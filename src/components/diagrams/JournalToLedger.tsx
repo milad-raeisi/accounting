@@ -148,7 +148,7 @@ export default function JournalToLedger({ caption }: DiagramProps) {
       key={lineKey(p.txId, side)}
       data-post={lineKey(p.txId, side)}
       className={cn(
-        'flex items-center justify-between gap-1 rounded px-1 py-0.5 text-[11px] tabular sm:text-xs',
+        'flex flex-wrap items-baseline justify-between gap-x-1 rounded px-1 py-0.5 text-[11px] tabular sm:text-xs',
         current?.id === p.txId && (side === 'dr' ? 'bg-debit/10' : 'bg-credit/10'),
       )}
     >
@@ -161,13 +161,13 @@ export default function JournalToLedger({ caption }: DiagramProps) {
     if (b.totalDebit === 0 && b.totalCredit === 0) return <div className="h-5" />
     const onDebit = b.net >= 0
     const cell = (
-      <span className="flex items-center justify-between gap-1 px-1 text-[11px] font-bold tabular sm:text-xs">
+      <span className="flex flex-wrap items-baseline justify-between gap-x-1 px-1 text-[11px] font-bold tabular sm:text-xs">
         <span className="text-[10px] font-medium text-muted-foreground">{t('table.balance')}</span>
         {money(Math.abs(b.net))}
       </span>
     )
     return (
-      <div data-bal={b.account.id} className="mt-1 grid h-5 grid-cols-2 border-t border-dashed pt-0.5">
+      <div data-bal={b.account.id} className="mt-1 grid min-h-5 grid-cols-2 border-t border-dashed pt-0.5">
         <div className={cn('pe-1.5', onDebit ? 'text-debit' : '')}>{onDebit && cell}</div>
         <div className={cn('ps-1.5', !onDebit ? 'text-credit' : '')}>{!onDebit && cell}</div>
       </div>
