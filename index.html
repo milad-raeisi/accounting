@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f6f68" />
+    <meta
+      name="description"
+      content="دفتر: آموزش تعاملی حسابداری مالی به فارسی و انگلیسی با نمودارهای متحرک، صحنه‌های سه‌بعدی و شبیه‌ساز دفتر کل. Daftar: an interactive bilingual financial-accounting course."
+    />
+    <title>دفتر · آکادمی حسابداری</title>
+    <script>
+      // Apply the saved language and theme before first paint (no RTL→LTR or light→dark flash).
+      try {
+        var d = document.documentElement
+        var l = localStorage.getItem('aa.lang')
+        if (l === 'en') {
+          d.lang = 'en'
+          d.dir = 'ltr'
+        }
+        var t = localStorage.getItem('theme') || 'system'
+        var dark = t === 'dark' || (t === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        if (dark) d.classList.add('dark')
+        d.style.colorScheme = dark ? 'dark' : 'light'
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

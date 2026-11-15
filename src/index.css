@@ -1,0 +1,246 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* ───────────────────────── Design tokens ───────────────────────── */
+:root {
+  --radius: 0.85rem;
+
+  /* paper & ink */
+  --background: oklch(0.982 0.006 85);
+  --foreground: oklch(0.22 0.025 262);
+  --card: oklch(0.997 0.002 85);
+  --card-foreground: oklch(0.22 0.025 262);
+  --popover: oklch(0.997 0.002 85);
+  --popover-foreground: oklch(0.22 0.025 262);
+
+  /* brand: deep ledger teal + gold */
+  --primary: oklch(0.5 0.105 182);
+  --primary-foreground: oklch(0.985 0.01 180);
+  --secondary: oklch(0.95 0.012 85);
+  --secondary-foreground: oklch(0.28 0.03 262);
+  --muted: oklch(0.955 0.008 85);
+  --muted-foreground: oklch(0.5 0.022 262);
+  --accent: oklch(0.93 0.035 182);
+  --accent-foreground: oklch(0.3 0.06 182);
+  --gold: oklch(0.76 0.135 78);
+  --destructive: oklch(0.58 0.2 25);
+  --border: oklch(0.905 0.01 85);
+  --input: oklch(0.89 0.012 85);
+  --ring: oklch(0.6 0.11 182);
+
+  /* accounting semantics: used by every diagram */
+  --asset: oklch(0.58 0.13 240);
+  --liability: oklch(0.6 0.17 18);
+  --equity: oklch(0.55 0.16 295);
+  --revenue: oklch(0.6 0.14 152);
+  --expense: oklch(0.68 0.15 55);
+  --debit: oklch(0.52 0.11 200);
+  --credit: oklch(0.62 0.16 38);
+
+  --chart-1: var(--asset);
+  --chart-2: var(--liability);
+  --chart-3: var(--equity);
+  --chart-4: var(--revenue);
+  --chart-5: var(--expense);
+
+  --grid-line: oklch(0.22 0.025 262 / 0.06);
+}
+
+.dark {
+  --background: oklch(0.155 0.02 262);
+  --foreground: oklch(0.95 0.008 85);
+  --card: oklch(0.195 0.022 262);
+  --card-foreground: oklch(0.95 0.008 85);
+  --popover: oklch(0.2 0.022 262);
+  --popover-foreground: oklch(0.95 0.008 85);
+
+  --primary: oklch(0.74 0.12 180);
+  --primary-foreground: oklch(0.18 0.03 200);
+  --secondary: oklch(0.25 0.022 262);
+  --secondary-foreground: oklch(0.92 0.01 85);
+  --muted: oklch(0.235 0.02 262);
+  --muted-foreground: oklch(0.7 0.02 262);
+  --accent: oklch(0.3 0.05 190);
+  --accent-foreground: oklch(0.9 0.05 180);
+  --gold: oklch(0.82 0.13 82);
+  --destructive: oklch(0.68 0.19 25);
+  --border: oklch(0.29 0.022 262);
+  --input: oklch(0.32 0.022 262);
+  --ring: oklch(0.7 0.12 180);
+
+  --asset: oklch(0.72 0.12 238);
+  --liability: oklch(0.72 0.15 18);
+  --equity: oklch(0.72 0.14 295);
+  --revenue: oklch(0.76 0.14 152);
+  --expense: oklch(0.8 0.14 62);
+  --debit: oklch(0.74 0.11 200);
+  --credit: oklch(0.78 0.14 45);
+
+  --grid-line: oklch(0.95 0.01 85 / 0.05);
+}
+
+@theme inline {
+  --font-sans: 'Inter Variable', 'Vazirmatn Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-fa: 'Vazirmatn Variable', 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 10px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+
+  --color-asset: var(--asset);
+  --color-liability: var(--liability);
+  --color-equity: var(--equity);
+  --color-revenue: var(--revenue);
+  --color-expense: var(--expense);
+  --color-debit: var(--debit);
+  --color-credit: var(--credit);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+}
+
+/* ───────────────────────── Base ───────────────────────── */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+    text-rendering: optimizeLegibility;
+  }
+  /* Persian: Vazirmatn + right-to-left */
+  html[lang='fa'] body {
+    font-family: var(--font-fa);
+    font-feature-settings: normal;
+    line-height: 1.85;
+  }
+  html[lang='fa'] :is(h1, h2, h3, h4) {
+    letter-spacing: 0 !important;
+    line-height: 1.45;
+  }
+  ::selection {
+    background: color-mix(in oklch, var(--primary) 25%, transparent);
+  }
+}
+
+/* ───────────────────────── Utilities ───────────────────────── */
+@utility ledger-grid {
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+@utility ledger-lines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 35px,
+    var(--grid-line) 35px,
+    var(--grid-line) 36px
+  );
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+@utility glass {
+  background: color-mix(in oklch, var(--background) 72%, transparent);
+  backdrop-filter: blur(14px) saturate(1.4);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+}
+
+/*
+ * GSAP owns `opacity` and `transform`. If Tailwind's generic `transition` also eases those,
+ * a reverted-and-rebuilt gsap.from() (language switch, StrictMode) reads a mid-transition value
+ * as its end state and the element stays invisible. Hover effects use the separate
+ * translate/scale properties in Tailwind v4, so they keep their transition.
+ */
+html .transition {
+  transition-property:
+    color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, box-shadow, translate,
+    scale, rotate, filter, backdrop-filter, -webkit-backdrop-filter;
+}
+
+/* Gradient shimmer that never splits text, safe for Persian letter joining */
+@keyframes text-shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+@utility text-shimmer {
+  background-image: linear-gradient(
+    90deg,
+    var(--muted-foreground) 0%,
+    var(--muted-foreground) 40%,
+    var(--primary) 50%,
+    var(--muted-foreground) 60%,
+    var(--muted-foreground) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: text-shimmer 2.8s linear infinite;
+  [dir='rtl'] & {
+    animation-direction: reverse;
+  }
+}
+
+@keyframes flow-dash {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+.flow-dash {
+  stroke-dasharray: 6 6;
+  animation: flow-dash 1.2s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
