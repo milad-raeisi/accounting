@@ -1,0 +1,51 @@
+import { useEffect, useRef, useState } from 'react'
+
+/** Three.js can't parse oklch(), so scenes use hex twins of the CSS tokens. */
+export const palette3D = {
+  asset: '#3f83c8',
+  liability: '#e05570',
+  equity: '#8a63d2',
+  revenue: '#2ea36f',
+  expense: '#e8913a',
+  gold: '#d9a943',
+  goldDeep: '#b8862b',
+  teal: '#14857c',
+  tealBright: '#38c2b3',
+  slate: '#273244',
+  ink: '#161c2a',
+  paper: '#ece6d8',
+} as const
+
+/**
+ * Mount a WebGL canvas only once it is near the viewport, and pause rendering
+ * while it is off-screen. Returns a ref for the wrapper plus `{ mounted, visible }`.
+ */
+export function useOnScreen<T extends HTMLElement>(rootMargin = '200px') {
+  const ref = useRef<T>(null)
+  const [mounted, setMounted] = useState(false)
+  const [visible, setVisible] = useState(false)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        setVisible(entry.isIntersecting)
+        if (entry.isIntersecting) setMounted(true)
+      },
+      { rootMargin },
+    )
+    io.observe(el)
+    return () => io.disconnect()
+  }, [rootMargin])
+  return { ref, mounted, visible }
+}
+
+/** WebGL availability check (falls back to a static message when missing). */
+export function hasWebGL(): boolean {
+  try {
+    const c = document.createElement('canvas')
+    return Boolean(c.getContext('webgl2') || c.getContext('webgl'))
+  } catch {
+    return false
+  }
+}
