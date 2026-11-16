@@ -49,7 +49,7 @@ const totals: L = { fa: 'جمع', en: 'Totals' }
 
 export const lesson: Lesson = {
   slug: 'adjusting-entries',
-  number: 8,
+  number: 9,
   level: 'intermediate',
   minutes: 38,
   icon: 'CalendarClock',

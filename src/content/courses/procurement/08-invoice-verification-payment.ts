@@ -471,8 +471,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'قرارداد سیمان‌کاری خدمات چاه البرز 120,000 است و مسار پترولیوم در شروع کار 20٪ آن، یعنی 24,000، را در برابر ضمانت‌نامه پیش‌پرداخت پرداخته است. اکنون فاکتور صورت‌وضعیت سیمان‌کاری جداری سطحی AR-11 (SES پذیرفته‌شده 45,000) رسیده است. در این مثال کسور روی مبلغ پیش از مالیات بر ارزش افزوده محاسبه می‌شوند:',
-            en: 'The Alborz Well Services cementing contract is worth 120,000, and at the start Masar Petroleum paid 20% of it, 24,000, against an advance-payment guarantee. Now the invoice for the AR-11 surface casing cementing (accepted SES 45,000) has arrived. In this example deductions are calculated on the amount before VAT:',
+            fa: 'قرارداد سیمان‌کاری خدمات چاه البرز 120,000 است و مسار پترولیوم در شروع کار 20٪ آن، یعنی 24,000، را در برابر ضمانت‌نامه پیش‌پرداخت پرداخته است. اکنون فاکتور صورت‌وضعیت سیمان‌کاری جداری سطحی AR-07 (SES پذیرفته‌شده 45,000) رسیده است. در این مثال کسور روی مبلغ پیش از مالیات بر ارزش افزوده محاسبه می‌شوند:',
+            en: 'The Alborz Well Services cementing contract is worth 120,000, and at the start Masar Petroleum paid 20% of it, 24,000, against an advance-payment guarantee. Now the invoice for the AR-07 surface casing cementing (accepted SES 45,000) has arrived. In this example deductions are calculated on the amount before VAT:',
           },
         },
         {
@@ -1258,7 +1258,7 @@ export const lesson: Lesson = {
         en: 'For which case is a two-way match (no receipt) most appropriate?',
       },
       options: [
-        { fa: 'لوله جداری چاه AR-11', en: 'Casing for well AR-11' },
+        { fa: 'لوله جداری چاه AR-07', en: 'Casing for well AR-07' },
         { fa: 'کارتریج آب‌بند گاز خشک کمپرسور', en: 'A compressor dry gas seal cartridge' },
         { fa: 'سیمان‌کاری چاه با SES', en: 'Well cementing with an SES' },
         { fa: 'قبض برق ماهانه دفتر میدان روی سفارش باز', en: 'The field office’s monthly electricity bill on a blanket PO' },

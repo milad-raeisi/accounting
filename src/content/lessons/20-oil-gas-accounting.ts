@@ -23,7 +23,7 @@ const blank = { fa: '', en: '' }
 
 export const lesson: Lesson = {
   slug: 'oil-gas-accounting',
-  number: 20,
+  number: 25,
   currency: 'usd',
   level: 'advanced',
   minutes: 32,

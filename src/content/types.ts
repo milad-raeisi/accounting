@@ -152,6 +152,17 @@ export type Lesson = {
   quiz: Question[] // 5–6 questions
 }
 
+/**
+ * Lightweight lesson summary, built at compile time by the `virtual:lesson-manifest` Vite plugin.
+ * Lists and progress use it; the full lesson (sections, quiz) is loaded on demand.
+ */
+export type LessonMetaRaw = Pick<Lesson, 'slug' | 'number' | 'level' | 'minutes' | 'icon' | 'tone' | 'title' | 'summary' | 'currency'> & {
+  course: string
+  /** import.meta.glob key relative to src/content/lessons/index.ts */
+  key: string
+  quizCount: number
+}
+
 export type GlossaryCategory =
   | 'basics'
   | 'accounts'

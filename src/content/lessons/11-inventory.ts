@@ -4,7 +4,7 @@ const blank = { fa: '', en: '' }
 
 export const lesson: Lesson = {
   slug: 'inventory',
-  number: 11,
+  number: 14,
   level: 'advanced',
   minutes: 45,
   icon: 'Boxes',

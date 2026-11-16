@@ -25,7 +25,7 @@ const yr = (n: number) => ({ fa: `${n}`, en: `${n}` })
 
 export const lesson: Lesson = {
   slug: 'oman-corporate-tax',
-  number: 23,
+  number: 30,
   currency: 'omr',
   level: 'advanced',
   minutes: 40,

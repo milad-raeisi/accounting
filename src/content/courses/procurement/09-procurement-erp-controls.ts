@@ -800,8 +800,8 @@ export const lesson: Lesson = {
               { fa: 'مبلغ', en: 'Amount' },
             ],
             rows: [
-              [{ fa: 'T1', en: 'T1' }, { fa: '`GRN-26-0318` لوله AR-11 روی `AFE-2025-014.02.03`؛ سفارش، IRN، گواهی کارخانه، فاکتور و پرداخت کامل', en: '`GRN-26-0318` AR-11 casing on `AFE-2025-014.02.03`; PO, IRN, mill certificates, invoice and payment complete' }, 180000],
-              [{ fa: 'T2', en: 'T2' }, { fa: '`SES-26-0131` سیمان‌کاری AR-11؛ برگه‌های کارکرد امضاشده، پذیرش مسئول قرارداد', en: '`SES-26-0131` AR-11 cementing; signed field tickets, accepted by the contract holder' }, 45000],
+              [{ fa: 'T1', en: 'T1' }, { fa: '`GRN-26-0318` لوله AR-07 روی `AFE-2025-014.02.03`؛ سفارش، IRN، گواهی کارخانه، فاکتور و پرداخت کامل', en: '`GRN-26-0318` AR-07 casing on `AFE-2025-014.02.03`; PO, IRN, mill certificates, invoice and payment complete' }, 180000],
+              [{ fa: 'T2', en: 'T2' }, { fa: '`SES-26-0131` سیمان‌کاری AR-07؛ برگه‌های کارکرد امضاشده، پذیرش مسئول قرارداد', en: '`SES-26-0131` AR-07 cementing; signed field tickets, accepted by the contract holder' }, 45000],
               [{ fa: 'T3', en: 'T3' }, { fa: 'فاکتور قطعات کمپرسور روی `CC-ARY-CMP` بدون سفارش و بدون GRN؛ قطعات در سوابق انبار نیستند', en: 'Compressor parts invoice on `CC-ARY-CMP` with no PO and no GRN; the parts are not in stock records' }, 12600],
               [{ fa: 'T4', en: 'T4' }, { fa: 'SES نمودارگیری AR-09 شامل یک نوبت تکراری به دلیل خرابی ابزار پیمانکار که طبق قرارداد قابل مطالبه نیست', en: 'AR-09 logging SES including a re-run caused by the contractor’s tool failure, not chargeable under the contract' }, 3200],
               [{ fa: 'T5', en: 'T5' }, { fa: 'پرداخت دوم یک فاکتور حمل ترابری جنوب (فاکتور تکراری)', en: 'Second payment of a Jonoub Transport freight invoice (a duplicate)' }, 2750],

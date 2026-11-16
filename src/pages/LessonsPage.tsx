@@ -27,7 +27,7 @@ export default function LessonsPage() {
 
   const list = useMemo(() => (filter === 'all' ? lessons : lessons.filter((l) => l.level === filter)), [filter, lessons])
   const minutes = lessons.reduce((s, l) => s + l.minutes, 0)
-  const questions = lessons.reduce((s, l) => s + l.quiz.length, 0)
+  const questions = lessons.reduce((s, l) => s + l.quizCount, 0)
   const levels = (['beginner', 'intermediate', 'advanced'] as const).filter((lv) => lessons.some((l) => l.level === lv))
 
   return (

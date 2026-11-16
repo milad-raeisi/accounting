@@ -38,7 +38,7 @@ const none: L = { fa: 'بدون اثر', en: 'No effect' }
 
 export const lesson: Lesson = {
   slug: 'trial-balance',
-  number: 7,
+  number: 8,
   level: 'intermediate',
   minutes: 26,
   icon: 'ListChecks',

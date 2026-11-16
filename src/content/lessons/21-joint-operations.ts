@@ -31,7 +31,7 @@ const blank = { fa: '', en: '' }
 
 export const lesson: Lesson = {
   slug: 'joint-operations',
-  number: 21,
+  number: 27,
   currency: 'usd',
   level: 'advanced',
   minutes: 30,

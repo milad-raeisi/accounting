@@ -1,7 +1,7 @@
 import type { Lesson } from '../../types'
 
 const ac = {
-  aucAR11: { fa: 'دارایی در جریان ساخت: چاه AR-11', en: 'Assets under construction: well AR-11' },
+  aucAR11: { fa: 'دارایی در جریان ساخت: چاه AR-07', en: 'Assets under construction: well AR-07' },
   grir: { fa: 'حساب واسط رسید کالا و فاکتور (GR/IR)', en: 'GR/IR clearing account' },
 }
 
@@ -49,8 +49,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'در میدان آریا، دکل حفاری آماده است تا لوله‌های جداری (Casing) را در چاه AR-11 بگذارد. لوله‌ها رسیده‌اند، اما چند هفته پیش مهندس حفاری آن‌ها را فقط با یک تماس تلفنی از تأمین‌کننده خواسته بود و هیچ **سفارش خرید** رسمی‌ای صادر نشده است. حالا فاکتور تأمین‌کننده قیمتی بالاتر از توافق شفاهی دارد، تاریخ تحویل در هیچ سندی نیامده و واحد مالی نمی‌داند هزینه را به کدام AFE بزند. حسابرس شریک مشارکت هم می‌پرسد: «رقابت کجا بود و چه کسی این خرید را تأیید کرد؟» این درس درباره سندی است که همه این پرسش‌ها را از پیش پاسخ می‌دهد.',
-            en: 'At Arya field the rig is ready to run casing in well AR-11. The pipe has arrived, but weeks ago the drilling engineer ordered it with a single phone call and no formal **purchase order** was ever issued. Now the supplier’s invoice shows a higher price than the verbal deal, no document records the delivery date, and Finance does not know which AFE to charge. The joint-venture partner’s auditor asks: “Where was the competition, and who approved this purchase?” This lesson is about the document that answers all of these questions in advance.',
+            fa: 'در میدان آریا، دکل حفاری آماده است تا لوله‌های جداری (Casing) را در چاه AR-07 بگذارد. لوله‌ها رسیده‌اند، اما چند هفته پیش مهندس حفاری آن‌ها را فقط با یک تماس تلفنی از تأمین‌کننده خواسته بود و هیچ **سفارش خرید** رسمی‌ای صادر نشده است. حالا فاکتور تأمین‌کننده قیمتی بالاتر از توافق شفاهی دارد، تاریخ تحویل در هیچ سندی نیامده و واحد مالی نمی‌داند هزینه را به کدام AFE بزند. حسابرس شریک مشارکت هم می‌پرسد: «رقابت کجا بود و چه کسی این خرید را تأیید کرد؟» این درس درباره سندی است که همه این پرسش‌ها را از پیش پاسخ می‌دهد.',
+            en: 'At Arya field the rig is ready to run casing in well AR-07. The pipe has arrived, but weeks ago the drilling engineer ordered it with a single phone call and no formal **purchase order** was ever issued. Now the supplier’s invoice shows a higher price than the verbal deal, no document records the delivery date, and Finance does not know which AFE to charge. The joint-venture partner’s auditor asks: “Where was the competition, and who approved this purchase?” This lesson is about the document that answers all of these questions in advance.',
           },
         },
         {
@@ -93,8 +93,8 @@ export const lesson: Lesson = {
         {
           type: 'table',
           caption: {
-            fa: 'سفارش `PO-45007`: لوله جداری چاه AR-11 از شرکت لوله‌گستر خلیج',
-            en: '`PO-45007`: casing for well AR-11 from Gulf Tubulars',
+            fa: 'سفارش `PO-45007`: لوله جداری چاه AR-07 از شرکت لوله‌گستر خلیج',
+            en: '`PO-45007`: casing for well AR-07 from Gulf Tubulars',
           },
           head: [
             { fa: 'بخش', en: 'Part' },
@@ -130,7 +130,7 @@ export const lesson: Lesson = {
                 fa: 'انبار، یا یک موضوع هزینه: مرکز هزینه، پروژه (WBS) یا AFE، دستور کار',
                 en: 'Stock, or a cost object: cost centre, project (WBS) or AFE, work order',
               },
-              { fa: '`AFE-2025-014.02.03` (لوله‌گذاری و سیمان‌کاری چاه AR-11)', en: '`AFE-2025-014.02.03` (casing and cementing of well AR-11)' },
+              { fa: '`AFE-2025-014.02.03` (لوله‌گذاری و سیمان‌کاری چاه AR-07)', en: '`AFE-2025-014.02.03` (casing and cementing of well AR-07)' },
             ],
             [
               { fa: 'شرایط قیمت', en: 'Pricing conditions' },
@@ -194,8 +194,8 @@ export const lesson: Lesson = {
                 en: 'Defined goods with a set quantity and price, usually one-off',
               },
               {
-                fa: '150 شاخه لوله جداری برای چاه AR-11؛ 2 کارتریج آب‌بند گاز خشک برای کمپرسور K-202',
-                en: '150 casing joints for well AR-11; 2 dry gas seal cartridges for compressor K-202',
+                fa: '150 شاخه لوله جداری برای چاه AR-07؛ 2 کارتریج آب‌بند گاز خشک برای کمپرسور K-202',
+                en: '150 casing joints for well AR-07; 2 dry gas seal cartridges for compressor K-202',
               },
               { fa: 'رسید کالا (GRN)', en: 'Goods received note (GRN)' },
             ],
@@ -206,8 +206,8 @@ export const lesson: Lesson = {
                 en: 'Work done by a contractor, at unit rates or a lump sum',
               },
               {
-                fa: 'سیمان‌کاری جداری سطحی چاه AR-11؛ بازرسی یک مخزن تحت فشار',
-                en: 'Cementing the surface casing of AR-11; inspecting a pressure vessel',
+                fa: 'سیمان‌کاری جداری سطحی چاه AR-07؛ بازرسی یک مخزن تحت فشار',
+                en: 'Cementing the surface casing of AR-07; inspecting a pressure vessel',
               },
               {
                 fa: 'برگه ثبت خدمات (SES) که نماینده کارفرما در محل می‌پذیرد',
@@ -316,8 +316,8 @@ export const lesson: Lesson = {
         {
           type: 'table',
           caption: {
-            fa: 'قرارداد چارچوب شیمی حفاری کاوه (12 ماه، سقف 600,000) و فراخوان چاه AR-11',
-            en: 'Kaveh Drilling Chemicals framework (12 months, ceiling 600,000) and the AR-11 call-off',
+            fa: 'قرارداد چارچوب شیمی حفاری کاوه (12 ماه، سقف 600,000) و فراخوان چاه AR-07',
+            en: 'Kaveh Drilling Chemicals framework (12 months, ceiling 600,000) and the AR-07 call-off',
           },
           head: [
             { fa: 'کالا', en: 'Item' },
@@ -337,8 +337,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'پیش از این، دو فراخوان برای چاه‌های AR-09 و AR-10 به مبلغ 210,000 و 185,000 صادر شده بود. با فراخوان AR-11، جمع فراخوان‌ها به 440,000 می‌رسد و 160,000 از سقف قرارداد باقی می‌ماند. ERP این مانده را همیشه نشان می‌دهد و اگر فراخوانی از سقف بگذرد، آن را متوقف می‌کند یا برای تأیید ویژه می‌فرستد.',
-            en: 'Two earlier call-offs, for wells AR-09 and AR-10, were worth 210,000 and 185,000. With the AR-11 call-off, total releases reach 440,000 and 160,000 of the ceiling remains. The ERP shows this balance at all times, and if a call-off would exceed the ceiling it blocks it or routes it for special approval.',
+            fa: 'پیش از این، دو فراخوان برای چاه‌های AR-09 و AR-10 به مبلغ 210,000 و 185,000 صادر شده بود. با فراخوان AR-07، جمع فراخوان‌ها به 440,000 می‌رسد و 160,000 از سقف قرارداد باقی می‌ماند. ERP این مانده را همیشه نشان می‌دهد و اگر فراخوانی از سقف بگذرد، آن را متوقف می‌کند یا برای تأیید ویژه می‌فرستد.',
+            en: 'Two earlier call-offs, for wells AR-09 and AR-10, were worth 210,000 and 185,000. With the AR-07 call-off, total releases reach 440,000 and 160,000 of the ceiling remains. The ERP shows this balance at all times, and if a call-off would exceed the ceiling it blocks it or routes it for special approval.',
           },
         },
         {
@@ -361,8 +361,8 @@ export const lesson: Lesson = {
         {
           type: 'table',
           caption: {
-            fa: 'برگه ثبت خدمات (SES) سیمان‌کاری جداری سطحی چاه AR-11، قرارداد خدمات چاه البرز',
-            en: 'SES for cementing the surface casing of AR-11, Alborz Well Services contract',
+            fa: 'برگه ثبت خدمات (SES) سیمان‌کاری جداری سطحی چاه AR-07، قرارداد خدمات چاه البرز',
+            en: 'SES for cementing the surface casing of AR-07, Alborz Well Services contract',
           },
           head: [
             { fa: 'ردیف خدمت', en: 'Service line' },
@@ -510,7 +510,7 @@ export const lesson: Lesson = {
         {
           type: 'callout',
           tone: 'example',
-          title: { fa: 'نمونه: سفارش لوله جداری AR-11', en: 'Example: the AR-11 casing order' },
+          title: { fa: 'نمونه: سفارش لوله جداری AR-07', en: 'Example: the AR-07 casing order' },
           text: {
             fa: 'ردیف 20 (60 شاخه × 1,800 = 108,000) سه هفته دیر رسید. با نرخ فرضی 0.5٪ در هفته: 108,000 × 0.5٪ × 3 = 1,620. سقف 5٪ برابر 5,400 است و رعایت شده است. ردیف 10 به‌موقع رسیده و خسارتی ندارد. این 1,620 از فاکتور کسر می‌شود و معمولاً از بهای تمام‌شده چاه کم می‌شود (رویه دقیق را سیاست حسابداری شرکت تعیین می‌کند)؛ زیرا هزینه قابل بازیافت، هزینه خالص واقعی است.',
             en: 'Line 20 (60 joints × 1,800 = 108,000) arrived three weeks late. At an illustrative 0.5% per week: 108,000 × 0.5% × 3 = 1,620. The 5% cap is 5,400, so it is not reached. Line 10 arrived on time and attracts no LDs. The 1,620 is deducted from the invoice and is usually credited against the cost of the well (the exact treatment follows the company’s accounting policy), because the recoverable cost is the true net cost.',
@@ -613,8 +613,8 @@ export const lesson: Lesson = {
           type: 'callout',
           tone: 'example',
           text: {
-            fa: 'فرض کنید مقدار ردیف 20 سفارش لوله AR-11 از 60 به 66 شاخه برسد. افزایش مبلغ 6 × 1,800 = 10,800 است، یعنی 3.75٪ از 288,000؛ و سفارش جدید 298,800 همچنان در رده 100,001 تا 1,000,000 است. با قاعده فرضی «تأیید مجدد اگر افزایش بیش از 5٪ باشد یا رده تأیید عوض شود»، تأیید مجدد لازم نیست؛ اما نسخه جدید ثبت می‌شود و تعهد AFE به اندازه 10,800 بالا می‌رود.',
-            en: 'Suppose line 20 of the AR-11 casing order goes from 60 to 66 joints. The increase is 6 × 1,800 = 10,800, or 3.75% of 288,000, and the new total of 298,800 stays in the 100,001 to 1,000,000 band. Under an illustrative rule “re-approve if the increase exceeds 5% or the approval band changes”, no re-approval is needed; but a new version is recorded and the AFE commitment rises by 10,800.',
+            fa: 'فرض کنید مقدار ردیف 20 سفارش لوله AR-07 از 60 به 66 شاخه برسد. افزایش مبلغ 6 × 1,800 = 10,800 است، یعنی 3.75٪ از 288,000؛ و سفارش جدید 298,800 همچنان در رده 100,001 تا 1,000,000 است. با قاعده فرضی «تأیید مجدد اگر افزایش بیش از 5٪ باشد یا رده تأیید عوض شود»، تأیید مجدد لازم نیست؛ اما نسخه جدید ثبت می‌شود و تعهد AFE به اندازه 10,800 بالا می‌رود.',
+            en: 'Suppose line 20 of the AR-07 casing order goes from 60 to 66 joints. The increase is 6 × 1,800 = 10,800, or 3.75% of 288,000, and the new total of 298,800 stays in the 100,001 to 1,000,000 band. Under an illustrative rule “re-approve if the increase exceeds 5% or the approval band changes”, no re-approval is needed; but a new version is recorded and the AFE commitment rises by 10,800.',
           },
         },
         {
@@ -675,8 +675,8 @@ export const lesson: Lesson = {
               { fa: 'موضوع‌های هزینه', en: 'Cost objects' },
               { fa: 'مرکز هزینه، WBS یا AFE، دستور کار', en: 'Cost centre, WBS or AFE, work order' },
               {
-                fa: '`AFE-2025-014` (چاه AR-11) با عنصرهایی مثل `AFE-2025-014.02.03` لوله‌گذاری و سیمان‌کاری؛ مرکز هزینه ایستگاه تقویت فشار `CC-ARY-CMP`؛ نشان بازیافت `R` یا `N` و دسته هزینه (توسعه، عملیات)',
-                en: '`AFE-2025-014` (well AR-11) with elements such as `AFE-2025-014.02.03` casing and cementing; compressor station cost centre `CC-ARY-CMP`; recoverable flag `R` or `N` and cost category (Development, Operating)',
+                fa: '`AFE-2025-014` (چاه AR-07) با عنصرهایی مثل `AFE-2025-014.02.03` لوله‌گذاری و سیمان‌کاری؛ مرکز هزینه ایستگاه تقویت فشار `CC-ARY-CMP`؛ نشان بازیافت `R` یا `N` و دسته هزینه (توسعه، عملیات)',
+                en: '`AFE-2025-014` (well AR-07) with elements such as `AFE-2025-014.02.03` casing and cementing; compressor station cost centre `CC-ARY-CMP`; recoverable flag `R` or `N` and cost category (Development, Operating)',
               },
             ],
             [
@@ -685,7 +685,7 @@ export const lesson: Lesson = {
                 fa: 'سفارش با ردیف‌ها، تخصیص هزینه، شرایط و تاریخچه نسخه‌ها',
                 en: 'PO with lines, account assignment, terms and version history',
               },
-              { fa: '`PO-45007` لوله جداری AR-11', en: '`PO-45007` AR-11 casing' },
+              { fa: '`PO-45007` لوله جداری AR-07', en: '`PO-45007` AR-07 casing' },
             ],
           ],
         },
@@ -830,8 +830,8 @@ export const lesson: Lesson = {
               en: '**Work without a PO**: starting on a phone or email agreement. Fix: approved PO first, delivery second; in an emergency, the documented emergency procedure.',
             },
             {
-              fa: '**کد هزینه اشتباه یا خالی**: سفارش برای چاه AR-11 با کد AR-10 یا بدون AFE. راه درست: فیلد تخصیص هزینه اجباری و بررسی آن در گردش کار تأیید.',
-              en: '**Wrong or missing cost code**: an AR-11 order coded to AR-10 or to no AFE. Fix: make account assignment mandatory and check it in the approval workflow.',
+              fa: '**کد هزینه اشتباه یا خالی**: سفارش برای چاه AR-07 با کد AR-10 یا بدون AFE. راه درست: فیلد تخصیص هزینه اجباری و بررسی آن در گردش کار تأیید.',
+              en: '**Wrong or missing cost code**: an AR-07 order coded to AR-10 or to no AFE. Fix: make account assignment mandatory and check it in the approval workflow.',
             },
             {
               fa: '**قرارداد چارچوب بدون پایش سقف**: فراخوان‌ها از سقف می‌گذرند و کسی متوجه نمی‌شود. راه درست: کنترل خودکار سقف و گزارش ماهانه مصرف قرارداد.',
@@ -875,8 +875,8 @@ export const lesson: Lesson = {
               [
                 { fa: 'ب', en: 'b' },
                 {
-                  fa: 'نمودارگیری (Wireline Logging) چاه AR-11 با نرخ‌های قرارداد خدمات موجود با خدمات چاه البرز',
-                  en: 'Wireline logging of well AR-11 at the rates of the existing Alborz Well Services contract',
+                  fa: 'نمودارگیری (Wireline Logging) چاه AR-07 با نرخ‌های قرارداد خدمات موجود با خدمات چاه البرز',
+                  en: 'Wireline logging of well AR-07 at the rates of the existing Alborz Well Services contract',
                 },
               ],
               [
@@ -923,8 +923,8 @@ export const lesson: Lesson = {
                   { fa: 'فراخوان خدمات از قرارداد موجود', en: 'Service call-off under the contract' },
                   { fa: '`AFE-2025-014`', en: '`AFE-2025-014`' },
                   {
-                    fa: 'خدمت است و با SES پذیرفته می‌شود؛ از ابتدا معلوم است برای چاه AR-11 است',
-                    en: 'A service confirmed by SES; clearly for well AR-11 from the start',
+                    fa: 'خدمت است و با SES پذیرفته می‌شود؛ از ابتدا معلوم است برای چاه AR-07 است',
+                    en: 'A service confirmed by SES; clearly for well AR-07 from the start',
                   },
                 ],
                 [
@@ -1024,8 +1024,8 @@ export const lesson: Lesson = {
           title: { fa: 'تمرین 3: فراخوان و سقف قرارداد چارچوب', en: 'Exercise 3: Call-offs and the framework ceiling' },
           difficulty: 'medium',
           problem: {
-            fa: 'قرارداد چارچوب شیمی حفاری کاوه سقف 600,000 دارد و تاکنون 440,000 از آن فراخوان شده است (AR-09، AR-10 و AR-11). (الف) مبلغ فراخوان چاه AR-12 را با نرخ‌های قرارداد حساب کنید. (ب) مانده سقف پس از آن چقدر است؟ (ج) برنامه‌ریز می‌خواهد برای سیال تکمیل چاه AR-12 فراخوان دیگری به مبلغ 112,000 بدهد. ERP چه می‌کند و راه درست چیست؟',
-            en: 'The Kaveh Drilling Chemicals framework has a ceiling of 600,000, of which 440,000 has been called off (AR-09, AR-10 and AR-11). (a) Calculate the AR-12 call-off at contract rates. (b) What is the remaining ceiling afterwards? (c) The planner wants another call-off of 112,000 for AR-12 completion fluids. What does the ERP do, and what is the right course of action?',
+            fa: 'قرارداد چارچوب شیمی حفاری کاوه سقف 600,000 دارد و تاکنون 440,000 از آن فراخوان شده است (AR-09، AR-10 و AR-07). (الف) مبلغ فراخوان چاه AR-12 را با نرخ‌های قرارداد حساب کنید. (ب) مانده سقف پس از آن چقدر است؟ (ج) برنامه‌ریز می‌خواهد برای سیال تکمیل چاه AR-12 فراخوان دیگری به مبلغ 112,000 بدهد. ERP چه می‌کند و راه درست چیست؟',
+            en: 'The Kaveh Drilling Chemicals framework has a ceiling of 600,000, of which 440,000 has been called off (AR-09, AR-10 and AR-07). (a) Calculate the AR-12 call-off at contract rates. (b) What is the remaining ceiling afterwards? (c) The planner wants another call-off of 112,000 for AR-12 completion fluids. What does the ERP do, and what is the right course of action?',
           },
           given: {
             head: [
@@ -1303,8 +1303,8 @@ export const lesson: Lesson = {
   quiz: [
     {
       q: {
-        fa: 'وقتی یک سفارش خرید 288,000 برای لوله چاه AR-11 تأیید می‌شود، ERP در دفتر کل چه ثبتی می‌زند؟',
-        en: 'When a 288,000 PO for AR-11 casing is approved, what does the ERP post to the general ledger?',
+        fa: 'وقتی یک سفارش خرید 288,000 برای لوله چاه AR-07 تأیید می‌شود، ERP در دفتر کل چه ثبتی می‌زند؟',
+        en: 'When a 288,000 PO for AR-07 casing is approved, what does the ERP post to the general ledger?',
       },
       options: [
         { fa: 'بدهکار موجودی، بستانکار حساب‌های پرداختنی', en: 'Debit Inventory, credit Accounts payable' },

@@ -3,7 +3,7 @@ import type { Lesson } from '../../types'
 const ac = {
   invField: { fa: 'موجودی مواد و قطعات: انبار میدان', en: 'Materials inventory: Field Warehouse' },
   invCentral: { fa: 'موجودی مواد و قطعات: انبار مرکزی', en: 'Materials inventory: Central Warehouse' },
-  aucAR11: { fa: 'دارایی در جریان ساخت: چاه AR-11', en: 'Assets under construction: well AR-11' },
+  aucAR11: { fa: 'دارایی در جریان ساخت: چاه AR-07', en: 'Assets under construction: well AR-07' },
   grir: { fa: 'حساب واسط رسید کالا و فاکتور (GR/IR)', en: 'GR/IR clearing account' },
   freightClr: { fa: 'حساب واسط هزینه حمل و بیمه', en: 'Freight and insurance clearing' },
   customsClr: { fa: 'حساب واسط حقوق گمرکی و ترخیص', en: 'Customs and clearance clearing' },
@@ -57,8 +57,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'سه هفته مانده به حفاری بخش 13-3/8 اینچ چاه AR-11، معلوم می‌شود ردیف 20 سفارش لوله جداری هنوز در کارخانه منتظر بازرسی است. اگر لوله به‌موقع نرسد، دکل باید منتظر بماند. با هزینه آماده‌به‌کار (Standby) فرضی 35,000 در روز، پنج روز انتظار یعنی 175,000؛ بیشتر از ارزش کل همان ردیف (108,000). در مقابل، یک بازدید پیگیری از کارخانه فقط چند هزار هزینه دارد.',
-            en: 'Three weeks before drilling the 13-3/8" section of well AR-11, it turns out that line 20 of the casing order is still at the mill waiting for inspection. If the pipe is late, the rig waits. At an illustrative standby rate of 35,000 a day, five days of waiting cost 175,000, more than the whole line is worth (108,000). A visit to the mill to chase the order costs only a few thousand.',
+            fa: 'سه هفته مانده به حفاری بخش 13-3/8 اینچ چاه AR-07، معلوم می‌شود ردیف 20 سفارش لوله جداری هنوز در کارخانه منتظر بازرسی است. اگر لوله به‌موقع نرسد، دکل باید منتظر بماند. با هزینه آماده‌به‌کار (Standby) فرضی 35,000 در روز، پنج روز انتظار یعنی 175,000؛ بیشتر از ارزش کل همان ردیف (108,000). در مقابل، یک بازدید پیگیری از کارخانه فقط چند هزار هزینه دارد.',
+            en: 'Three weeks before drilling the 13-3/8" section of well AR-07, it turns out that line 20 of the casing order is still at the mill waiting for inspection. If the pipe is late, the rig waits. At an illustrative standby rate of 35,000 a day, five days of waiting cost 175,000, more than the whole line is worth (108,000). A visit to the mill to chase the order costs only a few thousand.',
           },
         },
         {
@@ -371,8 +371,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'محل تحویل در سفارش تعیین شده است. قطعات یدکی حیاتی و کالای وارداتی معمولاً به **انبار مرکزی** (`WH-10`) می‌روند؛ موجودی عملیاتی نزدیک چاه‌ها در **انبار میدان** (`WH-20`) نگهداری می‌شود؛ و کالایی که برای یک چاه خاص خریده شده، مثل لوله جداری AR-11، ممکن است مستقیم به انبار میدان یا محل دکل برسد. کار لجستیک در این نقطه تمام و کار دریافت آغاز می‌شود:',
-            en: 'The delivery point is set in the PO. Critical spares and imported goods usually go to the **Central Warehouse** (`WH-10`); operating stock near the wells is kept in the **Field Warehouse** (`WH-20`); and goods bought for one specific well, like the AR-11 casing, may go straight to the Field Warehouse or the rig site. This is where logistics ends and receiving begins:',
+            fa: 'محل تحویل در سفارش تعیین شده است. قطعات یدکی حیاتی و کالای وارداتی معمولاً به **انبار مرکزی** (`WH-10`) می‌روند؛ موجودی عملیاتی نزدیک چاه‌ها در **انبار میدان** (`WH-20`) نگهداری می‌شود؛ و کالایی که برای یک چاه خاص خریده شده، مثل لوله جداری AR-07، ممکن است مستقیم به انبار میدان یا محل دکل برسد. کار لجستیک در این نقطه تمام و کار دریافت آغاز می‌شود:',
+            en: 'The delivery point is set in the PO. Critical spares and imported goods usually go to the **Central Warehouse** (`WH-10`); operating stock near the wells is kept in the **Field Warehouse** (`WH-20`); and goods bought for one specific well, like the AR-07 casing, may go straight to the Field Warehouse or the rig site. This is where logistics ends and receiving begins:',
           },
         },
         {

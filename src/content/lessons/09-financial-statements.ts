@@ -9,7 +9,7 @@ const toBS = { fa: 'ترازنامه', en: 'Balance sheet' }
 
 export const lesson: Lesson = {
   slug: 'financial-statements',
-  number: 9,
+  number: 10,
   level: 'intermediate',
   minutes: 45,
   icon: 'FileSpreadsheet',

@@ -14,7 +14,7 @@ const blank = { fa: '', en: '' }
 
 export const lesson: Lesson = {
   slug: 'cost-recovery',
-  number: 22,
+  number: 28,
   currency: 'usd',
   level: 'advanced',
   minutes: 34,

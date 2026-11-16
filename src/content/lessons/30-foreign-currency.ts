@@ -32,7 +32,7 @@ const blank = { fa: '', en: '' }
 
 export const lesson: Lesson = {
   slug: 'foreign-currency',
-  number: 30,
+  number: 23,
   currency: 'usd',
   level: 'advanced',
   minutes: 35,
@@ -97,7 +97,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: { fa: 'شرکت‌های گروه مسار پترولیوم در این درس (کدهای MP02 و MP03 فرضی‌اند)', en: 'Masar Petroleum group companies in this lesson (codes MP02 and MP03 are illustrative)' },
+          caption: { fa: 'شرکت‌های گروه مسار پترولیوم در این درس (کدهای MP03 و MP04 فرضی‌اند)', en: 'Masar Petroleum group companies in this lesson (codes MP03 and MP04 are illustrative)' },
           head: [
             { fa: 'شرکت', en: 'Company' },
             { fa: 'کد شرکت', en: 'Company code' },
@@ -106,8 +106,8 @@ export const lesson: Lesson = {
           ],
           rows: [
             [t('مسار پترولیوم', 'Masar Petroleum'), t('MP01', 'MP01'), t('اپراتور میدان آریا، فروش نفت خام', 'Operator of the Arya field, sells crude oil'), t('دلار آمریکا (USD)', 'US dollar (USD)')],
-            [t('مسار پترولیوم خدمات عمان', 'Masar Petroleum Oman Services'), t('MP02', 'MP02'), t('خدمات تعمیر چاه و نگهداری کمپرسور در عمان', 'Well-workover and compressor maintenance services in Oman'), t('ریال عمان (OMR)', 'Omani rial (OMR)')],
-            [t('مسار پترولیوم اروپا', 'Masar Petroleum Europe'), t('MP03', 'MP03'), t('مرکز خرید و مهندسی تجهیزات در اروپا', 'Equipment procurement and engineering hub in Europe'), t('یورو (EUR)', 'Euro (EUR)')],
+            [t('مسار پترولیوم خدمات عمان', 'Masar Petroleum Oman Services'), t('MP03', 'MP03'), t('خدمات تعمیر چاه و نگهداری کمپرسور در عمان', 'Well-workover and compressor maintenance services in Oman'), t('ریال عمان (OMR)', 'Omani rial (OMR)')],
+            [t('مسار پترولیوم اروپا', 'Masar Petroleum Europe'), t('MP04', 'MP04'), t('مرکز خرید و مهندسی تجهیزات در اروپا', 'Equipment procurement and engineering hub in Europe'), t('یورو (EUR)', 'Euro (EUR)')],
           ],
         },
         {
@@ -140,7 +140,7 @@ export const lesson: Lesson = {
           head: [
             { fa: 'شاخص', en: 'Indicator' },
             { fa: 'مسار پترولیوم (MP01)', en: 'Masar Petroleum (MP01)' },
-            { fa: 'مسار پترولیوم خدمات عمان (MP02)', en: 'Masar Petroleum Oman Services (MP02)' },
+            { fa: 'مسار پترولیوم خدمات عمان (MP03)', en: 'Masar Petroleum Oman Services (MP03)' },
           ],
           rows: [
             [
@@ -173,8 +173,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'چرا بسیاری از شرکت‌های نفت و گاز بالادستی واحد پول عملیاتی دلاری دارند، حتی اگر در کشوری با پول ملی دیگر کار کنند؟ چون نفت خام و میعانات در بازار جهانی به دلار خرید و فروش می‌شوند، اجاره دکل، تجهیزات و خدمات تخصصی بیشتر به دلار قیمت دارند و وام‌های پروژه هم معمولاً دلاری است. با این حال این یک قاعده خودکار نیست: شرکتی مثل MP02 که درآمد و هزینه‌اش محلی است، واحد پول عملیاتی محلی دارد.',
-            en: 'Why do many upstream oil and gas companies have a US dollar functional currency, even when they operate in a country with another national currency? Because crude oil and condensate trade worldwide in dollars, rigs, equipment and specialist services are mostly priced in dollars, and project loans are usually in dollars too. It is not automatic, though: a company like MP02, whose revenue and costs are local, has a local functional currency.',
+            fa: 'چرا بسیاری از شرکت‌های نفت و گاز بالادستی واحد پول عملیاتی دلاری دارند، حتی اگر در کشوری با پول ملی دیگر کار کنند؟ چون نفت خام و میعانات در بازار جهانی به دلار خرید و فروش می‌شوند، اجاره دکل، تجهیزات و خدمات تخصصی بیشتر به دلار قیمت دارند و وام‌های پروژه هم معمولاً دلاری است. با این حال این یک قاعده خودکار نیست: شرکتی مثل MP03 که درآمد و هزینه‌اش محلی است، واحد پول عملیاتی محلی دارد.',
+            en: 'Why do many upstream oil and gas companies have a US dollar functional currency, even when they operate in a country with another national currency? Because crude oil and condensate trade worldwide in dollars, rigs, equipment and specialist services are mostly priced in dollars, and project loans are usually in dollars too. It is not automatic, though: a company like MP03, whose revenue and costs are local, has a local functional currency.',
           },
         },
         {
@@ -542,8 +542,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: '**عملیات خارجی** یک شرکت تابعه، شعبه، شرکت وابسته یا مشارکت است که فعالیتش در کشوری دیگر یا با واحد پولی غیر از واحد پول شرکت گزارشگر انجام می‌شود. شرکت تابعه دفاتر خودش را با واحد پول عملیاتی خودش نگه می‌دارد (MP02 به ریال عمان و MP03 به یورو). برای تهیه صورت‌های مالی تلفیقی گروه مسار به دلار، صورت‌های آن‌ها باید **تبدیل** (Translation) شوند. این کار با تسعیر معاملات ارزی فرق دارد و تفاوتش هم به جای دیگری می‌رود.',
-            en: 'A **foreign operation** is a subsidiary, branch, associate or joint arrangement whose activities are based or conducted in a country or currency other than those of the reporting entity. The subsidiary keeps its own books in its own functional currency (MP02 in Omani rials, MP03 in euros). To prepare the Masar group’s consolidated statements in dollars, their statements must be **translated**. This is different from revaluing foreign transactions, and its difference goes somewhere else.',
+            fa: '**عملیات خارجی** یک شرکت تابعه، شعبه، شرکت وابسته یا مشارکت است که فعالیتش در کشوری دیگر یا با واحد پولی غیر از واحد پول شرکت گزارشگر انجام می‌شود. شرکت تابعه دفاتر خودش را با واحد پول عملیاتی خودش نگه می‌دارد (MP03 به ریال عمان و MP04 به یورو). برای تهیه صورت‌های مالی تلفیقی گروه مسار به دلار، صورت‌های آن‌ها باید **تبدیل** (Translation) شوند. این کار با تسعیر معاملات ارزی فرق دارد و تفاوتش هم به جای دیگری می‌رود.',
+            en: 'A **foreign operation** is a subsidiary, branch, associate or joint arrangement whose activities are based or conducted in a country or currency other than those of the reporting entity. The subsidiary keeps its own books in its own functional currency (MP03 in Omani rials, MP04 in euros). To prepare the Masar group’s consolidated statements in dollars, their statements must be **translated**. This is different from revaluing foreign transactions, and its difference goes somewhere else.',
           },
         },
         {
@@ -574,8 +574,8 @@ export const lesson: Lesson = {
         {
           type: 'table',
           caption: {
-            fa: 'تبدیل صورت‌های مالی مسار پترولیوم اروپا (MP03) برای سال 2026؛ نرخ‌ها دلار برای هر یورو و فرضی‌اند',
-            en: 'Translating Masar Petroleum Europe (MP03) for 2026; rates are USD per EUR and illustrative',
+            fa: 'تبدیل صورت‌های مالی مسار پترولیوم اروپا (MP04) برای سال 2026؛ نرخ‌ها دلار برای هر یورو و فرضی‌اند',
+            en: 'Translating Masar Petroleum Europe (MP04) for 2026; rates are USD per EUR and illustrative',
           },
           head: [
             { fa: 'قلم', en: 'Line' },
@@ -610,8 +610,8 @@ export const lesson: Lesson = {
           tone: 'example',
           title: { fa: 'در عمل', en: 'In practice' },
           text: {
-            fa: 'برای MP02 در عمان، نرخ ابتدای سال، میانگین و پایان دوره همه 2.6008 است؛ پس تفاوت تبدیل تقریباً صفر می‌شود. ماژول تلفیق باز هم همان گام‌ها را اجرا می‌کند، چون روش به نرخ ثابت وابسته نیست. اگر نرخ ثابت روزی تغییر کند، همین ساختار تفاوت را درست نشان می‌دهد.',
-            en: 'For MP02 in Oman, the opening, average and closing rates are all 2.6008, so the translation difference is close to zero. The consolidation module still runs the same steps, because the method does not depend on the peg. If the peg ever changes, the same structure will show the difference correctly.',
+            fa: 'برای MP03 در عمان، نرخ ابتدای سال، میانگین و پایان دوره همه 2.6008 است؛ پس تفاوت تبدیل تقریباً صفر می‌شود. ماژول تلفیق باز هم همان گام‌ها را اجرا می‌کند، چون روش به نرخ ثابت وابسته نیست. اگر نرخ ثابت روزی تغییر کند، همین ساختار تفاوت را درست نشان می‌دهد.',
+            en: 'For MP03 in Oman, the opening, average and closing rates are all 2.6008, so the translation difference is close to zero. The consolidation module still runs the same steps, because the method does not depend on the peg. If the peg ever changes, the same structure will show the difference correctly.',
           },
         },
         {
@@ -647,9 +647,9 @@ export const lesson: Lesson = {
           rows: [
             [t('کدهای ارز (استاندارد ISO 4217) و تعداد اعشار', 'Currency codes (ISO 4217) and decimals'), t('USD و EUR با دو رقم اعشار؛ OMR با سه رقم اعشار (هر ریال 1,000 بیسه است)', 'USD and EUR with two decimals; OMR with three (one rial is 1,000 baisa)')],
             [t('انواع نرخ ارز', 'Exchange-rate types'), t('نرخ روزانه معاملات، نرخ پایان ماه، نرخ میانگین ماه، نرخ خرید و فروش بانک', 'Daily transaction rate, month-end closing rate, monthly average rate, bank buying and selling rates')],
-            [t('ارز کد شرکت', 'Company code currency'), t('MP01 دلار؛ MP02 ریال عمان؛ MP03 یورو', 'MP01 USD; MP02 OMR; MP03 EUR')],
+            [t('ارز کد شرکت', 'Company code currency'), t('MP01 دلار؛ MP03 ریال عمان؛ MP04 یورو', 'MP01 USD; MP03 OMR; MP04 EUR')],
             [t('تنظیم حساب‌های کل', 'GL account settings'), t('کدام حساب‌ها تسعیر شوند: حساب‌های دریافتنی و پرداختنی، GR/IR، بانک و وام؛ موجودی و دارایی‌ها تسعیر نشوند', 'Which accounts are revalued: receivables, payables, GR/IR, bank and loans; inventory and assets are not')],
-            [t('ارز پیش‌فرض تأمین‌کننده و مشتری', 'Default vendor and customer currency'), t('سازنده اروپایی: EUR؛ خریدار نفت خام: USD؛ MP02: OMR', 'European manufacturer: EUR; crude buyer: USD; MP02: OMR')],
+            [t('ارز پیش‌فرض تأمین‌کننده و مشتری', 'Default vendor and customer currency'), t('سازنده اروپایی: EUR؛ خریدار نفت خام: USD؛ MP03: OMR', 'European manufacturer: EUR; crude buyer: USD; MP03: OMR')],
             [t('نگاشت حساب‌های تفاوت تسعیر', 'Exchange difference account mapping'), t('4910 و 5810 برای تحقق‌یافته؛ 4920 و 5820 برای تحقق‌نیافته', '4910 and 5810 for realised; 4920 and 5820 for unrealised')],
           ],
         },
@@ -687,8 +687,8 @@ export const lesson: Lesson = {
             {
               title: { fa: '5. تلفیق و بررسی', en: '5. Consolidate and review' },
               text: {
-                fa: 'ماژول تلفیق MP02 و MP03 را با نرخ پایان دوره و میانگین تبدیل می‌کند. کنترلر مالی سود و زیان ارزی را با یک آزمون تحلیلی ساده (مانده ارزی × تغییر نرخ) مقایسه و تأیید می‌کند.',
-                en: 'The consolidation module translates MP02 and MP03 at closing and average rates. The financial controller compares the FX result with a simple analytical test (foreign balance × rate change) and approves it.',
+                fa: 'ماژول تلفیق MP03 و MP04 را با نرخ پایان دوره و میانگین تبدیل می‌کند. کنترلر مالی سود و زیان ارزی را با یک آزمون تحلیلی ساده (مانده ارزی × تغییر نرخ) مقایسه و تأیید می‌کند.',
+                en: 'The consolidation module translates MP03 and MP04 at closing and average rates. The financial controller compares the FX result with a simple analytical test (foreign balance × rate change) and approves it.',
               },
             },
           ],
@@ -777,8 +777,8 @@ export const lesson: Lesson = {
           title: { fa: 'ثبت با نرخ تاریخ معامله', en: 'Recording at the transaction-date rate' },
           difficulty: 'easy',
           problem: {
-            fa: 'در 5 مه: (الف) مواد شیمیایی حفاری به ارزش 80,000 یورو از یک تأمین‌کننده اروپایی در انبار میدان رسید شد و فاکتور همان روز رسید؛ نرخ روز 1.12 است. (ب) برگه ثبت خدمات MP02 برای خدمات چاه AR-04 به مبلغ 15,000 ریال عمان تأیید و فاکتور آن ثبت شد. ثبت‌های MP01 را به دلار بنویسید.',
-            en: 'On 5 May: (a) drilling chemicals worth EUR 80,000 from a European supplier were received at the Field Warehouse and the invoice arrived the same day; the rate is 1.12. (b) MP02’s service entry sheet for well services on AR-04 for OMR 15,000 was accepted and its invoice posted. Write MP01’s entries in USD.',
+            fa: 'در 5 مه: (الف) مواد شیمیایی حفاری به ارزش 80,000 یورو از یک تأمین‌کننده اروپایی در انبار میدان رسید شد و فاکتور همان روز رسید؛ نرخ روز 1.12 است. (ب) برگه ثبت خدمات MP03 برای خدمات چاه AR-04 به مبلغ 15,000 ریال عمان تأیید و فاکتور آن ثبت شد. ثبت‌های MP01 را به دلار بنویسید.',
+            en: 'On 5 May: (a) drilling chemicals worth EUR 80,000 from a European supplier were received at the Field Warehouse and the invoice arrived the same day; the rate is 1.12. (b) MP03’s service entry sheet for well services on AR-04 for OMR 15,000 was accepted and its invoice posted. Write MP01’s entries in USD.',
           },
           solution: [
             {
@@ -821,7 +821,7 @@ export const lesson: Lesson = {
                     { account: ac.grir, debit: 39012 },
                     { account: ac.apGroup, credit: 39012 },
                   ],
-                  memo: t('فاکتور MP02 (15,000 ریال عمان)', 'MP02 invoice (OMR 15,000)'),
+                  memo: t('فاکتور MP03 (15,000 ریال عمان)', 'MP03 invoice (OMR 15,000)'),
                 },
               ],
             },
@@ -1022,8 +1022,8 @@ export const lesson: Lesson = {
           title: { fa: 'تبدیل شرکت تابعه اروپایی در سال بعد', en: 'Translating the European subsidiary the next year' },
           difficulty: 'hard',
           problem: {
-            fa: 'در سال 2027، خالص دارایی‌های ابتدای سال MP03 همان 1,200,000 یورو است که با نرخ 1.05 به 1,260,000 دلار تبدیل شده بود. سود سال 150,000 یورو است (نرخ میانگین 1.08) و سود سهامی پرداخت نشده است. نرخ پایان سال 1.10 است. تفاوت تبدیل سال 2027 و مانده اندوخته تسعیر پایان سال را حساب کنید (مانده ابتدای سال: زیان 56,000).',
-            en: 'In 2027, MP03’s opening net assets are the same EUR 1,200,000, translated at 1.05 into USD 1,260,000. Profit for the year is EUR 150,000 (average rate 1.08) and no dividend is paid. The closing rate is 1.10. Compute the 2027 translation difference and the year-end translation reserve (opening balance: a loss of 56,000).',
+            fa: 'در سال 2027، خالص دارایی‌های ابتدای سال MP04 همان 1,200,000 یورو است که با نرخ 1.05 به 1,260,000 دلار تبدیل شده بود. سود سال 150,000 یورو است (نرخ میانگین 1.08) و سود سهامی پرداخت نشده است. نرخ پایان سال 1.10 است. تفاوت تبدیل سال 2027 و مانده اندوخته تسعیر پایان سال را حساب کنید (مانده ابتدای سال: زیان 56,000).',
+            en: 'In 2027, MP04’s opening net assets are the same EUR 1,200,000, translated at 1.05 into USD 1,260,000. Profit for the year is EUR 150,000 (average rate 1.08) and no dividend is paid. The closing rate is 1.10. Compute the 2027 translation difference and the year-end translation reserve (opening balance: a loss of 56,000).',
           },
           solution: [
             {
@@ -1274,8 +1274,8 @@ export const lesson: Lesson = {
     },
     {
       q: {
-        fa: 'چرا بدهی 50,000 ریالی MP01 به MP02 در پایان ماه تقریباً هیچ تفاوت تسعیری ندارد؟',
-        en: 'Why does MP01’s OMR 50,000 payable to MP02 show almost no exchange difference at month-end?',
+        fa: 'چرا بدهی 50,000 ریالی MP01 به MP03 در پایان ماه تقریباً هیچ تفاوت تسعیری ندارد؟',
+        en: 'Why does MP01’s OMR 50,000 payable to MP03 show almost no exchange difference at month-end?',
       },
       options: [
         { fa: 'چون بدهی‌های ریالی غیرپولی‌اند', en: 'Because rial payables are non-monetary' },

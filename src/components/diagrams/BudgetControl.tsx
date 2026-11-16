@@ -7,7 +7,7 @@ import { gsap, prefersReducedMotion, useGSAP } from '@/lib/gsap'
 import { cn } from '@/lib/utils'
 import { DiagramFrame, type DiagramProps } from './DiagramFrame'
 
-/** Amounts in USD thousands, on WBS element AFE-2025-014.02.03 (casing and tubulars). */
+/** Amounts in USD thousands, on WBS element AFE-2026-031.02.03 (casing and tubulars of a new well). */
 type Ev = { doc: L; note: L; budget?: number; commit?: number; actual?: number; attempt?: number }
 
 const EVENTS: Ev[] = [
@@ -78,11 +78,11 @@ const EVENTS: Ev[] = [
     },
   },
   {
-    doc: { fa: 'AFE تکمیلی تأیید شد: 200+', en: 'Supplementary AFE approved: +200' },
+    doc: { fa: 'انتقال از ذخیره احتیاط AFE: 200+', en: 'Transfer from the AFE contingency: +200' },
     budget: 200,
     note: {
-      fa: 'AFE تکمیلی به تأیید مدیریت و شرکا می‌رسد و بودجه WBS به 1٬550 افزایش می‌یابد.',
-      en: 'A supplementary AFE is approved by management and partners, and the WBS budget rises to 1,550.',
+      fa: 'کنترلر پروژه با تأیید طبق جدول اختیارات، 200 از ذخیره احتیاط سطح اول AFE را به این عنصر منتقل می‌کند و بودجه آن 1٬550 می‌شود. جمع AFE تغییر نمی‌کند، پس AFE تکمیلی لازم نیست؛ AFE تکمیلی فقط وقتی لازم است که ذخیره احتیاط هم کافی نباشد.',
+      en: 'With approval under the delegation of authority, the project controller moves 200 from the AFE contingency held at level 1 to this element, raising its budget to 1,550. The AFE total does not change, so no supplementary AFE is needed; that is only required when contingency is not enough either.',
     },
   },
   {
@@ -183,7 +183,7 @@ export default function BudgetControl({ caption }: DiagramProps) {
         <div className="min-w-0">
           <div className="flex flex-wrap items-baseline justify-between gap-2">
             <code dir="ltr" className="text-xs font-semibold text-primary">
-              AFE-2025-014.02.03
+              AFE-2026-031.02.03
             </code>
             <span className="text-xs text-muted-foreground">{tr({ fa: 'لوله‌های جداری و مغزی · هزار دلار', en: 'Casing and tubulars · USD thousands' })}</span>
           </div>

@@ -27,7 +27,7 @@ const blank = t('', '')
 
 export const lesson: Lesson = {
   slug: 'journal-entry-management',
-  number: 26,
+  number: 20,
   currency: 'usd',
   level: 'advanced',
   minutes: 45,

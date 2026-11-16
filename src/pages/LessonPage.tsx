@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { use, useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router'
 import { motion } from 'motion/react'
 import { ArrowLeft, ArrowRight, CheckCircle2, Circle, Clock, GraduationCap, Target } from 'lucide-react'
@@ -9,7 +9,7 @@ import { CurrencyProvider } from '@/components/lesson/tables'
 import { LessonIcon } from '@/components/ui/LessonIcon'
 import { Rich } from '@/components/ui/Rich'
 import { courseById } from '@/content/courses'
-import { lessonBySlug, lessonPath, neighbours } from '@/content/lessons'
+import { lessonPath, loadLesson, neighbours } from '@/content/lessons'
 import { useI18n } from '@/i18n/I18nProvider'
 import { PASS_RATIO, useCourseStats } from '@/lib/courseStats'
 import { useProgress } from '@/lib/progress'
@@ -36,7 +36,7 @@ function useScrollSpy(ids: string[]) {
 export default function LessonPage() {
   const { slug = '' } = useParams()
   const { t, tr, num, lang, isFa } = useI18n()
-  const lesson = lessonBySlug.get(slug)
+  const lesson = use(loadLesson(slug))
   const { prev, next } = neighbours(slug)
   const { isDone, markDone, saveQuiz, quiz } = useProgress()
   const stats = useCourseStats(lesson?.course ?? 'accounting')

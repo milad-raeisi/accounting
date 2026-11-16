@@ -43,8 +43,8 @@ export const ui = {
 
   'home.title': { fa: 'ERP نفت و گاز را ساده یاد بگیرید', en: 'Learn oil and gas ERP, simply' },
   'home.subtitle': {
-    fa: 'دوره‌های حسابداری، انبارداری، مدیریت دارایی و تدارکات؛ هر کدام با مثال، تمرین و ارتباطش با ERP.',
-    en: 'Courses in accounting, warehousing, asset management and procurement, each with examples, exercises and how it runs in an ERP.',
+    fa: 'حسابداری، بودجه و AFE، تدارکات، انبارداری و مدیریت دارایی؛ درس به درس، با مثال، تمرین، آزمون و ارتباطش با ERP.',
+    en: 'Accounting, budgets and AFE, procurement, warehousing and asset management: lesson by lesson, with examples, exercises, quizzes and how it runs in an ERP.',
   },
   'home.cta.start': { fa: 'مشاهده دوره‌ها', en: 'Browse courses' },
   'home.cta.lab': { fa: 'تمرین در آزمایشگاه', en: 'Practice in the lab' },

@@ -5,7 +5,6 @@ const t = (fa: string, en: string): L => ({ fa, en })
 const ac = {
   auc: (wbs: string) => t(`1510 دارایی‌های در جریان تکمیل (WBS \`${wbs}\`)`, `1510 Assets under construction (WBS \`${wbs}\`)`),
   well: t('1520 دارایی‌های نفت و گاز: چاه AR-07 (`FA-52007`)', '1520 Oil and gas properties: well AR-07 (`FA-52007`)'),
-  flowline: t('1520 دارایی‌های نفت و گاز: خط جریان AR-07 (`FA-54007`)', '1520 Oil and gas properties: AR-07 flowline (`FA-54007`)'),
   training: t('5130 هزینه ایمنی، بهداشت، محیط زیست و آموزش (`CC-ARY-PRD`)', '5130 HSE and training expense (`CC-ARY-PRD`)'),
   ee: t('1530 دارایی‌های اکتشاف و ارزیابی', '1530 Exploration and evaluation assets'),
   dry: t('5410 هزینه اکتشاف: چاه خشک', '5410 Exploration expense: dry hole'),
@@ -40,8 +39,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: t(
-            'اوایل ماه 4 است. چاه AR-07 تکمیل و آزمایش شده و از راه یک خط آزمایش موقت به تولید رسیده است؛ خط جریان دائمی هنوز در دست ساخت است. مدیر تولید خوشحال است، اما مدیر مالی مسار پترولیوم می‌پرسد: «چرا چاهی که تولید می‌کند هنوز در دارایی در جریان تکمیل است و استهلاک ندارد؟» حسابرس شریک الف هم می‌خواهد بداند از هزینه AFE چه مقدار به چاه، چه مقدار به خط جریان و چه مقدار به هزینه دوره رفته است. پاسخ هر دو پرسش در **تسویه** (Settlement) است.',
-            'It is early month 4. Well AR-07 has been completed and tested and is producing through a temporary test line; the permanent flowline is still being built. The production manager is pleased, but Masar Petroleum’s finance manager asks: “Why is a producing well still in assets under construction with no depreciation?” Partner A’s auditor also wants to know how much of the AFE cost has gone to the well, how much to the flowline and how much to period expense. The answer to both questions is **settlement**.',
+            'اوایل ماه 4 است. چاه AR-07 تکمیل و آزمایش شده و به منیفولد تولید موجود وصل شده است؛ فقط چند هزینه پایانی (آخرین گزارش آزمایش چاه، نظارت و بستن مجوزها) مانده است. مدیر تولید خوشحال است، اما مدیر مالی مسار پترولیوم می‌پرسد: «چرا چاهی که تولید می‌کند هنوز در دارایی در جریان تکمیل است و استهلاک ندارد؟» حسابرس شریک الف هم می‌خواهد بداند از هزینه AFE چه مقدار به دارایی چاه و چه مقدار به هزینه دوره رفته است. پاسخ هر دو پرسش در **تسویه** (Settlement) است.',
+            'It is early month 4. Well AR-07 has been completed, tested and tied into the existing production manifold; only a few final costs (the last well-testing report, supervision and permit close-out) remain. The production manager is pleased, but Masar Petroleum’s finance manager asks: “Why is a producing well still in assets under construction with no depreciation?” Partner A’s auditor also wants to know how much of the AFE cost has gone to the well asset and how much to period expense. The answer to both questions is **settlement**.',
           ),
         },
         {
@@ -117,8 +116,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: t(
-            'در مسار پترولیوم، طبق طراحی کدینگ هزینه، هر سند روی یک عنصر WBS سرمایه‌ای (GRN، SES، حواله انبار، کارکرد) مستقیماً بدهکار 1510 با همان WBS ثبت می‌شود و عنصر هزینه (6110 تا 6160) نوع هزینه را نشان می‌دهد. حساب‌های هزینه دوره (5110 تا 5130) روی WBS سرمایه‌ای مجاز نیستند. پس اگر بخشی از کار پروژه ذاتاً هزینه دوره است، مثل آموزش اپراتورها، برایش یک عنصر WBS جدا با قاعده تسویه به مرکز هزینه تعریف می‌شود.',
-            'At Masar Petroleum, by the design of its cost coding, every document on a capital WBS element (GRN, SES, goods issue, timesheet) posts straight to 1510 with that WBS, and the cost element (6110 to 6160) shows the type of cost. Period-expense accounts (5110 to 5130) are not allowed on a capital WBS. So if part of the project’s work is by nature a period expense, such as operator training, it gets its own WBS element with a settlement rule to a cost centre.',
+            'در مسار پترولیوم، طبق طراحی کدینگ هزینه، هر سند روی یک عنصر WBS سرمایه‌ای (GRN، SES، حواله انبار، کارکرد) مستقیماً بدهکار 1510 با همان WBS ثبت می‌شود و عنصر هزینه (6110 تا 6220) نوع هزینه را نشان می‌دهد. حساب‌های هزینه دوره (5110 تا 5130) روی WBS سرمایه‌ای مجاز نیستند. پس اگر بخشی از کار پروژه ذاتاً هزینه دوره است، مثل آموزش اپراتورها، اول روی WBS در 1510 می‌نشیند و قاعده تسویه آن را به مرکز هزینه می‌برد.',
+            'At Masar Petroleum, by the design of its cost coding, every document on a capital WBS element (GRN, SES, goods issue, timesheet) posts straight to 1510 with that WBS, and the cost element (6110 to 6220) shows the type of cost. Period-expense accounts (5110 to 5130) are not allowed on a capital WBS. So if part of the project’s work is by nature a period expense, such as operator training, it first lands in 1510 on the WBS and the settlement rule moves it to a cost centre.',
           ),
         },
         {
@@ -128,6 +127,15 @@ export const lesson: Lesson = {
           text: t(
             'در برخی ERPها هزینه پروژه ابتدا روی WBS با حساب‌های هزینه‌ای پروژه ثبت می‌شود و **تسویه دوره‌ای** پایان هر ماه آن را با ثبت «بدهکار 1510، بستانکار حساب تسویه هزینه پروژه» به AUC می‌برد. در طراحی مسار پترولیوم این گام لازم نیست، چون هزینه از همان ابتدا در 1510 می‌نشیند. نتیجه در ترازنامه پایان ماه یکی است؛ فقط باید بدانید سیستم شما کدام طراحی را دارد تا گزارش‌ها را درست بخوانید.',
             'In some ERPs project costs first post to project expense-type accounts on the WBS, and a month-end **periodic settlement** moves them to AUC with “debit 1510, credit project-cost settlement account”. Masar Petroleum’s design does not need this step, because the cost lands in 1510 from the start. The month-end balance sheet is the same either way; you only need to know which design your system uses to read the reports correctly.',
+          ),
+        },
+        {
+          type: 'callout',
+          tone: 'info',
+          title: t('در عمل: ایران', 'In practice: Iran'),
+          text: t(
+            'در ایران، استاندارد حسابداری شماره 11 (دارایی‌های ثابت مشهود) همان منطق IAS 16 را دارد: بهای تمام‌شده شامل مخارج مستقیماً مرتبط است و استهلاک از زمان آماده بهره‌برداری شروع می‌شود؛ شرکت‌هایی که IFRS را به کار می‌برند مستقیماً از IAS 16 پیروی می‌کنند. استهلاک مالیاتی تابع جدول استهلاک قانون مالیات‌های مستقیم است و ممکن است با استهلاک دفتری فرق داشته باشد؛ نرخ‌ها و روش‌ها را از مقررات روز بررسی کنید.',
+            'In Iran, Iranian Accounting Standard No. 11 (property, plant and equipment) follows the same logic as IAS 16: cost includes directly attributable spending and depreciation starts when the asset is ready for use; companies reporting under IFRS apply IAS 16 directly. Tax depreciation follows the depreciation table of the Direct Taxes Act and may differ from book depreciation; check the current rates and methods.',
           ),
         },
       ],
@@ -148,23 +156,24 @@ export const lesson: Lesson = {
           caption: t('قاعده تسویه `AFE-2025-014` و هزینه نهایی هر عنصر', 'Settlement rule of `AFE-2025-014` and the final cost of each element'),
           head: [t('عنصر WBS', 'WBS element'), t('هزینه نهایی', 'Final cost'), t('گیرنده', 'Receiver'), t('سهم', 'Share')],
           rows: [
-            [t('`.01` آماده‌سازی محل', '`.01` Site preparation'), 390000, t('`FA-52007` چاه AR-07', '`FA-52007` well AR-07'), t('100٪', '100%')],
-            [t('`.02.01` دکل: انتقال و 27 روز', '`.02.01` Rig: mobilisation and 27 days'), 2784000, t('`FA-52007`', '`FA-52007`'), t('100٪', '100%')],
-            [t('`.02.02` خدمات حفاری: سیمان‌کاری و گل', '`.02.02` Drilling services: cementing and mud'), 660000, t('`FA-52007`', '`FA-52007`'), t('100٪', '100%')],
-            [t('`.02.03` لوله جداری و OCTG', '`.02.03` Casing and tubulars'), 1850000, t('`FA-52007`', '`FA-52007`'), t('100٪', '100%')],
-            [t('`.03.01` تجهیزات تکمیل چاه', '`.03.01` Completion equipment'), 1500000, t('`FA-52007`', '`FA-52007`'), t('100٪', '100%')],
-            [t('`.03.02` خدمات آزمایش چاه', '`.03.02` Well-testing services'), 740000, t('`FA-52007`', '`FA-52007`'), t('100٪', '100%')],
-            [t('`.03.03` آموزش اپراتورها و تحویل', '`.03.03` Operator training and handover'), 40000, t('مرکز هزینه `CC-ARY-PRD`، حساب 5130', 'Cost centre `CC-ARY-PRD`, account 5130'), t('100٪', '100%')],
-            [t('`.04` خط جریان و اتصال', '`.04` Flowline and tie-in'), 1010000, t('`FA-54007` خط جریان AR-07', '`FA-54007` AR-07 flowline'), t('100٪', '100%')],
-            [t('جمع', 'Total'), 8974000, t('چاه 7,924,000؛ خط جریان 1,010,000؛ هزینه 40,000', 'Well 7,924,000; flowline 1,010,000; expense 40,000'), blank()],
+            [t('`.01.01` عملیات عمرانی محل و جاده', '`.01.01` Location and road civil works'), 371000, t('`FA-52007` چاه AR-07', '`FA-52007` well AR-07'), t('100٪', '100%')],
+            [t('`.01.02` جابه‌جایی و استقرار دکل', '`.01.02` Rig move and mobilisation'), 227000, t('`FA-52007`', '`FA-52007`'), t('100٪', '100%')],
+            [t('`.02.01` نرخ روزانه دکل (29 روز)', '`.02.01` Rig day rate (29 days)'), 2436000, t('`FA-52007`', '`FA-52007`'), t('100٪', '100%')],
+            [t('`.02.02` خدمات حفاری', '`.02.02` Drilling services'), 1434000, t('`FA-52007`', '`FA-52007`'), t('100٪', '100%')],
+            [t('`.02.03` لوله‌های جداری و مغزی', '`.02.03` Casing and tubulars'), 1170000, t('`FA-52007`', '`FA-52007`'), t('100٪', '100%')],
+            [t('`.03.01` تجهیزات تکمیل چاه', '`.03.01` Completion equipment'), 1080000, t('`FA-52007`', '`FA-52007`'), t('100٪', '100%')],
+            [t('`.03.02` آزمایش چاه', '`.03.02` Well testing'), 760000, t('سطر مبلغی: 40,000 به `CC-ARY-PRD` با حساب 5130؛ بقیه به `FA-52007`', 'Amount line: 40,000 to `CC-ARY-PRD` on account 5130; the rest to `FA-52007`'), t('40,000 و بقیه', '40,000 and rest')],
+            [t('`.04.01` نظارت و تیم پروژه', '`.04.01` Supervision and project team'), 440000, t('`FA-52007`', '`FA-52007`'), t('100٪', '100%')],
+            [t('`.04.02` بیمه و مجوزها', '`.04.02` Insurance and permits'), 180000, t('`FA-52007`', '`FA-52007`'), t('100٪', '100%')],
+            [t('جمع', 'Total'), 8098000, t('چاه 8,058,000؛ هزینه دوره 40,000', 'Well 8,058,000; period expense 40,000'), blank()],
           ],
           numericCols: [1],
         },
         {
           type: 'p',
           text: t(
-            'هنگام شروع کار تکمیل، کنترل‌کننده عنصر `.03` را به سه زیرعنصر شکست، چون آموزش اپراتورها سرمایه‌ای نمی‌شود و گیرنده دیگری لازم دارد. جمع هزینه نهایی 8,974,000 است: چاه 390,000 + 2,784,000 + 660,000 + 1,850,000 + 1,500,000 + 740,000 = 7,924,000، خط جریان 1,010,000 و هزینه دوره 40,000.',
-            'When completion work started, the controller split `.03` into three sub-elements, because operator training is not capitalised and needs a different receiver. The final cost totals 8,974,000: the well 390,000 + 2,784,000 + 660,000 + 1,850,000 + 1,500,000 + 740,000 = 7,924,000, the flowline 1,010,000 and period expense 40,000.',
+            'قرارداد آزمایش چاه یک سطر 40,000 برای آموزش اپراتورها و تحویل چاه داشت که با SES روی `.03.02` نشست. چون IAS 16 آموزش را جزو بهای دارایی نمی‌داند، قاعده تسویه این عنصر یک **سطر مبلغی** دارد که همین 40,000 را به مرکز هزینه `CC-ARY-PRD` و حساب 5130 می‌برد و بقیه را به چاه. هزینه نهایی AFE برابر 8,098,000 است: 8,058,000 به دارایی چاه و 40,000 به هزینه دوره. AR-07 یک دارایی است؛ اگر AFE اجزایی با عمر یا روش استهلاک متفاوت داشت (مثل یک خط لوله تازه)، هر جزء دارایی جدا و سطر جدا در قاعده تسویه می‌گرفت.',
+            'The well-testing contract had a 40,000 line for operator training and well handover, which landed on `.03.02` through an SES. Because IAS 16 does not include training in an asset’s cost, this element’s settlement rule has an **amount line** that sends exactly that 40,000 to cost centre `CC-ARY-PRD` on account 5130, and the rest to the well. The AFE’s final cost is 8,098,000: 8,058,000 to the well asset and 40,000 to period expense. AR-07 is one asset; if the AFE had components with different lives or depreciation methods (such as a new pipeline), each would get its own asset and its own line in the settlement rule.',
           ),
         },
         {
@@ -180,22 +189,22 @@ export const lesson: Lesson = {
             {
               title: t('سرمایه‌ای کردن جزئی (ماه 4)', 'Partial capitalisation (month 4)'),
               text: t(
-                'وقتی بخشی از پروژه آماده بهره‌برداری می‌شود، همان بخش به دارایی نهایی منتقل می‌شود. چاه از ماه 4 تولید می‌کند؛ پس 7,912,000 هزینه عناصر چاه که تا آن روز ثبت شده به `FA-52007` می‌رود و استهلاک آن شروع می‌شود. خط جریان هنوز در AUC می‌ماند.',
-                'When part of a project is ready for use, that part moves to its final asset. The well produces from month 4, so the 7,912,000 posted to the well elements by then moves to `FA-52007` and its depreciation starts. The flowline stays in AUC.',
+                'وقتی دارایی آماده بهره‌برداری می‌شود، هزینه‌ای که تا آن روز جمع شده به دارایی نهایی منتقل می‌شود، حتی اگر پروژه هنوز چند هزینه پایانی داشته باشد. چاه از ماه 4 تولید می‌کند؛ پس 7,900,000 هزینه سرمایه‌ای تا آن روز به `FA-52007` می‌رود و استهلاک شروع می‌شود.',
+                'When the asset is ready for use, the cost collected so far moves to the final asset, even if the project still has some closing costs. The well produces from month 4, so the 7,900,000 of capital cost to that date moves to `FA-52007` and depreciation starts.',
               ),
             },
             {
               title: t('تسویه نهایی (ماه 5)', 'Final settlement (month 5)'),
               text: t(
-                'خط جریان در ماه 5 تکمیل و راه‌اندازی می‌شود؛ 1,010,000 به `FA-54007` می‌رود، مانده AUC این AFE صفر می‌شود و وضعیت WBS «تکمیل فنی» (TECO) می‌شود. از این پس فقط ثبت‌های دیرهنگام مثل فاکتورهای عقب‌مانده پذیرفته می‌شوند.',
-                'The flowline is completed and commissioned in month 5; 1,010,000 moves to `FA-54007`, the AUC balance of this AFE becomes zero and the WBS status becomes “technically complete” (TECO). From then on only late postings such as delayed invoices are accepted.',
+                'هزینه‌های پایانی ماه 5 (SES نهایی آزمایش چاه 72,000، نظارت 44,000 و بستن مجوزها 30,000؛ جمع 146,000) به `FA-52007` می‌رود، مانده AUC این AFE صفر می‌شود و وضعیت WBS «تکمیل فنی» (TECO) می‌شود. از این پس فقط ثبت‌های دیرهنگام مثل فاکتورهای عقب‌مانده پذیرفته می‌شوند.',
+                'The month-5 closing costs (the final well-testing SES 72,000, supervision 44,000 and permit close-out 30,000; 146,000 in total) move to `FA-52007`, the AFE’s AUC balance becomes zero and the WBS status becomes “technically complete” (TECO). From then on only late postings such as delayed invoices are accepted.',
               ),
             },
             {
               title: t('تسویه بعدی (ماه 6)', 'Subsequent settlement (month 6)'),
               text: t(
-                'فاکتور سیمان‌کاری لاینر با 12,000 تفاوت تأییدشده می‌رسد و روی `.02.02` می‌نشیند. اجرای تسویه بعدی این 12,000 را هم به `FA-52007` می‌برد؛ بهای چاه 7,924,000 می‌شود و استهلاک از این ماه به بعد با بهای تازه حساب می‌شود.',
-                'The liner cementing invoice arrives with an approved difference of 12,000 and lands on `.02.02`. A subsequent settlement run moves this 12,000 to `FA-52007` as well; the well’s cost becomes 7,924,000 and depreciation from this month on uses the new cost.',
+                'فاکتور سیمان‌کاری لاینر با 12,000 تفاوت تأییدشده می‌رسد و روی `.02.02` می‌نشیند. اجرای تسویه بعدی این 12,000 را هم به `FA-52007` می‌برد؛ بهای چاه 7,900,000 + 146,000 + 12,000 = 8,058,000 می‌شود و استهلاک از این ماه به بعد با بهای تازه حساب می‌شود.',
+                'The liner cementing invoice arrives with an approved difference of 12,000 and lands on `.02.02`. A subsequent settlement run moves this 12,000 to `FA-52007` as well; the well’s cost becomes 7,900,000 + 146,000 + 12,000 = 8,058,000, and depreciation from this month on uses the new cost.',
               ),
             },
           ],
@@ -204,8 +213,8 @@ export const lesson: Lesson = {
           type: 'callout',
           tone: 'warning',
           text: t(
-            'سه خطای پرهزینه: (1) WBS بدون قاعده تسویه؛ اجرای تسویه خطا می‌دهد و هزینه ماه‌ها در AUC گیر می‌کند. (2) سرمایه‌ای کردن دیرهنگام؛ چاهی که تولید می‌کند ولی در AUC مانده، استهلاکش عقب می‌افتد و سود ماه‌های تولید بیش از واقع نشان داده می‌شود. (3) فرستادن همه هزینه به یک دارایی؛ وقتی چاه و خط جریان عمر و روش استهلاک متفاوت دارند، باید دارایی‌های جدا داشته باشند.',
-            'Three costly mistakes: (1) a WBS with no settlement rule; the settlement run fails and cost sits in AUC for months. (2) Late capitalisation; a producing well left in AUC is depreciated late and the profit of the producing months is overstated. (3) Sending all cost to one asset; when the well and the flowline have different lives and depreciation methods, they need separate assets.',
+            'سه خطای پرهزینه: (1) WBS بدون قاعده تسویه؛ اجرای تسویه خطا می‌دهد و هزینه ماه‌ها در AUC گیر می‌کند. (2) سرمایه‌ای کردن دیرهنگام؛ چاهی که تولید می‌کند ولی در AUC مانده، استهلاکش عقب می‌افتد و سود ماه‌های تولید بیش از واقع نشان داده می‌شود. (3) فرستادن همه هزینه به یک دارایی؛ وقتی اجزای یک پروژه (مثلاً چاه و یک خط لوله تازه) عمر و روش استهلاک متفاوت دارند، باید دارایی‌های جدا داشته باشند.',
+            'Three costly mistakes: (1) a WBS with no settlement rule; the settlement run fails and cost sits in AUC for months. (2) Late capitalisation; a producing well left in AUC is depreciated late and the profit of the producing months is overstated. (3) Sending all cost to one asset; when a project’s components (for example a well and a new pipeline) have different lives and depreciation methods, they need separate assets.',
           ),
         },
       ],
@@ -232,12 +241,12 @@ export const lesson: Lesson = {
             [t('چاه توسعه‌ای خشک', 'Dry development well'), t('سرمایه‌ای؛ بخشی از بهای توسعه میدان', 'Capitalised; part of the field development cost'), t('سرمایه‌ای', 'Capitalised')],
           ],
         },
-        { type: 'h', text: t('چاه اکتشافی AR-12', 'Exploration well AR-12') },
+        { type: 'h', text: t('چاه اکتشافی ARN-1', 'Exploration well ARN-1') },
         {
           type: 'p',
           text: t(
-            'مسار پترولیوم برای آزمودن یک مخزن عمیق‌تر و اثبات‌نشده در یال شمالی، چاه اکتشافی AR-12 را روی پروژه `EXP-2025-004` حفر کرد. همه هزینه‌ها (3,400,000 ناخالص، شامل مسدودسازی و متروکه‌سازی چاه) طبق رویه تلاش‌های موفق در 1530 جمع شدند. نتیجه آزمایش: لایه آب‌دار، بدون هیدروکربن تجاری. چاه مسدود و متروکه شد و دارایی E&E باید حذف شود. اگر نتیجه مثبت بود، پس از آزمون کاهش ارزش، همین مبلغ به دارایی توسعه منتقل می‌شد.',
-            'To test a deeper, unproven reservoir on the northern flank, Masar Petroleum drilled exploration well AR-12 on project `EXP-2025-004`. All costs (3,400,000 gross, including plugging and abandonment) were collected in 1530 under the successful efforts policy. Test result: water-bearing, no commercial hydrocarbons. The well was plugged and abandoned, and the E&E asset must be written off. Had the result been positive, the same amount would have moved to development assets after an impairment test.',
+            'مسار پترولیوم برای آزمودن یک مخزن عمیق‌تر و اثبات‌نشده در یال شمالی، چاه اکتشافی ARN-1 را روی پروژه `EXP-2025-004` حفر کرد. همه هزینه‌ها (3,400,000 ناخالص، شامل مسدودسازی و متروکه‌سازی چاه) طبق رویه تلاش‌های موفق در 1530 جمع شدند. نتیجه آزمایش: لایه آب‌دار، بدون هیدروکربن تجاری. چاه مسدود و متروکه شد و دارایی E&E باید حذف شود. اگر نتیجه مثبت بود، پس از آزمون کاهش ارزش، همین مبلغ به دارایی توسعه منتقل می‌شد.',
+            'To test a deeper, unproven reservoir on the northern flank, Masar Petroleum drilled exploration well ARN-1 on project `EXP-2025-004`. All costs (3,400,000 gross, including plugging and abandonment) were collected in 1530 under the successful efforts policy. Test result: water-bearing, no commercial hydrocarbons. The well was plugged and abandoned, and the E&E asset must be written off. Had the result been positive, the same amount would have moved to development assets after an impairment test.',
           ),
         },
         {
@@ -255,7 +264,7 @@ export const lesson: Lesson = {
             {
               date: t('کشف تجاری', 'Commercial find'),
               lines: [
-                { account: t('1510 دارایی‌های در جریان تکمیل (WBS توسعه AR-12)', '1510 Assets under construction (AR-12 development WBS)'), debit: 3400000 },
+                { account: t('1510 دارایی‌های در جریان تکمیل (WBS توسعه ARN-1)', '1510 Assets under construction (ARN-1 development WBS)'), debit: 3400000 },
                 { account: ac.ee, credit: 3400000 },
               ],
               memo: t('پس از اعلام تجاری بودن و آزمون کاهش ارزش، به دارایی توسعه منتقل می‌شود.', 'After commerciality is declared and the impairment test is done, it moves to development assets.'),
@@ -297,10 +306,9 @@ export const lesson: Lesson = {
           caption: t('نگاشت حسابداری و بازیافت چند قلم (نشانگرها نمونه‌اند؛ قرارداد خودتان را ببینید)', 'Accounting and recovery mapping of some items (flags are illustrative; check your contract)'),
           head: [t('قلم', 'Item'), t('مبلغ ناخالص', 'Gross amount'), t('رفتار حسابداری', 'Accounting'), t('طبقه بازیافت', 'Recovery category'), t('نشانگر', 'Flag')],
           rows: [
-            [t('چاه AR-07 (`FA-52007`)', 'Well AR-07 (`FA-52007`)'), 7924000, t('سرمایه‌ای؛ استهلاک به روش واحد تولید', 'Capitalised; unit-of-production depreciation'), t('توسعه', 'Development'), t('R', 'R')],
-            [t('خط جریان AR-07 (`FA-54007`)', 'AR-07 flowline (`FA-54007`)'), 1010000, t('سرمایه‌ای', 'Capitalised'), t('توسعه', 'Development'), t('R', 'R')],
-            [t('آموزش اپراتورها (`.03.03`)', 'Operator training (`.03.03`)'), 40000, t('هزینه دوره 5130', 'Expense 5130'), t('عملیاتی', 'Operating'), t('R', 'R')],
-            [t('چاه اکتشافی خشک AR-12', 'Dry exploration well AR-12'), 3400000, t('هزینه دوره 5410 (تلاش‌های موفق)', 'Expense 5410 (successful efforts)'), t('اکتشاف', 'Exploration'), t('طبق قرارداد', 'Per contract')],
+            [t('چاه AR-07 (`FA-52007`)', 'Well AR-07 (`FA-52007`)'), 8058000, t('سرمایه‌ای؛ استهلاک به روش واحد تولید', 'Capitalised; unit-of-production depreciation'), t('توسعه', 'Development'), t('R', 'R')],
+            [t('آموزش اپراتورها (سطر مبلغی `.03.02`)', 'Operator training (`.03.02` amount line)'), 40000, t('هزینه دوره 5130', 'Expense 5130'), t('عملیاتی', 'Operating'), t('R', 'R')],
+            [t('چاه اکتشافی خشک ARN-1', 'Dry exploration well ARN-1'), 3400000, t('هزینه دوره 5410 (تلاش‌های موفق)', 'Expense 5410 (successful efforts)'), t('اکتشاف', 'Exploration'), t('طبق قرارداد', 'Per contract')],
             [t('جریمه زیست‌محیطی نشت', 'Environmental fine for a spill'), 50000, t('هزینه دوره 5910', 'Expense 5910'), t('عملیاتی', 'Operating'), t('N', 'N')],
             [t('بهره وام شرکتی', 'Corporate loan interest'), t('طبق قرارداد وام', 'Per loan agreement'), t('هزینه مالی 7110', 'Finance cost 7110'), t('ندارد', 'None'), t('N', 'N')],
           ],
@@ -326,7 +334,7 @@ export const lesson: Lesson = {
           caption: t('داده پایه، اسناد و نقش‌ها', 'Master data, documents and roles'),
           head: [t('جزء', 'Element'), t('چه کسی', 'Who'), t('نمونه', 'Example')],
           rows: [
-            [t('قاعده تسویه روی هر عنصر WBS', 'Settlement rule on each WBS element'), t('حسابدار دارایی و کنترل‌کننده پروژه', 'Asset accountant and project controller'), t('`.03.03` به `CC-ARY-PRD`؛ بقیه به `FA-52007` یا `FA-54007`', '`.03.03` to `CC-ARY-PRD`; the rest to `FA-52007` or `FA-54007`')],
+            [t('قاعده تسویه روی هر عنصر WBS', 'Settlement rule on each WBS element'), t('حسابدار دارایی و کنترل‌کننده پروژه', 'Asset accountant and project controller'), t('سطر مبلغی 40,000 در `.03.02` به `CC-ARY-PRD`؛ همه بقیه به `FA-52007`', '40,000 amount line on `.03.02` to `CC-ARY-PRD`; everything else to `FA-52007`')],
             [t('داده پایه دارایی نهایی', 'Final asset master'), t('حسابدار دارایی', 'Asset accountant'), t('طبقه دارایی «چاه‌ها»، روش واحد تولید، مرکز هزینه `CC-ARY-PRD`، پیوند به مکان عملیاتی چاه در ماژول نگهداری', 'Asset class “Wells”, unit-of-production method, cost centre `CC-ARY-PRD`, link to the well’s functional location in maintenance')],
             [t('گواهی آماده بهره‌برداری', 'Ready-for-use certificate'), t('مدیر تولید', 'Production manager'), t('تاریخ شروع تولید چاه؛ مبنای تاریخ سرمایه‌ای کردن', 'The well’s first-production date; the basis for the capitalisation date')],
             [t('اجرای تسویه (دوره‌ای، جزئی، نهایی، بعدی)', 'Settlement run (periodic, partial, final, subsequent)'), t('حسابدار پروژه', 'Project accountant'), t('پایان هر ماه و در هر رویداد آماده بهره‌برداری', 'Every month end and at each ready-for-use event')],
@@ -341,7 +349,7 @@ export const lesson: Lesson = {
               date: t('پایان ماه 3', 'End of month 3'),
               lines: [
                 { account: ac.training, debit: 25000 },
-                { account: ac.auc('AFE-2025-014.03.03'), credit: 25000 },
+                { account: ac.auc('AFE-2025-014.03.02'), credit: 25000 },
               ],
               memo: t('تسویه دوره‌ای: آموزش اپراتورها به هزینه دوره.', 'Periodic settlement: operator training to period expense.'),
             },
@@ -349,25 +357,25 @@ export const lesson: Lesson = {
               date: t('پایان ماه 4', 'End of month 4'),
               lines: [
                 { account: ac.training, debit: 15000 },
-                { account: ac.auc('AFE-2025-014.03.03'), credit: 15000 },
+                { account: ac.auc('AFE-2025-014.03.02'), credit: 15000 },
               ],
               memo: t('تسویه دوره‌ای ماه 4.', 'Month-4 periodic settlement.'),
             },
             {
               date: t('ماه 4، آماده بهره‌برداری', 'Month 4, ready for use'),
               lines: [
-                { account: ac.well, debit: 7912000 },
-                { account: ac.auc('AFE-2025-014.01 تا .03.02'), credit: 7912000 },
+                { account: ac.well, debit: 7900000 },
+                { account: ac.auc('AFE-2025-014.01.01 تا .04.02'), credit: 7900000 },
               ],
               memo: t('سرمایه‌ای کردن جزئی چاه؛ استهلاک از تاریخ آماده بهره‌برداری شروع می‌شود.', 'Partial capitalisation of the well; depreciation starts from the ready-for-use date.'),
             },
             {
               date: t('ماه 5', 'Month 5'),
               lines: [
-                { account: ac.flowline, debit: 1010000 },
-                { account: ac.auc('AFE-2025-014.04'), credit: 1010000 },
+                { account: ac.well, debit: 146000 },
+                { account: ac.auc('AFE-2025-014.03.02، .04.01 و .04.02'), credit: 146000 },
               ],
-              memo: t('تسویه نهایی خط جریان؛ مانده AUC این AFE صفر می‌شود و WBS به TECO می‌رود.', 'Final settlement of the flowline; the AFE’s AUC balance becomes zero and the WBS goes to TECO.'),
+              memo: t('تسویه نهایی هزینه‌های پایانی ماه 5؛ مانده AUC این AFE صفر می‌شود و WBS به TECO می‌رود.', 'Final settlement of the month-5 closing costs; the AFE’s AUC balance becomes zero and the WBS goes to TECO.'),
             },
             {
               date: t('ماه 6، فاکتور', 'Month 6, invoice'),
@@ -384,7 +392,7 @@ export const lesson: Lesson = {
                 { account: ac.well, debit: 12000 },
                 { account: ac.auc('AFE-2025-014.02.02'), credit: 12000 },
               ],
-              memo: t('بهای چاه به 7,924,000 می‌رسد؛ استهلاک از این ماه با بهای تازه.', 'The well’s cost becomes 7,924,000; depreciation uses the new cost from this month.'),
+              memo: t('بهای چاه به 8,058,000 می‌رسد؛ استهلاک از این ماه با بهای تازه.', 'The well’s cost becomes 8,058,000; depreciation uses the new cost from this month.'),
             },
           ],
         },
@@ -394,16 +402,25 @@ export const lesson: Lesson = {
           accounts: [
             {
               name: t('1510 دارایی‌های در جریان تکمیل (AFE-2025-014)', '1510 Assets under construction (AFE-2025-014)'),
-              debits: [7952000, 1010000, 12000],
-              credits: [25000, 15000, 7912000, 1010000, 12000],
+              debits: [7940000, 146000, 12000],
+              credits: [25000, 15000, 7900000, 146000, 12000],
             },
           ],
         },
         {
           type: 'p',
           text: t(
-            'بدهکارها: هزینه عناصر چاه و آموزش تا ماه 4 (7,912,000 + 40,000 = 7,952,000)، هزینه خط جریان در ماه‌های 4 و 5 (1,010,000) و تفاوت فاکتور دیرهنگام (12,000)؛ جمع 8,974,000. بستانکارها همین مبلغ را به سه گیرنده برده‌اند. مانده صفر است و این نخستین آزمون آمادگی برای بستن AFE است.',
-            'Debits: well-element and training cost to month 4 (7,912,000 + 40,000 = 7,952,000), flowline cost in months 4 and 5 (1,010,000) and the late invoice difference (12,000); total 8,974,000. The credits moved the same amount to the three receivers. The balance is zero, the first test that the AFE is ready to close.',
+            'بدهکارها: همه هزینه‌های AFE تا پایان ماه 4 (7,900,000 سرمایه‌ای + 40,000 آموزش = 7,940,000)، هزینه‌های پایانی ماه 5 (146,000) و تفاوت فاکتور دیرهنگام ماه 6 (12,000)؛ جمع 8,098,000. بستانکارها همین مبلغ را به دو گیرنده برده‌اند: 8,058,000 به چاه و 40,000 به هزینه دوره. مانده صفر است و این نخستین آزمون آمادگی برای بستن AFE است.',
+            'Debits: all AFE cost to the end of month 4 (7,900,000 capital + 40,000 training = 7,940,000), the month-5 closing costs (146,000) and the month-6 late invoice difference (12,000); total 8,098,000. The credits moved the same amount to two receivers: 8,058,000 to the well and 40,000 to period expense. The balance is zero, the first test that the AFE is ready to close.',
+          ),
+        },
+        {
+          type: 'callout',
+          tone: 'tip',
+          title: t('گزارش سن AUC', 'The AUC ageing report'),
+          text: t(
+            'هر ماه فهرست مانده‌های 1510 را به تفکیک WBS با تاریخ آخرین ثبت و تاریخ آماده بهره‌برداری بخوانید. مانده‌ای که چند ماه تکان نخورده یا مال چاهی است که مدتی است تولید می‌کند، نشانه سرمایه‌ای کردن جاافتاده یا قاعده تسویه ناقص است. حسابرسان و شرکا معمولاً همین گزارش را اول می‌خواهند.',
+            'Every month, read the list of 1510 balances by WBS with the last posting date and the ready-for-use date. A balance that has not moved for months, or that belongs to a well already producing for a while, signals a missed capitalisation or an incomplete settlement rule. Auditors and partners usually ask for this report first.',
           ),
         },
         { type: 'h', text: t('بستن AFE و WBS', 'Closing the AFE and the WBS') },
@@ -417,8 +434,8 @@ export const lesson: Lesson = {
             {
               title: t('گزارش بستن AFE', 'AFE close-out report'),
               text: t(
-                'هزینه نهایی 8,974,000 در برابر AFE اولیه 8,800,000 (2.0٪ بیشتر) و بودجه جاری 8,994,000؛ برگشت 20,000 بودجه بی‌استفاده؛ توضیح انحراف‌ها؛ صورت‌حساب نهایی شرکا.',
-                'Final cost 8,974,000 against the original AFE of 8,800,000 (2.0% over) and the current budget of 8,994,000; return of 20,000 unused budget; variance explanations; final partner statement.',
+                'هزینه نهایی 8,098,000 در برابر برآورد پایه 8,000,000 (1.2٪ بیشتر) و AFE مصوب 8,800,000؛ 160,000 از ذخیره احتیاطی مصرف شد (140,000 در ماه 2 برای دکل و 20,000 در ماه 4 برای نظارت)؛ برگشت 702,000 بودجه بی‌استفاده، شامل 640,000 ذخیره باقی‌مانده؛ توضیح انحراف‌ها؛ صورت‌حساب نهایی شرکا.',
+                'Final cost 8,098,000 against the base estimate of 8,000,000 (1.2% over) and the approved AFE of 8,800,000; 160,000 of contingency was used (140,000 in month 2 for the rig and 20,000 in month 4 for supervision); return of 702,000 unused budget, including the 640,000 of contingency left; variance explanations; final partner statement.',
               ),
             },
             { title: t('بستن قطعی', 'Final close'), text: t('پس از دوره انتظار (مثلاً 3 تا 6 ماه؛ نمونه)، وضعیت «بسته» می‌شود، ثبت تازه مسدود و اسناد برای حسابرسی و بازیافت هزینه بایگانی می‌شوند.', 'After a holding period (for example 3 to 6 months; illustrative) the status becomes “closed”, new postings are blocked and documents are archived for audit and cost recovery.') },
@@ -580,15 +597,15 @@ export const lesson: Lesson = {
           title: t('تمرین 4: چاه خشک اکتشافی و توسعه‌ای', 'Exercise 4: Exploration and development dry holes'),
           difficulty: 'hard',
           problem: t(
-            'مسار پترولیوم دو چاه خشک دارد. (1) چاه اکتشافی KV-1 در «بلوک اکتشافی کویر» که مسار 40٪ آن را دارد؛ هزینه ناخالص 5,600,000، که سهم مسار در 1530 نگه داشته شده است. (2) چاه توسعه‌ای AR-10 در میدان آریا (سهم مسار 50٪)؛ هزینه ناخالص 4,200,000 در 1510، که در لبه مخزن به لایه متراکم و بی‌بازده رسید. (الف) با روش تلاش‌های موفق، ثبت‌های دفاتر مسار را بنویسید. (ب) با روش بهای تمام‌شده کامل چه تفاوتی دارد؟ (ج) اثر هر چاه بر سود سال مسار در هر دو روش چیست؟ (د) طبقه بازیافت هر هزینه چیست؟',
-            'Masar Petroleum has two dry holes. (1) Exploration well KV-1 in the “Kavir exploration block”, where Masar holds 40%; gross cost 5,600,000, with Masar’s share held in 1530. (2) Development well AR-10 in the Arya field (Masar 50%); gross cost 4,200,000 in 1510, which reached a tight, non-productive zone at the edge of the reservoir. (a) Under successful efforts, write the entries in Masar’s books. (b) How does full cost differ? (c) What is each well’s effect on Masar’s profit for the year under each method? (d) What is the recovery category of each cost?',
+            'مسار پترولیوم دو چاه خشک دارد. (1) چاه اکتشافی KV-1 در «بلوک اکتشافی کویر» که مسار 40٪ آن را دارد؛ هزینه ناخالص 5,600,000، که سهم مسار در 1530 نگه داشته شده است. (2) یک چاه توسعه‌ای پله‌ای در لبه جنوبی میدان آریا (`AFE-2024-033`، سهم مسار 50٪)؛ هزینه ناخالص 4,200,000 در 1510، که در لبه مخزن به لایه متراکم و بی‌بازده رسید. (الف) با روش تلاش‌های موفق، ثبت‌های دفاتر مسار را بنویسید. (ب) با روش بهای تمام‌شده کامل چه تفاوتی دارد؟ (ج) اثر هر چاه بر سود سال مسار در هر دو روش چیست؟ (د) طبقه بازیافت هر هزینه چیست؟',
+            'Masar Petroleum has two dry holes. (1) Exploration well KV-1 in the “Kavir exploration block”, where Masar holds 40%; gross cost 5,600,000, with Masar’s share held in 1530. (2) A step-out development well on the southern edge of the Arya field (`AFE-2024-033`, Masar 50%); gross cost 4,200,000 in 1510, which reached a tight, non-productive zone at the edge of the reservoir. (a) Under successful efforts, write the entries in Masar’s books. (b) How does full cost differ? (c) What is each well’s effect on Masar’s profit for the year under each method? (d) What is the recovery category of each cost?',
           ),
           hint: t('در تلاش‌های موفق، چاه اکتشافی خشک هزینه می‌شود اما چاه توسعه‌ای خشک سرمایه‌ای می‌ماند. سهم مسار را حساب کنید.', 'Under successful efforts a dry exploration well is expensed but a dry development well stays capitalised. Work out Masar’s share.'),
           solution: [
             {
               type: 'steps',
               items: [
-                { title: t('سهم مسار', 'Masar’s shares'), text: t('KV-1: 40٪ × 5,600,000 = 2,240,000. AR-10: 50٪ × 4,200,000 = 2,100,000.', 'KV-1: 40% × 5,600,000 = 2,240,000. AR-10: 50% × 4,200,000 = 2,100,000.') },
+                { title: t('سهم مسار', 'Masar’s shares'), text: t('KV-1: 40٪ × 5,600,000 = 2,240,000. چاه پله‌ای: 50٪ × 4,200,000 = 2,100,000.', 'KV-1: 40% × 5,600,000 = 2,240,000. Step-out well: 50% × 4,200,000 = 2,100,000.') },
               ],
             },
             {
@@ -604,10 +621,10 @@ export const lesson: Lesson = {
                   memo: t('چاه اکتشافی خشک: حذف از E&E.', 'Dry exploration well: written off from E&E.'),
                 },
                 {
-                  date: t('AR-10', 'AR-10'),
+                  date: t('چاه پله‌ای', 'Step-out well'),
                   lines: [
                     { account: t('1520 دارایی‌های نفت و گاز: بهای توسعه میدان آریا', '1520 Oil and gas properties: Arya field development cost'), debit: 2100000 },
-                    { account: ac.auc('چاه AR-10'), credit: 2100000 },
+                    { account: ac.auc('AFE-2024-033'), credit: 2100000 },
                   ],
                   memo: t('چاه توسعه‌ای خشک بخشی از بهای توسعه میدان است و با استهلاک واحد تولید میدان مستهلک می‌شود.', 'A dry development well is part of the field development cost and is depreciated with the field’s unit-of-production charge.'),
                 },
@@ -618,22 +635,22 @@ export const lesson: Lesson = {
               items: [
                 {
                   title: t('بهای تمام‌شده کامل', 'Full cost'),
-                  text: t('هر دو چاه سرمایه‌ای می‌مانند: KV-1 در استخر هزینه کشور یا منطقه (با آزمون سقف ارزش) و AR-10 در دارایی‌های میدان. هیچ هزینه فوری در سود و زیان نمی‌نشیند.', 'Both wells stay capitalised: KV-1 in the country or area cost pool (subject to a ceiling test) and AR-10 in the field’s assets. Nothing is expensed immediately.'),
+                  text: t('هر دو چاه سرمایه‌ای می‌مانند: KV-1 در استخر هزینه کشور یا منطقه (با آزمون سقف ارزش) و چاه پله‌ای در دارایی‌های میدان. هیچ هزینه فوری در سود و زیان نمی‌نشیند.', 'Both wells stay capitalised: KV-1 in the country or area cost pool (subject to a ceiling test) and the step-out well in the field’s assets. Nothing is expensed immediately.'),
                 },
                 {
                   title: t('اثر بر سود سال', 'Effect on the year’s profit'),
-                  text: t('تلاش‌های موفق: 2,240,000 کاهش سود به‌خاطر KV-1؛ AR-10 فقط از راه استهلاک آینده. بهای تمام‌شده کامل: کاهش فوری صفر؛ هر دو از راه استهلاک در سال‌های بعد.', 'Successful efforts: profit down 2,240,000 for KV-1; AR-10 only through future depreciation. Full cost: no immediate reduction; both through depreciation in later years.'),
+                  text: t('تلاش‌های موفق: 2,240,000 کاهش سود به‌خاطر KV-1؛ چاه پله‌ای فقط از راه استهلاک آینده. بهای تمام‌شده کامل: کاهش فوری صفر؛ هر دو از راه استهلاک در سال‌های بعد.', 'Successful efforts: profit down 2,240,000 for KV-1; the step-out well only through future depreciation. Full cost: no immediate reduction; both through depreciation in later years.'),
                 },
                 {
                   title: t('طبقه بازیافت', 'Recovery category'),
-                  text: t('KV-1 در طبقه اکتشاف؛ اگر بلوک کویر هرگز به تولید تجاری نرسد، در بسیاری از قراردادها بازیافت نمی‌شود. AR-10 در طبقه توسعه با نشانگر R. رفتار حسابداری هیچ‌کدام را عوض نمی‌کند.', 'KV-1 in Exploration; if the Kavir block never reaches commercial production, under many contracts it is not recovered. AR-10 in Development with flag R. The accounting treatment changes neither.'),
+                  text: t('KV-1 در طبقه اکتشاف؛ اگر بلوک کویر هرگز به تولید تجاری نرسد، در بسیاری از قراردادها بازیافت نمی‌شود. چاه پله‌ای در طبقه توسعه با نشانگر R. رفتار حسابداری هیچ‌کدام را عوض نمی‌کند.', 'KV-1 in Exploration; if the Kavir block never reaches commercial production, under many contracts it is not recovered. The step-out well in Development with flag R. The accounting treatment changes neither.'),
                 },
               ],
             },
           ],
           answer: t(
-            'تلاش‌های موفق: KV-1 هزینه 2,240,000 (بدهکار 5410)؛ AR-10 سرمایه‌ای 2,100,000 (بدهکار 1520). بهای تمام‌شده کامل: هر دو سرمایه‌ای.',
-            'Successful efforts: KV-1 expensed 2,240,000 (debit 5410); AR-10 capitalised 2,100,000 (debit 1520). Full cost: both capitalised.',
+            'تلاش‌های موفق: KV-1 هزینه 2,240,000 (بدهکار 5410)؛ چاه پله‌ای سرمایه‌ای 2,100,000 (بدهکار 1520). بهای تمام‌شده کامل: هر دو سرمایه‌ای.',
+            'Successful efforts: KV-1 expensed 2,240,000 (debit 5410); step-out well capitalised 2,100,000 (debit 1520). Full cost: both capitalised.',
           ),
         },
       ],
@@ -648,7 +665,7 @@ export const lesson: Lesson = {
             t('AUC (حساب 1510) بهای دارایی در حال ساخت را جمع می‌کند و مستهلک نمی‌شود؛ فقط هزینه‌های مستقیماً مرتبط سرمایه‌ای می‌شوند.', 'AUC (account 1510) collects the cost of an asset being built and is not depreciated; only directly attributable costs are capitalised.'),
             t('قاعده تسویه گیرنده‌ها و سهم‌ها را تعیین می‌کند: دارایی نهایی، مرکز هزینه یا WBS دیگر؛ با درصد، مبلغ یا عدد هم‌ارز.', 'The settlement rule sets receivers and shares: final asset, cost centre or another WBS; by percentage, amount or equivalence number.'),
             t('تسویه دوره‌ای هزینه‌های غیرسرمایه‌ای را بیرون می‌برد، سرمایه‌ای کردن جزئی بخش آماده را به دارایی می‌برد، تسویه نهایی AUC را صفر می‌کند و تسویه بعدی ثبت‌های دیرهنگام را منتقل می‌کند.', 'Periodic settlement takes out non-capital costs, partial capitalisation moves the ready part to the asset, final settlement clears AUC and subsequent settlement moves late postings.'),
-            t('استهلاک از تاریخ آماده بهره‌برداری شروع می‌شود؛ چاه AR-07 از ماه 4 با بهای 7,912,000 و سپس 7,924,000.', 'Depreciation starts at the ready-for-use date; well AR-07 from month 4 at 7,912,000, then 7,924,000.'),
+            t('استهلاک از تاریخ آماده بهره‌برداری شروع می‌شود؛ چاه AR-07 از ماه 4 با بهای 7,900,000، سپس 8,046,000 و پس از فاکتور دیرهنگام 8,058,000.', 'Depreciation starts at the ready-for-use date; well AR-07 from month 4 at 7,900,000, then 8,046,000, and 8,058,000 after the late invoice.'),
             t('در تلاش‌های موفق، چاه اکتشافی خشک هزینه می‌شود و چاه توسعه‌ای خشک سرمایه‌ای می‌ماند؛ در بهای تمام‌شده کامل هر دو سرمایه‌ای‌اند.', 'Under successful efforts a dry exploration well is expensed and a dry development well stays capitalised; under full cost both are capitalised.'),
             t('طبقه و نشانگر بازیافت در داده پایه گذاشته می‌شوند و با تسویه تغییر نمی‌کنند؛ حسابداری و بازیافت دو پرسش جدا هستند.', 'Recovery category and flag are set in master data and do not change with settlement; accounting and recovery are separate questions.'),
             t('بستن AFE: تعهد صفر، GR/IR تطبیق‌شده، AUC صفر، TECO، گزارش بستن و برگشت بودجه، و سپس بستن قطعی.', 'AFE close: zero commitments, matched GR/IR, zero AUC, TECO, close-out report and budget return, then final close.'),
@@ -674,7 +691,7 @@ export const lesson: Lesson = {
   ],
   quiz: [
     {
-      q: t('چاه AR-07 از ماه 4 تولید می‌کند، خط جریان در ماه 5 تمام می‌شود و AFE چند ماه بعد بسته می‌شود. استهلاک چاه از کی شروع می‌شود؟', 'Well AR-07 produces from month 4, the flowline is finished in month 5 and the AFE closes months later. When does the well’s depreciation start?'),
+      q: t('چاه AR-07 از ماه 4 تولید می‌کند، آخرین هزینه‌ها در ماه 5 ثبت می‌شوند و AFE چند ماه بعد بسته می‌شود. استهلاک چاه از کی شروع می‌شود؟', 'Well AR-07 produces from month 4, the last costs post in month 5 and the AFE closes months later. When does the well’s depreciation start?'),
       options: [t('از تاریخ بستن AFE', 'From the AFE close date'), t('از نخستین فاکتور حفاری', 'From the first drilling invoice'), t('از تاریخ آماده بهره‌برداری در ماه 4', 'From the ready-for-use date in month 4'), t('از پایان سال مالی', 'From the financial year end')],
       answer: 2,
       explain: t(
@@ -687,8 +704,8 @@ export const lesson: Lesson = {
       options: [t('سیمان‌کاری لوله جداری', 'Casing cementing'), t('آموزش اپراتورها هنگام تحویل چاه', 'Operator training at well handover'), t('آزمایش چاه برای اثبات کارکرد', 'Well testing to prove it works'), t('ساعات مهندس حفاری روی همین چاه', 'Drilling engineer’s hours on this well')],
       answer: 1,
       explain: t(
-        'IAS 16 آموزش کارکنان را جزو بهای دارایی نمی‌داند؛ به همین دلیل `.03.03` به `CC-ARY-PRD` تسویه شد. سیمان‌کاری، آزمایش لازم و ساعات مستقیم مهندس همه برای رساندن چاه به شرایط بهره‌برداری لازم‌اند.',
-        'IAS 16 does not include staff training in an asset’s cost; that is why `.03.03` was settled to `CC-ARY-PRD`. Cementing, necessary testing and the engineer’s direct hours are all needed to bring the well to working condition.',
+        'IAS 16 آموزش کارکنان را جزو بهای دارایی نمی‌داند؛ به همین دلیل سطر مبلغی 40,000 در `.03.02` به `CC-ARY-PRD` تسویه شد. سیمان‌کاری، آزمایش لازم و ساعات مستقیم مهندس همه برای رساندن چاه به شرایط بهره‌برداری لازم‌اند.',
+        'IAS 16 does not include staff training in an asset’s cost; that is why the 40,000 amount line on `.03.02` was settled to `CC-ARY-PRD`. Cementing, necessary testing and the engineer’s direct hours are all needed to bring the well to working condition.',
       ),
     },
     {
@@ -715,12 +732,12 @@ export const lesson: Lesson = {
       ),
     },
     {
-      q: t('هزینه کل AFE برابر 8,974,000 است. 7,924,000 به چاه رفته و 40,000 آموزش به هزینه دوره. پیش از تسویه خط جریان، مانده AUC این AFE چقدر است؟', 'The AFE’s total cost is 8,974,000. 7,924,000 has gone to the well and 40,000 of training to period expense. Before the flowline is settled, what is the AFE’s AUC balance?'),
-      options: [t('1,050,000', '1,050,000'), t('1,010,000', '1,010,000'), t('8,934,000', '8,934,000'), t('صفر', 'Zero')],
+      q: t('هزینه نهایی AFE چاه AR-07 برابر 8,098,000 است که 40,000 آن آموزش اپراتورهاست. پس از همه تسویه‌ها، بهای دارایی `FA-52007` چقدر است؟', 'The final cost of the AR-07 AFE is 8,098,000, of which 40,000 is operator training. After all settlements, what is the cost of asset `FA-52007`?'),
+      options: [t('8,098,000', '8,098,000'), t('8,058,000', '8,058,000'), t('7,900,000', '7,900,000'), t('8,000,000', '8,000,000')],
       answer: 1,
       explain: t(
-        '8,974,000 − 7,924,000 − 40,000 = 1,010,000؛ همان هزینه خط جریان. 1,050,000 آموزش را کم نکرده است، در حالی که آموزش با تسویه دوره‌ای از AUC بیرون رفته بود.',
-        '8,974,000 − 7,924,000 − 40,000 = 1,010,000, which is the flowline cost. 1,050,000 forgets to deduct the training, which periodic settlement had already taken out of AUC.',
+        '8,098,000 − 40,000 = 8,058,000؛ یعنی 7,900,000 در سرمایه‌ای کردن جزئی، 146,000 در تسویه نهایی و 12,000 در تسویه بعدی. 8,098,000 آموزش را کم نکرده است و 7,900,000 فقط مبلغ ماه 4 است.',
+        '8,098,000 − 40,000 = 8,058,000: 7,900,000 at partial capitalisation, 146,000 at final settlement and 12,000 at subsequent settlement. 8,098,000 forgets to deduct the training, and 7,900,000 is only the month-4 amount.',
       ),
     },
     {
@@ -761,12 +778,12 @@ export const lesson: Lesson = {
       ),
     },
     {
-      q: t('بودجه جاری AFE چاه AR-07 برابر 8,994,000 و هزینه نهایی 8,974,000 است. هنگام بستن چه سندی و با چه مبلغی صادر می‌شود؟', 'The AR-07 AFE’s current budget is 8,994,000 and its final cost 8,974,000. What document is issued at close, and for how much?'),
-      options: [t('افزایش 174,000', 'Supplement of 174,000'), t('برگشت 20,000', 'Return of 20,000'), t('انتقال 20,000 به AFE دیگر', 'Transfer of 20,000 to another AFE'), t('سندی لازم نیست', 'No document is needed')],
+      q: t('AFE مصوب چاه AR-07 برابر 8,800,000 (با ذخیره احتیاطی) و هزینه نهایی 8,098,000 است. هنگام بستن چه سندی و با چه مبلغی صادر می‌شود؟', 'The approved AR-07 AFE is 8,800,000 (including contingency) and the final cost is 8,098,000. What document is issued at close, and for how much?'),
+      options: [t('افزایش 98,000', 'Supplement of 98,000'), t('برگشت 702,000', 'Return of 702,000'), t('انتقال 702,000 به AFE دیگر', 'Transfer of 702,000 to another AFE'), t('سندی لازم نیست', 'No document is needed')],
       answer: 1,
       explain: t(
-        '8,994,000 − 8,974,000 = 20,000 بودجه بی‌استفاده با سند برگشت آزاد می‌شود تا در WP&B به کار دیگری برسد. 174,000 فاصله هزینه نهایی با AFE اولیه است که در گزارش بستن توضیح داده می‌شود، نه سند افزایش تازه.',
-        '8,994,000 − 8,974,000 = 20,000 of unused budget is released by a return document so the WP&B can use it elsewhere. 174,000 is the gap between final cost and the original AFE, explained in the close-out report, not a new supplement.',
+        '8,800,000 − 8,098,000 = 702,000 بودجه بی‌استفاده (شامل 640,000 ذخیره احتیاطی باقی‌مانده) با سند برگشت آزاد می‌شود تا در WP&B به کار دیگری برسد. 98,000 فاصله هزینه نهایی با برآورد پایه است که ذخیره احتیاطی پوشش داده و در گزارش بستن توضیح داده می‌شود، نه سند افزایش تازه.',
+        '8,800,000 − 8,098,000 = 702,000 of unused budget (including the 640,000 of contingency left) is released by a return document so the WP&B can use it elsewhere. 98,000 is the gap between final cost and the base estimate, covered by contingency and explained in the close-out report, not a new supplement.',
       ),
     },
     {

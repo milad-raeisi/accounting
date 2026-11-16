@@ -39,7 +39,7 @@ const blank = { fa: '', en: '' }
 
 export const lesson: Lesson = {
   slug: 'oman-vat',
-  number: 24,
+  number: 31,
   currency: 'omr',
   level: 'advanced',
   minutes: 40,

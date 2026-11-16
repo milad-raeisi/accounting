@@ -26,8 +26,8 @@ const courseList: Course[] = [
     title: { fa: 'حسابداری مالی', en: 'Financial accounting' },
     erp: { fa: 'ماژول مالی', en: 'Finance module' },
     summary: {
-      fa: 'از معادله حسابداری تا صورت‌های مالی، حسابداری نفت و گاز، عملیات مشترک و کاست ریکاوری.',
-      en: 'From the accounting equation to financial statements, oil and gas accounting, joint operations and cost recovery.',
+      fa: 'از معادله حسابداری تا صورت‌های مالی، مدیریت اسناد و بستن دوره در ERP، حسابداری نفت و گاز، کاست ریکاوری و مالیات، ارزش افزوده و صورت‌حساب الکترونیکی عمان.',
+      en: 'From the accounting equation to financial statements, journal management and period close in an ERP, oil and gas accounting, cost recovery, and Oman tax, VAT and e-invoicing.',
     },
   },
   {
@@ -52,7 +52,7 @@ const courseList: Course[] = [
     title: { fa: 'انبارداری و کنترل موجودی', en: 'Warehousing and inventory control' },
     erp: { fa: 'ماژول انبار و موجودی', en: 'Inventory and warehouse module' },
     summary: {
-      fa: 'کدینگ کالا، رسید و حواله، شمارش، برنامه‌ریزی موجودی و ارتباط انبار با مالی.',
+      fa: 'کدینگ کالا، رسید کالا (GRN) و حواله، شمارش، برنامه‌ریزی موجودی و ارتباط انبار با مالی.',
       en: 'Material master, receipts and issues, counting, replenishment and the link to finance.',
     },
   },
@@ -78,8 +78,8 @@ const courseList: Course[] = [
     title: { fa: 'تدارکات و خرید', en: 'Procurement' },
     erp: { fa: 'ماژول تدارکات (از درخواست تا پرداخت)', en: 'Procurement module (procure-to-pay)' },
     summary: {
-      fa: 'درخواست خرید، تأمین‌کنندگان، مناقصه، سفارش خرید، دریافت کالا و تطبیق فاکتور.',
-      en: 'Requisitions, suppliers, tenders, purchase orders, receipt and invoice matching.',
+      fa: 'درخواست خرید، تأمین‌کنندگان، مناقصه، سفارش خرید، رسید کالا (GRN)، برگه ثبت خدمات (SES) و تطبیق فاکتور.',
+      en: 'Requisitions, suppliers, tenders, purchase orders, goods received notes (GRN), service entry sheets (SES) and invoice matching.',
     },
   },
 ]

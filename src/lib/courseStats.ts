@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 
 import type { CourseId } from '@/content/courses'
-import { lessonsOf, type CourseLesson } from '@/content/lessons'
+import { lessonsOf, type LessonMeta } from '@/content/lessons'
 import { useProgress } from '@/lib/progress'
 
 /** Share of correct answers that passes a lesson quiz (and marks the lesson completed). */
@@ -13,7 +13,7 @@ export const examKey = (course: CourseId) => `exam:${course}`
 export type LessonStatus = 'done' | 'started' | 'new'
 
 export type CourseStats = {
-  lessons: CourseLesson[]
+  lessons: LessonMeta[]
   total: number
   completed: number
   /** 0..100, completed lessons over all lessons */
@@ -23,7 +23,7 @@ export type CourseStats = {
   /** 0..100 average of best quiz scores, null when no quiz was taken */
   avg: number | null
   /** first lesson (in order) not completed yet */
-  next: CourseLesson | null
+  next: LessonMeta | null
   exam: { score: number; total: number } | null
   statusOf: (slug: string) => LessonStatus
 }

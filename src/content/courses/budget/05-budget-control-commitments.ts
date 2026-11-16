@@ -19,8 +19,8 @@ export const lesson: Lesson = {
   tone: 'liability',
   title: t('کنترل بودجه و تعهدات', 'Budget Control and Commitments'),
   summary: t(
-    'بودجه وقتی واقعاً کنترل می‌شود که پیش از خرج شدن پول بررسی شود. در این درس تفاوت بودجه، تعهد و هزینه واقعی را می‌آموزید، می‌بینید درخواست و سفارش خرید چگونه تعهد می‌سازند و رسید کالا (GRN) و برگه ثبت خدمات (SES) چگونه آن را به هزینه واقعی AFE تبدیل می‌کنند، و با کنترل در دسترس بودن بودجه، انتقال و افزایش بودجه و پیش‌بینی ETC و EAC گزارش ماهانه چاه AR-07 را می‌سازید.',
-    'A budget is only controlled if it is checked before the money is spent. This lesson separates budget, commitments and actuals, shows how requisitions and purchase orders create commitments and how a goods received note (GRN) or service entry sheet (SES) turns them into actual AFE cost, and uses availability control, budget transfers and supplements, and ETC/EAC forecasts to build the monthly control report for well AR-07.',
+    'بودجه وقتی واقعاً کنترل می‌شود که پیش از خرج شدن پول بررسی شود. در این درس تفاوت بودجه، تعهد و هزینه واقعی را می‌آموزید، می‌بینید درخواست و سفارش خرید چگونه تعهد می‌سازند و رسید کالا (GRN) و برگه ثبت خدمات (SES) چگونه آن را به هزینه واقعی AFE تبدیل می‌کنند، و با کنترل در دسترس بودن بودجه، انتقال بودجه و ذخیره احتیاطی، افزایش و برگشت بودجه و پیش‌بینی ETC و EAC گزارش ماهانه چاه AR-07 را می‌سازید.',
+    'A budget is only controlled if it is checked before the money is spent. This lesson separates budget, commitments and actuals, shows how requisitions and purchase orders create commitments and how a goods received note (GRN) or service entry sheet (SES) turns them into actual AFE cost, and uses availability control, budget transfers and contingency, supplements and returns, and ETC/EAC forecasts to build the monthly control report for well AR-07.',
   ),
   objectives: [
     t(
@@ -52,8 +52,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: t(
-            'پایان ماه دوم پروژه چاه AR-07 در میدان آریا است. رشته حفاری در عمق 2,850 متری گیر کرده و سرپرست حفاری برای آزاد کردن آن و ادامه کار به 4 روز دکل بیشتر نیاز دارد؛ با نرخ روزانه 92,000 یعنی 368,000. او در ERP یک **درخواست خرید** ثبت می‌کند، اما سیستم آن را نمی‌پذیرد: «بودجه عنصر `AFE-2025-014.02.01` کافی نیست.» سرپرست تعجب می‌کند: «AFE این چاه 8,800,000 است و تا امروز فقط 4,000,000 خرج کرده‌ایم!» کنترل‌کننده پروژه توضیح می‌دهد که از این 8,800,000، مبلغ 4,000,000 واقعاً خرج شده، 2,136,000 دیگر با سفارش‌های خرید به تأمین‌کنندگان **قول داده شده** و روی ردیف دکل فقط 184,000 آزاد مانده است. این درس درباره همین گفت‌وگوست.',
-            'It is the end of month 2 on the AR-07 well project in the Arya field. The drill string is stuck at 2,850 metres, and to free it and carry on the drilling superintendent needs 4 more rig days: at a day rate of 92,000, that is 368,000. He raises a **purchase requisition** in the ERP, and the system rejects it: “Budget exceeded on WBS element `AFE-2025-014.02.01`.” He is surprised: “This well’s AFE is 8,800,000 and we have only spent 4,000,000!” The project controller explains that of the 8,800,000, 4,000,000 has actually been spent, another 2,136,000 has already been **promised** to suppliers through purchase orders, and on the rig line only 184,000 is still free. This lesson is about that conversation.',
+            'پایان ماه دوم پروژه چاه AR-07 در میدان آریا است. رشته حفاری در عمق 2,850 متری گیر کرده و سرپرست حفاری برای آزاد کردن آن و ادامه کار به 4 روز دکل بیشتر نیاز دارد؛ با نرخ روزانه 84,000 یعنی 336,000. او در ERP یک **درخواست خرید** ثبت می‌کند، اما سیستم آن را نمی‌پذیرد: «بودجه عنصر `AFE-2025-014.02.01` کافی نیست.» سرپرست تعجب می‌کند: «AFE این چاه 8,800,000 است و تا امروز فقط 4,318,000 خرج کرده‌ایم!» کنترل‌کننده پروژه توضیح می‌دهد که از این 8,800,000، مبلغ 4,318,000 واقعاً خرج شده، 2,070,000 دیگر با سفارش‌های خرید به تأمین‌کنندگان **قول داده شده**، 800,000 ذخیره احتیاطی است که هنوز به هیچ عنصری داده نشده، و روی ردیف نرخ روزانه دکل حتی یک ریال آزاد نمانده است. این درس درباره همین گفت‌وگوست.',
+            'It is the end of month 2 on the AR-07 well project in the Arya field. The drill string is stuck at 2,850 metres, and to free it and carry on the drilling superintendent needs 4 more rig days: at a day rate of 84,000, that is 336,000. He raises a **purchase requisition** in the ERP, and the system rejects it: “Budget exceeded on WBS element `AFE-2025-014.02.01`.” He is surprised: “This well’s AFE is 8,800,000 and we have only spent 4,318,000!” The project controller explains that of the 8,800,000, 4,318,000 has actually been spent, another 2,070,000 has already been **promised** to suppliers through purchase orders, 800,000 is contingency not yet given to any element, and on the rig day-rate line nothing at all is left. This lesson is about that conversation.',
           ),
         },
         {
@@ -75,8 +75,8 @@ export const lesson: Lesson = {
           type: 'diagram',
           id: 'budget-control',
           caption: t(
-            'هر عنصر WBS سه لایه دارد: هزینه واقعی، تعهدات و بودجه در دسترس. کنترل در دسترس بودن بودجه هر سند تازه را پیش از ذخیره با بخش آزاد مقایسه می‌کند.',
-            'Each WBS element has three layers: actuals, commitments and available budget. Availability control compares every new document with the free part before it is saved.',
+            'هر عنصر WBS سه لایه دارد: هزینه واقعی، تعهدات و بودجه در دسترس. نمودار عنصر لوله‌های جداری و مغزی چاه تازه `AFE-2026-031.02.03` (بودجه 1,350,000) را در یک داستان جدا دنبال می‌کند: سفارش، GRN، تفاوت قیمت فاکتور، سفارش‌های تازه، SES، سفارشی که در 109٪ متوقف می‌شود و انتقال از ذخیره احتیاط AFE که راه را باز می‌کند.',
+            'Each WBS element has three layers: actuals, commitments and available budget. The diagram follows the casing and tubulars element of a new well, `AFE-2026-031.02.03` (budget 1,350,000), through a separate story: a PO, a GRN, an invoice price difference, new orders, an SES, an order blocked at 109% and the transfer from the AFE contingency that unblocks it.',
           ),
         },
         {
@@ -84,12 +84,12 @@ export const lesson: Lesson = {
           caption: t('ردیف دکل چاه AR-07 در پایان ماه 2', 'The AR-07 rig line at the end of month 2'),
           head: [t('قلم', 'Item'), t('مبلغ', 'Amount'), t('توضیح', 'Explanation')],
           rows: [
-            [t('بودجه عنصر `AFE-2025-014.02.01`', 'Budget of `AFE-2025-014.02.01`'), 2600000, t('انتقال و آماده‌سازی دکل 300,000 و 25 روز × 92,000', 'Rig mobilisation 300,000 plus 25 days × 92,000')],
-            [t('هزینه واقعی', 'Actuals'), 2140000, t('انتقال دکل و 20 روز پذیرفته‌شده با SES', 'Mobilisation and 20 days accepted by SES')],
-            [t('تعهدات', 'Commitments'), 276000, t('3 روز باقی‌مانده روی سفارش فراخوان دکل', '3 days left on the rig call-off order')],
-            [t('بودجه در دسترس', 'Available'), 184000, t('2 روز ذخیره احتیاطی', '2 days of contingency')],
-            [t('درخواست تازه', 'New requisition'), 368000, t('4 روز اضافه برای آزاد کردن لوله', '4 extra days to free the pipe')],
-            [t('کسری', 'Shortfall'), 184000, t('ERP درخواست را متوقف می‌کند', 'The ERP blocks the requisition')],
+            [t('بودجه عنصر `AFE-2025-014.02.01`', 'Budget of `AFE-2025-014.02.01`'), 2100000, t('25 روز × 84,000', '25 days × 84,000')],
+            [t('هزینه واقعی', 'Actuals'), 1520000, t('روزهای دکل که تاکنون با SES پذیرفته شده‌اند', 'Rig days accepted by SES so far')],
+            [t('تعهدات', 'Commitments'), 580000, t('باقی‌مانده سفارش فراخوان 25 روزه دکل', 'The rest of the 25-day rig call-off order')],
+            [t('بودجه در دسترس', 'Available'), 0, t('هیچ جایی نمانده است', 'No room left')],
+            [t('درخواست تازه', 'New requisition'), 336000, t('4 روز اضافه برای آزاد کردن لوله', '4 extra days to free the pipe')],
+            [t('کسری', 'Shortfall'), 336000, t('ERP درخواست را متوقف می‌کند', 'The ERP blocks the requisition')],
           ],
           numericCols: [1],
         },
@@ -98,8 +98,8 @@ export const lesson: Lesson = {
           tone: 'tip',
           title: t('چرا فقط به هزینه واقعی نگاه نمی‌کنیم؟', 'Why not look at actuals alone?'),
           text: t(
-            'اگر سرپرست فقط ستون هزینه واقعی را ببیند، روی ردیف دکل 460,000 جای خالی می‌بیند. اما 276,000 از آن را قرارداد دکل از پیش گرفته است: دکل سر چاه است و روزهای باقی‌مانده‌اش در هر حال صورت‌حساب می‌شود. بودجه‌ای که فقط هزینه واقعی را ببیند، همیشه دیر خبر می‌دهد؛ تعهدات هشدار زودهنگام‌اند.',
-            'If the superintendent looks only at actuals, he sees 460,000 of room on the rig line. But 276,000 of that is already taken by the rig contract: the rig is on site and its remaining days will be billed regardless. A budget that only sees actuals always warns too late; commitments are the early warning.',
+            'اگر سرپرست فقط ستون هزینه واقعی را ببیند، روی ردیف دکل 580,000 جای خالی می‌بیند. اما همه این 580,000 را سفارش فراخوان دکل از پیش گرفته است: دکل سر چاه است و روزهای باقی‌مانده‌اش در هر حال صورت‌حساب می‌شود. بودجه‌ای که فقط هزینه واقعی را ببیند، همیشه دیر خبر می‌دهد؛ تعهدات هشدار زودهنگام‌اند.',
+            'If the superintendent looks only at actuals, he sees 580,000 of room on the rig line. But all of that 580,000 is already taken by the rig call-off order: the rig is on site and its remaining days will be billed regardless. A budget that only sees actuals always warns too late; commitments are the early warning.',
           ),
         },
         {
@@ -172,31 +172,31 @@ export const lesson: Lesson = {
             'Two receipt paths: goods through a GRN and services through an SES. Both reduce the PO commitment, increase WBS actuals and credit GR/IR.',
           ),
         },
-        { type: 'h', text: t('مثال: لوله جداری روی `AFE-2025-014.02.03`', 'Example: casing on `AFE-2025-014.02.03`') },
+        { type: 'h', text: t('مثال: لوله جداری چاه AR-08 روی `AFE-2024-018.02.03`', 'Example: casing for well AR-08 on `AFE-2024-018.02.03`') },
         {
           type: 'table',
           caption: t(
-            'عنصر لوله جداری و لوله‌های حفاری (OCTG، عنصر هزینه 6140) در ماه 2؛ بودجه 1,900,000. لوله‌ها مستقیم به حساب چاه سفارش داده شده‌اند، نه برای انبار.',
-            'The casing and tubulars (OCTG, cost element 6140) element in month 2; budget 1,900,000. The pipe is ordered directly to the well, not to stock.',
+            'چاه پارسال: عنصر لوله‌های جداری و مغزی (OCTG، عنصر هزینه 6140) چاه AR-08؛ بودجه 1,300,000. لوله‌ها مستقیم به حساب چاه سفارش داده شده‌اند، نه برای انبار.',
+            'Last year’s well: the casing and tubulars (OCTG, cost element 6140) element of well AR-08; budget 1,300,000. The pipe is ordered directly to the well, not to stock.',
           ),
           head: [t('گام', 'Step'), t('سند', 'Document'), t('تعهد اولیه', 'Pre-commitment'), t('تعهد سفارش', 'PO commitment'), t('هزینه واقعی', 'Actual'), t('در دسترس', 'Available')],
           rows: [
-            [t('شروع', 'Start'), t('مانده‌ها: GRN لوله جداری 13-3/8 اینچ (410,000) و یک سفارش باز قدیمی 40,000 برای کفشک و طوقه', 'Balances: the 13-3/8" casing GRN (410,000) and an older open PO of 40,000 for float equipment'), 0, 40000, 410000, 1450000],
-            [t('الف', 'a'), t('`PR-10021` لوله جداری 9-5/8 اینچ، برآورد 640,000', '`PR-10021` 9-5/8" casing, estimate 640,000'), 640000, 40000, 410000, 810000],
-            [t('ب', 'b'), t('`PO-45210` از همان درخواست با قیمت مذاکره‌شده 620,000', '`PO-45210` from that PR at a negotiated 620,000'), 0, 660000, 410000, 830000],
-            [t('ج', 'c'), t('`GRN-50318` رسید 60٪ لوله‌ها: 372,000', '`GRN-50318` receipt of 60% of the pipe: 372,000'), 0, 288000, 782000, 830000],
-            [t('د', 'd'), t('فاکتور 372,000 تطبیق داده می‌شود', 'Invoice of 372,000 matched'), 0, 288000, 782000, 830000],
-            [t('هـ', 'e'), t('`GRN-50331` رسید بقیه لوله‌ها: 248,000', '`GRN-50331` receipt of the rest: 248,000'), 0, 40000, 1030000, 830000],
-            [t('و', 'f'), t('فاکتور 254,000 برای رسید 248,000؛ کرایه حمل اضافه 6,000 تأیید می‌شود', 'Invoice of 254,000 for the 248,000 receipt; 6,000 extra freight approved'), 0, 40000, 1036000, 824000],
-            [t('ز', 'g'), t('`GRN-50340` رسید 32,000 روی سفارش قدیمی و بستن آن با «تحویل کامل»', '`GRN-50340` receipt of 32,000 on the old PO, closed as “delivery completed”'), 0, 0, 1068000, 832000],
+            [t('شروع', 'Start'), t('مانده‌ها: GRN لوله جداری 13-3/8 اینچ (410,000) و یک سفارش باز قدیمی 40,000 برای کفشک و طوقه', 'Balances: the 13-3/8" casing GRN (410,000) and an older open PO of 40,000 for float equipment'), 0, 40000, 410000, 850000],
+            [t('الف', 'a'), t('`PR-10021` لوله جداری 9-5/8 اینچ، برآورد 640,000', '`PR-10021` 9-5/8" casing, estimate 640,000'), 640000, 40000, 410000, 210000],
+            [t('ب', 'b'), t('`PO-45210` از همان درخواست با قیمت مذاکره‌شده 620,000', '`PO-45210` from that PR at a negotiated 620,000'), 0, 660000, 410000, 230000],
+            [t('ج', 'c'), t('`GRN-50318` رسید 60٪ لوله‌ها: 372,000', '`GRN-50318` receipt of 60% of the pipe: 372,000'), 0, 288000, 782000, 230000],
+            [t('د', 'd'), t('فاکتور 372,000 تطبیق داده می‌شود', 'Invoice of 372,000 matched'), 0, 288000, 782000, 230000],
+            [t('هـ', 'e'), t('`GRN-50331` رسید بقیه لوله‌ها: 248,000', '`GRN-50331` receipt of the rest: 248,000'), 0, 40000, 1030000, 230000],
+            [t('و', 'f'), t('فاکتور 254,000 برای رسید 248,000؛ کرایه حمل اضافه 6,000 تأیید می‌شود', 'Invoice of 254,000 for the 248,000 receipt; 6,000 extra freight approved'), 0, 40000, 1036000, 224000],
+            [t('ز', 'g'), t('`GRN-50340` رسید 32,000 روی سفارش قدیمی و بستن آن با «تحویل کامل»', '`GRN-50340` receipt of 32,000 on the old PO, closed as “delivery completed”'), 0, 0, 1068000, 232000],
           ],
           numericCols: [2, 3, 4, 5],
         },
         {
           type: 'p',
           text: t(
-            'به ستون آخر نگاه کنید. بودجه در دسترس فقط در چهار جا تغییر کرد: وقتی تعهد تازه‌ای ساخته شد (الف)، وقتی قیمت سفارش از برآورد کمتر شد (ب، 20,000 آزاد شد)، وقتی فاکتور با رسید فرق داشت (و، 6,000 کم شد) و وقتی مانده سفارش قدیمی بسته شد (ز، 8,000 آزاد شد). رسید کالا به‌تنهایی (ج و هـ) و فاکتور بدون تفاوت (د) هیچ اثری بر بودجه در دسترس ندارند؛ فقط پول را از ستون تعهد به ستون واقعی می‌برند. تا پایان ماه، رسید کوچکی به مبلغ 2,000 برای مرکزکننده‌ها (Centralizer) و سفارش تازه `PO-45236` به مبلغ 660,000 برای لاینر 7 اینچ و لوله مغزی، این عنصر را به ارقام گزارش ماهانه می‌رساند: هزینه واقعی 1,070,000 و تعهد 660,000.',
-            'Look at the last column. The available budget changed in only four places: when a new commitment was created (a), when the PO price came in below the estimate (b, 20,000 released), when the invoice differed from the receipt (f, 6,000 used) and when the old PO was closed (g, 8,000 released). A goods receipt on its own (c and e) and an invoice with no difference (d) do not touch the available budget; they only move money from the commitment column to the actual column. Before month end, a small receipt of 2,000 for centralisers and a new order `PO-45236` of 660,000 for the 7" liner and production tubing bring the element to the figures in the monthly report: actuals 1,070,000 and commitments 660,000.',
+            'به ستون آخر نگاه کنید. بودجه در دسترس فقط در چهار جا تغییر کرد: وقتی تعهد تازه‌ای ساخته شد (الف)، وقتی قیمت سفارش از برآورد کمتر شد (ب، 20,000 آزاد شد)، وقتی فاکتور با رسید فرق داشت (و، 6,000 کم شد) و وقتی مانده سفارش قدیمی بسته شد (ز، 8,000 آزاد شد). رسید کالا به‌تنهایی (ج و هـ) و فاکتور بدون تفاوت (د) هیچ اثری بر بودجه در دسترس ندارند؛ فقط پول را از ستون تعهد به ستون واقعی می‌برند. مانده 232,000 برای لاینر 7 اینچ کنار گذاشته شد که هفته بعد سفارش داده شد.',
+            'Look at the last column. The available budget changed in only four places: when a new commitment was created (a), when the PO price came in below the estimate (b, 20,000 released), when the invoice differed from the receipt (f, 6,000 used) and when the old PO was closed (g, 8,000 released). A goods receipt on its own (c and e) and an invoice with no difference (d) do not touch the available budget; they only move money from the commitment column to the actual column. The remaining 232,000 was kept for the 7" liner, ordered the following week.',
           ),
         },
         {
@@ -206,7 +206,7 @@ export const lesson: Lesson = {
             {
               date: t('ج', 'c'),
               lines: [
-                { account: ac.auc('AFE-2025-014.02.03', '6140'), debit: 372000 },
+                { account: ac.auc('AFE-2024-018.02.03', '6140'), debit: 372000 },
                 { account: ac.grir, credit: 372000 },
               ],
               memo: t('`GRN-50318`: تعهد 372,000 کم و هزینه واقعی 372,000 زیاد می‌شود.', '`GRN-50318`: commitment down 372,000, actuals up 372,000.'),
@@ -222,7 +222,7 @@ export const lesson: Lesson = {
             {
               date: t('هـ', 'e'),
               lines: [
-                { account: ac.auc('AFE-2025-014.02.03', '6140'), debit: 248000 },
+                { account: ac.auc('AFE-2024-018.02.03', '6140'), debit: 248000 },
                 { account: ac.grir, credit: 248000 },
               ],
               memo: t('`GRN-50331`', '`GRN-50331`'),
@@ -231,7 +231,7 @@ export const lesson: Lesson = {
               date: t('و', 'f'),
               lines: [
                 { account: ac.grir, debit: 248000 },
-                { account: ac.auc('AFE-2025-014.02.03', '6140'), debit: 6000 },
+                { account: ac.auc('AFE-2024-018.02.03', '6140'), debit: 6000 },
                 { account: ac.ap, credit: 254000 },
               ],
               memo: t('فقط تفاوت تأییدشده 6,000 به هزینه واقعی اضافه می‌شود.', 'Only the approved 6,000 difference is added to actuals.'),
@@ -239,7 +239,7 @@ export const lesson: Lesson = {
             {
               date: t('ز', 'g'),
               lines: [
-                { account: ac.auc('AFE-2025-014.02.03', '6140'), debit: 32000 },
+                { account: ac.auc('AFE-2024-018.02.03', '6140'), debit: 32000 },
                 { account: ac.grir, credit: 32000 },
               ],
               memo: t('بستن سفارش ثبت مالی ندارد؛ فقط 8,000 تعهد آزاد می‌شود.', 'Closing the PO posts nothing; it only releases 8,000 of commitment.'),
@@ -250,8 +250,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: t(
-            'خدمات وارد انبار نمی‌شوند که بشود آن‌ها را شمرد. مسار پترولیوم دکل را با یک **سفارش فراخوان** از قرارداد حفاری گرفته است: `PO-45180` برای انتقال دکل (300,000) و 23 روز کار برنامه‌ریزی‌شده × 92,000، یعنی 2,416,000. هر هفته نماینده شرکت سر دکل (Company Man) گزارش‌های روزانه حفاری را با صورت‌وضعیت پیمانکار تطبیق می‌دهد، روزهای تأییدشده را به‌صورت **برگه ثبت خدمات (SES)** وارد می‌کند و مالک WBS آن را می‌پذیرد. پذیرش SES، مثل رسید کالا، تعهد سفارش را کم و هزینه واقعی را زیاد می‌کند.',
-            'Services do not arrive at a warehouse where they can be counted. Masar Petroleum hires the rig through a **call-off order** under the drilling contract: `PO-45180` for mobilisation (300,000) and 23 planned days × 92,000, a total of 2,416,000. Each week the company man on the rig checks the daily drilling reports against the contractor’s statement, enters the accepted days as a **service entry sheet (SES)**, and the WBS owner accepts it. Accepting the SES, just like a goods receipt, reduces the PO commitment and increases actuals.',
+            'خدمات وارد انبار نمی‌شوند که بشود آن‌ها را شمرد. مسار پترولیوم دکل را با یک **سفارش فراخوان** از قرارداد حفاری گرفته است: `PO-45180` برای 25 روز × 84,000، یعنی 2,100,000؛ انتقال و استقرار دکل جداگانه روی `.01.02` است. هر هفته نماینده شرکت سر دکل (Company Man) گزارش‌های روزانه حفاری را با صورت‌وضعیت پیمانکار تطبیق می‌دهد، روزهای تأییدشده را به‌صورت **برگه ثبت خدمات (SES)** وارد می‌کند و مالک WBS آن را می‌پذیرد. پذیرش SES، مثل رسید کالا، تعهد سفارش را کم و هزینه واقعی را زیاد می‌کند.',
+            'Services do not arrive at a warehouse where they can be counted. Masar Petroleum hires the rig through a **call-off order** under the drilling contract: `PO-45180` for 25 days × 84,000, a total of 2,100,000; the rig move and mobilisation sit separately on `.01.02`. Each week the company man on the rig checks the daily drilling reports against the contractor’s statement, enters the accepted days as a **service entry sheet (SES)**, and the WBS owner accepts it. Accepting the SES, just like a goods receipt, reduces the PO commitment and increases actuals.',
           ),
         },
         {
@@ -261,12 +261,12 @@ export const lesson: Lesson = {
             {
               date: t('هفته 3 حفاری', 'Drilling week 3'),
               lines: [
-                { account: ac.auc('AFE-2025-014.02.01', '6120'), debit: 644000 },
-                { account: ac.grir, credit: 644000 },
+                { account: ac.auc('AFE-2025-014.02.01', '6120'), debit: 588000 },
+                { account: ac.grir, credit: 588000 },
               ],
               memo: t(
-                '`SES-70412`: روزهای 14 تا 20، یعنی 7 روز × 92,000. تعهد `PO-45180` از 920,000 به 276,000 کم و هزینه واقعی از 1,496,000 به 2,140,000 زیاد می‌شود.',
-                '`SES-70412`: days 14 to 20, 7 days × 92,000. The `PO-45180` commitment falls from 920,000 to 276,000 and actuals rise from 1,496,000 to 2,140,000.',
+                '`SES-70412`: 7 روز × 84,000. تعهد `PO-45180` از 1,168,000 به 580,000 کم و هزینه واقعی از 932,000 به 1,520,000 زیاد می‌شود.',
+                '`SES-70412`: 7 days × 84,000. The `PO-45180` commitment falls from 1,168,000 to 580,000 and actuals rise from 932,000 to 1,520,000.',
               ),
             },
           ],
@@ -326,11 +326,11 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: t('دو درخواست جداگانه روی ردیف دکل (بودجه 2,600,000)', 'Two separate requests on the rig line (budget 2,600,000)'),
+          caption: t('دو درخواست روی عناصر حفاری AR-07 در پایان ماه 2', 'Two requests on the AR-07 drilling elements at the end of month 2'),
           head: [t('درخواست', 'Request'), t('تخصیص‌یافته پیش از آن', 'Assigned before'), t('سند تازه', 'New document'), t('درصد مصرف پس از آن', 'Consumption after'), t('واکنش ERP', 'ERP action')],
           rows: [
-            [t('اجاره ابزار مانده‌یابی (Fishing tools)', 'Fishing tool rental'), 2416000, 150000, t('98.7٪', '98.7%'), t('هشدار؛ سند ذخیره می‌شود', 'Warning; the document is saved')],
-            [t('4 روز دکل اضافه', '4 extra rig days'), 2416000, 368000, t('107.1٪', '107.1%'), t('توقف قطعی؛ سند ذخیره نمی‌شود', 'Hard stop; the document is not saved')],
+            [t('اجاره جار و ابزار مانده‌یابی روی `.02.02` (بودجه 1,450,000)', 'Fishing jar and tool rental on `.02.02` (budget 1,450,000)'), 1370000, 64000, t('98.9٪', '98.9%'), t('هشدار؛ سند ذخیره می‌شود', 'Warning; the document is saved')],
+            [t('4 روز دکل اضافه روی `.02.01` (بودجه 2,100,000)', '4 extra rig days on `.02.01` (budget 2,100,000)'), 2100000, 336000, t('116.0٪', '116.0%'), t('توقف قطعی؛ سند ذخیره نمی‌شود', 'Hard stop; the document is not saved')],
           ],
           numericCols: [1, 2, 3],
         },
@@ -383,8 +383,8 @@ export const lesson: Lesson = {
           type: 'table',
           head: [t('نوع', 'Type'), t('چه می‌کند', 'What it does'), t('جمع AFE', 'AFE total'), t('تأیید در مسار پترولیوم (نمونه)', 'Approval at Masar Petroleum (illustrative)')],
           rows: [
-            [t('انتقال (Transfer)', 'Transfer'), t('بودجه را از یک عنصر WBS به عنصر دیگر می‌برد', 'Moves budget from one WBS element to another'), t('تغییر نمی‌کند', 'Unchanged'), t('مدیر پروژه در همان AFE؛ اطلاع به شرکا در گزارش ماهانه', 'Project manager within the same AFE; partners informed in the monthly report')],
-            [t('افزایش (Supplement)', 'Supplement'), t('به بودجه یک یا چند عنصر اضافه می‌کند', 'Adds budget to one or more elements'), t('زیاد می‌شود', 'Increases'), t('تا 10٪ مجموع افزایش‌ها نسبت به AFE اولیه: مدیر دارایی؛ بیش از آن: AFE تکمیلی با تأیید شرکا', 'Cumulative supplements up to 10% of the original AFE: asset manager; beyond that: supplementary AFE approved by partners')],
+            [t('انتقال (Transfer)', 'Transfer'), t('بودجه را از یک عنصر WBS به عنصر دیگر می‌برد؛ برداشت از **ذخیره احتیاطی** سطح 1 هم انتقال است', 'Moves budget from one WBS element to another; a draw on the level-1 **contingency** is also a transfer'), t('تغییر نمی‌کند', 'Unchanged'), t('صاحب AFE؛ برداشت از ذخیره در گزارش ماهانه به شرکا نشان داده می‌شود', 'The AFE owner; contingency draws are shown to partners in the monthly report')],
+            [t('افزایش (Supplement)', 'Supplement'), t('به بودجه AFE اضافه می‌کند', 'Adds to the AFE budget'), t('زیاد می‌شود', 'Increases'), t('تا 10٪ بیش از AFE: تأیید داخلی و اطلاع به شرکا؛ بیش از 10٪: AFE تکمیلی با رأی شرکا پیش از هر تعهد تازه', 'Up to 10% above the AFE: internal approval and notice to partners; above 10%: a supplementary AFE voted by the partners before any new commitment')],
             [t('برگشت (Return)', 'Return'), t('بودجه بی‌استفاده را آزاد می‌کند', 'Releases unused budget'), t('کم می‌شود', 'Decreases'), t('کنترل‌کننده پروژه؛ مبلغ به سرجمع WP&B برمی‌گردد', 'Project controller; the amount goes back to the WP&B pool')],
           ],
         },
@@ -392,38 +392,39 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: t(
-            'پیش‌بینی پایان ماه 2 (بخش بعد) نشان می‌دهد ردیف دکل 184,000 و ردیف خدمات حفاری (سیمان‌کاری و گل) 60,000 بیش از بودجه تمام می‌شوند، در حالی که آماده‌سازی محل 10,000 و لوله جداری 40,000 کمتر خرج می‌برند. کنترل‌کننده صرفه‌جویی‌ها را منتقل می‌کند و برای بقیه افزایش داخلی می‌گیرد:',
-            'The month-2 forecast (next section) shows the rig line finishing 184,000 and the drilling services line (cementing and mud) 60,000 over budget, while site preparation will spend 10,000 and casing 40,000 less. The controller transfers the savings and obtains an internal supplement for the rest:',
+            'پیش‌بینی پایان ماه 2 (بخش بعد) نشان می‌دهد ردیف نرخ روزانه دکل 336,000 بیش از بودجه تمام می‌شود، در حالی که لوله‌های جداری و مغزی 180,000 و خدمات حفاری 16,000 کمتر خرج می‌برند. کنترل‌کننده اول صرفه‌جویی‌های پیش‌بینی‌شده را منتقل می‌کند و فقط کسری باقی‌مانده را از ذخیره احتیاطی برمی‌دارد:',
+            'The month-2 forecast (next section) shows the rig day-rate line finishing 336,000 over budget, while casing and tubulars will spend 180,000 and drilling services 16,000 less. The controller first transfers the forecast savings and only takes the remaining gap from contingency:',
           ),
         },
         {
           type: 'table',
-          caption: t('سند بودجه `BD-2026-0207`؛ اعداد داخل پرانتز کاهش است', 'Budget document `BD-2026-0207`; figures in brackets are reductions'),
-          head: [t('عنصر WBS', 'WBS element'), t('بودجه اولیه', 'Original'), t('انتقال', 'Transfer'), t('افزایش', 'Supplement'), t('بودجه جاری', 'Current')],
+          caption: t('سند انتقال بودجه `BD-2026-0207`؛ اعداد داخل پرانتز کاهش است', 'Budget transfer document `BD-2026-0207`; figures in brackets are reductions'),
+          head: [t('عنصر WBS', 'WBS element'), t('بودجه اولیه', 'Original'), t('انتقال', 'Transfer'), t('بودجه جاری', 'Current')],
           rows: [
-            [t('`.01` آماده‌سازی محل', '`.01` Site preparation'), 400000, t('(10,000)', '(10,000)'), 0, 390000],
-            [t('`.02.01` دکل: انتقال و روزکار', '`.02.01` Rig: mobilisation and day rate'), 2600000, 50000, 134000, 2784000],
-            [t('`.02.02` خدمات حفاری: سیمان‌کاری و گل', '`.02.02` Drilling services: cementing and mud'), 600000, 0, 60000, 660000],
-            [t('`.02.03` لوله جداری و لوله‌های حفاری (OCTG)', '`.02.03` Casing and tubulars (OCTG)'), 1900000, t('(40,000)', '(40,000)'), 0, 1860000],
-            [t('`.03` تکمیل و آزمایش چاه', '`.03` Completion and testing'), 2300000, 0, 0, 2300000],
-            [t('`.04` خط جریان و اتصال', '`.04` Flowline and tie-in'), 1000000, 0, 0, 1000000],
-            [t('جمع', 'Total'), 8800000, 0, 194000, 8994000],
+            [t('`.01` آماده‌سازی پیش از حفاری', '`.01` Pre-spud and site preparation'), 620000, 0, 620000],
+            [t('`.02.01` نرخ روزانه دکل', '`.02.01` Rig day rate'), 2100000, 336000, 2436000],
+            [t('`.02.02` خدمات حفاری', '`.02.02` Drilling services'), 1450000, t('(16,000)', '(16,000)'), 1434000],
+            [t('`.02.03` لوله‌های جداری و مغزی', '`.02.03` Casing and tubulars'), 1350000, t('(180,000)', '(180,000)'), 1170000],
+            [t('`.03` تکمیل و آزمایش چاه', '`.03` Completion and testing'), 1880000, 0, 1880000],
+            [t('`.04` مدیریت پروژه', '`.04` Project management'), 600000, 0, 600000],
+            [t('ذخیره احتیاطی (سطح 1)', 'Contingency (level 1)'), 800000, t('(140,000)', '(140,000)'), 660000],
+            [t('جمع', 'Total'), 8800000, 0, 8800000],
           ],
-          numericCols: [1, 2, 3, 4],
+          numericCols: [1, 2, 3],
         },
         {
           type: 'p',
           text: t(
-            'جمع انتقال‌ها صفر است: 50,000 از دو عنصر کم و به ردیف دکل اضافه شد. افزایش 194,000 برابر 2.2٪ AFE اولیه است (194,000 ÷ 8,800,000) و چون از حد 10٪ کمتر است، مدیر دارایی آن را تأیید می‌کند و شرکا در گزارش ماهانه باخبر می‌شوند. اگر بعداً مجموع افزایش‌ها از 880,000 (یعنی 10٪ از 8,800,000) بگذرد، پیش از هر تعهد تازه باید AFE تکمیلی به تأیید شرکا برسد.',
-            'The transfers net to zero: 50,000 left two elements and went to the rig line. The 194,000 supplement is 2.2% of the original AFE (194,000 ÷ 8,800,000); since it is below the 10% limit, the asset manager approves it and the partners are informed in the monthly report. If cumulative supplements later pass 880,000 (10% of 8,800,000), a supplementary AFE must be approved by the partners before any new commitment.',
+            'جمع انتقال‌ها صفر است و AFE همان 8,800,000 می‌ماند؛ پس نه افزایشی لازم است و نه رأی شرکا. عنصر `.02` حفاری حالا 2,436,000 + 1,434,000 + 1,170,000 = 5,040,000 بودجه دارد، یعنی 140,000 بیش از 4,900,000 اولیه، و ذخیره احتیاطی به 660,000 می‌رسد. اگر روزی EAC کل از 8,800,000 بگذرد، افزایش داخلی لازم می‌شود و اگر از 9,680,000 (یعنی 110٪ AFE) بگذرد، AFE تکمیلی با رأی شرکا.',
+            'The transfers net to zero and the AFE stays at 8,800,000, so no supplement and no partner ballot is needed. Element `.02` Drilling now has 2,436,000 + 1,434,000 + 1,170,000 = 5,040,000, which is 140,000 above the original 4,900,000, and contingency drops to 660,000. If the total EAC ever passes 8,800,000, an internal supplement is needed; if it passes 9,680,000 (110% of the AFE), a supplementary AFE voted by the partners.',
           ),
         },
         {
           type: 'callout',
           tone: 'warning',
           text: t(
-            'انتقال را بر پایه **پیش‌بینی** انجام دهید، نه بر پایه بودجه در دسترس. عنصر لوله جداری 170,000 بودجه در دسترس دارد، اما پیش‌بینی می‌گوید 130,000 از آن هنوز برای لاینر و لوله مغزی لازم است؛ پس فقط 40,000 قابل انتقال است. کسی که همه 170,000 را منتقل کند، چند هفته بعد همین عنصر را متوقف می‌کند.',
-            'Base transfers on the **forecast**, not on the available budget. The casing element has 170,000 available, but the forecast says 130,000 of it is still needed for the liner and tubing, so only 40,000 can be transferred. Whoever moves all 170,000 will block the same element a few weeks later.',
+            'انتقال را بر پایه **پیش‌بینی** انجام دهید، نه بر پایه بودجه در دسترس. عنصر خدمات حفاری 80,000 بودجه در دسترس دارد، اما پیش‌بینی می‌گوید 64,000 از آن هنوز برای جار و ابزار مانده‌یابی لازم است؛ پس فقط 16,000 قابل انتقال است. کسی که همه 80,000 را منتقل کند، چند روز بعد همین عنصر را متوقف می‌کند.',
+            'Base transfers on the **forecast**, not on the available budget. The drilling services element has 80,000 available, but the forecast says 64,000 of it is still needed for the fishing jar and tools, so only 16,000 can be transferred. Whoever moves all 80,000 will block the same element a few days later.',
           ),
         },
         {
@@ -459,18 +460,20 @@ export const lesson: Lesson = {
         {
           type: 'table',
           caption: t(
-            'گزارش ماهانه کنترل `AFE-2025-014` (حفاری، تکمیل و اتصال چاه AR-07)، پایان ماه 2، بودجه اولیه',
-            'Monthly control report `AFE-2025-014` (drill, complete and tie in well AR-07), end of month 2, original budget',
+            'گزارش ماهانه کنترل `AFE-2025-014` (حفاری و تکمیل چاه AR-07)، پایان ماه 2، بودجه اولیه',
+            'Monthly control report `AFE-2025-014` (drill and complete well AR-07), end of month 2, original budget',
           ),
           head: [t('عنصر WBS', 'WBS element'), t('بودجه', 'Budget'), t('واقعی', 'Actual'), t('تعهد', 'Commitments'), t('در دسترس', 'Available'), t('مصرف', 'Consumed'), t('وضعیت', 'Status')],
           rows: [
-            [t('`.01` آماده‌سازی محل', '`.01` Site preparation'), 400000, 390000, 0, 10000, t('97.5٪', '97.5%'), t('تمام‌شده؛ مانده قابل برگشت', 'Finished; balance can be released')],
-            [t('`.02.01` دکل', '`.02.01` Rig'), 2600000, 2140000, 276000, 184000, t('92.9٪', '92.9%'), t('هشدار', 'Warning')],
-            [t('`.02.02` خدمات حفاری', '`.02.02` Drilling services'), 600000, 400000, 100000, 100000, t('83.3٪', '83.3%'), t('عادی', 'Normal')],
-            [t('`.02.03` لوله جداری و OCTG', '`.02.03` Casing and tubulars'), 1900000, 1070000, 660000, 170000, t('91.1٪', '91.1%'), t('هشدار', 'Warning')],
-            [t('`.03` تکمیل و آزمایش', '`.03` Completion and testing'), 2300000, 0, 1100000, 1200000, t('47.8٪', '47.8%'), t('تجهیزات دیررس سفارش داده شده', 'Long-lead equipment ordered')],
-            [t('`.04` خط جریان و اتصال', '`.04` Flowline and tie-in'), 1000000, 0, 0, 1000000, t('0.0٪', '0.0%'), t('شروع نشده', 'Not started')],
-            [t('جمع', 'Total'), 8800000, 4000000, 2136000, 2664000, t('69.7٪', '69.7%'), blank()],
+            [t('`.01` آماده‌سازی پیش از حفاری', '`.01` Pre-spud and site preparation'), 620000, 598000, 0, 22000, t('96.5٪', '96.5%'), t('تمام‌شده؛ مانده قابل برگشت', 'Finished; balance can be released')],
+            [t('`.02.01` نرخ روزانه دکل', '`.02.01` Rig day rate'), 2100000, 1520000, 580000, 0, t('100.0٪', '100.0%'), t('هشدار؛ هیچ جایی نمانده', 'Warning; no room left')],
+            [t('`.02.02` خدمات حفاری', '`.02.02` Drilling services'), 1450000, 980000, 390000, 80000, t('94.5٪', '94.5%'), t('هشدار', 'Warning')],
+            [t('`.02.03` لوله‌های جداری و مغزی', '`.02.03` Casing and tubulars'), 1350000, 910000, 260000, 180000, t('86.7٪', '86.7%'), t('عادی', 'Normal')],
+            [t('`.03.01` تجهیزات تکمیل چاه', '`.03.01` Completion equipment'), 1100000, 0, 840000, 260000, t('76.4٪', '76.4%'), t('اقلام دیررس سفارش داده شده', 'Long-lead items ordered')],
+            [t('`.03.02` آزمایش چاه', '`.03.02` Well testing'), 780000, 0, 0, 780000, t('0.0٪', '0.0%'), t('شروع نشده', 'Not started')],
+            [t('`.04` مدیریت پروژه', '`.04` Project management'), 600000, 310000, 0, 290000, t('51.7٪', '51.7%'), t('سطح تلاش', 'Level of effort')],
+            [t('ذخیره احتیاطی (سطح 1)', 'Contingency (level 1)'), 800000, 0, 0, 800000, t('0.0٪', '0.0%'), t('استفاده نشده', 'Unused')],
+            [t('جمع', 'Total'), 8800000, 4318000, 2070000, 2412000, t('72.6٪', '72.6%'), blank()],
           ],
           numericCols: [1, 2, 3, 4, 5],
         },
@@ -479,21 +482,23 @@ export const lesson: Lesson = {
           caption: t('پیش‌بینی پایان ماه 2؛ اعداد داخل پرانتز فراتر رفتن از بودجه است', 'Forecast at the end of month 2; figures in brackets are overruns'),
           head: [t('عنصر WBS', 'WBS element'), t('واقعی', 'Actual'), t('تعهد باز', 'Open commitments'), t('کار تعهدنشده', 'Uncommitted work'), t('ETC', 'ETC'), t('EAC', 'EAC'), t('VAC', 'VAC')],
           rows: [
-            [t('`.01`', '`.01`'), 390000, 0, 0, 0, 390000, 10000],
-            [t('`.02.01` (4 روز اضافه)', '`.02.01` (4 extra days)'), 2140000, 276000, 368000, 644000, 2784000, t('(184,000)', '(184,000)')],
-            [t('`.02.02` (سیمان‌کاری اضافه لاینر)', '`.02.02` (extra liner cement job)'), 400000, 100000, 160000, 260000, 660000, t('(60,000)', '(60,000)')],
-            [t('`.02.03`', '`.02.03`'), 1070000, 660000, 130000, 790000, 1860000, 40000],
-            [t('`.03`', '`.03`'), 0, 1100000, 1200000, 2300000, 2300000, 0],
-            [t('`.04`', '`.04`'), 0, 0, 1000000, 1000000, 1000000, 0],
-            [t('جمع', 'Total'), 4000000, 2136000, 2858000, 4994000, 8994000, t('(194,000)', '(194,000)')],
+            [t('`.01`', '`.01`'), 598000, 0, 0, 0, 598000, 22000],
+            [t('`.02.01` (4 روز اضافه)', '`.02.01` (4 extra days)'), 1520000, 580000, 336000, 916000, 2436000, t('(336,000)', '(336,000)')],
+            [t('`.02.02` (جار و ابزار مانده‌یابی)', '`.02.02` (fishing jar and tools)'), 980000, 390000, 64000, 454000, 1434000, 16000],
+            [t('`.02.03`', '`.02.03`'), 910000, 260000, 0, 260000, 1170000, 180000],
+            [t('`.03.01`', '`.03.01`'), 0, 840000, 260000, 1100000, 1100000, 0],
+            [t('`.03.02`', '`.03.02`'), 0, 0, 780000, 780000, 780000, 0],
+            [t('`.04`', '`.04`'), 310000, 0, 290000, 290000, 600000, 0],
+            [t('ذخیره احتیاطی', 'Contingency'), 0, 0, 0, 0, 0, 800000],
+            [t('جمع', 'Total'), 4318000, 2070000, 1730000, 3800000, 8118000, 682000],
           ],
           numericCols: [1, 2, 3, 4, 5, 6],
         },
         {
           type: 'p',
           text: t(
-            'این گزارش سه پیام دارد. یک: دو ردیف بیش از بودجه تمام می‌شوند: دکل (184,000، به دلیل 4 روز گیر کردن لوله) و خدمات حفاری (60,000، به دلیل یک عملیات سیمان‌کاری اضافه برای لاینر). دو: آماده‌سازی محل و لوله جداری با هم 50,000 صرفه‌جویی دارند. سه: جمع AFE حدود 194,000 یا 2.2٪ بیش از بودجه تمام می‌شود؛ همان مبلغی که در بخش قبل با انتقال و افزایش پوشش داده شد. همچنین دقت کنید عنصر تکمیل چاه با وجود هزینه واقعی صفر، 47.8٪ مصرف دارد: تجهیزات تکمیل اقلام دیررس (Long-lead) هستند و ماه‌ها پیش سفارش داده شده‌اند.',
-            'The report carries three messages. One: two lines will overrun: the rig (184,000, from 4 days of stuck pipe) and drilling services (60,000, from an extra liner cement job). Two: site preparation and casing together save 50,000. Three: the AFE as a whole will finish about 194,000, or 2.2%, over budget; exactly the amount covered by the transfers and supplement in the previous section. Note also that completion shows 47.8% consumed with zero actuals: completion equipment is long-lead and was ordered months ago.',
+            'این گزارش سه پیام دارد. یک: فقط ردیف نرخ روزانه دکل بیش از بودجه تمام می‌شود (336,000، به دلیل 4 روز گیر کردن لوله). دو: لوله‌های جداری و مغزی (180,000)، آماده‌سازی (22,000) و خدمات حفاری (16,000) کمتر از بودجه تمام می‌شوند. سه: کار پایه 8,118,000 تمام می‌شود؛ یعنی 118,000 بیش از برآورد پایه 8,000,000، اما به لطف ذخیره احتیاطی 682,000 کمتر از AFE مصوب 8,800,000. همچنین دقت کنید عنصر تجهیزات تکمیل با وجود هزینه واقعی صفر، 76.4٪ مصرف دارد: این تجهیزات اقلام دیررس (Long-lead) هستند و ماه‌ها پیش سفارش داده شده‌اند.',
+            'The report carries three messages. One: only the rig day-rate line will overrun (336,000, from 4 days of stuck pipe). Two: casing and tubulars (180,000), site preparation (22,000) and drilling services (16,000) will finish under budget. Three: the base work will cost 8,118,000, which is 118,000 above the base estimate of 8,000,000 but, thanks to contingency, 682,000 below the approved AFE of 8,800,000. Note also that completion equipment shows 76.4% consumed with zero actuals: it is long-lead and was ordered months ago.',
           ),
         },
         {
@@ -509,8 +514,8 @@ export const lesson: Lesson = {
           type: 'callout',
           tone: 'warning',
           text: t(
-            'دو خطای رایج در خواندن گزارش: (1) بودجه در دسترس را صرفه‌جویی فرض کردن؛ عنصر خط جریان 1,000,000 در دسترس دارد، اما هنوز هیچ کاری نشده و همه‌اش لازم است. (2) هزینه واقعی را با پیشرفت کار یکی گرفتن؛ 45٪ بودجه خرج شده، اما این نمی‌گوید 45٪ کار انجام شده است. سنجش پیشرفت موضوع درس تحلیل انحراف و ارزش کسب‌شده است.',
-            'Two common misreadings: (1) treating the available budget as a saving; the flowline element has 1,000,000 available, but no work has started and all of it is needed. (2) treating actual cost as progress; 45% of the budget is spent, but that does not mean 45% of the work is done. Measuring progress is the subject of the lesson on variance analysis and earned value.',
+            'دو خطای رایج در خواندن گزارش: (1) بودجه در دسترس را صرفه‌جویی فرض کردن؛ عنصر آزمایش چاه 780,000 در دسترس دارد، اما هنوز هیچ کاری نشده و همه‌اش لازم است. (2) هزینه واقعی را با پیشرفت کار یکی گرفتن؛ 49٪ AFE خرج شده، اما این نمی‌گوید 49٪ کار انجام شده است. سنجش پیشرفت موضوع درس تحلیل انحراف و ارزش کسب‌شده است.',
+            'Two common misreadings: (1) treating the available budget as a saving; the well-testing element has 780,000 available, but no work has started and all of it is needed. (2) treating actual cost as progress; 49% of the AFE is spent, but that does not mean 49% of the work is done. Measuring progress is the subject of the lesson on variance analysis and earned value.',
           ),
         },
       ],
@@ -534,8 +539,8 @@ export const lesson: Lesson = {
             [t('عنصر WBS', 'WBS element'), t('شیء هزینه‌ای که بودجه، تعهد و هزینه روی آن جمع می‌شود؛ با مالک، وضعیت و پروفایل بودجه', 'The cost object that collects budget, commitments and cost; with an owner, a status and a budget profile'), t('`AFE-2025-014.02.01` دکل؛ مالک: سرپرست حفاری', '`AFE-2025-014.02.01` rig; owner: drilling superintendent')],
             [t('پروفایل بودجه و تحمل', 'Budget and tolerance profile'), t('سطح کنترل، حدود هشدار و توقف قطعی', 'Control level, warning and hard-stop limits'), t('هشدار 90٪، توقف بیش از 100٪، روی عناصر دارای بودجه و جمع AFE', 'Warning 90%, stop above 100%, on budgeted elements and the AFE total')],
             [t('رشته کدینگ هزینه', 'Cost-coding string'), t('شرکت، مرکز هزینه، WBS، حساب کل، نشانگر بازیافت و طبقه هزینه', 'Company, cost centre, WBS, GL account, recoverable flag and cost category'), t('`MP01 / CC-ARY-DRL / AFE-2025-014.02.03 / 6140 (1510) / R / Development`', '`MP01 / CC-ARY-DRL / AFE-2025-014.02.03 / 6140 (1510) / R / Development`')],
-            [t('تأمین‌کننده، کالا و قرارداد', 'Vendor, material and contract'), t('مبنای قیمت سفارش و فراخوان', 'Basis for PO and call-off prices'), t('قرارداد حفاری با روزکار 92,000؛ کالای باریت', 'Drilling contract at 92,000 a day; barite material')],
-            [t('حساب‌های کل', 'GL accounts'), t('تعیین حساب خودکار برای ثبت‌ها', 'Automatic account determination for postings'), t('عناصر هزینه پروژه 6110 تا 6160 روی 1510؛ و 1310، 2110، 2120، 2130', 'Project cost elements 6110 to 6160 on 1510; plus 1310, 2110, 2120, 2130')],
+            [t('تأمین‌کننده، کالا و قرارداد', 'Vendor, material and contract'), t('مبنای قیمت سفارش و فراخوان', 'Basis for PO and call-off prices'), t('قرارداد حفاری با روزکار 84,000؛ کالای لوله جداری API 5CT', 'Drilling contract at 84,000 a day; API 5CT casing material')],
+            [t('حساب‌های کل', 'GL accounts'), t('تعیین حساب خودکار برای ثبت‌ها', 'Automatic account determination for postings'), t('عناصر هزینه پروژه 6110 تا 6220 روی 1510؛ و 1310، 2110، 2120، 2130', 'Project cost elements 6110 to 6220 on 1510; plus 1310, 2110, 2120, 2130')],
           ],
         },
         {
@@ -563,12 +568,12 @@ export const lesson: Lesson = {
         },
         {
           type: 'journal',
-          title: t('وقتی SES به موقع ثبت نشود (ماه 1، عنصر `.01`)', 'When an SES is not entered in time (month 1, element `.01`)'),
+          title: t('وقتی SES به موقع ثبت نشود (ماه 1، عنصر `.01.01`)', 'When an SES is not entered in time (month 1, element `.01.01`)'),
           entries: [
             {
               date: t('روز 30 ماه 1', 'Month 1, day 30'),
               lines: [
-                { account: ac.auc('AFE-2025-014.01', '6110'), debit: 85000 },
+                { account: ac.auc('AFE-2025-014.01.01', '6110'), debit: 85000 },
                 { account: ac.accrued, credit: 85000 },
               ],
               memo: t('آسفالت جاده دسترسی روز 30 تمام شد اما SES آن ثبت نشده است؛ حسابدار پروژه تعهدی دستی می‌زند.', 'Access-road surfacing finished on day 30 but its SES was not entered; the project accountant posts a manual accrual.'),
@@ -577,14 +582,14 @@ export const lesson: Lesson = {
               date: t('روز 1 ماه 2', 'Month 2, day 1'),
               lines: [
                 { account: ac.accrued, debit: 85000 },
-                { account: ac.auc('AFE-2025-014.01', '6110'), credit: 85000 },
+                { account: ac.auc('AFE-2025-014.01.01', '6110'), credit: 85000 },
               ],
               memo: t('برگشت خودکار تعهدی.', 'Automatic reversal of the accrual.'),
             },
             {
               date: t('روز 3 ماه 2', 'Month 2, day 3'),
               lines: [
-                { account: ac.auc('AFE-2025-014.01', '6110'), debit: 85000 },
+                { account: ac.auc('AFE-2025-014.01.01', '6110'), debit: 85000 },
                 { account: ac.grir, credit: 85000 },
               ],
               memo: t('`SES-70388` ثبت می‌شود و تعهد سفارش پیمانکار راه‌سازی 85,000 کم می‌شود.', '`SES-70388` is entered and the road contractor’s PO commitment falls by 85,000.'),
@@ -684,11 +689,11 @@ export const lesson: Lesson = {
         },
         {
           type: 'exercise',
-          title: t('تمرین 2: تعهد، GRN و SES روی تکمیل چاه AR-09', 'Exercise 2: Commitments, GRN and SES on the AR-09 completion'),
+          title: t('تمرین 2: تعهد، GRN و SES روی تکمیل چاه AR-08', 'Exercise 2: Commitments, GRN and SES on the AR-08 completion'),
           difficulty: 'medium',
           problem: t(
-            'عنصر `AFE-2024-022.03` (تکمیل و آزمایش چاه AR-09) بودجه 1,500,000 دارد و هنوز هیچ هزینه یا تعهدی ندارد. رویدادهای ماه: (1) `PO-45302` تجهیزات تکمیل (پکر و آویزگاه لوله مغزی) 420,000، مستقیم به حساب WBS. (2) `PO-45330` فراخوان آزمایش چاه از قرارداد خدمات: 8 روز × 22,000. (3) `GRN-50402`: بخشی از تجهیزات به ارزش 300,000 رسید. (4) `SES-70455`: 5 روز آزمایش چاه پذیرفته شد. (5) فاکتور `GRN-50402` به مبلغ 306,000 رسید و 6,000 کرایه حمل اضافه تأیید شد. برای هر رویداد تعهد، هزینه واقعی و بودجه در دسترس را حساب کنید، ثبت‌های ERP را بنویسید و بگویید مانده GR/IR در پایان ماه چقدر است و چه معنایی دارد.',
-            'Element `AFE-2024-022.03` (complete and test well AR-09) has a budget of 1,500,000 and no cost or commitment yet. The month’s events: (1) `PO-45302` completion equipment (packer and tubing hanger) 420,000, charged directly to the WBS. (2) `PO-45330` well-testing call-off under the services contract: 8 days × 22,000. (3) `GRN-50402`: part of the equipment worth 300,000 is received. (4) `SES-70455`: 5 days of well testing are accepted. (5) The invoice for `GRN-50402` arrives at 306,000 and 6,000 of extra freight is approved. For each event calculate commitments, actuals and available budget, write the ERP postings, and state the month-end GR/IR balance and what it means.',
+            'عنصر `AFE-2024-018.03` (تکمیل و آزمایش چاه AR-08) بودجه 1,500,000 دارد و هنوز هیچ هزینه یا تعهدی ندارد. رویدادهای ماه: (1) `PO-45302` تجهیزات تکمیل (پکر و آویزگاه لوله مغزی) 420,000، مستقیم به حساب WBS. (2) `PO-45330` فراخوان آزمایش چاه از قرارداد خدمات: 8 روز × 22,000. (3) `GRN-50402`: بخشی از تجهیزات به ارزش 300,000 رسید. (4) `SES-70455`: 5 روز آزمایش چاه پذیرفته شد. (5) فاکتور `GRN-50402` به مبلغ 306,000 رسید و 6,000 کرایه حمل اضافه تأیید شد. برای هر رویداد تعهد، هزینه واقعی و بودجه در دسترس را حساب کنید، ثبت‌های ERP را بنویسید و بگویید مانده GR/IR در پایان ماه چقدر است و چه معنایی دارد.',
+            'Element `AFE-2024-018.03` (complete and test well AR-08) has a budget of 1,500,000 and no cost or commitment yet. The month’s events: (1) `PO-45302` completion equipment (packer and tubing hanger) 420,000, charged directly to the WBS. (2) `PO-45330` well-testing call-off under the services contract: 8 days × 22,000. (3) `GRN-50402`: part of the equipment worth 300,000 is received. (4) `SES-70455`: 5 days of well testing are accepted. (5) The invoice for `GRN-50402` arrives at 306,000 and 6,000 of extra freight is approved. For each event calculate commitments, actuals and available budget, write the ERP postings, and state the month-end GR/IR balance and what it means.',
           ),
           hint: t(
             'سفارش‌ها ثبت مالی ندارند. GRN و SES تعهد را به هزینه واقعی تبدیل می‌کنند و فاکتور فقط تفاوت قیمت را به هزینه اضافه می‌کند.',
@@ -713,7 +718,7 @@ export const lesson: Lesson = {
                 {
                   date: t('3', '3'),
                   lines: [
-                    { account: ac.auc('AFE-2024-022.03', '6150'), debit: 300000 },
+                    { account: ac.auc('AFE-2024-018.03', '6150'), debit: 300000 },
                     { account: ac.grir, credit: 300000 },
                   ],
                   memo: t('`GRN-50402`', '`GRN-50402`'),
@@ -721,7 +726,7 @@ export const lesson: Lesson = {
                 {
                   date: t('4', '4'),
                   lines: [
-                    { account: ac.auc('AFE-2024-022.03', '6160'), debit: 110000 },
+                    { account: ac.auc('AFE-2024-018.03', '6160'), debit: 110000 },
                     { account: ac.grir, credit: 110000 },
                   ],
                   memo: t('`SES-70455`', '`SES-70455`'),
@@ -730,7 +735,7 @@ export const lesson: Lesson = {
                   date: t('5', '5'),
                   lines: [
                     { account: ac.grir, debit: 300000 },
-                    { account: ac.auc('AFE-2024-022.03', '6150'), debit: 6000 },
+                    { account: ac.auc('AFE-2024-018.03', '6150'), debit: 6000 },
                     { account: ac.ap, credit: 306000 },
                   ],
                   memo: t('تفاوت تأییدشده 6,000 به هزینه WBS اضافه می‌شود.', 'The approved 6,000 difference is added to the WBS cost.'),
@@ -767,8 +772,8 @@ export const lesson: Lesson = {
           title: t('تمرین 3: سند بودجه و مسیر تأیید', 'Exercise 3: Budget document and approval route'),
           difficulty: 'medium',
           problem: t(
-            '`AFE-2024-022` (حفاری و تکمیل چاه AR-09) با بودجه اولیه 6,000,000 تصویب شده است: `.01` آماده‌سازی 400,000، `.02` حفاری 3,600,000، `.03` تکمیل 1,500,000 و `.04` خط جریان 500,000. سه درخواست تغییر رسیده است: (1) انتقال 120,000 از `.01` به `.02`؛ (2) افزایش 450,000 برای `.02` به دلیل هرزروی گل در یک لایه شکافدار؛ (3) برگشت 200,000 از `.04` چون مسیر خط جریان کوتاه‌تر شد. سیاست مسار پترولیوم: مجموع افزایش‌ها (بدون کسر برگشت‌ها) تا 10٪ AFE اولیه با تأیید مدیر دارایی؛ بیش از آن AFE تکمیلی با تأیید شرکا. (الف) بودجه جاری هر عنصر و جمع AFE را حساب کنید. (ب) مسیر تأیید افزایش را تعیین کنید. (ج) اگر ماه بعد افزایش دیگری به مبلغ 200,000 لازم شود، چه می‌شود؟',
-            '`AFE-2024-022` (drill and complete well AR-09) was approved at an original 6,000,000: `.01` site preparation 400,000, `.02` drilling 3,600,000, `.03` completion 1,500,000 and `.04` flowline 500,000. Three change requests arrive: (1) transfer 120,000 from `.01` to `.02`; (2) a supplement of 450,000 for `.02` because of mud losses in a fractured zone; (3) a return of 200,000 from `.04` because the flowline route is shorter. Masar Petroleum policy: cumulative supplements (returns not netted) up to 10% of the original AFE are approved by the asset manager; beyond that a supplementary AFE needs partner approval. (a) Calculate the current budget of each element and of the AFE. (b) Determine the approval route for the supplement. (c) What happens if another 200,000 supplement is needed next month?',
+            '`AFE-2024-018` (حفاری و تکمیل چاه AR-08) با بودجه اولیه 6,000,000 تصویب شده است: `.01` آماده‌سازی 400,000، `.02` حفاری 3,600,000، `.03` تکمیل 1,500,000 و `.04` خط جریان 500,000. سه درخواست تغییر رسیده است: (1) انتقال 120,000 از `.01` به `.02`؛ (2) افزایش 450,000 برای `.02` به دلیل هرزروی گل در یک لایه شکافدار؛ (3) برگشت 200,000 از `.04` چون مسیر خط جریان کوتاه‌تر شد. سیاست مسار پترولیوم (طبق JOA نمونه): مجموع افزایش‌ها (بدون کسر برگشت‌ها) تا 10٪ AFE اولیه با تأیید داخلی و اطلاع به شرکا؛ بیش از آن AFE تکمیلی با رأی شرکا. (الف) بودجه جاری هر عنصر و جمع AFE را حساب کنید. (ب) مسیر تأیید افزایش را تعیین کنید. (ج) اگر ماه بعد افزایش دیگری به مبلغ 200,000 لازم شود، چه می‌شود؟',
+            '`AFE-2024-018` (drill and complete well AR-08) was approved at an original 6,000,000: `.01` site preparation 400,000, `.02` drilling 3,600,000, `.03` completion 1,500,000 and `.04` flowline 500,000. Three change requests arrive: (1) transfer 120,000 from `.01` to `.02`; (2) a supplement of 450,000 for `.02` because of mud losses in a fractured zone; (3) a return of 200,000 from `.04` because the flowline route is shorter. Masar Petroleum policy (per an illustrative JOA): cumulative supplements (returns not netted) up to 10% of the original AFE need internal approval and a notice to partners; beyond that a supplementary AFE voted by the partners. (a) Calculate the current budget of each element and of the AFE. (b) Determine the approval route for the supplement. (c) What happens if another 200,000 supplement is needed next month?',
           ),
           solution: [
             {
@@ -920,21 +925,21 @@ export const lesson: Lesson = {
   ],
   quiz: [
     {
-      q: t('عنصری بودجه 2,600,000، هزینه واقعی 2,140,000 و تعهدات 276,000 دارد. بودجه در دسترس چقدر است؟', 'An element has a budget of 2,600,000, actuals of 2,140,000 and commitments of 276,000. What is the available budget?'),
-      options: [t('460,000', '460,000'), t('184,000', '184,000'), t('2,324,000', '2,324,000'), t('276,000', '276,000')],
+      q: t('عنصر خدمات حفاری AR-07 بودجه 1,450,000، هزینه واقعی 980,000 و تعهدات 390,000 دارد. بودجه در دسترس چقدر است؟', 'The AR-07 drilling services element has a budget of 1,450,000, actuals of 980,000 and commitments of 390,000. What is the available budget?'),
+      options: [t('470,000', '470,000'), t('80,000', '80,000'), t('1,060,000', '1,060,000'), t('390,000', '390,000')],
       answer: 1,
       explain: t(
-        '2,600,000 − 2,140,000 − 276,000 = 184,000. پاسخ 460,000 وسوسه‌انگیز است، اما تعهدات را نادیده می‌گیرد؛ پولی که با سفارش قول داده شده دیگر آزاد نیست.',
-        '2,600,000 − 2,140,000 − 276,000 = 184,000. 460,000 is tempting but ignores commitments; money promised through a PO is no longer free.',
+        '1,450,000 − 980,000 − 390,000 = 80,000. پاسخ 470,000 وسوسه‌انگیز است، اما تعهدات را نادیده می‌گیرد؛ پولی که با سفارش قول داده شده دیگر آزاد نیست.',
+        '1,450,000 − 980,000 − 390,000 = 80,000. 470,000 is tempting but ignores commitments; money promised through a PO is no longer free.',
       ),
     },
     {
-      q: t('وقتی سفارش خرید 620,000 برای لوله جداری 9-5/8 اینچ روی WBS `AFE-2025-014.02.03` تأیید می‌شود، چه اتفاقی می‌افتد؟', 'When a 620,000 PO for 9-5/8" casing on WBS `AFE-2025-014.02.03` is approved, what happens?'),
+      q: t('وقتی سفارش خرید 600,000 برای لوله جداری 9-5/8 اینچ روی WBS `AFE-2025-014.02.03` تأیید می‌شود، چه اتفاقی می‌افتد؟', 'When a 600,000 PO for 9-5/8" casing on WBS `AFE-2025-014.02.03` is approved, what happens?'),
       options: [
-        t('بدهکار 1510 و بستانکار 2120، هر کدام 620,000', 'Debit 1510 and credit 2120, 620,000 each'),
-        t('بدهکار 1510 و بستانکار 2110، هر کدام 620,000', 'Debit 1510 and credit 2110, 620,000 each'),
-        t('تعهد سفارش 620,000 روی WBS ثبت می‌شود و دفتر کل تغییری نمی‌کند', 'A 620,000 PO commitment is recorded on the WBS and the ledger does not change'),
-        t('هزینه واقعی WBS 620,000 زیاد می‌شود', 'WBS actuals rise by 620,000'),
+        t('بدهکار 1510 و بستانکار 2120، هر کدام 600,000', 'Debit 1510 and credit 2120, 600,000 each'),
+        t('بدهکار 1510 و بستانکار 2110، هر کدام 600,000', 'Debit 1510 and credit 2110, 600,000 each'),
+        t('تعهد سفارش 600,000 روی WBS ثبت می‌شود و دفتر کل تغییری نمی‌کند', 'A 600,000 PO commitment is recorded on the WBS and the ledger does not change'),
+        t('هزینه واقعی WBS 600,000 زیاد می‌شود', 'WBS actuals rise by 600,000'),
       ],
       answer: 2,
       explain: t(
@@ -975,31 +980,31 @@ export const lesson: Lesson = {
       ),
     },
     {
-      q: t('عنصر خدمات حفاری: بودجه 600,000، واقعی 400,000، تعهد باز 100,000 و کار تعهدنشده 160,000. EAC و VAC کدام است؟', 'Drilling services element: budget 600,000, actuals 400,000, open commitments 100,000 and uncommitted work 160,000. What are EAC and VAC?'),
+      q: t('عنصر خدمات حفاری AR-07: بودجه 1,450,000، واقعی 980,000، تعهد باز 390,000 و کار تعهدنشده 64,000. EAC و VAC کدام است؟', 'AR-07 drilling services: budget 1,450,000, actuals 980,000, open commitments 390,000 and uncommitted work 64,000. What are EAC and VAC?'),
       options: [
-        t('EAC برابر 500,000؛ صرفه‌جویی 100,000', 'EAC 500,000; saving 100,000'),
-        t('EAC برابر 560,000؛ صرفه‌جویی 40,000', 'EAC 560,000; saving 40,000'),
-        t('EAC برابر 660,000؛ فراتر از بودجه 60,000', 'EAC 660,000; overrun 60,000'),
-        t('EAC برابر 760,000؛ فراتر از بودجه 160,000', 'EAC 760,000; overrun 160,000'),
+        t('EAC برابر 1,370,000؛ صرفه‌جویی 80,000', 'EAC 1,370,000; saving 80,000'),
+        t('EAC برابر 1,044,000؛ صرفه‌جویی 406,000', 'EAC 1,044,000; saving 406,000'),
+        t('EAC برابر 1,434,000؛ صرفه‌جویی 16,000', 'EAC 1,434,000; saving 16,000'),
+        t('EAC برابر 1,498,000؛ فراتر از بودجه 48,000', 'EAC 1,498,000; overrun 48,000'),
       ],
       answer: 2,
       explain: t(
-        'ETC = 100,000 + 160,000 = 260,000 و EAC = 400,000 + 260,000 = 660,000؛ VAC = 600,000 − 660,000، یعنی 60,000 فراتر از بودجه. گزینه 500,000 کار تعهدنشده را فراموش کرده است؛ همان خطایی که بودجه در دسترس را صرفه‌جویی می‌پندارد.',
-        'ETC = 100,000 + 160,000 = 260,000 and EAC = 400,000 + 260,000 = 660,000; VAC = 600,000 − 660,000, a 60,000 overrun. 500,000 forgets the uncommitted work, the same error as treating available budget as a saving.',
+        'ETC = 390,000 + 64,000 = 454,000 و EAC = 980,000 + 454,000 = 1,434,000؛ VAC = 1,450,000 − 1,434,000، یعنی 16,000 صرفه‌جویی. گزینه 1,370,000 کار تعهدنشده را فراموش کرده و کل 80,000 در دسترس را صرفه‌جویی پنداشته است.',
+        'ETC = 390,000 + 64,000 = 454,000 and EAC = 980,000 + 454,000 = 1,434,000; VAC = 1,450,000 − 1,434,000, a saving of 16,000. 1,370,000 forgets the uncommitted work and treats the whole 80,000 available as a saving.',
       ),
     },
     {
-      q: t('نماینده شرکت 7 روز دکل با نرخ 92,000 را در SES تأیید می‌کند. ERP چه ثبتی می‌زند؟', 'The company man accepts 7 rig days at 92,000 in an SES. What does the ERP post?'),
+      q: t('نماینده شرکت 7 روز دکل با نرخ 84,000 را در SES تأیید می‌کند. ERP چه ثبتی می‌زند؟', 'The company man accepts 7 rig days at 84,000 in an SES. What does the ERP post?'),
       options: [
-        t('بدهکار 1510 (WBS دکل) و بستانکار 2120، هر کدام 644,000', 'Debit 1510 (rig WBS) and credit 2120, 644,000 each'),
-        t('بدهکار 2120 و بستانکار 2110، هر کدام 644,000', 'Debit 2120 and credit 2110, 644,000 each'),
+        t('بدهکار 1510 (WBS دکل) و بستانکار 2120، هر کدام 588,000', 'Debit 1510 (rig WBS) and credit 2120, 588,000 each'),
+        t('بدهکار 2120 و بستانکار 2110، هر کدام 588,000', 'Debit 2120 and credit 2110, 588,000 each'),
         t('هیچ ثبتی تا رسیدن فاکتور', 'Nothing until the invoice arrives'),
-        t('بدهکار 5110 و بستانکار 1110، هر کدام 644,000', 'Debit 5110 and credit 1110, 644,000 each'),
+        t('بدهکار 5110 و بستانکار 1110، هر کدام 588,000', 'Debit 5110 and credit 1110, 588,000 each'),
       ],
       answer: 0,
       explain: t(
-        'SES برای خدمات همان GRN است: 7 × 92,000 = 644,000 بدهکار WBS (دارایی در جریان تکمیل) و بستانکار GR/IR، و تعهد سفارش دکل به همین اندازه کم می‌شود. «بدهکار 2120، بستانکار 2110» ثبت فاکتور است که بعداً می‌آید.',
-        'An SES is the GRN for services: 7 × 92,000 = 644,000 debited to the WBS (assets under construction) and credited to GR/IR, and the rig PO commitment falls by the same amount. “Debit 2120, credit 2110” is the invoice entry that comes later.',
+        'SES برای خدمات همان GRN است: 7 × 84,000 = 588,000 بدهکار WBS (دارایی در جریان تکمیل) و بستانکار GR/IR، و تعهد سفارش دکل به همین اندازه کم می‌شود. «بدهکار 2120، بستانکار 2110» ثبت فاکتور است که بعداً می‌آید.',
+        'An SES is the GRN for services: 7 × 84,000 = 588,000 debited to the WBS (assets under construction) and credited to GR/IR, and the rig PO commitment falls by the same amount. “Debit 2120, credit 2110” is the invoice entry that comes later.',
       ),
     },
     {

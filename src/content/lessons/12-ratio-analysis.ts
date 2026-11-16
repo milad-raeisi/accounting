@@ -2,7 +2,7 @@ import type { Lesson } from '../types'
 
 export const lesson: Lesson = {
   slug: 'ratio-analysis',
-  number: 12,
+  number: 18,
   level: 'advanced',
   minutes: 50,
   icon: 'TrendingUp',

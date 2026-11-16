@@ -7,7 +7,7 @@ import { Checkbox } from '@/components/animate-ui/components/radix/checkbox'
 import { Quiz } from '@/components/lesson/Quiz'
 import { Tabs, TabsList, TabsTrigger } from '@/components/animate-ui/components/radix/tabs'
 import { courses, isCourseId, type CourseId } from '@/content/courses'
-import { lessonsOf } from '@/content/lessons'
+import { loadCourseLessons, lessonsOf } from '@/content/lessons'
 import type { Question } from '@/content/types'
 import { useI18n } from '@/i18n/I18nProvider'
 import { examKey } from '@/lib/courseStats'
@@ -47,10 +47,8 @@ export default function PracticePage() {
   const [finished, setFinished] = useState(false)
   const root = useRef<HTMLDivElement>(null)
 
-  const pool = useMemo(
-    () => lessons.filter((l) => selected.has(l.number)).flatMap((l) => l.quiz.map((q) => ({ q, lesson: l.number, course: l.course }))),
-    [selected, lessons],
-  )
+  const poolSize = useMemo(() => lessons.filter((l) => selected.has(l.number)).reduce((s, l) => s + l.quizCount, 0), [selected, lessons])
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     if (!exam || finished) return
@@ -58,7 +56,15 @@ export default function PracticePage() {
     return () => window.clearInterval(id)
   }, [exam, finished, startedAt])
 
-  const start = () => {
+  const start = async () => {
+    setLoading(true)
+    let pool: Picked[]
+    try {
+      const full = await loadCourseLessons(course)
+      pool = full.filter((l) => selected.has(l.number)).flatMap((l) => l.quiz.map((q) => ({ q, lesson: l.number, course: l.course })))
+    } finally {
+      setLoading(false)
+    }
     setExam(shuffle(pool).slice(0, Math.min(count, pool.length)))
     setMeta({ course, full: selected.size === lessons.length })
     setStartedAt(Date.now())
@@ -155,11 +161,11 @@ export default function PracticePage() {
 
               <button
                 type="button"
-                disabled={!pool.length}
+                disabled={!poolSize || loading}
                 onClick={start}
                 className="mt-8 h-12 w-full rounded-full bg-primary text-base font-semibold text-primary-foreground transition hover:opacity-90 active:scale-[0.99] disabled:opacity-40"
               >
-                {t('practice.start')} · {num(Math.min(count, pool.length))} {t('quiz.question')}
+                {t('practice.start')} · {num(Math.min(count, poolSize))} {t('quiz.question')}
               </button>
             </>
           )}

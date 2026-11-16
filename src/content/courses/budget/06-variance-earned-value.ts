@@ -36,8 +36,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: t(
-            'جلسه ماهانه کمیته عملیات مشترک است. مهندس هزینه شریک الف گزارش AFE چاه AR-07 را ورق می‌زند: «طبق برنامه تا پایان ماه 2 قرار بود 4,400,000 خرج شود و شما 4,000,000 خرج کرده‌اید. یعنی 400,000 زیر بودجه‌اید؛ تبریک!» کنترل‌کننده پروژه مسار پترولیوم سر تکان می‌دهد: «نه. ما هم عقب‌تر از برنامه‌ایم و هم برای کاری که انجام داده‌ایم بیش از بودجه‌اش خرج کرده‌ایم.» هر دو یک گزارش را می‌خوانند؛ فرقشان در یک عدد سوم است: **ارزش کاری که واقعاً انجام شده است**.',
-            'It is the monthly operating committee meeting. Partner A’s cost engineer leafs through the AR-07 AFE report: “The plan said 4,400,000 would be spent by the end of month 2 and you have spent 4,000,000. So you are 400,000 under budget; congratulations!” Masar Petroleum’s project controller shakes his head: “No. We are behind schedule, and we have spent more than budget for the work we have done.” Both are reading the same report; the difference is a third number: **the value of the work actually done**.',
+            'جلسه ماهانه کمیته عملیات مشترک است. مهندس هزینه شریک الف گزارش AFE چاه AR-07 را ورق می‌زند: «طبق برنامه تا پایان ماه 2 قرار بود 5,000,000 خرج شود و شما 4,318,000 خرج کرده‌اید. یعنی 682,000 زیر بودجه‌اید؛ تبریک!» کنترل‌کننده پروژه مسار پترولیوم سر تکان می‌دهد: «نه. ما هم عقب‌تر از برنامه‌ایم و هم برای کاری که انجام داده‌ایم بیش از بودجه‌اش خرج کرده‌ایم.» هر دو یک گزارش را می‌خوانند؛ فرقشان در یک عدد سوم است: **ارزش کاری که واقعاً انجام شده است**.',
+            'It is the monthly operating committee meeting. Partner A’s cost engineer leafs through the AR-07 AFE report: “The plan said 5,000,000 would be spent by the end of month 2 and you have spent 4,318,000. So you are 682,000 under budget; congratulations!” Masar Petroleum’s project controller shakes his head: “No. We are behind schedule, and we have spent more than budget for the work we have done.” Both are reading the same report; the difference is a third number: **the value of the work actually done**.',
           ),
         },
         {
@@ -52,17 +52,17 @@ export const lesson: Lesson = {
           left: {
             title: t('آنچه مقایسه بودجه با واقعی می‌گوید', 'What budget versus actual says'),
             items: [
-              t('برنامه تا امروز 4,400,000؛ واقعی 4,000,000.', 'Plan to date 4,400,000; actual 4,000,000.'),
-              t('«انحراف مطلوب» 400,000.', '“Favourable variance” of 400,000.'),
+              t('برنامه تا امروز 5,000,000؛ واقعی 4,318,000.', 'Plan to date 5,000,000; actual 4,318,000.'),
+              t('«انحراف مطلوب» 682,000.', '“Favourable variance” of 682,000.'),
               t('نتیجه: همه چیز خوب است.', 'Conclusion: all is well.'),
             ],
           },
           right: {
             title: t('آنچه ارزش کسب‌شده می‌گوید', 'What earned value says'),
             items: [
-              t('ارزش کار انجام‌شده فقط 3,520,000 است.', 'The work done is worth only 3,520,000.'),
-              t('برای کاری به ارزش 3,520,000، مبلغ 4,000,000 خرج شده: 480,000 گران‌تر.', '4,000,000 was spent for work worth 3,520,000: 480,000 too expensive.'),
-              t('کار انجام‌شده 880,000 کمتر از برنامه است: عقب‌افتادگی.', 'Work done is 880,000 behind the plan: a schedule slip.'),
+              t('ارزش کار انجام‌شده فقط 4,000,000 است.', 'The work done is worth only 4,000,000.'),
+              t('برای کاری به ارزش 4,000,000، مبلغ 4,318,000 خرج شده: 318,000 گران‌تر.', '4,318,000 was spent for work worth 4,000,000: 318,000 too expensive.'),
+              t('کار انجام‌شده 1,000,000 کمتر از برنامه است: عقب‌افتادگی.', 'Work done is 1,000,000 behind the plan: a schedule slip.'),
             ],
           },
         },
@@ -143,8 +143,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: t(
-            'EVM با سه عدد کار می‌کند که همگی با واحد پول بیان می‌شوند. **بودجه در تکمیل** (BAC: Budget at Completion) بودجه کل کار است؛ برای AFE چاه AR-07 همان 8,800,000. **ارزش برنامه‌ریزی‌شده** (PV: Planned Value) بودجه کاری است که طبق برنامه پایه باید تا امروز انجام می‌شد. **ارزش کسب‌شده** (EV: Earned Value) بودجه کاری است که واقعاً انجام شده است. **هزینه واقعی** (AC: Actual Cost) پولی است که برای همان کار در دفتر کل ثبت شده است.',
-            'EVM works with three numbers, all in money. The **budget at completion (BAC)** is the total budget of the work; for the AR-07 AFE it is 8,800,000. **Planned value (PV)** is the budget of the work the baseline plan says should be done by today. **Earned value (EV)** is the budget of the work actually done. **Actual cost (AC)** is the money posted to the ledger for that work.',
+            'EVM با سه عدد کار می‌کند که همگی با واحد پول بیان می‌شوند. **بودجه در تکمیل** (BAC: Budget at Completion) بودجه کل کار توزیع‌شده است؛ برای AFE چاه AR-07 برآورد پایه 8,000,000. ذخیره احتیاطی 800,000 که در سطح 1 مانده، ذخیره مدیریت است و بیرون از خط مبنای EVM نگه داشته می‌شود. **ارزش برنامه‌ریزی‌شده** (PV: Planned Value) بودجه کاری است که طبق برنامه پایه باید تا امروز انجام می‌شد. **ارزش کسب‌شده** (EV: Earned Value) بودجه کاری است که واقعاً انجام شده است. **هزینه واقعی** (AC: Actual Cost) پولی است که برای همان کار در دفتر کل ثبت شده است.',
+            'EVM works with three numbers, all in money. The **budget at completion (BAC)** is the total distributed budget of the work; for the AR-07 AFE it is the base estimate of 8,000,000. The 800,000 contingency held at level 1 is a management reserve and stays outside the EVM baseline. **Planned value (PV)** is the budget of the work the baseline plan says should be done by today. **Earned value (EV)** is the budget of the work actually done. **Actual cost (AC)** is the money posted to the ledger for that work.',
           ),
         },
         {
@@ -167,11 +167,11 @@ export const lesson: Lesson = {
         { type: 'h', text: t('سنجش پیشرفت حفاری AR-07 با نقاط عطف', 'Measuring AR-07 drilling progress with milestones') },
         {
           type: 'table',
-          caption: t('وزن نقاط عطف عنصر دکل `.02.01` (تجمعی)', 'Milestone weights for the rig element `.02.01` (cumulative)'),
+          caption: t('وزن نقاط عطف عنصر نرخ روزانه دکل `.02.01` (تجمعی)', 'Milestone weights for the rig day-rate element `.02.01` (cumulative)'),
           head: [t('نقطه عطف', 'Milestone'), t('وزن تجمعی', 'Cumulative weight'), t('وضعیت در پایان ماه 2', 'Status at end of month 2')],
           rows: [
-            [t('انتقال دکل، نصب و شروع حفاری (Spud)', 'Rig move, rig-up and spud'), t('15٪', '15%'), t('انجام شد', 'Done')],
-            [t('مقطع 17-1/2 اینچ و نصب لوله جداری 13-3/8 اینچ', '17-1/2" section and 13-3/8" casing set'), t('35٪', '35%'), t('انجام شد', 'Done')],
+            [t('نصب دکل و شروع حفاری (Spud)', 'Rig-up and spud'), t('10٪', '10%'), t('انجام شد', 'Done')],
+            [t('مقطع 17-1/2 اینچ و نصب لوله جداری 13-3/8 اینچ', '17-1/2" section and 13-3/8" casing set'), t('30٪', '30%'), t('انجام شد', 'Done')],
             [t('مقطع 12-1/4 اینچ و نصب لوله جداری 9-5/8 اینچ', '12-1/4" section and 9-5/8" casing set'), t('60٪', '60%'), t('انجام شد', 'Done')],
             [t('حفاری مقطع 8-1/2 اینچ تا عمق نهایی (TD)', '8-1/2" section drilled to total depth (TD)'), t('85٪', '85%'), t('در جریان؛ لوله در 2,850 متری گیر کرده', 'In progress; pipe stuck at 2,850 m')],
             [t('نمودارگیری، نصب و سیمان‌کاری لاینر 7 اینچ، آزادسازی دکل', 'Logging, 7" liner run and cemented, rig release'), t('100٪', '100%'), t('مانده', 'Remaining')],
@@ -226,7 +226,7 @@ export const lesson: Lesson = {
           rows: [
             [t('بیشتر از 1', 'Above 1'), t('ارزان‌تر از بودجه: هر 1 خرج، بیش از 1 ارزش کار داده است', 'Under cost: each 1 spent earned more than 1 of work'), t('جلوتر از برنامه', 'Ahead of schedule')],
             [t('برابر 1', 'Equal to 1'), t('طبق بودجه', 'On budget'), t('طبق برنامه', 'On schedule')],
-            [t('کمتر از 1', 'Below 1'), t('گران‌تر از بودجه: CPI برابر 0.88 یعنی هر 1 خرج، 0.88 ارزش کار داده است', 'Over cost: a CPI of 0.88 means each 1 spent earned 0.88 of work'), t('عقب‌تر از برنامه: SPI برابر 0.80 یعنی 80٪ کار برنامه‌ریزی‌شده انجام شده است', 'Behind schedule: an SPI of 0.80 means 80% of the planned work is done')],
+            [t('کمتر از 1', 'Below 1'), t('گران‌تر از بودجه: CPI برابر 0.93 یعنی هر 1 خرج، 0.93 ارزش کار داده است', 'Over cost: a CPI of 0.93 means each 1 spent earned 0.93 of work'), t('عقب‌تر از برنامه: SPI برابر 0.80 یعنی 80٪ کار برنامه‌ریزی‌شده انجام شده است', 'Behind schedule: an SPI of 0.80 means 80% of the planned work is done')],
           ],
         },
         {
@@ -246,8 +246,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: t(
-            'وضعیت `AFE-2025-014` در پایان ماه 2 را با EVM می‌خوانیم. BAC همان بودجه اولیه 8,800,000 است. PV از برنامه پایه‌ای می‌آید که هنگام تصویب AFE ثابت شد؛ EV از وضعیت نقاط عطف و درصد پیشرفت هر عنصر؛ و AC همان هزینه واقعی گزارش ماهانه در درس کنترل بودجه و تعهدات است.',
-            'We read `AFE-2025-014` at the end of month 2 with EVM. BAC is the original budget of 8,800,000. PV comes from the baseline plan frozen at AFE approval; EV from the milestone status and percent complete of each element; and AC is the actual cost from the monthly report in the lesson on budget control and commitments.',
+            'وضعیت `AFE-2025-014` در پایان ماه 2 (میانه حفاری) را با EVM می‌خوانیم. BAC برآورد پایه 8,000,000 است. PV از برنامه پایه‌ای می‌آید که هنگام تصویب AFE ثابت شد؛ EV از وضعیت نقاط عطف و درصد پیشرفت هر عنصر؛ و AC همان هزینه واقعی گزارش ماهانه در درس کنترل بودجه و تعهدات است. عنصر مدیریت پروژه `.04.01` سطح تلاش است (EV برابر PV) و تجهیزات تکمیل و آزمایش چاه هنوز کاری انجام نداده‌اند.',
+            'We read `AFE-2025-014` at the end of month 2 (midway through drilling) with EVM. BAC is the base estimate of 8,000,000. PV comes from the baseline plan frozen at AFE approval; EV from the milestone status and percent complete of each element; and AC is the actual cost from the monthly report in the lesson on budget control and commitments. Project supervision `.04.01` is level of effort (EV equals PV), and completion and well testing have done no work yet.',
           ),
         },
         {
@@ -255,13 +255,15 @@ export const lesson: Lesson = {
           caption: t('PV، EV و AC به تفکیک عنصر WBS در پایان ماه 2', 'PV, EV and AC by WBS element at the end of month 2'),
           head: [t('عنصر WBS', 'WBS element'), t('BAC', 'BAC'), t('PV', 'PV'), t('پیشرفت', 'Progress'), t('EV', 'EV'), t('AC', 'AC')],
           rows: [
-            [t('`.01` آماده‌سازی محل', '`.01` Site preparation'), 400000, 400000, t('100٪', '100%'), 400000, 390000],
-            [t('`.02.01` دکل', '`.02.01` Rig'), 2600000, 2140000, t('60٪', '60%'), 1560000, 2140000],
-            [t('`.02.02` خدمات حفاری', '`.02.02` Drilling services'), 600000, 480000, t('70٪', '70%'), 420000, 400000],
-            [t('`.02.03` لوله جداری و OCTG', '`.02.03` Casing and tubulars'), 1900000, 1380000, t('60٪', '60%'), 1140000, 1070000],
-            [t('`.03` تکمیل و آزمایش', '`.03` Completion and testing'), 2300000, 0, t('0٪', '0%'), 0, 0],
-            [t('`.04` خط جریان و اتصال', '`.04` Flowline and tie-in'), 1000000, 0, t('0٪', '0%'), 0, 0],
-            [t('جمع', 'Total'), 8800000, 4400000, t('40٪', '40%'), 3520000, 4000000],
+            [t('`.01.01` عملیات عمرانی', '`.01.01` Civil works'), 380000, 380000, t('100٪', '100%'), 380000, 371000],
+            [t('`.01.02` جابه‌جایی و استقرار دکل', '`.01.02` Rig move and mobilisation'), 240000, 240000, t('100٪', '100%'), 240000, 227000],
+            [t('`.02.01` نرخ روزانه دکل', '`.02.01` Rig day rate'), 2100000, 1845000, t('60٪', '60%'), 1260000, 1520000],
+            [t('`.02.02` خدمات حفاری', '`.02.02` Drilling services'), 1450000, 1160000, t('70٪', '70%'), 1015000, 980000],
+            [t('`.02.03` لوله‌های جداری و مغزی', '`.02.03` Casing and tubulars'), 1350000, 1080000, t('60٪', '60%'), 810000, 910000],
+            [t('`.03` تکمیل و آزمایش', '`.03` Completion and testing'), 1880000, 0, t('0٪', '0%'), 0, 0],
+            [t('`.04.01` نظارت (سطح تلاش)', '`.04.01` Supervision (LOE)'), 420000, 245000, t('EV = PV', 'EV = PV'), 245000, 260000],
+            [t('`.04.02` بیمه و مجوزها', '`.04.02` Insurance and permits'), 180000, 50000, t('نقاط عطف', 'Milestones'), 50000, 50000],
+            [t('جمع', 'Total'), 8000000, 5000000, t('50٪', '50%'), 4000000, 4318000],
           ],
           numericCols: [1, 2, 3, 4, 5],
         },
@@ -270,12 +272,15 @@ export const lesson: Lesson = {
           caption: t('انحراف‌ها و شاخص‌ها؛ اعداد داخل پرانتز نامطلوب است', 'Variances and indices; figures in brackets are unfavourable'),
           head: [t('عنصر WBS', 'WBS element'), t('CV = EV − AC', 'CV = EV − AC'), t('SV = EV − PV', 'SV = EV − PV'), t('CPI', 'CPI'), t('SPI', 'SPI')],
           rows: [
-            [t('`.01`', '`.01`'), 10000, 0, 1.03, 1.0],
-            [t('`.02.01`', '`.02.01`'), t('(580,000)', '(580,000)'), t('(580,000)', '(580,000)'), 0.73, 0.73],
-            [t('`.02.02`', '`.02.02`'), 20000, t('(60,000)', '(60,000)'), 1.05, 0.88],
-            [t('`.02.03`', '`.02.03`'), 70000, t('(240,000)', '(240,000)'), 1.07, 0.83],
-            [t('`.03` و `.04`', '`.03` and `.04`'), 0, 0, na, na],
-            [t('جمع', 'Total'), t('(480,000)', '(480,000)'), t('(880,000)', '(880,000)'), 0.88, 0.8],
+            [t('`.01.01`', '`.01.01`'), 9000, 0, 1.02, 1.0],
+            [t('`.01.02`', '`.01.02`'), 13000, 0, 1.06, 1.0],
+            [t('`.02.01`', '`.02.01`'), t('(260,000)', '(260,000)'), t('(585,000)', '(585,000)'), 0.83, 0.68],
+            [t('`.02.02`', '`.02.02`'), 35000, t('(145,000)', '(145,000)'), 1.04, 0.88],
+            [t('`.02.03`', '`.02.03`'), t('(100,000)', '(100,000)'), t('(270,000)', '(270,000)'), 0.89, 0.75],
+            [t('`.03`', '`.03`'), 0, 0, na, na],
+            [t('`.04.01`', '`.04.01`'), t('(15,000)', '(15,000)'), 0, 0.94, 1.0],
+            [t('`.04.02`', '`.04.02`'), 0, 0, 1.0, 1.0],
+            [t('جمع', 'Total'), t('(318,000)', '(318,000)'), t('(1,000,000)', '(1,000,000)'), 0.93, 0.8],
           ],
           numericCols: [1, 2, 3, 4],
         },
@@ -285,47 +290,47 @@ export const lesson: Lesson = {
             {
               title: t('انحراف‌ها', 'Variances'),
               text: t(
-                'CV = 3,520,000 − 4,000,000، یعنی منفی 480,000: برای کار انجام‌شده 480,000 بیش از بودجه‌اش خرج شده است. SV = 3,520,000 − 4,400,000، یعنی منفی 880,000: کاری به ارزش 880,000 از برنامه عقب است.',
-                'CV = 3,520,000 − 4,000,000 = −480,000: the work done cost 480,000 more than its budget. SV = 3,520,000 − 4,400,000 = −880,000: work worth 880,000 is behind the plan.',
+                'CV = 4,000,000 − 4,318,000، یعنی منفی 318,000: برای کار انجام‌شده 318,000 بیش از بودجه‌اش خرج شده است. SV = 4,000,000 − 5,000,000، یعنی منفی 1,000,000: کاری به ارزش 1,000,000 از برنامه عقب است.',
+                'CV = 4,000,000 − 4,318,000 = −318,000: the work done cost 318,000 more than its budget. SV = 4,000,000 − 5,000,000 = −1,000,000: work worth 1,000,000 is behind the plan.',
               ),
             },
             {
               title: t('شاخص‌ها', 'Indices'),
-              text: t('CPI = 3,520,000 ÷ 4,000,000 = 0.88؛ SPI = 3,520,000 ÷ 4,400,000 = 0.80.', 'CPI = 3,520,000 ÷ 4,000,000 = 0.88; SPI = 3,520,000 ÷ 4,400,000 = 0.80.'),
+              text: t('CPI = 4,000,000 ÷ 4,318,000 = 0.93؛ SPI = 4,000,000 ÷ 5,000,000 = 0.80.', 'CPI = 4,000,000 ÷ 4,318,000 = 0.93; SPI = 4,000,000 ÷ 5,000,000 = 0.80.'),
             },
             {
               title: t('سه EAC مبتنی بر شاخص', 'Three index-based EACs'),
               text: t(
-                'BAC ÷ CPI = 8,800,000 ÷ 0.88 = 10,000,000. AC + (BAC − EV) = 4,000,000 + 5,280,000 = 9,280,000. AC + (BAC − EV) ÷ (CPI × SPI) = 4,000,000 + 5,280,000 ÷ 0.704 = 4,000,000 + 7,500,000 = 11,500,000.',
-                'BAC ÷ CPI = 8,800,000 ÷ 0.88 = 10,000,000. AC + (BAC − EV) = 4,000,000 + 5,280,000 = 9,280,000. AC + (BAC − EV) ÷ (CPI × SPI) = 4,000,000 + 5,280,000 ÷ 0.704 = 4,000,000 + 7,500,000 = 11,500,000.',
+                'BAC ÷ CPI = 8,000,000 × 4,318,000 ÷ 4,000,000 = 8,636,000. AC + (BAC − EV) = 4,318,000 + 4,000,000 = 8,318,000. AC + (BAC − EV) ÷ (CPI × SPI) = 4,318,000 + 4,000,000 × 4,318,000 ÷ 3,200,000 = 4,318,000 + 5,397,500 = 9,715,500 (چون CPI × SPI = 3,200,000 ÷ 4,318,000، یعنی حدود 0.741).',
+                'BAC ÷ CPI = 8,000,000 × 4,318,000 ÷ 4,000,000 = 8,636,000. AC + (BAC − EV) = 4,318,000 + 4,000,000 = 8,318,000. AC + (BAC − EV) ÷ (CPI × SPI) = 4,318,000 + 4,000,000 × 4,318,000 ÷ 3,200,000 = 4,318,000 + 5,397,500 = 9,715,500 (because CPI × SPI = 3,200,000 ÷ 4,318,000, about 0.741).',
               ),
             },
             {
               title: t('ETC، VAC و TCPI', 'ETC, VAC and TCPI'),
               text: t(
-                'با EAC برابر 10,000,000: ETC = 10,000,000 − 4,000,000 = 6,000,000 و VAC = 8,800,000 − 10,000,000، یعنی منفی 1,200,000. TCPI = (8,800,000 − 3,520,000) ÷ (8,800,000 − 4,000,000) = 5,280,000 ÷ 4,800,000 = 1.10.',
-                'With an EAC of 10,000,000: ETC = 10,000,000 − 4,000,000 = 6,000,000 and VAC = 8,800,000 − 10,000,000 = −1,200,000. TCPI = (8,800,000 − 3,520,000) ÷ (8,800,000 − 4,000,000) = 5,280,000 ÷ 4,800,000 = 1.10.',
+                'با EAC برابر 8,636,000: ETC = 8,636,000 − 4,318,000 = 4,318,000 و VAC = 8,000,000 − 8,636,000، یعنی منفی 636,000 نسبت به برآورد پایه. TCPI برای ماندن در برآورد پایه: (8,000,000 − 4,000,000) ÷ (8,000,000 − 4,318,000) = 4,000,000 ÷ 3,682,000 = 1.09. اما TCPI برای ماندن در AFE مصوب، با ذخیره احتیاطی: 4,000,000 ÷ (8,800,000 − 4,318,000) = 4,000,000 ÷ 4,482,000 = 0.89.',
+                'With an EAC of 8,636,000: ETC = 8,636,000 − 4,318,000 = 4,318,000 and VAC = 8,000,000 − 8,636,000 = −636,000 against the base estimate. TCPI to stay within the base estimate: (8,000,000 − 4,000,000) ÷ (8,000,000 − 4,318,000) = 4,000,000 ÷ 3,682,000 = 1.09. But TCPI to stay within the approved AFE, with contingency: 4,000,000 ÷ (8,800,000 − 4,318,000) = 4,000,000 ÷ 4,482,000 = 0.89.',
               ),
             },
           ],
         },
         {
           type: 'table',
-          caption: t('مقایسه پیش‌بینی‌ها؛ اعداد داخل پرانتز فراتر رفتن از بودجه است', 'Comparing the forecasts; figures in brackets are overruns'),
-          head: [t('روش', 'Method'), t('EAC', 'EAC'), t('VAC', 'VAC'), t('فرض اصلی', 'Key assumption')],
+          caption: t('مقایسه پیش‌بینی‌ها با برآورد پایه 8,000,000 و AFE مصوب 8,800,000؛ پرانتز یعنی بیش از سقف', 'Comparing the forecasts with the 8,000,000 base and the approved 8,800,000 AFE; brackets mean above the limit'),
+          head: [t('روش', 'Method'), t('EAC', 'EAC'), t('در برابر برآورد پایه', 'Against the base'), t('در برابر AFE', 'Against the AFE'), t('فرض اصلی', 'Key assumption')],
           rows: [
-            [t('پایین به بالا (گزارش ماهانه)', 'Bottom-up (monthly report)'), 8994000, t('(194,000)', '(194,000)'), t('4 روز دکل اضافه و سیمان‌کاری اضافه لاینر؛ بقیه طبق قرارداد', '4 extra rig days and an extra liner cement job; the rest per contract')],
-            [t('AC + (BAC − EV)', 'AC + (BAC − EV)'), 9280000, t('(480,000)', '(480,000)'), t('بقیه کار با نرخ بودجه', 'Remaining work at budget rates')],
-            [t('BAC ÷ CPI', 'BAC ÷ CPI'), 10000000, t('(1,200,000)', '(1,200,000)'), t('ناکارایی تا امروز ادامه می‌یابد', 'Inefficiency so far continues')],
-            [t('با CPI × SPI', 'With CPI × SPI'), 11500000, t('(2,700,000)', '(2,700,000)'), t('عقب‌افتادگی هم هزینه را بالا می‌برد', 'Delay also drives cost up')],
+            [t('پایین به بالا (گزارش ماهانه)', 'Bottom-up (monthly report)'), 8118000, t('(118,000)', '(118,000)'), 682000, t('4 روز دکل اضافه؛ بقیه طبق سفارش‌ها و برآورد مهندسان', '4 extra rig days; the rest per orders and engineers’ estimates')],
+            [t('AC + (BAC − EV)', 'AC + (BAC − EV)'), 8318000, t('(318,000)', '(318,000)'), 482000, t('بقیه کار با نرخ بودجه', 'Remaining work at budget rates')],
+            [t('BAC ÷ CPI', 'BAC ÷ CPI'), 8636000, t('(636,000)', '(636,000)'), 164000, t('ناکارایی تا امروز ادامه می‌یابد', 'Inefficiency so far continues')],
+            [t('با CPI × SPI', 'With CPI × SPI'), 9715500, t('(1,715,500)', '(1,715,500)'), t('(915,500)', '(915,500)'), t('عقب‌افتادگی هم هزینه را بالا می‌برد', 'Delay also drives cost up')],
           ],
-          numericCols: [1, 2],
+          numericCols: [1, 2, 3],
         },
         {
           type: 'p',
           text: t(
-            'تفسیر حرفه‌ای این است: مشکل تقریباً همه در ردیف دکل است (CV منفی 580,000 از کل منفی 480,000؛ بقیه عناصر کمی مطلوب‌اند). PV و AC دکل هر دو 2,140,000 است؛ یعنی مقایسه ساده بودجه با واقعی روی این ردیف «صفر انحراف» نشان می‌دهد، در حالی که 20 روز دکل فقط 60٪ ارزش کار داده است. پیش‌بینی پایین به بالا (8,994,000) از EAC دوم (9,280,000) کمتر است؛ دلیلش این است که روش نقاط عطف برای مقطع 8-1/2 اینچ که تا 2,850 متر حفر شده هیچ اعتباری نمی‌دهد و EV دکل را کمتر از واقع نشان می‌دهد. پس کنترل‌کننده EAC رسمی را 8,994,000 گزارش می‌کند، اما دامنه ریسک تا 10,000,000 را هم کنار آن می‌گذارد و یادآوری می‌کند که برای ماندن در بودجه اولیه، بقیه کار باید با کارایی 1.10 انجام شود که واقع‌بینانه نیست.',
-            'The professional reading: almost the whole problem is the rig line (CV of −580,000 against a total of −480,000; the other elements are slightly favourable). PV and AC on the rig are both 2,140,000, so a plain budget-versus-actual comparison shows “zero variance” on this line, while 20 rig days have earned only 60% of the work. The bottom-up forecast (8,994,000) is below the second EAC (9,280,000) because the milestone method gives no credit for the 8-1/2" section already drilled to 2,850 m and so understates the rig’s EV. The controller therefore reports an official EAC of 8,994,000, shows a risk range up to 10,000,000 next to it, and points out that staying within the original budget would need a TCPI of 1.10, which is not realistic.',
+            'تفسیر حرفه‌ای این است: مشکل در حفاری متمرکز است؛ نرخ روزانه دکل (CV منفی 260,000 و SV منفی 585,000) و لوله‌های جداری و مغزی (CV منفی 100,000). به ردیف دکل دقت کنید: مقایسه ساده برنامه با واقعی 1,845,000 برنامه در برابر 1,520,000 خرج را «325,000 کم‌خرجی» نشان می‌دهد، در حالی که EV می‌گوید همین ردیف 260,000 گران‌تر و 585,000 عقب‌تر است. پیش‌بینی پایین به بالا (8,118,000) از EAC دوم (8,318,000) کمتر است؛ یک دلیلش این است که روش نقاط عطف برای مقطع 8-1/2 اینچ که تا 2,850 متر حفر شده هیچ اعتباری نمی‌دهد و EV دکل را کمتر از واقع نشان می‌دهد، و دلیل دیگر اینکه لوله‌های باقی‌مانده با قیمت قطعی خریده شده‌اند. پس کنترل‌کننده EAC رسمی را 8,118,000 گزارش می‌کند، دامنه ریسک تا 8,636,000 را هم کنارش می‌گذارد (هر دو به لطف ذخیره احتیاطی درون AFE)، و هشدار می‌دهد که اگر عقب‌افتادگی ادامه یابد (EAC سوم، 9,715,500)، هزینه از 9,680,000 یعنی 110٪ AFE می‌گذرد و AFE تکمیلی با رأی شرکا لازم می‌شود.',
+            'The professional reading: the problem is concentrated in drilling; the rig day rate (CV −260,000 and SV −585,000) and casing and tubulars (CV −100,000). Look at the rig line: a plain plan-versus-actual comparison, 1,845,000 planned against 1,520,000 spent, shows a “325,000 underspend”, while EV says the same line is 260,000 over cost and 585,000 behind. The bottom-up forecast (8,118,000) is below the second EAC (8,318,000); one reason is that the milestone method gives no credit for the 8-1/2" section already drilled to 2,850 m and so understates the rig’s EV, another is that the remaining pipe is already bought at firm prices. The controller therefore reports an official EAC of 8,118,000, shows a risk range up to 8,636,000 next to it (both inside the AFE thanks to contingency), and warns that if the delay continues (the third EAC, 9,715,500) cost would pass 9,680,000, or 110% of the AFE, and a supplementary AFE voted by the partners would be needed.',
           ),
         },
         {
@@ -333,8 +338,8 @@ export const lesson: Lesson = {
           tone: 'warning',
           title: t('حفاری: هزینه تابع زمان است', 'Drilling: cost follows time'),
           text: t(
-            'در قرارداد روزکار، هزینه دکل و خدمات وابسته (نماینده شرکت، گل، نمودارگیری گل، اردوگاه) هر روز می‌چرخد، چه پیشرفت باشد چه نباشد. پس در حفاری، SPI پایین تقریباً همیشه CPI را هم پایین می‌کشد. اینکه CPI ردیف دکل دقیقاً برابر SPI آن است (0.73) تصادفی نیست: AC دکل همان PV آن است، چون هزینه دقیقاً به اندازه روزهای برنامه‌ریزی‌شده خرج شده، اما پیشرفت نه.',
-            'Under a day-rate contract, the rig and its spread (company man, mud, mud logging, camp) cost money every day whether or not there is progress. So in drilling a low SPI almost always drags CPI down too. It is no coincidence that the rig line’s CPI equals its SPI (0.73): the rig’s AC equals its PV, because exactly the planned days were spent, but not the planned progress.',
+            'در قرارداد روزکار، دکل و خدمات وابسته (نماینده شرکت، گل، نمودارگیری گل، اردوگاه) هر روز هزینه می‌سازند، چه پیشرفت باشد چه نباشد. پس در حفاری، SPI پایین تقریباً همیشه CPI را هم پایین می‌کشد. در ردیف دکل AR-07، SPI برابر 0.68 و CPI برابر 0.83 است: روزها سریع‌تر از پیشرفت می‌گذرند و هر روز اضافه، بی‌آنکه ارزشی کسب کند، 84,000 به AC اضافه می‌کند.',
+            'Under a day-rate contract, the rig and its spread (company man, mud, mud logging, camp) cost money every day whether or not there is progress. So in drilling a low SPI almost always drags CPI down too. On the AR-07 rig line SPI is 0.68 and CPI 0.83: days pass faster than progress, and each extra day adds 84,000 to AC without earning any value.',
           ),
         },
       ],
@@ -372,8 +377,8 @@ export const lesson: Lesson = {
                 { account: ac.accrued, credit: 18000 },
               ],
               memo: t(
-                'خدمات اضطراری نمودارگیری گل در 3 روز آخر ماه، بدون سفارش و بنابراین بدون SES؛ این مبلغ در AC برابر 4,000,000 گنجانده شده است.',
-                'Emergency mud-logging services in the last 3 days of the month, with no PO and therefore no SES; this amount is included in the AC of 4,000,000.',
+                'خدمات اضطراری نمودارگیری گل در 3 روز آخر ماه، بدون سفارش و بنابراین بدون SES؛ این مبلغ در AC برابر 4,318,000 گنجانده شده است.',
+                'Emergency mud-logging services in the last 3 days of the month, with no PO and therefore no SES; this amount is included in the AC of 4,318,000.',
               ),
             },
             {
@@ -414,8 +419,8 @@ export const lesson: Lesson = {
           tone: 'example',
           title: t('توضیح انحراف ردیف دکل در گزارش ماهانه', 'Rig-line variance comment in the monthly report'),
           text: t(
-            '**چه**: `.02.01` دکل؛ CV منفی 580,000 و SV منفی 580,000 (CPI و SPI برابر 0.73). **چرا**: گیر کردن لوله در عمق 2,850 متری مقطع 8-1/2 اینچ از روز 17؛ انحراف مقدار (روز اضافه) با نرخ قراردادی 92,000؛ انحراف قیمت ندارد. **اثر**: 4 روز دکل اضافه (368,000)؛ EAC عنصر 2,784,000 (184,000 بیش از بودجه)؛ EAC کل AFE برابر 8,994,000 (2.2٪ بیش از بودجه) با دامنه ریسک تا 10,000,000؛ شروع تولید حدود 4 روز دیرتر. **اقدام**: انتقال 50,000 و افزایش داخلی 134,000 با تأیید مدیر دارایی؛ بازبینی روش حفاری در لایه‌های ناپایدار. **مسئول**: سرپرست حفاری، تا پایان ماه 3.',
-            '**What**: `.02.01` rig; CV −580,000 and SV −580,000 (CPI and SPI 0.73). **Why**: stuck pipe at 2,850 m in the 8-1/2" section from day 17; a quantity variance (extra days) at the contract rate of 92,000; no price variance. **Impact**: 4 extra rig days (368,000); element EAC 2,784,000 (184,000 over budget); AFE EAC 8,994,000 (2.2% over) with a risk range up to 10,000,000; first production about 4 days late. **Action**: transfer of 50,000 and internal supplement of 134,000 approved by the asset manager; review of the drilling practice in unstable formations. **Owner**: drilling superintendent, by the end of month 3.',
+            '**چه**: `.02.01` نرخ روزانه دکل؛ CV منفی 260,000 و SV منفی 585,000 (CPI برابر 0.83 و SPI برابر 0.68). **چرا**: گیر کردن لوله در عمق 2,850 متری مقطع 8-1/2 اینچ از روز 17؛ انحراف مقدار (روز اضافه) با نرخ قراردادی 84,000؛ انحراف قیمت ندارد. **اثر**: 4 روز دکل اضافه (336,000)؛ EAC عنصر 2,436,000 (16٪ بیش از بودجه آن)؛ EAC کل 8,118,000، درون AFE مصوب 8,800,000، با دامنه ریسک تا 8,636,000؛ شروع تولید حدود 4 روز دیرتر. **اقدام**: سند انتقال `BD-2026-0207`: 196,000 از صرفه‌جویی لوله و خدمات حفاری و 140,000 از ذخیره احتیاطی (660,000 باقی می‌ماند)؛ بازبینی روش حفاری در لایه‌های ناپایدار. **مسئول**: سرپرست حفاری، تا پایان ماه 3.',
+            '**What**: `.02.01` rig day rate; CV −260,000 and SV −585,000 (CPI 0.83, SPI 0.68). **Why**: stuck pipe at 2,850 m in the 8-1/2" section from day 17; a quantity variance (extra days) at the contract rate of 84,000; no price variance. **Impact**: 4 extra rig days (336,000); element EAC 2,436,000 (16% over its budget); total EAC 8,118,000, inside the approved AFE of 8,800,000, with a risk range up to 8,636,000; first production about 4 days late. **Action**: transfer document `BD-2026-0207`: 196,000 from casing and drilling-services savings and 140,000 from contingency (660,000 left); review of the drilling practice in unstable formations. **Owner**: drilling superintendent, by the end of month 3.',
           ),
         },
         {
@@ -451,8 +456,8 @@ export const lesson: Lesson = {
           title: t('تمرین 1: انحراف قیمت و مقدار سیمان', 'Exercise 1: Cement price and quantity variances'),
           difficulty: 'easy',
           problem: t(
-            'برای سیمان‌کاری لوله جداری 9-5/8 اینچ چاه AR-09، برنامه 900 کیسه سیمان با نرخ 30 پیش‌بینی کرده بود. پیمانکار 1,050 کیسه با نرخ 28 مصرف و صورت‌حساب کرد (حجم چاه به دلیل ریزش دیواره بیشتر شد). انحراف قیمت، مقدار و کل را حساب کنید و صاحب هر کدام را بگویید.',
-            'For cementing the 9-5/8" casing on well AR-09, the programme planned 900 sacks at a rate of 30. The contractor used and billed 1,050 sacks at 28 (the hole volume was larger because of washouts). Calculate the price, quantity and total variances, and name the owner of each.',
+            'برای سیمان‌کاری لوله جداری 9-5/8 اینچ چاه AR-10، برنامه 900 کیسه سیمان با نرخ 30 پیش‌بینی کرده بود. پیمانکار 1,050 کیسه با نرخ 28 مصرف و صورت‌حساب کرد (حجم چاه به دلیل ریزش دیواره بیشتر شد). انحراف قیمت، مقدار و کل را حساب کنید و صاحب هر کدام را بگویید.',
+            'For cementing the 9-5/8" casing on well AR-10, the programme planned 900 sacks at a rate of 30. The contractor used and billed 1,050 sacks at 28 (the hole volume was larger because of washouts). Calculate the price, quantity and total variances, and name the owner of each.',
           ),
           solution: [
             {
@@ -482,8 +487,8 @@ export const lesson: Lesson = {
           title: t('تمرین 2: EV با نقاط عطف و شاخص‌ها', 'Exercise 2: EV from milestones, and the indices'),
           difficulty: 'medium',
           problem: t(
-            'عنصر حفاری `AFE-2024-022.02` چاه AR-09 بودجه 2,400,000 دارد. وزن تجمعی نقاط عطف: شروع حفاری 10٪، لوله جداری سطحی 30٪، لوله جداری میانی 55٪، عمق نهایی 85٪، لاینر و آزادسازی دکل 100٪. در تاریخ گزارش، لوله جداری میانی نصب شده و حفاری مقطع آخر در جریان است. PV طبق برنامه پایه 1,650,000 و AC برابر 1,500,000 است. EV، CV، SV، CPI و SPI را حساب و وضعیت را تفسیر کنید.',
-            'Drilling element `AFE-2024-022.02` on well AR-09 has a budget of 2,400,000. Cumulative milestone weights: spud 10%, surface casing 30%, intermediate casing 55%, total depth 85%, liner and rig release 100%. At the report date the intermediate casing is set and the last section is being drilled. PV from the baseline is 1,650,000 and AC is 1,500,000. Calculate EV, CV, SV, CPI and SPI and interpret the position.',
+            'عنصر حفاری `AFE-2024-020.02` چاه AR-10 بودجه 2,400,000 دارد. وزن تجمعی نقاط عطف: شروع حفاری 10٪، لوله جداری سطحی 30٪، لوله جداری میانی 55٪، عمق نهایی 85٪، لاینر و آزادسازی دکل 100٪. در تاریخ گزارش، لوله جداری میانی نصب شده و حفاری مقطع آخر در جریان است. PV طبق برنامه پایه 1,650,000 و AC برابر 1,500,000 است. EV، CV، SV، CPI و SPI را حساب و وضعیت را تفسیر کنید.',
+            'Drilling element `AFE-2024-020.02` on well AR-10 has a budget of 2,400,000. Cumulative milestone weights: spud 10%, surface casing 30%, intermediate casing 55%, total depth 85%, liner and rig release 100%. At the report date the intermediate casing is set and the last section is being drilled. PV from the baseline is 1,650,000 and AC is 1,500,000. Calculate EV, CV, SV, CPI and SPI and interpret the position.',
           ),
           hint: t('در روش نقاط عطف، فقط نقطه عطفی که کامل شده اعتبار دارد.', 'With milestones, only completed milestones earn credit.'),
           solution: [
@@ -510,8 +515,8 @@ export const lesson: Lesson = {
           title: t('تمرین 3: کدام EAC را گزارش کنیم؟', 'Exercise 3: Which EAC should we report?'),
           difficulty: 'medium',
           problem: t(
-            '`AFE-2024-030` (ارتقای واحد نم‌زدایی گاز با گلایکول در ایستگاه تقویت فشار) BAC برابر 4,000,000 دارد. در پایان ماه 6: PV = 2,500,000، EV = 2,000,000 و AC = 2,500,000. پیمانکار و مهندس پروژه برای بقیه کار ETC پایین به بالای 1,900,000 داده‌اند. (الف) CPI، SPI، سه EAC مبتنی بر شاخص و TCPI را حساب کنید. (ب) EAC پایین به بالا را حساب و نقد کنید. (ج) با سیاست 10٪ مسار پترولیوم، چه پیشنهادی به مدیریت می‌دهید؟',
-            '`AFE-2024-030` (upgrade of the glycol gas dehydration unit at the compressor station) has a BAC of 4,000,000. At the end of month 6: PV = 2,500,000, EV = 2,000,000 and AC = 2,500,000. The contractor and project engineer give a bottom-up ETC of 1,900,000 for the remaining work. (a) Calculate CPI, SPI, the three index-based EACs and TCPI. (b) Calculate and challenge the bottom-up EAC. (c) Under Masar Petroleum’s 10% policy, what do you recommend to management?',
+            '`AFE-2024-030` (تعویض جداکننده ورودی ایستگاه تولید میدان) BAC برابر 4,000,000 دارد. در پایان ماه 6: PV = 2,500,000، EV = 2,000,000 و AC = 2,500,000. پیمانکار و مهندس پروژه برای بقیه کار ETC پایین به بالای 1,900,000 داده‌اند. (الف) CPI، SPI، سه EAC مبتنی بر شاخص و TCPI را حساب کنید. (ب) EAC پایین به بالا را حساب و نقد کنید. (ج) این AFE ذخیره احتیاطی جداگانه ندارد؛ با قاعده 10٪ JOA، چه پیشنهادی به مدیریت می‌دهید؟',
+            '`AFE-2024-030` (replacement of the inlet separator at the field production station) has a BAC of 4,000,000. At the end of month 6: PV = 2,500,000, EV = 2,000,000 and AC = 2,500,000. The contractor and project engineer give a bottom-up ETC of 1,900,000 for the remaining work. (a) Calculate CPI, SPI, the three index-based EACs and TCPI. (b) Calculate and challenge the bottom-up EAC. (c) This AFE has no separate contingency; under the JOA’s 10% rule, what do you recommend to management?',
           ),
           solution: [
             {
@@ -619,7 +624,7 @@ export const lesson: Lesson = {
             t('انحراف کل را به قیمت، مقدار، محدوده و زمان‌بندی تجزیه کنید؛ هر کدام صاحب خودش را دارد.', 'Split the total variance into price, quantity, scope and timing; each has its own owner.'),
             t('CV = EV − AC و SV = EV − PV؛ CPI = EV ÷ AC و SPI = EV ÷ PV.', 'CV = EV − AC and SV = EV − PV; CPI = EV ÷ AC and SPI = EV ÷ PV.'),
             t('EACها فرض‌های متفاوت دارند؛ EAC رسمی پایین به بالا را با دامنه مبتنی بر شاخص و TCPI گزارش دهید.', 'EACs rest on different assumptions; report the official bottom-up EAC with an index-based range and TCPI.'),
-            t('در AFE چاه AR-07: EV برابر 3,520,000، CPI برابر 0.88، SPI برابر 0.80 و EAC رسمی 8,994,000 با دامنه ریسک تا 10,000,000.', 'For the AR-07 AFE: EV 3,520,000, CPI 0.88, SPI 0.80 and an official EAC of 8,994,000 with a risk range up to 10,000,000.'),
+            t('در AFE چاه AR-07: EV برابر 4,000,000، CPI برابر 0.93، SPI برابر 0.80 و EAC رسمی 8,118,000 با دامنه ریسک تا 8,636,000؛ هر دو درون AFE مصوب 8,800,000.', 'For the AR-07 AFE: EV 4,000,000, CPI 0.93, SPI 0.80 and an official EAC of 8,118,000 with a risk range up to 8,636,000; both inside the approved AFE of 8,800,000.'),
             t('EVM ثبت مالی ندارد، اما به AC کامل نیاز دارد: GRN، SES، کارکرد و تعهدی‌ها پیش از بستن ماه.', 'EVM posts nothing, but it needs a complete AC: GRNs, SESs, timesheets and accruals before month-end close.'),
             t('هر انحراف مهم را با «چه، چرا، اثر، اقدام، مسئول» توضیح دهید.', 'Explain every significant variance as “what, why, impact, action, owner”.'),
           ],
@@ -644,30 +649,30 @@ export const lesson: Lesson = {
   ],
   quiz: [
     {
-      q: t('EV برابر 3,520,000 و AC برابر 4,000,000 است. CV چقدر است؟', 'EV is 3,520,000 and AC is 4,000,000. What is CV?'),
-      options: [t('مثبت 480,000', '+480,000'), t('منفی 880,000', '−880,000'), t('منفی 480,000', '−480,000'), t('مثبت 400,000', '+400,000')],
+      q: t('EV برابر 4,000,000 و AC برابر 4,318,000 است. CV چقدر است؟', 'EV is 4,000,000 and AC is 4,318,000. What is CV?'),
+      options: [t('مثبت 318,000', '+318,000'), t('منفی 1,000,000', '−1,000,000'), t('منفی 318,000', '−318,000'), t('مثبت 682,000', '+682,000')],
       answer: 2,
       explain: t(
-        'CV = EV − AC = 3,520,000 − 4,000,000، یعنی منفی 480,000: کار انجام‌شده 480,000 گران‌تر از بودجه‌اش تمام شده است. مثبت 480,000 از جابه‌جا کردن ترتیب می‌آید؛ همیشه EV اول است.',
-        'CV = EV − AC = 3,520,000 − 4,000,000 = −480,000: the work done cost 480,000 more than its budget. +480,000 comes from reversing the order; EV always comes first.',
+        'CV = EV − AC = 4,000,000 − 4,318,000، یعنی منفی 318,000: کار انجام‌شده 318,000 گران‌تر از بودجه‌اش تمام شده است. مثبت 318,000 از جابه‌جا کردن ترتیب می‌آید؛ همیشه EV اول است.',
+        'CV = EV − AC = 4,000,000 − 4,318,000 = −318,000: the work done cost 318,000 more than its budget. +318,000 comes from reversing the order; EV always comes first.',
       ),
     },
     {
-      q: t('EV برابر 3,520,000 و PV برابر 4,400,000 است. SPI چقدر است؟', 'EV is 3,520,000 and PV is 4,400,000. What is SPI?'),
-      options: [t('0.80', '0.80'), t('1.25', '1.25'), t('0.88', '0.88'), t('1.10', '1.10')],
+      q: t('EV برابر 4,000,000 و PV برابر 5,000,000 است. SPI چقدر است؟', 'EV is 4,000,000 and PV is 5,000,000. What is SPI?'),
+      options: [t('0.80', '0.80'), t('1.25', '1.25'), t('0.93', '0.93'), t('1.09', '1.09')],
       answer: 0,
       explain: t(
-        'SPI = EV ÷ PV = 3,520,000 ÷ 4,400,000 = 0.80؛ یعنی 80٪ کار برنامه‌ریزی‌شده انجام شده است. 1.25 حاصل PV ÷ EV است و 0.88 همان CPI.',
-        'SPI = EV ÷ PV = 3,520,000 ÷ 4,400,000 = 0.80: 80% of the planned work is done. 1.25 is PV ÷ EV, and 0.88 is the CPI.',
+        'SPI = EV ÷ PV = 4,000,000 ÷ 5,000,000 = 0.80؛ یعنی 80٪ کار برنامه‌ریزی‌شده انجام شده است. 1.25 حاصل PV ÷ EV است و 0.93 همان CPI.',
+        'SPI = EV ÷ PV = 4,000,000 ÷ 5,000,000 = 0.80: 80% of the planned work is done. 1.25 is PV ÷ EV, and 0.93 is the CPI.',
       ),
     },
     {
-      q: t('BAC برابر 8,800,000 و CPI برابر 0.88 است. EAC با فرض ادامه کارایی فعلی چقدر است؟', 'BAC is 8,800,000 and CPI is 0.88. What is the EAC if current efficiency continues?'),
-      options: [t('7,744,000', '7,744,000'), t('9,280,000', '9,280,000'), t('8,800,000', '8,800,000'), t('10,000,000', '10,000,000')],
+      q: t('BAC برابر 8,000,000، EV برابر 4,000,000 و AC برابر 4,318,000 است. EAC با فرض ادامه کارایی فعلی چقدر است؟', 'BAC is 8,000,000, EV is 4,000,000 and AC is 4,318,000. What is the EAC if current efficiency continues?'),
+      options: [t('8,318,000', '8,318,000'), t('8,000,000', '8,000,000'), t('9,715,500', '9,715,500'), t('8,636,000', '8,636,000')],
       answer: 3,
       explain: t(
-        'EAC = BAC ÷ CPI = 8,800,000 ÷ 0.88 = 10,000,000. 7,744,000 از ضرب به‌جای تقسیم می‌آید و 9,280,000 فرمول دیگری است که فرض می‌کند بقیه کار با نرخ بودجه انجام شود.',
-        'EAC = BAC ÷ CPI = 8,800,000 ÷ 0.88 = 10,000,000. 7,744,000 comes from multiplying instead of dividing, and 9,280,000 is a different formula that assumes the rest of the work at budget rates.',
+        'EAC = BAC ÷ CPI = 8,000,000 × 4,318,000 ÷ 4,000,000 = 8,636,000. گزینه 8,318,000 فرمول دیگری است که فرض می‌کند بقیه کار با نرخ بودجه انجام شود و 9,715,500 فشار زمان‌بندی را هم اضافه می‌کند.',
+        'EAC = BAC ÷ CPI = 8,000,000 × 4,318,000 ÷ 4,000,000 = 8,636,000. 8,318,000 is a different formula that assumes the rest of the work at budget rates, and 9,715,500 also adds schedule pressure.',
       ),
     },
     {
@@ -717,12 +722,12 @@ export const lesson: Lesson = {
       ),
     },
     {
-      q: t('BAC = 8,800,000، EV = 3,520,000 و AC = 4,000,000. TCPI برای تمام کردن در BAC چقدر است؟', 'BAC = 8,800,000, EV = 3,520,000 and AC = 4,000,000. What TCPI is needed to finish within BAC?'),
-      options: [t('0.88', '0.88'), t('0.91', '0.91'), t('1.10', '1.10'), t('1.25', '1.25')],
+      q: t('BAC = 8,000,000، EV = 4,000,000 و AC = 4,318,000. TCPI برای تمام کردن در BAC چقدر است؟', 'BAC = 8,000,000, EV = 4,000,000 and AC = 4,318,000. What TCPI is needed to finish within BAC?'),
+      options: [t('0.93', '0.93'), t('0.92', '0.92'), t('1.09', '1.09'), t('1.25', '1.25')],
       answer: 2,
       explain: t(
-        'TCPI = (BAC − EV) ÷ (BAC − AC) = 5,280,000 ÷ 4,800,000 = 1.10؛ بقیه کار باید 10٪ کاراتر از بودجه انجام شود، در حالی که تا امروز 12٪ ناکاراتر بوده است. 0.91 معکوس همین نسبت است.',
-        'TCPI = (BAC − EV) ÷ (BAC − AC) = 5,280,000 ÷ 4,800,000 = 1.10: the rest of the work must be 10% more efficient than budget, while so far it has been 12% less efficient. 0.91 is the inverse ratio.',
+        'TCPI = (BAC − EV) ÷ (BAC − AC) = 4,000,000 ÷ 3,682,000 = 1.09؛ بقیه کار باید 9٪ کاراتر از بودجه انجام شود، در حالی که تا امروز حدود 7٪ ناکاراتر بوده است. 0.92 معکوس همین نسبت است. اگر سقف را AFE با ذخیره احتیاطی (8,800,000) بگیریم، TCPI به 0.89 می‌رسد و دست‌یافتنی است.',
+        'TCPI = (BAC − EV) ÷ (BAC − AC) = 4,000,000 ÷ 3,682,000 = 1.09: the rest of the work must be 9% more efficient than budget, while so far it has been about 7% less efficient. 0.92 is the inverse ratio. Using the AFE with contingency (8,800,000) as the limit, TCPI is 0.89, which is achievable.',
       ),
     },
     {
@@ -742,10 +747,10 @@ export const lesson: Lesson = {
     {
       q: t('کدام توضیح انحراف برای گزارش ماهانه به شرکا مناسب‌تر است؟', 'Which variance comment best suits the monthly partner report?'),
       options: [
-        t('«ردیف دکل 184,000 بیش از بودجه است.»', '“The rig line is 184,000 over budget.”'),
+        t('«ردیف دکل 336,000 بیش از بودجه است.»', '“The rig line is 336,000 over budget.”'),
         t('«به دلیل شرایط عملیاتی، هزینه‌ها کمی افزایش یافت.»', '“Due to operating conditions, costs rose slightly.”'),
         t('«بعداً توضیح داده می‌شود.»', '“Will be explained later.”'),
-        t('«دکل 184,000 بیش از بودجه (7٪): گیر کردن لوله، 4 روز اضافه × 92,000؛ EAC کل 8,994,000؛ افزایش داخلی تأیید شد؛ مسئول: سرپرست حفاری.»', '“Rig 184,000 over (7%): stuck pipe, 4 extra days × 92,000; total EAC 8,994,000; internal supplement approved; owner: drilling superintendent.”'),
+        t('«نرخ روزانه دکل 336,000 بیش از بودجه (16٪): گیر کردن لوله، 4 روز اضافه × 84,000؛ با صرفه‌جویی‌ها و 140,000 از ذخیره احتیاطی پوشش داده شد؛ EAC کل 8,118,000 درون AFE؛ مسئول: سرپرست حفاری.»', '“Rig day rate 336,000 over (16%): stuck pipe, 4 extra days × 84,000; covered by savings and 140,000 of contingency; total EAC 8,118,000 within the AFE; owner: drilling superintendent.”'),
       ],
       answer: 3,
       explain: t(

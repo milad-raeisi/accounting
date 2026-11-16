@@ -29,7 +29,7 @@ const blank = { fa: '', en: '' }
 
 export const lesson: Lesson = {
   slug: 'oman-e-invoicing',
-  number: 25,
+  number: 32,
   currency: 'omr',
   level: 'advanced',
   minutes: 35,

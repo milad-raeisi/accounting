@@ -4,7 +4,7 @@ const ac = {
   invSpares: { fa: 'موجودی قطعات یدکی: انبار مرکزی', en: 'Inventory: spare parts (Central Warehouse)' },
   invOctg: { fa: 'موجودی لوله‌های جداری و مغزی (OCTG): انبار میدان', en: 'Inventory: OCTG (Field Warehouse)' },
   invChem: { fa: 'موجودی مواد شیمیایی: انبار میدان', en: 'Inventory: chemicals (Field Warehouse)' },
-  aucAR11: { fa: 'دارایی در جریان ساخت: چاه AR-11', en: 'Assets under construction: well AR-11' },
+  aucAR11: { fa: 'دارایی در جریان ساخت: چاه AR-07', en: 'Assets under construction: well AR-07' },
   aucAR12: { fa: 'دارایی در جریان ساخت: چاه AR-12', en: 'Assets under construction: well AR-12' },
   grir: { fa: 'حساب واسط رسید کالا و فاکتور (GR/IR)', en: 'GR/IR clearing account' },
   consumPrd: { fa: 'هزینه اقلام مصرفی (مرکز هزینه CC-ARY-PRD)', en: 'Consumables expense (cost centre CC-ARY-PRD)' },
@@ -75,8 +75,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'روز 30 ماه است و واحد مالی مسار پترولیوم گزارش هزینه `AFE-2025-014` (حفاری چاه AR-11) را می‌بندد. گزارش نشان می‌دهد سیمان‌کاری جداری سطحی هنوز «تعهد» است، نه «هزینه واقعی»؛ در حالی که کار دو هفته پیش انجام شده و برگه‌های کارکرد روزانه‌اش امضا شده است. فقط کسی برگه ثبت خدمات را در ERP ثبت نکرده است. هم‌زمان، 60 شاخه لوله‌ای که برای چاه AR-12 آمده، با رسید روی سفارش AR-11 نشسته است. نتیجه: هزینه ماه کمتر از واقع، بدهی ناقص، دو AFE نادرست، و حسابرس شرکا که می‌پرسد «برگه کارکرد امضاشده این مبلغ کجاست؟»',
-            en: 'It is day 30 and Masar Petroleum’s Finance team is closing the cost report for `AFE-2025-014` (drilling well AR-11). The report still shows the surface casing cement job as a “commitment”, not an “actual”, although the work was done two weeks ago and its daily field tickets are signed. Nobody entered the service entry sheet in the ERP. Meanwhile, 60 joints of pipe that arrived for well AR-12 were received against the AR-11 order. The result: the month’s costs are understated, liabilities are incomplete, two AFEs are wrong, and the partners’ auditor asks, “Where is the signed field ticket for this amount?”',
+            fa: 'روز 30 ماه است و واحد مالی مسار پترولیوم گزارش هزینه `AFE-2025-014` (حفاری چاه AR-07) را می‌بندد. گزارش نشان می‌دهد سیمان‌کاری جداری سطحی هنوز «تعهد» است، نه «هزینه واقعی»؛ در حالی که کار دو هفته پیش انجام شده و برگه‌های کارکرد روزانه‌اش امضا شده است. فقط کسی برگه ثبت خدمات را در ERP ثبت نکرده است. هم‌زمان، 60 شاخه لوله‌ای که برای چاه AR-12 آمده، با رسید روی سفارش AR-07 نشسته است. نتیجه: هزینه ماه کمتر از واقع، بدهی ناقص، دو AFE نادرست، و حسابرس شرکا که می‌پرسد «برگه کارکرد امضاشده این مبلغ کجاست؟»',
+            en: 'It is day 30 and Masar Petroleum’s Finance team is closing the cost report for `AFE-2025-014` (drilling well AR-07). The report still shows the surface casing cement job as a “commitment”, not an “actual”, although the work was done two weeks ago and its daily field tickets are signed. Nobody entered the service entry sheet in the ERP. Meanwhile, 60 joints of pipe that arrived for well AR-12 were received against the AR-07 order. The result: the month’s costs are understated, liabilities are incomplete, two AFEs are wrong, and the partners’ auditor asks, “Where is the signed field ticket for this amount?”',
           },
         },
         {
@@ -140,8 +140,8 @@ export const lesson: Lesson = {
         {
           type: 'table',
           caption: {
-            fa: 'داده‌های رسید `GRN-26-0318`: لوله جداری چاه AR-11',
-            en: 'Data on `GRN-26-0318`: casing for well AR-11',
+            fa: 'داده‌های رسید `GRN-26-0318`: لوله جداری چاه AR-07',
+            en: 'Data on `GRN-26-0318`: casing for well AR-07',
           },
           head: [
             { fa: 'داده', en: 'Field' },
@@ -177,7 +177,7 @@ export const lesson: Lesson = {
             [
               { fa: 'موضوع هزینه', en: 'Cost object' },
               { fa: 'هزینه به کدام چاه، پروژه یا مرکز هزینه می‌رود', en: 'Which well, project or cost centre bears the cost' },
-              { fa: '`AFE-2025-014.02.03` (لوله‌گذاری و سیمان‌کاری AR-11)', en: '`AFE-2025-014.02.03` (AR-11 casing and cementing)' },
+              { fa: '`AFE-2025-014.02.03` (لوله‌گذاری و سیمان‌کاری AR-07)', en: '`AFE-2025-014.02.03` (AR-07 casing and cementing)' },
             ],
             [
               { fa: 'تاریخ سند و تاریخ ثبت', en: 'Document and posting dates' },
@@ -352,8 +352,8 @@ export const lesson: Lesson = {
                 { account: ac.aucAR11, credit: 108000 },
               ],
               memo: {
-                fa: '60 شاخه × 1,800 که برای چاه AR-12 بود، اشتباهی روی سفارش AR-11 رسید شده بود.',
-                en: '60 joints × 1,800 meant for well AR-12 had been received on the AR-11 order by mistake.',
+                fa: '60 شاخه × 1,800 که برای چاه AR-12 بود، اشتباهی روی سفارش AR-07 رسید شده بود.',
+                en: '60 joints × 1,800 meant for well AR-12 had been received on the AR-07 order by mistake.',
               },
             },
             {
@@ -390,8 +390,8 @@ export const lesson: Lesson = {
         {
           type: 'table',
           caption: {
-            fa: 'سفارش خدمات `PO-45090`: سیمان‌کاری جداری سطحی AR-11، خدمات چاه البرز (فراخوان از قرارداد چارچوب خدمات چاه)',
-            en: 'Service PO `PO-45090`: AR-11 surface casing cement job, Alborz Well Services (call-off under the well-services framework)',
+            fa: 'سفارش خدمات `PO-45090`: سیمان‌کاری جداری سطحی AR-07، خدمات چاه البرز (فراخوان از قرارداد چارچوب خدمات چاه)',
+            en: 'Service PO `PO-45090`: AR-07 surface casing cement job, Alborz Well Services (call-off under the well-services framework)',
           },
           head: [
             { fa: 'ردیف', en: 'Line' },
@@ -647,7 +647,7 @@ export const lesson: Lesson = {
           title: { fa: 'ثبت‌های خودکار پذیرش SES', en: 'Automatic SES acceptance postings' },
           entries: [
             {
-              date: { fa: 'SES-26-0131: سیمان‌کاری AR-11', en: 'SES-26-0131: AR-11 cementing' },
+              date: { fa: 'SES-26-0131: سیمان‌کاری AR-07', en: 'SES-26-0131: AR-07 cementing' },
               lines: [
                 { account: ac.aucAR11, debit: 45000 },
                 { account: ac.grir, credit: 45000 },
@@ -692,8 +692,8 @@ export const lesson: Lesson = {
         {
           type: 'table',
           caption: {
-            fa: 'عنصر `AFE-2025-014.02.03` (لوله‌گذاری و سیمان‌کاری AR-11)؛ بودجه 680,000 (فرضی)',
-            en: 'Element `AFE-2025-014.02.03` (AR-11 casing and cementing); budget 680,000 (illustrative)',
+            fa: 'عنصر `AFE-2025-014.02.03` (لوله‌گذاری و سیمان‌کاری AR-07)؛ بودجه 680,000 (فرضی)',
+            en: 'Element `AFE-2025-014.02.03` (AR-07 casing and cementing); budget 680,000 (illustrative)',
           },
           head: [
             { fa: 'پس از', en: 'After' },
@@ -737,7 +737,7 @@ export const lesson: Lesson = {
             { fa: 'اقدام', en: 'Action' },
           ],
           rows: [
-            [{ fa: 'GRN-26-0318 لوله AR-11', en: 'GRN-26-0318 AR-11 casing' }, 180000, 0, 12, { fa: 'عادی؛ منتظر فاکتور', en: 'Normal; awaiting invoice' }],
+            [{ fa: 'GRN-26-0318 لوله AR-07', en: 'GRN-26-0318 AR-07 casing' }, 180000, 0, 12, { fa: 'عادی؛ منتظر فاکتور', en: 'Normal; awaiting invoice' }],
             [{ fa: 'SES-26-0141 دکل AR-04', en: 'SES-26-0141 AR-04 rig' }, 144000, 0, 5, { fa: 'عادی', en: 'Normal' }],
             [{ fa: 'GRN-26-0119 شیر دروازه‌ای', en: 'GRN-26-0119 gate valves' }, 9600, 0, 96, { fa: 'پیگیری تأمین‌کننده؛ شاید فاکتور روی سفارش دیگری ثبت شده', en: 'Chase the supplier; the invoice may sit on another PO' }],
             [{ fa: 'فاکتور مواد شیمیایی `PO-45127`', en: 'Chemicals invoice `PO-45127`' }, 0, 12000, 41, { fa: 'کالا در راه است یا GRN جا مانده؛ با `WH-20` بررسی شود', en: 'Goods in transit or a missing GRN; check with `WH-20`' }],
@@ -778,7 +778,7 @@ export const lesson: Lesson = {
           rows: [
             [{ fa: 'کد شرکت', en: 'Company code' }, { fa: '`MP01`', en: '`MP01`' }, { fa: 'مسار پترولیوم، اپراتور مشارکت میدان آریا', en: 'Masar Petroleum, operator of the Arya field JV' }],
             [{ fa: 'مرکز هزینه', en: 'Cost centre' }, { fa: '`CC-ARY-PRD`، `CC-ARY-CMP`', en: '`CC-ARY-PRD`, `CC-ARY-CMP`' }, { fa: 'تولید میدان؛ ایستگاه تقویت فشار', en: 'Field production; compressor station' }],
-            [{ fa: 'عنصر WBS (AFE)', en: 'WBS element (AFE)' }, { fa: '`AFE-2025-014.02.03`', en: '`AFE-2025-014.02.03`' }, { fa: 'حفاری AR-11: لوله‌گذاری و سیمان‌کاری', en: 'AR-11 drilling: casing and cementing' }],
+            [{ fa: 'عنصر WBS (AFE)', en: 'WBS element (AFE)' }, { fa: '`AFE-2025-014.02.03`', en: '`AFE-2025-014.02.03`' }, { fa: 'حفاری AR-07: لوله‌گذاری و سیمان‌کاری', en: 'AR-07 drilling: casing and cementing' }],
             [{ fa: 'عنصر هزینه یا حساب کل', en: 'Cost element or GL account' }, { fa: '`1710`، `6110`', en: '`1710`, `6110`' }, { fa: 'دارایی در جریان ساخت چاه‌ها؛ تعمیر و نگهداری', en: 'AUC wells; repairs and maintenance' }],
             [{ fa: 'نشان بازیافت', en: 'Recoverable flag' }, { fa: '`R` یا `N`', en: '`R` or `N`' }, { fa: 'قابل بازیافت یا غیرقابل بازیافت', en: 'Recoverable or non-recoverable' }],
             [{ fa: 'دسته هزینه', en: 'Cost category' }, { fa: 'اکتشاف، توسعه، عملیات', en: 'Exploration, Development, Operating' }, { fa: 'دسته بازیافت طبق قرارداد', en: 'Recovery category per the contract' }],
@@ -813,8 +813,8 @@ export const lesson: Lesson = {
               en: '**SES above the PO limit**: accepting more work than the PO or its limit line. Control: the ERP blocks it; the fix is an approved PO amendment, not a new PO for the excess.',
             },
             {
-              fa: '**GRN روی موضوع هزینه اشتباه**: لوله AR-12 روی سفارش AR-11. کنترل: انتخاب سفارش با اسکن برچسب و بازبینی ماهانه AFE؛ اصلاح فقط با ابطال و ثبت دوباره.',
-              en: '**GRN to the wrong cost object**: AR-12 pipe on the AR-11 order. Control: PO selection by label scan and a monthly AFE review; fix only by reversal and re-posting.',
+              fa: '**GRN روی موضوع هزینه اشتباه**: لوله AR-12 روی سفارش AR-07. کنترل: انتخاب سفارش با اسکن برچسب و بازبینی ماهانه AFE؛ اصلاح فقط با ابطال و ثبت دوباره.',
+              en: '**GRN to the wrong cost object**: AR-12 pipe on the AR-07 order. Control: PO selection by label scan and a monthly AFE review; fix only by reversal and re-posting.',
             },
             {
               fa: '**اقلام کهنه GR/IR**: مانده‌هایی که ماه‌ها بی‌توضیح می‌مانند. کنترل: تحلیل سنی ماهانه و پیگیری اقلام بالای 90 روز.',
@@ -837,7 +837,7 @@ export const lesson: Lesson = {
             ],
             rows: [
               [{ fa: 'الف', en: 'a' }, { fa: '120 تن باریت از فراخوان قرارداد چارچوب برای موجودی `WH-20`', en: '120 t of barite on a framework call-off, for `WH-20` stock' }],
-              [{ fa: 'ب', en: 'b' }, { fa: '3 روز خدمات اسلیک‌لاین روی چاه AR-07 از فراخوان خدمات چاه؛ دستور کار به `CC-ARY-PRD` تسویه می‌شود', en: '3 days of slickline on well AR-07 under a well-services call-off; the work order settles to `CC-ARY-PRD`' }],
+              [{ fa: 'ب', en: 'b' }, { fa: '3 روز خدمات اسلیک‌لاین روی چاه AR-03 از فراخوان خدمات چاه؛ دستور کار به `CC-ARY-PRD` تسویه می‌شود', en: '3 days of slickline on well AR-03 under a well-services call-off; the work order settles to `CC-ARY-PRD`' }],
               [{ fa: 'ج', en: 'c' }, { fa: 'سرچاهی چاه AR-12 که مستقیم به محل دکل می‌رسد، روی `AFE-2026-014`', en: 'The AR-12 wellhead delivered straight to the rig site, on `AFE-2026-014`' }],
               [{ fa: 'د', en: 'd' }, { fa: 'کیت‌های سوپاپ K-201 که پیش از مصرف بازرسی ورودی لازم دارند', en: 'K-201 valve kits that need incoming inspection before use' }],
             ],
@@ -853,15 +853,15 @@ export const lesson: Lesson = {
               ],
               rows: [
                 [{ fa: 'الف', en: 'a' }, { fa: 'GRN', en: 'GRN' }, { fa: 'انبار، موجودی آزاد', en: 'Stock, unrestricted' }, { fa: 'موجودی مواد شیمیایی', en: 'Inventory: chemicals' }],
-                [{ fa: 'ب', en: 'b' }, { fa: 'SES', en: 'SES' }, { fa: 'دستور کار چاه AR-07', en: 'AR-07 work order' }, { fa: 'هزینه تعمیر و نگهداری چاه (دستور کار)', en: 'Well repairs and maintenance (work order)' }],
+                [{ fa: 'ب', en: 'b' }, { fa: 'SES', en: 'SES' }, { fa: 'دستور کار چاه AR-03', en: 'AR-03 work order' }, { fa: 'هزینه تعمیر و نگهداری چاه (دستور کار)', en: 'Well repairs and maintenance (work order)' }],
                 [{ fa: 'ج', en: 'c' }, { fa: 'GRN', en: 'GRN' }, { fa: 'WBS چاه AR-12 (سرمایه‌ای)', en: 'AR-12 WBS (capital)' }, { fa: 'دارایی در جریان ساخت: چاه AR-12', en: 'Assets under construction: well AR-12' }],
                 [{ fa: 'د', en: 'd' }, { fa: 'GRN', en: 'GRN' }, { fa: 'موجودی تحت بازرسی کیفیت', en: 'Quality-inspection stock' }, { fa: 'موجودی قطعات یدکی (ارزش‌گذاری‌شده، تا آزادسازی غیرقابل حواله)', en: 'Inventory: spare parts (valued, not issuable until released)' }],
               ],
             },
           ],
           answer: {
-            fa: 'الف، ج، د: GRN (موجودی شیمیایی، دارایی در جریان ساخت AR-12، موجودی قطعات تحت بازرسی)؛ ب: SES روی دستور کار AR-07. در همه، بستانکار GR/IR.',
-            en: 'a, c, d: GRN (chemicals inventory, AUC AR-12, spare parts in inspection stock); b: SES on the AR-07 work order. Credit GR/IR in every case.',
+            fa: 'الف، ج، د: GRN (موجودی شیمیایی، دارایی در جریان ساخت AR-12، موجودی قطعات تحت بازرسی)؛ ب: SES روی دستور کار AR-03. در همه، بستانکار GR/IR.',
+            en: 'a, c, d: GRN (chemicals inventory, AUC AR-12, spare parts in inspection stock); b: SES on the AR-03 work order. Credit GR/IR in every case.',
           },
         },
         {
@@ -945,8 +945,8 @@ export const lesson: Lesson = {
           title: { fa: 'تمرین 3: SES لوله مغزی سیار (Coiled Tubing)', en: 'Exercise 3: Coiled tubing SES' },
           difficulty: 'medium',
           problem: {
-            fa: 'برای اسیدکاری چاه AR-07، فراخوان خدمات `PO-45131` به خدمات چاه البرز داده شده است. ردیف‌های برنامه‌ریزی‌شده: کار دستگاه 3 روز × 7,500، نیتروژن 12 واحد × 900 و تجهیز کارگاه 6,000؛ به‌علاوه ردیف سقف 5,000. برگه‌های کارکرد این ردیف‌ها را دارند: کار 3 روز، نیتروژن 12 واحد، تجهیز کارگاه، 1 روز آماده‌به‌کار با نرخ قرارداد 4,000 به دلیل دیر رسیدن اسید که تأمینش با کارفرما بود، و نیم روز آماده‌به‌کار با مبلغ 2,000 به دلیل تعمیر سر تزریق خود پیمانکار. (الف) مبلغ قابل پذیرش SES را حساب کنید. (ب) چه کسی تأیید می‌کند؟ (ج) ثبت خودکار و مانده تعهد را بنویسید. هزینه روی دستور کار `WO-45230` می‌نشیند.',
-            en: 'For the acid job on well AR-07, call-off `PO-45131` was issued to Alborz Well Services. Planned lines: unit operating 3 days × 7,500, nitrogen 12 units × 900 and mobilisation 6,000; plus a 5,000 limit line. The field tickets show: 3 operating days, 12 units of nitrogen, mobilisation, 1 standby day at the contract rate of 4,000 because company-supplied acid arrived late, and half a standby day billed at 2,000 because the contractor’s own injector head was under repair. (a) Calculate the acceptable SES amount. (b) Who approves it? (c) Write the automatic entry and the remaining commitment. The cost goes to work order `WO-45230`.',
+            fa: 'برای اسیدکاری چاه AR-03، فراخوان خدمات `PO-45131` به خدمات چاه البرز داده شده است. ردیف‌های برنامه‌ریزی‌شده: کار دستگاه 3 روز × 7,500، نیتروژن 12 واحد × 900 و تجهیز کارگاه 6,000؛ به‌علاوه ردیف سقف 5,000. برگه‌های کارکرد این ردیف‌ها را دارند: کار 3 روز، نیتروژن 12 واحد، تجهیز کارگاه، 1 روز آماده‌به‌کار با نرخ قرارداد 4,000 به دلیل دیر رسیدن اسید که تأمینش با کارفرما بود، و نیم روز آماده‌به‌کار با مبلغ 2,000 به دلیل تعمیر سر تزریق خود پیمانکار. (الف) مبلغ قابل پذیرش SES را حساب کنید. (ب) چه کسی تأیید می‌کند؟ (ج) ثبت خودکار و مانده تعهد را بنویسید. هزینه روی دستور کار `WO-45230` می‌نشیند.',
+            en: 'For the acid job on well AR-03, call-off `PO-45131` was issued to Alborz Well Services. Planned lines: unit operating 3 days × 7,500, nitrogen 12 units × 900 and mobilisation 6,000; plus a 5,000 limit line. The field tickets show: 3 operating days, 12 units of nitrogen, mobilisation, 1 standby day at the contract rate of 4,000 because company-supplied acid arrived late, and half a standby day billed at 2,000 because the contractor’s own injector head was under repair. (a) Calculate the acceptable SES amount. (b) Who approves it? (c) Write the automatic entry and the remaining commitment. The cost goes to work order `WO-45230`.',
           },
           solution: [
             {
@@ -1008,8 +1008,8 @@ export const lesson: Lesson = {
           title: { fa: 'تمرین 4: تفکیک دوره در روز 30', en: 'Exercise 4: Cut-off on day 30' },
           difficulty: 'hard',
           problem: {
-            fa: 'امروز روز 30 و آخرین روز ماه است؛ دوره تا روز 5 ماه بعد باز می‌ماند. چهار رویداد زیر را بررسی کنید: (الف) ردیف 20 لوله جداری AR-11 (60 شاخه × 1,800) امروز در `WH-20` رسیده است. (ب) مرحله م2 پوشش ایستگاه (45,000) روز 28 تکمیل و آزمون DFT آن قبول شده، اما مهندس قرارداد می‌خواهد SES را روز 3 ماه بعد ثبت کند. (ج) دکل تعمیر چاه AR-04 در این ماه 4 روز با نرخ 12,000 کار کرده و گزارش‌های روزانه امضا شده‌اند. (د) فاکتور 12,000 مواد شیمیایی ثبت شده اما کالا نرسیده است. کدام ثبت‌ها با چه تاریخی در این ماه لازم‌اند؟ مانده خالص GR/IR این اقلام و اثر ثبت دیرهنگام ب و ج را حساب کنید.',
-            en: 'Today is day 30, the last day of the month; the period stays open until day 5 of next month. Review four events: (a) line 20 of the AR-11 casing (60 joints × 1,800) arrived at `WH-20` today. (b) Station coating milestone M2 (45,000) was completed on day 28 and passed its DFT test, but the contract engineer plans to enter the SES on day 3 of next month. (c) The AR-04 workover rig worked 4 days this month at 12,000 and the daily reports are signed. (d) A 12,000 chemicals invoice was posted but the goods have not arrived. Which postings belong in this month, with which dates? Calculate the net GR/IR balance from these items and the effect of posting b and c late.',
+            fa: 'امروز روز 30 و آخرین روز ماه است؛ دوره تا روز 5 ماه بعد باز می‌ماند. چهار رویداد زیر را بررسی کنید: (الف) ردیف 20 لوله جداری AR-07 (60 شاخه × 1,800) امروز در `WH-20` رسیده است. (ب) مرحله م2 پوشش ایستگاه (45,000) روز 28 تکمیل و آزمون DFT آن قبول شده، اما مهندس قرارداد می‌خواهد SES را روز 3 ماه بعد ثبت کند. (ج) دکل تعمیر چاه AR-04 در این ماه 4 روز با نرخ 12,000 کار کرده و گزارش‌های روزانه امضا شده‌اند. (د) فاکتور 12,000 مواد شیمیایی ثبت شده اما کالا نرسیده است. کدام ثبت‌ها با چه تاریخی در این ماه لازم‌اند؟ مانده خالص GR/IR این اقلام و اثر ثبت دیرهنگام ب و ج را حساب کنید.',
+            en: 'Today is day 30, the last day of the month; the period stays open until day 5 of next month. Review four events: (a) line 20 of the AR-07 casing (60 joints × 1,800) arrived at `WH-20` today. (b) Station coating milestone M2 (45,000) was completed on day 28 and passed its DFT test, but the contract engineer plans to enter the SES on day 3 of next month. (c) The AR-04 workover rig worked 4 days this month at 12,000 and the daily reports are signed. (d) A 12,000 chemicals invoice was posted but the goods have not arrived. Which postings belong in this month, with which dates? Calculate the net GR/IR balance from these items and the effect of posting b and c late.',
           },
           solution: [
             {
@@ -1213,13 +1213,13 @@ export const lesson: Lesson = {
     },
     {
       q: {
-        fa: 'انباردار GRN 60 شاخه لوله را اشتباهی روی سفارش چاه AR-11 ثبت کرده، در حالی که لوله‌ها برای AR-12 بوده‌اند. هنوز فاکتوری ثبت نشده است. راه درست چیست؟',
-        en: 'A storekeeper posted a GRN for 60 joints on the AR-11 order by mistake; the pipe was for AR-12. No invoice has been posted. What is the right fix?',
+        fa: 'انباردار GRN 60 شاخه لوله را اشتباهی روی سفارش چاه AR-07 ثبت کرده، در حالی که لوله‌ها برای AR-12 بوده‌اند. هنوز فاکتوری ثبت نشده است. راه درست چیست؟',
+        en: 'A storekeeper posted a GRN for 60 joints on the AR-07 order by mistake; the pipe was for AR-12. No invoice has been posted. What is the right fix?',
       },
       options: [
         { fa: 'سند مرجوعی به تأمین‌کننده صادر کنیم', en: 'Issue a return to vendor' },
         { fa: 'GRN را در ERP باطل کنیم و GRN درست را روی سفارش AR-12 ثبت کنیم', en: 'Reverse the GRN in the ERP and post the correct GRN on the AR-12 order' },
-        { fa: 'یک ثبت دستی دفتر کل از AR-11 به AR-12 بزنیم', en: 'Post a manual ledger entry from AR-11 to AR-12' },
+        { fa: 'یک ثبت دستی دفتر کل از AR-07 به AR-12 بزنیم', en: 'Post a manual ledger entry from AR-07 to AR-12' },
         { fa: 'کاری نکنیم؛ در پایان پروژه اصلاح می‌شود', en: 'Do nothing; it will be fixed at project close' },
       ],
       answer: 1,
