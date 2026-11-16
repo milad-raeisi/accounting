@@ -29,6 +29,12 @@ export const diagrams: Record<DiagramId, Lazy> = {
   'cycle-3d': lazy(() => import('./Cycle3D')),
   'inventory-fifo': lazy(() => import('./InventoryLayers')),
   ratios: lazy(() => import('./RatioGauges')),
+  'erp-modules': lazy(() => import('./ErpModules')),
+  'cost-recovery': lazy(() => import('./CostRecovery')),
+  'p2p-flow': lazy(() => import('./processFlows').then((m) => ({ default: m.P2PFlow }))),
+  'warehouse-flow': lazy(() => import('./processFlows').then((m) => ({ default: m.WarehouseFlow }))),
+  'asset-lifecycle': lazy(() => import('./processFlows').then((m) => ({ default: m.AssetLifecycle }))),
+  'work-order-flow': lazy(() => import('./processFlows').then((m) => ({ default: m.WorkOrderFlow }))),
 }
 
 export const diagramIds = Object.keys(diagrams) as DiagramId[]

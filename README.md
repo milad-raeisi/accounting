@@ -1,8 +1,17 @@
-# دفتر · Daftar، Accounting Academy
+# SBC Accounting Course · آموزش حسابداری SBC
 
-یک دوره تعاملی و دوزبانه (فارسی راست‌چین با فونت وزیرمتن / English) برای یادگیری حسابداری مالی؛ از معادله حسابداری تا تحلیل نسبت‌ها، با نمودارهای متحرک GSAP، صحنه‌های سه‌بعدی Three.js، کامپوننت‌های Animate UI و یک شبیه‌ساز زنده دفتر کل.
+دوره آموزش حسابداری مالی به فارسی و انگلیسی، تهیه‌شده توسط [SBC](https://sbc.om).
 
-An interactive, bilingual (Persian RTL + English) financial-accounting course built with React, Vite, Three.js, GSAP and [Animate UI](https://animate-ui.com).
+A financial accounting course in Persian and English, by [SBC](https://sbc.om) (Senior Block Chain LLC).
+
+## Brand
+
+The site follows the [SBC brand guide](https://sbc.om/brand/):
+
+- **Logo:** `public/brand/sbc-logo.svg`, used as supplied (never recoloured, stretched or given effects; at least 24px; clear space of a quarter of the mark's width). The "mark with name" lockup lives in `src/components/layout/Logo.tsx`.
+- **Colour:** Royal `#406AE4` for buttons and links, Ink `#1D1D1D` headings, Slate `#4D585F` body, Mist `#EDF1F4` page field, white cards, Tint `#EAF0F9` panels inside cards, Navy `#06132A` for dark mode. SBC Blue `#0098EA` is reserved for the mark. Tokens are in `src/index.css`.
+- **Type:** Bricolage Grotesque (semibold) for English headings, Inter Display for English text, Vazirmatn for Persian.
+- **Shape:** white cards with 30px corners and no borders, pill buttons, line icons inside a Royal to Azure circle.
 
 ## Features
 

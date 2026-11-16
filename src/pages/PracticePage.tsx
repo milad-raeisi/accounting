@@ -4,12 +4,14 @@ import { GraduationCap, RefreshCcw, Timer } from 'lucide-react'
 
 import { Checkbox } from '@/components/animate-ui/components/radix/checkbox'
 import { Quiz } from '@/components/lesson/Quiz'
-import { lessons } from '@/content/lessons'
+import { Tabs, TabsList, TabsTrigger } from '@/components/animate-ui/components/radix/tabs'
+import { courses, type CourseId } from '@/content/courses'
+import { lessonsOf } from '@/content/lessons'
 import type { Question } from '@/content/types'
 import { useI18n } from '@/i18n/I18nProvider'
 import { cn } from '@/lib/utils'
 
-type Picked = { q: Question; lesson: number }
+type Picked = { q: Question; lesson: number; course: CourseId }
 
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr]
@@ -23,14 +25,23 @@ function shuffle<T>(arr: T[]): T[] {
 export default function PracticePage() {
   const { t, tr, num, lang } = useI18n()
   const [count, setCount] = useState(15)
-  const [selected, setSelected] = useState<Set<number>>(() => new Set(lessons.map((l) => l.number)))
+  const [course, setCourse] = useState<CourseId>('accounting')
+  const lessons = useMemo(() => lessonsOf(course), [course])
+  const [selected, setSelected] = useState<Set<number>>(() => new Set(lessonsOf('accounting').map((l) => l.number)))
+  const chooseCourse = (c: CourseId) => {
+    setCourse(c)
+    setSelected(new Set(lessonsOf(c).map((l) => l.number)))
+  }
   const [exam, setExam] = useState<Picked[] | null>(null)
   const [startedAt, setStartedAt] = useState(0)
   const [elapsed, setElapsed] = useState(0)
   const [finished, setFinished] = useState(false)
   const root = useRef<HTMLDivElement>(null)
 
-  const pool = useMemo(() => lessons.filter((l) => selected.has(l.number)).flatMap((l) => l.quiz.map((q) => ({ q, lesson: l.number }))), [selected])
+  const pool = useMemo(
+    () => lessons.filter((l) => selected.has(l.number)).flatMap((l) => l.quiz.map((q) => ({ q, lesson: l.number, course: l.course }))),
+    [selected, lessons],
+  )
 
   useEffect(() => {
     if (!exam || finished) return
@@ -59,11 +70,21 @@ export default function PracticePage() {
       </div>
 
       {!exam ? (
-        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="mt-10 rounded-lg border bg-card p-6 sm:p-8">
+        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="mt-10 rounded-lg bg-card p-6 sm:p-8">
           {!lessons.length ? (
             <p className="text-center text-muted-foreground">{t('practice.empty')}</p>
           ) : (
             <>
+              <div className="text-sm font-semibold">{t('practice.course')}</div>
+              <Tabs value={course} onValueChange={(v) => chooseCourse(v as CourseId)} className="mt-3 mb-8">
+                <TabsList className="h-auto w-full max-w-full flex-wrap justify-start sm:w-fit">
+                  {courses.map((c) => (
+                    <TabsTrigger key={c.id} value={c.id} className="px-4 py-1.5">
+                      {tr(c.title)}
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
+              </Tabs>
               <div className="text-sm font-semibold">{t('practice.count')}</div>
               <div className="mt-3 flex flex-wrap gap-2">
                 {[10, 15, 25, 40].map((n) => (
@@ -128,10 +149,10 @@ export default function PracticePage() {
       ) : (
         <div className="mt-10">
           <div className="mb-4 flex items-center justify-between">
-            <span className="inline-flex items-center gap-2 rounded-full border bg-card px-3 py-1.5 text-sm tabular">
+            <span className="inline-flex items-center gap-2 rounded-full bg-card px-3 py-1.5 text-sm tabular">
               <Timer className="size-4 text-primary" /> {t('practice.timer')}: {mmss}
             </span>
-            <button type="button" onClick={() => setExam(null)} className="inline-flex items-center gap-2 rounded-full border bg-card px-3 py-1.5 text-sm hover:bg-muted">
+            <button type="button" onClick={() => setExam(null)} className="inline-flex items-center gap-2 rounded-full bg-card px-3 py-1.5 text-sm hover:bg-muted">
               <RefreshCcw className="size-4" /> {t('practice.new')}
             </button>
           </div>

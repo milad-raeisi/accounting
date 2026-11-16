@@ -7,7 +7,8 @@ import { BlockRenderer } from '@/components/lesson/BlockRenderer'
 import { Quiz } from '@/components/lesson/Quiz'
 import { LessonIcon } from '@/components/ui/LessonIcon'
 import { Rich } from '@/components/ui/Rich'
-import { lessonBySlug, neighbours } from '@/content/lessons'
+import { courseById } from '@/content/courses'
+import { lessonBySlug, lessonPath, neighbours } from '@/content/lessons'
 import { useI18n } from '@/i18n/I18nProvider'
 import { useProgress } from '@/lib/progress'
 import { cn } from '@/lib/utils'
@@ -45,8 +46,8 @@ export default function LessonPage() {
     return (
       <div className="mx-auto max-w-3xl px-4 py-24 text-center">
         <p className="text-lg text-muted-foreground">{t('lesson.notFound')}</p>
-        <Link to="/lessons" className="mt-6 inline-block font-semibold text-primary">
-          {t('nav.lessons')}
+        <Link to="/courses" className="mt-6 inline-block font-semibold text-primary">
+          {t('nav.courses')}
         </Link>
       </div>
     )
@@ -63,8 +64,12 @@ export default function LessonPage() {
       <header className="border-b">
         <div className="relative mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:py-16">
           <div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
-            <Link to="/lessons" className="hover:text-foreground">
-              {t('nav.lessons')}
+            <Link to="/courses" className="hover:text-foreground">
+              {t('nav.courses')}
+            </Link>
+            <span>/</span>
+            <Link to={`/courses/${lesson.course}`} className="hover:text-foreground">
+              {tr(courseById.get(lesson.course)?.title)}
             </Link>
             <span>/</span>
             <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-medium">
@@ -86,7 +91,7 @@ export default function LessonPage() {
               </p>
             </div>
           </div>
-          <div className="mt-8 max-w-3xl rounded-lg border bg-card p-5">
+          <div className="mt-8 max-w-3xl rounded-lg bg-card p-5">
             <div className="mb-3 flex items-center gap-2 text-sm font-bold">
               <Target className="size-4 text-primary" /> {t('lesson.objectives')}
             </div>
@@ -140,7 +145,7 @@ export default function LessonPage() {
             />
           </section>
 
-          <div className="mt-10 flex flex-wrap items-center justify-between gap-4 rounded-lg bg-muted/50 p-5">
+          <div className="mt-10 flex flex-wrap items-center justify-between gap-4 rounded-lg bg-card p-5">
             <button
               type="button"
               onClick={() => markDone(lesson.slug, !done)}
@@ -156,7 +161,7 @@ export default function LessonPage() {
 
           <nav className="mt-6 grid gap-4 sm:grid-cols-2">
             {prev ? (
-              <Link to={`/lessons/${prev.slug}`} className="group rounded-lg border bg-card p-5 transition-colors hover:bg-muted/40">
+              <Link to={lessonPath(prev)} className="group rounded-lg bg-card p-5 transition-colors hover:bg-muted/40">
                 <div className="flex items-center gap-2 text-xs text-muted-foreground">
                   <PrevIcon className="size-3.5" /> {t('lesson.prev')}
                 </div>
@@ -166,7 +171,7 @@ export default function LessonPage() {
               <span />
             )}
             {next && (
-              <Link to={`/lessons/${next.slug}`} className="group rounded-lg border bg-card p-5 text-end transition-colors hover:bg-muted/40">
+              <Link to={lessonPath(next)} className="group rounded-lg bg-card p-5 text-end transition-colors hover:bg-muted/40">
                 <div className="flex items-center justify-end gap-2 text-xs text-muted-foreground">
                   {t('lesson.next')} <NextIcon className="size-3.5" />
                 </div>

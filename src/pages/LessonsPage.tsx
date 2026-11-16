@@ -1,11 +1,12 @@
 import { useMemo, useRef, useState } from 'react'
-import { Link } from 'react-router'
-import { ArrowRight, CheckCircle2, Clock, Trophy } from 'lucide-react'
+import { Link, useParams } from 'react-router'
+import { ArrowRight, CheckCircle2, Clock, Cpu, Trophy } from 'lucide-react'
 
 import { Progress } from '@/components/animate-ui/components/radix/progress'
 import { Tabs, TabsList, TabsTrigger } from '@/components/animate-ui/components/radix/tabs'
 import { LessonIcon } from '@/components/ui/LessonIcon'
-import { lessons } from '@/content/lessons'
+import { courseById, isCourseId } from '@/content/courses'
+import { lessonPath, lessonsOf } from '@/content/lessons'
 import type { Level } from '@/content/types'
 import { useI18n } from '@/i18n/I18nProvider'
 import { useProgress } from '@/lib/progress'
@@ -13,12 +14,15 @@ import { useProgress } from '@/lib/progress'
 type Filter = 'all' | Level
 
 export default function LessonsPage() {
+  const { course: courseParam } = useParams()
+  const course = courseById.get(isCourseId(courseParam) ? courseParam : 'accounting')!
+  const lessons = useMemo(() => lessonsOf(course.id), [course.id])
   const { t, tr, num, pct: fmtPct } = useI18n()
   const { isDone, quiz, done } = useProgress()
   const [filter, setFilter] = useState<Filter>('all')
   const root = useRef<HTMLDivElement>(null)
 
-  const list = useMemo(() => (filter === 'all' ? lessons : lessons.filter((l) => l.level === filter)), [filter])
+  const list = useMemo(() => (filter === 'all' ? lessons : lessons.filter((l) => l.level === filter)), [filter, lessons])
   const completed = lessons.filter((l) => done.includes(l.slug)).length
   const pct = lessons.length ? Math.round((completed / lessons.length) * 100) : 0
 
@@ -26,10 +30,19 @@ export default function LessonsPage() {
     <div ref={root} className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:py-16">
       <div className="grid gap-8 lg:grid-cols-[1fr_340px] lg:items-end">
         <div>
-          <h1 className="text-4xl font-black tracking-tight sm:text-5xl">{t('lessons.title')}</h1>
-          <p className="mt-4 max-w-2xl text-lg leading-8 text-muted-foreground">{t('lessons.lead')}</p>
+          <div className="mb-4 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+            <Link to="/courses" className="hover:text-foreground">
+              {t('nav.courses')}
+            </Link>
+            <span>/</span>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-card px-3 py-1 text-xs font-medium">
+              <Cpu className="size-3.5" /> {tr(course.erp)}
+            </span>
+          </div>
+          <h1 className="text-4xl sm:text-5xl">{tr(course.title)}</h1>
+          <p className="mt-4 max-w-2xl text-lg leading-8 text-body">{tr(course.summary)}</p>
         </div>
-        <div className="rounded-lg border bg-card p-5">
+        <div className="rounded-lg bg-card p-5">
           <div className="flex items-center justify-between text-sm">
             <span className="font-semibold">{t('lessons.progress')}</span>
             <span className="tabular text-muted-foreground">{fmtPct(pct, 0)}</span>
@@ -51,6 +64,8 @@ export default function LessonsPage() {
         </TabsList>
       </Tabs>
 
+      {!lessons.length && <p className="mt-10 rounded-lg bg-card p-8 text-center text-muted-foreground">{t('course.soon')}</p>}
+
       <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {list.map((l) => {
           const finished = isDone(l.slug)
@@ -58,9 +73,9 @@ export default function LessonsPage() {
           return (
             <Link
               key={l.slug}
-              to={`/lessons/${l.slug}`}
+              to={lessonPath(l)}
              
-              className="group flex flex-col rounded-lg border bg-card p-5 transition-colors hover:bg-muted/40"
+              className="group flex flex-col rounded-lg bg-card p-5 transition-colors hover:bg-muted/40"
             >
               <div className="flex items-start justify-between gap-3">
                 <LessonIcon name={l.icon} tone={l.tone} />

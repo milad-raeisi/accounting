@@ -1,5 +1,5 @@
 import { lazy, type ReactNode } from 'react'
-import { HashRouter, Route, Routes } from 'react-router'
+import { HashRouter, Navigate, Route, Routes } from 'react-router'
 import { Direction } from 'radix-ui'
 
 import { Layout } from '@/components/layout/Layout'
@@ -7,6 +7,7 @@ import { I18nProvider, useI18n } from '@/i18n/I18nProvider'
 import { ThemeProvider } from '@/lib/theme'
 
 const HomePage = lazy(() => import('@/pages/HomePage'))
+const CoursesPage = lazy(() => import('@/pages/CoursesPage'))
 const LessonsPage = lazy(() => import('@/pages/LessonsPage'))
 const LessonPage = lazy(() => import('@/pages/LessonPage'))
 const LabPage = lazy(() => import('@/pages/LabPage'))
@@ -30,7 +31,10 @@ export default function App() {
             <Routes>
               <Route element={<Layout />}>
                 <Route index element={<HomePage />} />
-                <Route path="lessons" element={<LessonsPage />} />
+                <Route path="courses" element={<CoursesPage />} />
+                <Route path="courses/:course" element={<LessonsPage />} />
+                <Route path="courses/:course/:slug" element={<LessonPage />} />
+                <Route path="lessons" element={<Navigate to="/courses/accounting" replace />} />
                 <Route path="lessons/:slug" element={<LessonPage />} />
                 <Route path="lab" element={<LabPage />} />
                 <Route path="glossary" element={<GlossaryPage />} />

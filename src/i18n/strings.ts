@@ -3,14 +3,24 @@ import type { L } from '@/content/types'
 /** Flat UI dictionary. Content (lessons, glossary) lives in src/content. */
 export const ui = {
   'brand.name': { fa: 'دفتر', en: 'Daftar' },
-  'brand.full': { fa: 'دفتر · آکادمی حسابداری', en: 'Daftar · Accounting Academy' },
-  'brand.tagline': {
-    fa: 'حسابداری را با شکل، حرکت و تمرین واقعی یاد بگیرید',
-    en: 'Learn accounting through visuals, motion and real practice',
-  },
+  'brand.product': { fa: 'آموزش حسابداری', en: 'Accounting course' },
+  'brand.full': { fa: 'دفتر · آموزش حسابداری', en: 'Daftar · Accounting course' },
 
   'nav.home': { fa: 'خانه', en: 'Home' },
   'nav.lessons': { fa: 'درس‌ها', en: 'Lessons' },
+  'nav.courses': { fa: 'دوره‌ها', en: 'Courses' },
+  'courses.title': { fa: 'دوره‌ها', en: 'Courses' },
+  'courses.lead': {
+    fa: 'هر دوره یک ماژول ERP را در صنعت نفت و گاز آموزش می‌دهد، از مفاهیم پایه تا کار با سیستم.',
+    en: 'Each course teaches one ERP module in the oil and gas industry, from the basics to working in the system.',
+  },
+  'course.erp': { fa: 'ماژول ERP', en: 'ERP module' },
+  'course.lessons': { fa: 'درس', en: 'lessons' },
+  'course.unit': { fa: 'دوره', en: 'courses' },
+  'course.open': { fa: 'مشاهده دوره', en: 'Open course' },
+  'course.notFound': { fa: 'این دوره پیدا نشد.', en: 'Course not found.' },
+  'course.soon': { fa: 'درس‌های این دوره در حال آماده‌سازی است.', en: 'The lessons of this course are being prepared.' },
+  'practice.course': { fa: 'دوره', en: 'Course' },
   'nav.lab': { fa: 'آزمایشگاه', en: 'Ledger Lab' },
   'nav.glossary': { fa: 'واژه‌نامه', en: 'Glossary' },
   'nav.practice': { fa: 'آزمون', en: 'Practice' },
@@ -28,13 +38,32 @@ export const ui = {
   'units.money': { fa: 'مبالغ به هزار تومان', en: 'Amounts in USD' },
   'units.short': { fa: 'هزار تومان', en: 'USD' },
 
-  'home.title': { fa: 'حسابداری را ساده یاد بگیرید', en: 'Learn accounting, simply' },
+  'home.title': { fa: 'ERP نفت و گاز را ساده یاد بگیرید', en: 'Learn oil and gas ERP, simply' },
   'home.subtitle': {
-    fa: 'دوازده درس کوتاه، از مفاهیم پایه تا صورت‌های مالی، با مثال و تمرین.',
-    en: 'Twelve short lessons, from the basics to financial statements, with examples and practice.',
+    fa: 'دوره‌های حسابداری، انبارداری، مدیریت دارایی و تدارکات؛ هر کدام با مثال، تمرین و ارتباطش با ERP.',
+    en: 'Courses in accounting, warehousing, asset management and procurement, each with examples, exercises and how it runs in an ERP.',
   },
-  'home.cta.start': { fa: 'شروع کنید', en: 'Get started' },
+  'home.cta.start': { fa: 'مشاهده دوره‌ها', en: 'Browse courses' },
   'home.cta.lab': { fa: 'تمرین در آزمایشگاه', en: 'Practice in the lab' },
+  'home.badge': { fa: 'فارسی و انگلیسی', en: 'Persian and English' },
+  'home.courses.title': { fa: 'دوره‌ها', en: 'Courses' },
+  'home.courses.lead': { fa: 'هر دوره یک ماژول ERP را از پایه تا عمل آموزش می‌دهد.', en: 'Each course teaches one ERP module, from the basics to practice.' },
+  'home.preview.title': { fa: 'استودیو طراحی نوا · ماه اول', en: 'Nova Design Studio · Month 1' },
+  'home.f1.title': { fa: 'درس‌های کوتاه و روشن', en: 'Short, clear lessons' },
+  'home.f1.text': {
+    fa: 'از معادله حسابداری تا تحلیل صورت‌های مالی، هر درس با مثال، تمرین و آزمون.',
+    en: 'From the accounting equation to financial analysis, every lesson with examples, exercises and a quiz.',
+  },
+  'home.f2.title': { fa: 'شکل‌های تعاملی', en: 'Interactive figures' },
+  'home.f2.text': {
+    fa: 'هر مفهوم مهم با یک شکل زنده نشان داده می‌شود.',
+    en: 'Every key idea comes with a live figure you can play with.',
+  },
+  'home.f3.title': { fa: 'تمرین روی یک کسب‌وکار', en: 'Practice on a real business' },
+  'home.f3.text': {
+    fa: 'در آزمایشگاه، رویدادهای یک ماه را ثبت کنید و دفتر کل و صورت‌های مالی را ببینید.',
+    en: 'In the lab, record a month of transactions and see the ledger and statements.',
+  },
   'home.curriculum.title': { fa: 'درس‌ها', en: 'Lessons' },
   'home.curriculum.lead': { fa: 'از پایه شروع کنید و قدم‌به‌قدم جلو بروید.', en: 'Start with the basics and go step by step.' },
   'home.cta.lead': {
@@ -44,8 +73,8 @@ export const ui = {
 
   'lessons.title': { fa: 'درس‌ها', en: 'Lessons' },
   'lessons.lead': {
-    fa: 'دوازده درس، از مفاهیم پایه تا تحلیل مالی. هر درس شامل نمودار تعاملی، مثال حل‌شده و آزمون است.',
-    en: 'Twelve lessons from first principles to financial analysis, each with interactive figures, worked examples and a quiz.',
+    fa: 'از مفاهیم پایه تا حسابداری حرفه‌ای. هر درس شکل تعاملی، مثال حل‌شده، تمرین و آزمون دارد.',
+    en: 'From first principles to professional accounting. Every lesson has interactive figures, worked examples, exercises and a quiz.',
   },
   'lessons.progress': { fa: 'پیشرفت شما', en: 'Your progress' },
   'lessons.completedOf': { fa: 'درس تکمیل‌شده از', en: 'lessons completed of' },
@@ -75,6 +104,13 @@ export const ui = {
   'callout.warning': { fa: 'هشدار', en: 'Watch out' },
   'callout.example': { fa: 'مثال', en: 'Example' },
   'keyTerms.title': { fa: 'واژه‌های کلیدی', en: 'Key terms' },
+  'exercise.label': { fa: 'تمرین', en: 'Exercise' },
+  'exercise.solution': { fa: 'مشاهده راه‌حل', en: 'Show solution' },
+  'exercise.hint': { fa: 'راهنمایی', en: 'Hint' },
+  'exercise.answer': { fa: 'پاسخ نهایی', en: 'Final answer' },
+  'exercise.easy': { fa: 'ساده', en: 'Easy' },
+  'exercise.medium': { fa: 'متوسط', en: 'Medium' },
+  'exercise.hard': { fa: 'چالشی', en: 'Challenging' },
 
   'table.account': { fa: 'حساب', en: 'Account' },
   'table.debit': { fa: 'بدهکار', en: 'Debit' },
@@ -154,6 +190,16 @@ export const ui = {
   'glossary.cat.statements': { fa: 'صورت‌های مالی', en: 'Statements' },
   'glossary.cat.adjusting': { fa: 'اصلاحات و بستن', en: 'Adjusting & closing' },
   'glossary.cat.inventory': { fa: 'موجودی کالا', en: 'Inventory' },
+  'glossary.cat.cash': { fa: 'وجه نقد و دریافتنی‌ها', en: 'Cash & receivables' },
+  'glossary.cat.fixedAssets': { fa: 'دارایی‌های ثابت', en: 'Fixed assets' },
+  'glossary.cat.liabilities': { fa: 'بدهی‌ها و مالیات', en: 'Liabilities & tax' },
+  'glossary.cat.equity': { fa: 'حقوق مالکانه شرکت‌ها', en: 'Company equity' },
+  'glossary.cat.tax': { fa: 'مالیات', en: 'Tax' },
+  'glossary.cat.oilgas': { fa: 'نفت و گاز', en: 'Oil and gas' },
+  'glossary.cat.warehouse': { fa: 'انبارداری', en: 'Warehousing' },
+  'glossary.cat.maintenance': { fa: 'دارایی و نگهداری', en: 'Assets and maintenance' },
+  'glossary.cat.procurement': { fa: 'تدارکات', en: 'Procurement' },
+  'glossary.cat.budget': { fa: 'بودجه و AFE', en: 'Budget and AFE' },
   'glossary.cat.analysis': { fa: 'تحلیل مالی', en: 'Analysis' },
 
   'lab.title': { fa: 'آزمایشگاه دفتر کل', en: 'Ledger Lab' },
@@ -211,14 +257,17 @@ export const ui = {
   'common.error': { fa: 'مشکلی پیش آمد. لطفاً دوباره تلاش کنید.', en: 'Something went wrong. Please try again.' },
 
   'footer.about': {
-    fa: 'دفتر یک دوره آموزشی رایگان و متن‌باز برای یادگیری حسابداری مالی به زبان فارسی و انگلیسی است.',
-    en: 'Daftar is a free, open course for learning financial accounting in Persian and English.',
+    fa: 'دفتر دوره آموزش حسابداری مالی به فارسی و انگلیسی است.',
+    en: 'Daftar is a financial accounting course in Persian and English.',
   },
   'footer.disclaimer': {
-    fa: 'محتوای آموزشی است و جایگزین مشاوره حرفه‌ای حسابداری یا مالیاتی نیست.',
-    en: 'Educational content only: not a substitute for professional accounting or tax advice.',
+    fa: 'این محتوا آموزشی است و جایگزین مشاوره حرفه‌ای حسابداری یا مالیاتی نیست.',
+    en: 'Educational content only. Not a substitute for professional accounting or tax advice.',
   },
-  'footer.built': { fa: 'ساخته‌شده با React، Three.js، GSAP و Animate UI', en: 'Built with React, Three.js, GSAP and Animate UI' },
+  'footer.contact': { fa: 'تماس', en: 'Contact' },
+  'footer.website': { fa: 'وب‌سایت SBC', en: 'SBC website' },
+  'footer.madeBy': { fa: 'ساخته SBC', en: 'Made by SBC' },
+  'footer.rights': { fa: 'همه حقوق محفوظ است.', en: 'All rights reserved.' },
 } satisfies Record<string, L>
 
 export type UIKey = keyof typeof ui

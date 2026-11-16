@@ -17,7 +17,7 @@ function Units() {
 
 export function TableShell({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <div className={cn('overflow-x-auto rounded-lg border bg-card', className)}>
+    <div className={cn('overflow-x-auto rounded-lg bg-card', className)}>
       <table className="w-full min-w-[480px] border-collapse text-sm">{children}</table>
     </div>
   )
@@ -183,7 +183,7 @@ export function TAccount({
   const bal = td - tc
   const rows = Math.max(debits.length, credits.length, 1)
   return (
-    <div className={cn('rounded-lg border bg-card p-3 transition-colors duration-500', highlight && 'bg-gold/[0.08]', className)}>
+    <div className={cn('rounded-lg bg-card p-3 transition-colors duration-500', highlight && 'bg-gold/[0.08]', className)}>
       <div className="border-b border-foreground/40 pb-1.5 text-center text-sm font-semibold">{name}</div>
       <div className="grid grid-cols-2 text-xs">
         <div className="border-e border-foreground/40 pe-2 pt-1">

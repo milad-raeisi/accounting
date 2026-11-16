@@ -64,7 +64,7 @@ export function Quiz({ questions, onComplete, sourceOf, className }: Props) {
       <motion.div
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
-        className={cn('rounded-lg border bg-card p-6 text-center sm:p-8', className)}
+        className={cn('rounded-lg bg-card p-6 text-center sm:p-8', className)}
       >
         <div className="mx-auto mb-4 grid size-16 place-items-center rounded-2xl bg-gold/15 text-gold">
           <Trophy className="size-8" />
@@ -116,7 +116,7 @@ export function Quiz({ questions, onComplete, sourceOf, className }: Props) {
   const correct = checked && Number(choice) === q.answer
 
   return (
-    <div className={cn('rounded-lg border bg-card p-5 sm:p-7', className)}>
+    <div className={cn('rounded-lg bg-card p-5 sm:p-7', className)}>
       <div className="mb-4 flex items-center justify-between gap-3 text-xs text-muted-foreground">
         <span>
           {t('quiz.question')} {num(index + 1)} {t('quiz.of')} {num(questions.length)}
@@ -150,9 +150,9 @@ export function Quiz({ questions, onComplete, sourceOf, className }: Props) {
                   key={i}
                   htmlFor={id}
                   className={cn(
-                    'flex cursor-pointer items-start gap-3 rounded-lg border p-3.5 transition-colors',
-                    !checked && 'hover:bg-muted/60',
-                    !checked && isChosen && 'bg-muted',
+                    'flex cursor-pointer items-start gap-3 rounded-[1.25rem] bg-muted/60 p-3.5 transition-colors',
+                    !checked && 'hover:bg-muted',
+                    !checked && isChosen && 'bg-primary/10',
                     checked && isAnswer && 'bg-revenue/10',
                     checked && isChosen && !isAnswer && 'bg-liability/10',
                     checked && !isAnswer && !isChosen && 'opacity-60',

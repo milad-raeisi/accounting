@@ -166,7 +166,7 @@ export default function LabPage() {
       </div>
 
       {/* equation + 3D scale */}
-      <section className="mt-8 grid overflow-hidden rounded-lg border bg-card lg:grid-cols-[1.2fr_1fr]">
+      <section className="mt-8 grid overflow-hidden rounded-lg bg-card lg:grid-cols-[1.2fr_1fr]">
         <div className="relative">
           <Suspense fallback={<div className="h-[340px] animate-pulse bg-muted/40 sm:h-[400px]" />}>
             <BalanceScaleScene
@@ -225,7 +225,7 @@ export default function LabPage() {
       <div className="mt-8 grid gap-6 lg:grid-cols-[360px_minmax(0,1fr)]">
         {/* controls */}
         <aside className="space-y-6">
-          <div className="rounded-lg border bg-card p-4">
+          <div className="rounded-lg bg-card p-4">
             <div className="mb-3 flex items-center justify-between">
               <h2 className="font-bold">{t('lab.presets')}</h2>
               <button
@@ -244,7 +244,7 @@ export default function LabPage() {
             </div>
           </div>
 
-          <div className="rounded-lg border bg-card p-4">
+          <div className="rounded-lg bg-card p-4">
             <div className="mb-3 flex items-center justify-between">
               <h2 className="flex items-center gap-2 font-bold">
                 <CalendarClock className="size-4 text-expense" /> {t('lab.adjustments')}
@@ -305,7 +305,7 @@ export default function LabPage() {
               <AnimatePresence mode="wait">
                 <motion.div key={`${view}-${lang}`} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.2 }}>
                   {view === 'journal' && (
-                    <div className="overflow-x-auto rounded-lg border bg-card">
+                    <div className="overflow-x-auto rounded-lg bg-card">
                       <table className="w-full min-w-[540px] text-sm">
                         <thead>
                           <tr className="border-b bg-muted/60 text-xs text-muted-foreground">
@@ -372,7 +372,7 @@ export default function LabPage() {
                   )}
 
                   {view === 'tb' && (
-                    <div className="overflow-x-auto rounded-lg border bg-card">
+                    <div className="overflow-x-auto rounded-lg bg-card">
                       <table className="w-full min-w-[460px] text-sm">
                         <thead>
                           <tr className="border-b bg-muted/60 text-xs text-muted-foreground">
@@ -463,7 +463,7 @@ export default function LabPage() {
 function Statement({ title, children }: { title: string; children: ReactNode }) {
   const { t, tr } = useI18n()
   return (
-    <div className="rounded-lg border bg-card p-5">
+    <div className="rounded-lg bg-card p-5">
       <div className="mb-1 text-center text-lg font-bold">{title}</div>
       <div className="mb-4 text-center text-xs text-muted-foreground">
         {tr({ fa: 'استودیو طراحی نوا · ماه اول', en: 'Nova Design Studio · Month 1' })} · {t('units.money')}
@@ -533,7 +533,7 @@ function CustomEntry({ onRecord, disabled, nextDay }: { onRecord: (tx: Tx) => vo
   const field = 'h-10 w-full rounded-lg border bg-background px-3 text-sm outline-none transition focus:border-foreground/30 focus:ring-2 focus:ring-ring/30'
 
   return (
-    <form onSubmit={submit} className="rounded-lg border bg-card p-4">
+    <form onSubmit={submit} className="rounded-lg bg-card p-4">
       <h2 className="mb-3 flex items-center gap-2 font-bold">
         <PenLine className="size-4 text-primary" /> {t('lab.custom')}
       </h2>

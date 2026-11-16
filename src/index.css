@@ -3,41 +3,56 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* ───────────────────────── Design tokens ───────────────────────── */
+/*
+ * SBC brand tokens (https://sbc.om/brand/)
+ *   SBC Blue #0098EA  the mark only, never large surfaces
+ *   Royal    #406AE4  buttons, links, highlights
+ *   Azure    #3B82F6  second stop of the icon gradient
+ *   Navy     #06132A  dark surfaces
+ *   Ink      #1D1D1D  headings, dark buttons
+ *   Slate    #4D585F  body text
+ *   Tint     #EAF0F9  panels inside cards
+ *   Mist     #EDF1F4  page field behind cards
+ *   White    #FFFFFF  cards (30px radius, no borders, no heavy shadows)
+ */
 :root {
-  --radius: 0.85rem;
+  --radius: 1.875rem;
 
-  /* paper & ink */
-  --background: oklch(0.982 0.006 85);
-  --foreground: oklch(0.22 0.025 262);
-  --card: oklch(0.997 0.002 85);
-  --card-foreground: oklch(0.22 0.025 262);
-  --popover: oklch(0.997 0.002 85);
-  --popover-foreground: oklch(0.22 0.025 262);
+  --brand: #0098ea;
+  --royal: #406ae4;
+  --azure: #3b82f6;
+  --navy: #06132a;
 
-  /* brand: deep ledger teal + gold */
-  --primary: oklch(0.5 0.105 182);
-  --primary-foreground: oklch(0.985 0.01 180);
-  --secondary: oklch(0.95 0.012 85);
-  --secondary-foreground: oklch(0.28 0.03 262);
-  --muted: oklch(0.955 0.008 85);
-  --muted-foreground: oklch(0.5 0.022 262);
-  --accent: oklch(0.93 0.035 182);
-  --accent-foreground: oklch(0.3 0.06 182);
-  --gold: oklch(0.76 0.135 78);
-  --destructive: oklch(0.58 0.2 25);
-  --border: oklch(0.905 0.01 85);
-  --input: oklch(0.89 0.012 85);
-  --ring: oklch(0.6 0.11 182);
+  --background: #edf1f4;
+  --foreground: #1d1d1d;
+  --body: #4d585f;
+  --card: #ffffff;
+  --card-foreground: #1d1d1d;
+  --popover: #ffffff;
+  --popover-foreground: #1d1d1d;
+
+  --primary: #406ae4;
+  --primary-foreground: #ffffff;
+  --secondary: #eaf0f9;
+  --secondary-foreground: #1d1d1d;
+  --muted: #eaf0f9;
+  --muted-foreground: #4d585f;
+  --accent: #eaf0f9;
+  --accent-foreground: #406ae4;
+  --gold: #e3a92b;
+  --destructive: #d93f3f;
+  --border: #e1e7ed;
+  --input: #d6dee6;
+  --ring: #406ae4;
 
   /* accounting semantics: used by every diagram */
-  --asset: oklch(0.58 0.13 240);
-  --liability: oklch(0.6 0.17 18);
-  --equity: oklch(0.55 0.16 295);
-  --revenue: oklch(0.6 0.14 152);
-  --expense: oklch(0.68 0.15 55);
-  --debit: oklch(0.52 0.11 200);
-  --credit: oklch(0.62 0.16 38);
+  --asset: #3b82f6;
+  --liability: #d9485f;
+  --equity: #7a5ad8;
+  --revenue: #1f9d6b;
+  --expense: #e07b2e;
+  --debit: #406ae4;
+  --credit: #d9732e;
 
   --chart-1: var(--asset);
   --chart-2: var(--liability);
@@ -45,55 +60,60 @@
   --chart-4: var(--revenue);
   --chart-5: var(--expense);
 
-  --grid-line: oklch(0.22 0.025 262 / 0.06);
+  --grid-line: rgb(29 29 29 / 0.06);
 }
 
+/* Dark: charcoal neutrals (no blue cast); SBC Royal stays the accent */
 .dark {
-  --background: oklch(0.155 0.02 262);
-  --foreground: oklch(0.95 0.008 85);
-  --card: oklch(0.195 0.022 262);
-  --card-foreground: oklch(0.95 0.008 85);
-  --popover: oklch(0.2 0.022 262);
-  --popover-foreground: oklch(0.95 0.008 85);
+  --background: #141516;
+  --foreground: #f2f2f2;
+  --body: #bcbfc3;
+  --card: #1e1f21;
+  --card-foreground: #f2f2f2;
+  --popover: #1e1f21;
+  --popover-foreground: #f2f2f2;
 
-  --primary: oklch(0.74 0.12 180);
-  --primary-foreground: oklch(0.18 0.03 200);
-  --secondary: oklch(0.25 0.022 262);
-  --secondary-foreground: oklch(0.92 0.01 85);
-  --muted: oklch(0.235 0.02 262);
-  --muted-foreground: oklch(0.7 0.02 262);
-  --accent: oklch(0.3 0.05 190);
-  --accent-foreground: oklch(0.9 0.05 180);
-  --gold: oklch(0.82 0.13 82);
-  --destructive: oklch(0.68 0.19 25);
-  --border: oklch(0.29 0.022 262);
-  --input: oklch(0.32 0.022 262);
-  --ring: oklch(0.7 0.12 180);
+  --primary: #5b82f0;
+  --primary-foreground: #ffffff;
+  --secondary: #2a2c2f;
+  --secondary-foreground: #f2f2f2;
+  --muted: #2a2c2f;
+  --muted-foreground: #a3a7ac;
+  --accent: #2a2c2f;
+  --accent-foreground: #a9bef7;
+  --gold: #f0bd4f;
+  --destructive: #f06a6a;
+  --border: #2f3134;
+  --input: #3a3d41;
+  --ring: #5b82f0;
 
-  --asset: oklch(0.72 0.12 238);
-  --liability: oklch(0.72 0.15 18);
-  --equity: oklch(0.72 0.14 295);
-  --revenue: oklch(0.76 0.14 152);
-  --expense: oklch(0.8 0.14 62);
-  --debit: oklch(0.74 0.11 200);
-  --credit: oklch(0.78 0.14 45);
+  --asset: #6aa2fa;
+  --liability: #f07a8d;
+  --equity: #a58df0;
+  --revenue: #4cc795;
+  --expense: #f2a05e;
+  --debit: #7f9df5;
+  --credit: #f2a05e;
 
-  --grid-line: oklch(0.95 0.01 85 / 0.05);
+  --grid-line: rgb(242 245 249 / 0.05);
 }
 
 @theme inline {
   --font-sans: 'Inter Variable', 'Vazirmatn Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-heading: 'Bricolage Grotesque Variable', 'Vazirmatn Variable', ui-sans-serif, system-ui, sans-serif;
   --font-fa: 'Vazirmatn Variable', 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+  /* cards & pills use 30px; small controls stay tight */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 10px);
+  --radius-xl: var(--radius);
+  --radius-2xl: var(--radius);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-body: var(--body);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
@@ -111,6 +131,10 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-gold: var(--gold);
+  --color-brand: var(--brand);
+  --color-royal: var(--royal);
+  --color-azure: var(--azure);
+  --color-navy: var(--navy);
 
   --color-asset: var(--asset);
   --color-liability: var(--liability);
@@ -138,32 +162,36 @@
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-feature-settings: 'cv11', 'ss01';
+    font-weight: 450;
+    /* Inter Display: the display optical size of Inter, as the SBC guide specifies */
+    font-variation-settings: 'opsz' 32;
     text-rendering: optimizeLegibility;
   }
-  /* Persian: Vazirmatn + right-to-left */
+  /* Headings: Bricolage Grotesque, semibold, tight tracking (SBC guide) */
+  :is(h1, h2, h3, h4) {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    color: var(--foreground);
+  }
+  /* Persian: Vazirmatn, right-to-left */
   html[lang='fa'] body {
     font-family: var(--font-fa);
-    font-feature-settings: normal;
+    font-weight: 400;
+    font-variation-settings: normal;
     line-height: 1.85;
   }
   html[lang='fa'] :is(h1, h2, h3, h4) {
-    letter-spacing: 0 !important;
-    line-height: 1.45;
+    font-family: var(--font-fa);
+    letter-spacing: 0;
+    line-height: 1.5;
   }
   ::selection {
-    background: color-mix(in oklch, var(--primary) 25%, transparent);
+    background: color-mix(in oklch, var(--primary) 22%, transparent);
   }
 }
 
 /* ───────────────────────── Utilities ───────────────────────── */
-@utility ledger-grid {
-  background-image:
-    linear-gradient(var(--grid-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-
 @utility ledger-lines {
   background-image: repeating-linear-gradient(
     to bottom,
@@ -179,9 +207,16 @@
 }
 
 @utility glass {
-  background: color-mix(in oklch, var(--background) 72%, transparent);
+  background: color-mix(in oklch, var(--background) 80%, transparent);
   backdrop-filter: blur(14px) saturate(1.4);
   -webkit-backdrop-filter: blur(14px) saturate(1.4);
+}
+
+/* SBC icon treatment: line icon inside a circle filled Royal → Azure */
+@utility icon-badge {
+  background-image: linear-gradient(135deg, var(--royal), var(--azure));
+  color: #ffffff;
+  border-radius: 9999px;
 }
 
 /*
@@ -194,34 +229,6 @@ html .transition {
   transition-property:
     color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, box-shadow, translate,
     scale, rotate, filter, backdrop-filter, -webkit-backdrop-filter;
-}
-
-/* Gradient shimmer that never splits text, safe for Persian letter joining */
-@keyframes text-shimmer {
-  from {
-    background-position: 100% 0;
-  }
-  to {
-    background-position: -100% 0;
-  }
-}
-@utility text-shimmer {
-  background-image: linear-gradient(
-    90deg,
-    var(--muted-foreground) 0%,
-    var(--muted-foreground) 40%,
-    var(--primary) 50%,
-    var(--muted-foreground) 60%,
-    var(--muted-foreground) 100%
-  );
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: text-shimmer 2.8s linear infinite;
-  [dir='rtl'] & {
-    animation-direction: reverse;
-  }
 }
 
 @keyframes flow-dash {

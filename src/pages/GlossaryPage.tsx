@@ -12,7 +12,7 @@ import type { UIKey } from '@/i18n/strings'
 import { cn } from '@/lib/utils'
 
 type Cat = 'all' | GlossaryCategory
-const CATS: Cat[] = ['all', 'basics', 'accounts', 'recording', 'statements', 'adjusting', 'inventory', 'analysis']
+const CATS: Cat[] = ['all', 'basics', 'accounts', 'recording', 'statements', 'adjusting', 'cash', 'inventory', 'fixedAssets', 'liabilities', 'equity', 'tax', 'oilgas', 'warehouse', 'maintenance', 'procurement', 'budget', 'analysis']
 const catDot: Record<GlossaryCategory, string> = {
   basics: 'bg-primary',
   accounts: 'bg-asset',
@@ -20,7 +20,17 @@ const catDot: Record<GlossaryCategory, string> = {
   statements: 'bg-revenue',
   adjusting: 'bg-expense',
   inventory: 'bg-gold',
-  analysis: 'bg-equity',
+  cash: 'bg-debit',
+  fixedAssets: 'bg-asset',
+  liabilities: 'bg-liability',
+  equity: 'bg-equity',
+  tax: 'bg-liability',
+  oilgas: 'bg-gold',
+  warehouse: 'bg-expense',
+  maintenance: 'bg-asset',
+  procurement: 'bg-revenue',
+  budget: 'bg-gold',
+  analysis: 'bg-revenue',
 }
 
 const normalize = (s: string) =>
@@ -38,7 +48,7 @@ function TermCard({ term, onRelated, highlight }: { term: GlossaryTerm; onRelate
     <article
       id={`term-${term.id}`}
      
-      className={cn('scroll-mt-28 rounded-lg border bg-card p-5 transition-colors duration-500', highlight && 'bg-gold/[0.1]')}
+      className={cn('scroll-mt-28 rounded-lg bg-card p-5 transition-colors duration-500', highlight && 'bg-gold/[0.1]')}
     >
       <div className="flex items-start justify-between gap-3">
         <div>
@@ -148,7 +158,7 @@ function Flashcards({ terms }: { terms: GlossaryTerm[] }) {
                   <RotateCw className="size-3.5" /> {t('glossary.flip')}
                 </div>
               </div>
-              <div className="absolute inset-0 flex flex-col justify-center overflow-y-auto rounded-lg border bg-card p-7 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+              <div className="absolute inset-0 flex flex-col justify-center overflow-y-auto rounded-lg bg-card p-7 [backface-visibility:hidden] [transform:rotateY(180deg)]">
                 <div className="mb-2 text-sm font-bold text-primary">{tr(term.term)}</div>
                 <p className="leading-8">
                   <Rich text={term.def} />
