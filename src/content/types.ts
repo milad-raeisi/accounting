@@ -31,6 +31,12 @@ export type IconName =
   | 'RefreshCcw'
   | 'Boxes'
   | 'TrendingUp'
+  | 'FileCheck'
+  | 'Landmark'
+  | 'ReceiptText'
+  | 'Building2'
+  | 'Percent'
+  | 'Users'
 
 /**
  * Animated / interactive figures implemented in src/components/diagrams.
@@ -57,6 +63,17 @@ export type DiagramId =
   | 'cycle-3d' //             Three.js orbit of the cycle steps
   | 'inventory-fifo' //       cost layers consumed under FIFO vs weighted average
   | 'ratios' //               liquidity / profitability / leverage / efficiency ratio gauges for a sample company
+  | 'erp-modules' //          ERP module map (Finance, Inventory, Procurement, Asset Management, Projects, HR) + integration
+  | 'p2p-flow' //             procure-to-pay documents with the Finance postings at each step
+  | 'grn-ses' //              receipt paths: goods via GRN and services via SES, with documents and postings
+  | 'warehouse-flow' //       receipt → inspection → put-away → storage → reservation → issue
+  | 'asset-lifecycle' //      plan → acquire → capitalise → operate & maintain → dispose, with ERP module per stage
+  | 'work-order-flow' //      maintenance work order lifecycle and cost settlement
+  | 'wbs-tree' //             WBS hierarchy with cost codes, budget and actuals per node
+  | 'budget-control' //       budget vs commitments vs actuals with availability control
+  | 'afe-lifecycle' //        AFE: prepare → approve (internal, partners, government) → commit → track → supplement → close
+  | 'je-workflow' //          journal entry: prepare → attach → validate → approve → post → review → reverse
+  | 'cost-recovery' //        production → royalty → cost oil (capped) → profit oil split; carry-forward
 
 export type JournalLine = { account: L; debit?: number; credit?: number }
 export type JournalEntry = { date?: L; lines: JournalLine[]; memo?: L }
@@ -72,7 +89,8 @@ export type AnalysisRow = {
 
 export type TAccountData = { name: L; debits: number[]; credits: number[] }
 
-export type Block =
+/** Every block except `exercise` (an exercise's solution is built from these). */
+export type BaseBlock =
   | { type: 'p'; text: L }
   | { type: 'h'; text: L } // sub-heading inside a section
   | { type: 'list'; items: L[]; ordered?: boolean }
@@ -87,6 +105,25 @@ export type Block =
   | { type: 'compare'; left: { title: L; items: L[] }; right: { title: L; items: L[] } }
   | { type: 'keyTerms'; terms: { term: L; def: L }[] }
 
+/**
+ * A practice problem with a worked solution (hidden until the learner asks for it).
+ * `solution` is any sequence of ordinary blocks: steps, journal, tables, callouts…
+ */
+export type ExerciseBlock = {
+  type: 'exercise'
+  title?: L
+  difficulty?: 'easy' | 'medium' | 'hard'
+  problem: L
+  /** optional data the learner needs, shown as a table under the problem */
+  given?: { head: L[]; rows: (L | number)[][]; numericCols?: number[] }
+  hint?: L
+  solution: BaseBlock[]
+  /** one-line final answer shown at the end of the solution */
+  answer?: L
+}
+
+export type Block = BaseBlock | ExerciseBlock
+
 export type Section = { id: string; title: L; blocks: Block[] }
 
 export type Question = {
@@ -96,9 +133,14 @@ export type Question = {
   explain: L
 }
 
+/** Unit shown above journals and tables. Defaults to the course's currency. */
+export type Currency = 'toman' | 'usd' | 'omr'
+
 export type Lesson = {
   slug: string
   number: number
+  /** overrides the course currency, e.g. 'omr' for the Oman tax lessons */
+  currency?: Currency
   level: Level
   minutes: number
   icon: IconName
@@ -110,6 +152,17 @@ export type Lesson = {
   quiz: Question[] // 5–6 questions
 }
 
+/**
+ * Lightweight lesson summary, built at compile time by the `virtual:lesson-manifest` Vite plugin.
+ * Lists and progress use it; the full lesson (sections, quiz) is loaded on demand.
+ */
+export type LessonMetaRaw = Pick<Lesson, 'slug' | 'number' | 'level' | 'minutes' | 'icon' | 'tone' | 'title' | 'summary' | 'currency'> & {
+  course: string
+  /** import.meta.glob key relative to src/content/lessons/index.ts */
+  key: string
+  quizCount: number
+}
+
 export type GlossaryCategory =
   | 'basics'
   | 'accounts'
@@ -117,6 +170,16 @@ export type GlossaryCategory =
   | 'statements'
   | 'adjusting'
   | 'inventory'
+  | 'cash' // cash, bank, receivables, cheques
+  | 'fixedAssets'
+  | 'liabilities' // payroll, taxes, loans, provisions
+  | 'equity' // company equity, reserves, dividends
+  | 'tax' // corporate tax, VAT, e-invoicing
+  | 'oilgas' // upstream accounting, joint operations, cost recovery
+  | 'warehouse'
+  | 'maintenance' // asset management and maintenance (EAM)
+  | 'procurement'
+  | 'budget' // budgets, WBS, cost codes, AFE, project control
   | 'analysis'
 
 export type GlossaryTerm = {

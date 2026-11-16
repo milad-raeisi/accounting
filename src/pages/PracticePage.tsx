@@ -1,15 +1,20 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { motion } from 'motion/react'
-import { GraduationCap, RefreshCcw, Timer } from 'lucide-react'
+import { useSearchParams } from 'react-router'
+import { GraduationCap, RefreshCcw, Timer, Trophy } from 'lucide-react'
 
 import { Checkbox } from '@/components/animate-ui/components/radix/checkbox'
 import { Quiz } from '@/components/lesson/Quiz'
-import { lessons } from '@/content/lessons'
+import { Tabs, TabsList, TabsTrigger } from '@/components/animate-ui/components/radix/tabs'
+import { courses, isCourseId, type CourseId } from '@/content/courses'
+import { loadCourseLessons, lessonsOf } from '@/content/lessons'
 import type { Question } from '@/content/types'
 import { useI18n } from '@/i18n/I18nProvider'
+import { examKey } from '@/lib/courseStats'
+import { useProgress } from '@/lib/progress'
 import { cn } from '@/lib/utils'
 
-type Picked = { q: Question; lesson: number }
+type Picked = { q: Question; lesson: number; course: CourseId }
 
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr]
@@ -23,14 +28,27 @@ function shuffle<T>(arr: T[]): T[] {
 export default function PracticePage() {
   const { t, tr, num, lang } = useI18n()
   const [count, setCount] = useState(15)
-  const [selected, setSelected] = useState<Set<number>>(() => new Set(lessons.map((l) => l.number)))
+  const [params, setParams] = useSearchParams()
+  const fromUrl = params.get('course') ?? undefined
+  const [course, setCourse] = useState<CourseId>(isCourseId(fromUrl) ? fromUrl : 'accounting')
+  const lessons = useMemo(() => lessonsOf(course), [course])
+  const [selected, setSelected] = useState<Set<number>>(() => new Set(lessonsOf(course).map((l) => l.number)))
+  const chooseCourse = (c: CourseId) => {
+    setCourse(c)
+    setSelected(new Set(lessonsOf(c).map((l) => l.number)))
+    setParams({ course: c }, { replace: true })
+  }
+  const { quiz, saveQuiz } = useProgress()
+  const [meta, setMeta] = useState<{ course: CourseId; full: boolean } | null>(null)
+  const best = quiz[examKey(course)]
   const [exam, setExam] = useState<Picked[] | null>(null)
   const [startedAt, setStartedAt] = useState(0)
   const [elapsed, setElapsed] = useState(0)
   const [finished, setFinished] = useState(false)
   const root = useRef<HTMLDivElement>(null)
 
-  const pool = useMemo(() => lessons.filter((l) => selected.has(l.number)).flatMap((l) => l.quiz.map((q) => ({ q, lesson: l.number }))), [selected])
+  const poolSize = useMemo(() => lessons.filter((l) => selected.has(l.number)).reduce((s, l) => s + l.quizCount, 0), [selected, lessons])
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     if (!exam || finished) return
@@ -38,8 +56,17 @@ export default function PracticePage() {
     return () => window.clearInterval(id)
   }, [exam, finished, startedAt])
 
-  const start = () => {
+  const start = async () => {
+    setLoading(true)
+    let pool: Picked[]
+    try {
+      const full = await loadCourseLessons(course)
+      pool = full.filter((l) => selected.has(l.number)).flatMap((l) => l.quiz.map((q) => ({ q, lesson: l.number, course: l.course })))
+    } finally {
+      setLoading(false)
+    }
     setExam(shuffle(pool).slice(0, Math.min(count, pool.length)))
+    setMeta({ course, full: selected.size === lessons.length })
     setStartedAt(Date.now())
     setElapsed(0)
     setFinished(false)
@@ -59,11 +86,29 @@ export default function PracticePage() {
       </div>
 
       {!exam ? (
-        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="mt-10 rounded-lg border bg-card p-6 sm:p-8">
+        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="mt-10 rounded-lg bg-card p-6 sm:p-8">
           {!lessons.length ? (
             <p className="text-center text-muted-foreground">{t('practice.empty')}</p>
           ) : (
             <>
+              <div className="text-sm font-semibold">{t('practice.course')}</div>
+              <Tabs value={course} onValueChange={(v) => chooseCourse(v as CourseId)} className="mt-3 mb-8">
+                <TabsList className="h-auto w-full max-w-full flex-wrap justify-start sm:w-fit">
+                  {courses.map((c) => (
+                    <TabsTrigger key={c.id} value={c.id} className="px-4 py-1.5">
+                      {tr(c.title)}
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
+              </Tabs>
+              <div className="-mt-4 mb-8 flex flex-wrap items-center gap-2 text-xs leading-5 text-muted-foreground">
+                <span>{allOn ? t('progress.examLead') : t('progress.examFullNote')}</span>
+                {best && (
+                  <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2.5 py-1 font-medium text-foreground">
+                    <Trophy className="size-3.5 text-gold" /> {t('progress.examBest')}: {num(best.score)}/{num(best.total)}
+                  </span>
+                )}
+              </div>
               <div className="text-sm font-semibold">{t('practice.count')}</div>
               <div className="mt-3 flex flex-wrap gap-2">
                 {[10, 15, 25, 40].map((n) => (
@@ -72,8 +117,8 @@ export default function PracticePage() {
                     type="button"
                     onClick={() => setCount(n)}
                     className={cn(
-                      'h-10 min-w-16 rounded-xl border px-4 text-sm font-semibold tabular transition',
-                      count === n ? ' bg-primary text-primary-foreground' : 'bg-background ',
+                      'h-10 min-w-16 rounded-full px-4 text-sm font-semibold tabular transition-colors',
+                      count === n ? 'bg-primary text-primary-foreground' : 'bg-muted text-foreground hover:bg-muted/70',
                     )}
                   >
                     {num(n)}
@@ -95,7 +140,7 @@ export default function PracticePage() {
                 {lessons.map((l) => {
                   const on = selected.has(l.number)
                   return (
-                    <label key={l.slug} className={cn('flex cursor-pointer items-center gap-3 rounded-xl border p-3 text-sm transition', on ? 'bg-muted/60' : 'hover:bg-muted/50')}>
+                    <label key={l.slug} className={cn('flex cursor-pointer items-center gap-3 rounded-[1rem] p-3 text-sm transition-colors', on ? 'bg-primary/[0.07]' : 'bg-muted/40 hover:bg-muted/70')}>
                       <Checkbox
                         checked={on}
                         onCheckedChange={(v) =>
@@ -116,11 +161,11 @@ export default function PracticePage() {
 
               <button
                 type="button"
-                disabled={!pool.length}
+                disabled={!poolSize || loading}
                 onClick={start}
-                className="mt-8 h-12 w-full rounded-xl bg-primary text-base font-semibold text-primary-foreground shadow-[0_10px_30px_-12px_var(--primary)] transition hover:opacity-90 active:scale-[0.99] disabled:opacity-40"
+                className="mt-8 h-12 w-full rounded-full bg-primary text-base font-semibold text-primary-foreground transition hover:opacity-90 active:scale-[0.99] disabled:opacity-40"
               >
-                {t('practice.start')} · {num(Math.min(count, pool.length))} {t('quiz.question')}
+                {t('practice.start')} · {num(Math.min(count, poolSize))} {t('quiz.question')}
               </button>
             </>
           )}
@@ -128,10 +173,10 @@ export default function PracticePage() {
       ) : (
         <div className="mt-10">
           <div className="mb-4 flex items-center justify-between">
-            <span className="inline-flex items-center gap-2 rounded-full border bg-card px-3 py-1.5 text-sm tabular">
+            <span className="inline-flex items-center gap-2 rounded-full bg-card px-3 py-1.5 text-sm tabular">
               <Timer className="size-4 text-primary" /> {t('practice.timer')}: {mmss}
             </span>
-            <button type="button" onClick={() => setExam(null)} className="inline-flex items-center gap-2 rounded-full border bg-card px-3 py-1.5 text-sm hover:bg-muted">
+            <button type="button" onClick={() => setExam(null)} className="inline-flex items-center gap-2 rounded-full bg-card px-3 py-1.5 text-sm hover:bg-muted">
               <RefreshCcw className="size-4" /> {t('practice.new')}
             </button>
           </div>
@@ -139,7 +184,10 @@ export default function PracticePage() {
             key={`${startedAt}-${lang}`}
             questions={exam.map((e) => e.q)}
             sourceOf={(i) => `${t('lesson.number')} ${num(exam[i].lesson)}`}
-            onComplete={() => setFinished(true)}
+            onComplete={(score, total) => {
+              setFinished(true)
+              if (meta?.full) saveQuiz(examKey(meta.course), score, total)
+            }}
           />
         </div>
       )}

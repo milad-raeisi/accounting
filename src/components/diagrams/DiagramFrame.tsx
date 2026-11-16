@@ -28,11 +28,11 @@ export function DiagramFrame({ title, caption, children, onReplay, controls, bad
   return (
     <figure
       className={cn(
-        'not-prose group/diagram relative my-8 overflow-hidden rounded-lg border bg-card',
+        'not-prose group/diagram relative my-8 overflow-hidden rounded-lg bg-card',
         className,
       )}
     >
-      <header className="flex flex-wrap items-center gap-3 border-b px-4 py-2.5 sm:px-5">
+      <header className="flex flex-wrap items-center gap-3 border-b px-5 py-3 sm:px-7">
         <div className="min-w-0 flex-1">
           <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground">
             {badge === '3d' ? <Box className="size-3" /> : <Sparkles className="size-3" />}
@@ -55,9 +55,9 @@ export function DiagramFrame({ title, caption, children, onReplay, controls, bad
           )}
         </div>
       </header>
-      <div className={cn('relative p-4 sm:p-6', bodyClassName)}>{children}</div>
+      <div className={cn('relative p-5 sm:p-7', bodyClassName)}>{children}</div>
       {caption && (
-        <figcaption className="border-t px-4 py-3 text-sm leading-relaxed text-muted-foreground sm:px-5">{tr(caption)}</figcaption>
+        <figcaption className="border-t px-5 py-3.5 text-sm leading-relaxed text-muted-foreground sm:px-7">{tr(caption)}</figcaption>
       )}
     </figure>
   )

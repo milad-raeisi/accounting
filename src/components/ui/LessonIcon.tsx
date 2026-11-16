@@ -11,6 +11,12 @@ import {
   RefreshCcw,
   Scale,
   TrendingUp,
+  FileCheck,
+  Landmark,
+  ReceiptText,
+  Building2,
+  Percent,
+  Users,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -30,6 +36,12 @@ const icons: Record<IconName, LucideIcon> = {
   RefreshCcw,
   Boxes,
   TrendingUp,
+  FileCheck,
+  Landmark,
+  ReceiptText,
+  Building2,
+  Percent,
+  Users,
 }
 
 /** Static class maps so Tailwind can see every class name. */
@@ -64,8 +76,9 @@ export const toneBar: Record<Tone, string> = {
 export function LessonIcon({ name, tone, className }: { name: IconName; tone: Tone; className?: string }) {
   const Icon = icons[name] ?? BookOpen
   return (
-    <span className={cn('grid size-10 shrink-0 place-items-center rounded-lg bg-muted', toneText[tone], className)}>
-      <Icon className="size-5" />
+    // SBC icon style: line icon (1.6 stroke) inside a circle filled Royal → Azure
+    <span data-tone={tone} className={cn('icon-badge grid size-10 shrink-0 place-items-center', className)}>
+      <Icon className="size-[1.15rem]" strokeWidth={1.6} />
     </span>
   )
 }

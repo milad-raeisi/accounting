@@ -1,7 +1,7 @@
-import type { ReactNode } from 'react'
+import { createContext, useContext, type ReactNode } from 'react'
 
 import { Rich } from '@/components/ui/Rich'
-import type { AnalysisRow, JournalEntry, L, TAccountData } from '@/content/types'
+import type { AnalysisRow, Currency, JournalEntry, L, TAccountData } from '@/content/types'
 import { useI18n } from '@/i18n/I18nProvider'
 import { formatSigned } from '@/lib/format'
 import { cn } from '@/lib/utils'
@@ -10,14 +10,20 @@ function Caption({ children }: { children: ReactNode }) {
   return <div className="mb-2 flex items-center justify-between gap-3 text-sm font-semibold">{children}</div>
 }
 
+const CurrencyContext = createContext<Currency>('toman')
+/** Set by the lesson page so journals and tables label amounts in the lesson's currency. */
+export const CurrencyProvider = CurrencyContext.Provider
+
 function Units() {
   const { t } = useI18n()
-  return <span className="text-[11px] font-normal text-muted-foreground">{t('units.money')}</span>
+  const currency = useContext(CurrencyContext)
+  const key = currency === 'usd' ? 'units.money.usd' : currency === 'omr' ? 'units.money.omr' : 'units.money'
+  return <span className="text-[11px] font-normal text-muted-foreground">{t(key)}</span>
 }
 
 export function TableShell({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <div className={cn('overflow-x-auto rounded-lg border bg-card', className)}>
+    <div className={cn('overflow-x-auto rounded-lg bg-card', className)}>
       <table className="w-full min-w-[480px] border-collapse text-sm">{children}</table>
     </div>
   )
@@ -183,7 +189,7 @@ export function TAccount({
   const bal = td - tc
   const rows = Math.max(debits.length, credits.length, 1)
   return (
-    <div className={cn('rounded-lg border bg-card p-3 transition-colors duration-500', highlight && 'bg-gold/[0.08]', className)}>
+    <div className={cn('rounded-lg bg-card p-3 transition-colors duration-500', highlight && 'bg-gold/[0.08]', className)}>
       <div className="border-b border-foreground/40 pb-1.5 text-center text-sm font-semibold">{name}</div>
       <div className="grid grid-cols-2 text-xs">
         <div className="border-e border-foreground/40 pe-2 pt-1">
