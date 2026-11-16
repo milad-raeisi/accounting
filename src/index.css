@@ -102,7 +102,7 @@
   --font-sans: 'Inter Variable', 'Vazirmatn Variable', ui-sans-serif, system-ui, sans-serif;
   --font-heading: 'Bricolage Grotesque Variable', 'Vazirmatn Variable', ui-sans-serif, system-ui, sans-serif;
   --font-fa: 'Vazirmatn Variable', 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
-  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, 'Vazirmatn Variable', monospace;
 
   /* cards & pills use 30px; small controls stay tight */
   --radius-sm: 0.5rem;
@@ -189,6 +189,18 @@
   ::selection {
     background: color-mix(in oklch, var(--primary) 22%, transparent);
   }
+}
+
+/*
+ * Persian text is always set in Vazirmatn. Unlayered on purpose, so it also wins over Tailwind's font utilities:
+ * in Persian mode the Latin-first stacks (font-sans, font-heading) switch to Vazirmatn, and any element marked
+ * lang="fa" (e.g. «فا» in the language switch while the site is in English) uses it too.
+ */
+html[lang='fa'] :is(.font-sans, .font-heading),
+body [lang='fa'] {
+  font-family: var(--font-fa);
+  font-variation-settings: normal;
+  letter-spacing: 0;
 }
 
 /* ───────────────────────── Utilities ───────────────────────── */
