@@ -1,6 +1,6 @@
 import type { Lesson } from '../../types'
 
-/* Account titles used in the Pars Arya examples. */
+/* Account titles used in the Masar Petroleum examples. */
 const ac = {
   bank: { fa: 'موجودی نقد (بانک)', en: 'Cash at bank' },
   bidDeposits: { fa: 'سپرده‌های دریافتی شرکت در مناقصه', en: 'Bid deposits received' },
@@ -70,11 +70,11 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: { fa: 'ماتریس کرالیچ برای پارس‌آریا', en: 'The Kraljic matrix for Pars Arya' },
+          caption: { fa: 'ماتریس کرالیچ برای مسار پترولیوم', en: 'The Kraljic matrix for Masar Petroleum' },
           head: [
             { fa: 'گروه', en: 'Quadrant' },
             { fa: 'هزینه‌کرد / ریسک تأمین', en: 'Spend / supply risk' },
-            { fa: 'نمونه در پارس‌آریا', en: 'Pars Arya example' },
+            { fa: 'نمونه در مسار پترولیوم', en: 'Masar Petroleum example' },
             { fa: 'راهبرد', en: 'Strategy' },
           ],
           rows: [
@@ -141,7 +141,7 @@ export const lesson: Lesson = {
             ],
             [
               { fa: 'استعلام بها', en: 'Request for quotation' },
-              { fa: 'اقلام استاندارد و مبالغ کمتر (در پارس‌آریا تا 100,000)', en: 'Standard items and lower values (up to 100,000 at Pars Arya)' },
+              { fa: 'اقلام استاندارد و مبالغ کمتر (در مسار پترولیوم تا 100,000)', en: 'Standard items and lower values (up to 100,000 at Masar Petroleum)' },
               { fa: 'سریع و رقابتی', en: 'Quick and competitive' },
               { fa: 'دست‌کم سه پیشنهاد از فهرست تأییدشده و ثبت مقایسه', en: 'At least three quotations from the AVL, with the comparison recorded' },
             ],
@@ -294,8 +294,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'پارس‌آریا مناقصه عمومی برگزار کرده و چهار پیشنهاد (الف، ب، ج و د) رسیده است. وزن فنی 70٪، وزن بازرگانی 30٪ و حد نصاب فنی 70 است. امتیاز فنی از پنج معیار ساخته می‌شود؛ جدول زیر محاسبه آن را برای پیشنهاددهنده الف نشان می‌دهد (امتیاز وزنی = وزن × امتیاز از 10 ÷ 10).',
-            en: 'Pars Arya ran an open tender and received four bids (A, B, C and D). The technical weight is 70%, the commercial weight 30% and the technical threshold 70. The technical score is built from five criteria; the table below works it out for bidder A (weighted points = weight × score out of 10 ÷ 10).',
+            fa: 'مسار پترولیوم مناقصه عمومی برگزار کرده و چهار پیشنهاد (الف، ب، ج و د) رسیده است. وزن فنی 70٪، وزن بازرگانی 30٪ و حد نصاب فنی 70 است. امتیاز فنی از پنج معیار ساخته می‌شود؛ جدول زیر محاسبه آن را برای پیشنهاددهنده الف نشان می‌دهد (امتیاز وزنی = وزن × امتیاز از 10 ÷ 10).',
+            en: 'Masar Petroleum ran an open tender and received four bids (A, B, C and D). The technical weight is 70%, the commercial weight 30% and the technical threshold 70. The technical score is built from five criteria; the table below works it out for bidder A (weighted points = weight × score out of 10 ÷ 10).',
           },
         },
         {
@@ -364,8 +364,8 @@ export const lesson: Lesson = {
             {
               title: { fa: 'نتیجه', en: 'Result' },
               text: {
-                fa: 'الف برنده است: نه ارزان‌ترین (ب) و نه بهترین فنی (د)، بلکه بهترین ترکیب. با روش «کمترین قیمت قابل‌قبول فنی»، ب با 1,800,000 برنده می‌شد؛ برای قرارداد راهبردی نگهداری کمپرسور، پارس‌آریا کیفیت را مهم‌تر دانسته و روش وزنی را از پیش اعلام کرده است.',
-                en: 'A wins: not the cheapest (B), not the best technical (D), but the best combination. Under “lowest price technically acceptable”, B would have won at 1,800,000; for a strategic compressor maintenance contract, Pars Arya judged quality more important and announced the weighted method in advance.',
+                fa: 'الف برنده است: نه ارزان‌ترین (ب) و نه بهترین فنی (د)، بلکه بهترین ترکیب. با روش «کمترین قیمت قابل‌قبول فنی»، ب با 1,800,000 برنده می‌شد؛ برای قرارداد راهبردی نگهداری کمپرسور، مسار پترولیوم کیفیت را مهم‌تر دانسته و روش وزنی را از پیش اعلام کرده است.',
+                en: 'A wins: not the cheapest (B), not the best technical (D), but the best combination. Under “lowest price technically acceptable”, B would have won at 1,800,000; for a strategic compressor maintenance contract, Masar Petroleum judged quality more important and announced the weighted method in advance.',
               },
             },
           ],
@@ -515,14 +515,14 @@ export const lesson: Lesson = {
             [{ fa: 'دریافت پیشنهادها', en: 'Receive bids' }, { fa: 'ثبت پیشنهادها و تضمین‌ها', en: 'Quotations and guarantees recorded' }, { fa: 'برای قیمت ندارد؛ برای تضمین‌ها: جدول پایین', en: 'None for prices; for guarantees, see below' }],
             [{ fa: 'مقایسه', en: 'Compare' }, { fa: 'جدول مقایسه با قیمت‌های ارزیابی‌شده', en: 'Comparison with evaluated prices' }, { fa: 'ندارد', en: 'None' }],
             [{ fa: 'انتخاب برنده', en: 'Award' }, { fa: 'پیشنهاد برنده به قرارداد یا سفارش خرید تبدیل می‌شود', en: 'The winning quotation becomes a contract or PO' }, { fa: 'ثبت در دفتر کل ندارد؛ تعهد در برابر بودجه', en: 'No ledger entry; a commitment against the budget' }],
-            [{ fa: 'اجرای خدمت', en: 'Service performed' }, { fa: 'تأییدیه انجام خدمات ماهانه', en: 'Monthly service entry sheet' }, { fa: 'بدهکار موضوع هزینه / بستانکار GR/IR', en: 'Dr cost object / Cr GR/IR' }],
+            [{ fa: 'اجرای خدمت', en: 'Service performed' }, { fa: 'برگه ثبت خدمات (SES) ماهانه و پذیرش آن', en: 'Monthly service entry sheet (SES) and its acceptance' }, { fa: 'هنگام پذیرش SES: بدهکار موضوع هزینه / بستانکار GR/IR', en: 'On SES acceptance: Dr cost object / Cr GR/IR' }],
           ],
         },
         {
           type: 'p',
           text: {
-            fa: 'تضمین‌ها دو رفتار متفاوت دارند. **ضمانت‌نامه بانکی** دارایی پارس‌آریا نیست و طبق IFRS در ترازنامه شناسایی نمی‌شود؛ اما باید پیگیری شود، و در عمل حسابداری ایران در **حساب‌های انتظامی** ثبت می‌شود: یک حساب و طرف حساب که در ترازنامه اثری ندارند و فقط یادآور تعهدند. **سپرده نقدی** اما پول واقعی است: به بانک پارس‌آریا واریز شده و تا بازگرداندن یا ضبط، **بدهی** به شرکت‌کننده است.',
-            en: 'Guarantees behave in two different ways. A **bank guarantee** is not Pars Arya’s asset and is not recognised on the balance sheet under IFRS; but it must be tracked, and in Iranian practice it is recorded in **memorandum accounts**: a pair of accounts with no effect on the balance sheet, kept only as a record of the obligation. A **cash deposit**, however, is real money: it sits in Pars Arya’s bank and is a **liability** to the bidder until it is returned or forfeited.',
+            fa: 'تضمین‌ها دو رفتار متفاوت دارند. **ضمانت‌نامه بانکی** دارایی مسار پترولیوم نیست و طبق IFRS در ترازنامه شناسایی نمی‌شود؛ اما باید پیگیری شود، و در عمل حسابداری ایران در **حساب‌های انتظامی** ثبت می‌شود: یک حساب و طرف حساب که در ترازنامه اثری ندارند و فقط یادآور تعهدند. **سپرده نقدی** اما پول واقعی است: به بانک مسار پترولیوم واریز شده و تا بازگرداندن یا ضبط، **بدهی** به شرکت‌کننده است.',
+            en: 'Guarantees behave in two different ways. A **bank guarantee** is not Masar Petroleum’s asset and is not recognised on the balance sheet under IFRS; but it must be tracked, and in Iranian practice it is recorded in **memorandum accounts**: a pair of accounts with no effect on the balance sheet, kept only as a record of the obligation. A **cash deposit**, however, is real money: it sits in Masar Petroleum’s bank and is a **liability** to the bidder until it is returned or forfeited.',
           },
         },
         {
@@ -578,8 +578,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'پس از این ثبت‌ها، حساب سپرده‌های دریافتی صفر است و در حساب‌های انتظامی فقط ضمانت‌نامه انجام تعهدات الف به مبلغ 200,000 باقی مانده است. قرارداد 2,000,000 به‌صورت تعهد در برابر بودجه مرکز هزینه CC-310 ثبت می‌شود. نخستین ثبت واقعی در دفتر کل با **تأییدیه انجام خدمات** ماه اول می‌آید؛ فرض کنید خدمات تأییدشده ماه اول طبق نرخ‌های قرارداد 54,000 باشد:',
-            en: 'After these entries, bid deposits are back to zero and only A’s 200,000 performance guarantee remains in the memorandum accounts. The 2,000,000 contract is recorded as a commitment against the CC-310 budget. The first real ledger entry comes with the first month’s **service entry sheet**; suppose the services confirmed in month one come to 54,000 at the contract rates:',
+            fa: 'پس از این ثبت‌ها، حساب سپرده‌های دریافتی صفر است و در حساب‌های انتظامی فقط ضمانت‌نامه انجام تعهدات الف به مبلغ 200,000 باقی مانده است. قرارداد 2,000,000 به‌صورت تعهد در برابر بودجه مرکز هزینه CC-310 ثبت می‌شود. نخستین ثبت واقعی در دفتر کل با پذیرش **برگه ثبت خدمات (SES)** ماه اول می‌آید. ثبت SES به‌تنهایی سندی نمی‌سازد؛ پذیرش آن توسط مسئول قرارداد (غیر از ثبت‌کننده) ثبت مالی را ایجاد می‌کند. جزئیات در درس «رسید کالا (GRN) و برگه ثبت خدمات (SES)» آمده است. فرض کنید خدمات پذیرفته‌شده ماه اول طبق نرخ‌های قرارداد 54,000 باشد:',
+            en: 'After these entries, bid deposits are back to zero and only A’s 200,000 performance guarantee remains in the memorandum accounts. The 2,000,000 contract is recorded as a commitment against the CC-310 budget. The first real ledger entry comes with the acceptance of the first month’s **service entry sheet (SES)**. Entering an SES posts nothing by itself; its acceptance by the contract holder (not the person who entered it) creates the entry. The lesson on the goods received note (GRN) and service entry sheet (SES) covers this in detail. Suppose the services accepted in month one come to 54,000 at the contract rates:',
           },
         },
         {
@@ -591,14 +591,14 @@ export const lesson: Lesson = {
                 { account: ac.repairs, debit: 54000 },
                 { account: ac.grir, credit: 54000 },
               ],
-              memo: { fa: 'تأییدیه انجام خدمات ماه اول؛ تعهد قرارداد 54,000 کاهش و هزینه واقعی 54,000 افزایش می‌یابد.', en: 'Month-one service entry sheet; the contract commitment falls by 54,000 and actual cost rises by 54,000.' },
+              memo: { fa: 'پذیرش SES ماه اول؛ تعهد قرارداد 54,000 کاهش و هزینه واقعی 54,000 افزایش می‌یابد.', en: 'Month-one SES accepted; the contract commitment falls by 54,000 and actual cost rises by 54,000.' },
             },
             {
               lines: [
                 { account: ac.grir, debit: 54000 },
                 { account: ac.ap, credit: 54000 },
               ],
-              memo: { fa: 'صورت‌حساب پیمانکار پس از تطبیق با تأییدیه.', en: 'The contractor’s invoice after matching with the service entry sheet.' },
+              memo: { fa: 'صورت‌حساب پیمانکار پس از تطبیق با SES پذیرفته‌شده.', en: 'The contractor’s invoice after matching with the accepted SES.' },
             },
           ],
         },
@@ -622,8 +622,8 @@ export const lesson: Lesson = {
           title: { fa: 'کدام روش منبع‌یابی؟', en: 'Which sourcing method?' },
           difficulty: 'easy',
           problem: {
-            fa: 'با جدول اختیارات پارس‌آریا و تعریف روش‌ها، برای هر نیاز روش منبع‌یابی مناسب را تعیین کنید.',
-            en: 'Using the Pars Arya authority matrix and the method definitions, choose the right sourcing method for each need.',
+            fa: 'با جدول اختیارات مسار پترولیوم و تعریف روش‌ها، برای هر نیاز روش منبع‌یابی مناسب را تعیین کنید.',
+            en: 'Using the Masar Petroleum authority matrix and the method definitions, choose the right sourcing method for each need.',
           },
           given: {
             head: [
@@ -890,8 +890,8 @@ export const lesson: Lesson = {
               en: 'Bid bonds, performance guarantees, advance payment guarantees and retention each protect against a risk; bank guarantees go to memorandum accounts and cash deposits are recorded as liabilities.',
             },
             {
-              fa: 'ERP استعلام‌ها، پیشنهادها، مقایسه و انتخاب برنده را با جریان اسناد به سفارش یا قرارداد وصل می‌کند؛ نخستین ثبت واقعی هزینه با رسید کالا یا تأییدیه خدمات می‌آید و پرونده کامل مناقصه، پشتوانه بازیافت هزینه است.',
-              en: 'The ERP links RFQs, quotations, comparison and award to the PO or contract through the document flow; the first real cost entry comes with the goods receipt or service entry sheet, and a complete tender file underpins cost recovery.',
+              fa: 'ERP استعلام‌ها، پیشنهادها، مقایسه و انتخاب برنده را با جریان اسناد به سفارش یا قرارداد وصل می‌کند؛ نخستین ثبت واقعی هزینه با GRN برای کالا یا پذیرش SES برای خدمات می‌آید و پرونده کامل مناقصه، پشتوانه بازیافت هزینه است.',
+              en: 'The ERP links RFQs, quotations, comparison and award to the PO or contract through the document flow; the first real cost entry comes with the GRN for goods or the accepted SES for services, and a complete tender file underpins cost recovery.',
             },
           ],
         },
@@ -955,8 +955,8 @@ export const lesson: Lesson = {
     },
     {
       q: {
-        fa: 'برای نگهداری یکپارچه ایستگاه، پارس‌آریا می‌خواهد پیمانکاران خودشان روش اجرا را پیشنهاد دهند و پیشنهادها با امتیاز وزنی سنجیده شوند. کدام سند مناسب است؟',
-        en: 'For integrated station maintenance, Pars Arya wants contractors to propose their own method, with bids scored by weighted criteria. Which document fits?',
+        fa: 'برای نگهداری یکپارچه ایستگاه، مسار پترولیوم می‌خواهد پیمانکاران خودشان روش اجرا را پیشنهاد دهند و پیشنهادها با امتیاز وزنی سنجیده شوند. کدام سند مناسب است؟',
+        en: 'For integrated station maintenance, Masar Petroleum wants contractors to propose their own method, with bids scored by weighted criteria. Which document fits?',
       },
       options: [
         { fa: 'استعلام بها (RFQ)', en: 'Request for quotation (RFQ)' },
@@ -1057,8 +1057,8 @@ export const lesson: Lesson = {
     },
     {
       q: {
-        fa: 'یک شرکت‌کننده ضمانت‌نامه بانکی شرکت در مناقصه داده است. پارس‌آریا آن را چگونه ثبت می‌کند؟',
-        en: 'A bidder submits a bank guarantee as its bid bond. How does Pars Arya record it?',
+        fa: 'یک شرکت‌کننده ضمانت‌نامه بانکی شرکت در مناقصه داده است. مسار پترولیوم آن را چگونه ثبت می‌کند؟',
+        en: 'A bidder submits a bank guarantee as its bid bond. How does Masar Petroleum record it?',
       },
       options: [
         { fa: 'بدهکار بانک / بستانکار درآمد', en: 'Dr Cash at bank / Cr Revenue' },
@@ -1068,14 +1068,14 @@ export const lesson: Lesson = {
       ],
       answer: 2,
       explain: {
-        fa: 'ضمانت‌نامه بانکی پولی به پارس‌آریا منتقل نمی‌کند، پس دارایی یا درآمد نیست و در ترازنامه شناسایی نمی‌شود؛ اما باید اعتبار و بازگرداندنش پیگیری شود، و در عمل حسابداری ایران در حساب‌های انتظامی ثبت می‌شود. سپرده نقدی برعکس پول واقعی است و بدهی ثبت می‌شود.',
-        en: 'A bank guarantee transfers no money to Pars Arya, so it is neither an asset nor income and is not recognised on the balance sheet; but its validity and return must be tracked, and in Iranian practice it is recorded in memorandum accounts. A cash deposit, by contrast, is real money and is recorded as a liability.',
+        fa: 'ضمانت‌نامه بانکی پولی به مسار پترولیوم منتقل نمی‌کند، پس دارایی یا درآمد نیست و در ترازنامه شناسایی نمی‌شود؛ اما باید اعتبار و بازگرداندنش پیگیری شود، و در عمل حسابداری ایران در حساب‌های انتظامی ثبت می‌شود. سپرده نقدی برعکس پول واقعی است و بدهی ثبت می‌شود.',
+        en: 'A bank guarantee transfers no money to Masar Petroleum, so it is neither an asset nor income and is not recognised on the balance sheet; but its validity and return must be tracked, and in Iranian practice it is recorded in memorandum accounts. A cash deposit, by contrast, is real money and is recorded as a liability.',
       },
     },
     {
       q: {
-        fa: 'برنده مناقصه در مهلت اعتبار پیشنهاد از امضای قرارداد خودداری می‌کند. پارس‌آریا طبق اسناد مناقصه چه می‌کند؟',
-        en: 'The winning bidder refuses to sign within the bid validity period. Under the tender documents, what does Pars Arya do?',
+        fa: 'برنده مناقصه در مهلت اعتبار پیشنهاد از امضای قرارداد خودداری می‌کند. مسار پترولیوم طبق اسناد مناقصه چه می‌کند؟',
+        en: 'The winning bidder refuses to sign within the bid validity period. Under the tender documents, what does Masar Petroleum do?',
       },
       options: [
         { fa: 'مناقصه را تا ابد متوقف می‌کند', en: 'Halts the tender indefinitely' },
@@ -1095,15 +1095,15 @@ export const lesson: Lesson = {
         en: 'For a services contract that came out of a tender, at which ERP step is the first general ledger entry created?',
       },
       options: [
-        { fa: 'تأییدیه انجام خدمات ماهانه', en: 'The monthly service entry sheet' },
+        { fa: 'پذیرش برگه ثبت خدمات (SES) ماهانه', en: 'Acceptance of the monthly service entry sheet (SES)' },
         { fa: 'ثبت پیشنهادهای رسیده', en: 'Entering the bids received' },
         { fa: 'جدول مقایسه قیمت', en: 'The price comparison' },
         { fa: 'انتخاب برنده و ساخت قرارداد', en: 'The award and creation of the contract' },
       ],
       answer: 0,
       explain: {
-        fa: 'استعلام، پیشنهاد، مقایسه و انتخاب برنده هیچ ثبتی در دفتر کل ندارند؛ قرارداد فقط تعهدی در برابر بودجه می‌سازد. نخستین هزینه واقعی وقتی ثبت می‌شود که خدمت انجام و تأیید شود: بدهکار موضوع هزینه / بستانکار GR/IR.',
-        en: 'RFQs, bids, comparison and award create no ledger entries; the contract only creates a commitment against the budget. The first actual cost is posted when the service is performed and confirmed: Dr cost object / Cr GR/IR.',
+        fa: 'استعلام، پیشنهاد، مقایسه و انتخاب برنده هیچ ثبتی در دفتر کل ندارند؛ قرارداد فقط تعهدی در برابر بودجه می‌سازد. نخستین هزینه واقعی وقتی ثبت می‌شود که خدمت انجام و SES آن پذیرفته شود: بدهکار موضوع هزینه / بستانکار GR/IR.',
+        en: 'RFQs, bids, comparison and award create no ledger entries; the contract only creates a commitment against the budget. The first actual cost is posted when the service is performed and its SES is accepted: Dr cost object / Cr GR/IR.',
       },
     },
   ],

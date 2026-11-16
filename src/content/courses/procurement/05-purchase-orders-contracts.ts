@@ -1,7 +1,7 @@
 import type { Lesson } from '../../types'
 
 const ac = {
-  aucAR11: { fa: 'دارایی در جریان تکمیل: چاه AR-11', en: 'Assets under construction: well AR-11' },
+  aucAR11: { fa: 'دارایی در جریان ساخت: چاه AR-11', en: 'Assets under construction: well AR-11' },
   grir: { fa: 'حساب واسط رسید کالا و فاکتور (GR/IR)', en: 'GR/IR clearing account' },
 }
 
@@ -16,7 +16,7 @@ export const lesson: Lesson = {
   tone: 'asset',
   title: { fa: 'سفارش خرید و قراردادها', en: 'Purchase Orders and Contracts' },
   summary: {
-    fa: 'سفارش خرید تعهد رسمی شرکت به تأمین‌کننده است. در این درس انواع سفارش خرید، قرارداد چارچوب و سفارش فراخوان، قرارداد خدمات و صورت‌وضعیت، شرایط کلیدی تجاری، تغییر و تأیید سفارش، و نمایش تعهدات در گزارش هزینه AFE را در ERP می‌آموزید.',
+    fa: 'سفارش خرید تعهد رسمی شرکت به تأمین‌کننده است. در این درس انواع سفارش خرید، قرارداد چارچوب و سفارش فراخوان، قرارداد خدمات و برگه ثبت خدمات (SES)، شرایط کلیدی تجاری، تغییر و تأیید سفارش، و نمایش تعهدات در گزارش هزینه AFE را در ERP می‌آموزید.',
     en: 'A purchase order is the company’s formal commitment to a supplier. This lesson covers PO types, framework agreements and call-offs, service contracts and service entry sheets, key commercial terms, PO changes and approvals, and how commitments appear in AFE cost reports inside the ERP.',
   },
   objectives: [
@@ -25,7 +25,7 @@ export const lesson: Lesson = {
       en: 'Explain what a PO is and what it contains, and choose correctly between standard, service and blanket POs, and between stock and direct-charge purchases.',
     },
     {
-      fa: 'با قرارداد چارچوب و سفارش فراخوان کار کنید و خرید خدمات را با صورت‌وضعیت (SES) کنترل کنید.',
+      fa: 'با قرارداد چارچوب و سفارش فراخوان کار کنید و خرید خدمات را با برگه ثبت خدمات (SES) کنترل کنید.',
       en: 'Work with framework agreements and call-off orders, and control service purchases through service entry sheets (SES).',
     },
     {
@@ -76,8 +76,8 @@ export const lesson: Lesson = {
               en: '**For the supplier**: it is the formal instruction to deliver; a professional supplier does not ship without it.',
             },
             {
-              fa: '**برای انبار و واحد دریافت**: مبنای رسید کالاست؛ انباردار مقدار رسیده را با مقدار سفارش مقایسه می‌کند.',
-              en: '**For the warehouse and receiving**: it is the basis of the goods receipt; the storekeeper compares what arrived with what was ordered.',
+              fa: '**برای انبار و واحد دریافت**: مبنای رسید کالا (GRN) است؛ انباردار مقدار رسیده را با مقدار سفارش مقایسه می‌کند.',
+              en: '**For the warehouse and receiving**: it is the basis of the goods received note (GRN); the storekeeper compares what arrived with what was ordered.',
             },
             {
               fa: '**برای واحد مالی**: مبنای تطبیق فاکتور و پرداخت است و از همان لحظه تأیید، مبلغ آن به‌عنوان **تعهد** روی بودجه AFE یا مرکز هزینه می‌نشیند.',
@@ -99,7 +99,7 @@ export const lesson: Lesson = {
           head: [
             { fa: 'بخش', en: 'Part' },
             { fa: 'چه چیزی در آن می‌آید', en: 'What it contains' },
-            { fa: 'نمونه در پارس‌آریا', en: 'Pars Arya example' },
+            { fa: 'نمونه در مسار پترولیوم', en: 'Masar Petroleum example' },
           ],
           rows: [
             [
@@ -130,7 +130,7 @@ export const lesson: Lesson = {
                 fa: 'انبار، یا یک موضوع هزینه: مرکز هزینه، پروژه (WBS) یا AFE، دستور کار',
                 en: 'Stock, or a cost object: cost centre, project (WBS) or AFE, work order',
               },
-              { fa: '`AFE-AR11` (حفاری چاه AR-11)', en: '`AFE-AR11` (drilling of well AR-11)' },
+              { fa: '`AFE-2025-014.02.03` (لوله‌گذاری و سیمان‌کاری چاه AR-11)', en: '`AFE-2025-014.02.03` (casing and cementing of well AR-11)' },
             ],
             [
               { fa: 'شرایط قیمت', en: 'Pricing conditions' },
@@ -183,7 +183,7 @@ export const lesson: Lesson = {
           head: [
             { fa: 'نوع', en: 'Type' },
             { fa: 'کاربرد', en: 'Used for' },
-            { fa: 'نمونه در پارس‌آریا', en: 'Pars Arya example' },
+            { fa: 'نمونه در مسار پترولیوم', en: 'Masar Petroleum example' },
             { fa: 'چه چیزی تحویل را تأیید می‌کند', en: 'What confirms delivery' },
           ],
           rows: [
@@ -194,10 +194,10 @@ export const lesson: Lesson = {
                 en: 'Defined goods with a set quantity and price, usually one-off',
               },
               {
-                fa: '150 شاخه لوله جداری برای چاه AR-11؛ 2 کارتریج آب‌بند گاز خشک برای کمپرسور K-101',
-                en: '150 casing joints for well AR-11; 2 dry gas seal cartridges for compressor K-101',
+                fa: '150 شاخه لوله جداری برای چاه AR-11؛ 2 کارتریج آب‌بند گاز خشک برای کمپرسور K-201',
+                en: '150 casing joints for well AR-11; 2 dry gas seal cartridges for compressor K-201',
               },
-              { fa: 'رسید کالا (رسید انبار)', en: 'Goods receipt' },
+              { fa: 'رسید کالا (GRN)', en: 'Goods received note (GRN)' },
             ],
             [
               { fa: 'سفارش خدمات', en: 'Service PO' },
@@ -210,8 +210,8 @@ export const lesson: Lesson = {
                 en: 'Cementing the surface casing of AR-11; inspecting a pressure vessel',
               },
               {
-                fa: 'صورت‌وضعیت (SES) که درخواست‌کننده تأیید می‌کند',
-                en: 'Service entry sheet (SES) accepted by the requester',
+                fa: 'برگه ثبت خدمات (SES) که نماینده کارفرما در محل می‌پذیرد',
+                en: 'Service entry sheet (SES) accepted by the company’s site representative',
               },
             ],
             [
@@ -260,7 +260,7 @@ export const lesson: Lesson = {
                 en: 'The PO line carries a cost object: cost centre, WBS or AFE, work order',
               },
               {
-                fa: 'رسید کالا یا تأیید SES مستقیم به همان موضوع هزینه می‌رود',
+                fa: 'رسید کالا یا پذیرش SES مستقیم به همان موضوع هزینه می‌رود',
                 en: 'The goods receipt or SES is charged straight to that cost object',
               },
               { fa: 'کالا وارد موجودی قابل‌مصرف عمومی نمی‌شود', en: 'The item never enters general-use stock' },
@@ -310,7 +310,7 @@ export const lesson: Lesson = {
           type: 'p',
           text: {
             fa: '**قرارداد چارچوب** (Framework Agreement؛ در برخی ERPها Outline Agreement) توافقی برای یک دوره مشخص، مثلاً 12 یا 24 ماه، است که قیمت‌های واحد، شرایط و معمولاً سقف مبلغ یا مقدار را از پیش تعیین می‌کند؛ اما به‌تنهایی دستور تحویل نیست. هر بار که نیاز واقعی پیش می‌آید، یک **سفارش فراخوان** (Call-off یا Release Order) با ارجاع به قرارداد صادر می‌شود و ERP قیمت‌ها را خودکار از قرارداد می‌خواند. شرکت مواد شیمیایی حفاری را از «شیمی حفاری کاوه» با همین روش می‌خرد:',
-            en: 'A **framework agreement** (some ERPs call it an outline agreement) is an agreement for a set period, say 12 or 24 months, that fixes unit prices, terms and usually a value or quantity ceiling in advance; on its own it is not an instruction to deliver. Each time a real need arises, a **call-off order** (release order) is issued against the agreement, and the ERP reads the prices from it automatically. Pars Arya buys its drilling chemicals from Kaveh Drilling Chemicals this way:',
+            en: 'A **framework agreement** (some ERPs call it an outline agreement) is an agreement for a set period, say 12 or 24 months, that fixes unit prices, terms and usually a value or quantity ceiling in advance; on its own it is not an instruction to deliver. Each time a real need arises, a **call-off order** (release order) is issued against the agreement, and the ERP reads the prices from it automatically. Masar Petroleum buys its drilling chemicals from Kaveh Drilling Chemicals this way:',
           },
         },
         {
@@ -350,18 +350,18 @@ export const lesson: Lesson = {
             en: 'Competition happens once, prices stay fixed for the period, lead times shrink, and each call-off carries the AFE of its own well. Each well’s cost is therefore separate and traceable, and an auditor can follow every call-off back to the agreement and the original tender.',
           },
         },
-        { type: 'h', text: { fa: 'قرارداد خدمات و صورت‌وضعیت (SES)', en: 'Service contracts and the service entry sheet (SES)' } },
+        { type: 'h', text: { fa: 'قرارداد خدمات و برگه ثبت خدمات (SES)', en: 'Service contracts and the service entry sheet (SES)' } },
         {
           type: 'p',
           text: {
-            fa: 'در خرید خدمات، چیزی وارد انبار نمی‌شود. به‌جای رسید انبار، پیمانکار کار انجام‌شده را در یک **صورت‌وضعیت** یا **برگه کار روزانه** (Field Ticket) گزارش می‌کند. نماینده شرکت در محل، مثلاً سرپرست حفاری روی دکل (Company Man)، آن را با فهرست بهای قرارداد مقایسه و امضا می‌کند. سپس همین کار در ERP به‌صورت **برگه ورود خدمات** (Service Entry Sheet یا SES) ثبت و تأیید می‌شود. تأیید SES برای خدمات همان نقشی را دارد که رسید کالا برای کالا.',
-            en: 'When you buy services, nothing enters the warehouse. Instead of a goods receipt, the contractor reports the work done on a **progress statement** or **daily field ticket**. The company’s site representative, for example the company man on the rig, checks it against the contract rate schedule and signs it. The same work is then entered and approved in the ERP as a **service entry sheet (SES)**. Approving an SES does for services what a goods receipt does for goods.',
+            fa: 'در خرید خدمات، چیزی وارد انبار نمی‌شود. به‌جای رسید کالا (GRN)، پیمانکار کار انجام‌شده را در یک **صورت‌وضعیت** یا **برگه کارکرد روزانه** (Field Ticket) گزارش می‌کند. نماینده شرکت در محل، مثلاً سرپرست حفاری روی دکل (Company Man)، آن را با فهرست بهای قرارداد مقایسه و امضا می‌کند. سپس همین کار در ERP به‌صورت **برگه ثبت خدمات** (Service Entry Sheet یا SES) ثبت می‌شود و با **پذیرش خدمات** قطعی می‌شود. پذیرش SES برای خدمات همان نقشی را دارد که GRN برای کالا. جزئیات کامل هر دو سند در درس «رسید کالا (GRN) و برگه ثبت خدمات (SES)» آمده است.',
+            en: 'When you buy services, nothing enters the warehouse. Instead of a goods received note (GRN), the contractor reports the work done on a **progress statement** or **daily field ticket**. The company’s site representative, for example the company man on the rig, checks it against the contract rate schedule and signs it. The same work is then entered in the ERP as a **service entry sheet (SES)** and becomes final with **service acceptance**. Accepting an SES does for services what a GRN does for goods. Both documents are covered in full in the lesson on goods received notes (GRN) and service entry sheets (SES).',
           },
         },
         {
           type: 'table',
           caption: {
-            fa: 'صورت‌وضعیت سیمان‌کاری جداری سطحی چاه AR-11، قرارداد خدمات چاه البرز',
+            fa: 'برگه ثبت خدمات (SES) سیمان‌کاری جداری سطحی چاه AR-11، قرارداد خدمات چاه البرز',
             en: 'SES for cementing the surface casing of AR-11, Alborz Well Services contract',
           },
           head: [
@@ -376,7 +376,7 @@ export const lesson: Lesson = {
             [{ fa: 'سیمان کلاس G', en: 'Class G cement' }, { fa: 'کیسه', en: 'sack' }, 800, 30, 24000],
             [{ fa: 'افزودنی‌ها', en: 'Additives' }, { fa: 'مقطوع', en: 'lump sum' }, 1, 5000, 5000],
             [{ fa: 'تجهیز کارگاه (Mobilisation)', en: 'Mobilisation' }, { fa: 'مقطوع', en: 'lump sum' }, 1, 3000, 3000],
-            [{ fa: 'جمع صورت‌وضعیت', en: 'SES total' }, blank, blank, blank, 45000],
+            [{ fa: 'جمع SES', en: 'SES total' }, blank, blank, blank, 45000],
           ],
           numericCols: [2, 3, 4],
         },
@@ -397,8 +397,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'قیمت فقط یکی از شرایط سفارش است. اختلاف‌های بزرگ معمولاً از شرایطی می‌آیند که مبهم نوشته شده‌اند: چه کسی هزینه حمل را می‌دهد؟ پرداخت کی سررسید می‌شود؟ اگر کالا دیر برسد یا خراب باشد چه می‌شود؟ جدول زیر شرایط اصلی را با نمونه‌های پارس‌آریا نشان می‌دهد. درصدها فرضی و برای آموزش‌اند.',
-            en: 'Price is only one term of an order. Big disputes usually come from terms written vaguely: who pays for transport, when payment falls due, what happens if goods arrive late or defective. The table shows the main terms with Pars Arya examples. The percentages are illustrative.',
+            fa: 'قیمت فقط یکی از شرایط سفارش است. اختلاف‌های بزرگ معمولاً از شرایطی می‌آیند که مبهم نوشته شده‌اند: چه کسی هزینه حمل را می‌دهد؟ پرداخت کی سررسید می‌شود؟ اگر کالا دیر برسد یا خراب باشد چه می‌شود؟ جدول زیر شرایط اصلی را با نمونه‌های مسار پترولیوم نشان می‌دهد. درصدها فرضی و برای آموزش‌اند.',
+            en: 'Price is only one term of an order. Big disputes usually come from terms written vaguely: who pays for transport, when payment falls due, what happens if goods arrive late or defective. The table shows the main terms with Masar Petroleum examples. The percentages are illustrative.',
           },
         },
         {
@@ -541,8 +541,8 @@ export const lesson: Lesson = {
         {
           type: 'table',
           caption: {
-            fa: 'جدول اختیارات معاملات پارس‌آریا (ارقام فرضی‌اند)',
-            en: 'Pars Arya delegation of authority (illustrative figures)',
+            fa: 'جدول اختیارات معاملات مسار پترولیوم (ارقام فرضی‌اند)',
+            en: 'Masar Petroleum delegation of authority (illustrative figures)',
           },
           head: [
             { fa: 'مبلغ سفارش', en: 'PO value' },
@@ -647,7 +647,7 @@ export const lesson: Lesson = {
           head: [
             { fa: 'جزء', en: 'Element' },
             { fa: 'در ERP چه نقشی دارد', en: 'Role in the ERP' },
-            { fa: 'نمونه پارس‌آریا', en: 'Pars Arya example' },
+            { fa: 'نمونه مسار پترولیوم', en: 'Masar Petroleum example' },
           ],
           rows: [
             [
@@ -675,8 +675,8 @@ export const lesson: Lesson = {
               { fa: 'موضوع‌های هزینه', en: 'Cost objects' },
               { fa: 'مرکز هزینه، WBS یا AFE، دستور کار', en: 'Cost centre, WBS or AFE, work order' },
               {
-                fa: '`AFE-AR11`؛ مرکز هزینه ایستگاه تقویت فشار `CC-CS`',
-                en: '`AFE-AR11`; compressor station cost centre `CC-CS`',
+                fa: '`AFE-2025-014` (چاه AR-11) با عنصرهایی مثل `AFE-2025-014.02.03` لوله‌گذاری و سیمان‌کاری؛ مرکز هزینه ایستگاه تقویت فشار `CC-ARY-CMP`؛ نشان بازیافت `R` یا `N` و دسته هزینه (توسعه، عملیات)',
+                en: '`AFE-2025-014` (well AR-11) with elements such as `AFE-2025-014.02.03` casing and cementing; compressor station cost centre `CC-ARY-CMP`; recoverable flag `R` or `N` and cost category (Development, Operating)',
               },
             ],
             [
@@ -726,15 +726,15 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: '**هیچ.** سفارش خرید یک تعهد آینده است، نه یک رویداد مالی: هنوز کالایی دریافت نشده و بدهی‌ای پدید نیامده است. پس ERP هیچ سند حسابداری در دفتر کل ثبت نمی‌کند. اما در ماژول پروژه و کنترل هزینه، مبلغ سفارش به‌عنوان **تعهد** (Commitment) روی AFE یا مرکز هزینه می‌نشیند تا مدیر پروژه بداند این بخش از بودجه دیگر آزاد نیست. ثبت خودکار در دفتر کل در لحظه **رسید کالا** یا **تأیید SES** انجام می‌شود و همان لحظه تعهد کم و هزینه واقعی زیاد می‌شود:',
+            fa: '**هیچ.** سفارش خرید یک تعهد آینده است، نه یک رویداد مالی: هنوز کالایی دریافت نشده و بدهی‌ای پدید نیامده است. پس ERP هیچ سند حسابداری در دفتر کل ثبت نمی‌کند. اما در ماژول پروژه و کنترل هزینه، مبلغ سفارش به‌عنوان **تعهد** (Commitment) روی AFE یا مرکز هزینه می‌نشیند تا مدیر پروژه بداند این بخش از بودجه دیگر آزاد نیست. ثبت خودکار در دفتر کل در لحظه **رسید کالا** یا **پذیرش SES** انجام می‌شود و همان لحظه تعهد کم و هزینه واقعی زیاد می‌شود:',
             en: '**Nothing.** A PO is a future commitment, not a financial event: no goods have been received and no liability exists yet. So the ERP posts no accounting document to the general ledger. In the project and cost-control module, however, the PO value is recorded as a **commitment** on the AFE or cost centre, so the project manager knows that part of the budget is no longer free. The automatic general-ledger posting happens at **goods receipt** or **SES approval**, and at that moment the commitment falls and the actual cost rises:',
           },
         },
         {
           type: 'journal',
           title: {
-            fa: 'ثبت‌های خودکار ERP روی AFE-AR11 (تخصیص مستقیم)',
-            en: 'Automatic ERP postings on AFE-AR11 (direct charge)',
+            fa: 'ثبت‌های خودکار ERP روی AFE-2025-014 (تخصیص مستقیم)',
+            en: 'Automatic ERP postings on AFE-2025-014 (direct charge)',
           },
           entries: [
             {
@@ -749,13 +749,13 @@ export const lesson: Lesson = {
               },
             },
             {
-              date: { fa: 'تأیید SES سیمان‌کاری', en: 'Cementing SES approved' },
+              date: { fa: 'پذیرش SES سیمان‌کاری', en: 'Cementing SES accepted' },
               lines: [
                 { account: ac.aucAR11, debit: 45000 },
                 { account: ac.grir, credit: 45000 },
               ],
               memo: {
-                fa: 'صورت‌وضعیت 45,000 خدمات چاه البرز؛ هزینه حفاری چاه توسعه‌ای سرمایه‌ای است و در دارایی در جریان تکمیل جمع می‌شود.',
+                fa: 'SES به مبلغ 45,000 خدمات چاه البرز؛ هزینه حفاری چاه توسعه‌ای سرمایه‌ای است و در دارایی در جریان ساخت جمع می‌شود.',
                 en: 'Alborz Well Services SES of 45,000; development-well drilling cost is capitalised in assets under construction.',
               },
             },
@@ -764,8 +764,8 @@ export const lesson: Lesson = {
         {
           type: 'table',
           caption: {
-            fa: 'گزارش هزینه AFE-AR11 پیش از این دو رویداد (بودجه مصوب 2,500,000؛ ارقام فرضی)',
-            en: 'AFE-AR11 cost report before these two events (approved budget 2,500,000; illustrative)',
+            fa: 'گزارش هزینه AFE-2025-014 پیش از این دو رویداد (بودجه مصوب 2,500,000؛ ارقام فرضی)',
+            en: 'AFE-2025-014 cost report before these two events (approved budget 2,500,000; illustrative)',
           },
           head: [
             { fa: 'عنصر هزینه', en: 'Cost element' },
@@ -794,7 +794,7 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'پس از رسید ردیف 10 (180,000) و تأیید SES سیمان‌کاری (45,000)، هزینه واقعی از 660,000 به 885,000 می‌رسد و تعهدات از 1,093,000 به 868,000 کاهش می‌یابد. مانده AFE همان 747,000 می‌ماند؛ چون پول فقط از ستون «تعهد» به ستون «واقعی» رفته است، نه اینکه پول تازه‌ای خرج شده باشد. مانده فقط وقتی تغییر می‌کند که تعهد تازه‌ای ایجاد شود، سفارشی کاهش یابد یا مبلغ واقعی با مبلغ سفارش فرق کند.',
+            fa: 'پس از رسید ردیف 10 (180,000) و پذیرش SES سیمان‌کاری (45,000)، هزینه واقعی از 660,000 به 885,000 می‌رسد و تعهدات از 1,093,000 به 868,000 کاهش می‌یابد. مانده AFE همان 747,000 می‌ماند؛ چون پول فقط از ستون «تعهد» به ستون «واقعی» رفته است، نه اینکه پول تازه‌ای خرج شده باشد. مانده فقط وقتی تغییر می‌کند که تعهد تازه‌ای ایجاد شود، سفارشی کاهش یابد یا مبلغ واقعی با مبلغ سفارش فرق کند.',
             en: 'After the line 10 receipt (180,000) and the cementing SES (45,000), actuals rise from 660,000 to 885,000 and commitments fall from 1,093,000 to 868,000. The AFE remaining stays at 747,000, because money only moved from the “commitment” column to the “actual” column; nothing new was spent. The remaining amount changes only when a new commitment is created, a PO is reduced, or the actual amount differs from the PO amount.',
           },
         },
@@ -803,8 +803,8 @@ export const lesson: Lesson = {
           tone: 'info',
           title: { fa: 'پیوند با بازیافت هزینه', en: 'Link to cost recovery' },
           text: {
-            fa: 'چون هر ردیف سفارش کد AFE-AR11 دارد، هزینه‌ها از همان ابتدا روی چاه درست می‌نشینند. در قرارداد نفتی، این هزینه‌ها بعداً در صورت هزینه‌های قابل بازیافت ادعا می‌شوند و حسابرس دولت یا شرکا هر رقم را تا سفارش، رسید و فاکتور آن دنبال می‌کند. کد درست در سفارش یعنی ادعای درست در صورت بازیافت هزینه.',
-            en: 'Because every PO line carries AFE-AR11, costs land on the right well from the start. Under the petroleum contract these costs are later claimed in the cost-recovery statement, and the government’s or partners’ auditors trace every figure back to its PO, receipt and invoice. The right code on the PO means the right claim in the cost-recovery statement.',
+            fa: 'چون هر ردیف سفارش کد AFE-2025-014 دارد، هزینه‌ها از همان ابتدا روی چاه درست می‌نشینند. در قرارداد نفتی، این هزینه‌ها بعداً در صورت هزینه‌های قابل بازیافت ادعا می‌شوند و حسابرس دولت یا شرکا هر رقم را تا سفارش، رسید و فاکتور آن دنبال می‌کند. کد درست در سفارش یعنی ادعای درست در صورت بازیافت هزینه.',
+            en: 'Because every PO line carries AFE-2025-014, costs land on the right well from the start. Under the petroleum contract these costs are later claimed in the cost-recovery statement, and the government’s or partners’ auditors trace every figure back to its PO, receipt and invoice. The right code on the PO means the right claim in the cost-recovery statement.',
           },
         },
         {
@@ -842,7 +842,7 @@ export const lesson: Lesson = {
               en: '**Vague terms**: no Incoterms rule, place and version, or no LD clause and certificate list. Fix: the company’s standard terms as the default text of every PO.',
             },
             {
-              fa: '**تأیید SES بدون بررسی**: امضای صورت‌وضعیت بدون مقایسه با برگه کار روزانه و فهرست بهای قرارداد. راه درست: بررسی ردیف‌به‌ردیف و رد ردیف‌های غیرقابل مطالبه.',
+              fa: '**پذیرش SES بدون بررسی**: امضا و پذیرش برگه ثبت خدمات بدون مقایسه با برگه کارکرد روزانه و فهرست بهای قرارداد. راه درست: بررسی ردیف‌به‌ردیف و رد ردیف‌های غیرقابل مطالبه.',
               en: '**Rubber-stamping SES**: signing without checking the field tickets and contract rates. Fix: review line by line and reject non-chargeable lines.',
             },
             {
@@ -856,8 +856,8 @@ export const lesson: Lesson = {
           title: { fa: 'تمرین 1: کدام نوع سند خرید؟', en: 'Exercise 1: Which purchasing document?' },
           difficulty: 'easy',
           problem: {
-            fa: 'برای هر نیاز زیر در پارس‌آریا، نوع سند خرید (سفارش استاندارد، سفارش خدمات، سفارش باز، یا فراخوان از قرارداد چارچوب) و نوع تخصیص هزینه (انبار یا موضوع هزینه مشخص) را تعیین کنید.',
-            en: 'For each Pars Arya need below, choose the purchasing document (standard PO, service PO, blanket PO, or call-off from a framework agreement) and the account assignment (stock or a specific cost object).',
+            fa: 'برای هر نیاز زیر در مسار پترولیوم، نوع سند خرید (سفارش استاندارد، سفارش خدمات، سفارش باز، یا فراخوان از قرارداد چارچوب) و نوع تخصیص هزینه (انبار یا موضوع هزینه مشخص) را تعیین کنید.',
+            en: 'For each Masar Petroleum need below, choose the purchasing document (standard PO, service PO, blanket PO, or call-off from a framework agreement) and the account assignment (stock or a specific cost object).',
           },
           given: {
             head: [
@@ -868,8 +868,8 @@ export const lesson: Lesson = {
               [
                 { fa: 'الف', en: 'a' },
                 {
-                  fa: '2 کارتریج آب‌بند گاز خشک برای کمپرسور K-101 که به‌عنوان قطعه یدکی حیاتی در انبار مرکزی نگهداری می‌شوند',
-                  en: '2 dry gas seal cartridges for compressor K-101, held as critical spares in the Central Warehouse',
+                  fa: '2 کارتریج آب‌بند گاز خشک برای کمپرسور K-201 که به‌عنوان قطعه یدکی حیاتی در انبار مرکزی نگهداری می‌شوند',
+                  en: '2 dry gas seal cartridges for compressor K-201, held as critical spares in the Central Warehouse',
                 },
               ],
               [
@@ -921,9 +921,9 @@ export const lesson: Lesson = {
                 [
                   { fa: 'ب', en: 'b' },
                   { fa: 'فراخوان خدمات از قرارداد موجود', en: 'Service call-off under the contract' },
-                  { fa: '`AFE-AR11`', en: '`AFE-AR11`' },
+                  { fa: '`AFE-2025-014`', en: '`AFE-2025-014`' },
                   {
-                    fa: 'خدمت است و با SES تأیید می‌شود؛ از ابتدا معلوم است برای چاه AR-11 است',
+                    fa: 'خدمت است و با SES پذیرفته می‌شود؛ از ابتدا معلوم است برای چاه AR-11 است',
                     en: 'A service confirmed by SES; clearly for well AR-11 from the start',
                   },
                 ],
@@ -939,7 +939,7 @@ export const lesson: Lesson = {
                 [
                   { fa: 'د', en: 'd' },
                   { fa: 'فراخوان از قرارداد چارچوب', en: 'Call-off from the framework' },
-                  { fa: '`AFE-AR12`', en: '`AFE-AR12`' },
+                  { fa: '`AFE-2026-014`', en: '`AFE-2026-014`' },
                   {
                     fa: 'قیمت‌ها از پیش در قرارداد تعیین شده‌اند؛ هر فراخوان کد چاه خودش را دارد',
                     en: 'Prices are already fixed in the agreement; each call-off carries its own well code',
@@ -949,8 +949,8 @@ export const lesson: Lesson = {
             },
           ],
           answer: {
-            fa: 'الف: سفارش استاندارد برای انبار؛ ب: فراخوان خدمات با SES روی AFE-AR11؛ ج: سفارش باز روی مرکز هزینه میدان؛ د: فراخوان قرارداد چارچوب روی AFE-AR12.',
-            en: 'a: standard PO for stock; b: service call-off with SES on AFE-AR11; c: blanket PO on the field cost centre; d: framework call-off on AFE-AR12.',
+            fa: 'الف: سفارش استاندارد برای انبار؛ ب: فراخوان خدمات با SES روی AFE-2025-014؛ ج: سفارش باز روی مرکز هزینه میدان؛ د: فراخوان قرارداد چارچوب روی AFE-2026-014.',
+            en: 'a: standard PO for stock; b: service call-off with SES on AFE-2025-014; c: blanket PO on the field cost centre; d: framework call-off on AFE-2026-014.',
           },
         },
         {
@@ -958,8 +958,8 @@ export const lesson: Lesson = {
           title: { fa: 'تمرین 2: محاسبه خسارت تأخیر', en: 'Exercise 2: Calculating liquidated damages' },
           difficulty: 'medium',
           problem: {
-            fa: 'پارس‌آریا برای پروژه ارتقای ایستگاه تقویت فشار (WBS `CS-UPG`) سفارشی دو ردیفی به تأمین‌کننده داده است. بند خسارت تأخیر: 0.5٪ ارزش ردیف دیرکرد به ازای هر هفته کامل، حداکثر 5٪ ارزش همان ردیف (فرضی). (الف) خسارت هر ردیف و جمع آن را حساب کنید. (ب) هزینه خالص قابل بازیافت این سفارش چقدر است؟',
-            en: 'For the compressor station upgrade project (WBS `CS-UPG`) Pars Arya placed a two-line PO. LD clause: 0.5% of the late line’s value per full week, capped at 5% of that line’s value (illustrative). (a) Calculate the LDs per line and in total. (b) What is the net recoverable cost of this PO?',
+            fa: 'مسار پترولیوم برای پروژه ارتقای ایستگاه تقویت فشار (WBS `AFE-2026-021`) سفارشی دو ردیفی به تأمین‌کننده داده است. بند خسارت تأخیر: 0.5٪ ارزش ردیف دیرکرد به ازای هر هفته کامل، حداکثر 5٪ ارزش همان ردیف (فرضی). (الف) خسارت هر ردیف و جمع آن را حساب کنید. (ب) هزینه خالص قابل بازیافت این سفارش چقدر است؟',
+            en: 'For the compressor station upgrade project (WBS `AFE-2026-021`) Masar Petroleum placed a two-line PO. LD clause: 0.5% of the late line’s value per full week, capped at 5% of that line’s value (illustrative). (a) Calculate the LDs per line and in total. (b) What is the net recoverable cost of this PO?',
           },
           given: {
             head: [
@@ -1093,8 +1093,8 @@ export const lesson: Lesson = {
           title: { fa: 'تمرین 4: به‌روزرسانی گزارش تعهدات AFE', en: 'Exercise 4: Updating the AFE commitment report' },
           difficulty: 'hard',
           problem: {
-            fa: 'گزارش AFE-AR11 پس از رسید ردیف 10 لوله و تأیید SES سیمان‌کاری این است: بودجه 2,500,000؛ واقعی 885,000؛ تعهد 868,000؛ مانده 747,000. چهار رویداد زیر به ترتیب رخ می‌دهد. پس از هر رویداد، واقعی، تعهد و مانده را به‌روز کنید و ثبت‌های خودکار دفتر کل را بنویسید.',
-            en: 'After the line 10 casing receipt and the cementing SES, AFE-AR11 shows: budget 2,500,000; actual 885,000; commitment 868,000; remaining 747,000. The four events below happen in order. After each one, update actual, commitment and remaining, and write the automatic general-ledger entries.',
+            fa: 'گزارش AFE-2025-014 پس از رسید ردیف 10 لوله و پذیرش SES سیمان‌کاری این است: بودجه 2,500,000؛ واقعی 885,000؛ تعهد 868,000؛ مانده 747,000. چهار رویداد زیر به ترتیب رخ می‌دهد. پس از هر رویداد، واقعی، تعهد و مانده را به‌روز کنید و ثبت‌های خودکار دفتر کل را بنویسید.',
+            en: 'After the line 10 casing receipt and the cementing SES, AFE-2025-014 shows: budget 2,500,000; actual 885,000; commitment 868,000; remaining 747,000. The four events below happen in order. After each one, update actual, commitment and remaining, and write the automatic general-ledger entries.',
           },
           given: {
             head: [
@@ -1121,7 +1121,7 @@ export const lesson: Lesson = {
                 { fa: 'د', en: 'd' },
                 {
                   fa: 'SES خدمات Mud Logging به مبلغ 18,000 روی سفارش موجود تأیید می‌شود',
-                  en: 'An SES of 18,000 for mud-logging services is approved against an existing PO',
+                  en: 'An SES of 18,000 for mud-logging services is accepted against an existing PO',
                 },
               ],
             ],
@@ -1144,7 +1144,7 @@ export const lesson: Lesson = {
                 [{ fa: 'الف: سفارش جدید', en: 'a: new PO' }, 885000, 928000, 687000],
                 [{ fa: 'ب: رسید ردیف 20', en: 'b: line 20 receipt' }, 993000, 820000, 687000],
                 [{ fa: 'ج: کاهش سفارش دکل', en: 'c: rig PO reduced' }, 993000, 770000, 737000],
-                [{ fa: 'د: تأیید SES', en: 'd: SES approved' }, 1011000, 752000, 737000],
+                [{ fa: 'د: پذیرش SES', en: 'd: SES accepted' }, 1011000, 752000, 737000],
               ],
               numericCols: [1, 2, 3],
             },
@@ -1166,7 +1166,7 @@ export const lesson: Lesson = {
                     { account: ac.aucAR11, debit: 18000 },
                     { account: ac.grir, credit: 18000 },
                   ],
-                  memo: { fa: 'تأیید SES خدمات Mud Logging.', en: 'Mud-logging SES approved.' },
+                  memo: { fa: 'پذیرش SES خدمات Mud Logging.', en: 'Mud-logging SES accepted.' },
                 },
               ],
             },
@@ -1247,7 +1247,7 @@ export const lesson: Lesson = {
               },
             },
             {
-              term: { fa: 'صورت‌وضعیت (SES)', en: 'Service entry sheet (SES)' },
+              term: { fa: 'برگه ثبت خدمات (SES)', en: 'Service entry sheet (SES)' },
               def: {
                 fa: 'سند تأیید خدمات انجام‌شده در ERP؛ معادل رسید کالا برای خدمات.',
                 en: 'The ERP document that confirms services performed; the service equivalent of a goods receipt.',
@@ -1308,13 +1308,13 @@ export const lesson: Lesson = {
       },
       options: [
         { fa: 'بدهکار موجودی، بستانکار حساب‌های پرداختنی', en: 'Debit Inventory, credit Accounts payable' },
-        { fa: 'بدهکار دارایی در جریان تکمیل، بستانکار GR/IR', en: 'Debit Assets under construction, credit GR/IR' },
+        { fa: 'بدهکار دارایی در جریان ساخت، بستانکار GR/IR', en: 'Debit Assets under construction, credit GR/IR' },
         { fa: 'هیچ ثبتی؛ فقط تعهد روی AFE ثبت می‌شود', en: 'Nothing; only a commitment is recorded on the AFE' },
         { fa: 'بدهکار هزینه، بستانکار موجودی نقد', en: 'Debit Expense, credit Cash' },
       ],
       answer: 2,
       explain: {
-        fa: 'سفارش خرید هنوز رویداد مالی نیست: نه کالایی رسیده و نه بدهی‌ای ایجاد شده است. پس دفتر کل تغییری نمی‌کند و فقط تعهد روی AFE می‌نشیند. ثبت «بدهکار دارایی در جریان تکمیل، بستانکار GR/IR» وسوسه‌انگیز است، اما آن ثبت در لحظه رسید کالا انجام می‌شود، نه هنگام تأیید سفارش.',
+        fa: 'سفارش خرید هنوز رویداد مالی نیست: نه کالایی رسیده و نه بدهی‌ای ایجاد شده است. پس دفتر کل تغییری نمی‌کند و فقط تعهد روی AFE می‌نشیند. ثبت «بدهکار دارایی در جریان ساخت، بستانکار GR/IR» وسوسه‌انگیز است، اما آن ثبت در لحظه رسید کالا انجام می‌شود، نه هنگام تأیید سفارش.',
         en: 'A PO is not yet a financial event: no goods have arrived and no liability exists. The ledger does not change; only a commitment is recorded on the AFE. “Debit AUC, credit GR/IR” is tempting, but that entry is made at goods receipt, not at PO approval.',
       },
     },
@@ -1354,7 +1354,7 @@ export const lesson: Lesson = {
     },
     {
       q: {
-        fa: 'تأیید صورت‌وضعیت (SES) در خرید خدمات چه نقشی دارد؟',
+        fa: 'تأیید برگه ثبت خدمات (SES) در خرید خدمات چه نقشی دارد؟',
         en: 'What role does approving a service entry sheet (SES) play in buying services?',
       },
       options: [

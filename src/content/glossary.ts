@@ -564,6 +564,77 @@ export const glossary: GlossaryTerm[] = [
     related: ['journal', 'ledger', 'accounting-voucher'],
   },
 
+  // journal-entry management in an ERP
+  {
+    id: 'parked-entry',
+    category: 'recording',
+    term: { fa: 'سند پیش‌نویس (Parked entry)', en: 'Parked Entry' },
+    def: {
+      fa: 'سند حسابداری که در ERP ذخیره شده اما هنوز در دفتر کل قطعی (ثبت نهایی) نشده است؛ روی مانده حساب‌ها اثری ندارد و هنوز می‌توان آن را ویرایش، تکمیل یا حذف کرد. معمولاً تهیه‌کننده سند را پیش‌نویس می‌کند و تأییدکننده پس از بررسی آن را قطعی می‌کند؛ پیش‌نویس‌های باز باید هنگام بستن دوره بررسی شوند.',
+      en: 'An accounting voucher saved in the ERP but not yet posted to the general ledger; it does not affect account balances and can still be edited, completed or deleted. Typically the preparer parks the entry and an approver posts it after review; parked entries still open at period-end must be reviewed during the close.',
+    },
+    related: ['maker-checker', 'accounting-voucher', 'posting-period'],
+  },
+  {
+    id: 'recurring-entry',
+    category: 'recording',
+    term: { fa: 'سند تکراری (Recurring entry)', en: 'Recurring Entry' },
+    def: {
+      fa: 'الگوی سندی که یک بار در ERP تعریف می‌شود و در فواصل منظم با همان حساب‌ها و مبلغ ثابت خودکار ثبت می‌شود، مانند اجاره ماهانه دفتر یا سهم ماهانه هزینه بیمه از پیش‌پرداخت. کار تکراری و خطای ورود را کم می‌کند، اما الگو باید با هر تغییر قرارداد بازبینی و در پایان مدت غیرفعال شود.',
+      en: 'A voucher template defined once in the ERP and posted automatically at regular intervals with the same accounts and a fixed amount, such as monthly office rent or the monthly release of prepaid insurance. It saves repetitive work and keying errors, but the template must be reviewed whenever the contract changes and deactivated when its term ends.',
+    },
+    related: ['parked-entry', 'reversing-entries', 'prepaid-expense'],
+  },
+  {
+    id: 'maker-checker',
+    category: 'recording',
+    term: { fa: 'اصل تهیه‌کننده و تأییدکننده (Maker-checker)', en: 'Maker-Checker (Four-Eyes Principle)' },
+    def: {
+      fa: 'کنترلی که در آن یک نفر سند یا تراکنش را تهیه می‌کند و نفر دوم، مستقل از او، پیش از قطعی شدن آن را بررسی و تأیید می‌کند؛ ERP باید جلوی تأیید سند توسط تهیه‌کننده خودش را بگیرد. این اصل یکی از ساده‌ترین و مؤثرترین شکل‌های تفکیک وظایف است، به‌ویژه برای اسناد دستی، پرداخت‌ها و تغییر داده پایه تأمین‌کننده.',
+      en: 'A control in which one person prepares a voucher or transaction and a second, independent person reviews and approves it before it is posted; the ERP should prevent the preparer from approving their own entry. It is one of the simplest and most effective forms of segregation of duties, especially for manual journals, payments and changes to vendor master data.',
+    },
+    related: ['segregation-of-duties', 'parked-entry', 'internal-control'],
+  },
+  {
+    id: 'validation-rule',
+    category: 'recording',
+    term: { fa: 'قاعده اعتبارسنجی (Validation rule)', en: 'Validation Rule' },
+    def: {
+      fa: 'شرطی که ERP هنگام ثبت سند بررسی می‌کند و اگر برقرار نباشد، خطا یا هشدار می‌دهد؛ مثلاً «ثبت روی حساب‌های مخارج سرمایه‌ای بدون عنصر WBS یا AFE مجاز نیست» یا «مرکز هزینه انبار نباید با حساب هزینه حفاری بیاید». قواعد اعتبارسنجی خطا را در لحظه ورود می‌گیرند، نه در حسابرسی پایان سال.',
+      en: 'A condition the ERP checks when a voucher is entered and, if it fails, raises an error or warning; for example, "postings to capital expenditure accounts require a WBS element or AFE" or "the warehouse cost centre must not be combined with the drilling expense account". Validation rules catch errors at the moment of entry, not in the year-end audit.',
+    },
+    related: ['substitution-rule', 'internal-control', 'recoverable-flag'],
+  },
+  {
+    id: 'substitution-rule',
+    category: 'recording',
+    term: { fa: 'قاعده جایگزینی (Substitution rule)', en: 'Substitution Rule' },
+    def: {
+      fa: 'قاعده‌ای که ERP با آن، هنگام ثبت سند، مقدار یک فیلد را بر پایه شرط‌های معین خودکار پر یا جایگزین می‌کند؛ مثلاً اگر شیء هزینه یک AFE حفاری باشد، نشانه «قابل بازیافت» و کد شریک خودکار پر می‌شوند. جایگزینی کار دستی و ناهماهنگی را کم می‌کند، اما چون بی‌صدا داده را تغییر می‌دهد، باید مستند، آزموده و تحت کنترل تغییرات باشد.',
+      en: 'A rule by which the ERP automatically fills in or replaces the value of a field during posting, based on set conditions; for example, if the cost object is a drilling AFE, the "recoverable" flag and the partner code are filled in automatically. Substitution reduces manual work and inconsistency, but because it changes data silently it must be documented, tested and placed under change control.',
+    },
+    related: ['validation-rule', 'recoverable-flag'],
+  },
+  {
+    id: 'posting-period',
+    category: 'recording',
+    term: { fa: 'دوره ثبت (Posting period)', en: 'Posting Period' },
+    def: {
+      fa: 'دوره‌ای از سال مالی (معمولاً یک ماه) که ERP اسناد با تاریخ آن را می‌پذیرد. پس از بستن ماه، دوره برای ثبت قفل می‌شود تا ارقام گزارش‌شده تغییر نکنند و معمولاً یک یا چند دوره ویژه پس از ماه آخر برای اصلاحات پایان سال در نظر گرفته می‌شود. باز کردن دوباره دوره بسته باید فقط با تأیید مسئول مالی و ثبت دلیل انجام شود.',
+      en: "A period of the fiscal year (usually a month) for which the ERP accepts vouchers dated within it. After the month-end close the period is locked so reported figures cannot change, and one or more special periods after the last month are usually kept for year-end adjustments. Reopening a closed period should require the finance manager's approval and a recorded reason.",
+    },
+    related: ['time-period', 'closing-entries', 'audit-trail'],
+  },
+  {
+    id: 'audit-trail',
+    category: 'recording',
+    term: { fa: 'ردپای حسابرسی (Audit trail)', en: 'Audit Trail' },
+    def: {
+      fa: 'سابقه کامل و غیرقابل حذف هر سند و هر تغییر در سیستم: چه کسی، چه زمانی، چه چیزی را ثبت، تغییر، تأیید یا برگشت داد و مقدار قبلی چه بود. در ERP سند قطعی حذف نمی‌شود و اصلاح آن با سند برگشتی انجام می‌شود تا ردپا بماند؛ حسابرسان، شرکای عملیات مشترک و طرف دولتی در حسابرسی بازیافت هزینه به همین ردپا تکیه می‌کنند.',
+      en: 'A complete, undeletable record of every voucher and every change in the system: who entered, changed, approved or reversed what, when, and what the previous value was. In an ERP a posted voucher is never deleted but corrected with a reversal entry so the trail remains; auditors, joint-venture partners and the government side rely on this trail in cost recovery audits.',
+    },
+    related: ['source-document', 'maker-checker', 'posting-period'],
+  },
   // ───────────────────────────── statements ─────────────────────────────
   {
     id: 'balance-sheet',
@@ -2666,6 +2737,598 @@ export const glossary: GlossaryTerm[] = [
       en: 'When ready for use: Dr Fixed asset, Cr Assets under construction',
     },
     related: ['capital-expenditure', 'work-order-settlement', 'property-plant-equipment'],
+  },
+  // ───────────────────────────── procurement ─────────────────────────────
+  {
+    id: 'procure-to-pay',
+    category: 'procurement',
+    term: { fa: 'چرخه درخواست تا پرداخت (P2P)', en: 'Procure-to-Pay (P2P)' },
+    def: {
+      fa: 'کل زنجیره خرید از نیاز تا پرداخت: درخواست خرید، انتخاب تأمین‌کننده، سفارش خرید، رسید انبار یا تأیید خدمات، ثبت فاکتور با تطبیق سه‌طرفه و پرداخت. در ERP هر مرحله سند خود را دارد و سندها به هم پیوند دارند (جریان اسناد)، پس از روی هر پرداخت می‌توان تا درخواست اولیه عقب رفت.',
+      en: 'The whole purchasing chain from need to payment: purchase requisition, supplier selection, purchase order, goods receipt or service confirmation, invoice entry with three-way match, and payment. In an ERP each step has its own document and the documents are linked (document flow), so any payment can be traced back to the original request.',
+    },
+    related: ['purchase-requisition', 'purchase-order', 'three-way-match'],
+  },
+  {
+    id: 'purchase-requisition',
+    category: 'procurement',
+    term: { fa: 'درخواست خرید (PR)', en: 'Purchase Requisition (PR)' },
+    def: {
+      fa: 'سند داخلی که نیاز به یک کالا یا خدمت را اعلام می‌کند: چه چیزی، چه مقدار، چه زمانی و برای کدام شیء هزینه (مرکز هزینه، دستور کار یا AFE). درخواست خرید تعهدی در برابر تأمین‌کننده ایجاد نمی‌کند و ثبت مالی ندارد، اما باید طبق جدول تفویض اختیار تأیید شود تا به سفارش خرید تبدیل شود.',
+      en: 'An internal document that states a need for goods or services: what, how much, when and for which cost object (cost centre, work order or AFE). It creates no commitment to a supplier and no financial posting, but it must be approved under the delegation of authority before it can become a purchase order.',
+    },
+    related: ['purchase-order', 'delegation-of-authority', 'reorder-point'],
+  },
+  {
+    id: 'request-for-quotation',
+    category: 'procurement',
+    term: { fa: 'درخواست استعلام قیمت (RFQ)', en: 'Request for Quotation (RFQ)' },
+    def: {
+      fa: 'سندی که برای چند تأمین‌کننده واجد شرایط فرستاده می‌شود تا برای کالا یا خدمتی با مشخصات معین، قیمت و شرایط پیشنهادی خود را اعلام کنند. برای خریدهای کوچک و متوسط به کار می‌رود و خریدهای بزرگ معمولاً مناقصه رسمی لازم دارند؛ سقف هر روش را خط‌مشی خرید شرکت یا قانون تعیین می‌کند.',
+      en: 'A document sent to several qualified suppliers asking them to quote their price and terms for goods or services of a given specification. It is used for small and medium purchases, while large purchases usually need a formal tender; the threshold for each method is set by company policy or law.',
+    },
+    related: ['tender', 'bid-evaluation', 'approved-vendor-list'],
+  },
+  {
+    id: 'tender',
+    category: 'procurement',
+    term: { fa: 'مناقصه', en: 'Tender' },
+    def: {
+      fa: 'فرایند رسمی و رقابتی خرید که در آن اسناد مناقصه (مشخصات فنی، شرایط قرارداد، معیارهای ارزیابی) به تأمین‌کنندگان واجد شرایط داده می‌شود و پیشنهادها تا مهلت معین، معمولاً در پاکت‌های لاک‌ومهرشده، دریافت و سپس گشوده می‌شوند. هدف، انتخابی منصفانه و قابل دفاع است؛ در ایران شرکت‌های دولتی تابع قانون برگزاری مناقصات‌اند.',
+      en: 'A formal, competitive purchasing process in which tender documents (technical specifications, contract terms, evaluation criteria) are given to qualified suppliers, and bids are received by a deadline, usually sealed, and then opened. The aim is a fair and defensible selection; in Iran, state-owned companies must follow the Tenders Law.',
+    },
+    related: ['request-for-quotation', 'bid-evaluation', 'prequalification'],
+  },
+  {
+    id: 'prequalification',
+    category: 'procurement',
+    term: { fa: 'ارزیابی کیفی (پیش‌صلاحیت)', en: 'Prequalification' },
+    def: {
+      fa: 'بررسی توان فنی و مالی، تجربه، گواهی‌ها و سابقه HSE تأمین‌کنندگان پیش از دعوت به مناقصه یا ورود به فهرست تأمین‌کنندگان تأییدشده. در صنعت نفت و گاز، برای تجهیزات تحت فشار و قطعات حیاتی، داشتن گواهی‌های لازم (مانند API یا ISO) معمولاً شرط اولیه است.',
+      en: "Assessing suppliers' technical and financial capability, experience, certifications and HSE record before inviting them to tender or adding them to the approved vendor list. In oil and gas, holding the required certifications (such as API or ISO) is usually a precondition for pressure equipment and critical parts.",
+    },
+    related: ['approved-vendor-list', 'tender'],
+  },
+  {
+    id: 'bid-evaluation',
+    category: 'procurement',
+    term: { fa: 'ارزیابی پیشنهادها', en: 'Bid Evaluation' },
+    def: {
+      fa: 'بررسی پیشنهادهای دریافتی بر پایه معیارهای اعلام‌شده در اسناد مناقصه، معمولاً در دو مرحله: ارزیابی فنی (انطباق با مشخصات، تجربه، HSE) و سپس ارزیابی مالی پیشنهادهایی که از نظر فنی پذیرفته شده‌اند. مقایسه باید بر پایه هزینه کل باشد، نه فقط قیمت: حمل، زمان تحویل، شرایط پرداخت و هزینه‌های طول عمر کالا.',
+      en: 'Reviewing the bids received against the criteria announced in the tender documents, usually in two stages: technical evaluation (compliance with specifications, experience, HSE) and then commercial evaluation of the technically accepted bids. The comparison should be on total cost, not price alone: freight, delivery time, payment terms and life-cycle costs.',
+    },
+    related: ['tender', 'request-for-quotation', 'local-content'],
+  },
+  {
+    id: 'approved-vendor-list',
+    category: 'procurement',
+    term: { fa: 'فهرست تأمین‌کنندگان تأییدشده (AVL)', en: 'Approved Vendor List (AVL)' },
+    def: {
+      fa: 'فهرست تأمین‌کنندگانی که ارزیابی کیفی را گذرانده‌اند و برای گروه‌های مشخصی از کالا یا خدمت مجاز به دریافت استعلام و سفارش‌اند. در ERP، نبودن تأمین‌کننده در این فهرست برای آن گروه کالا باید جلوی صدور سفارش را بگیرد؛ فهرست با ارزیابی دوره‌ای عملکرد به‌روز می‌شود.',
+      en: 'The list of suppliers that have passed qualification and are allowed to receive enquiries and orders for specific groups of goods or services. In the ERP, a supplier missing from the list for that material group should block the purchase order; the list is updated through periodic performance reviews.',
+    },
+    related: ['prequalification', 'vendor-master', 'request-for-quotation'],
+  },
+  {
+    id: 'vendor-master',
+    category: 'procurement',
+    term: { fa: 'داده پایه تأمین‌کننده (Vendor master)', en: 'Vendor Master' },
+    def: {
+      fa: 'رکورد اصلی هر تأمین‌کننده در ERP: نام قانونی، شماره ثبت و شماره مالیاتی، نشانی، حساب بانکی، شرایط پرداخت، حساب کنترل پرداختنی‌ها و وضعیت تأیید. چون پرداخت‌ها به حساب بانکی همین رکورد واریز می‌شود، هر تغییر در آن باید با تفکیک وظایف و تأیید جداگانه کنترل شود تا جلوی تقلب گرفته شود.',
+      en: "The central ERP record for each supplier: legal name, registration and tax numbers, address, bank account, payment terms, payables control account and approval status. Because payments go to this record's bank account, every change to it must be controlled with segregation of duties and separate approval to prevent fraud.",
+    },
+    related: ['approved-vendor-list', 'accounts-payable', 'segregation-of-duties'],
+  },
+  {
+    id: 'delegation-of-authority',
+    category: 'procurement',
+    term: { fa: 'جدول تفویض اختیار (DoA)', en: 'Delegation of Authority (DoA)' },
+    def: {
+      fa: 'سندی که مشخص می‌کند چه کسی، تا چه مبلغی و برای چه نوع تصمیمی (درخواست خرید، سفارش، قرارداد، پرداخت) اختیار تأیید دارد. ERP این جدول را در گردش کار تأیید پیاده می‌کند تا هر سند خودکار به تأییدکننده درست برسد؛ خرد کردن یک خرید به چند سفارش کوچک برای ماندن زیر سقف، نقض آشکار آن است.',
+      en: 'A document that sets out who may approve what, up to what amount, for each type of decision (requisitions, orders, contracts, payments). The ERP builds it into the approval workflow so every document reaches the right approver automatically; splitting one purchase into several small orders to stay under a limit is a clear breach.',
+    },
+    related: ['purchase-requisition', 'internal-control', 'segregation-of-duties'],
+  },
+  {
+    id: 'purchase-order',
+    category: 'procurement',
+    term: { fa: 'سفارش خرید (PO)', en: 'Purchase Order (PO)' },
+    def: {
+      fa: 'سند رسمی که شرکت با آن به تأمین‌کننده سفارش می‌دهد و از نظر حقوقی تعهد ایجاد می‌کند: کالا یا خدمت، مقدار، قیمت، شرایط تحویل (مانند اینکوترمز)، شرایط پرداخت و شیء هزینه. سفارش خرید ثبت مالی ندارد، ولی در بسیاری از ERPها به‌عنوان تعهد در برابر بودجه یا AFE دیده می‌شود.',
+      en: 'The formal document by which the company orders from a supplier, creating a legal commitment: goods or services, quantity, price, delivery terms (such as Incoterms), payment terms and cost object. It has no financial posting, but many ERPs show it as a commitment against the budget or AFE.',
+    },
+    related: ['purchase-requisition', 'goods-receipt', 'commitment'],
+  },
+  {
+    id: 'service-purchase-order',
+    category: 'procurement',
+    term: { fa: 'سفارش خرید خدمات (Service PO)', en: 'Service Purchase Order' },
+    def: {
+      fa: 'سفارش خریدی که به جای کالا، خدمات سفارش می‌دهد، مانند اجاره دستگاه حفاری، خدمات سیمان‌کاری چاه یا بازرسی؛ معمولاً با فهرست اقلام خدمت، نرخ واحد (روزانه، ساعتی، متری) و یک سقف مبلغ. چون خدمات انبار نمی‌شوند، به جای رسید انبار با برگه ثبت خدمات تأیید می‌شوند و هزینه آن‌ها مستقیماً به شیء هزینه (AFE، دستور کار یا مرکز هزینه) می‌رود.',
+      en: 'A purchase order for services rather than goods, such as rig hire, well cementing or inspection services, usually with a list of service lines, unit rates (per day, per hour, per metre) and a value ceiling. Because services are not stocked, they are confirmed with a service entry sheet instead of a goods receipt, and the cost goes straight to the cost object (AFE, work order or cost centre).',
+    },
+    related: ['service-entry-sheet', 'purchase-order', 'field-ticket'],
+  },
+  {
+    id: 'framework-agreement',
+    category: 'procurement',
+    term: { fa: 'قرارداد چارچوب', en: 'Framework Agreement' },
+    def: {
+      fa: 'قراردادی بلندمدت با یک تأمین‌کننده که قیمت‌ها یا نرخ‌ها، شرایط و گاهی سقف مبلغ را برای دوره‌ای معین (مثلاً دو سال) ثابت می‌کند، بی‌آنکه مقدار دقیق خرید را از پیش تعهد کند. خرید واقعی بعداً با سفارش‌های فراخوان انجام می‌شود؛ برای اقلام تکراری مانند مواد شیمیایی حفاری یا خدمات بازرسی، زمان و هزینه مناقصه‌های پیاپی را کم می‌کند.',
+      en: 'A long-term contract with a supplier that fixes prices or rates, terms and sometimes a value ceiling for a set period (for example two years), without committing in advance to exact quantities. Actual purchases are made later through call-off orders; for recurring items such as drilling chemicals or inspection services it saves the time and cost of repeated tenders.',
+    },
+    related: ['call-off-order', 'purchase-order', 'tender'],
+  },
+  {
+    id: 'call-off-order',
+    category: 'procurement',
+    term: { fa: 'سفارش فراخوان (Call-off)', en: 'Call-Off Order' },
+    def: {
+      fa: 'سفارشی برای خرید مقدار مشخصی از کالا یا خدمت که با ارجاع به قرارداد چارچوب و با همان قیمت‌ها و شرایط آن صادر می‌شود. ERP با هر فراخوان، مصرف سقف قرارداد را به‌روز می‌کند تا از سقف مصوب عبور نشود.',
+      en: 'An order for a specific quantity of goods or services, issued with reference to a framework agreement at its prices and terms. The ERP updates the consumption of the agreement ceiling with each call-off so the approved ceiling is not exceeded.',
+    },
+    related: ['framework-agreement', 'purchase-order'],
+  },
+  {
+    id: 'goods-received-note',
+    category: 'procurement',
+    term: { fa: 'برگه رسید کالا (GRN)', en: 'Goods Received Note (GRN)' },
+    def: {
+      fa: 'سند چاپی یا الکترونیکی که انباردار هنگام تحویل گرفتن کالا صادر و امضا می‌کند: شماره سفارش خرید، تأمین‌کننده، شماره بارنامه یا برگ تحویل، کالا، مقدار رسیده و وضعیت ظاهری. در ERP برگه رسید کالا خروجی ثبت رسید انبار است و شماره آن در تطبیق سه‌طرفه و پرونده بازیافت هزینه، مدرک دریافت کالا به شمار می‌آید.',
+      en: 'The printed or electronic document the storekeeper issues and signs when taking delivery: purchase order number, supplier, delivery note or waybill number, items, quantity received and visible condition. In an ERP the GRN is the output of the goods receipt posting, and its number serves as proof of receipt in the three-way match and in the cost recovery file.',
+    },
+    related: ['goods-receipt', 'three-way-match', 'source-document'],
+  },
+  {
+    id: 'service-entry-sheet',
+    category: 'procurement',
+    term: { fa: 'برگه ثبت خدمات (صورت‌وضعیت، SES)', en: 'Service Entry Sheet (SES)' },
+    def: {
+      fa: 'سندی که مقدار خدمات انجام‌شده طبق سفارش خرید یا قرارداد را ثبت می‌کند، مانند ساعت کار دستگاه حفاری یا متراژ لوله‌گذاری اجراشده. برای خدمات نقش رسید انبار را دارد: پس از پذیرش، ثبت مالی بدهکار شیء هزینه و بستانکار حساب واسط ایجاد می‌کند و پایه تطبیق سه‌طرفه فاکتور پیمانکار است.',
+      en: "The document that records the quantity of services performed under a purchase order or contract, such as rig hours or metres of pipe laid. For services it plays the role of the goods receipt: once accepted, it posts a debit to the cost object and a credit to the clearing account, and it is the basis for the three-way match on the contractor's invoice.",
+    },
+    related: ['ses-acceptance', 'service-purchase-order', 'three-way-match'],
+  },
+  {
+    id: 'ses-acceptance',
+    category: 'procurement',
+    term: { fa: 'پذیرش برگه ثبت خدمات (SES acceptance)', en: 'SES Acceptance' },
+    def: {
+      fa: 'گامی که در آن نماینده مجاز کارفرما، پس از مقایسه برگه ثبت خدمات با کار واقعاً انجام‌شده و برگه‌های کار میدانی، آن را در ERP می‌پذیرد. پیش از پذیرش، برگه فقط پیش‌نویس است و ثبت مالی ندارد؛ با پذیرش، ثبت بدهکار شیء هزینه و بستانکار حساب واسط ایجاد و فاکتور پیمانکار برای تطبیق سه‌طرفه آماده می‌شود. پذیرنده باید طبق جدول تفویض اختیار مجاز باشد و همان کسی نباشد که برگه را تهیه کرده است.',
+      en: "The step in which the client's authorized representative, after checking the service entry sheet against the work actually done and the field tickets, accepts it in the ERP. Before acceptance the sheet is only a draft with no financial posting; on acceptance the ERP posts a debit to the cost object and a credit to the clearing account, and the contractor's invoice becomes ready for the three-way match. The approver must hold authority under the delegation of authority and must not be the person who prepared the sheet.",
+    },
+    formula: {
+      fa: 'بدهکار شیء هزینه (AFE، دستور کار یا مرکز هزینه)، بستانکار حساب واسط رسید کالا و فاکتور (GR/IR)',
+      en: 'Dr Cost object (AFE, work order or cost centre), Cr GR/IR clearing account',
+    },
+    related: ['service-entry-sheet', 'field-ticket', 'delegation-of-authority'],
+  },
+  {
+    id: 'field-ticket',
+    category: 'procurement',
+    term: { fa: 'برگه کار میدانی (Field ticket)', en: 'Field Ticket' },
+    def: {
+      fa: 'برگه‌ای که پیمانکار خدمات در محل کار (سر چاه یا ایستگاه) تهیه می‌کند و نماینده کارفرما، مانند سرپرست حفاری، همان روز امضا می‌کند: تاریخ، چاه یا محل، نفرات و تجهیزات به‌کاررفته، ساعت‌ها، مواد مصرفی و نرخ‌ها. برگه‌های کار میدانی مدرک اولیه انجام خدمت و پایه برگه ثبت خدمات و فاکتور پیمانکارند؛ بدون آن‌ها دفاع از هزینه در حسابرسی شرکا یا طرف دولتی دشوار است.',
+      en: "A sheet the service contractor prepares at the work site (wellsite or station) and the client's representative, such as the drilling supervisor, signs the same day: date, well or location, crew and equipment used, hours, consumables and rates. Field tickets are the primary evidence that the service was performed and the basis for the service entry sheet and the contractor's invoice; without them, defending the cost in a partner or government audit is difficult.",
+    },
+    related: ['service-entry-sheet', 'ses-acceptance', 'recoverable-cost'],
+  },
+  {
+    id: 'three-way-match',
+    category: 'procurement',
+    term: { fa: 'تطبیق سه‌طرفه', en: 'Three-Way Match' },
+    def: {
+      fa: 'کنترلی که پیش از پرداخت سه سند را با هم مقایسه می‌کند: سفارش خرید (چه چیزی و به چه قیمتی سفارش دادیم)، رسید انبار یا برگه ثبت خدمات (چه مقدار واقعاً رسید) و فاکتور تأمین‌کننده (چه مبلغی خواسته شده). اگر مقدار یا قیمت بیش از حد مجاز تفاوت داشته باشد، ERP فاکتور را تا روشن شدن موضوع برای پرداخت مسدود می‌کند.',
+      en: 'A control that compares three documents before payment: the purchase order (what we ordered and at what price), the goods receipt or service entry sheet (what actually arrived) and the supplier invoice (what is being charged). If quantity or price differs beyond the allowed tolerance, the ERP blocks the invoice for payment until the difference is resolved.',
+    },
+    formula: {
+      fa: 'مقدار فاکتور ≤ مقدار رسیده، و قیمت فاکتور ≈ قیمت سفارش (در حد مجاز)',
+      en: 'Invoice quantity ≤ Quantity received, and Invoice price ≈ PO price (within tolerance)',
+    },
+    related: ['purchase-order', 'goods-receipt', 'gr-ir-clearing-account'],
+  },
+  {
+    id: 'evaluated-receipt-settlement',
+    category: 'procurement',
+    term: { fa: 'تسویه بر پایه رسید (ERS)', en: 'Evaluated Receipt Settlement (ERS)' },
+    def: {
+      fa: 'روشی که در آن تأمین‌کننده فاکتور نمی‌فرستد و ERP بدهی را مستقیماً از روی رسید انبار و قیمت سفارش خرید (یا قرارداد) محاسبه و ثبت می‌کند. برای تأمین‌کنندگان مطمئن با قیمت توافق‌شده، مانند تحویل منظم سوخت یا مواد شیمیایی، کار و خطای تطبیق فاکتور را کم می‌کند؛ اما به داده پایه قیمت دقیق، توافق کتبی با تأمین‌کننده و بررسی الزامات صورت‌حساب مالیاتی نیاز دارد.',
+      en: 'A method in which the supplier sends no invoice and the ERP calculates and posts the liability directly from the goods receipt and the purchase order (or contract) price. For trusted suppliers with agreed prices, such as regular fuel or chemical deliveries, it cuts invoice-matching work and errors; but it requires accurate price master data, a written agreement with the supplier and a check of tax-invoice requirements.',
+    },
+    formula: {
+      fa: 'بدهی به تأمین‌کننده = مقدار رسیده × قیمت سفارش (به‌علاوه مالیات مربوط)',
+      en: 'Amount payable = Quantity received × PO price (plus any applicable tax)',
+    },
+    related: ['goods-receipt', 'three-way-match', 'tax-invoice'],
+  },
+  {
+    id: 'gr-ir-clearing-account',
+    category: 'procurement',
+    term: { fa: 'حساب واسط رسید کالا و فاکتور (GR/IR)', en: 'GR/IR Clearing Account' },
+    def: {
+      fa: 'حساب واسطی که میان رسید کالا و ثبت فاکتور پل می‌زند: رسید انبار آن را بستانکار و فاکتور آن را بدهکار می‌کند، پس در حالت عادی مانده آن صفر می‌شود. مانده باز آن یعنی کالای رسیده بدون فاکتور (بدهی تعهدی) یا فاکتور ثبت‌شده بدون رسید؛ بررسی این مانده بخشی از بستن ماهانه حساب‌هاست.',
+      en: 'A clearing account that bridges goods receipt and invoice entry: the receipt credits it and the invoice debits it, so it normally nets to zero. An open balance means goods received but not invoiced (an accrued liability) or invoices posted without a receipt; reviewing it is part of the month-end close.',
+    },
+    formula: {
+      fa: 'رسید: بدهکار موجودی کالا، بستانکار GR/IR؛ فاکتور: بدهکار GR/IR و مالیات خرید، بستانکار حساب‌های پرداختنی',
+      en: 'Receipt: Dr Inventory, Cr GR/IR; Invoice: Dr GR/IR and Input VAT, Cr Accounts payable',
+    },
+    related: ['goods-receipt', 'gr-ir-reconciliation', 'accrued-liabilities'],
+  },
+  {
+    id: 'gr-ir-reconciliation',
+    category: 'procurement',
+    term: { fa: 'تطبیق و تحلیل حساب GR/IR', en: 'GR/IR Reconciliation' },
+    def: {
+      fa: 'بررسی دوره‌ای (معمولاً در بستن ماهانه) مانده باز حساب واسط رسید کالا و فاکتور، سفارش به سفارش: کدام رسیدها هنوز فاکتور ندارند، کدام فاکتورها رسید ندارند و کدام اختلاف‌ها از تفاوت قیمت یا مقدار آمده‌اند. اقلام قدیمی پیگیری و اصلاح می‌شوند و مانده‌ها برای ارائه درست در ترازنامه، به بدهی تعهدی یا پیش‌پرداخت طبقه‌بندی می‌شوند.',
+      en: 'A periodic review (usually at month-end close) of the open balance on the GR/IR clearing account, order by order: which receipts have no invoice yet, which invoices have no receipt, and which differences come from price or quantity mismatches. Old items are chased and corrected, and balances are reclassified as accrued liabilities or prepayments so the balance sheet presents them correctly.',
+    },
+    related: ['gr-ir-clearing-account', 'received-not-invoiced-accrual', 'three-way-match'],
+  },
+  {
+    id: 'received-not-invoiced-accrual',
+    category: 'procurement',
+    term: { fa: 'بدهی تعهدی دریافت‌شده بدون فاکتور (RNI)', en: 'Received-Not-Invoiced (RNI) Accrual' },
+    def: {
+      fa: 'بدهی برای کالا یا خدماتی که تا پایان دوره رسیده یا انجام شده‌اند اما فاکتورشان هنوز نرسیده است. در ERP مانده بستانکار GR/IR همین بدهی را نشان می‌دهد؛ برای خدماتی که برگه تأییدشان هنوز ثبت نشده (مثلاً کار حفاری انجام‌شده تا آخر ماه) باید ثبت تعهدی دستی زد، که معمولاً در ابتدای دوره بعد معکوس می‌شود، تا هزینه در دوره درست شناسایی شود.',
+      en: 'A liability for goods or services received or performed by period-end whose invoices have not yet arrived. In an ERP the credit balance on GR/IR represents this liability; for services whose entry sheets are not yet recorded (for example drilling work done up to month-end), a manual accrual is needed, usually reversed at the start of the next period, so the cost lands in the right period.',
+    },
+    formula: {
+      fa: 'بدهکار هزینه یا AFE، بستانکار بدهی‌های تعهدی (هزینه‌های پرداختنی)',
+      en: 'Dr Expense or AFE, Cr Accrued liabilities',
+    },
+    related: ['accrued-liabilities', 'gr-ir-reconciliation', 'reversing-entries'],
+  },
+  {
+    id: 'incoterms',
+    category: 'procurement',
+    term: { fa: 'اینکوترمز (Incoterms)', en: 'Incoterms' },
+    def: {
+      fa: 'مجموعه قواعد استاندارد اتاق بازرگانی بین‌المللی (ICC) که با کدهای سه‌حرفی مانند EXW، FCA، CIF و DAP مشخص می‌کند هزینه حمل، بیمه و ترخیص با کیست و ریسک کالا در کدام نقطه از فروشنده به خریدار منتقل می‌شود. اینکوترمز مالکیت یا قیمت را تعیین نمی‌کند، اما بر بهای تمام‌شده کالا (هزینه حمل به داخل) و زمان شناسایی کالای در راه اثر دارد؛ نسخه به‌کاررفته باید همراه کد در سفارش خرید قید شود.',
+      en: 'A set of standard rules from the International Chamber of Commerce (ICC) whose three-letter codes, such as EXW, FCA, CIF and DAP, state who pays for freight, insurance and customs clearance and at which point risk passes from seller to buyer. Incoterms do not decide ownership or price, but they affect the cost of goods (freight-in) and when goods in transit are recognized; the version used should be stated with the code on the purchase order.',
+    },
+    related: ['purchase-order', 'freight-in'],
+  },
+  {
+    id: 'expediting',
+    category: 'procurement',
+    term: { fa: 'پیگیری سفارش (Expediting)', en: 'Expediting' },
+    def: {
+      fa: 'پیگیری فعال سفارش‌ها از صدور تا تحویل، به‌ویژه اقلام با زمان تأمین طولانی: بررسی پیشرفت ساخت، نقشه‌ها و مدارک فنی، بازرسی‌های کارخانه، آماده‌سازی حمل و ترخیص. هدف این است که تأخیر زود کشف شود، نه وقتی که دستگاه حفاری منتظر کالا مانده است.',
+      en: 'Actively following orders from issue to delivery, especially long-lead items: checking manufacturing progress, drawings and technical documents, factory inspections, shipping and customs clearance. The aim is to spot delays early, not when the rig is already waiting for the goods.',
+    },
+    related: ['long-lead-item', 'purchase-order'],
+  },
+  {
+    id: 'long-lead-item',
+    category: 'procurement',
+    term: { fa: 'کالای با زمان تأمین طولانی (Long-lead item)', en: 'Long-Lead Item' },
+    def: {
+      fa: 'کالا یا تجهیزی که ساخت و تحویل آن ماه‌ها طول می‌کشد، مانند کمپرسور، شیرهای سرچاهی، لوله جداری با گرید خاص یا ترانسفورماتور. این اقلام باید خیلی زودتر از زمان نیاز سفارش داده شوند، گاهی پیش از تصویب کامل پروژه، و به پیگیری و بازرسی ویژه نیاز دارند.',
+      en: 'Goods or equipment that take months to manufacture and deliver, such as compressors, wellhead valves, special-grade casing or transformers. They must be ordered well before they are needed, sometimes before the project is fully sanctioned, and need special expediting and inspection.',
+    },
+    related: ['expediting', 'octg', 'critical-spares'],
+  },
+  {
+    id: 'local-content',
+    category: 'procurement',
+    term: { fa: 'محتوای داخلی (Local content)', en: 'Local Content' },
+    def: {
+      fa: 'سیاست‌ها و الزام‌هایی که سهم کالا، خدمات، نیروی کار و شرکت‌های داخلی را در پروژه‌ها افزایش می‌دهند؛ قراردادهای نفتی یا قوانین کشور میزبان معمولاً آن را از پیمانکار می‌خواهند. ممکن است در ارزیابی پیشنهادها امتیاز یا اولویت جداگانه داشته باشد و گزارش آن به ثبت دقیق منشأ کالا و تأمین‌کننده در ERP نیاز دارد. نسبت‌ها و قواعد آن را قانون و قرارداد هر کشور تعیین می‌کند.',
+      en: "Policies and requirements that increase the share of domestic goods, services, workforce and companies in projects; petroleum contracts or host-country laws commonly require it of the contractor. It may carry separate points or preference in bid evaluation, and reporting it requires recording each item's origin and supplier accurately in the ERP. The percentages and rules are set by each country's law and contract.",
+    },
+    related: ['bid-evaluation', 'tender', 'prequalification'],
+  },
+  // ───────────────────────────── budget ─────────────────────────────
+  {
+    id: 'work-programme-and-budget',
+    category: 'budget',
+    term: { fa: 'برنامه کاری و بودجه (WP&B)', en: 'Work Programme and Budget (WP&B)' },
+    def: {
+      fa: 'سند سالانه‌ای که اپراتور برای یک بلوک یا میدان تهیه می‌کند و کارهای برنامه‌ریزی‌شده (حفاری چاه‌ها، تعمیرات، پروژه‌ها) و بودجه هر یک را نشان می‌دهد؛ طبق موافقت‌نامه عملیات مشترک به تصویب کمیته عملیاتی شرکا و در بسیاری از قراردادهای نفتی به تأیید طرف دولتی می‌رسد. هزینه‌ای که در WP&B مصوب یا یک AFE نیامده باشد، ممکن است قابل بازیافت شناخته نشود.',
+      en: "The annual document in which the operator sets out the planned work for a block or field (wells to drill, maintenance, projects) and the budget for each; under the joint operating agreement it is approved by the partners' operating committee and, under many petroleum contracts, by the government side. A cost that is not in the approved WP&B or an AFE may not be accepted as recoverable.",
+    },
+    related: ['afe', 'joint-operating-agreement', 'capex-opex-budget'],
+  },
+  {
+    id: 'capex-opex-budget',
+    category: 'budget',
+    term: { fa: 'بودجه سرمایه‌ای و جاری (CAPEX / OPEX)', en: 'CAPEX and OPEX Budget' },
+    def: {
+      fa: 'تقسیم بودجه به دو بخش: بودجه سرمایه‌ای (CAPEX) برای مخارجی که دارایی می‌سازند یا عمر آن را افزایش می‌دهند، مانند حفاری چاه یا ساخت خط لوله جدید، و بودجه جاری (OPEX) برای هزینه‌های روزمره بهره‌برداری و نگهداری. این تفکیک باید با رویه سرمایه‌ای کردن در حسابداری یکی باشد؛ در قراردادهای نفتی هم CAPEX و OPEX اغلب قواعد بازیافت متفاوتی دارند.',
+      en: 'Splitting the budget into two parts: the capital budget (CAPEX) for spending that creates assets or extends their life, such as drilling a well or building a new pipeline, and the operating budget (OPEX) for day-to-day operating and maintenance costs. The split must match the accounting capitalization policy; in petroleum contracts, CAPEX and OPEX often follow different recovery rules too.',
+    },
+    related: ['capital-expenditure', 'revenue-expenditure', 'work-programme-and-budget'],
+  },
+  {
+    id: 'budget-version',
+    category: 'budget',
+    term: { fa: 'نسخه بودجه', en: 'Budget Version' },
+    def: {
+      fa: 'هر نسخه جداگانه از بودجه که در ERP با شناسه خود نگه داشته می‌شود، مانند بودجه اولیه مصوب، بودجه اصلاحی میان‌سال و پیش‌بینی پایان سال. نگه داشتن نسخه‌ها کنار هم نشان می‌دهد بودجه چگونه و با چه تصویبی تغییر کرده است؛ بودجه مصوب اولیه نباید بازنویسی شود.',
+      en: 'Each separate version of the budget held in the ERP under its own identifier, such as the original approved budget, the mid-year revised budget and the year-end forecast. Keeping versions side by side shows how the budget changed and with what approval; the original approved budget should never be overwritten.',
+    },
+    related: ['work-programme-and-budget', 'budget-transfer', 'estimate-at-completion'],
+  },
+  {
+    id: 'wbs',
+    category: 'budget',
+    term: { fa: 'ساختار شکست کار (WBS)', en: 'Work Breakdown Structure (WBS)' },
+    def: {
+      fa: 'تقسیم سلسله‌مراتبی کل دامنه یک پروژه به بخش‌های کوچک‌تر و قابل مدیریت، از کل پروژه تا بسته‌های کاری؛ مثلاً پروژه حفاری چاه AR-09 به آماده‌سازی محل، حفاری، لوله‌گذاری و سیمان‌کاری، تکمیل چاه و اتصال به خط جریان. در ERP، WBS اسکلت بودجه، ثبت هزینه، تعهدات و گزارش پیشرفت پروژه است.',
+      en: 'The hierarchical breakdown of the whole scope of a project into smaller, manageable parts, from the full project down to work packages; for example, drilling well AR-09 broken into site preparation, drilling, casing and cementing, well completion and tie-in to the flowline. In an ERP the WBS is the skeleton for the project budget, cost postings, commitments and progress reporting.',
+    },
+    related: ['wbs-element', 'wbs-dictionary', 'hundred-percent-rule'],
+  },
+  {
+    id: 'wbs-element',
+    category: 'budget',
+    term: { fa: 'عنصر WBS', en: 'WBS Element' },
+    def: {
+      fa: 'هر گره در ساختار شکست کار که در ERP نقش شیء هزینه را دارد: بودجه می‌گیرد، تعهد و هزینه واقعی روی آن ثبت می‌شود و در پایان به گیرنده نهایی، مانند دارایی در جریان تکمیل یا هزینه دوره، تسویه می‌شود. معمولاً فقط عناصر پایین‌ترین سطح ثبت هزینه می‌پذیرند و سطح‌های بالاتر جمع آن‌ها را نشان می‌دهند.',
+      en: 'Each node in the work breakdown structure that acts as a cost object in the ERP: it receives budget, carries commitments and actual costs, and is finally settled to a receiver such as assets under construction or period expense. Usually only the lowest-level elements accept postings, and higher levels show their totals.',
+    },
+    related: ['wbs', 'settlement', 'assets-under-construction'],
+  },
+  {
+    id: 'wbs-dictionary',
+    category: 'budget',
+    term: { fa: 'فرهنگ WBS (WBS dictionary)', en: 'WBS Dictionary' },
+    def: {
+      fa: 'سندی همراه ساختار شکست کار که برای هر عنصر، شرح دامنه کار، خروجی‌ها، مسئول، برآورد هزینه و زمان و معیار تکمیل را می‌نویسد. فرهنگ WBS ابهام را برطرف می‌کند تا هر هزینه دقیقاً به یک عنصر درست تخصیص یابد و دامنه پروژه بی‌صدا گسترش نیابد.',
+      en: 'A document that accompanies the work breakdown structure and records, for each element, the scope description, deliverables, owner, cost and time estimate and completion criteria. It removes ambiguity so every cost is charged to exactly one correct element and the project scope does not quietly grow.',
+    },
+    related: ['wbs', 'wbs-element', 'cost-code'],
+  },
+  {
+    id: 'hundred-percent-rule',
+    category: 'budget',
+    term: { fa: 'قاعده 100 درصد', en: '100% Rule' },
+    def: {
+      fa: 'اصل بنیادی ساختار شکست کار: مجموع کار عناصر زیرین هر سطح باید دقیقاً برابر 100 درصد کار عنصر بالاتر باشد؛ نه کاری بیرون از دامنه در آن بیاید و نه بخشی از دامنه جا بماند. همین قاعده برای بودجه هم برقرار است: جمع بودجه عناصر زیرین باید با بودجه عنصر بالاتر برابر باشد.',
+      en: 'The basic principle of a work breakdown structure: the work of the child elements at each level must add up to exactly 100% of the work of their parent, with nothing outside the scope included and nothing in scope left out. The same rule applies to budget: the child budgets must sum to the parent budget.',
+    },
+    formula: {
+      fa: 'بودجه عنصر بالاتر = جمع بودجه عناصر زیرین',
+      en: 'Parent budget = Sum of child budgets',
+    },
+    related: ['wbs', 'wbs-element'],
+  },
+  {
+    id: 'cost-code',
+    category: 'budget',
+    term: { fa: 'کد هزینه', en: 'Cost Code' },
+    def: {
+      fa: 'کد استانداردی که نوع فعالیت یا هزینه را در پروژه‌ها و عملیات مشخص می‌کند، مانند «حفاری»، «لوله جداری»، «سیمان‌کاری» یا «خدمات گل حفاری»، و در همه چاه‌ها و AFEها یکسان به کار می‌رود. با کدهای هزینه یکسان می‌توان هزینه چاه‌ها را با هم و با برآورد مقایسه کرد و دسته‌بندی‌های لازم برای گزارش بازیافت هزینه را تهیه کرد.',
+      en: 'A standard code that identifies the type of activity or cost in projects and operations, such as "drilling", "casing", "cementing" or "mud services", used identically across all wells and AFEs. Consistent cost codes let you compare wells with each other and with estimates, and produce the categories the cost recovery report needs.',
+    },
+    related: ['afe', 'cost-element', 'wbs-dictionary'],
+  },
+  {
+    id: 'cost-element',
+    category: 'budget',
+    term: { fa: 'عنصر هزینه (Cost element)', en: 'Cost Element' },
+    def: {
+      fa: 'دسته‌بندی هزینه در حسابداری مدیریت که نشان می‌دهد چه نوع هزینه‌ای رخ داده است (مواد، دستمزد، خدمات پیمانکار، استهلاک)؛ در بسیاری از ERPها هر حساب هزینه دفتر کل یک عنصر هزینه اولیه متناظر دارد. عنصر هزینه می‌گوید «چه» خرج شد و شیء هزینه، مانند مرکز هزینه یا عنصر WBS، می‌گوید «کجا» یا «برای چه».',
+      en: 'A cost category in management accounting that shows what kind of cost was incurred (materials, labour, contractor services, depreciation); in many ERPs each general ledger expense account has a matching primary cost element. The cost element says what was spent, while the cost object, such as a cost centre or WBS element, says where or what for.',
+    },
+    related: ['cost-centre', 'cost-code', 'chart-of-accounts'],
+  },
+  {
+    id: 'cost-centre',
+    category: 'budget',
+    term: { fa: 'مرکز هزینه', en: 'Cost Centre' },
+    def: {
+      fa: 'واحدی از سازمان که هزینه‌های جاری آن جداگانه جمع و کنترل می‌شود و مسئول مشخصی دارد، مانند ایستگاه تقویت فشار، انبار میدان یا واحد حراست. مرکز هزینه برای هزینه‌های تکراری و ماندگار است و بودجه سالانه می‌گیرد؛ کارهای موقت با تاریخ شروع و پایان بهتر است روی سفارش داخلی یا عنصر WBS ثبت شوند.',
+      en: 'A unit of the organisation whose running costs are collected and controlled separately and which has a named owner, such as the compressor station, the Field Warehouse or the security department. Cost centres are for recurring, ongoing costs and receive an annual budget; temporary jobs with a start and end date are better recorded on an internal order or WBS element.',
+    },
+    related: ['cost-element', 'internal-order', 'wbs-element'],
+  },
+  {
+    id: 'internal-order',
+    category: 'budget',
+    term: { fa: 'سفارش داخلی (Internal order)', en: 'Internal Order' },
+    def: {
+      fa: 'شیء هزینه موقت در ERP برای جمع کردن هزینه یک کار یا رویداد مشخص و کوتاه‌مدت، مانند یک دوره بازرسی ایمنی، یک مطالعه یا یک برنامه آموزشی. بودجه جداگانه می‌گیرد، هزینه واقعی روی آن جمع می‌شود و در پایان به مرکز هزینه، دارایی یا شیء دیگری تسویه و بسته می‌شود.',
+      en: 'A temporary cost object in the ERP for collecting the cost of a specific, short-lived job or event, such as a safety inspection campaign, a study or a training programme. It gets its own budget, collects actual costs, and is finally settled to a cost centre, asset or other object and closed.',
+    },
+    related: ['cost-centre', 'settlement', 'wbs-element'],
+  },
+  {
+    id: 'recoverable-flag',
+    category: 'budget',
+    term: { fa: 'نشانه قابل بازیافت بودن (Recoverable flag)', en: 'Recoverable Flag' },
+    def: {
+      fa: 'فیلد یا ویژگی‌ای در ERP، روی شیء هزینه، عنصر هزینه یا خود ثبت، که مشخص می‌کند هزینه طبق قرارداد نفتی قابل بازیافت است یا نه (و گاهی دسته بازیافت آن، مانند سرمایه‌ای یا جاری). اگر این نشانه از ابتدا، هنگام ساخت AFE یا مرکز هزینه، درست تنظیم شود، گزارش بازیافت هزینه خودکار و قابل حسابرسی تهیه می‌شود؛ اصلاح دستی آن در پایان سال پرخطاست.',
+      en: 'A field or attribute in the ERP, on the cost object, the cost element or the posting itself, that marks whether a cost is recoverable under the petroleum contract (and sometimes its recovery category, such as capital or operating). Set correctly from the start, when the AFE or cost centre is created, it makes the cost recovery report automatic and auditable; fixing it by hand at year-end is error-prone.',
+    },
+    related: ['recoverable-cost', 'cost-recovery', 'afe'],
+  },
+  {
+    id: 'supplementary-afe',
+    category: 'budget',
+    term: { fa: 'AFE تکمیلی (Supplementary AFE)', en: 'Supplementary AFE' },
+    def: {
+      fa: 'درخواست بودجه اضافه برای یک AFE مصوب، وقتی هزینه نهایی برآوردی از مبلغ مصوب به‌علاوه حد مجاز توافق‌شده بیشتر می‌شود یا دامنه کار تغییر می‌کند؛ مثلاً وقتی حفاری چاه با مشکل گیر کردن لوله روبه‌رو می‌شود. باید پیش از صرف هزینه اضافه، با ذکر علت و برآورد جدید، به تصویب همان مرجع AFE اصلی (در عملیات مشترک، شرکا) برسد.',
+      en: 'A request for additional budget on an approved AFE when the estimated final cost will exceed the approved amount plus the agreed tolerance, or when the scope changes; for example, when drilling runs into a stuck-pipe problem. It must be approved, with the reason and a new estimate, by the same authority as the original AFE (the partners, in a joint operation) before the extra money is spent.',
+    },
+    related: ['afe', 'budget-tolerance', 'estimate-at-completion'],
+  },
+  {
+    id: 'afe-close-out',
+    category: 'budget',
+    term: { fa: 'بستن AFE (AFE close-out)', en: 'AFE Close-Out' },
+    def: {
+      fa: 'فرایند بستن AFE پس از پایان کار: همه رسیدها، برگه‌های تأیید خدمات و فاکتورها ثبت و تعهدات باز لغو می‌شوند، مواد استفاده‌نشده به انبار برگشت داده می‌شود، هزینه نهایی با مبلغ مصوب مقایسه و انحراف‌ها توضیح داده می‌شوند و هزینه‌ها به دارایی یا هزینه دوره تسویه می‌شوند. سپس AFE برای ثبت جدید بسته و گزارش نهایی آن برای شرکا یا طرف دولتی فرستاده می‌شود.',
+      en: 'The process of closing an AFE once the work is finished: all receipts, service entry sheets and invoices are posted and open commitments cancelled, unused materials are returned to the warehouse, the final cost is compared with the approved amount and variances are explained, and costs are settled to assets or period expense. The AFE is then blocked for new postings and its final report is sent to the partners or the government side.',
+    },
+    related: ['afe', 'settlement', 'commitment'],
+  },
+  {
+    id: 'commitment',
+    category: 'budget',
+    term: { fa: 'تعهد (Commitment)', en: 'Commitment' },
+    def: {
+      fa: 'مبلغی که با صدور سفارش خرید یا قرارداد به آن متعهد شده‌ایم اما هنوز هزینه واقعی نشده است، چون کالا نرسیده یا خدمت انجام نشده است. تعهد در دفتر کل ثبت نمی‌شود، ولی ERP آن را روی شیء هزینه (AFE، عنصر WBS، مرکز هزینه) نشان می‌دهد تا بودجه آزاد واقعی دیده شود؛ با رسید کالا یا پذیرش خدمات، تعهد کاهش و هزینه واقعی افزایش می‌یابد.',
+      en: 'An amount the company is bound to by an issued purchase order or contract that has not yet become an actual cost, because the goods have not arrived or the service has not been performed. It is not posted to the general ledger, but the ERP shows it against the cost object (AFE, WBS element, cost centre) so the truly free budget is visible; on goods receipt or service acceptance the commitment goes down and actual cost goes up.',
+    },
+    formula: {
+      fa: 'بودجه آزاد = بودجه مصوب − هزینه واقعی − تعهدات باز',
+      en: 'Available budget = Approved budget − Actual cost − Open commitments',
+    },
+    related: ['availability-control', 'purchase-order', 'afe'],
+  },
+  {
+    id: 'availability-control',
+    category: 'budget',
+    term: { fa: 'کنترل بودجه در دسترس (Availability control)', en: 'Availability Control' },
+    def: {
+      fa: 'کنترلی در ERP که هنگام ثبت درخواست خرید، سفارش یا هزینه، بودجه آزاد شیء هزینه را بررسی می‌کند و اگر مبلغ از بودجه بیشتر شود، بسته به تنظیم، هشدار می‌دهد یا ثبت را متوقف می‌کند. این کنترل جلوی خرج بدون بودجه را پیش از وقوع می‌گیرد، نه پس از آن.',
+      en: 'An ERP control that checks the free budget of the cost object when a requisition, order or cost is entered and, depending on its settings, warns or blocks the posting if the amount would exceed the budget. It stops unbudgeted spending before it happens, not after.',
+    },
+    related: ['commitment', 'budget-tolerance', 'afe'],
+  },
+  {
+    id: 'budget-tolerance',
+    category: 'budget',
+    term: { fa: 'حد مجاز انحراف (Tolerance)', en: 'Budget Tolerance' },
+    def: {
+      fa: 'آستانه‌ای (درصد یا مبلغ) که ERP بر پایه آن تصمیم می‌گیرد مصرف بودجه یا اختلاف اسناد را بپذیرد، هشدار دهد یا ثبت را متوقف کند؛ در یک تنظیم فرضی، تا 90 درصد بودجه بدون پیام، از 90 تا 100 درصد با هشدار و بیش از 100 درصد با توقف ثبت. حد مجاز عبور از AFE را موافقت‌نامه عملیات مشترک یا خط‌مشی شرکت تعیین می‌کند و حدهای مجاز قیمت و مقدار در تطبیق سه‌طرفه هم به همین شکل کار می‌کنند.',
+      en: 'A threshold (a percentage or amount) the ERP uses to decide whether to accept budget usage or a document mismatch, warn, or block the posting; in an illustrative setup, up to 90% of budget passes silently, 90% to 100% triggers a warning and anything above 100% is blocked. The AFE overrun tolerance is set by the joint operating agreement or company policy, and the price and quantity tolerances in the three-way match work the same way.',
+    },
+    related: ['availability-control', 'supplementary-afe', 'three-way-match'],
+  },
+  {
+    id: 'budget-transfer',
+    category: 'budget',
+    term: { fa: 'جابه‌جایی بودجه (Budget transfer)', en: 'Budget Transfer' },
+    def: {
+      fa: 'انتقال بخشی از بودجه از یک شیء هزینه به دیگری، مثلاً از عنصر WBS «سیمان‌کاری» به «تکمیل چاه»، بدون تغییر کل بودجه مصوب. باید با سند و تأیید طبق جدول تفویض اختیار انجام و در ERP به‌صورت یک کاهش و یک افزایش هم‌مبلغ ثبت شود تا ردپای آن بماند؛ اگر کل بودجه بالا برود، دیگر جابه‌جایی نیست و افزایش بودجه یا AFE تکمیلی لازم است.',
+      en: 'Moving part of a budget from one cost object to another, for example from the "cementing" WBS element to "well completion", without changing the total approved budget. It must be documented and approved under the delegation of authority, and recorded in the ERP as a matching decrease and increase so the trail remains; if the total goes up, it is no longer a transfer but a budget increase or supplementary AFE.',
+    },
+    related: ['budget-version', 'supplementary-afe', 'delegation-of-authority'],
+  },
+  {
+    id: 'estimate-to-complete',
+    category: 'budget',
+    term: { fa: 'برآورد هزینه تا تکمیل (ETC)', en: 'Estimate to Complete (ETC)' },
+    def: {
+      fa: 'برآورد هزینه‌ای که از امروز تا پایان کار هنوز لازم است. بهترین برآورد از بازبینی کار باقی‌مانده به دست می‌آید؛ اگر فرض شود کارایی هزینه تا پایان مانند گذشته می‌ماند، می‌توان آن را با فرمول زیر هم تخمین زد.',
+      en: 'The estimated cost still needed from today to finish the work. The best estimate comes from re-assessing the remaining work; if cost efficiency is assumed to continue as it has so far, it can also be approximated with the formula below.',
+    },
+    formula: {
+      fa: 'ETC = (BAC − EV) ÷ CPI؛ BAC کل بودجه مصوب کار است',
+      en: 'ETC = (BAC − EV) ÷ CPI, where BAC is the total approved budget for the work',
+    },
+    related: ['estimate-at-completion', 'cost-performance-index', 'earned-value'],
+  },
+  {
+    id: 'estimate-at-completion',
+    category: 'budget',
+    term: { fa: 'برآورد هزینه در پایان کار (EAC)', en: 'Estimate at Completion (EAC)' },
+    def: {
+      fa: 'برآورد هزینه کل کار در زمان پایان آن: هزینه واقعی تا امروز به‌علاوه برآورد هزینه تا تکمیل. مقایسه EAC با کل بودجه مصوب (BAC) نشان می‌دهد پروژه یا AFE احتمالاً با چه انحرافی تمام می‌شود و آیا AFE تکمیلی لازم است.',
+      en: 'The expected total cost of the work when it is finished: actual cost to date plus the estimate to complete. Comparing EAC with the total approved budget (BAC) shows the likely final variance of the project or AFE and whether a supplementary AFE is needed.',
+    },
+    formula: {
+      fa: 'EAC = AC + ETC؛ انحراف در پایان کار = BAC − EAC',
+      en: 'EAC = AC + ETC; Variance at completion = BAC − EAC',
+    },
+    related: ['estimate-to-complete', 'actual-cost', 'supplementary-afe'],
+  },
+  {
+    id: 'earned-value-management',
+    category: 'budget',
+    term: { fa: 'مدیریت ارزش کسب‌شده (EVM)', en: 'Earned Value Management (EVM)' },
+    def: {
+      fa: 'روشی برای سنجش عملکرد پروژه که سه عدد را در یک تاریخ کنار هم می‌گذارد: ارزش برنامه‌ریزی‌شده (PV)، ارزش کسب‌شده (EV) و هزینه واقعی (AC). این سه عدد نشان می‌دهند پروژه از نظر هزینه و زمان جلوتر یا عقب‌تر از برنامه است؛ مقایسه ساده هزینه واقعی با بودجه این را نشان نمی‌دهد، چون مقدار کار انجام‌شده را در نظر نمی‌گیرد.',
+      en: 'A method of measuring project performance that puts three numbers side by side at a given date: planned value (PV), earned value (EV) and actual cost (AC). Together they show whether the project is ahead of or behind plan on cost and on schedule; simply comparing actual cost with budget cannot show this, because it ignores how much work has been done.',
+    },
+    formula: {
+      fa: 'انحراف هزینه = EV − AC؛ انحراف زمان‌بندی = EV − PV',
+      en: 'Cost variance = EV − AC; Schedule variance = EV − PV',
+    },
+    related: ['planned-value', 'earned-value', 'actual-cost'],
+  },
+  {
+    id: 'planned-value',
+    category: 'budget',
+    term: { fa: 'ارزش برنامه‌ریزی‌شده (PV)', en: 'Planned Value (PV)' },
+    def: {
+      fa: 'بودجه کاری که طبق برنامه زمان‌بندی باید تا یک تاریخ معین انجام می‌شد. مثلاً اگر بودجه حفاری یک چاه 1,000,000 و برنامه آن 40 روزه باشد و تا روز 20 باید نیمی از کار تمام شده باشد، PV در روز 20 برابر 500,000 است.',
+      en: 'The budget for the work that, according to the schedule, should have been done by a given date. For example, if a well has a drilling budget of 1,000,000 over a 40-day plan and half the work should be done by day 20, PV on day 20 is 500,000.',
+    },
+    formula: {
+      fa: 'PV = کل بودجه مصوب (BAC) × درصد پیشرفت برنامه‌ریزی‌شده',
+      en: 'PV = BAC × Planned % complete',
+    },
+    related: ['earned-value', 'actual-cost', 'schedule-performance-index'],
+  },
+  {
+    id: 'earned-value',
+    category: 'budget',
+    term: { fa: 'ارزش کسب‌شده (EV)', en: 'Earned Value (EV)' },
+    def: {
+      fa: 'ارزش بودجه‌ای کاری که تا یک تاریخ معین واقعاً انجام شده است، به نرخ بودجه و نه به هزینه واقعی. در همان مثال، اگر تا روز 20 فقط 40 درصد کار انجام شده باشد، EV برابر 400,000 است.',
+      en: 'The budgeted value of the work actually done by a given date, measured at budget rates rather than actual cost. In the same example, if only 40% of the work is done by day 20, EV is 400,000.',
+    },
+    formula: {
+      fa: 'EV = کل بودجه مصوب (BAC) × درصد پیشرفت واقعی',
+      en: 'EV = BAC × Actual % complete',
+    },
+    related: ['planned-value', 'actual-cost', 'cost-performance-index'],
+  },
+  {
+    id: 'actual-cost',
+    category: 'budget',
+    term: { fa: 'هزینه واقعی (AC)', en: 'Actual Cost (AC)' },
+    def: {
+      fa: 'هزینه‌ای که تا یک تاریخ معین واقعاً برای کار انجام‌شده ثبت شده است، شامل رسیدها، خدمات پذیرفته‌شده و بدهی‌های تعهدی؛ تعهدات باز جزو آن نیستند. در همان مثال، اگر تا روز 20 مبلغ 480,000 هزینه ثبت شده باشد، AC برابر 480,000 است.',
+      en: 'The cost actually recorded by a given date for the work performed, including receipts, accepted services and accruals; open commitments are not part of it. In the same example, if 480,000 has been booked by day 20, AC is 480,000.',
+    },
+    related: ['earned-value', 'cost-performance-index', 'commitment'],
+  },
+  {
+    id: 'cost-performance-index',
+    category: 'budget',
+    term: { fa: 'شاخص عملکرد هزینه (CPI)', en: 'Cost Performance Index (CPI)' },
+    def: {
+      fa: 'نسبت ارزش کسب‌شده به هزینه واقعی: نشان می‌دهد در برابر هر واحد پول خرج‌شده، چه مقدار کار به ارزش بودجه انجام شده است. CPI کمتر از 1 یعنی کار گران‌تر از بودجه پیش می‌رود؛ در همان مثال، 400,000 ÷ 480,000 حدود 0.83 است.',
+      en: 'The ratio of earned value to actual cost: how much budgeted work was done for each unit of money spent. A CPI below 1 means the work is running over budget; in the same example, 400,000 ÷ 480,000 is about 0.83.',
+    },
+    formula: {
+      fa: 'CPI = EV ÷ AC',
+      en: 'CPI = EV ÷ AC',
+    },
+    related: ['earned-value', 'actual-cost', 'estimate-to-complete'],
+  },
+  {
+    id: 'schedule-performance-index',
+    category: 'budget',
+    term: { fa: 'شاخص عملکرد زمان‌بندی (SPI)', en: 'Schedule Performance Index (SPI)' },
+    def: {
+      fa: 'نسبت ارزش کسب‌شده به ارزش برنامه‌ریزی‌شده: نشان می‌دهد کار نسبت به برنامه با چه سرعتی پیش می‌رود. SPI کمتر از 1 یعنی عقب‌تر از برنامه؛ در همان مثال، 400,000 ÷ 500,000 برابر 0.8 است.',
+      en: 'The ratio of earned value to planned value: how fast work is progressing compared with the plan. An SPI below 1 means behind schedule; in the same example, 400,000 ÷ 500,000 is 0.8.',
+    },
+    formula: {
+      fa: 'SPI = EV ÷ PV',
+      en: 'SPI = EV ÷ PV',
+    },
+    related: ['earned-value', 'planned-value', 'cost-performance-index'],
+  },
+  {
+    id: 'settlement',
+    category: 'budget',
+    term: { fa: 'تسویه هزینه (Settlement)', en: 'Settlement' },
+    def: {
+      fa: 'انتقال دوره‌ای یا پایانی هزینه‌های جمع‌شده روی یک شیء هزینه موقت، مانند عنصر WBS، سفارش داخلی یا دستور کار، به گیرنده نهایی طبق قاعده تسویه: دارایی در جریان تکمیل، دارایی ثابت، مرکز هزینه یا حساب سود و زیان. تسویه هزینه تازه‌ای نمی‌سازد؛ فقط هزینه را جابه‌جا و مانده شیء فرستنده را صفر می‌کند.',
+      en: 'The periodic or final transfer of costs collected on a temporary cost object, such as a WBS element, internal order or work order, to its final receiver according to the settlement rule: assets under construction, a fixed asset, a cost centre or a profit-and-loss account. Settlement creates no new cost; it only moves cost and clears the sender to zero.',
+    },
+    formula: {
+      fa: 'نمونه: بدهکار دارایی در جریان تکمیل، بستانکار عنصر WBS',
+      en: 'Example: Dr Assets under construction, Cr WBS element',
+    },
+    related: ['work-order-settlement', 'assets-under-construction', 'wbs-element'],
   },
   // ───────────────────────────── analysis ─────────────────────────────
   {

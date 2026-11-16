@@ -192,8 +192,8 @@ export const lesson: Lesson = {
             {
               title: { fa: 'خرید و رسید', en: 'Purchase and receipt' },
               text: {
-                fa: 'تأمین‌کننده کالا را به انبار مرکزی تحویل می‌دهد. انباردار آن را در برابر سفارش خرید می‌شمارد، بازرسی می‌کند و رسید انبار را در ERP ثبت می‌کند.',
-                en: 'The vendor delivers to the Central Warehouse. The storekeeper counts and inspects the goods against the purchase order and posts the goods receipt in the ERP.',
+                fa: 'تأمین‌کننده کالا را به انبار مرکزی تحویل می‌دهد. انباردار آن را در برابر سفارش خرید می‌شمارد، بازرسی می‌کند و **رسید کالا (GRN)** را در ERP ثبت می‌کند. (خدمات، مثلاً سیمان‌کاری چاه، از انبار عبور نمی‌کنند؛ آنها با پذیرش **برگه ثبت خدمات (SES)** تحویل گرفته می‌شوند.)',
+                en: 'The vendor delivers to the Central Warehouse. The storekeeper counts and inspects the goods against the purchase order and posts the **goods received note (GRN)** in the ERP. (Services, such as cementing a well, never pass through the warehouse; they are received by accepting a **service entry sheet (SES)**.)',
               },
             },
             {
@@ -563,7 +563,7 @@ export const lesson: Lesson = {
               { fa: 'کنار گذاشتن موجودی برای یک دستور کار یا چاه', en: 'Earmarks stock for a work order or well' },
             ],
             [
-              { fa: 'رسید انبار', en: 'Goods receipt' },
+              { fa: 'رسید کالا (GRN)', en: 'Goods received note (GRN)' },
               { fa: 'داده تراکنشی', en: 'Transaction' },
               { fa: 'انباردار', en: 'Storekeeper' },
               { fa: 'افزایش موجودی و ثبت خودکار در مالی', en: 'Increases stock; posts to Finance' },
@@ -668,8 +668,8 @@ export const lesson: Lesson = {
             {
               title: { fa: 'انباردار انبار مرکزی', en: 'Central Warehouse storekeeper' },
               text: {
-                fa: 'هنگام رسیدن کالا، رسید انبار را در برابر PO-0412 ثبت می‌کند و ثبت مالی خودکار انجام می‌شود.',
-                en: 'Posts the goods receipt against PO-0412 when the kits arrive, and the Finance entry is made automatically.',
+                fa: 'هنگام رسیدن کالا، رسید کالا (GRN) را در برابر PO-0412 ثبت می‌کند و ثبت مالی خودکار انجام می‌شود.',
+                en: 'Posts the GRN against PO-0412 when the kits arrive, and the Finance entry is made automatically.',
               },
             },
             {
@@ -697,7 +697,7 @@ export const lesson: Lesson = {
               },
             },
             {
-              date: { fa: 'رسید انبار (انبار مرکزی)', en: 'Goods receipt (Central Warehouse)' },
+              date: { fa: 'رسید کالا (GRN) در انبار مرکزی', en: 'GRN (Central Warehouse)' },
               lines: [
                 { account: ac.spares, debit: 3600 },
                 { account: ac.grir, credit: 3600 },
@@ -725,7 +725,7 @@ export const lesson: Lesson = {
           tone: 'info',
           title: { fa: 'یک جابه‌جایی، دو سند', en: 'One movement, two documents' },
           text: {
-            fa: 'هر جابه‌جایی ارزشی در ERP دو سند مرتبط می‌سازد: **سند انبار** (چه کالایی، چه مقدار، از کجا به کجا) و **سند حسابداری** (چه مبلغی، به کدام حساب‌ها). این **زنجیره اسناد** به حسابرس اجازه می‌دهد از یک سطر دفتر کل شروع کند و تا رسید انبار و سفارش خرید پیش برود. بسیاری از ERPها (برای مثال SAP) حساب‌های دفتر کل را بر اساس نوع جابه‌جایی و کلاس ارزش‌گذاری کالا خودکار تعیین می‌کنند؛ به این کار **تعیین خودکار حساب** می‌گویند.',
+            fa: 'هر جابه‌جایی ارزشی در ERP دو سند مرتبط می‌سازد: **سند انبار** (چه کالایی، چه مقدار، از کجا به کجا) و **سند حسابداری** (چه مبلغی، به کدام حساب‌ها). این **زنجیره اسناد** به حسابرس اجازه می‌دهد از یک سطر دفتر کل شروع کند و تا رسید کالا (GRN) و سفارش خرید پیش برود. بسیاری از ERPها (برای مثال SAP) حساب‌های دفتر کل را بر اساس نوع جابه‌جایی و کلاس ارزش‌گذاری کالا خودکار تعیین می‌کنند؛ به این کار **تعیین خودکار حساب** می‌گویند.',
             en: 'Every valued movement in an ERP creates two linked documents: a **material document** (what, how many, from where to where) and an **accounting document** (how much, to which accounts). This **document flow** lets an auditor start from a general ledger line and drill down to the storekeeper’s receipt and the purchase order. Many ERPs (SAP, for example) pick the GL accounts automatically from the movement type and the material’s valuation class; this is called **account determination**.',
           },
         },
@@ -734,8 +734,8 @@ export const lesson: Lesson = {
           tone: 'tip',
           title: { fa: 'در عمل', en: 'In practice' },
           text: {
-            fa: 'در شرکت‌های ایرانی، **رسید انبار** و **حواله انبار** اسناد شماره‌دار و امضاشده‌اند. در ERP همین اسناد در سیستم صادر می‌شوند (چاپی یا با امضای الکترونیکی) و سند حسابداری به آنها ارجاع می‌دهد؛ همان پیوند میان سند حسابداری و مدارک پیوست آن که در دوره حسابداری مالی دیدیم.',
-            en: 'In Iranian companies the **goods receipt note** (رسید انبار) and the **issue note** (حواله انبار) are numbered, signed documents. In an ERP the system produces the same documents (printed or e-signed) and the accounting voucher refers to them: the same link between a voucher and its supporting documents that the Financial Accounting course covers.',
+            fa: 'در شرکت‌های ایرانی، **رسید کالا** (که در بسیاری از شرکت‌ها «رسید انبار» هم نامیده می‌شود و در این دوره آن را GRN می‌نامیم) و **حواله انبار** اسناد شماره‌دار و امضاشده‌اند. در ERP همین اسناد در سیستم صادر می‌شوند (چاپی یا با امضای الکترونیکی) و سند حسابداری به آنها ارجاع می‌دهد؛ همان پیوند میان سند حسابداری و مدارک پیوست آن که در دوره حسابداری مالی دیدیم.',
+            en: 'In Iranian companies the **goods received note** (GRN, often called «رسید انبار») and the **issue note** (حواله انبار) are numbered, signed documents. In an ERP the system produces the same documents (printed or e-signed) and the accounting voucher refers to them: the same link between a voucher and its supporting documents that the Financial Accounting course covers.',
           },
         },
       ],
@@ -927,7 +927,7 @@ export const lesson: Lesson = {
               title: { fa: 'ثبت‌های خودکار', en: 'Automatic entries' },
               entries: [
                 {
-                  date: { fa: 'رسید انبار', en: 'Goods receipt' },
+                  date: { fa: 'رسید کالا (GRN)', en: 'GRN' },
                   lines: [
                     { account: ac.consumables, debit: 1200 },
                     { account: ac.grir, credit: 1200 },
@@ -1177,8 +1177,8 @@ export const lesson: Lesson = {
             {
               term: { fa: 'حساب واسط رسید کالا و فاکتور (GR/IR)', en: 'GR/IR clearing account' },
               def: {
-                fa: 'حسابی که در رسید کالا بستانکار و در ثبت فاکتور بدهکار می‌شود و کالای رسیده و هنوز فاکتورنشده را نشان می‌دهد.',
-                en: 'An account credited at goods receipt and debited when the invoice is posted, showing goods received but not yet invoiced.',
+                fa: 'حسابی که در رسید کالا (GRN) بستانکار و در ثبت فاکتور بدهکار می‌شود و کالای رسیده و هنوز فاکتورنشده را نشان می‌دهد.',
+                en: 'An account credited at the GRN and debited when the invoice is posted, showing goods received but not yet invoiced.',
               },
             },
             {
@@ -1274,8 +1274,8 @@ export const lesson: Lesson = {
     },
     {
       q: {
-        fa: 'وقتی انباردار رسید یک کالای انباری را در برابر سفارش خرید در ERP ثبت می‌کند، سیستم خودکار چه ثبتی در مالی انجام می‌دهد؟',
-        en: 'When a storekeeper posts a goods receipt for a stock item against a purchase order, what does the ERP post to Finance automatically?',
+        fa: 'وقتی انباردار رسید کالا (GRN) یک کالای انباری را در برابر سفارش خرید در ERP ثبت می‌کند، سیستم خودکار چه ثبتی در مالی انجام می‌دهد؟',
+        en: 'When a storekeeper posts a GRN for a stock item against a purchase order, what does the ERP post to Finance automatically?',
       },
       options: [
         { fa: 'بدهکار هزینه، بستانکار موجودی نقد', en: 'Dr Expense, Cr Cash' },

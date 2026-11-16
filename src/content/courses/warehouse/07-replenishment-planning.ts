@@ -11,8 +11,8 @@ export const lesson: Lesson = {
   tone: 'asset',
   title: { fa: 'برنامه‌ریزی تأمین و سفارش مجدد', en: 'Replenishment Planning' },
   summary: {
-    fa: 'چه زمانی سفارش دهیم و چه مقدار؟ در این درس با کالاهای شرکت پارس‌آریا، نقطه سفارش، موجودی اطمینان، سیاست حداقل و حداکثر، مقدار اقتصادی سفارش و MRP را با عدد حساب می‌کنیم، راهبرد قطعات یدکی حیاتی را می‌سازیم و می‌بینیم ERP چگونه درخواست خرید را خودکار ایجاد می‌کند.',
-    en: 'When should we order, and how much? Using Pars Arya’s own materials, this lesson works through reorder points, safety stock, min/max, the economic order quantity and MRP with real numbers, builds a critical-spares strategy, and shows how the ERP raises purchase requisitions automatically.',
+    fa: 'چه زمانی سفارش دهیم و چه مقدار؟ در این درس با کالاهای شرکت مسار پترولیوم، نقطه سفارش، موجودی اطمینان، سیاست حداقل و حداکثر، مقدار اقتصادی سفارش و MRP را با عدد حساب می‌کنیم، راهبرد قطعات یدکی حیاتی را می‌سازیم و می‌بینیم ERP چگونه درخواست خرید را خودکار ایجاد می‌کند.',
+    en: 'When should we order, and how much? Using Masar Petroleum’s own materials, this lesson works through reorder points, safety stock, min/max, the economic order quantity and MRP with real numbers, builds a critical-spares strategy, and shows how the ERP raises purchase requisitions automatically.',
   },
   objectives: [
     {
@@ -193,7 +193,7 @@ export const lesson: Lesson = {
             ],
             [
               { fa: 'رسید، کنترل کیفیت و جایابی', en: 'Receipt, QC and put-away' },
-              { fa: 'رسید انبار، بازرسی و قرار دادن در محل نگهداری', en: 'Goods receipt, inspection and put-away into a bin' },
+              { fa: 'رسید کالا (GRN)، بازرسی و قرار دادن در محل نگهداری', en: 'Goods received note (GRN), inspection and put-away into a bin' },
               1,
             ],
             [{ fa: '**جمع زمان تأمین**', en: '**Total lead time**' }, blank, 24],
@@ -630,7 +630,7 @@ export const lesson: Lesson = {
               { fa: '17 هفته', en: '17 weeks' },
             ],
             [
-              { fa: 'زمان پردازش رسید', en: 'Goods-receipt processing time' },
+              { fa: 'زمان پردازش رسید کالا (GRN)', en: 'GRN processing time' },
               { fa: 'بازرسی و جایابی پس از رسیدن کالا', en: 'Inspection and put-away after arrival' },
               { fa: '1 هفته', en: '1 week' },
             ],
@@ -703,8 +703,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: '**چه چیزی به مالی می‌رود؟** درخواست خرید هیچ سند حسابداری ایجاد نمی‌کند، چون هنوز تعهدی به تأمین‌کننده وجود ندارد. اگر درخواست برای مصرف مستقیم یک مرکز هزینه یا AFE باشد، بسیاری از ERPها آن را به عنوان **تعهد بودجه** نگه می‌دارند تا بودجه آزاد کمتر نشان داده شود؛ اما این ثبت در دفتر کل نیست. درخواست‌های خرید برای انبار موضوع هزینه ندارند، چون هزینه در زمان حواله به دستور کار یا پروژه شناسایی می‌شود. نخستین ثبت خودکار مالی در **رسید انبار** و سپس در **ثبت فاکتور** ایجاد می‌شود:',
-            en: '**What reaches Finance?** A purchase requisition creates no accounting document, because there is no obligation to a supplier yet. If the requisition is for direct consumption by a cost centre or AFE, many ERPs hold it as a **budget commitment** so that the available budget shows less; but that is not a general-ledger entry. Requisitions for stock carry no cost object, because the cost is recognised when the goods are issued to a work order or project. The first automatic Finance entry comes at **goods receipt**, and the next at **invoice receipt**:',
+            fa: '**چه چیزی به مالی می‌رود؟** درخواست خرید هیچ سند حسابداری ایجاد نمی‌کند، چون هنوز تعهدی به تأمین‌کننده وجود ندارد. اگر درخواست برای مصرف مستقیم یک مرکز هزینه یا AFE باشد، بسیاری از ERPها آن را به عنوان **تعهد بودجه** نگه می‌دارند تا بودجه آزاد کمتر نشان داده شود؛ اما این ثبت در دفتر کل نیست. درخواست‌های خرید برای انبار موضوع هزینه ندارند، چون هزینه در زمان حواله به دستور کار یا پروژه شناسایی می‌شود. نخستین ثبت خودکار مالی در **رسید کالا (GRN)** و سپس در **ثبت فاکتور** ایجاد می‌شود؛ برای کالای مصرف مستقیم هم همین GRN است که تعهد را به هزینه واقعی روی مرکز هزینه یا AFE تبدیل می‌کند:',
+            en: '**What reaches Finance?** A purchase requisition creates no accounting document, because there is no obligation to a supplier yet. If the requisition is for direct consumption by a cost centre or AFE, many ERPs hold it as a **budget commitment** so that the available budget shows less; but that is not a general-ledger entry. Requisitions for stock carry no cost object, because the cost is recognised when the goods are issued to a work order or project. The first automatic Finance entry comes at the **goods received note (GRN)**, and the next at **invoice receipt**; for direct-charge material, too, it is the GRN that turns the commitment into an actual cost on the cost centre or AFE:',
           },
         },
         {
@@ -715,7 +715,7 @@ export const lesson: Lesson = {
           },
           entries: [
             {
-              date: { fa: 'رسید انبار GR-26-0871', en: 'Goods receipt GR-26-0871' },
+              date: { fa: 'رسید کالا GRN-26-0871', en: 'GRN-26-0871' },
               lines: [
                 { account: { fa: 'موجودی قطعات یدکی (انبار میدان)', en: 'Inventory: spare parts (Field Warehouse)' }, debit: 9000 },
                 { account: { fa: 'حساب واسط رسید کالا و فاکتور (GR/IR)', en: 'GR/IR clearing' }, credit: 9000 },
@@ -1046,7 +1046,7 @@ export const lesson: Lesson = {
             },
             {
               type: 'journal',
-              title: { fa: 'رسید انبار نخستین سفارش (ماه 4)', en: 'Goods receipt of the first order (month 4)' },
+              title: { fa: 'رسید کالا (GRN) نخستین سفارش (ماه 4)', en: 'GRN for the first order (month 4)' },
               entries: [
                 {
                   lines: [
@@ -1071,8 +1071,8 @@ export const lesson: Lesson = {
             },
           ],
           answer: {
-            fa: 'دو درخواست: 2 شیر در ماه 1 (رسید در ماه 4) و 5 شیر در ماه 2 (رسید در ماه 5)؛ رسید اول: موجودی قطعات یدکی بدهکار 6,400 و GR/IR بستانکار 6,400.',
-            en: 'Two requisitions: 2 valves in month 1 (received in month 4) and 5 valves in month 2 (received in month 5); first receipt: Dr Inventory: spare parts 6,400, Cr GR/IR clearing 6,400.',
+            fa: 'دو درخواست: 2 شیر در ماه 1 (رسید در ماه 4) و 5 شیر در ماه 2 (رسید در ماه 5)؛ نخستین GRN: موجودی قطعات یدکی بدهکار 6,400 و GR/IR بستانکار 6,400.',
+            en: 'Two requisitions: 2 valves in month 1 (received in month 4) and 5 valves in month 2 (received in month 5); first GRN: Dr Inventory: spare parts 6,400, Cr GR/IR clearing 6,400.',
           },
         },
       ],
@@ -1109,8 +1109,8 @@ export const lesson: Lesson = {
               en: 'MRP nets known future needs and offsets them by the lead time; critical spares are managed through a risk assessment.',
             },
             {
-              fa: 'ERP درخواست خرید را خودکار می‌سازد؛ درخواست ثبت مالی ندارد و نخستین ثبت خودکار در رسید انبار است. موجودی اضافه یعنی نقدینگی‌ای که هنوز بازیافت نشده است.',
-              en: 'The ERP creates requisitions automatically; a requisition posts nothing, and the first automatic entry comes at goods receipt. Surplus stock is cash not yet recovered.',
+              fa: 'ERP درخواست خرید را خودکار می‌سازد؛ درخواست ثبت مالی ندارد و نخستین ثبت خودکار در رسید کالا (GRN) است. موجودی اضافه یعنی نقدینگی‌ای که هنوز بازیافت نشده است.',
+              en: 'The ERP creates requisitions automatically; a requisition posts nothing, and the first automatic entry comes at the GRN. Surplus stock is cash not yet recovered.',
             },
           ],
         },
@@ -1314,14 +1314,14 @@ export const lesson: Lesson = {
       },
       options: [
         { fa: 'موجودی قطعات یدکی بدهکار و حساب‌های پرداختنی بستانکار', en: 'Dr Inventory: spare parts, Cr Accounts payable' },
-        { fa: 'هیچ ثبتی؛ نخستین ثبت خودکار در رسید انبار است (موجودی بدهکار، GR/IR بستانکار)', en: 'Nothing; the first automatic entry comes at goods receipt (Dr Inventory, Cr GR/IR)' },
+        { fa: 'هیچ ثبتی؛ نخستین ثبت خودکار در رسید کالا (GRN) است (موجودی بدهکار، GR/IR بستانکار)', en: 'Nothing; the first automatic entry comes at the GRN (Dr Inventory, Cr GR/IR)' },
         { fa: 'هزینه تعمیر و نگهداری بدهکار و موجودی بستانکار', en: 'Dr Repairs and maintenance expense, Cr Inventory' },
         { fa: 'GR/IR بدهکار و حساب‌های پرداختنی بستانکار', en: 'Dr GR/IR clearing, Cr Accounts payable' },
       ],
       answer: 1,
       explain: {
-        fa: 'درخواست خرید یک درخواست داخلی است و تعهدی به تأمین‌کننده ایجاد نمی‌کند؛ در برخی ERPها فقط تعهد بودجه ثبت می‌شود که در دفتر کل نیست. هنگام رسید، موجودی بدهکار و GR/IR بستانکار می‌شود و هنگام فاکتور، GR/IR بدهکار و حساب‌های پرداختنی بستانکار.',
-        en: 'A requisition is an internal request and creates no obligation to a supplier; some ERPs record a budget commitment, which is not a general-ledger entry. At goods receipt Inventory is debited and GR/IR credited; at invoice GR/IR is debited and Accounts payable credited.',
+        fa: 'درخواست خرید یک درخواست داخلی است و تعهدی به تأمین‌کننده ایجاد نمی‌کند؛ در برخی ERPها فقط تعهد بودجه ثبت می‌شود که در دفتر کل نیست. هنگام رسید کالا (GRN)، موجودی بدهکار و GR/IR بستانکار می‌شود و هنگام فاکتور، GR/IR بدهکار و حساب‌های پرداختنی بستانکار.',
+        en: 'A requisition is an internal request and creates no obligation to a supplier; some ERPs record a budget commitment, which is not a general-ledger entry. At the GRN Inventory is debited and GR/IR credited; at invoice GR/IR is debited and Accounts payable credited.',
       },
     },
     {

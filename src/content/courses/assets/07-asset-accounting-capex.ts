@@ -1,7 +1,7 @@
 import type { Lesson } from '../../types'
 
 /*
- * Running example: Pars Arya Oil & Gas, Arya field.
+ * Running example: Masar Petroleum, Arya field.
  * K-101 overhaul in the turnaround: 2,400,000 (capital work order WO-70110).
  * AFE-2026-07: install a third compressor K-103 (budget 6,000,000).
  * Arya oil and gas properties: 72,000,000; proved developed reserves 24,000,000 boe; production 2,400,000 boe.
@@ -284,7 +284,7 @@ export const lesson: Lesson = {
               ],
             },
             {
-              date: { fa: 'برگه‌های تأیید خدمات', en: 'Service entry sheets' },
+              date: { fa: 'تأیید SESهای پیمانکاران', en: 'Contractor SESs approved' },
               lines: [
                 { account: ac.auc, debit: 1250000 },
                 { account: ac.grir, credit: 1250000 },
@@ -420,8 +420,8 @@ export const lesson: Lesson = {
           tone: 'warning',
           title: { fa: 'چه کسی مالک دارایی است؟', en: 'Who owns the asset?' },
           text: {
-            fa: 'در این دوره فرض می‌کنیم پارس‌آریا به‌عنوان شرکت عامل و شریک مشارکت، سهم خود از دارایی‌ها را در دفاترش نگه می‌دارد. اما در برخی قراردادهای ایران (مانند بیع متقابل و IPC) تأسیسات متعلق به شرکت ملی نفت است و پیمانکار مخارج خود را از محل قرارداد بازیافت می‌کند. آنجا حسابداری پیمانکار به شرایط قرارداد بستگی دارد و باید با حسابرس تصمیم‌گیری شود؛ قواعد این درس را بی‌بررسی به آن قراردادها تعمیم ندهید.',
-            en: 'In this course we assume Pars Arya, as operator and joint-venture partner, carries its share of the assets on its books. But under some Iranian contracts (such as buy-back and the IPC) the facilities belong to the National Iranian Oil Company and the contractor recovers its spend under the contract. The contractor’s accounting then depends on the contract terms and must be settled with the auditors; don’t apply this lesson’s rules to those contracts without checking.',
+            fa: 'در این دوره فرض می‌کنیم مسار پترولیوم به‌عنوان شرکت عامل و شریک مشارکت، سهم خود از دارایی‌ها را در دفاترش نگه می‌دارد. اما در برخی قراردادهای ایران (مانند بیع متقابل و IPC) تأسیسات متعلق به شرکت ملی نفت است و پیمانکار مخارج خود را از محل قرارداد بازیافت می‌کند. آنجا حسابداری پیمانکار به شرایط قرارداد بستگی دارد و باید با حسابرس تصمیم‌گیری شود؛ قواعد این درس را بی‌بررسی به آن قراردادها تعمیم ندهید.',
+            en: 'In this course we assume Masar Petroleum, as operator and joint-venture partner, carries its share of the assets on its books. But under some Iranian contracts (such as buy-back and the IPC) the facilities belong to the National Iranian Oil Company and the contractor recovers its spend under the contract. The contractor’s accounting then depends on the contract terms and must be settled with the auditors; don’t apply this lesson’s rules to those contracts without checking.',
           },
         },
       ],
@@ -715,8 +715,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'چهار تمرین از ساده به دشوار، هر کدام با موقعیتی تازه در پارس‌آریا. ثبت‌ها را کامل بنویسید و تراز بودنشان را کنترل کنید.',
-            en: 'Four exercises from easy to hard, each a new situation at Pars Arya. Write the entries in full and check that they balance.',
+            fa: 'چهار تمرین از ساده به دشوار، هر کدام با موقعیتی تازه در مسار پترولیوم. ثبت‌ها را کامل بنویسید و تراز بودنشان را کنترل کنید.',
+            en: 'Four exercises from easy to hard, each a new situation at Masar Petroleum. Write the entries in full and check that they balance.',
           },
         },
         {

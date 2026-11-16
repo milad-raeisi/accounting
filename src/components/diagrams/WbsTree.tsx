@@ -77,7 +77,7 @@ const LEVEL_TYPE: L[] = [
 ]
 
 export default function WbsTree({ caption }: DiagramProps) {
-  const { tr, num, lang } = useI18n()
+  const { tr, num, lang, dir } = useI18n()
   const rows = useMemo(() => flatten(TREE), [])
   const [selected, setSelected] = useState(DEFAULT)
   const [collapsed, setCollapsed] = useState<ReadonlySet<string>>(new Set())
@@ -94,9 +94,9 @@ export default function WbsTree({ caption }: DiagramProps) {
   useGSAP(
     () => {
       if (prefersReducedMotion()) return
-      gsap.from('[data-wbs-bar]', { scaleX: 0, duration: 0.7, ease: 'power2.out', stagger: 0.02, transformOrigin: 'left center' })
+      gsap.from('[data-wbs-bar]', { scaleX: 0, duration: 0.7, ease: 'power2.out', stagger: 0.02, transformOrigin: dir === 'rtl' ? 'right center' : 'left center' })
     },
-    { scope, dependencies: [lang] },
+    { scope, dependencies: [lang, dir] },
   )
 
   const pct = (n: number) => tr({ fa: `${Math.round(n)}٪`, en: `${Math.round(n)}%` })
@@ -158,7 +158,7 @@ export default function WbsTree({ caption }: DiagramProps) {
                         <span className={cn('min-w-0 truncate text-sm', level < 2 ? 'font-semibold text-foreground' : 'text-body')}>{tr(node.name)}</span>
                         <span className="ms-auto shrink-0 tabular text-xs text-muted-foreground">{num(totals.budget)}</span>
                       </div>
-                      <div className="mt-1.5 flex h-1.5 overflow-hidden rounded-full bg-muted" dir="ltr">
+                      <div className="mt-1.5 flex h-1.5 overflow-hidden rounded-full bg-muted">
                         <div data-wbs-bar className="h-full bg-primary" style={{ width: `${(totals.actual / totals.budget) * 100}%` }} />
                         <div data-wbs-bar className="h-full bg-primary/35" style={{ width: `${(totals.commit / totals.budget) * 100}%` }} />
                       </div>
@@ -200,12 +200,17 @@ export default function WbsTree({ caption }: DiagramProps) {
           {sel.node.leaf ? (
             <div className="mt-4 space-y-2 text-sm">
               <div className="text-[11px] font-semibold text-muted-foreground">{tr({ fa: 'رشته کامل کدینگ هزینه', en: 'Full cost-coding string' })}</div>
-              <code dir="ltr" className="block rounded-[0.9rem] bg-card px-3 py-2 text-xs leading-6 break-all text-foreground">
-                PA01 · CC-ARY-DRL · {sel.node.code} · {sel.node.leaf.element.en.slice(0, 4)} · R · DEV
+              <code dir="ltr" className="flex flex-wrap gap-x-1.5 rounded-[0.9rem] bg-card px-3 py-2 text-xs leading-6 text-foreground">
+                {['MP01', 'CC-ARY-DRL', sel.node.code, sel.node.leaf.element.en.slice(0, 4), 'R', 'DEV'].map((part, k) => (
+                  <span key={k} className="whitespace-nowrap">
+                    {k > 0 && <span className="me-1.5 text-muted-foreground">·</span>}
+                    {part}
+                  </span>
+                ))}
               </code>
               <dl className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1.5 text-xs">
                 <dt className="text-muted-foreground">{tr({ fa: 'کد شرکت', en: 'Company code' })}</dt>
-                <dd className="text-foreground">{tr({ fa: 'PA01 پارس‌آریا', en: 'PA01 Pars Arya' })}</dd>
+                <dd className="text-foreground">{tr({ fa: 'MP01 مسار پترولیوم', en: 'MP01 Masar Petroleum' })}</dd>
                 <dt className="text-muted-foreground">{tr({ fa: 'مرکز هزینه مسئول', en: 'Responsible cost centre' })}</dt>
                 <dd className="text-foreground">{tr({ fa: 'CC-ARY-DRL واحد حفاری', en: 'CC-ARY-DRL drilling department' })}</dd>
                 <dt className="text-muted-foreground">{tr({ fa: 'عنصر هزینه', en: 'Cost element' })}</dt>

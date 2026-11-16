@@ -1,19 +1,17 @@
 import { Link } from 'react-router'
-import { ArrowLeft, ArrowRight, Cpu } from 'lucide-react'
+import { ArrowLeft, ArrowRight, CheckCircle2, Cpu, GraduationCap } from 'lucide-react'
 
 import { LessonIcon } from '@/components/ui/LessonIcon'
 import type { Course } from '@/content/courses'
-import { lessonsOf } from '@/content/lessons'
 import { useI18n } from '@/i18n/I18nProvider'
-import { useProgress } from '@/lib/progress'
+import { useCourseStats } from '@/lib/courseStats'
 
 export function CourseCard({ course }: { course: Course }) {
   const { t, tr, num, pct: fmtPct, isFa } = useI18n()
-  const { done } = useProgress()
-  const list = lessonsOf(course.id)
-  const finished = list.filter((l) => done.includes(l.slug)).length
-  const pct = list.length ? Math.round((finished / list.length) * 100) : 0
+  const stats = useCourseStats(course.id)
   const Arrow = isFa ? ArrowLeft : ArrowRight
+  const started = stats.completed > 0 || stats.attempted > 0
+  const finished = stats.total > 0 && stats.completed === stats.total
 
   return (
     <Link to={`/courses/${course.id}`} className="group flex flex-col rounded-lg bg-card p-6 transition-colors hover:bg-card/80 sm:p-7">
@@ -28,16 +26,30 @@ export function CourseCard({ course }: { course: Course }) {
       <div className="mt-6">
         <div className="flex items-center justify-between text-xs text-muted-foreground">
           <span>
-            {num(list.length)} {t('course.lessons')}
+            {started ? (
+              <>
+                {num(stats.completed)} {t('progress.of')} {num(stats.total)} {t('course.lessons')}
+              </>
+            ) : (
+              <>
+                {num(stats.total)} {t('course.lessons')}
+              </>
+            )}
           </span>
-          {finished > 0 && <span className="tabular">{fmtPct(pct, 0)}</span>}
+          {started && <span className="tabular font-semibold text-foreground">{fmtPct(stats.pct, 0)}</span>}
         </div>
         <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-muted">
-          <div className="h-full rounded-full bg-primary transition-[width] duration-700" style={{ width: `${pct}%` }} />
+          <div className="h-full rounded-full bg-primary transition-[width] duration-700" style={{ width: `${stats.pct}%` }} />
         </div>
+        {stats.exam && (
+          <div className="mt-2 inline-flex items-center gap-1.5 text-[11px] text-muted-foreground">
+            <GraduationCap className="size-3.5 text-primary" /> {t('progress.exam')}: {num(stats.exam.score)}/{num(stats.exam.total)}
+          </div>
+        )}
       </div>
       <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-        {t('course.open')}
+        {finished ? <CheckCircle2 className="size-4 text-revenue" /> : null}
+        {finished ? t('lessons.review') : started ? t('progress.continue') : t('course.open')}
         <Arrow className="size-4 transition-transform group-hover:translate-x-0.5 rtl:group-hover:-translate-x-0.5" />
       </span>
     </Link>

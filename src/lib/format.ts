@@ -2,9 +2,30 @@ export type Lang = 'fa' | 'en'
 
 const FA_DIGITS = '۰۱۲۳۴۵۶۷۸۹'
 
-/** Replace ASCII digits with Persian digits (and % with ٪). Leaves other text intact. */
+const convert = (s: string) => s.replace(/[0-9]/g, (d) => FA_DIGITS[Number(d)]).replace(/%/g, '٪')
+
+/** Identifiers that mix Latin letters and digits: AFE-2025-014.02.03, AR-07, PO-4500123, MP01, S/4HANA. */
+const CODE = /[A-Za-z][A-Za-z0-9]*(?:[-./_][A-Za-z0-9]+)+|[A-Za-z]+[0-9][A-Za-z0-9]*/g
+const LRI = '⁦'
+const PDI = '⁩'
+
+/**
+ * Replace ASCII digits with Persian digits (and % with ٪). Leaves other text intact.
+ * Codes that mix Latin letters and digits keep their ASCII digits and are isolated as an LTR run,
+ * so «عنصر AFE-2025-014.02.03» never gets reordered or half-converted inside Persian text.
+ */
 export function toFaDigits(input: string): string {
-  return input.replace(/[0-9]/g, (d) => FA_DIGITS[Number(d)]).replace(/%/g, '٪')
+  let out = ''
+  let last = 0
+  for (const m of input.matchAll(CODE)) {
+    const token = m[0]
+    if (!/[0-9]/.test(token)) continue
+    const at = m.index ?? 0
+    // U+2011 non-breaking hyphen keeps the code on one line
+    out += convert(input.slice(last, at)) + LRI + token.replace(/-/g, '\u2011') + PDI
+    last = at + token.length
+  }
+  return out + convert(input.slice(last))
 }
 
 export function localizeDigits(input: string, lang: Lang): string {

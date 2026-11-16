@@ -668,8 +668,8 @@ export const lesson: Lesson = {
           type: 'callout',
           tone: 'tip',
           text: {
-            fa: 'طراحی کامل کدینگ سه‌سطحی، تعداد ارقام هر سطح و صدور سند با این کدها را در درس اسناد حسابداری و کدینگ به‌طور کامل یاد می‌گیرید.',
-            en: 'You will learn the full design of three-level coding, the number of digits at each level and how vouchers are issued with these codes in the lesson on vouchers and coding.',
+            fa: 'طراحی کامل کدینگ سه‌سطحی، تعداد ارقام هر سطح و صدور سند با این کدها را در درس سند حسابداری و کدینگ سه‌سطحی به‌طور کامل یاد می‌گیرید.',
+            en: 'You will learn the full design of three-level coding, the number of digits at each level and how vouchers are issued with these codes in the lesson on accounting vouchers and three-level coding.',
           },
         },
       ],

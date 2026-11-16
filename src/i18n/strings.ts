@@ -3,8 +3,8 @@ import type { L } from '@/content/types'
 /** Flat UI dictionary. Content (lessons, glossary) lives in src/content. */
 export const ui = {
   'brand.name': { fa: 'دفتر', en: 'Daftar' },
-  'brand.product': { fa: 'آموزش حسابداری', en: 'Accounting course' },
-  'brand.full': { fa: 'دفتر · آموزش حسابداری', en: 'Daftar · Accounting course' },
+  'brand.product': { fa: 'آموزش ERP نفت و گاز', en: 'Oil and gas ERP academy' },
+  'brand.full': { fa: 'دفتر · آموزش ERP نفت و گاز', en: 'Daftar · Oil and gas ERP academy' },
 
   'nav.home': { fa: 'خانه', en: 'Home' },
   'nav.lessons': { fa: 'درس‌ها', en: 'Lessons' },
@@ -17,6 +17,7 @@ export const ui = {
   'course.erp': { fa: 'ماژول ERP', en: 'ERP module' },
   'course.lessons': { fa: 'درس', en: 'lessons' },
   'course.unit': { fa: 'دوره', en: 'courses' },
+  'course.hours': { fa: 'ساعت آموزش', en: 'hours of study' },
   'course.open': { fa: 'مشاهده دوره', en: 'Open course' },
   'course.notFound': { fa: 'این دوره پیدا نشد.', en: 'Course not found.' },
   'course.soon': { fa: 'درس‌های این دوره در حال آماده‌سازی است.', en: 'The lessons of this course are being prepared.' },
@@ -37,6 +38,8 @@ export const ui = {
 
   'units.money': { fa: 'مبالغ به هزار تومان', en: 'Amounts in USD' },
   'units.short': { fa: 'هزار تومان', en: 'USD' },
+  'units.money.usd': { fa: 'مبالغ به دلار آمریکا', en: 'Amounts in USD' },
+  'units.money.omr': { fa: 'مبالغ به ریال عمان', en: 'Amounts in OMR' },
 
   'home.title': { fa: 'ERP نفت و گاز را ساده یاد بگیرید', en: 'Learn oil and gas ERP, simply' },
   'home.subtitle': {
@@ -251,14 +254,42 @@ export const ui = {
 
   'common.back': { fa: 'بازگشت', en: 'Back' },
   'common.home': { fa: 'بازگشت به خانه', en: 'Back home' },
+  'progress.course': { fa: 'پیشرفت شما در این دوره', en: 'Your progress in this course' },
+  'progress.overall': { fa: 'پیشرفت کلی شما', en: 'Your overall progress' },
+  'progress.lessons': { fa: 'درس تکمیل‌شده', en: 'Lessons completed' },
+  'progress.quizzes': { fa: 'آزمون قبول‌شده', en: 'Quizzes passed' },
+  'progress.avg': { fa: 'میانگین نمره', en: 'Average score' },
+  'progress.of': { fa: 'از', en: 'of' },
+  'progress.start': { fa: 'شروع دوره', en: 'Start the course' },
+  'progress.continue': { fa: 'ادامه یادگیری', en: 'Continue learning' },
+  'progress.complete': { fa: 'همه درس‌های این دوره را کامل کرده‌اید.', en: 'You have completed every lesson in this course.' },
+  'progress.exam': { fa: 'آزمون پایانی دوره', en: 'Course final exam' },
+  'progress.examLead': {
+    fa: 'پرسش‌هایی از همه درس‌های این دوره، با زمان‌سنج و مرور پاسخ‌ها.',
+    en: 'Questions from every lesson in this course, timed, with answer review.',
+  },
+  'progress.examBest': { fa: 'بهترین نتیجه آزمون پایانی', en: 'Best final-exam result' },
+  'progress.examTake': { fa: 'شرکت در آزمون پایانی', en: 'Take the final exam' },
+  'progress.examFullNote': {
+    fa: 'نتیجه فقط وقتی به‌عنوان آزمون پایانی دوره ثبت می‌شود که همه درس‌ها انتخاب شده باشند.',
+    en: 'The result counts as the course final exam only when every lesson is selected.',
+  },
+  'progress.upNext': { fa: 'درس بعدی شما', en: 'Up next' },
+  'progress.inProgress': { fa: 'در حال یادگیری', en: 'In progress' },
+  'progress.endOfCourse': { fa: 'به پایان این دوره رسیدید', en: 'You have reached the end of this course' },
+  'progress.passNote': {
+    fa: 'با کسب دست‌کم ۶۰٪ در آزمون هر درس، آن درس تکمیل‌شده ثبت می‌شود.',
+    en: 'Scoring at least 60% on a lesson quiz marks the lesson as completed.',
+  },
+  'progress.saved': { fa: 'پیشرفت شما فقط در همین مرورگر ذخیره می‌شود.', en: 'Your progress is saved in this browser only.' },
   'common.notFound': { fa: 'صفحه‌ای که دنبالش بودید پیدا نشد.', en: 'We couldn’t find that page.' },
   'common.loading': { fa: 'در حال بارگذاری…', en: 'Loading…' },
   'common.close': { fa: 'بستن', en: 'Close' },
   'common.error': { fa: 'مشکلی پیش آمد. لطفاً دوباره تلاش کنید.', en: 'Something went wrong. Please try again.' },
 
   'footer.about': {
-    fa: 'دفتر دوره آموزش حسابداری مالی به فارسی و انگلیسی است.',
-    en: 'Daftar is a financial accounting course in Persian and English.',
+    fa: 'دفتر مجموعه دوره‌های آموزش ماژول‌های ERP برای صنعت نفت و گاز است، به فارسی و انگلیسی.',
+    en: 'Daftar teaches the modules of an oil and gas ERP, in Persian and English.',
   },
   'footer.disclaimer': {
     fa: 'این محتوا آموزشی است و جایگزین مشاوره حرفه‌ای حسابداری یا مالیاتی نیست.',

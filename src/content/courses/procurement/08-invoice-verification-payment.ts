@@ -6,14 +6,14 @@ const ac = {
   bank: { fa: 'موجودی نقد (بانک)', en: 'Cash at bank' },
   invField: { fa: 'موجودی مواد و قطعات: انبار میدان', en: 'Materials inventory: Field Warehouse' },
   invCentral: { fa: 'موجودی مواد و قطعات: انبار مرکزی', en: 'Materials inventory: Central Warehouse' },
-  ppv: { fa: 'انحراف قیمت خرید', en: 'Purchase price variance' },
+  ppv: { fa: 'تفاوت قیمت خرید', en: 'Purchase price differences' },
   advances: { fa: 'پیش‌پرداخت به تأمین‌کنندگان', en: 'Advances to suppliers' },
   wht: { fa: 'مالیات تکلیفی پرداختنی', en: 'Withholding tax payable' },
   insRet: { fa: 'سپرده بیمه پیمانکاران پرداختنی', en: 'Contractor insurance retention payable' },
   perfRet: { fa: 'سپرده حسن انجام کار پرداختنی', en: 'Performance retention payable' },
   maintCS: {
-    fa: 'هزینه تعمیر و نگهداری: ایستگاه تقویت فشار (CC-CS)',
-    en: 'Maintenance expense: compressor station (CC-CS)',
+    fa: 'هزینه تعمیر و نگهداری: ایستگاه تقویت فشار (CC-ARY-CMP)',
+    en: 'Maintenance expense: compressor station (CC-ARY-CMP)',
   },
   apGulf: { fa: 'حساب‌های پرداختنی: لوله‌گستر خلیج', en: 'Accounts payable: Gulf Tubulars' },
   apAlborz: { fa: 'حساب‌های پرداختنی: خدمات چاه البرز', en: 'Accounts payable: Alborz Well Services' },
@@ -30,7 +30,7 @@ const none = { fa: '-', en: '-' }
 
 export const lesson: Lesson = {
   slug: 'invoice-verification-payment',
-  number: 7,
+  number: 8,
   level: 'advanced',
   minutes: 28,
   icon: 'ReceiptText',
@@ -77,8 +77,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: '**تطبیق فاکتور** (Invoice Verification) یعنی پیش از آنکه فاکتور به بدهی قطعی و قابل پرداخت تبدیل شود، آن را با آنچه سفارش داده شده (سفارش خرید) و آنچه واقعاً دریافت شده (رسید کالا یا SES) مقایسه کنیم. فقط اختلاف‌های کوچک و مجاز عبور می‌کنند؛ بقیه متوقف می‌شوند تا کسی آن‌ها را بررسی کند.',
-            en: '**Invoice verification** means comparing an invoice with what was ordered (the PO) and what was actually received (the goods receipt or SES) before it becomes a confirmed, payable liability. Only small, allowed differences pass; everything else is blocked until someone investigates.',
+            fa: '**تطبیق فاکتور** (Invoice Verification) یعنی پیش از آنکه فاکتور به بدهی قطعی و قابل پرداخت تبدیل شود، آن را با آنچه سفارش داده شده (سفارش خرید) و آنچه واقعاً دریافت شده (رسید کالا (GRN) یا برگه ثبت خدمات (SES)) مقایسه کنیم. جزئیات این دو سند در درس «رسید کالا (GRN) و برگه ثبت خدمات (SES)» آمده است. فقط اختلاف‌های کوچک و مجاز عبور می‌کنند؛ بقیه متوقف می‌شوند تا کسی آن‌ها را بررسی کند.',
+            en: '**Invoice verification** means comparing an invoice with what was ordered (the PO) and what was actually received (the goods received note, GRN, or the service entry sheet, SES) before it becomes a confirmed, payable liability. Only small, allowed differences pass; everything else is blocked until someone investigates.',
           },
         },
         {
@@ -134,8 +134,8 @@ export const lesson: Lesson = {
           right: {
             title: { fa: 'تطبیق سه‌طرفه (Three-way)', en: 'Three-way match' },
             items: [
-              { fa: 'فاکتور با سفارش و رسید کالا (یا SES) مقایسه می‌شود', en: 'Invoice compared with the PO and the goods receipt (or SES)' },
-              { fa: 'قیمت از سفارش، مقدار از رسید', en: 'Price from the PO, quantity from the receipt' },
+              { fa: 'فاکتور با سفارش و GRN (یا SES) مقایسه می‌شود', en: 'Invoice compared with the PO and the GRN (or SES)' },
+              { fa: 'قیمت از سفارش، مقدار از GRN یا SES', en: 'Price from the PO, quantity from the GRN or SES' },
               { fa: 'استاندارد برای کالا و خدمات در شرکت نفتی', en: 'The standard for goods and services in an oil company' },
               {
                 fa: 'برای اقلام بحرانی گاهی چهارطرفه: به‌علاوه تأیید بازرسی کیفیت',
@@ -147,8 +147,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: '**حد تحمل** (Tolerance) اختلاف کوچکی است که بدون دخالت انسان پذیرفته می‌شود؛ چون بررسی دستی هر اختلاف چندریالی از خود اختلاف گران‌تر است. در پارس‌آریا حد تحمل‌ها (فرضی) چنین‌اند: **قیمت** تا 2٪ بالاتر از قیمت سفارش در هر ردیف؛ **مقدار** فاکتور نباید از مقدار خالص رسیدشده بیشتر باشد. **انحراف قیمت** یعنی قیمت فاکتور با قیمت سفارش فرق دارد و **انحراف مقدار** یعنی مقدار فاکتور با مقدار رسیده فرق دارد.',
-            en: 'A **tolerance** is a small difference accepted without human review, because manually checking every tiny difference costs more than the difference itself. Pars Arya’s illustrative tolerances: **price** up to 2% above the PO price per line; invoice **quantity** may not exceed the net quantity received. A **price variance** means the invoice price differs from the PO price; a **quantity variance** means the invoiced quantity differs from what was received.',
+            fa: '**حد تحمل** (Tolerance) اختلاف کوچکی است که بدون دخالت انسان پذیرفته می‌شود؛ چون بررسی دستی هر اختلاف بسیار کوچک از خود اختلاف گران‌تر است. در مسار پترولیوم حد تحمل‌ها (فرضی) چنین‌اند: **قیمت** تا 2٪ بالاتر از قیمت سفارش در هر ردیف؛ **مقدار** فاکتور نباید از مقدار خالص رسیدشده بیشتر باشد. **انحراف قیمت** یعنی قیمت فاکتور با قیمت سفارش فرق دارد و **انحراف مقدار** یعنی مقدار فاکتور با مقدار رسیده فرق دارد.',
+            en: 'A **tolerance** is a small difference accepted without human review, because manually checking every tiny difference costs more than the difference itself. Masar Petroleum’s illustrative tolerances: **price** up to 2% above the PO price per line; invoice **quantity** may not exceed the net quantity received. A **price variance** means the invoice price differs from the PO price; a **quantity variance** means the invoiced quantity differs from what was received.',
           },
         },
         {
@@ -294,8 +294,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'هنگام ثبت فاکتور، ERP همان مبلغی را که هنگام رسید در GR/IR بستانکار کرده بود، بدهکار می‌کند و بدهی واقعی به تأمین‌کننده را در **حساب‌های پرداختنی** بستانکار می‌کند. مالیات بر ارزش افزوده قابل استرداد جداگانه بدهکار می‌شود. برای حالت الف (174 شاخه × 400):',
-            en: 'At invoice posting, the ERP debits GR/IR with the same amount it credited at receipt, and credits the real liability to the supplier in **Accounts payable**. Recoverable VAT is debited separately. For case A (174 joints × 400):',
+            fa: 'هنگام ثبت فاکتور، ERP همان مبلغی را که هنگام GRN در GR/IR بستانکار کرده بود، بدهکار می‌کند و بدهی واقعی به تأمین‌کننده را در **حساب‌های پرداختنی** بستانکار می‌کند. مالیات بر ارزش افزوده قابل استرداد جداگانه بدهکار می‌شود. برای حالت الف (174 شاخه × 400):',
+            en: 'At invoice posting, the ERP debits GR/IR with the same amount it credited at GRN, and credits the real liability to the supplier in **Accounts payable**. Recoverable VAT is debited separately. For case A (174 joints × 400):',
           },
         },
         {
@@ -318,7 +318,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'tAccounts',
-          title: { fa: 'حساب GR/IR برای `PO-45031` پس از رسید، مرجوعی و فاکتور', en: 'GR/IR for `PO-45031` after receipt, return and invoice' },
+          title: { fa: 'حساب GR/IR برای `PO-45031` پس از GRN، مرجوعی و فاکتور', en: 'GR/IR for `PO-45031` after GRN, return and invoice' },
           accounts: [
             {
               name: { fa: 'حساب واسط رسید کالا و فاکتور (GR/IR)', en: 'GR/IR clearing account' },
@@ -330,8 +330,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'مانده صفر است: مقدار و مبلغ رسیده با مقدار و مبلغ فاکتورشده برابر شده و GR/IR برای این سفارش **تسویه** شده است. اگر فاکتور حالت ج (قیمت 405) ثبت می‌شد، اختلاف 870 کجا می‌رفت؟ چون همه لوله‌ها هنوز در انبار میدان‌اند و کالا با **میانگین موزون متحرک** ارزش‌گذاری می‌شود، اختلاف به خود موجودی اضافه می‌شود. اگر بخشی از کالا مصرف شده بود، سهم آن به حساب انحراف قیمت خرید می‌رفت؛ و در روش **قیمت استاندارد** کل اختلاف به حساب انحراف می‌رود.',
-            en: 'The balance is zero: quantity and value received now equal quantity and value invoiced, so GR/IR is **cleared** for this PO. If the case C invoice (price 405) had been posted, where would the 870 difference go? Because all the pipe is still in the Field Warehouse and valued at **moving average**, the difference is added to inventory. Had part of the stock been used, that share would go to the purchase price variance account; under **standard price**, the whole difference goes to the variance account.',
+            fa: 'مانده صفر است: مقدار و مبلغ رسیده با مقدار و مبلغ فاکتورشده برابر شده و GR/IR برای این سفارش **تسویه** شده است. اگر فاکتور حالت ج (قیمت 405) ثبت می‌شد، اختلاف 870 کجا می‌رفت؟ چون همه لوله‌ها هنوز در انبار میدان‌اند و کالا با **میانگین موزون متحرک** ارزش‌گذاری می‌شود، اختلاف به خود موجودی اضافه می‌شود. اگر بخشی از کالا مصرف شده بود، سهم آن به حساب تفاوت قیمت خرید می‌رفت؛ و در روش **قیمت استاندارد** کل اختلاف به حساب انحراف می‌رود.',
+            en: 'The balance is zero: quantity and value received now equal quantity and value invoiced, so GR/IR is **cleared** for this PO. If the case C invoice (price 405) had been posted, where would the 870 difference go? Because all the pipe is still in the Field Warehouse and valued at **moving average**, the difference is added to inventory. Had part of the stock been used, that share would go to the purchase price differences account; under **standard price**, the whole difference goes to the variance account.',
           },
         },
         {
@@ -365,7 +365,7 @@ export const lesson: Lesson = {
           ],
           rows: [
             [
-              { fa: '`PO-45026` کیت سوپاپ', en: '`PO-45026` valve kits' },
+              { fa: '`PO-45026` کیت تعمیر سوپاپ', en: '`PO-45026` valve repair kits' },
               30000,
               0,
               { fa: 'بستانکار 30,000', en: 'Cr 30,000' },
@@ -471,8 +471,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'قرارداد سیمان‌کاری خدمات چاه البرز 120,000 است و پارس‌آریا در شروع کار 20٪ آن، یعنی 24,000، را در برابر ضمانت‌نامه پیش‌پرداخت پرداخته است. اکنون فاکتور صورت‌وضعیت سیمان‌کاری جداری سطحی AR-11 (SES تأییدشده 45,000) رسیده است. در این مثال کسور روی مبلغ پیش از مالیات بر ارزش افزوده محاسبه می‌شوند:',
-            en: 'The Alborz Well Services cementing contract is worth 120,000, and at the start Pars Arya paid 20% of it, 24,000, against an advance-payment guarantee. Now the invoice for the AR-11 surface casing cementing (approved SES 45,000) has arrived. In this example deductions are calculated on the amount before VAT:',
+            fa: 'قرارداد سیمان‌کاری خدمات چاه البرز 120,000 است و مسار پترولیوم در شروع کار 20٪ آن، یعنی 24,000، را در برابر ضمانت‌نامه پیش‌پرداخت پرداخته است. اکنون فاکتور صورت‌وضعیت سیمان‌کاری جداری سطحی AR-11 (SES پذیرفته‌شده 45,000) رسیده است. در این مثال کسور روی مبلغ پیش از مالیات بر ارزش افزوده محاسبه می‌شوند:',
+            en: 'The Alborz Well Services cementing contract is worth 120,000, and at the start Masar Petroleum paid 20% of it, 24,000, against an advance-payment guarantee. Now the invoice for the AR-11 surface casing cementing (accepted SES 45,000) has arrived. In this example deductions are calculated on the amount before VAT:',
           },
         },
         {
@@ -721,7 +721,7 @@ export const lesson: Lesson = {
             [{ fa: 'استعلام‌ها، پیشنهادها و ارزیابی؛ یا توجیه مصوب خرید انحصاری', en: 'RFQs, bids and evaluation; or an approved sole-source justification' }, { fa: 'قیمت رقابتی و منصفانه بوده است', en: 'The price was competitive and fair' }],
             [{ fa: 'سفارش یا قرارداد تأییدشده طبق DOA', en: 'PO or contract approved per DOA' }, { fa: 'قیمت و شرایط با اختیار مجاز توافق شده است', en: 'Price and terms were agreed with proper authority' }],
             [{ fa: 'IRN و گواهی‌ها', en: 'IRN and certificates' }, { fa: 'کیفیت طبق مشخصات بوده است', en: 'Quality met the specification' }],
-            [{ fa: 'رسید کالا یا SES تأییدشده با برگه کار روزانه', en: 'Goods receipt or approved SES with field tickets' }, { fa: 'کالا یا خدمت واقعاً دریافت شده است', en: 'The goods or service were actually received' }],
+            [{ fa: 'رسید کالا (GRN)، یا برگه ثبت خدمات (SES) پذیرفته‌شده با برگه‌های کارکرد روزانه امضاشده', en: 'GRN, or accepted SES with signed daily field tickets' }, { fa: 'کالا یا خدمت واقعاً دریافت شده است', en: 'The goods or service were actually received' }],
             [{ fa: 'فاکتور معتبر مالیاتی', en: 'Valid tax invoice' }, { fa: 'مبلغ مطالبه‌شده و اعتبار مالیاتی', en: 'The amount claimed and the tax credit' }],
             [{ fa: 'سند پرداخت بانکی', en: 'Bank payment record' }, { fa: 'مبلغ واقعاً پرداخت‌شده، پس از کسر خسارت‌ها و اعلامیه‌های بستانکاری', en: 'The amount actually paid, after LDs and credit notes' }],
             [{ fa: 'کد موضوع هزینه روی همه اسناد', en: 'Cost object on every document' }, { fa: 'هزینه به چاه، AFE یا مرکز هزینه درست رفته است', en: 'The cost went to the right well, AFE or cost centre' }],
@@ -740,8 +740,8 @@ export const lesson: Lesson = {
           type: 'callout',
           tone: 'example',
           text: {
-            fa: 'در فاکتور البرز، هزینه سیمان‌کاری روی AFE-AR11 همان 45,000 است: نه 49,500 (چون مالیات بر ارزش افزوده هزینه نیست) و نه 32,400 (چون کسور فقط بخشی از بدهی به پیمانکار را به سازمان مالیاتی، سپرده‌ها و تسویه پیش‌پرداخت منتقل کرده‌اند). اینکه قرارداد هزینه را هنگام وقوع یا هنگام پرداخت قابل بازیافت بداند، به رویه حسابداری همان قرارداد بستگی دارد.',
-            en: 'On the Alborz invoice, the cementing cost on AFE-AR11 is 45,000: not 49,500 (VAT is not a cost) and not 32,400 (the deductions only redirect part of the debt to the tax office, retentions and the advance). Whether the contract recognises the cost when incurred or when paid depends on its own accounting procedure.',
+            fa: 'در فاکتور البرز، هزینه سیمان‌کاری روی `AFE-2025-014.02.03` همان 45,000 است: نه 49,500 (چون مالیات بر ارزش افزوده هزینه نیست) و نه 32,400 (چون کسور فقط بخشی از بدهی به پیمانکار را به سازمان مالیاتی، سپرده‌ها و تسویه پیش‌پرداخت منتقل کرده‌اند). اینکه قرارداد هزینه را هنگام وقوع یا هنگام پرداخت قابل بازیافت بداند، به رویه حسابداری همان قرارداد بستگی دارد.',
+            en: 'On the Alborz invoice, the cementing cost on `AFE-2025-014.02.03` is 45,000: not 49,500 (VAT is not a cost) and not 32,400 (the deductions only redirect part of the debt to the tax office, retentions and the advance). Whether the contract recognises the cost when incurred or when paid depends on its own accounting procedure.',
           },
         },
       ],
@@ -755,8 +755,8 @@ export const lesson: Lesson = {
           type: 'list',
           items: [
             {
-              fa: '**پرداخت بر اساس فاکتور تنها**: بدون رسید یا SES. راه درست: تطبیق سه‌طرفه برای همه کالاها و خدمات، مگر موارد مصوب تطبیق دوطرفه.',
-              en: '**Paying on the invoice alone**: with no receipt or SES. Fix: three-way match for all goods and services except approved two-way cases.',
+              fa: '**پرداخت بر اساس فاکتور تنها**: بدون GRN یا SES. راه درست: تطبیق سه‌طرفه برای همه کالاها و خدمات، مگر موارد مصوب تطبیق دوطرفه.',
+              en: '**Paying on the invoice alone**: with no GRN or SES. Fix: three-way match for all goods and services except approved two-way cases.',
             },
             {
               fa: '**ثبت فاکتور تکراری**: همان فاکتور از دو مسیر. راه درست: کنترل خودکار تکرار بر اساس تأمین‌کننده، شماره فاکتور، تاریخ و مبلغ.',
@@ -785,8 +785,8 @@ export const lesson: Lesson = {
           title: { fa: 'تمرین 1: ثبت کنیم یا متوقف؟', en: 'Exercise 1: Post or block?' },
           difficulty: 'easy',
           problem: {
-            fa: 'با حد تحمل فرضی پارس‌آریا (قیمت تا 2٪ بالاتر؛ مقدار فاکتور حداکثر برابر خالص رسید)، تصمیم ERP را برای هر فاکتور تعیین کنید. فاکتور د روی سفارش باز با تطبیق دوطرفه است و مانده سقف آن 3,450 است.',
-            en: 'Using Pars Arya’s illustrative tolerances (price up to 2% higher; invoice quantity at most the net received), decide what the ERP does with each invoice. Invoice d is on a blanket PO with a two-way match and 3,450 of its limit remaining.',
+            fa: 'با حد تحمل فرضی مسار پترولیوم (قیمت تا 2٪ بالاتر؛ مقدار فاکتور حداکثر برابر خالص رسید)، تصمیم ERP را برای هر فاکتور تعیین کنید. فاکتور د روی سفارش باز با تطبیق دوطرفه است و مانده سقف آن 3,450 است.',
+            en: 'Using Masar Petroleum’s illustrative tolerances (price up to 2% higher; invoice quantity at most the net received), decide what the ERP does with each invoice. Invoice d is on a blanket PO with a two-way match and 3,450 of its limit remaining.',
           },
           given: {
             head: [
@@ -828,8 +828,8 @@ export const lesson: Lesson = {
           title: { fa: 'تمرین 2: انحراف قیمت در حد تحمل با مصرف جزئی', en: 'Exercise 2: In-tolerance price variance with partial consumption' },
           difficulty: 'medium',
           problem: {
-            fa: 'سفارش `PO-45026`: 40 کیت سوپاپ × 750 = 30,000؛ هر 40 کیت رسیده و در انبار مرکزی با میانگین موزون متحرک ارزش‌گذاری شده‌اند. تا زمان رسیدن فاکتور، 10 کیت به دستور کارهای کمپرسور حواله شده است. فاکتور: 40 × 760 به‌علاوه مالیات بر ارزش افزوده 10٪ (فرضی). (الف) آیا فاکتور ثبت می‌شود؟ (ب) ثبت خودکار آن را بنویسید.',
-            en: '`PO-45026`: 40 valve kits × 750 = 30,000; all 40 were received into the Central Warehouse at moving average. By the time the invoice arrives, 10 kits have been issued to compressor work orders. Invoice: 40 × 760 plus 10% VAT (illustrative). (a) Is the invoice posted? (b) Write its automatic entry.',
+            fa: 'سفارش `PO-45026`: 40 کیت تعمیر سوپاپ × 750 = 30,000؛ هر 40 کیت رسیده و در انبار مرکزی با میانگین موزون متحرک ارزش‌گذاری شده‌اند. تا زمان رسیدن فاکتور، 10 کیت به دستور کارهای کمپرسور حواله شده است. فاکتور: 40 × 760 به‌علاوه مالیات بر ارزش افزوده 10٪ (فرضی). (الف) آیا فاکتور ثبت می‌شود؟ (ب) ثبت خودکار آن را بنویسید.',
+            en: '`PO-45026`: 40 valve repair kits × 750 = 30,000; all 40 were received into the Central Warehouse at moving average. By the time the invoice arrives, 10 kits have been issued to compressor work orders. Invoice: 40 × 760 plus 10% VAT (illustrative). (a) Is the invoice posted? (b) Write its automatic entry.',
           },
           hint: {
             fa: 'اختلاف قیمت را به نسبت کالای موجود و مصرف‌شده تقسیم کنید.',
@@ -856,8 +856,8 @@ export const lesson: Lesson = {
                 {
                   title: { fa: 'تقسیم اختلاف', en: 'Split the difference' },
                   text: {
-                    fa: '30 کیت هنوز در انبار است: 30 × 10 = 300 به موجودی. 10 کیت مصرف شده: 10 × 10 = 100 به حساب انحراف قیمت خرید.',
-                    en: '30 kits are still in stock: 30 × 10 = 300 to inventory. 10 kits were used: 10 × 10 = 100 to purchase price variance.',
+                    fa: '30 کیت هنوز در انبار است: 30 × 10 = 300 به موجودی. 10 کیت مصرف شده: 10 × 10 = 100 به حساب تفاوت قیمت خرید.',
+                    en: '30 kits are still in stock: 30 × 10 = 300 to inventory. 10 kits were used: 10 × 10 = 100 to purchase price differences.',
                   },
                 },
               ],
@@ -876,7 +876,7 @@ export const lesson: Lesson = {
                   ],
                   memo: {
                     fa: 'GR/IR با همان 30,000 رسید تسویه می‌شود.',
-                    en: 'GR/IR is cleared with the same 30,000 as the receipt.',
+                    en: 'GR/IR is cleared with the same 30,000 as the GRN.',
                   },
                 },
               ],
@@ -953,8 +953,8 @@ export const lesson: Lesson = {
           title: { fa: 'تمرین 4: صورت‌وضعیت تعمیرات اساسی کمپرسور', en: 'Exercise 4: Compressor overhaul progress statement' },
           difficulty: 'hard',
           problem: {
-            fa: 'پارس‌آریا تعمیرات اساسی کمپرسور K-102 را به بخش خدمات فن‌آوران کمپرسور توس سپرده است: قرارداد 200,000، پیش‌پرداخت 15٪ در برابر ضمانت‌نامه. هزینه روی مرکز هزینه ایستگاه تقویت فشار (CC-CS) می‌نشیند. صورت‌وضعیت اول با SES تأییدشده 80,000 رسیده است. نرخ‌های فرضی: مالیات بر ارزش افزوده 10٪، مالیات تکلیفی 3٪، سپرده بیمه 5٪، سپرده حسن انجام کار 10٪، کسر پیش‌پرداخت 15٪ (همه روی مبلغ پیش از مالیات). (الف) خالص پرداختی را حساب کنید. (ب) همه ثبت‌ها را از پیش‌پرداخت تا پرداخت بنویسید. (ج) هزینه قابل بازیافت این صورت‌وضعیت و مانده پیش‌پرداخت چقدر است؟',
-            en: 'Pars Arya has contracted the overhaul of compressor K-102 to the service division of Toos Compressor Technologies: contract 200,000, 15% advance against a guarantee. The cost goes to the compressor station cost centre (CC-CS). The first statement has arrived with an approved SES of 80,000. Illustrative rates: VAT 10%, withholding 3%, insurance retention 5%, performance retention 10%, advance recovery 15% (all on the pre-VAT amount). (a) Calculate the net payment. (b) Write every entry from the advance to the payment. (c) What is the recoverable cost of this statement and the remaining advance?',
+            fa: 'مسار پترولیوم تعمیرات اساسی کمپرسور K-202 را به بخش خدمات فن‌آوران کمپرسور توس سپرده است: قرارداد 200,000، پیش‌پرداخت 15٪ در برابر ضمانت‌نامه. هزینه روی مرکز هزینه ایستگاه تقویت فشار (CC-ARY-CMP) می‌نشیند. صورت‌وضعیت اول با SES پذیرفته‌شده 80,000 رسیده است. نرخ‌های فرضی: مالیات بر ارزش افزوده 10٪، مالیات تکلیفی 3٪، سپرده بیمه 5٪، سپرده حسن انجام کار 10٪، کسر پیش‌پرداخت 15٪ (همه روی مبلغ پیش از مالیات). (الف) خالص پرداختی را حساب کنید. (ب) همه ثبت‌ها را از پیش‌پرداخت تا پرداخت بنویسید. (ج) هزینه قابل بازیافت این صورت‌وضعیت و مانده پیش‌پرداخت چقدر است؟',
+            en: 'Masar Petroleum has contracted the overhaul of compressor K-202 to the service division of Toos Compressor Technologies: contract 200,000, 15% advance against a guarantee. The cost goes to the compressor station cost centre (CC-ARY-CMP). The first statement has arrived with an accepted SES of 80,000. Illustrative rates: VAT 10%, withholding 3%, insurance retention 5%, performance retention 10%, advance recovery 15% (all on the pre-VAT amount). (a) Calculate the net payment. (b) Write every entry from the advance to the payment. (c) What is the recoverable cost of this statement and the remaining advance?',
           },
           solution: [
             {
@@ -989,7 +989,7 @@ export const lesson: Lesson = {
                   ],
                 },
                 {
-                  date: { fa: 'تأیید SES', en: 'SES approved' },
+                  date: { fa: 'پذیرش SES', en: 'SES accepted' },
                   lines: [
                     { account: ac.maintCS, debit: 80000 },
                     { account: ac.grir, credit: 80000 },
@@ -1026,8 +1026,8 @@ export const lesson: Lesson = {
               type: 'callout',
               tone: 'tip',
               text: {
-                fa: 'هزینه قابل بازیافت 80,000 روی CC-CS است؛ نه 88,000 و نه 61,600. مانده پیش‌پرداخت 30,000 − 12,000 = 18,000 است که از صورت‌وضعیت‌های بعدی کسر می‌شود.',
-                en: 'The recoverable cost is 80,000 on CC-CS, not 88,000 and not 61,600. The advance balance is 30,000 − 12,000 = 18,000, to be recovered from later statements.',
+                fa: 'هزینه قابل بازیافت 80,000 روی CC-ARY-CMP است؛ نه 88,000 و نه 61,600. مانده پیش‌پرداخت 30,000 − 12,000 = 18,000 است که از صورت‌وضعیت‌های بعدی کسر می‌شود.',
+                en: 'The recoverable cost is 80,000 on CC-ARY-CMP, not 88,000 and not 61,600. The advance balance is 30,000 − 12,000 = 18,000, to be recovered from later statements.',
               },
             },
           ],
@@ -1046,8 +1046,8 @@ export const lesson: Lesson = {
           type: 'list',
           items: [
             {
-              fa: 'تطبیق سه‌طرفه قیمت را از سفارش و مقدار را از رسید یا SES می‌گیرد؛ تطبیق دوطرفه فقط برای موارد مصوب کم‌خطر است.',
-              en: 'Three-way matching takes price from the PO and quantity from the receipt or SES; two-way matching is only for approved low-risk cases.',
+              fa: 'تطبیق سه‌طرفه قیمت را از سفارش و مقدار را از GRN یا SES می‌گیرد؛ تطبیق دوطرفه فقط برای موارد مصوب کم‌خطر است.',
+              en: 'Three-way matching takes price from the PO and quantity from the GRN or SES; two-way matching is only for approved low-risk cases.',
             },
             {
               fa: 'اختلاف در حد تحمل خودکار جذب می‌شود؛ بیش از آن، فاکتور با قفل پرداخت ثبت می‌شود تا ریشه اختلاف حل شود.',
@@ -1072,11 +1072,11 @@ export const lesson: Lesson = {
           terms: [
             {
               term: { fa: 'تطبیق فاکتور', en: 'Invoice verification' },
-              def: { fa: 'مقایسه فاکتور با سفارش و رسید پیش از تبدیل آن به بدهی قابل پرداخت.', en: 'Checking an invoice against the PO and receipt before it becomes a payable liability.' },
+              def: { fa: 'مقایسه فاکتور با سفارش و GRN یا SES پیش از تبدیل آن به بدهی قابل پرداخت.', en: 'Checking an invoice against the PO and the GRN or SES before it becomes a payable liability.' },
             },
             {
               term: { fa: 'تطبیق سه‌طرفه', en: 'Three-way match' },
-              def: { fa: 'مقایسه سفارش خرید، رسید کالا (یا SES) و فاکتور.', en: 'Comparing the PO, the goods receipt (or SES) and the invoice.' },
+              def: { fa: 'مقایسه سفارش خرید، رسید کالا (GRN) یا برگه ثبت خدمات (SES)، و فاکتور.', en: 'Comparing the PO, the GRN (or SES) and the invoice.' },
             },
             {
               term: { fa: 'حد تحمل', en: 'Tolerance' },
@@ -1123,7 +1123,7 @@ export const lesson: Lesson = {
       },
       options: [
         { fa: 'درخواست خرید، سفارش خرید، فاکتور', en: 'Requisition, PO, invoice' },
-        { fa: 'سفارش خرید، رسید کالا یا SES، فاکتور', en: 'PO, goods receipt or SES, invoice' },
+        { fa: 'سفارش خرید، GRN یا SES، فاکتور', en: 'PO, GRN or SES, invoice' },
         { fa: 'فاکتور، سند پرداخت، صورتحساب بانک', en: 'Invoice, payment document, bank statement' },
         { fa: 'قرارداد، ضمانت‌نامه، فاکتور', en: 'Contract, guarantee, invoice' },
       ],
@@ -1152,8 +1152,8 @@ export const lesson: Lesson = {
     },
     {
       q: {
-        fa: 'رسید کالا 20,000 ثبت شده است. فاکتور 20,000 به‌علاوه 10٪ مالیات بر ارزش افزوده می‌رسد و منطبق است. حساب‌های پرداختنی چقدر بستانکار می‌شود؟',
-        en: 'A goods receipt of 20,000 was posted. A matching invoice arrives for 20,000 plus 10% VAT. How much is credited to Accounts payable?',
+        fa: 'GRN به مبلغ 20,000 ثبت شده است. فاکتور 20,000 به‌علاوه 10٪ مالیات بر ارزش افزوده می‌رسد و منطبق است. حساب‌های پرداختنی چقدر بستانکار می‌شود؟',
+        en: 'A GRN of 20,000 was posted. A matching invoice arrives for 20,000 plus 10% VAT. How much is credited to Accounts payable?',
       },
       options: [
         { fa: '20,000', en: '20,000' },
@@ -1181,7 +1181,7 @@ export const lesson: Lesson = {
       answer: 0,
       explain: {
         fa: 'رسید GR/IR را بستانکار و فاکتور آن را بدهکار می‌کند. مانده بستانکار یعنی رسید بیش از فاکتور است: کالا رسیده و بدهی تحقق یافته، اما فاکتورش نیامده. مانده بدهکار معنای برعکس دارد: فاکتور بدون رسید.',
-        en: 'The receipt credits GR/IR and the invoice debits it. A credit balance means receipts exceed invoices: goods arrived and a liability exists, but the invoice has not come. A debit balance means the opposite: an invoice without a receipt.',
+        en: 'The GRN (or SES) credits GR/IR and the invoice debits it. A credit balance means receipts exceed invoices: goods arrived and a liability exists, but the invoice has not come. A debit balance means the opposite: an invoice without a receipt.',
       },
     },
     {
@@ -1191,7 +1191,7 @@ export const lesson: Lesson = {
       },
       options: [
         { fa: 'حد تحمل مقدار را موقتاً افزایش دهیم', en: 'Temporarily raise the quantity tolerance' },
-        { fa: 'برای 6 واحد رسید ثبت کنیم تا فاکتور آزاد شود', en: 'Post a receipt for the 6 units so the invoice clears' },
+        { fa: 'برای 6 واحد GRN ساختگی ثبت کنیم تا فاکتور آزاد شود', en: 'Post a GRN for the 6 units so the invoice clears' },
         { fa: 'از تأمین‌کننده اعلامیه بستانکاری بگیریم یا منتظر رسید واقعی باقی‌مانده بمانیم', en: 'Get a credit note from the supplier or wait for a real receipt of the rest' },
         { fa: 'فاکتور را بدون بررسی پرداخت کنیم', en: 'Pay the invoice without review' },
       ],
@@ -1203,8 +1203,8 @@ export const lesson: Lesson = {
     },
     {
       q: {
-        fa: 'SES تأییدشده 50,000 است. نرخ‌های فرضی: مالیات بر ارزش افزوده 10٪، مالیات تکلیفی 3٪، سپرده بیمه 5٪، حسن انجام کار 10٪، بدون پیش‌پرداخت (همه روی مبلغ پیش از مالیات). خالص پرداختی چقدر است؟',
-        en: 'An approved SES is 50,000. Illustrative rates: VAT 10%, withholding 3%, insurance retention 5%, performance retention 10%, no advance (all on the pre-VAT amount). What is the net payment?',
+        fa: 'SES پذیرفته‌شده 50,000 است. نرخ‌های فرضی: مالیات بر ارزش افزوده 10٪، مالیات تکلیفی 3٪، سپرده بیمه 5٪، حسن انجام کار 10٪، بدون پیش‌پرداخت (همه روی مبلغ پیش از مالیات). خالص پرداختی چقدر است؟',
+        en: 'An accepted SES is 50,000. Illustrative rates: VAT 10%, withholding 3%, insurance retention 5%, performance retention 10%, no advance (all on the pre-VAT amount). What is the net payment?',
       },
       options: [
         { fa: '46,000', en: '46,000' },
@@ -1260,13 +1260,13 @@ export const lesson: Lesson = {
       options: [
         { fa: 'لوله جداری چاه AR-11', en: 'Casing for well AR-11' },
         { fa: 'کارتریج آب‌بند گاز خشک کمپرسور', en: 'A compressor dry gas seal cartridge' },
-        { fa: 'سیمان‌کاری چاه با صورت‌وضعیت', en: 'Well cementing with an SES' },
+        { fa: 'سیمان‌کاری چاه با SES', en: 'Well cementing with an SES' },
         { fa: 'قبض برق ماهانه دفتر میدان روی سفارش باز', en: 'The field office’s monthly electricity bill on a blanket PO' },
       ],
       answer: 3,
       explain: {
-        fa: 'برای قبوض و خریدهای کم‌مبلغ تکراری، ثبت رسید عملی نیست و ریسک پایین است؛ پس تطبیق دوطرفه با سفارش باز کافی است. لوله، قطعات بحرانی و خدمات چاه باید تطبیق سه‌طرفه با رسید یا SES داشته باشند.',
-        en: 'For utility bills and small repeated purchases, a receipt is impractical and the risk is low, so a two-way match against a blanket PO is enough. Pipe, critical spares and well services need a three-way match with a receipt or SES.',
+        fa: 'برای قبوض و خریدهای کم‌مبلغ تکراری، ثبت رسید عملی نیست و ریسک پایین است؛ پس تطبیق دوطرفه با سفارش باز کافی است. لوله، قطعات بحرانی و خدمات چاه باید تطبیق سه‌طرفه با GRN یا SES داشته باشند.',
+        en: 'For utility bills and small repeated purchases, a receipt is impractical and the risk is low, so a two-way match against a blanket PO is enough. Pipe, critical spares and well services need a three-way match with a GRN or SES.',
       },
     },
     {

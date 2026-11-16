@@ -1,6 +1,6 @@
 import type { Lesson } from '../types'
 
-/* Accounts in the operator’s books (Pars Arya Oil & Gas). */
+/* Accounts in the operator’s books (Masar Petroleum). */
 const op = {
   bank: { fa: '1110 موجودی نقد (بانک)', en: '1110 Cash at bank' },
   jointAccount: { fa: '1710 حساب مشترک مشارکت آریا (واسط)', en: '1710 Arya JV joint account (clearing)' },
@@ -8,6 +8,7 @@ const op = {
   dena: { fa: '1730 حساب جاری شریک: نفت دنا', en: '1730 Partner current account: Dena Petroleum' },
   auc: { fa: '1510 دارایی‌های در جریان تکمیل (WBS چاه AR-08، سهم 50٪)', en: '1510 Assets under construction (WBS well AR-08, 50% share)' },
   ap: { fa: '2110 حساب‌های پرداختنی', en: '2110 Accounts payable' },
+  grir: { fa: '2120 حساب واسط رسید کالا و فاکتور (GR/IR)', en: '2120 GR/IR clearing account' },
   opex: { fa: '5110 هزینه عملیات تولید', en: '5110 Production operating expense' },
   ga: { fa: '5900 هزینه‌های اداری و عمومی', en: '5900 General and administrative expense' },
   ohRecovered: { fa: '5910 سربار بازیافتی از حساب مشترک', en: '5910 Overhead recovered from the joint account' },
@@ -31,6 +32,7 @@ const blank = { fa: '', en: '' }
 export const lesson: Lesson = {
   slug: 'joint-operations',
   number: 21,
+  currency: 'usd',
   level: 'advanced',
   minutes: 30,
   icon: 'Users',
@@ -70,8 +72,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'توسعه میدان آریا ده‌ها میلیون هزینه دارد و هیچ‌کس نمی‌داند هر چاه جدید چقدر نفت می‌دهد. پارس‌آریا نمی‌خواهد همه این ریسک و سرمایه را تنها بپذیرد؛ پس دو شریک آورده است: «شرکت انرژی البرز» و «شرکت نفت دنا». سه شرکت یک **موافقت‌نامه عملیات مشترک (JOA)** امضا کرده‌اند که می‌گوید چه کسی کار را اداره می‌کند، هر کس چه سهمی از هزینه و تولید دارد و حساب‌ها چگونه نگه داشته و تسویه می‌شوند.',
-            en: 'Developing the Arya field costs tens of millions, and nobody knows how much oil each new well will deliver. Pars Arya does not want to carry all that risk and capital alone, so it has brought in two partners: Alborz Energy and Dena Petroleum. The three companies have signed a **joint operating agreement (JOA)** that says who runs the work, what share of costs and production each one has, and how the accounts are kept and settled.',
+            fa: 'توسعه میدان آریا ده‌ها میلیون هزینه دارد و هیچ‌کس نمی‌داند هر چاه جدید چقدر نفت می‌دهد. مسار پترولیوم نمی‌خواهد همه این ریسک و سرمایه را تنها بپذیرد؛ پس دو شریک آورده است: «شرکت انرژی البرز» و «شرکت نفت دنا». سه شرکت یک **موافقت‌نامه عملیات مشترک (JOA)** امضا کرده‌اند که می‌گوید چه کسی کار را اداره می‌کند، هر کس چه سهمی از هزینه و تولید دارد و حساب‌ها چگونه نگه داشته و تسویه می‌شوند.',
+            en: 'Developing the Arya field costs tens of millions, and nobody knows how much oil each new well will deliver. Masar Petroleum does not want to carry all that risk and capital alone, so it has brought in two partners: Alborz Energy and Dena Petroleum. The three companies have signed a **joint operating agreement (JOA)** that says who runs the work, what share of costs and production each one has, and how the accounts are kept and settled.',
           },
         },
         {
@@ -92,7 +94,7 @@ export const lesson: Lesson = {
           ],
           numericCols: [3],
           rows: [
-            [t('شرکت نفت و گاز پارس‌آریا', 'Pars Arya Oil & Gas'), t('اپراتور', 'Operator'), t('50٪', '50%'), 5000000],
+            [t('شرکت مسار پترولیوم', 'Masar Petroleum'), t('اپراتور', 'Operator'), t('50٪', '50%'), 5000000],
             [t('شرکت انرژی البرز', 'Alborz Energy'), t('غیرعامل', 'Non-operator'), t('30٪', '30%'), 3000000],
             [t('شرکت نفت دنا', 'Dena Petroleum'), t('غیرعامل', 'Non-operator'), t('20٪', '20%'), 2000000],
             [t('جمع', 'Total'), blank, t('100٪', '100%'), 10000000],
@@ -125,7 +127,7 @@ export const lesson: Lesson = {
         {
           type: 'compare',
           left: {
-            title: { fa: 'اپراتور (پارس‌آریا)', en: 'Operator (Pars Arya)' },
+            title: { fa: 'اپراتور (مسار پترولیوم)', en: 'Operator (Masar Petroleum)' },
             items: [
               { fa: 'عملیات روزانه و قراردادها را اداره می‌کند', en: 'Runs daily operations and contracts' },
               { fa: '100٪ هزینه‌ها را به تأمین‌کنندگان می‌پردازد', en: 'Pays vendors 100% of the costs' },
@@ -191,7 +193,7 @@ export const lesson: Lesson = {
           head: [
             { fa: 'دسته هزینه', en: 'Cost category' },
             { fa: 'برآورد 100٪', en: 'Estimate 100%' },
-            { fa: 'پارس‌آریا 50٪', en: 'Pars Arya 50%' },
+            { fa: 'مسار پترولیوم 50٪', en: 'Masar Petroleum 50%' },
             { fa: 'البرز 30٪', en: 'Alborz 30%' },
             { fa: 'دنا 20٪', en: 'Dena 20%' },
           ],
@@ -212,7 +214,7 @@ export const lesson: Lesson = {
             { title: t('تهیه', 'Prepare'), text: t('مهندس حفاری اپراتور برآورد را تهیه و حسابدار مشارکت سهم شرکا را اضافه می‌کند.', 'The operator’s drilling engineer prepares the estimate and the JV accountant adds the partners’ shares.') },
             { title: t('ارسال و تصویب', 'Circulate and approve'), text: t('AFE برای شرکا فرستاده و طبق قواعد JOA تصویب می‌شود.', 'The AFE is sent to the partners and approved under the JOA rules.') },
             { title: t('ساخت در ERP', 'Set up in the ERP'), text: t('عنصر WBS چاه AR-08 با AFE-208، بودجه 10,000,000، کد مشارکت آریا و نشانگر «قابل شارژ به حساب مشترک» ساخته می‌شود.', 'The WBS element for well AR-08 is created with AFE-208, a 10,000,000 budget, the Arya JV code and a "chargeable to the joint account" flag.') },
-            { title: t('کنترل تعهد', 'Control commitments'), text: t('وقتی قرارداد دکل یا سفارش لوله ثبت می‌شود، ERP تعهد را از بودجه AFE کم می‌کند و پیش از عبور از سقف هشدار می‌دهد.', 'When the rig contract or a tubing order is created, the ERP deducts the commitment from the AFE budget and warns before the limit is crossed.') },
+            { title: t('کنترل تعهد', 'Control commitments'), text: t('وقتی قرارداد دکل یا سفارش لوله ثبت می‌شود، ERP تعهد را از بودجه AFE کم می‌کند و پیش از عبور از سقف هشدار می‌دهد؛ سپس GRN و SES این تعهد را به هزینه واقعی تبدیل می‌کنند.', 'When the rig contract or a tubing order is created, the ERP deducts the commitment from the AFE budget and warns before the limit is crossed; GRNs and SESs then turn the commitment into actual cost.') },
             { title: t('بستن', 'Close out'), text: t('پس از تکمیل، گزارش نهایی AFE برای شرکا فرستاده می‌شود؛ بیش‌خرج بالای آستانه، AFE تکمیلی می‌خواهد.', 'After completion, the final AFE report goes to the partners; an overrun above the threshold needs a supplementary AFE.') },
           ],
         },
@@ -244,7 +246,7 @@ export const lesson: Lesson = {
           head: [
             { fa: 'پیش‌بینی هزینه', en: 'Forecast cost' },
             { fa: '100٪', en: '100%' },
-            { fa: 'پارس‌آریا 50٪', en: 'Pars Arya 50%' },
+            { fa: 'مسار پترولیوم 50٪', en: 'Masar Petroleum 50%' },
             { fa: 'البرز 30٪', en: 'Alborz 30%' },
             { fa: 'دنا 20٪', en: 'Dena 20%' },
           ],
@@ -308,8 +310,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'در طول ماه، اپراتور همه هزینه‌های عملیات مشترک را **100٪** پرداخت و در حساب مشترک ثبت می‌کند؛ هر سطر روی شیء هزینه خودش (AFE-208، مرکز هزینه عملیات میدان) و با کد مشارکت آریا. در پایان ماه، **صورت‌حساب سهم شرکا (JIB: Joint Interest Billing)** اجرا می‌شود: سهم هر شریک از هزینه‌های واقعی محاسبه و پس از کسر وجه دریافتی، مانده بدهکار یا بستانکار او مشخص می‌شود.',
-            en: 'During the month the operator pays **100%** of the joint operation’s costs and records them in the joint account, each line on its cost object (AFE-208, the field operations cost centre) with the Arya JV code. At month-end **joint interest billing (JIB)** is run: each partner’s share of actual costs is computed and, after deducting cash received, its balance due or owed is determined.',
+            fa: 'در طول ماه، اپراتور همه هزینه‌های عملیات مشترک را **100٪** در حساب مشترک ثبت و پرداخت می‌کند. هزینه هنگام ثبت رسید کالا (GRN) یا تأیید برگه ثبت خدمات (SES) وارد حساب مشترک می‌شود، نه هنگام پرداخت به تأمین‌کننده؛ هر سطر روی شیء هزینه خودش (AFE-208، مرکز هزینه عملیات میدان) و با کد مشارکت آریا. در پایان ماه، **صورت‌حساب سهم شرکا (JIB: Joint Interest Billing)** اجرا می‌شود: سهم هر شریک از هزینه‌های واقعی محاسبه و پس از کسر وجه دریافتی، مانده بدهکار یا بستانکار او مشخص می‌شود.',
+            en: 'During the month the operator records and pays **100%** of the joint operation’s costs in the joint account. A cost enters the joint account when its goods received note (GRN) or service entry sheet (SES) is posted, not when the vendor is paid; each line sits on its cost object (AFE-208, the field operations cost centre) with the Arya JV code. At month-end **joint interest billing (JIB)** is run: each partner’s share of actual costs is computed and, after deducting cash received, its balance due or owed is determined.',
           },
         },
         {
@@ -336,7 +338,7 @@ export const lesson: Lesson = {
           head: [
             { fa: 'هزینه', en: 'Cost' },
             { fa: '100٪', en: '100%' },
-            { fa: 'پارس‌آریا 50٪', en: 'Pars Arya 50%' },
+            { fa: 'مسار پترولیوم 50٪', en: 'Masar Petroleum 50%' },
             { fa: 'البرز 30٪', en: 'Alborz 30%' },
             { fa: 'دنا 20٪', en: 'Dena 20%' },
           ],
@@ -374,8 +376,17 @@ export const lesson: Lesson = {
           tone: 'tip',
           title: { fa: 'در ERP: اجرای صورت‌حساب شرکا', en: 'In the ERP: the billing run' },
           text: {
-            fa: 'ERP در پایان ماه همه سطرهای هزینه با کد مشارکت آریا و نشانگر «قابل شارژ» را جمع می‌کند، سربار را طبق نرخ JOA حساب می‌کند، 100٪ را به نسبت سهم‌ها میان شرکا تقسیم می‌کند (برخی ERPها به این مرحله Cutback می‌گویند) و برای هر شریک صورت‌حساب با جزئیات AFE و دسته هزینه می‌سازد. هزینه‌ای که بدون کد مشارکت ثبت شده باشد، در صورت‌حساب نمی‌آید و اپراتور باید آن را تنها بپردازد.',
-            en: 'At month-end the ERP gathers every cost line carrying the Arya JV code and a "chargeable" flag, calculates overhead at the JOA rate, splits 100% among the partners by their interests (some ERPs call this step "cutback") and produces a statement for each partner with AFE and cost-category detail. A cost posted without the JV code does not reach the billing, and the operator ends up paying it alone.',
+            fa: 'ERP در پایان ماه همه سطرهای هزینه با کد مشارکت آریا و نشانگر «قابل شارژ» را جمع می‌کند، سربار را طبق نرخ JOA حساب می‌کند، 100٪ را به نسبت سهم‌ها میان شرکا تقسیم می‌کند (برخی ERPها به این مرحله Cutback می‌گویند) و برای هر شریک صورت‌حساب با جزئیات AFE و دسته هزینه می‌سازد. هزینه‌ای که بدون کد مشارکت ثبت شده باشد، در صورت‌حساب نمی‌آید و اپراتور باید آن را تنها بپردازد. اینکه GRN و SESهای فاکتورنشده هم در صورت‌حساب همان ماه بیایند یا نه، به روش حسابداری JOA بستگی دارد.',
+            en: 'At month-end the ERP gathers every cost line carrying the Arya JV code and a "chargeable" flag, calculates overhead at the JOA rate, splits 100% among the partners by their interests (some ERPs call this step "cutback") and produces a statement for each partner with AFE and cost-category detail. A cost posted without the JV code does not reach the billing, and the operator ends up paying it alone. Whether uninvoiced GRNs and SESs are billed in the same month depends on the JOA accounting procedure.',
+          },
+        },
+        {
+          type: 'callout',
+          tone: 'info',
+          title: { fa: 'پشت هر سطر صورت‌حساب', en: 'Behind every billing line' },
+          text: {
+            fa: 'شریکی که صورت‌حساب را بررسی می‌کند، باید بتواند هر سطر را تا مدرک آن دنبال کند: سهم 900,000 البرز از حفاری AR-08 به SESهای دکل و GRNهای مواد روی AFE-208 می‌رسد و هر SES به گزارش‌های روزانه امضاشده. همین مدارک بعداً در صورت بازیافت هزینه هم به کار می‌روند.',
+            en: 'A partner reviewing the billing must be able to trace each line to its evidence: Alborz’s 900,000 share of drilling AR-08 leads to the rig SESs and material GRNs on AFE-208, and each SES to signed daily reports. The same records are used later in the cost-recovery statement.',
           },
         },
       ],
@@ -391,19 +402,30 @@ export const lesson: Lesson = {
             en: 'Now let’s see the same month in both sets of books. The operator first collects 100% of the costs in the joint account (a clearing account) and at month-end spreads it between the partners’ current accounts and its own share. The non-operator never sees vendor invoices and records only from the operator’s billing statement.',
           },
         },
-        { type: 'h', text: { fa: 'دفاتر اپراتور (پارس‌آریا)', en: 'The operator’s books (Pars Arya)' } },
+        { type: 'h', text: { fa: 'دفاتر اپراتور (مسار پترولیوم)', en: 'The operator’s books (Masar Petroleum)' } },
         {
           type: 'journal',
-          title: { fa: 'پارس‌آریا: هزینه‌ها، سربار، صورت‌حساب و تسویه', en: 'Pars Arya: costs, overhead, billing and settlement' },
+          title: { fa: 'مسار پترولیوم: هزینه‌ها، سربار، صورت‌حساب و تسویه', en: 'Masar Petroleum: costs, overhead, billing and settlement' },
           entries: [
             {
               date: t('طی ماه', 'During the month'),
               lines: [
                 { account: t('1710 حساب مشترک (AFE-208: حفاری AR-08)', '1710 Joint account (AFE-208: drilling AR-08)'), debit: 3000000 },
                 { account: t('1710 حساب مشترک (عملیات میدان)', '1710 Joint account (field operations)'), debit: 1000000 },
+                { account: op.grir, credit: 4000000 },
+              ],
+              memo: {
+                fa: 'GRN مواد و SES دکل و خدمات، به 100٪ و با کد مشارکت آریا (خلاصه ماه).',
+                en: 'GRNs for materials and SESs for the rig and services, at 100% with the Arya JV code (month summary).',
+              },
+            },
+            {
+              date: t('طی ماه', 'During the month'),
+              lines: [
+                { account: op.grir, debit: 4000000 },
                 { account: op.ap, credit: 4000000 },
               ],
-              memo: { fa: 'فاکتورهای تأمین‌کنندگان به 100٪.', en: 'Vendor invoices at 100%.' },
+              memo: { fa: 'فاکتورهای تأمین‌کنندگان پس از تطبیق سه‌طرفه.', en: 'Vendor invoices after the three-way match.' },
             },
             {
               date: day(30),
@@ -487,8 +509,8 @@ export const lesson: Lesson = {
           tone: 'tip',
           title: { fa: 'آزمون سازگاری', en: 'A consistency check' },
           text: {
-            fa: 'جمع سهم شرکا از دارایی چاه AR-08 در سه دفتر باید برابر 100٪ هزینه باشد: 1,500,000 (پارس‌آریا) و 900,000 (البرز) و 600,000 (دنا)، یعنی 3,000,000. حسابدار مشارکت این آزمون را در پایان هر فصل با تأیید مانده‌ها از شرکا انجام می‌دهد.',
-            en: 'The partners’ shares of the AR-08 well asset across the three sets of books must add up to 100% of the cost: 1,500,000 (Pars Arya), 900,000 (Alborz) and 600,000 (Dena), that is 3,000,000. The JV accountant runs this check every quarter by confirming balances with the partners.',
+            fa: 'جمع سهم شرکا از دارایی چاه AR-08 در سه دفتر باید برابر 100٪ هزینه باشد: 1,500,000 (مسار پترولیوم) و 900,000 (البرز) و 600,000 (دنا)، یعنی 3,000,000. حسابدار مشارکت این آزمون را در پایان هر فصل با تأیید مانده‌ها از شرکا انجام می‌دهد.',
+            en: 'The partners’ shares of the AR-08 well asset across the three sets of books must add up to 100% of the cost: 1,500,000 (Masar Petroleum), 900,000 (Alborz) and 600,000 (Dena), that is 3,000,000. The JV accountant runs this check every quarter by confirming balances with the partners.',
           },
         },
       ],
@@ -505,6 +527,16 @@ export const lesson: Lesson = {
           },
         },
         {
+          type: 'steps',
+          items: [
+            { title: t('اعلام', 'Notice'), text: t('شرکا قصد حسابرسی و دوره مورد نظر را در مهلت JOA به اپراتور اعلام می‌کنند.', 'The partners notify the operator of the audit and the period it covers, within the JOA deadline.') },
+            { title: t('کار میدانی', 'Fieldwork'), text: t('حسابرسان نمونه‌ای از هزینه‌ها را از صورت‌حساب تا AFE، سفارش، GRN یا SES، برگه کار و فاکتور دنبال می‌کنند.', 'The auditors trace a sample of charges from the billing to the AFE, PO, GRN or SES, field ticket and invoice.') },
+            { title: t('گزارش یافته‌ها', 'Exception report'), text: t('هر یافته با مبلغ و دلیل و بند مربوط JOA گزارش می‌شود.', 'Each exception is reported with its amount, reason and the JOA clause involved.') },
+            { title: t('پاسخ اپراتور', 'Operator response'), text: t('اپراتور هر یافته را می‌پذیرد یا با مدرک رد می‌کند.', 'The operator accepts each exception or rejects it with evidence.') },
+            { title: t('تسویه', 'Settlement'), text: t('اقلام پذیرفته‌شده در صورت‌حساب بعدی اصلاح و اقلام اختلافی طبق سازوکار JOA پیگیری می‌شوند.', 'Accepted items are corrected in the next billing and disputed items follow the JOA mechanism.') },
+          ],
+        },
+        {
           type: 'table',
           caption: { fa: 'یافته‌های رایج حسابرسی شرکا', en: 'Common partner audit findings' },
           head: [
@@ -517,7 +549,7 @@ export const lesson: Lesson = {
             [t('هزینه عملیات انفرادی', 'Sole-risk cost'), t('آزمایشی که فقط اپراتور تصمیم به انجامش گرفت', 'A test only the operator decided to run'), t('WBS جدا با کد مشارکت انفرادی', 'A separate WBS with a sole-risk venture code')],
             [t('قیمت‌گذاری نادرست مواد', 'Wrong material pricing'), t('قطعه کارکرده با قیمت نو شارژ شده', 'A used part charged at the new price'), t('قاعده قیمت‌گذاری انتقال مواد طبق JOA در تنظیمات', 'JOA material-transfer pricing rules in the configuration')],
             [t('AFE اشتباه یا بیش‌خرج بدون مجوز', 'Wrong AFE or unapproved overrun'), t('هزینه چاه AR-09 روی AFE-208', 'Well AR-09 cost on AFE-208'), t('رزرو و سفارش فقط با WBS معتبر؛ کنترل بودجه AFE', 'Reservations and orders only with a valid WBS; AFE budget control')],
-            [t('نبود مدرک پشتیبان', 'Missing support'), t('فاکتور بدون رسید یا تأیید خدمات', 'An invoice with no receipt or service entry'), t('تطبیق سه‌طرفه و پیوست الکترونیکی مدارک', 'Three-way match and electronic attachments')],
+            [t('نبود مدرک پشتیبان', 'Missing support'), t('فاکتور بدون GRN، یا SES بدون برگه کار امضاشده', 'An invoice with no GRN, or an SES with no signed field ticket'), t('تطبیق سه‌طرفه (سفارش، GRN یا SES، فاکتور) و پیوست الکترونیکی برگه‌های کار', 'Three-way match (PO, GRN or SES, invoice) and electronic attachment of field tickets')],
             [t('سربار دوباره', 'Double overhead'), t('سربار روی هزینه‌ای که خودش سربار است', 'Overhead charged on a cost that is itself overhead'), t('پایه محاسبه سربار در تنظیمات ERP', 'The overhead base defined in the ERP configuration')],
           ],
         },
@@ -533,8 +565,8 @@ export const lesson: Lesson = {
           tone: 'info',
           title: { fa: 'در عمل: دو حسابرس، یک مجموعه سند', en: 'In practice: two auditors, one set of records' },
           text: {
-            fa: 'در میدان‌هایی که تحت قرارداد نفتی کار می‌کنند، علاوه بر شرکا، شرکت ملی نفت یا نهاد دولتی هم هزینه‌ها را برای بازیافت هزینه حسابرسی می‌کند. هر دو حسابرس همان اسناد را می‌خواهند: AFE مصوب، سفارش خرید، رسید، فاکتور، تأیید پرداخت. اپراتوری که اسناد را یک بار درست و کامل در ERP نگه دارد، هر دو حسابرسی را آسان‌تر می‌گذراند.',
-            en: 'In fields run under a petroleum contract, besides the partners, the national oil company or a government body also audits costs for cost recovery. Both auditors ask for the same records: the approved AFE, purchase order, receipt, invoice and payment approval. An operator that keeps the records correct and complete once, in the ERP, gets through both audits more easily.',
+            fa: 'در میدان‌هایی که تحت قرارداد نفتی کار می‌کنند، علاوه بر شرکا، شرکت ملی نفت یا نهاد دولتی هم هزینه‌ها را برای بازیافت هزینه حسابرسی می‌کند. هر دو حسابرس همان اسناد را می‌خواهند: AFE مصوب، سفارش خرید، GRN یا SES همراه با برگه‌های کار امضاشده، فاکتور و تأیید پرداخت. اپراتوری که اسناد را یک بار درست و کامل در ERP نگه دارد، هر دو حسابرسی را آسان‌تر می‌گذراند.',
+            en: 'In fields run under a petroleum contract, besides the partners, the national oil company or a government body also audits costs for cost recovery. Both auditors ask for the same records: the approved AFE, purchase order, GRN or SES with its signed field tickets, invoice and payment approval. An operator that keeps the records correct and complete once, in the ERP, gets through both audits more easily.',
           },
         },
         {
@@ -565,8 +597,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'در همه تمرین‌ها سهم‌ها همان سهم‌های مشارکت آریاست: پارس‌آریا 50٪ (اپراتور)، البرز 30٪ و دنا 20٪. نرخ سربار 3٪ عدد فرضی آموزشی است.',
-            en: 'In all exercises the shares are the Arya JV interests: Pars Arya 50% (operator), Alborz 30% and Dena 20%. The 3% overhead rate is an illustrative teaching figure.',
+            fa: 'در همه تمرین‌ها سهم‌ها همان سهم‌های مشارکت آریاست: مسار پترولیوم 50٪ (اپراتور)، البرز 30٪ و دنا 20٪. نرخ سربار 3٪ عدد فرضی آموزشی است.',
+            en: 'In all exercises the shares are the Arya JV interests: Masar Petroleum 50% (operator), Alborz 30% and Dena 20%. The 3% overhead rate is an illustrative teaching figure.',
           },
         },
         {
@@ -587,7 +619,7 @@ export const lesson: Lesson = {
               ],
               numericCols: [1, 2],
               rows: [
-                [t('پارس‌آریا 50٪', 'Pars Arya 50%'), 3000000, 1650000],
+                [t('مسار پترولیوم 50٪', 'Masar Petroleum 50%'), 3000000, 1650000],
                 [t('البرز 30٪', 'Alborz 30%'), 1800000, 990000],
                 [t('دنا 20٪', 'Dena 20%'), 1200000, 660000],
                 [t('جمع', 'Total'), 6000000, 3300000],
@@ -597,14 +629,14 @@ export const lesson: Lesson = {
               type: 'callout',
               tone: 'info',
               text: {
-                fa: 'درخواست وجه فقط برای شرکای غیرعامل صادر می‌شود: البرز 990,000 و دنا 660,000. سهم 1,650,000 پارس‌آریا را خودش تأمین می‌کند.',
-                en: 'Cash calls go only to the non-operators: Alborz 990,000 and Dena 660,000. Pars Arya funds its own 1,650,000.',
+                fa: 'درخواست وجه فقط برای شرکای غیرعامل صادر می‌شود: البرز 990,000 و دنا 660,000. سهم 1,650,000 مسار پترولیوم را خودش تأمین می‌کند.',
+                en: 'Cash calls go only to the non-operators: Alborz 990,000 and Dena 660,000. Masar Petroleum funds its own 1,650,000.',
               },
             },
           ],
           answer: {
-            fa: 'AFE-211: پارس‌آریا 3,000,000، البرز 1,800,000، دنا 1,200,000؛ درخواست وجه: البرز 990,000 و دنا 660,000.',
-            en: 'AFE-211: Pars Arya 3,000,000, Alborz 1,800,000, Dena 1,200,000; cash calls: Alborz 990,000 and Dena 660,000.',
+            fa: 'AFE-211: مسار پترولیوم 3,000,000، البرز 1,800,000، دنا 1,200,000؛ درخواست وجه: البرز 990,000 و دنا 660,000.',
+            en: 'AFE-211: Masar Petroleum 3,000,000, Alborz 1,800,000, Dena 1,200,000; cash calls: Alborz 990,000 and Dena 660,000.',
           },
         },
         {
@@ -716,7 +748,7 @@ export const lesson: Lesson = {
               rows: [
                 [t('البرز 30٪', 'Alborz 30%'), 60000, t('بستانکار در صورت‌حساب بعدی', 'Credited in the next billing')],
                 [t('دنا 20٪', 'Dena 20%'), 40000, t('بستانکار در صورت‌حساب بعدی', 'Credited in the next billing')],
-                [t('پارس‌آریا 50٪', 'Pars Arya 50%'), 100000, t('از هزینه مشارکت به هزینه خودش منتقل می‌شود', 'Moves from JV cost to its own cost')],
+                [t('مسار پترولیوم 50٪', 'Masar Petroleum 50%'), 100000, t('از هزینه مشارکت به هزینه خودش منتقل می‌شود', 'Moves from JV cost to its own cost')],
               ],
             },
             {
@@ -912,8 +944,8 @@ export const lesson: Lesson = {
       ],
       answer: 1,
       explain: {
-        fa: '10,000,000 × 20٪ = 2,000,000. عدد 3,000,000 سهم البرز (30٪) و 5,000,000 سهم پارس‌آریا (50٪) است؛ 200,000 یک صفر کم دارد.',
-        en: '10,000,000 × 20% = 2,000,000. 3,000,000 is Alborz’s share (30%) and 5,000,000 Pars Arya’s (50%); 200,000 is missing a zero.',
+        fa: '10,000,000 × 20٪ = 2,000,000. عدد 3,000,000 سهم البرز (30٪) و 5,000,000 سهم مسار پترولیوم (50٪) است؛ 200,000 یک صفر کم دارد.',
+        en: '10,000,000 × 20% = 2,000,000. 3,000,000 is Alborz’s share (30%) and 5,000,000 Masar Petroleum’s (50%); 200,000 is missing a zero.',
       },
     },
     {

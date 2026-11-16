@@ -40,6 +40,7 @@ const blank = { fa: '', en: '' }
 export const lesson: Lesson = {
   slug: 'oman-vat',
   number: 24,
+  currency: 'omr',
   level: 'advanced',
   minutes: 40,
   icon: 'Percent',
@@ -500,8 +501,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'شخص ثبت‌نام‌شده باید هنگام هر عرضه (از جمله عرضه فرضی، مثل هدیه‌ای که مالیات ورودی‌اش کسر شده) و هنگام دریافت پیش‌پرداخت، **صورت‌حساب مالیاتی** صادر کند؛ آن هم **ظرف 15 روز** از رویداد (ماده 143 آیین‌نامه، اصلاح‌شده در 2022). صورت‌حساب به زبان عربی است یا به انگلیسی همراه با ترجمه عربی (ماده 144). اگر صورت‌حساب به ارز خارجی باشد، مبلغ مالیات باید به ریال عمانی و با میانگین نرخ خرید و فروش اعلام‌شده بانک مرکزی عمان در تاریخ سررسید مالیات محاسبه شود (ماده 68 قانون). از 2027 صورت‌حساب باید در قالب الکترونیکی تأییدشده صادر شود؛ جزئیات آن در درس صورت‌حساب الکترونیکی در عمان آمده است.',
-            en: 'A registered person must issue a **tax invoice** for every supply (including a deemed supply, such as a gift on which input VAT was deducted) and when it receives an advance payment, **within 15 days** of the event (Regulation 143, as amended in 2022). The invoice is in Arabic, or in English with an Arabic translation (Regulation 144). If it is in a foreign currency, the VAT must be shown in Omani rials, converted at the Central Bank of Oman’s average buying and selling rate on the tax due date (Article 68). From 2027 invoices must be issued in an approved electronic format; the lesson on e-invoicing in Oman covers this.',
+            fa: 'شخص ثبت‌نام‌شده باید هنگام هر عرضه (از جمله عرضه فرضی، مثل هدیه‌ای که مالیات ورودی‌اش کسر شده) و هنگام دریافت پیش‌پرداخت، **صورت‌حساب مالیاتی** صادر کند؛ آن هم **ظرف 15 روز** از رویداد (ماده 143 آیین‌نامه، اصلاح‌شده در 2022). صورت‌حساب به زبان عربی است یا به انگلیسی همراه با ترجمه عربی (ماده 144). اگر صورت‌حساب به ارز خارجی باشد، مبلغ مالیات باید به ریال عمانی و با میانگین نرخ خرید و فروش اعلام‌شده بانک مرکزی عمان در تاریخ سررسید مالیات محاسبه شود (ماده 68 قانون). طبق تصمیم 189/2026، صورت‌حساب باید به‌صورت مرحله‌ای از 1 آوریل 2027 و 1 اکتبر 2027 در قالب الکترونیکی تأییدشده صادر شود؛ جزئیات آن در درس صورت‌حساب الکترونیکی در عمان آمده است.',
+            en: 'A registered person must issue a **tax invoice** for every supply (including a deemed supply, such as a gift on which input VAT was deducted) and when it receives an advance payment, **within 15 days** of the event (Regulation 143, as amended in 2022). The invoice is in Arabic, or in English with an Arabic translation (Regulation 144). If it is in a foreign currency, the VAT must be shown in Omani rials, converted at the Central Bank of Oman’s average buying and selling rate on the tax due date (Article 68). Under Decision 189/2026, invoices must be issued in an approved electronic format in phases from 1 April 2027 and 1 October 2027; the lesson on e-invoicing in Oman covers this.',
           },
         },
         {
@@ -1342,15 +1343,100 @@ export const lesson: Lesson = {
         en: 'In a quarter: standard-rated sales of 240,000, reverse-charge foreign services of 20,000, and VAT on local purchases of 7,500, of which 400 relates to entertainment. What is the VAT payable?',
       },
       options: [
-        { fa: '5,500', en: '5,500' },
-        { fa: '6,900', en: '6,900' },
         { fa: '5,900', en: '5,900' },
+        { fa: '4,500', en: '4,500' },
         { fa: '4,900', en: '4,900' },
+        { fa: '3,900', en: '3,900' },
       ],
       answer: 2,
       explain: {
-        fa: 'خروجی = 12,000 + 1,000 (سازوکار معکوس) = 13,000. ورودی = (7,500 منهای 400 سرگرمی) + 1,000 = 8,100. قابل پرداخت = 13,000 − 8,100 = 4,900؟ نه؛ دوباره دقت کنید: 13,000 − 8,100 = 4,900 است. پاسخ 4,900 درست نیست؟',
-        en: 'placeholder',
+        fa: 'خروجی = 240,000 × 5٪ = 12,000 به‌اضافه 1,000 سازوکار معکوس = 13,000. ورودی = (7,500 منهای 400 سرگرمی) + 1,000 سازوکار معکوس = 8,100. قابل پرداخت = 13,000 − 8,100 = 4,900. پاسخ 4,500 مالیات سرگرمی را هم کسر کرده و پاسخ 5,900 ورودی سازوکار معکوس را جا انداخته است.',
+        en: 'Output = 240,000 × 5% = 12,000 plus 1,000 reverse charge = 13,000. Input = (7,500 less 400 entertainment) + 1,000 reverse charge = 8,100. Payable = 13,000 − 8,100 = 4,900. The 4,500 answer also deducts the blocked entertainment VAT, and 5,900 forgets the reverse-charge input.',
+      },
+    },
+    {
+      q: {
+        fa: 'اظهارنامه فصل دوم (آوریل تا ژوئن) تا چه روزی باید تسلیم و پرداخت شود؟',
+        en: 'By when must the return for the second quarter (April to June) be filed and paid?',
+      },
+      options: [
+        { fa: '30 ژوئیه', en: '30 July' },
+        { fa: '30 ژوئن', en: '30 June' },
+        { fa: '15 ژوئیه', en: '15 July' },
+        { fa: '31 اوت', en: '31 August' },
+      ],
+      answer: 0,
+      explain: {
+        fa: 'اظهارنامه و پرداخت هر دو ظرف 30 روز پس از پایان دوره‌اند (مواد 72 و 82)؛ 30 ژوئن به‌اضافه 30 روز می‌شود 30 ژوئیه. 30 ژوئن خودِ پایان دوره است و 15 ژوئیه با مهلت 15 روزه صدور صورت‌حساب اشتباه گرفته شده است.',
+        en: 'Both the return and the payment are due within 30 days after the period ends (Articles 72 and 82): 30 June plus 30 days is 30 July. 30 June is the period end itself, and 15 July confuses this with the 15-day invoicing deadline.',
+      },
+    },
+    {
+      q: {
+        fa: 'مالیات 6,000 باید تا 30 آوریل پرداخت می‌شد اما 10 ژوئن پرداخت شد. مالیات اضافی تأخیر چقدر است؟',
+        en: 'VAT of 6,000 was due by 30 April but paid on 10 June. How much late-payment additional tax applies?',
+      },
+      options: [
+        { fa: '60', en: '60' },
+        { fa: '120', en: '120' },
+        { fa: '180', en: '180' },
+        { fa: '600', en: '600' },
+      ],
+      answer: 1,
+      explain: {
+        fa: 'تأخیر یک ماه و 11 روز است و «بخشی از ماه» هم یک ماه کامل حساب می‌شود؛ پس 2 ماه: 6,000 × 1٪ × 2 = 120. پاسخ 60 فقط ماه کامل را شمرده است.',
+        en: 'The delay is one month and 11 days, and a part of a month counts as a full month, so 2 months apply: 6,000 × 1% × 2 = 120. The 60 answer counts only the complete month.',
+      },
+    },
+    {
+      q: {
+        fa: 'مشتری‌ای در 20 ژوئن پیش‌پرداخت خدمتی را می‌پردازد که در ژوئیه انجام می‌شود. مالیات این مبلغ چه زمانی سررسید می‌شود؟',
+        en: 'A customer pays on 20 June in advance for a service performed in July. When is the VAT on that amount due?',
+      },
+      options: [
+        { fa: 'وقتی خدمت در ژوئیه کامل شود', en: 'When the service is completed in July' },
+        { fa: 'در پایان قرارداد', en: 'At the end of the contract' },
+        { fa: 'وقتی صورت‌حساب نهایی صادر شود', en: 'When the final invoice is issued' },
+        { fa: 'در 20 ژوئن، به اندازه مبلغ دریافتی', en: 'On 20 June, to the extent of the amount received' },
+      ],
+      answer: 3,
+      explain: {
+        fa: 'مالیات در زودترین تاریخ عرضه، صدور صورت‌حساب یا دریافت وجه سررسید می‌شود (ماده 26). دریافت در 20 ژوئن زودتر از همه است، پس مالیات مبلغ دریافتی در اظهارنامه فصل دوم می‌آید. «تکمیل خدمت» وسوسه‌انگیز است، اما فقط وقتی ملاک است که وجهی زودتر دریافت نشده باشد.',
+        en: 'VAT is due on the earliest of supply, invoice or payment (Article 26). The 20 June receipt comes first, so VAT on the amount received goes in the Q2 return. “Completion of the service” is tempting but only applies when nothing was received earlier.',
+      },
+    },
+    {
+      q: {
+        fa: 'وادی خدمات مشاوره‌ای را از شرکتی در لندن می‌خرد که در عمان اقامت ندارد. کدام جمله درست است؟',
+        en: 'Wadi buys consultancy services from a London firm with no residence in Oman. Which statement is correct?',
+      },
+      options: [
+        { fa: 'وادی 5٪ را به‌عنوان خروجی حساب می‌کند و اگر خدمت برای عرضه‌های مشمول باشد، همان را در همان اظهارنامه به‌عنوان ورودی کسر می‌کند', en: 'Wadi accounts for 5% as output VAT and, if the service is used for taxable supplies, deducts the same amount as input VAT in the same return' },
+        { fa: 'شرکت لندنی باید 5٪ مالیات عمان روی صورت‌حساب بگیرد', en: 'The London firm must charge 5% Omani VAT on its invoice' },
+        { fa: 'هیچ مالیاتی وجود ندارد، چون تأمین‌کننده خارجی است', en: 'There is no VAT because the supplier is foreign' },
+        { fa: 'وادی 5٪ را می‌پردازد ولی هرگز نمی‌تواند آن را کسر کند', en: 'Wadi pays 5% but can never deduct it' },
+      ],
+      answer: 0,
+      explain: {
+        fa: 'این سازوکار معکوس است: خریدار ثبت‌نام‌شده مالیات را خودش حساب و اظهار می‌کند و اگر شرایط کسر فراهم باشد، اثر نقدی صفر است. «هیچ مالیاتی وجود ندارد» اشتباه رایجی است که در رسیدگی به جریمه می‌انجامد، حتی وقتی اثر خالص صفر است.',
+        en: 'This is the reverse charge: the registered buyer self-accounts for the VAT and, if the deduction conditions are met, the cash effect is nil. “No VAT” is a common mistake that leads to penalties at audit even though the net effect is zero.',
+      },
+    },
+    {
+      q: {
+        fa: 'صورت‌حساب‌ها و سوابق مالیات بر ارزش افزوده یک شرکت خدماتی (غیرملکی) چه مدت باید نگهداری شوند؟',
+        en: 'How long must a service company (not real estate) keep its VAT invoices and records?',
+      },
+      options: [
+        { fa: '5 سال از تاریخ صورت‌حساب', en: '5 years from the invoice date' },
+        { fa: '3 سال پس از تسلیم اظهارنامه', en: '3 years after filing the return' },
+        { fa: '10 سال پس از پایان سال مالیاتی‌ای که اظهارنامه در آن تسلیم شده', en: '10 years after the end of the tax year in which the return was filed' },
+        { fa: '15 سال برای همه شرکت‌ها', en: '15 years for every business' },
+      ],
+      answer: 2,
+      explain: {
+        fa: 'ماده 70 نگهداری را 10 سال پس از پایان سال مالیاتی‌ای که اظهارنامه در آن تسلیم شده تعیین می‌کند؛ 15 سال فقط برای اسناد مربوط به املاک است. 5 سال مهلت عادی تشخیص سازمان است و 3 سال مهلت اصلاح اظهارنامه، نه مهلت نگهداری.',
+        en: 'Article 70 sets 10 years after the end of the tax year in which the return was filed; 15 years applies only to real estate records. 5 years is the OTA’s normal assessment window and 3 years the return-correction window, not the retention period.',
       },
     },
   ],

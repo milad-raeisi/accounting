@@ -2,10 +2,10 @@ import type { Lesson } from '../../types'
 
 const t = (fa: string, en: string) => ({ fa, en })
 
-/* Account titles used in the Pars Arya examples (codes follow the accounting course's chart of accounts). */
+/* Account titles used in the Masar Petroleum examples (codes follow the accounting course's chart of accounts). */
 const ac = {
   inventory: t('1310 موجودی مواد و قطعات', '1310 Materials and spares inventory'),
-  auc: t('1510 دارایی‌های در جریان تکمیل (WBS `AFE-2025-014.02.01`)', '1510 Assets under construction (WBS `AFE-2025-014.02.01`)'),
+  auc: t('1510 دارایی‌های در جریان تکمیل (WBS `AFE-2025-014.02.01`، عنصر هزینه 6120)', '1510 Assets under construction (WBS `AFE-2025-014.02.01`, cost element 6120)'),
   opex: t('5110 هزینه عملیات تولید (مرکز هزینه `CC-ARY-CMP`)', '5110 Production operating expense (cost centre `CC-ARY-CMP`)'),
   grir: t('2120 حساب واسط رسید کالا و فاکتور (GR/IR)', '2120 GR/IR clearing'),
 }
@@ -52,8 +52,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: t(
-            'مهر ماه است. مدیر حفاری **شرکت نفت و گاز پارس‌آریا** می‌خواهد قرارداد دکل حفاری چاه جدید AR-07 را برای سال آینده امضا کند، چون دکل‌های خوب زود رزرو می‌شوند. مدیر مالی می‌گوید: «هنوز نه. تا برنامه کاری و بودجه سال آینده را شرکا و کارفرمای دولتی تصویب نکنند، این هزینه نه از شرکا قابل مطالبه است و نه در بازیافت هزینه پذیرفته می‌شود؛ ERP هم بدون بودجه روی AFE این چاه اجازه صدور سفارش نمی‌دهد.» این گفت‌وگو خلاصه کل این دوره است: در صنعت نفت و گاز بالادستی، **پول بدون بودجه مصوب خرج نمی‌شود**.',
-            'It is October. The drilling manager at **Pars Arya Oil & Gas** wants to sign the rig contract for the new well AR-07 for next year, because good rigs are booked early. The finance manager says: “Not yet. Until the partners and the state counterparty approve next year’s work programme and budget, we cannot bill this cost to the partners or claim it in cost recovery, and the ERP will not release a purchase order without a budget on this well’s AFE.” That conversation sums up this whole course: in upstream oil and gas, **money is not spent without an approved budget**.',
+            'مهر ماه است. مدیر حفاری **شرکت مسار پترولیوم** می‌خواهد قرارداد دکل حفاری چاه جدید AR-07 را برای سال آینده امضا کند، چون دکل‌های خوب زود رزرو می‌شوند. مدیر مالی می‌گوید: «هنوز نه. تا برنامه کاری و بودجه سال آینده را شرکا و کارفرمای دولتی تصویب نکنند، این هزینه نه از شرکا قابل مطالبه است و نه در بازیافت هزینه پذیرفته می‌شود؛ ERP هم بدون بودجه روی AFE این چاه اجازه صدور سفارش نمی‌دهد.» این گفت‌وگو خلاصه کل این دوره است: در صنعت نفت و گاز بالادستی، **پول بدون بودجه مصوب خرج نمی‌شود**.',
+            'It is October. The drilling manager at **Masar Petroleum** wants to sign the rig contract for the new well AR-07 for next year, because good rigs are booked early. The finance manager says: “Not yet. Until the partners and the state counterparty approve next year’s work programme and budget, we cannot bill this cost to the partners or claim it in cost recovery, and the ERP will not release a purchase order without a budget on this well’s AFE.” That conversation sums up this whole course: in upstream oil and gas, **money is not spent without an approved budget**.',
           ),
         },
         {
@@ -76,14 +76,14 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: t('مثال جاری این دوره: شرکت نفت و گاز پارس‌آریا', 'The running example of this course: Pars Arya Oil & Gas'),
+          caption: t('مثال جاری این دوره: شرکت مسار پترولیوم', 'The running example of this course: Masar Petroleum'),
           head: [t('مورد', 'Item'), t('شرح', 'Description')],
           rows: [
-            [t('شرکت', 'Company'), t('شرکت نفت و گاز پارس‌آریا، بهره‌بردار (Operator) مشارکت میدان آریا؛ کد شرکت در ERP: `PA01`', 'Pars Arya Oil & Gas, operator of the Arya field joint venture; ERP company code `PA01`')],
+            [t('شرکت', 'Company'), t('شرکت مسار پترولیوم، بهره‌بردار (Operator) مشارکت میدان آریا؛ کد شرکت در ERP: `MP01`', 'Masar Petroleum, operator of the Arya field joint venture; ERP company code `MP01`')],
             [t('میدان و چاه‌ها', 'Field and wells'), t('میدان خشکی آریا با چاه‌های AR-01 تا AR-12؛ چاه AR-07 برای سال 2026 برنامه‌ریزی شده است', 'The onshore Arya field with wells AR-01 to AR-12; well AR-07 is planned for 2026')],
             [t('تأسیسات', 'Facilities'), t('جداکننده‌ها، خطوط جریان و ایستگاه تقویت فشار گاز با دو واحد کمپرسور', 'Separators, flowlines and a gas compressor station with two compressor units')],
             [t('انبارها', 'Warehouses'), t('انبار مرکزی و انبار میدان', 'Central Warehouse and Field Warehouse')],
-            [t('شرکا (سهم‌ها فرضی‌اند)', 'Partners (illustrative shares)'), t('پارس‌آریا 50٪، شریک الف 30٪، شریک ب 20٪', 'Pars Arya 50%, Partner A 30%, Partner B 20%')],
+            [t('شرکا (سهم‌ها فرضی‌اند)', 'Partners (illustrative shares)'), t('مسار پترولیوم 50٪، شریک الف 30٪، شریک ب 20٪', 'Masar Petroleum 50%, Partner A 30%, Partner B 20%')],
             [t('کدگذاری هزینه', 'Cost coding'), t('کد شرکت، مرکز هزینه (مثلاً `CC-ARY-PRD`)، عنصر WBS (مثلاً `AFE-2025-014.02.03`)، عنصر هزینه یا حساب کل، نشانگر قابل بازیافت (R/N) و طبقه هزینه', 'Company code, cost centre (for example `CC-ARY-PRD`), WBS element (for example `AFE-2025-014.02.03`), cost element or GL account, recoverable flag (R/N) and cost category')],
           ],
         },
@@ -92,8 +92,8 @@ export const lesson: Lesson = {
           tone: 'example',
           title: t('هر شریک چقدر می‌پردازد؟', 'How much does each partner pay?'),
           text: t(
-            'بودجه سال 2026 میدان آریا 34,000,000 است (ارقام این دوره فرضی‌اند). با سهم‌های مشارکت: پارس‌آریا 34,000,000 × 50٪ = 17,000,000، شریک الف 34,000,000 × 30٪ = 10,200,000 و شریک ب 34,000,000 × 20٪ = 6,800,000. جمع سه سهم دوباره 34,000,000 می‌شود. هر شریک پیش از تصویب، سهم خودش را با دقت بررسی می‌کند؛ برای همین بودجه در مشارکت یک سند مذاکره است، نه فقط یک جدول داخلی.',
-            'The 2026 budget for the Arya field is 34,000,000 (all figures in this course are illustrative). With the joint-venture shares: Pars Arya 34,000,000 × 50% = 17,000,000, Partner A 34,000,000 × 30% = 10,200,000 and Partner B 34,000,000 × 20% = 6,800,000. The three shares add back to 34,000,000. Each partner checks its own share carefully before approving, which is why a joint-venture budget is a negotiated document, not just an internal spreadsheet.',
+            'بودجه سال 2026 میدان آریا 34,000,000 است (ارقام این دوره فرضی‌اند). با سهم‌های مشارکت: مسار پترولیوم 34,000,000 × 50٪ = 17,000,000، شریک الف 34,000,000 × 30٪ = 10,200,000 و شریک ب 34,000,000 × 20٪ = 6,800,000. جمع سه سهم دوباره 34,000,000 می‌شود. هر شریک پیش از تصویب، سهم خودش را با دقت بررسی می‌کند؛ برای همین بودجه در مشارکت یک سند مذاکره است، نه فقط یک جدول داخلی.',
+            'The 2026 budget for the Arya field is 34,000,000 (all figures in this course are illustrative). With the joint-venture shares: Masar Petroleum 34,000,000 × 50% = 17,000,000, Partner A 34,000,000 × 30% = 10,200,000 and Partner B 34,000,000 × 20% = 6,800,000. The three shares add back to 34,000,000. Each partner checks its own share carefully before approving, which is why a joint-venture budget is a negotiated document, not just an internal spreadsheet.',
           ),
         },
       ],
@@ -139,15 +139,15 @@ export const lesson: Lesson = {
             {
               title: t('تهیه و بررسی داخلی', 'Internal preparation and review'),
               text: t(
-                'مسئولان بودجه درخواست‌ها را می‌سازند، واحد برنامه‌ریزی و کنترل پروژه آن‌ها را یکجا می‌کند و مدیریت پارس‌آریا با سقف کلی مقایسه می‌کند.',
-                'Budget owners build their requests, planning and project controls consolidate them, and Pars Arya’s management checks them against the overall ceiling.',
+                'مسئولان بودجه درخواست‌ها را می‌سازند، واحد برنامه‌ریزی و کنترل پروژه آن‌ها را یکجا می‌کند و مدیریت مسار پترولیوم با سقف کلی مقایسه می‌کند.',
+                'Budget owners build their requests, planning and project controls consolidate them, and Masar Petroleum’s management checks them against the overall ceiling.',
               ),
             },
             {
               title: t('تصویب در بهره‌بردار', 'Approval inside the operator'),
               text: t(
-                'مدیرعامل و هیئت‌مدیره پارس‌آریا، طبق جدول تفویض اختیار، پیش‌نویس WP&B را تأیید می‌کنند.',
-                'Pars Arya’s CEO and board approve the draft WP&B under the delegation of authority.',
+                'مدیرعامل و هیئت‌مدیره مسار پترولیوم، طبق جدول تفویض اختیار، پیش‌نویس WP&B را تأیید می‌کنند.',
+                'Masar Petroleum’s CEO and board approve the draft WP&B under the delegation of authority.',
               ),
             },
             {
@@ -290,8 +290,8 @@ export const lesson: Lesson = {
           type: 'formula',
           text: t('بودجه هر ردیف (پایین به بالا) = مقدار × نرخ', 'Line budget (bottom-up) = quantity × rate'),
           note: t(
-            'مثال: دکل حفاری چاه AR-07 برای 25 روز با نرخ روزانه 92,000: 25 × 92,000 = 2,300,000.',
-            'Example: the AR-07 drilling rig for 25 days at a day rate of 92,000: 25 × 92,000 = 2,300,000.',
+            'مثال: دکل حفاری چاه AR-07 برای 25 روز با نرخ روزانه 84,000: 25 × 84,000 = 2,100,000.',
+            'Example: the AR-07 drilling rig for 25 days at a day rate of 84,000: 25 × 84,000 = 2,100,000.',
           ),
         },
         {
@@ -318,8 +318,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: t(
-            'در عمل هر دو روش با هم به کار می‌روند: مدیریت سقف را اعلام می‌کند، مسئولان بودجه درخواست جزئی می‌سازند و سپس در چند دور گفت‌وگو این دو به هم می‌رسند. در پارس‌آریا، دور اول درخواست‌ها 36,500,000 شد؛ یعنی 36,500,000 − 34,000,000 = 2,500,000 بیشتر از سقف.',
-            'In practice the two are used together: management announces the ceiling, budget owners build detailed requests, and the two meet after a few rounds of discussion. At Pars Arya the first round of requests came to 36,500,000, which is 36,500,000 − 34,000,000 = 2,500,000 above the ceiling.',
+            'در عمل هر دو روش با هم به کار می‌روند: مدیریت سقف را اعلام می‌کند، مسئولان بودجه درخواست جزئی می‌سازند و سپس در چند دور گفت‌وگو این دو به هم می‌رسند. در مسار پترولیوم، دور اول درخواست‌ها 36,500,000 شد؛ یعنی 36,500,000 − 34,000,000 = 2,500,000 بیشتر از سقف.',
+            'In practice the two are used together: management announces the ceiling, budget owners build detailed requests, and the two meet after a few rounds of discussion. At Masar Petroleum the first round of requests came to 36,500,000, which is 36,500,000 − 34,000,000 = 2,500,000 above the ceiling.',
           ),
         },
         {
@@ -363,7 +363,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: t('تقویم بودجه پارس‌آریا (زمان‌ها نسبت به شروع سال مالی)', 'Pars Arya budget calendar (timing relative to the start of the financial year)'),
+          caption: t('تقویم بودجه مسار پترولیوم (زمان‌ها نسبت به شروع سال مالی)', 'Masar Petroleum budget calendar (timing relative to the start of the financial year)'),
           head: [t('مرحله', 'Step'), t('زمان', 'Timing'), t('مسئول', 'Owner'), t('خروجی', 'Output')],
           rows: [
             [t('ابلاغ دستورالعمل و فرض‌ها', 'Issue instructions and assumptions'), t('6 ماه پیش از شروع سال', '6 months before year start'), t('مدیر برنامه‌ریزی و بودجه', 'Planning and budget manager'), t('قیمت فرضی نفت، نرخ‌ها، سقف کلی، قالب‌ها', 'Oil price assumption, rates, overall ceiling, templates')],
@@ -446,7 +446,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: t('نسخه‌های بودجه در ERP پارس‌آریا', 'Budget versions in the Pars Arya ERP'),
+          caption: t('نسخه‌های بودجه در ERP مسار پترولیوم', 'Budget versions in the Masar Petroleum ERP'),
           head: [t('نسخه', 'Version'), t('کاربرد', 'Purpose'), t('چه کسی ثبت می‌کند', 'Entered by'), t('الزام‌آور برای کنترل؟', 'Binding for control?')],
           rows: [
             [t('برنامه (پیش‌نویس)', 'Plan (draft)'), t('درخواست‌های پایین به بالا و سناریوها', 'Bottom-up requests and scenarios'), t('مسئولان بودجه', 'Budget owners'), t('خیر', 'No')],
@@ -482,7 +482,7 @@ export const lesson: Lesson = {
               t('سند ثبت بودجه اولیه', 'Original budget entry document'),
               t('سندهای متمم، برگشت و انتقال بودجه', 'Supplement, return and transfer documents'),
               t('سفارش خرید (تعهد)', 'Purchase orders (commitments)'),
-              t('رسید انبار، تأییدیه خدمات و حواله (هزینه واقعی)', 'Goods receipts, service entries and issues (actuals)'),
+              t('رسید کالا (GRN)، برگه ثبت خدمات (SES) و حواله انبار (هزینه واقعی)', 'Goods received notes (GRN), service entry sheets (SES) and goods issues (actuals)'),
               t('سندهای دستی مالی روی شیء هزینه', 'Manual finance journals on a cost object'),
             ],
           },
@@ -504,8 +504,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: t(
-            'ثبت بودجه در ERP **هیچ سندی در دفتر کل نمی‌سازد**؛ بودجه عددی برای کنترل است، نه رویداد مالی. دفتر کل فقط وقتی تغییر می‌کند که رویداد واقعی رخ دهد: حواله انبار، تأیید خدمات، فاکتور یا سند دستی. همین سندها به‌طور خودکار بودجه شیء هزینه را **مصرف** می‌کنند. در ژانویه دو رویداد زیر در میدان آریا ثبت شد:',
-            'Entering a budget in the ERP **creates no general ledger document**; a budget is a control figure, not a financial event. The ledger changes only when a real event happens: a goods issue, a service entry, an invoice or a manual journal. Those same documents automatically **consume** the budget of their cost object. In January the following two events were posted at the Arya field:',
+            'ثبت بودجه در ERP **هیچ سندی در دفتر کل نمی‌سازد**؛ بودجه عددی برای کنترل است، نه رویداد مالی. دفتر کل فقط وقتی تغییر می‌کند که رویداد واقعی رخ دهد: **رسید کالا (GRN)** برای کالای سفارش‌داده‌شده، پذیرش **برگه ثبت خدمات (SES)** برای خدمات، حواله انبار، فاکتور بدون سفارش یا سند دستی. همین سندها به‌طور خودکار بودجه شیء هزینه را **مصرف** می‌کنند. در ژانویه دو رویداد زیر در میدان آریا ثبت شد:',
+            'Entering a budget in the ERP **creates no general ledger document**; a budget is a control figure, not a financial event. The ledger changes only when a real event happens: a **goods received note (GRN)** for ordered goods, an accepted **service entry sheet (SES)** for services, a goods issue, an invoice without a PO, or a manual journal. Those same documents automatically **consume** the budget of their cost object. In January the following two events were posted at the Arya field:',
           ),
         },
         {
@@ -526,12 +526,12 @@ export const lesson: Lesson = {
             {
               date: t('31 ژانویه', '31 January'),
               lines: [
-                { account: ac.auc, debit: 300000 },
-                { account: ac.grir, credit: 300000 },
+                { account: ac.auc, debit: 252000 },
+                { account: ac.grir, credit: 252000 },
               ],
               memo: t(
-                'تأییدیه خدمات: آماده‌سازی دکل برای AR-07 روی عنصر WBS حفاری (نشانگر R، طبقه توسعه).',
-                'Service entry: rig preparation for AR-07 on the drilling WBS element (flag R, Development category).',
+                'پذیرش SES: سه روز نرخ روزانه دکل AR-07 (3 × 84,000) روی عنصر WBS حفاری (نشانگر R، طبقه توسعه).',
+                'SES accepted: three rig days on AR-07 (3 × 84,000) on the drilling WBS element (flag R, Development category).',
               ),
             },
           ],
@@ -546,8 +546,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: t(
-            'بودجه را دو چیز مصرف می‌کند: هزینه واقعی (410,000) و **تعهد**، یعنی سفارش خریدی که صادر شده اما هنوز کالا یا خدمتش نرسیده (90,000). مانده در دسترس = 550,000 − 410,000 − 90,000 = 50,000. سرپرست ایستگاه اگر فقط هزینه واقعی را ببیند، فکر می‌کند 140,000 جا دارد و بیش از بودجه سفارش می‌دهد. درس‌های بعدی این دوره تعهدات و کنترل در دسترس بودن بودجه را کامل باز می‌کنند.',
-            'Two things consume the budget: actual cost (410,000) and **commitments**, meaning purchase orders issued for goods or services not yet received (90,000). Available = 550,000 − 410,000 − 90,000 = 50,000. A superintendent who looks only at actuals thinks there is 140,000 of room and over-orders. Later lessons in this course cover commitments and availability control in full.',
+            'بودجه را دو چیز مصرف می‌کند: هزینه واقعی (410,000) و **تعهد**، یعنی سفارش خریدی که صادر شده اما هنوز نه رسید کالا (GRN) برایش ثبت شده و نه برگه ثبت خدمات (SES) آن پذیرفته شده است (90,000). مانده در دسترس = 550,000 − 410,000 − 90,000 = 50,000. سرپرست ایستگاه اگر فقط هزینه واقعی را ببیند، فکر می‌کند 140,000 جا دارد و بیش از بودجه سفارش می‌دهد. درس‌های بعدی این دوره تعهدات و کنترل در دسترس بودن بودجه را کامل باز می‌کنند.',
+            'Two things consume the budget: actual cost (410,000) and **commitments**, meaning purchase orders issued but with no goods received note (GRN) posted or service entry sheet (SES) accepted yet (90,000). Available = 550,000 − 410,000 − 90,000 = 50,000. A superintendent who looks only at actuals thinks there is 140,000 of room and over-orders. Later lessons in this course cover commitments and availability control in full.',
           ),
         },
         {
@@ -741,8 +741,8 @@ export const lesson: Lesson = {
                 {
                   title: t('(ه) سندهای دفتر کل', '(e) Ledger documents'),
                   text: t(
-                    'بودجه اولیه، متمم و برگشت فقط اسناد بودجه‌اند و در دفتر کل ثبتی ندارند. سفارش‌های باز هم فقط تعهدند. فقط 1,750,000 هزینه واقعی (حواله‌ها، تأییدیه‌های خدمات و فاکتورها) سند دفتر کل ساخته است.',
-                    'The original budget, supplement and return are budget documents only and post nothing to the ledger. Open POs are only commitments. Only the 1,750,000 of actual cost (issues, service entries and invoices) created ledger documents.',
+                    'بودجه اولیه، متمم و برگشت فقط اسناد بودجه‌اند و در دفتر کل ثبتی ندارند. سفارش‌های باز هم فقط تعهدند. فقط 1,750,000 هزینه واقعی (حواله‌های انبار، رسیدهای کالا (GRN)، برگه‌های ثبت خدمات (SES) پذیرفته‌شده و فاکتورهای بدون سفارش) سند دفتر کل ساخته است.',
+                    'The original budget, supplement and return are budget documents only and post nothing to the ledger. Open POs are only commitments. Only the 1,750,000 of actual cost (goods issues, GRNs, accepted SESs and non-PO invoices) created ledger documents.',
                   ),
                 },
               ],
@@ -789,7 +789,7 @@ export const lesson: Lesson = {
             { term: t('مسئول بودجه (Budget owner)', 'Budget owner'), def: t('کسی که پاسخ‌گوی یک ردیف بودجه است و هزینه‌ها و انحراف‌های آن را تأیید و توضیح می‌دهد.', 'The person accountable for a budget line, who approves its spending and explains its variances.') },
             { term: t('زمان‌بندی بودجه (Phasing)', 'Phasing'), def: t('پخش بودجه سالانه بین ماه‌ها یا فصل‌ها بر پایه زمان واقعی خرج.', 'Spreading the annual budget across months or quarters according to when the money is really spent.') },
             { term: t('نسخه بودجه', 'Budget version'), def: t('لایه‌ای از اعداد بودجه در ERP، مثل پیش‌نویس، مصوب، متمم یا پیش‌بینی.', 'A layer of budget figures in the ERP, such as draft, approved, supplement or forecast.') },
-            { term: t('تعهد (Commitment)', 'Commitment'), def: t('سفارش خرید صادرشده‌ای که هنوز کالا یا خدمتش نرسیده و بودجه را مصرف می‌کند.', 'An issued purchase order not yet received, which consumes budget.') },
+            { term: t('تعهد (Commitment)', 'Commitment'), def: t('سفارش خرید صادرشده‌ای که هنوز با رسید کالا (GRN) یا پذیرش برگه ثبت خدمات (SES) به هزینه واقعی تبدیل نشده، اما بودجه را مصرف می‌کند.', 'An issued purchase order not yet turned into actual cost by a GRN or an accepted SES, which already consumes budget.') },
           ],
         },
       ],
@@ -815,8 +815,8 @@ export const lesson: Lesson = {
       options: [t('6,800,000', '6,800,000'), t('10,200,000', '10,200,000'), t('17,000,000', '17,000,000'), t('3,400,000', '3,400,000')],
       answer: 1,
       explain: t(
-        '34,000,000 × 30٪ = 10,200,000. رقم 6,800,000 سهم 20٪ شریک ب و 17,000,000 سهم 50٪ پارس‌آریاست.',
-        '34,000,000 × 30% = 10,200,000. 6,800,000 is Partner B’s 20% share and 17,000,000 is Pars Arya’s 50%.',
+        '34,000,000 × 30٪ = 10,200,000. رقم 6,800,000 سهم 20٪ شریک ب و 17,000,000 سهم 50٪ مسار پترولیوم است.',
+        '34,000,000 × 30% = 10,200,000. 6,800,000 is Partner B’s 20% share and 17,000,000 is Masar Petroleum’s 50%.',
       ),
     },
     {
@@ -834,12 +834,12 @@ export const lesson: Lesson = {
       ),
     },
     {
-      q: t('دکل حفاری برای 25 روز با نرخ روزانه 92,000 لازم است. بودجه پایین به بالای دکل چقدر است؟', 'A drilling rig is needed for 25 days at a day rate of 92,000. What is the bottom-up rig budget?'),
-      options: [t('2,300,000', '2,300,000'), t('2,208,000', '2,208,000'), t('920,000', '920,000'), t('3,680,000', '3,680,000')],
+      q: t('برای چاه AR-11 دکل حفاری 30 روز با نرخ روزانه 92,000 لازم است. بودجه پایین به بالای دکل چقدر است؟', 'Well AR-11 needs a drilling rig for 30 days at a day rate of 92,000. What is the bottom-up rig budget?'),
+      options: [t('2,760,000', '2,760,000'), t('2,668,000', '2,668,000'), t('920,000', '920,000'), t('3,680,000', '3,680,000')],
       answer: 0,
       explain: t(
-        'مقدار × نرخ = 25 × 92,000 = 2,300,000. گزینه‌های دیگر از ضرب در تعداد روز اشتباه (24 یا 10 یا 40) به دست می‌آیند.',
-        'Quantity × rate = 25 × 92,000 = 2,300,000. The other options come from multiplying by the wrong number of days (24, 10 or 40).',
+        'مقدار × نرخ = 30 × 92,000 = 2,760,000. گزینه‌های دیگر از ضرب در تعداد روز اشتباه (29 یا 10 یا 40) به دست می‌آیند.',
+        'Quantity × rate = 30 × 92,000 = 2,760,000. The other options come from multiplying by the wrong number of days (29, 10 or 40).',
       ),
     },
     {
@@ -893,8 +893,8 @@ export const lesson: Lesson = {
       ],
       answer: 2,
       explain: t(
-        'بودجه رویداد مالی نیست و در دفتر کل ثبت نمی‌شود. فقط رویدادهای واقعی مثل حواله انبار، تأیید خدمات و فاکتور سند دفتر کل می‌سازند و هم‌زمان بودجه را مصرف می‌کنند.',
-        'A budget is not a financial event and posts nothing to the ledger. Only real events such as goods issues, service entries and invoices create ledger documents, and they consume the budget at the same time.',
+        'بودجه رویداد مالی نیست و در دفتر کل ثبت نمی‌شود. فقط رویدادهای واقعی مثل رسید کالا (GRN)، پذیرش برگه ثبت خدمات (SES) و حواله انبار سند دفتر کل می‌سازند و هم‌زمان بودجه را مصرف می‌کنند.',
+        'A budget is not a financial event and posts nothing to the ledger. Only real events such as a goods received note (GRN), an accepted service entry sheet (SES) or a goods issue create ledger documents, and they consume the budget at the same time.',
       ),
     },
     {

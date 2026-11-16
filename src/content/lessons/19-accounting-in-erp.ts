@@ -1,6 +1,6 @@
 import type { Lesson } from '../types'
 
-/* Account titles used by Pars Arya Oil & Gas (codes from its chart of accounts). */
+/* Account titles used by Masar Petroleum (codes from its chart of accounts). */
 const ac = {
   bank: { fa: '1110 موجودی نقد (بانک)', en: '1110 Cash at bank' },
   ar: { fa: '1210 حساب‌های دریافتنی', en: '1210 Accounts receivable' },
@@ -24,14 +24,15 @@ const t = (fa: string, en: string) => ({ fa, en })
 export const lesson: Lesson = {
   slug: 'accounting-in-erp',
   number: 19,
+  currency: 'usd',
   level: 'advanced',
   minutes: 30,
   icon: 'Library',
   tone: 'primary',
   title: { fa: 'حسابداری در سیستم ERP', en: 'Accounting in an ERP System' },
   summary: {
-    fa: 'ببینید ماژول مالی یک ERP چگونه کار می‌کند: دفتر کل و دفترهای معین، داده‌های پایه، اسناد و ثبت‌های خودکاری که از تدارکات، انبار و نگهداری می‌رسند، حساب واسط GR/IR، بستن دوره، تطبیق‌ها و کنترل‌ها؛ همه با مثال شرکت نفت و گاز پارس‌آریا.',
-    en: 'See how the Finance module of an ERP works: the general ledger and sub-ledgers, master data, the documents and automatic postings that arrive from procurement, inventory and maintenance, the GR/IR account, period-end close, reconciliations and controls, all through the Pars Arya Oil & Gas example.',
+    fa: 'ببینید ماژول مالی یک ERP چگونه کار می‌کند: دفتر کل و دفترهای معین، داده‌های پایه، اسناد و ثبت‌های خودکاری که از تدارکات، انبار و نگهداری می‌رسند، رسید کالا و برگه ثبت خدمات (GRN و SES)، حساب واسط GR/IR، بستن دوره، تطبیق‌ها و کنترل‌ها؛ همه با مثال شرکت مسار پترولیوم.',
+    en: 'See how the Finance module of an ERP works: the general ledger and sub-ledgers, master data, the documents and automatic postings that arrive from procurement, inventory and maintenance, GRNs and SESs, the GR/IR account, period-end close, reconciliations and controls, all through the Masar Petroleum example.',
   },
   objectives: [
     {
@@ -47,8 +48,8 @@ export const lesson: Lesson = {
       en: 'Read the automatic entries an ERP posts for receipts, invoices, goods issues, settlements and depreciation',
     },
     {
-      fa: 'حساب واسط GR/IR و تطبیق سه‌طرفه را تحلیل کنید',
-      en: 'Analyse the GR/IR clearing account and the three-way match',
+      fa: 'رسید کالا (GRN)، برگه ثبت خدمات (SES)، حساب واسط GR/IR و تطبیق سه‌طرفه را تحلیل کنید',
+      en: 'Analyse the GRN, the SES, the GR/IR clearing account and the three-way match',
     },
     {
       fa: 'بستن دوره را با چک‌لیست، تطبیق‌ها و کنترل‌های داخلی انجام دهید',
@@ -63,15 +64,15 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'شرکت نفت و گاز پارس‌آریا اپراتور «میدان آریا» است: دوازده چاه (AR-01 تا AR-12)، یک ایستگاه تقویت فشار، یک انبار مرکزی و یک انبار میدان. تا پارسال هر واحد نرم‌افزار خودش را داشت: انبار با فایل اکسل کار می‌کرد، تدارکات سفارش‌ها را در سامانه‌ای جدا ثبت می‌کرد و حسابداری همه فاکتورها را دوباره با دست وارد می‌کرد. بستن هر ماه پانزده روز طول می‌کشید و وقتی یکی از شرکای مشارکت پرسید «حفاری چاه AR-07 تا امروز دقیقاً چقدر خرج برداشته است؟»، هیچ‌کس نتوانست زودتر از یک هفته جواب بدهد.',
-            en: 'Pars Arya Oil & Gas operates the Arya field: twelve wells (AR-01 to AR-12), a compressor station, a Central Warehouse and a Field Warehouse. Until last year each department had its own software: the warehouse ran on spreadsheets, procurement kept orders in a separate system, and accounting re-keyed every invoice by hand. Closing a month took fifteen days, and when a joint venture partner asked "exactly how much has drilling well AR-07 cost so far?", nobody could answer in less than a week.',
+            fa: 'شرکت مسار پترولیوم اپراتور «میدان آریا» است: دوازده چاه (AR-01 تا AR-12)، یک ایستگاه تقویت فشار، یک انبار مرکزی و یک انبار میدان. تا پارسال هر واحد نرم‌افزار خودش را داشت: انبار با فایل اکسل کار می‌کرد، تدارکات سفارش‌ها را در سامانه‌ای جدا ثبت می‌کرد و حسابداری همه فاکتورها را دوباره با دست وارد می‌کرد. بستن هر ماه پانزده روز طول می‌کشید و وقتی یکی از شرکای مشارکت پرسید «حفاری چاه AR-07 تا امروز دقیقاً چقدر خرج برداشته است؟»، هیچ‌کس نتوانست زودتر از یک هفته جواب بدهد.',
+            en: 'Masar Petroleum operates the Arya field: twelve wells (AR-01 to AR-12), a compressor station, a Central Warehouse and a Field Warehouse. Until last year each department had its own software: the warehouse ran on spreadsheets, procurement kept orders in a separate system, and accounting re-keyed every invoice by hand. Closing a month took fifteen days, and when a joint venture partner asked "exactly how much has drilling well AR-07 cost so far?", nobody could answer in less than a week.',
           },
         },
         {
           type: 'p',
           text: {
-            fa: '**سیستم برنامه‌ریزی منابع سازمان (ERP)** نرم‌افزاری یکپارچه است که همه واحدهای سازمان در آن روی **یک پایگاه داده مشترک** کار می‌کنند. هر واحد یک **ماژول** دارد (مالی، انبار، تدارکات، نگهداری، پروژه، منابع انسانی) و هر رویداد فقط یک بار، همان‌جا که رخ می‌دهد، ثبت می‌شود. وقتی انباردار رسید کالا را ثبت می‌کند، ماژول مالی در همان لحظه سند حسابداری آن را دریافت می‌کند و کسی لازم نیست آن را دوباره وارد کند.',
-            en: 'An **Enterprise Resource Planning (ERP) system** is integrated software in which every department works on **one shared database**. Each department has a **module** (Finance, Inventory, Procurement, Maintenance, Projects, HR), and each event is recorded once, where it happens. When the storekeeper posts a goods receipt, the Finance module receives its accounting document at that moment, and nobody has to key it in again.',
+            fa: '**سیستم برنامه‌ریزی منابع سازمان (ERP)** نرم‌افزاری یکپارچه است که همه واحدهای سازمان در آن روی **یک پایگاه داده مشترک** کار می‌کنند. هر واحد یک **ماژول** دارد (مالی، انبار، تدارکات، نگهداری، پروژه، منابع انسانی) و هر رویداد فقط یک بار، همان‌جا که رخ می‌دهد، ثبت می‌شود. وقتی انباردار رسید کالا (GRN) را ثبت می‌کند، ماژول مالی در همان لحظه سند حسابداری آن را دریافت می‌کند و کسی لازم نیست آن را دوباره وارد کند.',
+            en: 'An **Enterprise Resource Planning (ERP) system** is integrated software in which every department works on **one shared database**. Each department has a **module** (Finance, Inventory, Procurement, Maintenance, Projects, HR), and each event is recorded once, where it happens. When the storekeeper posts a goods received note (GRN), the Finance module receives its accounting document at that moment, and nobody has to key it in again.',
           },
         },
         {
@@ -165,12 +166,12 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: { fa: 'دفترهای معین اصلی در پارس‌آریا', en: 'The main sub-ledgers at Pars Arya' },
+          caption: { fa: 'دفترهای معین اصلی در مسار پترولیوم', en: 'The main sub-ledgers at Masar Petroleum' },
           head: [
             { fa: 'دفتر معین', en: 'Sub-ledger' },
             { fa: 'چه جزئیاتی نگه می‌دارد', en: 'Detail it keeps' },
             { fa: 'حساب کنترل در دفتر کل', en: 'Control account in the ledger' },
-            { fa: 'نمونه در پارس‌آریا', en: 'Pars Arya example' },
+            { fa: 'نمونه در مسار پترولیوم', en: 'Masar Petroleum example' },
           ],
           rows: [
             [
@@ -237,11 +238,11 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'ERP با دو نوع داده کار می‌کند. **داده پایه (Master Data)** اطلاعاتی است که کم تغییر می‌کند و بارها در سندها به کار می‌رود: کدینگ حساب‌ها، تأمین‌کنندگان، مشتریان، کالاها، مراکز هزینه، پروژه‌ها و دارایی‌ها. **داده تراکنشی** رویدادهای روزانه است: درخواست خرید، سفارش خرید، رسید انبار، فاکتور و پرداخت. هر سند تراکنشی به داده‌های پایه اشاره می‌کند؛ پس اگر یک داده پایه غلط باشد، صدها سند غلط ساخته می‌شود.',
-            en: 'An ERP works with two kinds of data. **Master data** changes rarely and is used again and again in documents: the chart of accounts, vendors, customers, materials, cost centres, projects and assets. **Transaction data** is the day-to-day events: purchase requisitions, purchase orders, goods receipts, invoices and payments. Every transaction document points to master data, so one wrong master record produces hundreds of wrong documents.',
+            fa: 'ERP با دو نوع داده کار می‌کند. **داده پایه (Master Data)** اطلاعاتی است که کم تغییر می‌کند و بارها در سندها به کار می‌رود: کدینگ حساب‌ها، تأمین‌کنندگان، مشتریان، کالاها، مراکز هزینه، پروژه‌ها و دارایی‌ها. **داده تراکنشی** رویدادهای روزانه است: درخواست خرید، سفارش خرید، رسید کالا (GRN)، برگه ثبت خدمات (SES)، فاکتور و پرداخت. هر سند تراکنشی به داده‌های پایه اشاره می‌کند؛ پس اگر یک داده پایه غلط باشد، صدها سند غلط ساخته می‌شود.',
+            en: 'An ERP works with two kinds of data. **Master data** changes rarely and is used again and again in documents: the chart of accounts, vendors, customers, materials, cost centres, projects and assets. **Transaction data** is the day-to-day events: purchase requisitions, purchase orders, goods received notes (GRN), service entry sheets (SES), invoices and payments. Every transaction document points to master data, so one wrong master record produces hundreds of wrong documents.',
           },
         },
-        { type: 'h', text: { fa: 'کدینگ حساب‌های پارس‌آریا (بخشی از آن)', en: 'Pars Arya’s chart of accounts (extract)' } },
+        { type: 'h', text: { fa: 'کدینگ حساب‌های مسار پترولیوم (بخشی از آن)', en: 'Masar Petroleum’s chart of accounts (extract)' } },
         {
           type: 'table',
           caption: {
@@ -257,7 +258,7 @@ export const lesson: Lesson = {
           rows: [
             ['1110', t('موجودی نقد (بانک)', 'Cash at bank'), t('دارایی', 'Asset'), t('پرداخت‌ها و دریافت‌ها (خزانه)', 'Payments and receipts (treasury)')],
             ['1210', t('حساب‌های دریافتنی', 'Accounts receivable'), t('دارایی (کنترل)', 'Asset (control)'), t('فاکتور فروش', 'Sales invoices')],
-            ['1310', t('موجودی مواد و قطعات', 'Materials and spares inventory'), t('دارایی (کنترل)', 'Asset (control)'), t('رسید و حواله انبار', 'Goods receipts and issues')],
+            ['1310', t('موجودی مواد و قطعات', 'Materials and spares inventory'), t('دارایی (کنترل)', 'Asset (control)'), t('رسید کالا (GRN) و حواله انبار', 'GRNs and goods issues')],
             ['1510', t('دارایی‌های در جریان تکمیل', 'Assets under construction'), t('دارایی', 'Asset'), t('هزینه‌های پروژه، WBS و AFE', 'Project, WBS and AFE costs')],
             ['1520', t('دارایی‌های نفت و گاز', 'Oil and gas properties'), t('دارایی (کنترل)', 'Asset (control)'), t('تسویه پروژه به دارایی', 'Settlement of projects to assets')],
             ['1590', t('استهلاک انباشته', 'Accumulated depreciation'), t('کاهنده دارایی', 'Contra-asset'), t('اجرای استهلاک', 'Depreciation run')],
@@ -281,10 +282,10 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: { fa: 'اشیای هزینه پارس‌آریا', en: 'Pars Arya’s cost objects' },
+          caption: { fa: 'اشیای هزینه مسار پترولیوم', en: 'Masar Petroleum’s cost objects' },
           head: [
             { fa: 'نوع', en: 'Type' },
-            { fa: 'کد در پارس‌آریا', en: 'Pars Arya code' },
+            { fa: 'کد در مسار پترولیوم', en: 'Masar Petroleum code' },
             { fa: 'به چه سؤالی جواب می‌دهد', en: 'Question it answers' },
             { fa: 'نمونه', en: 'Example' },
           ],
@@ -367,8 +368,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'در ERP هر رویداد یک **سند** می‌سازد و هر سند یک **نوع سند** دارد: سند دستی، فاکتور خرید، فاکتور فروش، پرداخت، رسید انبار، اجرای استهلاک و مانند آن. نوع سند تعیین می‌کند شماره از کدام محدوده بیاید، چه کسی اجازه ثبت دارد و کدام حساب‌ها مجازند. سند حسابداری ERP همان «سند حسابداری» آشناست (شماره، تاریخ، شرح، سطرهای بدهکار و بستانکار، پیوست‌ها)، با این تفاوت که امضاها جای خود را به تأیید در گردش کار و شناسه کاربر داده‌اند.',
-            en: 'In an ERP every event creates a **document**, and every document has a **document type**: manual journal, purchase invoice, sales invoice, payment, goods receipt, depreciation run and so on. The document type decides which number range is used, who may post it and which accounts are allowed. The ERP accounting document is the familiar voucher (number, date, description, debit and credit lines, attachments), except that signatures are replaced by workflow approvals and user IDs.',
+            fa: 'در ERP هر رویداد یک **سند** می‌سازد و هر سند یک **نوع سند** دارد: سند دستی، فاکتور خرید، فاکتور فروش، پرداخت، رسید کالا (GRN)، برگه ثبت خدمات (SES)، اجرای استهلاک و مانند آن. نوع سند تعیین می‌کند شماره از کدام محدوده بیاید، چه کسی اجازه ثبت دارد و کدام حساب‌ها مجازند. سند حسابداری ERP همان «سند حسابداری» آشناست (شماره، تاریخ، شرح، سطرهای بدهکار و بستانکار، پیوست‌ها)، با این تفاوت که امضاها جای خود را به تأیید در گردش کار و شناسه کاربر داده‌اند.',
+            en: 'In an ERP every event creates a **document**, and every document has a **document type**: manual journal, purchase invoice, sales invoice, payment, goods received note (GRN), service entry sheet (SES), depreciation run and so on. The document type decides which number range is used, who may post it and which accounts are allowed. The ERP accounting document is the familiar voucher (number, date, description, debit and credit lines, attachments), except that signatures are replaced by workflow approvals and user IDs.',
           },
         },
         {
@@ -380,12 +381,13 @@ export const lesson: Lesson = {
             { fa: 'نمونه', en: 'Example' },
           ],
           rows: [
+            [t('کد شرکت', 'Company code'), t('شخصیت حقوقی‌ای که سند در دفاتر آن ثبت می‌شود', 'The legal entity whose books the document posts to'), t('MP01 مسار پترولیوم', 'MP01 Masar Petroleum')],
             [t('نوع سند', 'Document type'), t('دسته سند؛ کنترل شماره و مجوزها', 'Category of document; controls numbering and permissions'), t('فاکتور خرید', 'Purchase invoice')],
             [t('تاریخ سند', 'Document date'), t('تاریخ روی مدرک مبدأ', 'The date on the source document'), t('تاریخ فاکتور تأمین‌کننده', 'The vendor’s invoice date')],
             [t('تاریخ ثبت', 'Posting date'), t('تاریخ ورود به دفاتر؛ دوره را تعیین می‌کند', 'The date it enters the books; decides the period'), t('آخرین روز ماه', 'Last day of the month')],
             [t('مرجع', 'Reference'), t('شماره فاکتور تأمین‌کننده؛ جلوی ثبت تکراری را می‌گیرد', 'Vendor’s invoice number; blocks duplicate posting'), t('INV-8841', 'INV-8841')],
             [t('سطرها', 'Line items'), t('حساب، بدهکار یا بستانکار، مبلغ، شیء هزینه', 'Account, debit or credit, amount, cost object'), t('1510 با WBS چاه AR-07', '1510 with WBS of well AR-07')],
-            [t('پیوست و جریان اسناد', 'Attachments and document flow'), t('تصویر مدارک و پیوند به سفارش و رسید', 'Scanned documents and links to the order and receipt'), t('PO-3051 و رسید انبار آن', 'PO-3051 and its goods receipt')],
+            [t('پیوست و جریان اسناد', 'Attachments and document flow'), t('تصویر مدارک و پیوند به سفارش و رسید', 'Scanned documents and links to the order and receipt'), t('PO-3051 و رسید کالا (GRN) مربوط به آن', 'PO-3051 and its goods received note (GRN)')],
             [t('کاربر و زمان', 'User and time stamps'), t('چه کسی ثبت و چه کسی تأیید کرد، و چه زمانی', 'Who posted, who approved, and when'), t('کارشناس پرداختنی‌ها، مدیر مالی', 'AP accountant, finance manager')],
           ],
         },
@@ -393,8 +395,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'وقتی یک ماژول عملیاتی سندی ثبت می‌کند، ERP با جدولی به نام **تعیین خودکار حساب** تصمیم می‌گیرد کدام حساب‌ها بدهکار و بستانکار شوند. ورودی این جدول نوع حرکت (رسید، حواله، فاکتور)، گروه کالا و نوع شیء هزینه است. تیم مالی این تنظیمات را یک بار و با دقت انجام می‌دهد؛ از آن به بعد انباردار و کارشناس خرید، بی‌آنکه بدهکار و بستانکار را بدانند، سند مالی درست می‌سازند. جدول زیر مهم‌ترین این ثبت‌ها را در پارس‌آریا نشان می‌دهد.',
-            en: 'When an operational module posts a document, the ERP uses a table called **automatic account determination** to decide which accounts to debit and credit. Its inputs are the movement type (receipt, issue, invoice), the material group and the kind of cost object. The finance team sets it up once, carefully; from then on the storekeeper and the buyer create correct financial documents without knowing debits and credits. The table below shows the main integration postings at Pars Arya.',
+            fa: 'وقتی یک ماژول عملیاتی سندی ثبت می‌کند، ERP با جدولی به نام **تعیین خودکار حساب** تصمیم می‌گیرد کدام حساب‌ها بدهکار و بستانکار شوند. ورودی این جدول نوع سند و حرکت (رسید کالا، برگه ثبت خدمات، حواله، فاکتور)، گروه کالا و نوع شیء هزینه است. تیم مالی این تنظیمات را یک بار و با دقت انجام می‌دهد؛ از آن به بعد انباردار و کارشناس خرید، بی‌آنکه بدهکار و بستانکار را بدانند، سند مالی درست می‌سازند. جدول زیر مهم‌ترین این ثبت‌ها را در مسار پترولیوم نشان می‌دهد.',
+            en: 'When an operational module posts a document, the ERP uses a table called **automatic account determination** to decide which accounts to debit and credit. Its inputs are the document and movement type (GRN, SES, goods issue, invoice), the material group and the kind of cost object. The finance team sets it up once, carefully; from then on the storekeeper and the buyer create correct financial documents without knowing debits and credits. The table below shows the main integration postings at Masar Petroleum.',
           },
         },
         {
@@ -407,9 +409,10 @@ export const lesson: Lesson = {
             { fa: 'بستانکار', en: 'Credit' },
           ],
           rows: [
-            [t('رسید کالای انباری با سفارش خرید', 'Receipt of stock material against a PO'), t('انبار: رسید انبار', 'Inventory: goods receipt'), t('1310 موجودی مواد و قطعات', '1310 Inventory'), t('2120 GR/IR', '2120 GR/IR')],
-            [t('تأیید خدمات انجام‌شده (مثلاً اجاره دکل)', 'Service entry (for example rig hire)'), t('تدارکات: تأیید خدمات', 'Procurement: service entry'), t('1510 یا 5110 روی شیء هزینه', '1510 or 5110 on the cost object'), t('2120 GR/IR', '2120 GR/IR')],
-            [t('فاکتور تأمین‌کننده مطابق سفارش', 'Vendor invoice matched to the PO'), t('پرداختنی‌ها: فاکتور خرید', 'AP: purchase invoice'), t('2120 GR/IR', '2120 GR/IR'), t('2110 حساب‌های پرداختنی', '2110 Accounts payable')],
+            [t('رسید کالای انباری با سفارش خرید', 'Receipt of stock material against a PO'), t('انبار: رسید کالا (GRN)', 'Inventory: goods received note (GRN)'), t('1310 موجودی مواد و قطعات', '1310 Inventory'), t('2120 GR/IR', '2120 GR/IR')],
+            [t('رسید کالای مصرف مستقیم (غیرانباری)', 'Receipt of a direct-charge (non-stock) item'), t('تدارکات: رسید کالا (GRN)', 'Procurement: GRN'), t('1510 یا 5110 روی شیء هزینه سفارش', '1510 or 5110 on the PO’s cost object'), t('2120 GR/IR', '2120 GR/IR')],
+            [t('پذیرش خدمت انجام‌شده (مثلاً اجاره دکل)', 'Acceptance of a service performed (for example rig hire)'), t('تدارکات: برگه ثبت خدمات (SES)', 'Procurement: service entry sheet (SES)'), t('1510، 5110 یا 5120 روی WBS، مرکز هزینه یا دستور کار', '1510, 5110 or 5120 on the WBS, cost centre or work order'), t('2120 GR/IR', '2120 GR/IR')],
+            [t('فاکتور تأمین‌کننده مطابق سفارش و GRN/SES', 'Vendor invoice matched to the PO and GRN/SES'), t('پرداختنی‌ها: فاکتور خرید', 'AP: purchase invoice'), t('2120 GR/IR', '2120 GR/IR'), t('2110 حساب‌های پرداختنی', '2110 Accounts payable')],
             [t('پرداخت به تأمین‌کننده', 'Payment to a vendor'), t('خزانه: سند پرداخت', 'Treasury: payment'), t('2110 حساب‌های پرداختنی', '2110 Accounts payable'), t('1110 موجودی نقد (بانک)', '1110 Cash at bank')],
             [t('حواله کالا به مرکز هزینه', 'Goods issue to a cost centre'), t('انبار: حواله انبار', 'Inventory: goods issue'), t('5110 روی CC-110', '5110 on CC-110'), t('1310 موجودی', '1310 Inventory')],
             [t('حواله کالا به چاه یا AFE', 'Goods issue to a well or AFE'), t('انبار: حواله انبار', 'Inventory: goods issue'), t('1510 روی WBS چاه', '1510 on the well’s WBS'), t('1310 موجودی', '1310 Inventory')],
@@ -432,36 +435,51 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: '**جریان اسناد (Document Flow)**: ERP سندها را به هم زنجیر می‌کند: درخواست خرید، سفارش خرید، رسید انبار، فاکتور و پرداخت. از هر سند حسابداری می‌توان به سند عملیاتی مبدأ رسید و از هر سفارش خرید می‌توان دید چه مقدار رسیده، چه مقدار فاکتور شده و چه مقدار پرداخت شده است. حسابرس‌ها و شرکا دقیقاً همین زنجیره را دنبال می‌کنند.',
-            en: '**Document flow**: the ERP chains documents together: purchase requisition, purchase order, goods receipt, invoice and payment. From any accounting document you can reach the operational source document, and from any purchase order you can see how much has been received, invoiced and paid. Auditors and partners follow exactly this chain.',
+            fa: '**جریان اسناد (Document Flow)**: ERP سندها را به هم زنجیر می‌کند: درخواست خرید، سفارش خرید، رسید کالا (GRN) یا برگه ثبت خدمات (SES)، فاکتور و پرداخت. از هر سند حسابداری می‌توان به سند عملیاتی مبدأ رسید و از هر سفارش خرید می‌توان دید چه مقدار رسیده، چه مقدار فاکتور شده و چه مقدار پرداخت شده است. حسابرس‌ها و شرکا دقیقاً همین زنجیره را دنبال می‌کنند.',
+            en: '**Document flow**: the ERP chains documents together: purchase requisition, purchase order, goods received note (GRN) or service entry sheet (SES), invoice and payment. From any accounting document you can reach the operational source document, and from any purchase order you can see how much has been received, invoiced and paid. Auditors and partners follow exactly this chain.',
           },
         },
       ],
     },
     {
       id: 'grir',
-      title: { fa: 'حساب واسط GR/IR و تطبیق سه‌طرفه', en: 'The GR/IR Account and the Three-Way Match' },
+      title: { fa: 'رسید کالا، برگه ثبت خدمات و حساب واسط GR/IR', en: 'GRN, SES and the GR/IR Account' },
       blocks: [
         {
           type: 'p',
           text: {
-            fa: 'کالا و فاکتور معمولاً در یک روز نمی‌رسند: شیرها امروز به انبار مرکزی می‌رسند و فاکتور تأمین‌کننده هفته بعد. اگر تا رسیدن فاکتور صبر کنیم، دارایی و بدهی این هفته کمتر از واقع نشان داده می‌شوند. ERP این فاصله را با **حساب واسط رسید کالا و فاکتور (GR/IR)** پر می‌کند: هنگام رسید، موجودی بدهکار و GR/IR بستانکار می‌شود؛ هنگام فاکتور، GR/IR بدهکار و حساب تأمین‌کننده بستانکار می‌شود. وقتی هر دو رسیده باشند، مانده GR/IR آن سفارش صفر است.',
-            en: 'Goods and invoices rarely arrive on the same day: the valves reach the Central Warehouse today and the vendor’s invoice next week. If we waited for the invoice, this week’s assets and liabilities would be understated. The ERP bridges the gap with the **GR/IR clearing account** (goods received / invoice received): on receipt it debits inventory and credits GR/IR; on the invoice it debits GR/IR and credits the vendor. Once both have arrived, the GR/IR balance for that order is zero.',
+            fa: 'کالا و فاکتور معمولاً در یک روز نمی‌رسند: شیرها امروز به انبار مرکزی می‌رسند و فاکتور تأمین‌کننده هفته بعد. اگر تا رسیدن فاکتور صبر کنیم، دارایی و بدهی این هفته کمتر از واقع نشان داده می‌شوند. ERP این فاصله را با دو سند رسید و **حساب واسط رسید کالا و فاکتور (GR/IR)** پر می‌کند. برای کالا، انباردار پس از بازرسی **رسید کالا (GRN: Goods Received Note)** ثبت می‌کند؛ برای خدمت، کسی که کار را دیده است **برگه ثبت خدمات (SES: Service Entry Sheet)** را تأیید می‌کند. هر دو، GR/IR را بستانکار می‌کنند؛ فاکتور بعداً GR/IR را بدهکار و حساب تأمین‌کننده را بستانکار می‌کند. وقتی هر دو رسیده باشند، مانده GR/IR آن سفارش صفر است.',
+            en: 'Goods and invoices rarely arrive on the same day: the valves reach the Central Warehouse today and the vendor’s invoice next week. If we waited for the invoice, this week’s assets and liabilities would be understated. The ERP bridges the gap with two receipt documents and the **GR/IR clearing account** (goods received / invoice received). For goods, the storekeeper posts a **goods received note (GRN)** after inspection; for services, the person who saw the work approves a **service entry sheet (SES)**. Both credit GR/IR; the invoice later debits GR/IR and credits the vendor. Once both have arrived, the GR/IR balance for that order is zero.',
           },
         },
         {
+          type: 'table',
+          caption: { fa: 'سه ثبت رسید که GR/IR را بستانکار می‌کنند', en: 'The three receipt postings that credit GR/IR' },
+          head: [
+            { fa: 'چه چیزی رسید؟', en: 'What was received?' },
+            { fa: 'سند', en: 'Document' },
+            { fa: 'بدهکار', en: 'Debit' },
+            { fa: 'بستانکار', en: 'Credit' },
+          ],
+          rows: [
+            [t('کالای انباری (مثلاً شیر برای انبار مرکزی)', 'Stock material (for example valves for the Central Warehouse)'), t('رسید کالا (GRN)', 'GRN'), t('1310 موجودی مواد و قطعات', '1310 Inventory'), t('2120 GR/IR', '2120 GR/IR')],
+            [t('کالای مصرف مستقیم برای یک چاه یا کار مشخص', 'Direct-charge material for a specific well or job'), t('رسید کالا (GRN)', 'GRN'), t('شیء هزینه سفارش: 1510 روی WBS، یا 5110 و 5120', 'The PO’s cost object: 1510 on a WBS, or 5110 and 5120'), t('2120 GR/IR', '2120 GR/IR')],
+            [t('خدمت انجام‌شده (دکل، نمودارگیری، بازرسی)', 'Service performed (rig, logging, inspection)'), t('برگه ثبت خدمات (SES)', 'SES'), t('هزینه خدمت روی مرکز هزینه، WBS یا دستور کار', 'Service cost on the cost centre, WBS or work order'), t('2120 GR/IR', '2120 GR/IR')],
+          ],
+        },
+        {
           type: 'diagram',
-          id: 'p2p-flow',
+          id: 'grn-ses',
           caption: {
-            fa: 'از درخواست خرید تا پرداخت: سند هر مرحله و ثبتی که در ماژول مالی می‌سازد.',
-            en: 'From requisition to payment: the document at each step and the posting it creates in Finance.',
+            fa: 'دو مسیر رسید: کالا با رسید کالا (GRN) و خدمات با برگه ثبت خدمات (SES)؛ سند هر مرحله و ثبتی که در ماژول مالی می‌سازد.',
+            en: 'Two receipt paths: goods through a GRN and services through an SES, with the document at each step and the posting it creates in Finance.',
           },
         },
         {
           type: 'p',
           text: {
-            fa: 'مثال: پارس‌آریا با سفارش خرید PO-3051، تعداد 40 شیر دروازه‌ای را به قیمت واحد 2,500 (جمعاً 100,000) از «شیرآلات صنعتی خلیج» می‌خرد. کالا روز 5 پس از بازرسی در انبار مرکزی رسید می‌شود، فاکتور روز 12 می‌رسد و روز 30 پرداخت انجام می‌شود. هیچ‌کدام از این سه ثبت را حسابدار دستی وارد نمی‌کند.',
-            en: 'Example: with purchase order PO-3051, Pars Arya buys 40 gate valves at 2,500 each (100,000 in total) from Khalij Industrial Valves. The goods are received into the Central Warehouse on Day 5 after inspection, the invoice arrives on Day 12 and payment is made on Day 30. The accountant keys in none of these three entries by hand.',
+            fa: 'مثال: مسار پترولیوم با سفارش خرید PO-3051، تعداد 40 شیر دروازه‌ای را به قیمت واحد 2,500 (جمعاً 100,000) از «شیرآلات صنعتی خلیج» می‌خرد. روز 5 کالا بازرسی و با رسید کالا (GRN) در انبار مرکزی ثبت می‌شود، فاکتور روز 12 می‌رسد و روز 30 پرداخت انجام می‌شود. هیچ‌کدام از این سه ثبت را حسابدار دستی وارد نمی‌کند.',
+            en: 'Example: with purchase order PO-3051, Masar Petroleum buys 40 gate valves at 2,500 each (100,000 in total) from Khalij Industrial Valves. On Day 5 the goods are inspected and a GRN is posted into the Central Warehouse, the invoice arrives on Day 12 and payment is made on Day 30. The accountant keys in none of these three entries by hand.',
           },
         },
         {
@@ -474,7 +492,7 @@ export const lesson: Lesson = {
                 { account: ac.inventory, debit: 100000 },
                 { account: ac.grir, credit: 100000 },
               ],
-              memo: { fa: 'رسید انبار: 40 شیر × 2,500 به قیمت سفارش.', en: 'Goods receipt: 40 valves × 2,500 at the PO price.' },
+              memo: { fa: 'رسید کالا (GRN): 40 شیر × 2,500 به قیمت سفارش.', en: 'GRN: 40 valves × 2,500 at the PO price.' },
             },
             {
               date: day(12),
@@ -506,8 +524,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'پیش از ثبت فاکتور، ERP سه سند را مقایسه می‌کند: **سفارش خرید** (چه چیزی را با چه قیمتی سفارش دادیم؟)، **رسید انبار** (چه مقداری واقعاً رسید؟) و **فاکتور** (تأمین‌کننده بابت چه مقدار و چه قیمتی پول می‌خواهد؟). اگر اختلاف از **حد مجاز (Tolerance)** بیشتر باشد، فاکتور ثبت می‌شود اما برای پرداخت **مسدود** می‌ماند تا کارشناس خرید آن را بررسی کند. در جدول زیر حد مجاز اختلاف قیمت را برای مثال 1٪ فرض کرده‌ایم؛ هر شرکت حد خودش را تعیین می‌کند.',
-            en: 'Before an invoice is posted, the ERP compares three documents: the **purchase order** (what did we order, at what price?), the **goods receipt** (how much actually arrived?) and the **invoice** (how much, at what price, does the vendor want to be paid for?). If the difference exceeds the **tolerance**, the invoice is posted but **blocked for payment** until the buyer reviews it. In the table below we assume a 1% price tolerance for illustration; each company sets its own.',
+            fa: 'پیش از ثبت فاکتور، ERP سه سند را مقایسه می‌کند: **سفارش خرید** (چه چیزی را با چه قیمتی سفارش دادیم؟)، **رسید کالا (GRN)**، یا برای خدمات **برگه ثبت خدمات (SES)** (چه مقداری واقعاً رسید یا انجام شد؟) و **فاکتور** (تأمین‌کننده بابت چه مقدار و چه قیمتی پول می‌خواهد؟). اگر اختلاف از **حد مجاز (Tolerance)** بیشتر باشد، فاکتور ثبت می‌شود اما برای پرداخت **مسدود** می‌ماند تا کارشناس خرید آن را بررسی کند. در جدول زیر حد مجاز اختلاف قیمت را برای مثال 1٪ فرض کرده‌ایم؛ هر شرکت حد خودش را تعیین می‌کند.',
+            en: 'Before an invoice is posted, the ERP compares three documents: the **purchase order** (what did we order, at what price?), the **GRN**, or for services the **SES** (how much actually arrived or was performed?) and the **invoice** (how much, at what price, does the vendor want to be paid for?). If the difference exceeds the **tolerance**, the invoice is posted but **blocked for payment** until the buyer reviews it. In the table below we assume a 1% price tolerance for illustration; each company sets its own.',
           },
         },
         {
@@ -516,7 +534,7 @@ export const lesson: Lesson = {
           head: [
             { fa: 'حالت', en: 'Case' },
             { fa: 'سفارش خرید', en: 'Purchase order' },
-            { fa: 'رسید انبار', en: 'Goods receipt' },
+            { fa: 'رسید کالا (GRN)', en: 'GRN' },
             { fa: 'فاکتور', en: 'Invoice' },
             { fa: 'نتیجه در ERP', en: 'ERP result' },
           ],
@@ -530,8 +548,47 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'در پایان ماه، مانده GR/IR معنای روشنی دارد. **مانده بستانکار** یعنی کالا یا خدمتی رسیده که فاکتورش هنوز نیامده است؛ این یک بدهی واقعی است. **مانده بدهکار** یعنی فاکتوری ثبت شده که کالایش هنوز نرسیده است. حسابدار فهرست اقلام باز را سفارش به سفارش بررسی می‌کند، اقلام قدیمی را با واحد خرید پیگیری می‌کند و آن‌ها را در ترازنامه درست طبقه‌بندی می‌کند.',
-            en: 'At month-end the GR/IR balance has a clear meaning. A **credit balance** means goods or services have arrived but their invoice has not; this is a real liability. A **debit balance** means an invoice has been posted for goods that have not arrived yet. The accountant reviews the open items order by order, chases old items with Procurement and classifies them correctly on the balance sheet.',
+            fa: 'در پایان ماه، مانده GR/IR معنای روشنی دارد. **مانده بستانکار** یعنی GRN یا SES ثبت شده ولی فاکتورش هنوز نیامده است؛ این یک بدهی واقعی است و همان چیزی است که در پایان ماه به‌عنوان هزینه تعهدی گزارش می‌شود. **مانده بدهکار** یعنی فاکتوری ثبت شده که کالایش هنوز نرسیده است. حسابدار فهرست اقلام باز را سفارش به سفارش بررسی می‌کند، اقلام قدیمی را با واحد خرید پیگیری می‌کند و آن‌ها را در ترازنامه درست طبقه‌بندی می‌کند.',
+            en: 'At month-end the GR/IR balance has a clear meaning. A **credit balance** means a GRN or SES has been posted but its invoice has not arrived; this is a real liability, and it is exactly what is reported as an accrual at month-end. A **debit balance** means an invoice has been posted for goods that have not arrived yet. The accountant reviews the open items order by order, chases old items with Procurement and classifies them correctly on the balance sheet.',
+          },
+        },
+        { type: 'h', text: { fa: 'مسیر خدمات: برگه ثبت خدمات (SES)', en: 'The service path: the SES' } },
+        {
+          type: 'p',
+          text: {
+            fa: 'خدمت را نمی‌شود در انبار شمرد؛ پس رسید آن **SES** است. پیمانکار حفاری این ماه 12 روز روی چاه AR-07 کار کرده و هر روز نماینده مسار پترولیوم در محل (سرپرست حفاری) «گزارش روزانه حفاری» را امضا کرده است. پایان ماه، SES-0412 برای 12 روز × 100,000 = 1,200,000 ثبت می‌شود و سرپرست حفاری، که کار را دیده است، آن را با گزارش‌های امضاشده مقایسه و تأیید می‌کند؛ نه خریدار و نه خود پیمانکار. همین تأیید، **تعهد** سفارش خرید روی AFE-207 را به **هزینه واقعی** تبدیل می‌کند.',
+            en: 'A service cannot be counted in a warehouse, so its receipt is the **SES**. The drilling contractor worked 12 days on well AR-07 this month, and each day Masar Petroleum’s representative on site (the drilling supervisor) signed the daily drilling report. At month-end SES-0412 is entered for 12 days × 100,000 = 1,200,000, and the drilling supervisor, who saw the work, checks it against the signed reports and approves it; neither the buyer nor the contractor does. That approval turns the purchase order **commitment** on AFE-207 into **actual cost**.',
+          },
+        },
+        {
+          type: 'journal',
+          title: { fa: 'ثبت‌هایی که ERP برای SES-0412 می‌سازد', en: 'The entries the ERP posts for SES-0412' },
+          entries: [
+            {
+              date: day(30),
+              lines: [
+                { account: t('1510 دارایی‌های در جریان تکمیل (WBS چاه AR-07، AFE-207)', '1510 Assets under construction (WBS well AR-07, AFE-207)'), debit: 1200000 },
+                { account: ac.grir, credit: 1200000 },
+              ],
+              memo: { fa: 'تأیید SES: 12 روز دکل × 100,000.', en: 'SES approved: 12 rig days × 100,000.' },
+            },
+            {
+              date: t('روز 8 ماه بعد', 'Day 8 next month'),
+              lines: [
+                { account: ac.grir, debit: 1200000 },
+                { account: ac.ap, credit: 1200000 },
+              ],
+              memo: { fa: 'فاکتور پیمانکار پس از تطبیق با سفارش و SES.', en: 'The contractor’s invoice after matching with the PO and the SES.' },
+            },
+          ],
+        },
+        {
+          type: 'callout',
+          tone: 'info',
+          title: { fa: 'مدرک بازیافت هزینه پشت هر SES', en: 'The cost-recovery evidence behind each SES' },
+          text: {
+            fa: 'گزارش‌های روزانه و برگه‌های کار امضاشده پشت هر SES، مدرک اصلی بازیافت هزینه و حسابرسی شرکاست. مسار پترولیوم آن‌ها را به‌صورت پیوست الکترونیکی به همان SES وصل می‌کند تا حسابرس شرکت ملی نفت یا شرکا بتواند از هزینه AFE-207 تا امضای سرپرست حفاری را دنبال کند. در پایان ماه، SESها و GRNهای فاکتورنشده در GR/IR مانده بستانکار می‌سازند؛ خدمتی که انجام شده ولی SES ندارد، باید با سند تعهدی دستی ثبت شود.',
+            en: 'The signed daily reports and field tickets behind each SES are the main evidence for cost recovery and partner audits. Masar Petroleum attaches them electronically to the SES so that the national oil company’s or the partners’ auditor can trace AFE-207’s cost all the way to the drilling supervisor’s signature. At month-end, uninvoiced SESs and GRNs form the credit balance in GR/IR; a service performed without an SES must be accrued with a manual journal.',
           },
         },
         { type: 'h', text: { fa: 'حواله کالا به چاه و به ایستگاه', en: 'Issuing goods to a well and to the station' } },
@@ -568,8 +625,8 @@ export const lesson: Lesson = {
           tone: 'info',
           title: { fa: 'در عمل: چه کسی چه می‌کند؟', en: 'In practice: who does what?' },
           text: {
-            fa: 'کارشناس خرید سفارش را می‌سازد و سفارش طبق سقف اختیارات تأیید می‌شود؛ انباردار پس از بازرسی کیفی رسید را ثبت می‌کند؛ کارشناس پرداختنی‌ها فاکتور را ثبت می‌کند؛ خزانه پس از تأیید، پرداخت را انجام می‌دهد. هیچ فردی همه این مراحل را به‌تنهایی انجام نمی‌دهد و ERP با نقش‌های کاربری همین را اجبار می‌کند.',
-            en: 'The buyer creates the order and it is approved within authority limits; the storekeeper posts the receipt after quality inspection; the AP accountant posts the invoice; treasury pays after approval. No single person performs all of these steps, and the ERP enforces this through user roles.',
+            fa: 'کارشناس خرید سفارش را می‌سازد و سفارش طبق سقف اختیارات تأیید می‌شود؛ انباردار پس از بازرسی کیفی رسید کالا (GRN) را ثبت می‌کند و سرپرست کار SES خدمات را تأیید می‌کند؛ کارشناس پرداختنی‌ها فاکتور را ثبت می‌کند؛ خزانه پس از تأیید، پرداخت را انجام می‌دهد. هیچ فردی همه این مراحل را به‌تنهایی انجام نمی‌دهد و ERP با نقش‌های کاربری همین را اجبار می‌کند.',
+            en: 'The buyer creates the order and it is approved within authority limits; the storekeeper posts the GRN after quality inspection and the job supervisor approves the SES for services; the AP accountant posts the invoice; treasury pays after approval. No single person performs all of these steps, and the ERP enforces this through user roles.',
           },
         },
       ],
@@ -581,8 +638,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'ERP بسیاری از ثبت‌ها را خودکار می‌کند، اما بستن دوره هنوز کاری انسانی است: باید مطمئن شوید همه رویدادها ثبت شده‌اند، برآوردها و تخصیص‌ها انجام شده‌اند و دفاتر با واقعیت می‌خوانند. پارس‌آریا ماه را در پنج روز کاری و با یک **چک‌لیست بستن دوره** می‌بندد. منطق آن همان ثبت‌های اصلاحی و بستن حساب‌هاست که در درس‌های قبل دیدید، فقط با نظم و ابزار ERP.',
-            en: 'An ERP automates many postings, but the close is still human work: you must make sure every event has been recorded, estimates and allocations are done, and the books agree with reality. Pars Arya closes the month in five working days with a **period-end close checklist**. Its logic is the adjusting and closing work you met in earlier lessons, now with ERP discipline and tools.',
+            fa: 'ERP بسیاری از ثبت‌ها را خودکار می‌کند، اما بستن دوره هنوز کاری انسانی است: باید مطمئن شوید همه رویدادها ثبت شده‌اند، برآوردها و تخصیص‌ها انجام شده‌اند و دفاتر با واقعیت می‌خوانند. مسار پترولیوم ماه را در پنج روز کاری و با یک **چک‌لیست بستن دوره** می‌بندد. منطق آن همان ثبت‌های اصلاحی و بستن حساب‌هاست که در درس‌های قبل دیدید، فقط با نظم و ابزار ERP.',
+            en: 'An ERP automates many postings, but the close is still human work: you must make sure every event has been recorded, estimates and allocations are done, and the books agree with reality. Masar Petroleum closes the month in five working days with a **period-end close checklist**. Its logic is the adjusting and closing work you met in earlier lessons, now with ERP discipline and tools.',
           },
         },
         {
@@ -591,15 +648,15 @@ export const lesson: Lesson = {
             {
               title: t('قطع عملیات (Cut-off)', 'Logistics cut-off'),
               text: t(
-                'همه رسیدها، حواله‌ها و تأییدهای خدمات ماه ثبت می‌شوند؛ سپس دوره ماژول انبار بسته می‌شود.',
-                'All receipts, goods issues and service entries for the month are posted; then the Inventory period is closed.',
+                'همه رسیدهای کالا (GRN)، حواله‌ها و برگه‌های ثبت خدمات (SES) ماه ثبت می‌شوند؛ سپس دوره ماژول انبار بسته می‌شود.',
+                'All GRNs, goods issues and SESs for the month are posted; then the Inventory period is closed.',
               ),
             },
             {
               title: t('فاکتورها و GR/IR', 'Invoices and GR/IR'),
               text: t(
-                'فاکتورهای رسیده ثبت و اقلام باز GR/IR تحلیل می‌شوند. خدماتی که انجام شده ولی هنوز در سیستم تأیید نشده، با سند تعهدی ثبت می‌شوند.',
-                'Received invoices are posted and GR/IR open items are analysed. Services performed but not yet entered are accrued with a journal.',
+                'فاکتورهای رسیده ثبت و اقلام باز GR/IR تحلیل می‌شوند. GRN و SESهای فاکتورنشده خودشان بدهی ماه را در GR/IR نشان می‌دهند؛ فقط خدمتی که انجام شده ولی SES ندارد، با سند تعهدی دستی ثبت می‌شود.',
+                'Received invoices are posted and GR/IR open items are analysed. Uninvoiced GRNs and SESs already show the month’s liability in GR/IR; only services performed without an SES need a manual accrual.',
               ),
             },
             {
@@ -648,7 +705,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: { fa: 'تقویم بستن ماه در پارس‌آریا', en: 'Pars Arya’s month-end close calendar' },
+          caption: { fa: 'تقویم بستن ماه در مسار پترولیوم', en: 'Masar Petroleum’s month-end close calendar' },
           head: [
             { fa: 'روز کاری', en: 'Working day' },
             { fa: 'کار', en: 'Task' },
@@ -674,8 +731,8 @@ export const lesson: Lesson = {
                 { account: ac.accrued, credit: 45000 },
               ],
               memo: {
-                fa: 'آزمایش چاه AR-05 روز 28 انجام شد و برگه کار امضا شد، اما تأیید خدمات هنوز ثبت نشده است؛ ثبت تعهدی که اول ماه بعد برگشت می‌خورد.',
-                en: 'A well test on AR-05 was done on Day 28 and the job ticket signed, but the service entry is not yet posted; an accrual reversed on day 1 of next month.',
+                fa: 'آزمایش چاه AR-05 روز 28 انجام شد و برگه کار امضا شد، اما SES آن هنوز ثبت نشده است؛ ثبت تعهدی که اول ماه بعد برگشت می‌خورد.',
+                en: 'A well test on AR-05 was done on Day 28 and the field ticket signed, but its SES is not yet posted; an accrual reversed on day 1 of next month.',
               },
             },
             {
@@ -715,7 +772,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: { fa: 'تطبیق‌های ماهانه پارس‌آریا', en: 'Pars Arya’s monthly reconciliations' },
+          caption: { fa: 'تطبیق‌های ماهانه مسار پترولیوم', en: 'Masar Petroleum’s monthly reconciliations' },
           head: [
             { fa: 'تطبیق', en: 'Reconciliation' },
             { fa: 'چه چیزی با چه چیزی', en: 'What against what' },
@@ -726,7 +783,7 @@ export const lesson: Lesson = {
             [t('پرداختنی‌ها', 'Payables'), t('جمع مانده تأمین‌کنندگان با حساب 2110', 'Total vendor balances against account 2110'), t('سند دستی در حساب کنترل، خطای انتقال مانده اول دوره', 'Manual journals to the control account, opening-balance migration errors')],
             [t('موجودی', 'Inventory'), t('گزارش ارزش موجودی انبارها با حساب 1310', 'Stock valuation report against account 1310'), t('سند دستی در حساب موجودی، اختلاف زمانی بستن دو ماژول', 'Manual journals to inventory, timing of the two module closes')],
             [t('دارایی‌های ثابت', 'Fixed assets'), t('فهرست دارایی‌ها با حساب‌های 1520 و 1590', 'Asset register against accounts 1520 and 1590'), t('ثبت دستی خارج از دفتر معین دارایی‌ها', 'Manual postings that bypass the asset sub-ledger')],
-            [t('GR/IR', 'GR/IR'), t('فهرست اقلام باز با حساب 2120', 'Open-item list against account 2120'), t('اقلام قدیمی تطبیق‌نشده، اختلاف قیمت و مقدار', 'Old unmatched items, price and quantity differences')],
+            [t('GR/IR', 'GR/IR'), t('فهرست GRN و SESهای باز با حساب 2120', 'Open GRN and SES items against account 2120'), t('اقلام قدیمی تطبیق‌نشده، اختلاف قیمت و مقدار', 'Old unmatched items, price and quantity differences')],
             [t('پروژه‌ها و AFEها', 'Projects and AFEs'), t('گزارش هزینه AFEها با حساب 1510', 'AFE cost report against account 1510'), t('هزینه تسویه‌نشده، WBS اشتباه', 'Unsettled costs, wrong WBS')],
           ],
         },
@@ -743,8 +800,8 @@ export const lesson: Lesson = {
               en: '**Approval workflow and authority limits**: purchase orders, AFEs and payments above each limit need a higher-level approval.',
             },
             {
-              fa: '**تطبیق سه‌طرفه و حد مجاز**: فاکتور خارج از حد مجاز مسدود می‌شود.',
-              en: '**Three-way match and tolerances**: an invoice outside tolerance is blocked.',
+              fa: '**تطبیق سه‌طرفه و حد مجاز**: سفارش، GRN یا SES و فاکتور مقایسه می‌شوند و فاکتور خارج از حد مجاز مسدود می‌شود.',
+              en: '**Three-way match and tolerances**: the PO, the GRN or SES and the invoice are compared, and an invoice outside tolerance is blocked.',
             },
             {
               fa: '**حساب‌های کنترل بسته**: سند دستی در 1210، 1310، 1520، 2110 و 2120 ممکن نیست.',
@@ -767,8 +824,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: '**ردپای حسابرسی (Audit Trail)** یعنی بتوان از هر عدد صورت‌های مالی به عقب برگشت: از سطر ترازنامه به حساب دفتر کل، از حساب به سند حسابداری، از سند به سفارش خرید، رسید انبار و تصویر فاکتور، و از هر کدام به کاربر و زمان ثبت و تأیید. حسابرس مستقل، شرکای مشارکت و حسابرسان شرکت ملی نفت دقیقاً همین مسیر را دنبال می‌کنند.',
-            en: 'An **audit trail** means you can walk back from any number in the financial statements: from the balance-sheet line to the ledger account, from the account to the accounting document, from the document to the purchase order, goods receipt and invoice image, and from each of them to the user and time of posting and approval. External auditors, joint venture partners and the national oil company’s auditors follow exactly this path.',
+            fa: '**ردپای حسابرسی (Audit Trail)** یعنی بتوان از هر عدد صورت‌های مالی به عقب برگشت: از سطر ترازنامه به حساب دفتر کل، از حساب به سند حسابداری، از سند به سفارش خرید، GRN یا SES (با برگه‌های کار امضاشده) و تصویر فاکتور، و از هر کدام به کاربر و زمان ثبت و تأیید. حسابرس مستقل، شرکای مشارکت و حسابرسان شرکت ملی نفت دقیقاً همین مسیر را دنبال می‌کنند.',
+            en: 'An **audit trail** means you can walk back from any number in the financial statements: from the balance-sheet line to the ledger account, from the account to the accounting document, from the document to the purchase order, the GRN or SES (with its signed field tickets) and the invoice image, and from each of them to the user and time of posting and approval. External auditors, joint venture partners and the national oil company’s auditors follow exactly this path.',
           },
         },
         {
@@ -805,8 +862,8 @@ export const lesson: Lesson = {
               en: 'Choosing the wrong cost object (a cost centre instead of an AFE), so a capital cost becomes a period expense and the AFE and cost-recovery reports go wrong.',
             },
             {
-              fa: 'ثبت فاکتور بدون سفارش خرید و رسید، که تطبیق سه‌طرفه را دور می‌زند.',
-              en: 'Posting invoices without a purchase order and receipt, which bypasses the three-way match.',
+              fa: 'ثبت فاکتور بدون سفارش خرید و GRN یا SES، که تطبیق سه‌طرفه را دور می‌زند.',
+              en: 'Posting invoices without a purchase order and a GRN or SES, which bypasses the three-way match.',
             },
             {
               fa: 'رها کردن اقلام قدیمی GR/IR و باز گذاشتن دوره‌ها پس از گزارش‌دهی.',
@@ -832,8 +889,8 @@ export const lesson: Lesson = {
           title: { fa: 'داده پایه یا داده تراکنشی؟', en: 'Master data or transaction data?' },
           difficulty: 'easy',
           problem: {
-            fa: 'هر یک از اقلام زیر در ERP پارس‌آریا داده پایه است یا داده تراکنشی؟ برای هر کدام یک دلیل کوتاه بیاورید.',
-            en: 'Is each item below master data or transaction data in Pars Arya’s ERP? Give a short reason for each.',
+            fa: 'هر یک از اقلام زیر در ERP مسار پترولیوم داده پایه است یا داده تراکنشی؟ برای هر کدام یک دلیل کوتاه بیاورید.',
+            en: 'Is each item below master data or transaction data in Masar Petroleum’s ERP? Give a short reason for each.',
           },
           given: {
             head: [{ fa: 'شماره', en: 'No.' }, { fa: 'قلم', en: 'Item' }],
@@ -841,7 +898,7 @@ export const lesson: Lesson = {
               [1, t('پرونده تأمین‌کننده «شیرآلات صنعتی خلیج»', 'Vendor record "Khalij Industrial Valves"')],
               [2, t('سفارش خرید PO-3051', 'Purchase order PO-3051')],
               [3, t('مرکز هزینه CC-120 ایستگاه تقویت فشار', 'Cost centre CC-120 Compressor station')],
-              [4, t('رسید انبار 40 شیر در روز 5', 'Goods receipt of 40 valves on Day 5')],
+              [4, t('رسید کالا (GRN) 40 شیر در روز 5', 'GRN for 40 valves on Day 5')],
               [5, t('کالای «شیر دروازه‌ای 4 اینچ»', 'Material "4-inch gate valve"')],
               [6, t('AFE-207 حفاری و تکمیل AR-07', 'AFE-207 drill and complete AR-07')],
               [7, t('فاکتور خرید مواد شیمیایی حفاری', 'Purchase invoice for drilling chemicals')],
@@ -878,8 +935,8 @@ export const lesson: Lesson = {
           title: { fa: 'از سفارش تا حواله: مواد افزودنی گل حفاری', en: 'From order to issue: drilling mud additive' },
           difficulty: 'medium',
           problem: {
-            fa: 'پارس‌آریا با PO-3088 تعداد 50 بشکه افزودنی گل حفاری را به قیمت واحد 1,200 سفارش می‌دهد. روز 3 کالا در انبار میدان رسید می‌شود، روز 9 فاکتور 60,000 می‌رسد و تطبیق می‌شود، روز 10 تعداد 20 بشکه به چاه AR-07 (AFE-207) حواله می‌شود و روز 25 فاکتور پرداخت می‌شود. ثبت‌هایی را که ERP می‌سازد بنویسید و بگویید مانده GR/IR پس از روز 9 و مانده موجودی این کالا پس از روز 10 چقدر است.',
-            en: 'With PO-3088 Pars Arya orders 50 drums of drilling mud additive at 1,200 each. On Day 3 the goods are received at the Field Warehouse, on Day 9 an invoice of 60,000 arrives and is matched, on Day 10 20 drums are issued to well AR-07 (AFE-207), and on Day 25 the invoice is paid. Write the entries the ERP posts and state the GR/IR balance after Day 9 and the stock value of this material after Day 10.',
+            fa: 'مسار پترولیوم با PO-3088 تعداد 50 بشکه افزودنی گل حفاری را به قیمت واحد 1,200 سفارش می‌دهد. روز 3 رسید کالا (GRN) در انبار میدان ثبت می‌شود، روز 9 فاکتور 60,000 می‌رسد و تطبیق می‌شود، روز 10 تعداد 20 بشکه به چاه AR-07 (AFE-207) حواله می‌شود و روز 25 فاکتور پرداخت می‌شود. ثبت‌هایی را که ERP می‌سازد بنویسید و بگویید مانده GR/IR پس از روز 9 و مانده موجودی این کالا پس از روز 10 چقدر است.',
+            en: 'With PO-3088 Masar Petroleum orders 50 drums of drilling mud additive at 1,200 each. On Day 3 a GRN is posted at the Field Warehouse, on Day 9 an invoice of 60,000 arrives and is matched, on Day 10 20 drums are issued to well AR-07 (AFE-207), and on Day 25 the invoice is paid. Write the entries the ERP posts and state the GR/IR balance after Day 9 and the stock value of this material after Day 10.',
           },
           hint: {
             fa: 'رسید با قیمت سفارش ثبت می‌شود؛ حواله به چاه، هزینه سرمایه‌ای روی WBS آن است.',
@@ -895,7 +952,7 @@ export const lesson: Lesson = {
                     { account: ac.inventory, debit: 60000 },
                     { account: ac.grir, credit: 60000 },
                   ],
-                  memo: { fa: 'رسید انبار: 50 × 1,200.', en: 'Goods receipt: 50 × 1,200.' },
+                  memo: { fa: 'رسید کالا (GRN): 50 × 1,200.', en: 'GRN: 50 × 1,200.' },
                 },
                 {
                   date: day(9),
@@ -947,22 +1004,22 @@ export const lesson: Lesson = {
           title: { fa: 'تحلیل GR/IR در پایان ماه', en: 'Month-end GR/IR analysis' },
           difficulty: 'medium',
           problem: {
-            fa: 'فهرست اقلام باز حساب 2120 پارس‌آریا در پایان ماه در جدول زیر آمده است. (الف) مانده خالص GR/IR چقدر و از چه نوعی است؟ (ب) هر سفارش چه معنایی دارد و چه اقدامی لازم است؟',
-            en: 'Pars Arya’s open items in account 2120 at month-end are shown below. (a) What is the net GR/IR balance, and is it a debit or a credit? (b) What does each order mean and what action is needed?',
+            fa: 'فهرست اقلام باز حساب 2120 مسار پترولیوم در پایان ماه در جدول زیر آمده است. (الف) مانده خالص GR/IR چقدر و از چه نوعی است؟ (ب) هر سفارش چه معنایی دارد و چه اقدامی لازم است؟',
+            en: 'Masar Petroleum’s open items in account 2120 at month-end are shown below. (a) What is the net GR/IR balance, and is it a debit or a credit? (b) What does each order mean and what action is needed?',
           },
           given: {
             head: [
               { fa: 'سفارش', en: 'Order' },
               { fa: 'شرح', en: 'Description' },
-              { fa: 'رسید (بستانکار GR/IR)', en: 'Received (GR/IR credit)' },
+              { fa: 'GRN یا SES (بستانکار GR/IR)', en: 'GRN or SES (GR/IR credit)' },
               { fa: 'فاکتور (بدهکار GR/IR)', en: 'Invoiced (GR/IR debit)' },
             ],
             numericCols: [2, 3],
             rows: [
               ['PO-3102', t('لوله مغزی', 'Tubing'), 45000, 0],
               ['PO-3110', t('قطعات یدکی جداکننده', 'Separator spare parts'), 0, 12000],
-              ['PO-3115', t('اجاره دکل (تأیید خدمات)', 'Rig hire (service entry)'), 80000, 80000],
-              ['PO-3121', t('واشر و اتصالات، رسید پنج ماه پیش', 'Gaskets and fittings, received five months ago'), 6000, 0],
+              ['PO-3115', t('اجاره دکل (SES)', 'Rig hire (SES)'), 80000, 80000],
+              ['PO-3121', t('واشر و اتصالات، GRN پنج ماه پیش', 'Gaskets and fittings, GRN five months ago'), 6000, 0],
             ].map((r) => r.map((c) => (typeof c === 'string' ? t(c, c) : c))),
           },
           solution: [
@@ -975,10 +1032,10 @@ export const lesson: Lesson = {
                 { fa: 'اقدام', en: 'Action' },
               ],
               rows: [
-                [t('PO-3102', 'PO-3102'), t('بستانکار 45,000', 'Credit 45,000'), t('رسیده، فاکتور نشده: بدهی واقعی', 'Received, not invoiced: a real liability'), t('پیگیری فاکتور از تأمین‌کننده', 'Chase the vendor for the invoice')],
+                [t('PO-3102', 'PO-3102'), t('بستانکار 45,000', 'Credit 45,000'), t('GRN ثبت‌شده، فاکتورنشده: بدهی واقعی', 'GRN posted, not invoiced: a real liability'), t('پیگیری فاکتور از تأمین‌کننده', 'Chase the vendor for the invoice')],
                 [t('PO-3110', 'PO-3110'), t('بدهکار 12,000', 'Debit 12,000'), t('فاکتور شده، نرسیده', 'Invoiced, not received'), t('بررسی وضعیت ارسال؛ فاکتور مسدود بماند', 'Check delivery status; keep the invoice blocked')],
                 [t('PO-3115', 'PO-3115'), t('صفر', 'Zero'), t('کامل تطبیق شده', 'Fully matched'), t('اقدامی لازم نیست', 'No action')],
-                [t('PO-3121', 'PO-3121'), t('بستانکار 6,000', 'Credit 6,000'), t('قلم قدیمی؛ احتمال خطا', 'Old item; probably an error'), t('بررسی با خرید و تأمین‌کننده؛ اگر فاکتوری نخواهد آمد، رسید اصلاح شود', 'Investigate with Procurement and the vendor; if no invoice will come, correct the receipt')],
+                [t('PO-3121', 'PO-3121'), t('بستانکار 6,000', 'Credit 6,000'), t('قلم قدیمی؛ احتمال خطا', 'Old item; probably an error'), t('بررسی با خرید و تأمین‌کننده؛ اگر فاکتوری نخواهد آمد، GRN برگشت یا اصلاح شود', 'Investigate with Procurement and the vendor; if no invoice will come, reverse or correct the GRN')],
               ],
             },
             {
@@ -1100,8 +1157,8 @@ export const lesson: Lesson = {
               en: 'Master data (accounts, vendors, materials, cost centres, WBS and AFEs) is the skeleton of the system; its errors repeat in every document.',
             },
             {
-              fa: 'حساب GR/IR فاصله رسید و فاکتور را پر می‌کند و تطبیق سه‌طرفه جلوی پرداخت نادرست را می‌گیرد.',
-              en: 'The GR/IR account bridges receipt and invoice, and the three-way match prevents wrong payments.',
+              fa: 'GRN برای کالا و SES برای خدمات، تعهد سفارش را به هزینه واقعی تبدیل می‌کنند؛ GR/IR فاصله آن‌ها با فاکتور را پر می‌کند و تطبیق سه‌طرفه جلوی پرداخت نادرست را می‌گیرد.',
+              en: 'A GRN for goods and an SES for services turn a PO commitment into actual cost; GR/IR bridges them to the invoice, and the three-way match prevents wrong payments.',
             },
             {
               fa: 'هر هزینه باید روی شیء هزینه درست بنشیند؛ این پایه گزارش AFE، صورت‌حساب شرکا و بازیافت هزینه است.',
@@ -1161,15 +1218,29 @@ export const lesson: Lesson = {
             {
               term: { fa: 'حساب واسط رسید کالا و فاکتور (GR/IR)', en: 'GR/IR clearing account' },
               def: {
-                fa: 'حساب موقتی که هنگام رسید بستانکار و هنگام فاکتور بدهکار می‌شود؛ مانده آن اقلام تطبیق‌نشده را نشان می‌دهد.',
-                en: 'A temporary account credited on receipt and debited on invoice; its balance shows unmatched items.',
+                fa: 'حساب موقتی که با GRN یا SES بستانکار و با فاکتور بدهکار می‌شود؛ مانده آن اقلام تطبیق‌نشده را نشان می‌دهد.',
+                en: 'A temporary account credited by a GRN or SES and debited by the invoice; its balance shows unmatched items.',
+              },
+            },
+            {
+              term: { fa: 'رسید کالا (GRN)', en: 'Goods received note (GRN)' },
+              def: {
+                fa: 'سند رسید کالا پس از بازرسی؛ موجودی یا شیء هزینه را بدهکار و GR/IR را بستانکار می‌کند.',
+                en: 'The receipt document for goods after inspection; it debits inventory or the cost object and credits GR/IR.',
+              },
+            },
+            {
+              term: { fa: 'برگه ثبت خدمات (SES)', en: 'Service entry sheet (SES)' },
+              def: {
+                fa: 'رسیدِ خدمت که کسی که کار را دیده تأیید می‌کند؛ هزینه را روی مرکز هزینه، WBS یا دستور کار و GR/IR را بستانکار ثبت می‌کند.',
+                en: 'The receipt for a service, approved by someone who saw the work; it posts the cost to a cost centre, WBS or work order and credits GR/IR.',
               },
             },
             {
               term: { fa: 'تطبیق سه‌طرفه', en: 'Three-way match' },
               def: {
-                fa: 'مقایسه سفارش خرید، رسید انبار و فاکتور پیش از آزاد کردن پرداخت.',
-                en: 'Comparing the purchase order, goods receipt and invoice before payment is released.',
+                fa: 'مقایسه سفارش خرید، GRN یا SES و فاکتور پیش از آزاد کردن پرداخت.',
+                en: 'Comparing the purchase order, the GRN or SES, and the invoice before payment is released.',
               },
             },
             {
@@ -1192,20 +1263,20 @@ export const lesson: Lesson = {
       },
       options: [
         { fa: 'پرونده تأمین‌کننده «خدمات حفاری آریا»', en: 'The vendor record "Arya Drilling Services"' },
-        { fa: 'رسید انبار 40 شیر در روز 5', en: 'The goods receipt of 40 valves on Day 5' },
+        { fa: 'رسید کالا (GRN) 40 شیر در روز 5', en: 'The GRN for 40 valves on Day 5' },
         { fa: 'مرکز هزینه CC-120 ایستگاه تقویت فشار', en: 'Cost centre CC-120 Compressor station' },
         { fa: 'حساب 1310 در کدینگ حساب‌ها', en: 'Account 1310 in the chart of accounts' },
       ],
       answer: 1,
       explain: {
-        fa: 'رسید انبار یک رویداد است که یک بار در یک تاریخ رخ می‌دهد؛ پس داده تراکنشی است. تأمین‌کننده، مرکز هزینه و حساب، مرجع‌هایی هستند که سندهای زیادی به آن‌ها اشاره می‌کنند؛ یعنی داده پایه.',
-        en: 'A goods receipt is an event that happens once, on one date, so it is transaction data. The vendor, the cost centre and the account are references many documents point to, which makes them master data.',
+        fa: 'رسید کالا (GRN) یک رویداد است که یک بار در یک تاریخ رخ می‌دهد؛ پس داده تراکنشی است. تأمین‌کننده، مرکز هزینه و حساب، مرجع‌هایی هستند که سندهای زیادی به آن‌ها اشاره می‌کنند؛ یعنی داده پایه.',
+        en: 'A GRN is an event that happens once, on one date, so it is transaction data. The vendor, the cost centre and the account are references many documents point to, which makes them master data.',
       },
     },
     {
       q: {
-        fa: 'انبار مرکزی 30 پمپ را با قیمت سفارش 4,000 برای هر پمپ رسید می‌کند. ERP چه ثبتی می‌سازد؟',
-        en: 'The Central Warehouse receives 30 pumps at the PO price of 4,000 each. What does the ERP post?',
+        fa: 'انبار مرکزی برای 30 پمپ با قیمت سفارش 4,000 رسید کالا (GRN) ثبت می‌کند. ERP چه ثبتی می‌سازد؟',
+        en: 'The Central Warehouse posts a GRN for 30 pumps at the PO price of 4,000 each. What does the ERP post?',
       },
       options: [
         { fa: 'بدهکار موجودی 120,000 / بستانکار حساب‌های پرداختنی 120,000', en: 'Dr Inventory 120,000 / Cr Accounts payable 120,000' },
@@ -1215,31 +1286,31 @@ export const lesson: Lesson = {
       ],
       answer: 2,
       explain: {
-        fa: '30 × 4,000 = 120,000. هنگام رسید، موجودی بدهکار و حساب واسط GR/IR بستانکار می‌شود. حساب تأمین‌کننده فقط هنگام ثبت فاکتور بستانکار می‌شود؛ پس گزینه اول، کار فاکتور را زودتر از موعد انجام داده است.',
-        en: '30 × 4,000 = 120,000. On receipt, inventory is debited and the GR/IR clearing account credited. The vendor is credited only when the invoice is posted, so the first option does the invoice’s job too early.',
+        fa: '30 × 4,000 = 120,000. هنگام GRN، موجودی بدهکار و حساب واسط GR/IR بستانکار می‌شود. حساب تأمین‌کننده فقط هنگام ثبت فاکتور بستانکار می‌شود؛ پس گزینه اول، کار فاکتور را زودتر از موعد انجام داده است.',
+        en: '30 × 4,000 = 120,000. On the GRN, inventory is debited and the GR/IR clearing account credited. The vendor is credited only when the invoice is posted, so the first option does the invoice’s job too early.',
       },
     },
     {
       q: {
-        fa: 'در پایان ماه، GR/IR برای PO-3102 مانده بستانکار 45,000 دارد. این مانده یعنی چه؟',
-        en: 'At month-end GR/IR shows a 45,000 credit balance for PO-3102. What does it mean?',
+        fa: 'سرپرست حفاری برگه ثبت خدمات (SES) اجاره دکل چاه AR-07 را روی AFE-207 تأیید می‌کند. ERP در همان لحظه چه ثبتی می‌سازد؟',
+        en: 'The drilling supervisor approves the service entry sheet (SES) for rig hire on well AR-07 against AFE-207. What does the ERP post at that moment?',
       },
       options: [
-        { fa: 'کالا رسیده ولی فاکتور آن هنوز ثبت نشده است', en: 'The goods have arrived but their invoice has not been posted yet' },
-        { fa: 'فاکتور ثبت شده ولی کالا هنوز نرسیده است', en: 'The invoice has been posted but the goods have not arrived' },
-        { fa: 'فاکتور پرداخت شده و کالا مرجوع شده است', en: 'The invoice has been paid and the goods returned' },
-        { fa: 'سفارش کامل تطبیق شده و قابل بستن است', en: 'The order is fully matched and can be closed' },
+        { fa: 'بدهکار دارایی‌های در جریان تکمیل (WBS چاه AR-07) / بستانکار GR/IR', en: 'Dr Assets under construction (WBS well AR-07) / Cr GR/IR' },
+        { fa: 'بدهکار موجودی مواد و قطعات / بستانکار GR/IR', en: 'Dr Materials and spares inventory / Cr GR/IR' },
+        { fa: 'بدهکار GR/IR / بستانکار حساب‌های پرداختنی', en: 'Dr GR/IR / Cr Accounts payable' },
+        { fa: 'هیچ ثبتی تا رسیدن فاکتور پیمانکار ساخته نمی‌شود', en: 'Nothing is posted until the contractor’s invoice arrives' },
       ],
       answer: 0,
       explain: {
-        fa: 'رسید، GR/IR را بستانکار می‌کند و فاکتور آن را بدهکار. مانده بستانکار یعنی رسید ثبت شده و فاکتور هنوز نیامده است؛ این یک بدهی واقعی است. مانده بدهکار حالت برعکس (فاکتور بدون رسید) را نشان می‌دهد.',
-        en: 'A receipt credits GR/IR and an invoice debits it. A credit balance means the receipt is posted and the invoice has not come yet; it is a real liability. A debit balance shows the opposite case (invoice without receipt).',
+        fa: 'SES رسیدِ خدمت است: هزینه خدمت را روی شیء هزینه سفارش (اینجا WBS چاه AR-07) بدهکار و GR/IR را بستانکار می‌کند و تعهد AFE-207 را به هزینه واقعی تبدیل می‌کند. خدمت به انبار نمی‌رود، پس موجودی درگیر نیست؛ ثبت GR/IR در برابر حساب‌های پرداختنی کار فاکتور است.',
+        en: 'An SES is the receipt for a service: it debits the service cost to the PO’s cost object (here the WBS of well AR-07), credits GR/IR, and turns the AFE-207 commitment into actual cost. A service never enters a warehouse, so inventory is not involved; GR/IR against payables is the invoice’s job.',
       },
     },
     {
       q: {
-        fa: 'اقلام باز GR/IR: کالای رسیده و فاکتورنشده 70,000 و فاکتورِ کالای نرسیده 15,000. مانده خالص حساب چیست؟',
-        en: 'GR/IR open items: goods received not invoiced 70,000 and invoices for goods not received 15,000. What is the net balance?',
+        fa: 'اقلام باز GR/IR: GRN و SESهای فاکتورنشده 70,000 و فاکتورِ کالای نرسیده 15,000. مانده خالص حساب چیست؟',
+        en: 'GR/IR open items: GRNs and SESs not yet invoiced 70,000 and invoices for goods not received 15,000. What is the net balance?',
       },
       options: [
         { fa: '85,000 بستانکار', en: '85,000 credit' },
@@ -1249,7 +1320,7 @@ export const lesson: Lesson = {
       ],
       answer: 3,
       explain: {
-        fa: 'کالای رسیده و فاکتورنشده بستانکار است (70,000) و فاکتورِ کالای نرسیده بدهکار (15,000)؛ خالص 70,000 منهای 15,000 برابر 55,000 بستانکار. جمع کردن دو عدد (85,000) اشتباه است، چون این دو در دو طرف مخالف حساب‌اند.',
+        fa: 'GRN و SES فاکتورنشده بستانکار است (70,000) و فاکتورِ کالای نرسیده بدهکار (15,000)؛ خالص 70,000 منهای 15,000 برابر 55,000 بستانکار. جمع کردن دو عدد (85,000) اشتباه است، چون این دو در دو طرف مخالف حساب‌اند.',
         en: 'Received-not-invoiced is a credit (70,000) and invoiced-not-received a debit (15,000); net 70,000 minus 15,000 is a 55,000 credit. Adding them (85,000) is wrong because they sit on opposite sides of the account.',
       },
     },

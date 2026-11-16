@@ -811,8 +811,8 @@ export const lesson: Lesson = {
           tone: 'tip',
           title: { fa: 'در عمل: کاست ریکاوری', en: 'In practice: cost recovery' },
           text: {
-            fa: 'در حسابرسی کاست ریکاوری یا حسابرسی شرکا، بازرس معمولاً فاکتور، رسید انبار و حواله به چاه را کنار هم می‌گذارد. اگر فاکتور «Ball valve 2in CL600» بگوید، رسید «شیر 2 اینچ» و حواله کد دیگری را نشان دهد، اثبات اینکه همان کالا در چاه مصرف شده سخت می‌شود. داده پایه تمیز، این زنجیره را خودبه‌خود هماهنگ نگه می‌دارد.',
-            en: 'In a cost-recovery or partner audit, the auditor typically lays the invoice, the goods receipt and the issue to the well side by side. If the invoice says “Ball valve 2in CL600”, the receipt says “valve 2 inch” and the issue shows yet another code, proving that the same item went into the well becomes hard. Clean master data keeps that chain consistent automatically.',
+            fa: 'در حسابرسی کاست ریکاوری یا حسابرسی شرکا، بازرس معمولاً فاکتور، رسید کالا (GRN) و حواله به چاه را کنار هم می‌گذارد. اگر فاکتور «Ball valve 2in CL600» بگوید، رسید «شیر 2 اینچ» و حواله کد دیگری را نشان دهد، اثبات اینکه همان کالا در چاه مصرف شده سخت می‌شود. داده پایه تمیز، این زنجیره را خودبه‌خود هماهنگ نگه می‌دارد.',
+            en: 'In a cost-recovery or partner audit, the auditor typically lays the invoice, the goods received note (GRN) and the issue to the well side by side. If the invoice says “Ball valve 2in CL600”, the receipt says “valve 2 inch” and the issue shows yet another code, proving that the same item went into the well becomes hard. Clean master data keeps that chain consistent automatically.',
           },
         },
       ],
@@ -950,7 +950,7 @@ export const lesson: Lesson = {
               title: { fa: 'ثبت‌های خودکار', en: 'Automatic entries' },
               entries: [
                 {
-                  date: { fa: 'رسید انبار', en: 'Goods receipt' },
+                  date: { fa: 'رسید کالا (GRN)', en: 'GRN' },
                   lines: [
                     { account: ac.chemicals, debit: 5040 },
                     { account: ac.grir, credit: 5040 },

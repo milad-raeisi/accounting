@@ -1,6 +1,6 @@
 import type { Lesson } from '../../types'
 
-/* Account titles used in the Pars Arya examples. */
+/* Account titles used in the Masar Petroleum examples. */
 const ac = {
   inventory: { fa: 'موجودی مواد و قطعات', en: 'Materials and spares inventory' },
   auc09: { fa: 'دارایی در جریان تکمیل: چاه AR-09', en: 'Assets under construction: well AR-09' },
@@ -108,7 +108,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: { fa: 'چهار منبع درخواست خرید در پارس‌آریا', en: 'The four sources of requisitions at Pars Arya' },
+          caption: { fa: 'چهار منبع درخواست خرید در مسار پترولیوم', en: 'The four sources of requisitions at Masar Petroleum' },
           head: [
             { fa: 'منبع', en: 'Source' },
             { fa: 'اقلام نمونه', en: 'Typical items' },
@@ -180,8 +180,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'برنامه‌ریز نگهداری برای تعمیر اساسی کمپرسور شماره 2 یک **دستور کار** باز می‌کند و فهرست قطعات را در آن وارد می‌کند. اقلامی که در انبار هستند رزرو می‌شوند؛ برای اقلام غیرانباری، مثل یک دست یاتاقان مخصوص، ERP خودکار درخواست خرید می‌سازد که تخصیص هزینه‌اش همان دستور کار است. وقتی قطعه می‌رسد، مستقیم به دستور کار تحویل می‌شود، نه به انبار، و هزینه‌اش از دستور کار به مرکز هزینه ایستگاه تقویت فشار (CC-310) می‌نشیند.',
-            en: 'The maintenance planner opens a **work order** for the overhaul of compressor No. 2 and lists the parts in it. Items held in stock are reserved; for non-stock items, such as a special bearing set, the ERP creates a requisition automatically with the work order as its account assignment. When the part arrives it is received straight against the work order, not into stock, and its cost flows from the work order to the compressor station cost centre (CC-310).',
+            fa: 'برنامه‌ریز نگهداری برای تعمیر اساسی کمپرسور شماره 2 یک **دستور کار** باز می‌کند و فهرست قطعات را در آن وارد می‌کند. اقلامی که در انبار هستند رزرو می‌شوند؛ برای اقلام غیرانباری، مثل یک دست یاتاقان مخصوص، ERP خودکار درخواست خرید می‌سازد که تخصیص هزینه‌اش همان دستور کار است. وقتی قطعه می‌رسد، GRN آن مستقیم به دستور کار ثبت می‌شود، نه به انبار، و هزینه‌اش از دستور کار به مرکز هزینه ایستگاه تقویت فشار (CC-310) می‌نشیند.',
+            en: 'The maintenance planner opens a **work order** for the overhaul of compressor No. 2 and lists the parts in it. Items held in stock are reserved; for non-stock items, such as a special bearing set, the ERP creates a requisition automatically with the work order as its account assignment. When the part arrives, its GRN is posted straight against the work order, not into stock, and its cost flows from the work order to the compressor station cost centre (CC-310).',
           },
         },
       ],
@@ -202,7 +202,7 @@ export const lesson: Lesson = {
           caption: { fa: 'فیلدهای یک درخواست خرید کامل', en: 'The fields of a complete purchase requisition' },
           head: [
             { fa: 'فیلد', en: 'Field' },
-            { fa: 'نمونه پارس‌آریا', en: 'Pars Arya example' },
+            { fa: 'نمونه مسار پترولیوم', en: 'Masar Petroleum example' },
             { fa: 'چرا مهم است', en: 'Why it matters' },
           ],
           rows: [
@@ -224,7 +224,7 @@ export const lesson: Lesson = {
             [
               { fa: 'محل تحویل', en: 'Delivery location' },
               { fa: 'انبار میدان، برای چاه AR-09', en: 'Field Warehouse, for well AR-09' },
-              { fa: 'رسید کالا همان‌جا ثبت می‌شود', en: 'Where the goods receipt is posted' },
+              { fa: 'رسید کالا (GRN) همان‌جا ثبت می‌شود', en: 'Where the goods received note (GRN) is posted' },
             ],
             [
               { fa: 'نوع تخصیص هزینه', en: 'Account assignment category' },
@@ -256,8 +256,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: '**موضوع هزینه (Cost object)** هر چیزی است که می‌خواهیم هزینه‌اش را جداگانه بدانیم و گزارش کنیم. در پارس‌آریا چهار نوع موضوع هزینه روی درخواست‌ها دیده می‌شود:',
-            en: 'A **cost object** is anything whose cost we want to know and report separately. At Pars Arya four kinds of cost object appear on requisitions:',
+            fa: '**موضوع هزینه (Cost object)** هر چیزی است که می‌خواهیم هزینه‌اش را جداگانه بدانیم و گزارش کنیم. در مسار پترولیوم چهار نوع موضوع هزینه روی درخواست‌ها دیده می‌شود:',
+            en: 'A **cost object** is anything whose cost we want to know and report separately. At Masar Petroleum four kinds of cost object appear on requisitions:',
           },
         },
         {
@@ -288,8 +288,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'سنترالایزرهای 30,000 که به AFE-AR09 ثبت شوند، بخشی از بهای چاه می‌شوند و به نسبت سهم شرکا به حساب مشترک می‌روند: پارس‌آریا 50٪ یعنی 15,000، شریک الف 30٪ یعنی 9,000 و شریک ب 20٪ یعنی 6,000. اگر همین مبلغ اشتباهی به مرکز هزینه CC-310 برود، AFE چاه 30,000 کمتر از واقع نشان داده می‌شود، بهای دارایی چاه کم و هزینه عملیاتی زیاد گزارش می‌شود و هزینه در دسته اشتباه بازیافت قرار می‌گیرد. در بسیاری از قراردادهای مشارکت در تولید، هزینه سرمایه‌ای طی چند سال و هزینه عملیاتی در همان سال بازیافت می‌شود؛ پس دسته اشتباه، زمان بازگشت پول را هم عوض می‌کند.',
-            en: 'Centralisers worth 30,000 charged to AFE-AR09 become part of the cost of the well and go to the joint account in proportion to the partners’ shares: Pars Arya 50%, or 15,000; Partner A 30%, or 9,000; Partner B 20%, or 6,000. If the same amount goes to cost centre CC-310 by mistake, the well’s AFE looks 30,000 under-spent, the well asset is understated, operating expense is overstated and the cost sits in the wrong recovery category. Under many production sharing contracts, capital costs are recovered over several years while operating costs are recovered in the year incurred, so the wrong category also changes when the money comes back.',
+            fa: 'سنترالایزرهای 30,000 که به AFE-AR09 ثبت شوند، بخشی از بهای چاه می‌شوند و به نسبت سهم شرکا به حساب مشترک می‌روند: مسار پترولیوم 50٪ یعنی 15,000، شریک الف 30٪ یعنی 9,000 و شریک ب 20٪ یعنی 6,000. اگر همین مبلغ اشتباهی به مرکز هزینه CC-310 برود، AFE چاه 30,000 کمتر از واقع نشان داده می‌شود، بهای دارایی چاه کم و هزینه عملیاتی زیاد گزارش می‌شود و هزینه در دسته اشتباه بازیافت قرار می‌گیرد. در بسیاری از قراردادهای مشارکت در تولید، هزینه سرمایه‌ای طی چند سال و هزینه عملیاتی در همان سال بازیافت می‌شود؛ پس دسته اشتباه، زمان بازگشت پول را هم عوض می‌کند.',
+            en: 'Centralisers worth 30,000 charged to AFE-AR09 become part of the cost of the well and go to the joint account in proportion to the partners’ shares: Masar Petroleum 50%, or 15,000; Partner A 30%, or 9,000; Partner B 20%, or 6,000. If the same amount goes to cost centre CC-310 by mistake, the well’s AFE looks 30,000 under-spent, the well asset is understated, operating expense is overstated and the cost sits in the wrong recovery category. Under many production sharing contracts, capital costs are recovered over several years while operating costs are recovered in the year incurred, so the wrong category also changes when the money comes back.',
           },
         },
         {
@@ -321,7 +321,7 @@ export const lesson: Lesson = {
             en: 'Available = approved budget or AFE − actual costs posted − open commitments',
           },
           note: {
-            fa: 'تعهدات باز یعنی سفارش‌های خریدی که صادر شده‌اند اما هنوز رسید یا فاکتورشان ثبت نشده است. بعضی شرکت‌ها درخواست‌های تأییدشده را هم کنار می‌گذارند.',
+            fa: 'تعهدات باز یعنی سفارش‌های خریدی که صادر شده‌اند اما هنوز GRN، SES یا فاکتورشان ثبت نشده است. بعضی شرکت‌ها درخواست‌های تأییدشده را هم کنار می‌گذارند.',
             en: 'Open commitments are POs that have been issued but not yet received or invoiced. Some companies also earmark approved requisitions.',
           },
         },
@@ -352,10 +352,10 @@ export const lesson: Lesson = {
         {
           type: 'callout',
           tone: 'example',
-          title: { fa: 'قاعده پارس‌آریا (فرضی)', en: 'The Pars Arya rule (illustrative)' },
+          title: { fa: 'قاعده مسار پترولیوم (فرضی)', en: 'The Masar Petroleum rule (illustrative)' },
           text: {
-            fa: 'خط‌مشی پارس‌آریا می‌گوید پیش از هر تعهدی که از AFE بگذرد، باید **AFE تکمیلی (Supplementary AFE)** تصویب شود. موافقت‌نامه عملیات مشترک (در این مثال) فقط وقتی تصویب شرکا را لازم می‌داند که پیش‌بینی بیش‌خرج از 10٪ AFE اولیه بیشتر شود. اینجا بیش‌خرج 2.5٪ است: AFE تکمیلی داخلی لازم است، اما تصویب شرکا نه؛ هرچند شرکا باید در گزارش ماهانه AFE مطلع شوند.',
-            en: 'Pars Arya’s policy says a **supplementary AFE** must be approved before any commitment that would exceed the AFE. The joint operating agreement (in this example) requires partner approval only when the forecast overrun exceeds 10% of the original AFE. Here the overrun is 2.5%: an internal supplementary AFE is needed, partner approval is not, although partners must be informed in the monthly AFE report.',
+            fa: 'خط‌مشی مسار پترولیوم می‌گوید پیش از هر تعهدی که از AFE بگذرد، باید **AFE تکمیلی (Supplementary AFE)** تصویب شود. موافقت‌نامه عملیات مشترک (در این مثال) فقط وقتی تصویب شرکا را لازم می‌داند که پیش‌بینی بیش‌خرج از 10٪ AFE اولیه بیشتر شود. اینجا بیش‌خرج 2.5٪ است: AFE تکمیلی داخلی لازم است، اما تصویب شرکا نه؛ هرچند شرکا باید در گزارش ماهانه AFE مطلع شوند.',
+            en: 'Masar Petroleum’s policy says a **supplementary AFE** must be approved before any commitment that would exceed the AFE. The joint operating agreement (in this example) requires partner approval only when the forecast overrun exceeds 10% of the original AFE. Here the overrun is 2.5%: an internal supplementary AFE is needed, partner approval is not, although partners must be informed in the monthly AFE report.',
           },
         },
         {
@@ -382,7 +382,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: { fa: 'تأیید بر اساس مبلغ در پارس‌آریا (سقف‌ها فرضی‌اند)', en: 'Value-based approval at Pars Arya (illustrative limits)' },
+          caption: { fa: 'تأیید بر اساس مبلغ در مسار پترولیوم (سقف‌ها فرضی‌اند)', en: 'Value-based approval at Masar Petroleum (illustrative limits)' },
           head: [
             { fa: 'مبلغ درخواست', en: 'PR value' },
             { fa: 'مسیر تأیید به ترتیب', en: 'Approval route, in order' },
@@ -535,8 +535,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'وضعیت درخواست در طول عمرش تغییر می‌کند: پیش‌نویس، ارسال‌شده، در حال تأیید، آزادشده، بخشی سفارش‌شده و بسته. **جریان اسناد** هر درخواست را به استعلام، سفارش، رسید و فاکتور بعدی‌اش وصل می‌کند. خود درخواست **هیچ ثبتی در دفتر کل ندارد**. اما **تخصیص هزینه‌ای** که روی آن انتخاب می‌شود به سفارش خرید منتقل می‌شود و تعیین می‌کند ERP هنگام رسید چه ثبتی بسازد.',
-            en: 'A requisition’s status changes over its life: draft, submitted, in approval, released, partly ordered and closed. The **document flow** links each PR to the RFQ, PO, receipt and invoice that follow. The PR itself creates **no general ledger entry**. But the **account assignment** chosen on it is copied to the PO and decides which entry the ERP creates at goods receipt.',
+            fa: 'وضعیت درخواست در طول عمرش تغییر می‌کند: پیش‌نویس، ارسال‌شده، در حال تأیید، آزادشده، بخشی سفارش‌شده و بسته. **جریان اسناد** هر درخواست را به استعلام، سفارش، GRN یا SES و فاکتور بعدی‌اش وصل می‌کند. خود درخواست **هیچ ثبتی در دفتر کل ندارد**. اما **تخصیص هزینه‌ای** که روی آن انتخاب می‌شود به سفارش خرید منتقل می‌شود و تعیین می‌کند ERP هنگام ثبت GRN (یا برای خدمات، هنگام پذیرش SES) چه ثبتی بسازد.',
+            en: 'A requisition’s status changes over its life: draft, submitted, in approval, released, partly ordered and closed. The **document flow** links each PR to the RFQ, PO, GRN or SES, and invoice that follow. The PR itself creates **no general ledger entry**. But the **account assignment** chosen on it is copied to the PO and decides which entry the ERP creates when the GRN is posted (or, for services, when the SES is accepted).',
           },
         },
         {
@@ -550,7 +550,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'journal',
-          title: { fa: 'ثبت‌های خودکار رسید، بر اساس تخصیص هزینه درخواست', en: 'Automatic goods receipt entries, driven by the PR’s account assignment' },
+          title: { fa: 'ثبت‌های خودکار GRN، بر اساس تخصیص هزینه درخواست', en: 'Automatic GRN entries, driven by the PR’s account assignment' },
           entries: [
             {
               lines: [
@@ -578,8 +578,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'ثبت فاکتور و پرداخت برای هر سه مثل هم است (بدهکار GR/IR / بستانکار حساب‌های پرداختنی، سپس بدهکار حساب‌های پرداختنی / بستانکار بانک). تفاوت فقط در **سمت بدهکارِ رسید** است، و این سمت را همان انتخابی تعیین کرده که درخواست‌کننده روی درخواست خرید کرده است.',
-            en: 'The invoice and payment entries are the same for all three (Dr GR/IR / Cr Accounts payable, then Dr Accounts payable / Cr Cash at bank). The only difference is the **debit side of the receipt**, and that was decided by the choice the requester made on the PR.',
+            fa: 'ثبت فاکتور و پرداخت برای هر سه مثل هم است (بدهکار GR/IR / بستانکار حساب‌های پرداختنی، سپس بدهکار حساب‌های پرداختنی / بستانکار بانک). تفاوت فقط در **سمت بدهکارِ GRN** است، و این سمت را همان انتخابی تعیین کرده که درخواست‌کننده روی درخواست خرید کرده است. برای خدمات، همین منطق هنگام پذیرش SES اجرا می‌شود؛ جزئیات GRN و SES در درس «رسید کالا (GRN) و برگه ثبت خدمات (SES)» آمده است.',
+            en: 'The invoice and payment entries are the same for all three (Dr GR/IR / Cr Accounts payable, then Dr Accounts payable / Cr Cash at bank). The only difference is the **debit side of the GRN**, and that was decided by the choice the requester made on the PR. For services the same logic runs when the SES is accepted; the lesson on the goods received note (GRN) and service entry sheet (SES) covers both in detail.',
           },
         },
         {
@@ -594,7 +594,7 @@ export const lesson: Lesson = {
           rows: [
             [{ fa: 'پس از تأیید درخواست', en: 'After the PR is approved' }, 0, 0],
             [{ fa: 'پس از صدور سفارش خرید', en: 'After the PO is issued' }, 30000, 0],
-            [{ fa: 'پس از رسید کالا', en: 'After the goods receipt' }, 0, 30000],
+            [{ fa: 'پس از ثبت GRN', en: 'After the GRN' }, 0, 30000],
             [{ fa: 'پس از فاکتور با همان قیمت', en: 'After an invoice at the same price' }, 0, 30000],
           ],
         },
@@ -707,8 +707,8 @@ export const lesson: Lesson = {
           title: { fa: 'کنترل AFE تعمیر چاه AR-04', en: 'AFE check for the AR-04 workover' },
           difficulty: 'medium',
           problem: {
-            fa: 'AFE تعمیر چاه AR-04 مبلغ 800,000 تصویب شده است. هزینه واقعی ثبت‌شده 520,000 و تعهدات باز 180,000 است. درخواست تازه‌ای به مبلغ 140,000 برای خدمات اسیدکاری ثبت می‌شود. (الف) مانده قابل استفاده و کسری را حساب کنید. (ب) با قاعده پارس‌آریا (AFE تکمیلی برای هر بیش‌خرج؛ تصویب شرکا برای بیش از 10٪)، چه تأییدی لازم است؟ (ج) اگر درخواست 200,000 بود چه؟',
-            en: 'The AFE for the AR-04 workover is approved at 800,000. Actual costs posted are 520,000 and open commitments 180,000. A new PR for 140,000 of acid stimulation services is raised. (a) Calculate the available amount and the shortfall. (b) Under the Pars Arya rule (supplementary AFE for any overrun; partner approval above 10%), what approval is needed? (c) What if the PR were 200,000?',
+            fa: 'AFE تعمیر چاه AR-04 مبلغ 800,000 تصویب شده است. هزینه واقعی ثبت‌شده 520,000 و تعهدات باز 180,000 است. درخواست تازه‌ای به مبلغ 140,000 برای خدمات اسیدکاری ثبت می‌شود. (الف) مانده قابل استفاده و کسری را حساب کنید. (ب) با قاعده مسار پترولیوم (AFE تکمیلی برای هر بیش‌خرج؛ تصویب شرکا برای بیش از 10٪)، چه تأییدی لازم است؟ (ج) اگر درخواست 200,000 بود چه؟',
+            en: 'The AFE for the AR-04 workover is approved at 800,000. Actual costs posted are 520,000 and open commitments 180,000. A new PR for 140,000 of acid stimulation services is raised. (a) Calculate the available amount and the shortfall. (b) Under the Masar Petroleum rule (supplementary AFE for any overrun; partner approval above 10%), what approval is needed? (c) What if the PR were 200,000?',
           },
           solution: [
             {
@@ -754,8 +754,8 @@ export const lesson: Lesson = {
           title: { fa: 'موضوع هزینه اشتباه و سند اصلاحی', en: 'A wrong cost object and the correcting entry' },
           difficulty: 'hard',
           problem: {
-            fa: 'درخواست 120 سنترالایزر (30,000) اشتباهی با موضوع هزینه CC-310 ثبت شد و رسید کالا هزینه تعمیر و نگهداری را بدهکار کرد. در بررسی ماهانه AFE، کنترل‌کننده هزینه متوجه می‌شود. (الف) سند اصلاحی را بنویسید. (ب) سهم هر شریک از این هزینه چقدر است؟ (ج) اگر اصلاح نمی‌شد، چه اثری بر گزارش AFE و بازیافت هزینه داشت؟ (د) چه کنترلی جلوی تکرار را می‌گیرد؟',
-            en: 'A PR for 120 centralisers (30,000) was raised against CC-310 by mistake, and the goods receipt debited repairs and maintenance expense. The cost controller spots it in the monthly AFE review. (a) Write the correcting entry. (b) What is each partner’s share of this cost? (c) Had it not been corrected, how would it affect the AFE report and cost recovery? (d) What control would prevent a repeat?',
+            fa: 'درخواست 120 سنترالایزر (30,000) اشتباهی با موضوع هزینه CC-310 ثبت شد و GRN هزینه تعمیر و نگهداری را بدهکار کرد. در بررسی ماهانه AFE، کنترل‌کننده هزینه متوجه می‌شود. (الف) سند اصلاحی را بنویسید. (ب) سهم هر شریک از این هزینه چقدر است؟ (ج) اگر اصلاح نمی‌شد، چه اثری بر گزارش AFE و بازیافت هزینه داشت؟ (د) چه کنترلی جلوی تکرار را می‌گیرد؟',
+            en: 'A PR for 120 centralisers (30,000) was raised against CC-310 by mistake, and the GRN debited repairs and maintenance expense. The cost controller spots it in the monthly AFE review. (a) Write the correcting entry. (b) What is each partner’s share of this cost? (c) Had it not been corrected, how would it affect the AFE report and cost recovery? (d) What control would prevent a repeat?',
           },
           hint: {
             fa: 'سند اصلاحی هزینه را از جای اشتباه برمی‌دارد و به جای درست می‌برد؛ GR/IR و حساب‌های پرداختنی تغییری نمی‌کنند.',
@@ -787,7 +787,7 @@ export const lesson: Lesson = {
               ],
               numericCols: [2],
               rows: [
-                [{ fa: 'پارس‌آریا', en: 'Pars Arya' }, { fa: '50٪', en: '50%' }, 15000],
+                [{ fa: 'مسار پترولیوم', en: 'Masar Petroleum' }, { fa: '50٪', en: '50%' }, 15000],
                 [{ fa: 'شریک الف', en: 'Partner A' }, { fa: '30٪', en: '30%' }, 9000],
                 [{ fa: 'شریک ب', en: 'Partner B' }, { fa: '20٪', en: '20%' }, 6000],
                 [{ fa: '**جمع**', en: '**Total**' }, { fa: '100٪', en: '100%' }, 30000],
@@ -844,8 +844,8 @@ export const lesson: Lesson = {
               en: 'Available = budget or AFE − actual costs − open commitments; an overrun needs a supplementary AFE and sometimes partner approval.',
             },
             {
-              fa: 'گردش کار تأیید بر اساس مبلغ و گروه کالا مسیر را تعیین می‌کند؛ تخصیص هزینه درخواست، سمت بدهکار رسید و در نتیجه بازیافت هزینه را تعیین می‌کند.',
-              en: 'The approval workflow routes PRs by value and category; the PR’s account assignment decides the debit side of the receipt and therefore cost recovery.',
+              fa: 'گردش کار تأیید بر اساس مبلغ و گروه کالا مسیر را تعیین می‌کند؛ تخصیص هزینه درخواست، سمت بدهکار GRN یا SES و در نتیجه بازیافت هزینه را تعیین می‌کند.',
+              en: 'The approval workflow routes PRs by value and category; the PR’s account assignment decides the debit side of the GRN or SES and therefore cost recovery.',
             },
           ],
         },
@@ -960,8 +960,8 @@ export const lesson: Lesson = {
     },
     {
       q: {
-        fa: 'AFE اولیه 4,000,000 است و پیش‌بینی کل هزینه به 4,600,000 رسیده است. با قاعده پارس‌آریا (تصویب شرکا برای بیش‌خرج بالای 10٪) چه لازم است؟',
-        en: 'The original AFE is 4,000,000 and the forecast total cost has reached 4,600,000. Under the Pars Arya rule (partner approval above a 10% overrun), what is required?',
+        fa: 'AFE اولیه 4,000,000 است و پیش‌بینی کل هزینه به 4,600,000 رسیده است. با قاعده مسار پترولیوم (تصویب شرکا برای بیش‌خرج بالای 10٪) چه لازم است؟',
+        en: 'The original AFE is 4,000,000 and the forecast total cost has reached 4,600,000. Under the Masar Petroleum rule (partner approval above a 10% overrun), what is required?',
       },
       options: [
         { fa: 'بیش‌خرج 6٪؛ کاری لازم نیست', en: '6% overrun; nothing is required' },
@@ -988,8 +988,8 @@ export const lesson: Lesson = {
       ],
       answer: 0,
       explain: {
-        fa: '30,000 × 30٪ = 9,000. 15,000 سهم 50٪ پارس‌آریا و 6,000 سهم 20٪ شریک ب است. این تقسیم فقط وقتی درست انجام می‌شود که هزینه به موضوع هزینه مشترک درست ثبت شده باشد.',
-        en: '30,000 × 30% = 9,000. 15,000 is Pars Arya’s 50% and 6,000 is Partner B’s 20%. The split only works if the cost was charged to the right joint cost object.',
+        fa: '30,000 × 30٪ = 9,000. 15,000 سهم 50٪ مسار پترولیوم و 6,000 سهم 20٪ شریک ب است. این تقسیم فقط وقتی درست انجام می‌شود که هزینه به موضوع هزینه مشترک درست ثبت شده باشد.',
+        en: '30,000 × 30% = 9,000. 15,000 is Masar Petroleum’s 50% and 6,000 is Partner B’s 20%. The split only works if the cost was charged to the right joint cost object.',
       },
     },
     {
@@ -1039,8 +1039,8 @@ export const lesson: Lesson = {
       ],
       answer: 2,
       explain: {
-        fa: '120 × 250 = 30,000. تخصیص AFE یعنی هزینه مستقیم به بهای چاه می‌رود، نه به انبار یا هزینه عملیاتی. سمت بستانکار در رسید GR/IR است؛ حساب‌های پرداختنی فقط با فاکتور بستانکار می‌شود.',
-        en: '120 × 250 = 30,000. An AFE assignment sends the cost straight to the cost of the well, not to stock or operating expense. The credit at receipt is GR/IR; accounts payable is credited only by the invoice.',
+        fa: '120 × 250 = 30,000. تخصیص AFE یعنی هزینه مستقیم به بهای چاه می‌رود، نه به انبار یا هزینه عملیاتی. سمت بستانکار در GRN حساب GR/IR است؛ حساب‌های پرداختنی فقط با فاکتور بستانکار می‌شود.',
+        en: '120 × 250 = 30,000. An AFE assignment sends the cost straight to the cost of the well, not to stock or operating expense. The credit at the GRN is GR/IR; accounts payable is credited only by the invoice.',
       },
     },
     {

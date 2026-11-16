@@ -1,7 +1,7 @@
 import type { Lesson } from '../../types'
 
 /*
- * Running example: Pars Arya Oil & Gas, Arya field, compressor station (K-101, K-102),
+ * Running example: Masar Petroleum, Arya field, compressor station (K-101, K-102),
  * separator V-201. Arya field production this year: 2,400,000 boe.
  */
 const ac = {
@@ -552,7 +552,7 @@ export const lesson: Lesson = {
               { fa: 'نرخ خوردگی؛ اگر از حد هشدار بگذرد، اعلان خودکار', en: 'Corrosion rate; an automatic notification if an alarm limit is crossed' },
             ],
             [
-              { fa: 'برگه تأیید خدمات بازرسی شخص ثالث', en: 'Service entry sheet for third-party inspection' },
+              { fa: 'صورت‌وضعیت (SES) بازرسی شخص ثالث', en: 'Service entry sheet (SES) for third-party inspection' },
               { fa: 'مهندس بازرسی', en: 'Inspection engineer' },
               { fa: 'هزینه بازرسی روی دستور کار', en: 'Inspection cost on the work order' },
             ],
@@ -575,7 +575,7 @@ export const lesson: Lesson = {
           title: { fa: 'ثبت‌های خودکار مالی برای کارهای یکپارچگی', en: 'Automatic Finance postings for integrity work' },
           entries: [
             {
-              date: { fa: 'برگه تأیید خدمات', en: 'Service entry sheet' },
+              date: { fa: 'تأیید SES', en: 'SES approved' },
               lines: [
                 { account: ac.inspection, debit: 46000 },
                 { account: ac.grir, credit: 46000 },
@@ -793,8 +793,8 @@ export const lesson: Lesson = {
           title: { fa: 'داشبورد دو ساله میدان بهار', en: 'A two-year dashboard for the Bahar field' },
           difficulty: 'hard',
           problem: {
-            fa: 'پارس‌آریا میدان دیگری به نام «بهار» را هم اداره می‌کند. مدیر عملیات می‌گوید «هزینه نگهداری 16.7٪ بالا رفته؛ نگهداری بدتر شده است.» با داده جدول، هزینه هر boe، پایبندی به PM و سهم کار برنامه‌ریزی‌شده را برای دو سال حساب کنید و درباره این ادعا قضاوت کنید.',
-            en: 'Pars Arya also operates another field, “Bahar”. The operations manager says: “maintenance cost went up 16.7%; maintenance has got worse.” Using the table, compute cost per boe, PM compliance and the planned work ratio for both years, and judge the claim.',
+            fa: 'مسار پترولیوم میدان دیگری به نام «بهار» را هم اداره می‌کند. مدیر عملیات می‌گوید «هزینه نگهداری 16.7٪ بالا رفته؛ نگهداری بدتر شده است.» با داده جدول، هزینه هر boe، پایبندی به PM و سهم کار برنامه‌ریزی‌شده را برای دو سال حساب کنید و درباره این ادعا قضاوت کنید.',
+            en: 'Masar Petroleum also operates another field, “Bahar”. The operations manager says: “maintenance cost went up 16.7%; maintenance has got worse.” Using the table, compute cost per boe, PM compliance and the planned work ratio for both years, and judge the claim.',
           },
           given: {
             head: [

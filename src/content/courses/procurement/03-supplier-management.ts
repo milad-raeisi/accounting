@@ -1,6 +1,6 @@
 import type { Lesson } from '../../types'
 
-/* Account titles used in the Pars Arya examples. */
+/* Account titles used in the Masar Petroleum examples. */
 const ac = {
   inventory: { fa: 'موجودی مواد و قطعات', en: 'Materials and spares inventory' },
   auc09: { fa: 'دارایی در جریان تکمیل: چاه AR-09', en: 'Assets under construction: well AR-09' },
@@ -22,8 +22,8 @@ export const lesson: Lesson = {
   tone: 'gold',
   title: { fa: 'مدیریت تأمین‌کنندگان', en: 'Supplier Management' },
   summary: {
-    fa: 'ببینید پارس‌آریا چگونه تأمین‌کنندگان را ثبت می‌کند و داده پایه آن‌ها را سالم نگه می‌دارد، صلاحیت فنی، مالی، HSE و کیفی را می‌سنجد، فهرست تأمین‌کنندگان تأییدشده را با توجه به ساخت داخل می‌سازد، عملکرد را با شاخص‌ها اندازه می‌گیرد و تأمین‌کننده پرریسک را مسدود می‌کند؛ و اینکه داده پایه تأمین‌کننده چگونه ثبت‌های حساب‌های پرداختنی را در مالی هدایت می‌کند.',
-    en: 'See how Pars Arya registers suppliers and keeps their master data clean, assesses technical, financial, HSE and quality capability, builds approved vendor lists with local content in mind, measures performance with KPIs and blocks risky suppliers; and how the vendor master drives the accounts payable postings in Finance.',
+    fa: 'ببینید مسار پترولیوم چگونه تأمین‌کنندگان را ثبت می‌کند و داده پایه آن‌ها را سالم نگه می‌دارد، صلاحیت فنی، مالی، HSE و کیفی را می‌سنجد، فهرست تأمین‌کنندگان تأییدشده را با توجه به ساخت داخل می‌سازد، عملکرد را با شاخص‌ها اندازه می‌گیرد و تأمین‌کننده پرریسک را مسدود می‌کند؛ و اینکه داده پایه تأمین‌کننده چگونه ثبت‌های حساب‌های پرداختنی را در مالی هدایت می‌کند.',
+    en: 'See how Masar Petroleum registers suppliers and keeps their master data clean, assesses technical, financial, HSE and quality capability, builds approved vendor lists with local content in mind, measures performance with KPIs and blocks risky suppliers; and how the vendor master drives the accounts payable postings in Finance.',
   },
   objectives: [
     {
@@ -55,8 +55,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'در یک ماه دو اتفاق در پارس‌آریا می‌افتد. اول: محموله‌ای شیر کشویی از تأمین‌کننده‌ای تازه، بدون گواهی مواد می‌رسد؛ بازرسی آن را رد می‌کند و دکل چاه AR-09 سه روز منتظر می‌ماند. با هزینه روزانه فرضی 45,000 برای دکل و خدمات وابسته، این انتظار 3 × 45,000 = 135,000 خرج دارد؛ بیشتر از قیمت خود شیرها. دوم: واحد حساب‌های پرداختنی کشف می‌کند یک شرکت با دو کد V-1007 و V-1093 در سیستم ثبت شده و یک فاکتور 36,000 دو بار پرداخت شده است.',
-            en: 'Two things happen at Pars Arya in one month. First, a batch of gate valves from a new supplier arrives without material certificates; inspection rejects it and the AR-09 rig waits three days. At an illustrative 45,000 a day for the rig and related services, the wait costs 3 × 45,000 = 135,000, more than the valves themselves. Second, accounts payable discovers that one company exists in the system under two codes, V-1007 and V-1093, and an invoice of 36,000 was paid twice.',
+            fa: 'در یک ماه دو اتفاق در مسار پترولیوم می‌افتد. اول: محموله‌ای شیر کشویی از تأمین‌کننده‌ای تازه، بدون گواهی مواد می‌رسد؛ بازرسی آن را رد می‌کند و دکل چاه AR-09 سه روز منتظر می‌ماند. با هزینه روزانه فرضی 45,000 برای دکل و خدمات وابسته، این انتظار 3 × 45,000 = 135,000 خرج دارد؛ بیشتر از قیمت خود شیرها. دوم: واحد حساب‌های پرداختنی کشف می‌کند یک شرکت با دو کد V-1007 و V-1093 در سیستم ثبت شده و یک فاکتور 36,000 دو بار پرداخت شده است.',
+            en: 'Two things happen at Masar Petroleum in one month. First, a batch of gate valves from a new supplier arrives without material certificates; inspection rejects it and the AR-09 rig waits three days. At an illustrative 45,000 a day for the rig and related services, the wait costs 3 × 45,000 = 135,000, more than the valves themselves. Second, accounts payable discovers that one company exists in the system under two codes, V-1007 and V-1093, and an invoice of 36,000 was paid twice.',
           },
         },
         {
@@ -117,8 +117,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: '**داده پایه تأمین‌کننده (Vendor master)** رکوردی واحد برای هر تأمین‌کننده در ERP است که هم تدارکات از آن استفاده می‌کند و هم مالی. هر سفارش، رسید، فاکتور و پرداخت به این رکورد ارجاع می‌دهد؛ پس یک اشتباه در آن، در هزاران سند تکرار می‌شود. داده پایه معمولاً در چند **نما (View)** سازمان‌دهی می‌شود که هر کدام صاحب جداگانه دارد.',
-            en: 'The **vendor master** is the single record for each supplier in the ERP, used by both Procurement and Finance. Every PO, receipt, invoice and payment points to it, so one error in it is repeated across thousands of documents. The record is usually organised into several **views**, each with its own owner.',
+            fa: '**داده پایه تأمین‌کننده (Vendor master)** رکوردی واحد برای هر تأمین‌کننده در ERP است که هم تدارکات از آن استفاده می‌کند و هم مالی. هر سفارش، GRN، SES، فاکتور و پرداخت به این رکورد ارجاع می‌دهد؛ پس یک اشتباه در آن، در هزاران سند تکرار می‌شود. داده پایه معمولاً در چند **نما (View)** سازمان‌دهی می‌شود که هر کدام صاحب جداگانه دارد.',
+            en: 'The **vendor master** is the single record for each supplier in the ERP, used by both Procurement and Finance. Every PO, GRN, SES, invoice and payment points to it, so one error in it is repeated across thousands of documents. The record is usually organised into several **views**, each with its own owner.',
           },
         },
         {
@@ -240,8 +240,8 @@ export const lesson: Lesson = {
             en: 'Weighted score = Σ (weight of each criterion × score on that criterion)',
           },
           note: {
-            fa: 'قاعده قبولی پارس‌آریا برای گروه «شیرآلات و تجهیزات سرچاهی» (فرضی): امتیاز کل دست‌کم 70 و هیچ معیاری کمتر از 60 نباشد.',
-            en: 'Pars Arya’s pass rule for the “valves and wellhead equipment” group (illustrative): a total of at least 70 and no criterion below 60.',
+            fa: 'قاعده قبولی مسار پترولیوم برای گروه «شیرآلات و تجهیزات سرچاهی» (فرضی): امتیاز کل دست‌کم 70 و هیچ معیاری کمتر از 60 نباشد.',
+            en: 'Masar Petroleum’s pass rule for the “valves and wellhead equipment” group (illustrative): a total of at least 70 and no criterion below 60.',
           },
         },
         {
@@ -283,8 +283,8 @@ export const lesson: Lesson = {
               en: '**Financial capacity**: a common rule (illustrative) is that the supplier’s average annual turnover should be at least twice the annual contract value. A supplier turning over 2,400,000 is not enough for a 1,500,000-a-year contract (2,400,000 ÷ 1,500,000 = 1.6, below 2), but is acceptable for contracts up to 2,400,000 ÷ 2 = 1,200,000.',
             },
             {
-              fa: '**نرخ تکرار حوادث منجر به توقف کار (LTIF)** = تعداد حوادث منجر به از دست رفتن روز کاری × 1,000,000 ÷ نفرساعت کار. پیمانکاری با 3 حادثه در 1,500,000 نفرساعت: 3 × 1,000,000 ÷ 1,500,000 = 2.0. اگر سقف پارس‌آریا برای پیمانکاران در محل 1.5 باشد (فرضی)، این پیمانکار بدون برنامه بهبود HSE پذیرفته نمی‌شود.',
-              en: '**Lost time injury frequency (LTIF)** = lost-time injuries × 1,000,000 ÷ hours worked. A contractor with 3 injuries in 1,500,000 hours: 3 × 1,000,000 ÷ 1,500,000 = 2.0. If Pars Arya’s limit for on-site contractors is 1.5 (illustrative), this contractor is not accepted without an HSE improvement plan.',
+              fa: '**نرخ تکرار حوادث منجر به توقف کار (LTIF)** = تعداد حوادث منجر به از دست رفتن روز کاری × 1,000,000 ÷ نفرساعت کار. پیمانکاری با 3 حادثه در 1,500,000 نفرساعت: 3 × 1,000,000 ÷ 1,500,000 = 2.0. اگر سقف مسار پترولیوم برای پیمانکاران در محل 1.5 باشد (فرضی)، این پیمانکار بدون برنامه بهبود HSE پذیرفته نمی‌شود.',
+              en: '**Lost time injury frequency (LTIF)** = lost-time injuries × 1,000,000 ÷ hours worked. A contractor with 3 injuries in 1,500,000 hours: 3 × 1,000,000 ÷ 1,500,000 = 2.0. If Masar Petroleum’s limit for on-site contractors is 1.5 (illustrative), this contractor is not accepted without an HSE improvement plan.',
             },
           ],
         },
@@ -369,8 +369,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'ارزیابی عملکرد باید بر **داده** تکیه کند، نه بر حس. ERP بیشتر داده‌های لازم را دارد: تاریخ رسید را با تاریخ تحویل سفارش، نتیجه بازرسی را با مقدار رسیده، و فاکتورهای مسدودشده را با کل فاکتورها مقایسه می‌کند.',
-            en: 'Performance evaluation should rest on **data**, not on feelings. The ERP already holds most of what is needed: it compares the receipt date with the PO delivery date, inspection results with quantities received, and blocked invoices with all invoices.',
+            fa: 'ارزیابی عملکرد باید بر **داده** تکیه کند، نه بر حس. ERP بیشتر داده‌های لازم را دارد: تاریخ GRN را با تاریخ تحویل سفارش، نتیجه بازرسی را با مقدار رسیده، و فاکتورهای مسدودشده را با کل فاکتورها مقایسه می‌کند. برای پیمانکاران خدماتی، SESهای ردشده یا اصلاح‌شده نشانه کیفیت کارند. نحوه ثبت بازرسی، GRN و SES در درس «رسید کالا (GRN) و برگه ثبت خدمات (SES)» آمده است.',
+            en: 'Performance evaluation should rest on **data**, not on feelings. The ERP already holds most of what is needed: it compares the GRN date with the PO delivery date, inspection results with quantities received, and blocked invoices with all invoices. For service contractors, rejected or corrected SESs are a signal of work quality. How inspections, GRNs and SESs are recorded is covered in the lesson on the goods received note (GRN) and service entry sheet (SES).',
           },
         },
         {
@@ -385,7 +385,7 @@ export const lesson: Lesson = {
             [
               { fa: 'تحویل به‌موقع (OTD)', en: 'On-time delivery (OTD)' },
               { fa: 'تحویل‌های به‌موقع ÷ کل تحویل‌ها × 100', en: 'On-time deliveries ÷ all deliveries × 100' },
-              { fa: 'تاریخ رسید در برابر تاریخ تحویل سفارش', en: 'Receipt date vs PO delivery date' },
+              { fa: 'تاریخ GRN در برابر تاریخ تحویل سفارش', en: 'GRN date vs PO delivery date' },
             ],
             [
               { fa: 'پذیرش کیفی', en: 'Quality acceptance' },
@@ -395,7 +395,7 @@ export const lesson: Lesson = {
             [
               { fa: 'کامل بودن مدارک', en: 'Documentation' },
               { fa: 'تحویل‌های با گواهی کامل ÷ کل تحویل‌ها × 100', en: 'Deliveries with complete certificates ÷ all deliveries × 100' },
-              { fa: 'چک‌لیست رسید انبار', en: 'Goods receipt checklist' },
+              { fa: 'چک‌لیست GRN', en: 'GRN checklist' },
             ],
             [
               { fa: 'HSE', en: 'HSE' },
@@ -519,8 +519,8 @@ export const lesson: Lesson = {
           tone: 'example',
           title: { fa: 'پیش‌پرداخت برای یک قلم بلندمدت', en: 'An advance for a long-lead item' },
           text: {
-            fa: 'پارس‌آریا سرچاهی و تاج چاه AR-09 را به مبلغ 200,000 از تأمین‌کننده V-1015 سفارش می‌دهد (پس از مناقصه محدود). شرایط: 30٪ پیش‌پرداخت در برابر ضمانت‌نامه پیش‌پرداخت، یعنی 60,000، و مانده 30 روز پس از تحویل. کالا با تخصیص AFE-AR09 تحویل می‌شود. ERP این ثبت‌ها را می‌سازد:',
-            en: 'Pars Arya orders the wellhead and Christmas tree for AR-09 from supplier V-1015 for 200,000 (after a limited tender). Terms: a 30% advance against an advance payment guarantee, that is 60,000, and the balance 30 days after delivery. The goods are received against AFE-AR09. The ERP creates these entries:',
+            fa: 'مسار پترولیوم سرچاهی و تاج چاه AR-09 را به مبلغ 200,000 از تأمین‌کننده V-1015 سفارش می‌دهد (پس از مناقصه محدود). شرایط: 30٪ پیش‌پرداخت در برابر ضمانت‌نامه پیش‌پرداخت، یعنی 60,000، و مانده 30 روز پس از تحویل. GRN کالا با تخصیص AFE-AR09 ثبت می‌شود. ERP این ثبت‌ها را می‌سازد:',
+            en: 'Masar Petroleum orders the wellhead and Christmas tree for AR-09 from supplier V-1015 for 200,000 (after a limited tender). Terms: a 30% advance against an advance payment guarantee, that is 60,000, and the balance 30 days after delivery. The GRN is posted against AFE-AR09. The ERP creates these entries:',
           },
         },
         {
@@ -541,7 +541,7 @@ export const lesson: Lesson = {
                 { account: ac.auc09, debit: 200000 },
                 { account: ac.grir, credit: 200000 },
               ],
-              memo: { fa: 'رسید سرچاهی و تاج چاه به AFE-AR09.', en: 'Receipt of the wellhead and tree against AFE-AR09.' },
+              memo: { fa: 'GRN سرچاهی و تاج چاه به AFE-AR09.', en: 'GRN for the wellhead and tree against AFE-AR09.' },
             },
             {
               date: day(92),
@@ -572,8 +572,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'پیش‌پرداخت هزینه نیست؛ **دارایی** است، یعنی طلبی از تأمین‌کننده که تا رسیدن کالا در حساب «پیش‌پرداخت به تأمین‌کنندگان» می‌ماند. در پایان، مانده حساب V-1015 صفر است: 200,000 − 60,000 − 140,000 = 0. اگر کالا نمی‌رسید، پارس‌آریا ضمانت‌نامه پیش‌پرداخت را برای پس گرفتن 60,000 به بانک ارائه می‌کرد.',
-            en: 'An advance is not an expense; it is an **asset**, a claim on the supplier that sits in “Advances to suppliers” until the goods arrive. At the end, V-1015’s balance is zero: 200,000 − 60,000 − 140,000 = 0. Had the goods not arrived, Pars Arya would have called the advance payment guarantee at the bank to recover the 60,000.',
+            fa: 'پیش‌پرداخت هزینه نیست؛ **دارایی** است، یعنی طلبی از تأمین‌کننده که تا رسیدن کالا در حساب «پیش‌پرداخت به تأمین‌کنندگان» می‌ماند. در پایان، مانده حساب V-1015 صفر است: 200,000 − 60,000 − 140,000 = 0. اگر کالا نمی‌رسید، مسار پترولیوم ضمانت‌نامه پیش‌پرداخت را برای پس گرفتن 60,000 به بانک ارائه می‌کرد.',
+            en: 'An advance is not an expense; it is an **asset**, a claim on the supplier that sits in “Advances to suppliers” until the goods arrive. At the end, V-1015’s balance is zero: 200,000 − 60,000 − 140,000 = 0. Had the goods not arrived, Masar Petroleum would have called the advance payment guarantee at the bank to recover the 60,000.',
           },
         },
         {
@@ -625,8 +625,8 @@ export const lesson: Lesson = {
           title: { fa: 'ارزیابی صلاحیت پیمانکار آزمایش چاه', en: 'Prequalifying a well-testing contractor' },
           difficulty: 'easy',
           problem: {
-            fa: 'برای خدمات آزمایش چاه که در محل انجام می‌شود، پارس‌آریا وزن HSE را بیشتر کرده است: فنی 30٪، مالی 15٪، HSE 35٪ و کیفیت 20٪. قاعده قبولی: امتیاز کل دست‌کم 70 و هیچ معیاری کمتر از 60. کدام پیمانکار قبول می‌شود؟',
-            en: 'For well-testing services performed on site, Pars Arya has raised the HSE weight: technical 30%, financial 15%, HSE 35% and quality 20%. Pass rule: total at least 70 and no criterion below 60. Which contractor passes?',
+            fa: 'برای خدمات آزمایش چاه که در محل انجام می‌شود، مسار پترولیوم وزن HSE را بیشتر کرده است: فنی 30٪، مالی 15٪، HSE 35٪ و کیفیت 20٪. قاعده قبولی: امتیاز کل دست‌کم 70 و هیچ معیاری کمتر از 60. کدام پیمانکار قبول می‌شود؟',
+            en: 'For well-testing services performed on site, Masar Petroleum has raised the HSE weight: technical 30%, financial 15%, HSE 35% and quality 20%. Pass rule: total at least 70 and no criterion below 60. Which contractor passes?',
           },
           given: {
             head: [
@@ -787,12 +787,12 @@ export const lesson: Lesson = {
           title: { fa: 'پیش‌پرداخت، کالای ردشده و مانده تأمین‌کننده', en: 'Advance, rejected goods and the supplier balance' },
           difficulty: 'hard',
           problem: {
-            fa: 'پارس‌آریا یک مجموعه قطعات یدکی حیاتی کمپرسور را به مبلغ 150,000 برای انبار مرکزی از V-1030 سفارش می‌دهد؛ 20٪ پیش‌پرداخت. روز 1: پیش‌پرداخت. روز 40: محموله می‌رسد، اما بازرسی اقلامی به ارزش 15,000 را رد و مرجوع می‌کند؛ فقط اقلام پذیرفته‌شده رسید می‌خورند. روز 45: فاکتور اقلام پذیرفته‌شده ثبت و پیش‌پرداخت تسویه می‌شود. روز 75: مانده آن فاکتور پرداخت می‌شود. روز 80: اقلام جایگزین می‌رسند و پذیرفته می‌شوند. روز 82: فاکتور آن‌ها ثبت می‌شود. ثبت‌ها را بنویسید و مانده حساب V-1030 را در روز 82 پیدا کنید.',
-            en: 'Pars Arya orders a critical compressor spares kit for 150,000 from V-1030 for the Central Warehouse, with a 20% advance. Day 1: advance paid. Day 40: the shipment arrives, but inspection rejects and returns items worth 15,000; only accepted items are received. Day 45: the invoice for the accepted items is posted and the advance cleared. Day 75: the balance of that invoice is paid. Day 80: replacement items arrive and are accepted. Day 82: their invoice is posted. Write the entries and find V-1030’s balance on Day 82.',
+            fa: 'مسار پترولیوم یک مجموعه قطعات یدکی حیاتی کمپرسور را به مبلغ 150,000 برای انبار مرکزی از V-1030 سفارش می‌دهد؛ 20٪ پیش‌پرداخت. روز 1: پیش‌پرداخت. روز 40: محموله می‌رسد، اما بازرسی اقلامی به ارزش 15,000 را رد و مرجوع می‌کند؛ فقط برای اقلام پذیرفته‌شده GRN ثبت می‌شود. روز 45: فاکتور اقلام پذیرفته‌شده ثبت و پیش‌پرداخت تسویه می‌شود. روز 75: مانده آن فاکتور پرداخت می‌شود. روز 80: اقلام جایگزین می‌رسند و پذیرفته می‌شوند. روز 82: فاکتور آن‌ها ثبت می‌شود. ثبت‌ها را بنویسید و مانده حساب V-1030 را در روز 82 پیدا کنید.',
+            en: 'Masar Petroleum orders a critical compressor spares kit for 150,000 from V-1030 for the Central Warehouse, with a 20% advance. Day 1: advance paid. Day 40: the shipment arrives, but inspection rejects and returns items worth 15,000; a GRN is posted only for the accepted items. Day 45: the invoice for the accepted items is posted and the advance cleared. Day 75: the balance of that invoice is paid. Day 80: replacement items arrive and are accepted. Day 82: their invoice is posted. Write the entries and find V-1030’s balance on Day 82.',
           },
           hint: {
-            fa: 'پیش‌پرداخت = 150,000 × 20٪. اقلام ردشده رسید نمی‌خورند، پس GR/IR فقط با ارزش پذیرفته‌شده بستانکار می‌شود.',
-            en: 'Advance = 150,000 × 20%. Rejected items are not received, so GR/IR is credited only with the accepted value.',
+            fa: 'پیش‌پرداخت = 150,000 × 20٪. برای اقلام ردشده GRN ثبت نمی‌شود، پس GR/IR فقط با ارزش پذیرفته‌شده بستانکار می‌شود.',
+            en: 'Advance = 150,000 × 20%. No GRN is posted for rejected items, so GR/IR is credited only with the accepted value.',
           },
           solution: [
             {
@@ -812,7 +812,7 @@ export const lesson: Lesson = {
                     { account: ac.inventory, debit: 135000 },
                     { account: ac.grir, credit: 135000 },
                   ],
-                  memo: { fa: 'رسید اقلام پذیرفته‌شده: 150,000 − 15,000 = 135,000.', en: 'Receipt of accepted items: 150,000 − 15,000 = 135,000.' },
+                  memo: { fa: 'GRN اقلام پذیرفته‌شده: 150,000 − 15,000 = 135,000.', en: 'GRN for the accepted items: 150,000 − 15,000 = 135,000.' },
                 },
                 {
                   date: day(45),
@@ -844,7 +844,7 @@ export const lesson: Lesson = {
                     { account: ac.inventory, debit: 15000 },
                     { account: ac.grir, credit: 15000 },
                   ],
-                  memo: { fa: 'رسید اقلام جایگزین.', en: 'Receipt of the replacement items.' },
+                  memo: { fa: 'GRN اقلام جایگزین.', en: 'GRN for the replacement items.' },
                 },
                 {
                   date: day(82),
@@ -876,7 +876,7 @@ export const lesson: Lesson = {
           ],
           answer: {
             fa: 'در روز 82، بدهی به V-1030 برابر 15,000 است (فاکتور اقلام جایگزین)؛ GR/IR و پیش‌پرداخت صفرند و موجودی انبار 150,000 افزایش یافته است.',
-            en: 'On Day 82, Pars Arya owes V-1030 15,000 (the replacement-items invoice); GR/IR and advances are zero, and inventory has risen by 150,000.',
+            en: 'On Day 82, Masar Petroleum owes V-1030 15,000 (the replacement-items invoice); GR/IR and advances are zero, and inventory has risen by 150,000.',
           },
         },
       ],

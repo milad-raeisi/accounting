@@ -1,7 +1,7 @@
 import type { Lesson } from '../../types'
 
 /*
- * Running example: Pars Arya Oil & Gas, Arya field, compressor station.
+ * Running example: Masar Petroleum, Arya field, compressor station.
  * Work order WO-50231: replace the mechanical seal of condensate pump P-120.
  * Internal labour rate of the mechanical crew (work centre, cost centre CC-3900): 200 per hour.
  */
@@ -142,7 +142,7 @@ export const lesson: Lesson = {
           tone: 'info',
           title: { fa: 'چرا واحد مالی به برنامه‌ریزی اهمیت می‌دهد؟', en: 'Why Finance cares' },
           text: {
-            fa: 'هر دستور کار برنامه‌ریزی‌شده یک برآورد هزینه و یک **موضوع هزینه** (Cost Object) دارد: دستور کاری که به مرکز هزینه، چاه یا AFE وصل است. به همین دلیل هزینه‌ها خودکار به جای درست در دفاتر می‌روند و با مدارک پشتیبان (رزرو، حواله انبار، سفارش خرید، برگه تأیید خدمات) برای **بازیافت هزینه** (Cost Recovery) در قرارداد نفتی قابل دفاع می‌شوند.',
+            fa: 'هر دستور کار برنامه‌ریزی‌شده یک برآورد هزینه و یک **موضوع هزینه** (Cost Object) دارد: دستور کاری که به مرکز هزینه، چاه یا AFE وصل است. به همین دلیل هزینه‌ها خودکار به جای درست در دفاتر می‌روند و با مدارک پشتیبان (رزرو، حواله انبار، سفارش خرید، برگه ثبت خدمات) برای **بازیافت هزینه** (Cost Recovery) در قرارداد نفتی قابل دفاع می‌شوند.',
             en: 'Every planned work order carries a cost estimate and a **cost object**: a work order linked to a cost centre, a well or an AFE. That is why costs flow automatically to the right place in the books and, backed by supporting documents (reservation, goods issue, purchase order, service entry sheet), can be defended for **cost recovery** under the petroleum contract.',
           },
         },
@@ -173,8 +173,8 @@ export const lesson: Lesson = {
         {
           type: 'table',
           caption: {
-            fa: 'کدهای اولویت در پارس‌آریا (زمان‌های واکنش نمونه‌اند؛ هر شرکت زمان‌های خودش را تعیین می‌کند)',
-            en: 'Priority codes at Pars Arya (response times are illustrative; each company sets its own)',
+            fa: 'کدهای اولویت در مسار پترولیوم (زمان‌های واکنش نمونه‌اند؛ هر شرکت زمان‌های خودش را تعیین می‌کند)',
+            en: 'Priority codes at Masar Petroleum (response times are illustrative; each company sets its own)',
           },
           head: [
             { fa: 'کد', en: 'Code' },
@@ -404,7 +404,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: { fa: 'گروه‌های قطعات یدکی در پارس‌آریا', en: 'Spare-part categories at Pars Arya' },
+          caption: { fa: 'گروه‌های قطعات یدکی در مسار پترولیوم', en: 'Spare-part categories at Masar Petroleum' },
           head: [
             { fa: 'گروه', en: 'Category' },
             { fa: 'مثال', en: 'Example' },
@@ -617,8 +617,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'بخش بزرگی از کار نگهداری در میدان‌های نفتی را پیمانکاران انجام می‌دهند: خدمات سازنده اصلی (OEM)، تراز لیزری، بازرسی غیرمخرب (NDT)، داربست و عایق‌کاری. خرید خدمت با خرید کالا فرق دارد: چیزی وارد انبار نمی‌شود و به جای رسید انبار، کارفرما با **برگه تأیید خدمات (Service Entry Sheet)** تأیید می‌کند که کار طبق قرارداد انجام شده است. همین تأیید است که هزینه را روی دستور کار ثبت می‌کند.',
-            en: 'Much of the maintenance work in oil fields is done by contractors: OEM field service, laser alignment, non-destructive testing (NDT), scaffolding and insulation. Buying a service differs from buying goods: nothing enters the warehouse, and instead of a goods receipt the company confirms on a **service entry sheet** that the work was done as contracted. That confirmation is what posts the cost to the work order.',
+            fa: 'بخش بزرگی از کار نگهداری در میدان‌های نفتی را پیمانکاران انجام می‌دهند: خدمات سازنده اصلی (OEM)، تراز لیزری، بازرسی غیرمخرب (NDT)، داربست و عایق‌کاری. خرید خدمت با خرید کالا فرق دارد: چیزی وارد انبار نمی‌شود و به جای رسید انبار، کارفرما با **برگه ثبت خدمات (SES)** تأیید می‌کند که کار طبق قرارداد انجام شده است. SES را کسی تأیید می‌کند که کار را دیده است (سرپرست کار یا مسئول دستور کار)، نه خریدار و نه خود پیمانکار. همین تأیید است که هزینه را روی دستور کار ثبت می‌کند و بعداً فاکتور پیمانکار با آن تطبیق داده می‌شود.',
+            en: 'Much of the maintenance work in oil fields is done by contractors: OEM field service, laser alignment, non-destructive testing (NDT), scaffolding and insulation. Buying a service differs from buying goods: nothing enters the warehouse, and instead of a goods receipt the company confirms on a **service entry sheet (SES)** that the work was done as contracted. The SES is approved by someone who saw the work (the job supervisor or work order owner), never the buyer or the contractor. That approval is what posts the cost to the work order, and the contractor’s invoice is later matched against it.',
           },
         },
         {
@@ -636,10 +636,10 @@ export const lesson: Lesson = {
             title: { fa: 'خرید خدمت', en: 'Buying services' },
             items: [
               { fa: 'درخواست خرید خدمت یا سفارش از محل قرارداد چارچوبی', en: 'Service requisition or call-off under a framework contract' },
-              { fa: 'برگه تأیید خدمات توسط مسئول دستور کار', en: 'Service entry sheet confirmed by the work order owner' },
+              { fa: 'صورت‌وضعیت (SES) با تأیید کسی که کار را دیده است', en: 'Service entry sheet (SES) approved by someone who saw the work' },
               { fa: 'نرخ‌ها از قرارداد (روزانه، هر کار، هر متر)', en: 'Rates from the contract (per day, per job, per metre)' },
               { fa: 'صلاحیت HSE پیمانکار و مجوز کار', en: 'Contractor HSE pre-qualification and permit to work' },
-              { fa: 'ثبت مالی هنگام تأیید برگه خدمات', en: 'Finance posting when the service entry is approved' },
+              { fa: 'ثبت مالی هنگام تأیید SES', en: 'Finance posting when the SES is approved' },
             ],
           },
         },
@@ -776,7 +776,7 @@ export const lesson: Lesson = {
             ],
             [{ fa: 'سفارش خرید و رسید کالا', en: 'Purchase order and goods receipt' }, { fa: 'خریدار؛ انباردار', en: 'Buyer; storekeeper' }, { fa: 'طبق سقف اختیارات خرید', en: 'Per purchasing authority limits' }],
             [{ fa: 'حواله انبار به دستور کار', en: 'Goods issue to the work order' }, { fa: 'انباردار', en: 'Storekeeper' }, { fa: 'امضای تحویل‌گیرنده (تکنسین)', en: 'Technician signs for receipt' }],
-            [{ fa: 'برگه تأیید خدمات', en: 'Service entry sheet' }, { fa: 'سرپرست کار', en: 'Job supervisor' }, { fa: 'مسئول دستور کار', en: 'Work order owner' }],
+            [{ fa: 'برگه ثبت خدمات (SES)', en: 'Service entry sheet (SES)' }, { fa: 'پیمانکار ارائه می‌دهد؛ سرپرست کار با برگه کار مقایسه می‌کند', en: 'Contractor submits; job supervisor checks it against the field ticket' }, { fa: 'مسئول دستور کار که کار را دیده است، نه خریدار', en: 'Work order owner who saw the work, not the buyer' }],
             [{ fa: 'تأیید ساعات کار (32 ساعت)', en: 'Time confirmation (32 hours)' }, { fa: 'تکنسین‌ها', en: 'Technicians' }, { fa: 'سرپرست', en: 'Supervisor' }],
             [{ fa: 'فاکتور فروشندگان', en: 'Vendor invoices' }, { fa: 'حساب‌های پرداختنی', en: 'Accounts payable' }, { fa: 'تطبیق سه‌طرفه', en: 'Three-way match' }],
             [{ fa: 'تکمیل فنی و تسویه', en: 'Technical completion and settlement' }, { fa: 'برنامه‌ریز؛ مالی در پایان ماه', en: 'Planner; Finance at month-end' }, { fa: 'سرپرست نگهداری', en: 'Maintenance supervisor' }],
@@ -816,7 +816,7 @@ export const lesson: Lesson = {
               },
             },
             {
-              date: { fa: 'برگه تأیید خدمات', en: 'Service entry sheet' },
+              date: { fa: 'تأیید SES', en: 'SES approved' },
               lines: [
                 { account: w1.svc, debit: 9800 },
                 { account: ac.grir, credit: 9800 },
@@ -909,8 +909,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'این تمرین‌ها از ساده به دشوار مرتب شده‌اند. هر کدام موقعیت تازه‌ای در شرکت پارس‌آریاست. پیش از دیدن پاسخ، خودتان حساب کنید.',
-            en: 'These exercises run from easy to hard. Each is a new situation at Pars Arya. Work it out yourself before opening the solution.',
+            fa: 'این تمرین‌ها از ساده به دشوار مرتب شده‌اند. هر کدام موقعیت تازه‌ای در شرکت مسار پترولیوم است. پیش از دیدن پاسخ، خودتان حساب کنید.',
+            en: 'These exercises run from easy to hard. Each is a new situation at Masar Petroleum. Work it out yourself before opening the solution.',
           },
         },
         {
@@ -1063,7 +1063,7 @@ export const lesson: Lesson = {
               rows: [
                 [{ fa: 'بلبرینگ', en: 'Bearings' }, { fa: 'رزرو، سپس حواله انبار به دستور کار', en: 'Reservation, then goods issue to the work order' }],
                 [{ fa: 'لاستیک کوپلینگ', en: 'Coupling insert' }, { fa: 'درخواست خرید با موضوع هزینه WO-50418، سفارش خرید، رسید کالا', en: 'Requisition assigned to WO-50418, purchase order, goods receipt' }],
-                [{ fa: 'آنالیز ارتعاش', en: 'Vibration analysis' }, { fa: 'سفارش خدمت، برگه تأیید خدمات', en: 'Service order, service entry sheet' }],
+                [{ fa: 'آنالیز ارتعاش', en: 'Vibration analysis' }, { fa: 'سفارش خدمت، صورت‌وضعیت (SES)', en: 'Service order, service entry sheet (SES)' }],
                 [{ fa: 'دستمزد', en: 'Labour' }, { fa: 'تأیید ساعات کار روی دستور کار', en: 'Time confirmation on the work order' }],
               ],
             },
@@ -1085,7 +1085,7 @@ export const lesson: Lesson = {
                   ],
                 },
                 {
-                  date: { fa: 'برگه تأیید خدمات', en: 'Service entry sheet' },
+                  date: { fa: 'تأیید SES', en: 'SES approved' },
                   lines: [
                     { account: w2.svc, debit: 6500 },
                     { account: ac.grir, credit: 6500 },
@@ -1216,8 +1216,8 @@ export const lesson: Lesson = {
               en: 'Choose critical spares by comparing loss avoided with holding cost; reorder point = usage over the lead time + safety stock.',
             },
             {
-              fa: 'دستور کار در ERP رزرو، انتقال، درخواست خرید و سفارش خدمت می‌سازد؛ حواله، رسید، برگه خدمات و ساعات کار خودکار در مالی ثبت می‌شوند.',
-              en: 'In the ERP, the work order creates reservations, transfers, requisitions and service orders; goods issues, receipts, service entries and time confirmations post to Finance automatically.',
+              fa: 'دستور کار در ERP رزرو، انتقال، درخواست خرید و سفارش خدمت می‌سازد؛ حواله، رسید، صورت‌وضعیت (SES) و ساعات کار خودکار در مالی ثبت می‌شوند.',
+              en: 'In the ERP, the work order creates reservations, transfers, requisitions and service orders; goods issues, receipts, SES approvals and time confirmations post to Finance automatically.',
             },
             {
               fa: 'موضوع هزینه درست روی هر دستور کار، پایه گزارش هزینه و دفاع از بازیافت هزینه در قرارداد نفتی است.',
@@ -1273,8 +1273,8 @@ export const lesson: Lesson = {
               def: { fa: 'قلمی که نگهداری نمی‌شود و برای هر کار مستقیم خریده و به دستور کار منظور می‌شود.', en: 'An item not kept in stock, bought per job and charged directly to the work order.' },
             },
             {
-              term: { fa: 'برگه تأیید خدمات', en: 'Service entry sheet' },
-              def: { fa: 'سندی که انجام خدمت پیمانکار را تأیید می‌کند و هزینه را روی دستور کار ثبت می‌کند.', en: 'The document confirming a contractor’s service was performed; it posts the cost to the work order.' },
+              term: { fa: 'برگه ثبت خدمات (SES)', en: 'Service entry sheet (SES)' },
+              def: { fa: 'رسیدِ خدمت: سندی که کسی که کار را دیده تأیید می‌کند؛ هزینه را روی دستور کار ثبت می‌کند و فاکتور با آن تطبیق داده می‌شود.', en: 'The receipt for a service: approved by someone who saw the work, it posts the cost to the work order and the invoice is matched against it.' },
             },
             {
               term: { fa: 'قرارداد چارچوبی', en: 'Framework contract' },
@@ -1441,8 +1441,8 @@ export const lesson: Lesson = {
     },
     {
       q: {
-        fa: 'برگه تأیید خدمات (Service Entry Sheet) در خرید خدمات پیمانکار چه نقشی دارد؟',
-        en: 'What does the service entry sheet do in contractor procurement?',
+        fa: 'برگه ثبت خدمات (SES) در خرید خدمات پیمانکار چه نقشی دارد؟',
+        en: 'What does the service entry sheet (SES) do in contractor procurement?',
       },
       options: [
         { fa: 'همان فاکتور پیمانکار است', en: 'It is the contractor’s invoice' },
@@ -1452,8 +1452,8 @@ export const lesson: Lesson = {
       ],
       answer: 2,
       explain: {
-        fa: 'برگه خدمات نقش رسید را برای خدمت بازی می‌کند: کار تأییدشده را ثبت و هزینه را روی دستور کار می‌برد. فاکتور سند جداگانه‌ای از پیمانکار است که بعداً با سفارش و همین برگه تطبیق داده می‌شود.',
-        en: 'The service entry sheet plays the role of a goods receipt for a service: it records the accepted work and posts the cost to the work order. The invoice is a separate document from the contractor, later matched against the order and this sheet.',
+        fa: 'SES نقش رسید را برای خدمت بازی می‌کند: کار تأییدشده را ثبت و هزینه را روی دستور کار می‌برد. فاکتور سند جداگانه‌ای از پیمانکار است که بعداً با سفارش و همین SES تطبیق داده می‌شود.',
+        en: 'The SES plays the role of a goods receipt for a service: it records the accepted work and posts the cost to the work order. The invoice is a separate document from the contractor, later matched against the order and this SES.',
       },
     },
   ],

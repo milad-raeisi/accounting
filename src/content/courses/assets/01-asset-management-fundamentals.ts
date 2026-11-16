@@ -1,19 +1,36 @@
 import type { L, Lesson } from '../../types'
 
+/*
+ * Running example (shared with the rest of the assets course): Masar Petroleum, Arya field.
+ * Compressor station: centrifugal compressors K-101 and K-102, driven by gas turbines GT-101 and GT-102.
+ * AFE-2026-07: a third compressor K-103 (budget 6,000,000). Separator V-201 at the production station.
+ * Cost centres: CC-3100 compressor station operations, CC-3200 production station operations,
+ * CC-3900 mechanical crew (rate 200 per hour), CC-3910 instrument crew (rate 180 per hour).
+ * Company: Masar Petroleum (company code MP01).
+ */
+
 /** Short bilingual string helper. */
 const t = (fa: string, en: string): L => ({ fa, en })
 
-/* Accounts used in the automatic ERP postings of the running example (Pars Arya Oil & Gas). */
+/* Work-order cost accounts: costs post to expense with the work order as cost object. */
+const wo = (n: string) => ({
+  mat: t(`هزینه قطعات و مواد نگهداری (${n})`, `Maintenance materials expense (${n})`),
+  svc: t(`هزینه خدمات پیمانکاران (${n})`, `Contractor services expense (${n})`),
+  lab: t(`هزینه دستمزد داخلی نگهداری (${n})`, `Internal maintenance labour (${n})`),
+  sender: t(`هزینه نگهداری: فرستنده ${n} (تسویه‌شده)`, `Maintenance cost: sender ${n} (settled)`),
+})
 const ac = {
-  wip: t('کار در جریان نگهداری (دستور کار)', 'Maintenance WIP (work orders)'),
-  spares: t('موجودی قطعات یدکی و مواد مصرفی', 'Inventory: spares and consumables'),
-  labour: t('دستمزد جذب‌شده کارگاه تعمیرات', 'Maintenance labour absorbed'),
-  grir: t('حساب واسط رسید کالا و فاکتور (GR/IR)', 'GR/IR clearing'),
+  inventory: t('موجودی قطعات یدکی', 'Inventory: spare parts'),
+  grir: t('حساب واسط رسید کالا و فاکتور (GR/IR)', 'GR/IR clearing account'),
   ap: t('حساب‌های پرداختنی', 'Accounts payable'),
+  mechAlloc: t('دستمزد تخصیص‌یافته: گروه مکانیک (CC-3900)', 'Labour cost allocated: mechanical crew (CC-3900)'),
+  instAlloc: t('دستمزد تخصیص‌یافته: گروه ابزاردقیق (CC-3910)', 'Labour cost allocated: instrument crew (CC-3910)'),
 }
-/** Repairs and maintenance expense charged to a cost object. */
-const rm = (objFa: string, objEn: string) =>
-  t(`هزینه تعمیر و نگهداری (${objFa})`, `Repairs and maintenance expense (${objEn})`)
+/** Settlement receiver: repairs and maintenance on a cost object, with recovery flag and cost category. */
+const receiver = (objFa: string, objEn: string) =>
+  t(`هزینه تعمیر و نگهداری: گیرنده ${objFa} (R، عملیاتی)`, `Repairs and maintenance: receiver ${objEn} (R, Operating)`)
+const w2 = wo('WO-40002')
+const w9 = wo('WO-40009')
 
 export const lesson: Lesson = {
   slug: 'asset-management-fundamentals',
@@ -51,8 +68,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'ساعت 2 بامداد، کمپرسور `K-101A` در ایستگاه تقویت فشار میدان آریا با هشدار لرزش زیاد از مدار خارج می‌شود. ایستگاه دیگر نمی‌تواند همه گاز تولیدی را فشرده کند و به خط لوله بفرستد؛ بخشی از گاز به مشعل می‌رود و تولید چند چاه کم می‌شود. یاتاقان معیوب در انبار نیست و سفارش فوری آن هفته‌ها طول می‌کشد. همه این‌ها با یک تصمیم ساده قابل پیشگیری بود: پایش منظم لرزش و نگه‌داشتن یک یاتاقان یدکی.',
-            en: 'At 2 a.m., compressor `K-101A` at the Arya field compressor station trips on high vibration. The station can no longer compress all the produced gas into the pipeline: part of it goes to the flare and several wells are choked back. The failed bearing is not in stock, and an urgent order takes weeks. All of this could have been avoided by one simple decision: monitor vibration regularly and keep a spare bearing.',
+            fa: 'ساعت 2 بامداد، کمپرسور `K-101` در ایستگاه تقویت فشار میدان آریا با هشدار لرزش زیاد از مدار خارج می‌شود. کمپرسور `K-102` فقط بخشی از گاز را می‌تواند فشرده کند؛ بقیه به مشعل می‌رود و تولید چند چاه کم می‌شود. یاتاقان معیوب در انبار نیست و سفارش فوری آن هفته‌ها طول می‌کشد. همه این‌ها با یک تصمیم ساده قابل پیشگیری بود: پایش منظم لرزش و نگه‌داشتن یک دست یاتاقان یدکی.',
+            en: 'At 2 a.m., compressor `K-101` at the Arya field compressor station trips on high vibration. Compressor `K-102` can compress only part of the gas; the rest goes to the flare and several wells are choked back. The failed bearing is not in stock, and an urgent order takes weeks. All of this could have been avoided by one simple decision: monitor vibration regularly and keep a spare bearing set.',
           },
         },
         {
@@ -60,8 +77,8 @@ export const lesson: Lesson = {
           tone: 'example',
           title: t('هزینه یک خرابی', 'The cost of one failure'),
           text: {
-            fa: 'کمپرسور 6 روز از کار افتاد. ارزش فروش گازی که به تعویق افتاد روزانه 150,000 بود: 6 × 150,000 = 900,000. حمل هوایی فوری یاتاقان 120,000 و خود تعمیر 80,000 هزینه داشت. جمع اثر مالی: 900,000 + 120,000 + 80,000 = 1,100,000. در مقابل، یک برنامه پایش لرزش برای هر دو کمپرسور سالانه فقط 60,000 هزینه دارد.',
-            en: 'The compressor was down for 6 days. Deferred gas sales were worth 150,000 a day: 6 × 150,000 = 900,000. Air-freighting the bearing cost 120,000 and the repair itself 80,000. Total impact: 900,000 + 120,000 + 80,000 = 1,100,000. A vibration-monitoring programme for both compressors costs only 60,000 a year.',
+            fa: 'کمپرسور 18 روز از کار افتاد. زیان هر روز توقف (گاز تحویل‌نشده، پس از اینکه K-102 بخشی از آن را جبران کرد) 12,000 بود: 18 × 12,000 = 216,000. حمل هوایی فوری یاتاقان 24,000 و خود تعمیر 30,000 هزینه داشت. جمع اثر مالی: 216,000 + 24,000 + 30,000 = 270,000. در مقابل، یک برنامه پایش لرزش برای هر دو کمپرسور سالانه فقط 15,000 هزینه دارد.',
+            en: 'The compressor was down for 18 days. Each day of outage cost 12,000 (gas not delivered, after K-102 made up part of it): 18 × 12,000 = 216,000. Air-freighting the bearing cost 24,000 and the repair itself 30,000. Total impact: 216,000 + 24,000 + 30,000 = 270,000. A vibration-monitoring programme for both compressors costs only 15,000 a year.',
           },
         },
         {
@@ -88,12 +105,12 @@ export const lesson: Lesson = {
             ],
             [
               t('تجهیزات دوار', 'Rotating equipment'),
-              t('کمپرسورهای K-101A و K-101B، پمپ‌های میعانات', 'Compressors K-101A and K-101B, condensate pumps'),
+              t('کمپرسورهای K-101 و K-102 با توربین‌های گازی، پمپ‌های میعانات', 'Compressors K-101 and K-102 with their gas turbines, condensate pumps'),
               t('لرزش، خرابی یاتاقان، نشتی آب‌بند', 'Vibration, bearing failure, seal leaks'),
             ],
             [
               t('تجهیزات ثابت', 'Static equipment'),
-              t('جداکننده ورودی V-110، مبدل‌های حرارتی، مخازن', 'Inlet separator V-110, heat exchangers, tanks'),
+              t('جداکننده ورودی V-201، مبدل‌های حرارتی، مخازن', 'Inlet separator V-201, heat exchangers, tanks'),
               t('خوردگی، کاهش ضخامت دیواره، گرفتگی', 'Corrosion, wall thinning, fouling'),
             ],
             [
@@ -143,10 +160,10 @@ export const lesson: Lesson = {
         {
           type: 'callout',
           tone: 'info',
-          title: t('مثال اصلی این دوره: پارس‌آریا', 'Our running example: Pars Arya'),
+          title: t('مثال اصلی این دوره: مسار پترولیوم', 'Our running example: Masar Petroleum'),
           text: {
-            fa: '**شرکت نفت و گاز پارس‌آریا** (شرکتی فرضی) بهره‌بردار **میدان آریا** است؛ یک میدان خشکی که با چند شریک در قالب یک مشارکت (Joint Venture) اداره می‌شود. میدان دوازده چاه (AR-01 تا AR-12)، یک ایستگاه بهره‌برداری با جداکننده‌ها، یک **ایستگاه تقویت فشار** با دو کمپرسور، یک خط لوله صادرات گاز، یک **انبار مرکزی** و یک **انبار میدان** دارد. همه مثال‌های این دوره درباره همین میدان است.',
-            en: '**Pars Arya Oil & Gas** (a fictional company) operates the **Arya field**, an onshore field run with several partners in a joint venture. The field has twelve wells (AR-01 to AR-12), a production station with separators, a **compressor station** with two compressors, an export gas pipeline, a **Central Warehouse** and a **Field Warehouse**. Every example in this course uses this field.',
+            fa: '**شرکت مسار پترولیوم** (شرکتی فرضی با کد شرکت MP01) بهره‌بردار **میدان آریا** است؛ یک میدان خشکی که با دو شریک در قالب یک مشارکت (Joint Venture) اداره می‌شود. میدان دوازده چاه (AR-01 تا AR-12)، یک ایستگاه بهره‌برداری با جداکننده‌ها، یک **ایستگاه تقویت فشار** با دو کمپرسور گریز از مرکز (K-101 و K-102) که توربین گازی آن‌ها را می‌چرخاند، یک خط لوله صادرات گاز، یک **انبار مرکزی** و یک **انبار میدان** دارد. همه مثال‌های این دوره درباره همین میدان است.',
+            en: '**Masar Petroleum** (a fictional company, company code MP01) operates the **Arya field**, an onshore field run with two partners in a joint venture. The field has twelve wells (AR-01 to AR-12), a production station with separators, a **compressor station** with two centrifugal compressors (K-101 and K-102) driven by gas turbines, an export gas pipeline, a **Central Warehouse** and a **Field Warehouse**. Every example in this course uses this field.',
           },
         },
         {
@@ -185,8 +202,8 @@ export const lesson: Lesson = {
             {
               title: t('برنامه‌ریزی', 'Plan'),
               text: t(
-                'نیاز تعریف می‌شود (مثلاً افزایش ظرفیت تراکم گاز)، گزینه‌ها مقایسه و بودجه با یک **مجوز هزینه‌کرد (AFE)** تصویب می‌شود.',
-                'The need is defined (for example more gas-compression capacity), options are compared and the budget is approved with an **Authorisation for Expenditure (AFE)**.',
+                'نیاز تعریف می‌شود (مثلاً کمپرسور سوم K-103 برای افزایش ظرفیت)، گزینه‌ها مقایسه و بودجه با یک **مجوز هزینه‌کرد (AFE)** تصویب می‌شود؛ برای K-103، AFE-2026-07.',
+                'The need is defined (for example a third compressor, K-103, for more capacity), options are compared and the budget is approved with an **Authorisation for Expenditure (AFE)**; for K-103, AFE-2026-07.',
               ),
             },
             {
@@ -230,20 +247,20 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'قیمت خرید فقط بخش کوچکی از هزینه یک دارایی است. **هزینه چرخه عمر (Life-Cycle Cost)** همه هزینه‌ها را از خرید تا کنارگذاری جمع می‌زند. جدول زیر برآورد پارس‌آریا برای کمپرسور جدید `K-102` است (اعداد فرضی و بدون تنزیل).',
-            en: 'The purchase price is only a small part of what an asset costs. **Life-cycle cost** adds up every cost from purchase to disposal. The table shows Pars Arya’s estimate for a new compressor `K-102` (illustrative figures, not discounted).',
+            fa: 'قیمت خرید فقط بخشی از هزینه یک دارایی است. **هزینه چرخه عمر (Life-Cycle Cost)** همه هزینه‌ها را از خرید تا کنارگذاری جمع می‌زند. جدول زیر برآورد مسار پترولیوم برای کمپرسور جدید `K-103` است (اعداد فرضی و بدون تنزیل). بودجه AFE-2026-07 یعنی 6,000,000 فقط دو ردیف اول را می‌پوشاند: 40٪ هزینه چرخه عمر.',
+            en: 'The purchase price is only part of what an asset costs. **Life-cycle cost** adds up every cost from purchase to disposal. The table shows Masar Petroleum’s estimate for the new compressor `K-103` (illustrative figures, not discounted). The AFE-2026-07 budget of 6,000,000 covers only the first two lines: 40% of the life-cycle cost.',
           },
         },
         {
           type: 'table',
-          caption: t('هزینه چرخه عمر کمپرسور K-102 در 20 سال', 'Life-cycle cost of compressor K-102 over 20 years'),
+          caption: t('هزینه چرخه عمر کمپرسور K-103 در 20 سال', 'Life-cycle cost of compressor K-103 over 20 years'),
           head: [t('قلم هزینه', 'Cost item'), t('مبلغ', 'Amount'), t('سهم از کل (٪)', 'Share of total (%)')],
           rows: [
-            [t('قیمت خرید', 'Purchase price'), 2400000, 23.5],
-            [t('نصب و راه‌اندازی', 'Installation and commissioning'), 600000, 5.9],
-            [t('بهره‌برداری و نگهداری (20 سال × 350,000)', 'Operation and maintenance (20 years × 350,000)'), 7000000, 68.6],
-            [t('برچیدن و کنارگذاری', 'Decommissioning and disposal'), 200000, 2.0],
-            [t('جمع', 'Total'), 10200000, 100],
+            [t('قیمت خرید', 'Purchase price'), 4500000, 30],
+            [t('نصب و راه‌اندازی', 'Installation and commissioning'), 1500000, 10],
+            [t('بهره‌برداری و نگهداری (20 سال × 420,000)', 'Operation and maintenance (20 years × 420,000)'), 8400000, 56],
+            [t('برچیدن و کنارگذاری', 'Decommissioning and disposal'), 600000, 4],
+            [t('جمع', 'Total'), 15000000, 100],
           ],
           numericCols: [1, 2],
         },
@@ -252,8 +269,8 @@ export const lesson: Lesson = {
           tone: 'example',
           title: t('دام ارزان‌ترین پیشنهاد', 'The cheapest-bid trap'),
           text: {
-            fa: 'کمپرسور B در مناقصه 300,000 ارزان‌تر است، اما سالانه 40,000 سوخت گاز بیشتری مصرف می‌کند. در 20 سال، 20 × 40,000 = 800,000 هزینه اضافه دارد؛ یعنی در کل عمر 500,000 گران‌تر است. مدیریت دارایی تصمیم خرید را بر پایه هزینه چرخه عمر می‌گیرد، نه فقط قیمت روز.',
-            en: 'Compressor B is 300,000 cheaper in the tender but burns 40,000 more fuel gas each year. Over 20 years that is 20 × 40,000 = 800,000 of extra cost, so over its life it is 500,000 more expensive. Asset management makes the purchase decision on life-cycle cost, not on today’s price alone.',
+            fa: 'در مناقصه K-103، پیشنهاد B 300,000 ارزان‌تر است، اما سالانه 40,000 سوخت گاز بیشتری مصرف می‌کند. در 20 سال، 20 × 40,000 = 800,000 هزینه اضافه دارد؛ یعنی در کل عمر 500,000 گران‌تر است. مدیریت دارایی تصمیم خرید را بر پایه هزینه چرخه عمر می‌گیرد، نه فقط قیمت روز.',
+            en: 'In the K-103 tender, bid B is 300,000 cheaper but burns 40,000 more fuel gas each year. Over 20 years that is 20 × 40,000 = 800,000 of extra cost, so over its life it is 500,000 more expensive. Asset management makes the purchase decision on life-cycle cost, not on today’s price alone.',
           },
         },
         {
@@ -261,8 +278,8 @@ export const lesson: Lesson = {
           tone: 'info',
           title: t('در عمل: نگاه حسابداری به چرخه عمر', 'In practice: the accounting view of the lifecycle'),
           text: {
-            fa: 'طبق IFRS (استاندارد IAS 16)، بهای خرید به‌علاوه مخارج لازم برای نصب و آماده‌سازی دارایی سرمایه‌ای و در طول عمر مفید مستهلک می‌شود. برآورد هزینه متروک‌سازی چاه‌ها و برچیدن تأسیسات نیز طبق IAS 37 به‌صورت ذخیره شناسایی و به بهای دارایی اضافه می‌شود. پس تصمیم‌های فنی چرخه عمر مستقیم در صورت‌های مالی دیده می‌شوند.',
-            en: 'Under IFRS (IAS 16), the purchase price plus the costs needed to install and prepare the asset are capitalised and depreciated over its useful life. The estimated cost of abandoning wells and dismantling facilities is recognised as a provision under IAS 37 and added to the asset’s cost. Technical lifecycle decisions therefore show up directly in the financial statements.',
+            fa: 'طبق IFRS (استاندارد IAS 16)، بهای خرید به‌علاوه مخارج لازم برای نصب و آماده‌سازی دارایی سرمایه‌ای و در طول عمر مفید مستهلک می‌شود. برآورد هزینه متروک‌سازی چاه‌ها و برچیدن تأسیسات نیز طبق IAS 37 به‌صورت ذخیره شناسایی و به بهای دارایی اضافه می‌شود. پس تصمیم‌های فنی چرخه عمر مستقیم در صورت‌های مالی دیده می‌شوند؛ جزئیات آن را در درس «حسابداری دارایی‌ها و هزینه‌های سرمایه‌ای» می‌بینیم.',
+            en: 'Under IFRS (IAS 16), the purchase price plus the costs needed to install and prepare the asset are capitalised and depreciated over its useful life. The estimated cost of abandoning wells and dismantling facilities is recognised as a provision under IAS 37 and added to the asset’s cost. Technical lifecycle decisions therefore show up directly in the financial statements; we cover the details in the lesson on asset accounting and CAPEX.',
           },
         },
       ],
@@ -308,16 +325,16 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: t('خط دید در پارس‌آریا', 'Line of sight at Pars Arya'),
-          head: [t('سطح', 'Level'), t('نمونه در پارس‌آریا', 'Example at Pars Arya')],
+          caption: t('خط دید در مسار پترولیوم', 'Line of sight at Masar Petroleum'),
+          head: [t('سطح', 'Level'), t('نمونه در مسار پترولیوم', 'Example at Masar Petroleum')],
           rows: [
             [t('هدف سازمان', 'Company objective'), t('تحویل گاز قراردادی به خط لوله بدون حادثه مهم', 'Deliver the contract gas volume to the pipeline with no major incident')],
             [t('هدف مدیریت دارایی', 'Asset management objective'), t('دسترس‌پذیری ایستگاه تقویت فشار دست‌کم 97٪', 'Compressor-station availability of at least 97%')],
             [
               t('برنامه دارایی', 'Asset plan'),
               t(
-                'پایش ماهانه لرزش K-101A و K-101B، تعمیرات اساسی هر 32,000 ساعت کارکرد، نگه‌داشتن یاتاقان یدکی در انبار',
-                'Monthly vibration monitoring of K-101A and K-101B, an overhaul every 32,000 running hours, a spare bearing kept in stock',
+                'پایش ماهانه لرزش K-101 و K-102، تعمیر اساسی توربین‌های گازی هر 4 سال، نگه‌داشتن قطعات حیاتی (مانند کارتریج آب‌بند گاز خشک) در انبار',
+                'Monthly vibration monitoring of K-101 and K-102, a gas-turbine major overhaul every 4 years, critical spares (such as a dry gas seal cartridge) kept in stock',
               ),
             ],
             [t('کار روزانه', 'Daily work'), t('دستور کارهای پیشگیرانه‌ای که ERP از روی برنامه‌های نگهداری می‌سازد', 'Preventive work orders that the ERP generates from the maintenance plans')],
@@ -331,8 +348,8 @@ export const lesson: Lesson = {
           type: 'formula',
           text: t('دسترس‌پذیری = زمان در دسترس ÷ کل زمان دوره', 'Availability = available time ÷ total time in the period'),
           note: t(
-            'مثال: یک سال 8,760 ساعت است. اگر K-101A در مجموع 263 ساعت متوقف بوده باشد، دسترس‌پذیری = (8,760 − 263) ÷ 8,760 = 8,497 ÷ 8,760 = 97.0٪.',
-            'Example: a year has 8,760 hours. If K-101A was down for 263 hours in total, availability = (8,760 − 263) ÷ 8,760 = 8,497 ÷ 8,760 = 97.0%.',
+            'مثال: یک سال 8,760 ساعت است. اگر K-101 در مجموع 263 ساعت متوقف بوده باشد، دسترس‌پذیری = (8,760 − 263) ÷ 8,760 = 8,497 ÷ 8,760 = 97.0٪. در درس «قابلیت اطمینان، یکپارچگی دارایی و شاخص‌های عملکرد» انواع دقیق‌تر این شاخص را می‌بینیم.',
+            'Example: a year has 8,760 hours. If K-101 was down for 263 hours in total, availability = (8,760 − 263) ÷ 8,760 = 8,497 ÷ 8,760 = 97.0%. The lesson on reliability, asset integrity and KPIs refines this indicator further.',
           ),
         },
         {
@@ -368,7 +385,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: t('نقش‌ها در مدیریت دارایی پارس‌آریا', 'Roles in asset management at Pars Arya'),
+          caption: t('نقش‌ها در مدیریت دارایی مسار پترولیوم', 'Roles in asset management at Masar Petroleum'),
           head: [t('نقش', 'Role'), t('مسئولیت‌های اصلی', 'Main responsibilities'), t('اسناد معمول در ERP', 'Typical ERP documents')],
           rows: [
             [
@@ -378,8 +395,8 @@ export const lesson: Lesson = {
             ],
             [
               t('نگهداری و تعمیرات', 'Maintenance'),
-              t('برنامه‌ریزی، زمان‌بندی و اجرای کار؛ ثبت کارکرد و گزارش فنی', 'Plans, schedules and executes work; records time and technical findings'),
-              t('دستور کار، رزرو کالا، تأیید زمان', 'Work orders, reservations, time confirmations'),
+              t('برنامه‌ریزی، زمان‌بندی و اجرای کار؛ ثبت کارکرد و گزارش فنی؛ تأیید SES پیمانکاران', 'Plans, schedules and executes work; records time and technical findings; approves contractors’ SESs'),
+              t('دستور کار، رزرو کالا، تأیید زمان، برگه ثبت خدمات (SES)', 'Work orders, reservations, time confirmations, service entry sheets (SES)'),
             ],
             [
               t('بازرسی فنی و یکپارچگی', 'Integrity and inspection'),
@@ -393,8 +410,8 @@ export const lesson: Lesson = {
             ],
             [
               t('انبار و تدارکات', 'Warehouse and procurement'),
-              t('نگه‌داشتن قطعات یدکی، خرید کالا و خدمات', 'Holds spare parts, buys materials and services'),
-              t('حواله انبار، درخواست خرید، سفارش خرید', 'Goods issues, purchase requisitions, purchase orders'),
+              t('نگه‌داشتن قطعات یدکی، خرید کالا و خدمات، ثبت رسید کالا', 'Holds spare parts, buys materials and services, posts goods receipts'),
+              t('حواله انبار، درخواست خرید، سفارش خرید، رسید کالا (GRN)', 'Goods issues, purchase requisitions, purchase orders, goods received notes (GRN)'),
             ],
             [
               t('مالی', 'Finance'),
@@ -416,8 +433,8 @@ export const lesson: Lesson = {
           tone: 'example',
           title: t('یک رویداد، چند نقش', 'One event, many roles'),
           text: {
-            fa: 'اپراتور ایستگاه، لرزش زیاد `K-101A` را در یک اعلان ثبت می‌کند. مهندس قابلیت اطمینان داده لرزش را بررسی و خرابی یاتاقان را تشخیص می‌دهد. برنامه‌ریز نگهداری دستور کار می‌سازد و یاتاقان را از انبار رزرو می‌کند. انباردار کالا را حواله می‌کند. HSE مجوز کار صادر می‌کند. تکنسین‌ها کار را انجام می‌دهند و ساعت کار را ثبت می‌کنند. مالی در پایان ماه هزینه دستور کار را به مرکز هزینه ایستگاه تسویه و برای بازیافت هزینه برچسب‌گذاری می‌کند.',
-            en: 'The station operator records high vibration on `K-101A` in a notification. The reliability engineer reviews the vibration data and diagnoses a bearing failure. The maintenance planner creates a work order and reserves the bearing in the warehouse. The storekeeper issues it. HSE issues the permit to work. Technicians do the job and record their hours. At month-end Finance settles the work order’s cost to the station’s cost centre and tags it for cost recovery.',
+            fa: 'اپراتور ایستگاه، لرزش زیاد `K-101` را در یک اعلان ثبت می‌کند. مهندس قابلیت اطمینان داده لرزش را بررسی و خرابی یاتاقان را تشخیص می‌دهد. برنامه‌ریز نگهداری دستور کار می‌سازد و یاتاقان را از انبار رزرو می‌کند. انباردار کالا را حواله می‌کند. HSE مجوز کار صادر می‌کند. تکنسین‌ها کار را انجام می‌دهند و ساعت کار را ثبت می‌کنند. مالی در پایان ماه هزینه دستور کار را به مرکز هزینه ایستگاه تسویه و برای بازیافت هزینه برچسب‌گذاری می‌کند.',
+            en: 'The station operator records high vibration on `K-101` in a notification. The reliability engineer reviews the vibration data and diagnoses a bearing failure. The maintenance planner creates a work order and reserves the bearing in the warehouse. The storekeeper issues it. HSE issues the permit to work. Technicians do the job and record their hours. At month-end Finance settles the work order’s cost to the station’s cost centre and tags it for cost recovery.',
           },
         },
         {
@@ -432,8 +449,8 @@ export const lesson: Lesson = {
           tone: 'info',
           title: t('در عمل: شرکا هم ذی‌نفع‌اند', 'In practice: partners are stakeholders too'),
           text: {
-            fa: 'در یک مشارکت، پارس‌آریا به‌عنوان **بهره‌بردار (Operator)** دارایی‌ها را از طرف همه شرکا اداره می‌کند. شرکا سهم خود از هزینه‌ها را می‌پردازند و حق دارند حساب‌ها را حسابرسی کنند. پس هر هزینه نگهداری باید با مدارک کامل و موضوع هزینه درست (چاه، مرکز هزینه یا AFE) ثبت شود.',
-            en: 'In a joint venture Pars Arya, as the **operator**, runs the assets on behalf of all partners. Partners pay their share of the costs and have the right to audit the accounts. Every maintenance cost must therefore be recorded with full supporting documents and the right cost object (well, cost centre or AFE).',
+            fa: 'در مشارکت میدان آریا (با سهم‌های فرضی مسار پترولیوم 50٪، شریک الف 30٪ و شریک ب 20٪)، مسار پترولیوم به‌عنوان **بهره‌بردار (Operator)** دارایی‌ها را از طرف همه شرکا اداره می‌کند. شرکا سهم خود از هزینه‌ها را می‌پردازند و حق دارند حساب‌ها را حسابرسی کنند. پس هر هزینه نگهداری باید با مدارک کامل و موضوع هزینه درست (چاه، مرکز هزینه یا AFE) ثبت شود.',
+            en: 'In the Arya joint venture (illustrative interests: Masar Petroleum 50%, Partner A 30%, Partner B 20%), Masar Petroleum, as the **operator**, runs the assets on behalf of all partners. Partners pay their share of the costs and have the right to audit the accounts. Every maintenance cost must therefore be recorded with full supporting documents and the right cost object (well, cost centre or AFE).',
           },
         },
       ],
@@ -491,31 +508,31 @@ export const lesson: Lesson = {
               t('انبار', 'Inventory'),
               t('رزرو قطعات برای دستور کار', 'Reservations of parts for work orders'),
               t('حواله انبار و موجودی در دسترس', 'Goods issues and available stock'),
-              t('کاهش موجودی، افزایش هزینه دستور کار', 'Inventory down, work-order cost up'),
+              t('کاهش موجودی، ثبت هزینه روی دستور کار', 'Inventory down, cost posted on the work order'),
             ],
             [
               t('تدارکات', 'Procurement'),
               t('درخواست خرید برای کالای غیرانباری و خدمات پیمانکار', 'Purchase requisitions for non-stock items and contractor services'),
-              t('سفارش خرید، رسید کالا، تأیید خدمات', 'Purchase orders, goods receipts, service acceptance'),
-              t('ثبت در حساب واسط GR/IR و سپس حساب‌های پرداختنی', 'Postings to GR/IR clearing, then accounts payable'),
+              t('سفارش خرید، رسید کالا (GRN) برای کالا و برگه ثبت خدمات (SES) برای خدمات', 'Purchase orders, goods received notes (GRN) for goods and service entry sheets (SES) for services'),
+              t('با GRN یا SES: بدهکار دستور کار، بستانکار GR/IR؛ فاکتور GR/IR را صاف می‌کند', 'On GRN or SES: debit the work order, credit GR/IR; the invoice clears GR/IR'),
             ],
             [
               t('پروژه‌ها', 'Projects'),
               t('دستور کارهای سرمایه‌ای (نصب، ارتقا)', 'Capital work orders (installation, upgrades)'),
-              t('بودجه AFE و ساختار پروژه', 'AFE budget and project structure'),
+              t('بودجه AFE و عناصر WBS', 'AFE budget and WBS elements'),
               t('دارایی در جریان تکمیل، سپس دارایی ثابت', 'Assets under construction, then fixed assets'),
             ],
             [
               t('منابع انسانی', 'HR'),
               t('ساعت‌های کار ثبت‌شده', 'Recorded working hours'),
               t('کارکنان، مهارت‌ها، گواهی‌نامه‌ها، نرخ دستمزد', 'Employees, skills, certificates, wage rates'),
-              t('انتقال هزینه دستمزد به دستور کار', 'Labour cost moved to work orders'),
+              t('انتقال هزینه دستمزد از مرکز هزینه گروه به دستور کار', 'Labour cost moved from the crew’s cost centre to the work order'),
             ],
             [
               t('مالی', 'Finance'),
-              t('هزینه‌های جمع‌شده و قاعده تسویه', 'Collected costs and settlement rules'),
-              t('مراکز هزینه، شماره دارایی ثابت، کدهای بازیافت هزینه', 'Cost centres, fixed-asset numbers, cost-recovery codes'),
-              t('ثبت خودکار هزینه نگهداری روی موضوع هزینه درست', 'Automatic posting of maintenance cost to the right cost object'),
+              t('هزینه‌های ثبت‌شده و قاعده تسویه', 'Posted costs and settlement rules'),
+              t('مراکز هزینه، شماره دارایی ثابت، کد بازیافت هزینه', 'Cost centres, fixed-asset numbers, cost-recovery flags'),
+              t('هزینه نگهداری روی موضوع هزینه نهایی و درست', 'Maintenance cost on the right final cost object'),
             ],
           ],
         },
@@ -523,8 +540,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'برای سرویس دوره‌ای کمپرسور `K-101B`، دستور کار `WO-40002` ساخته شده است. انباردار یک بسته فیلتر و روغن روان‌کاری به ارزش 20,000 حواله می‌کند. تکنسین 6 ساعت کار را با نرخ 1,500 در ساعت ثبت می‌کند (6 × 1,500 = 9,000). در پایان ماه، دستور کار به مرکز هزینه ایستگاه تقویت فشار (`CS-OPS`) تسویه می‌شود. هیچ‌کس در مالی سند دستی نمی‌زند؛ ERP این سندها را خودکار ثبت می‌کند:',
-            en: 'Work order `WO-40002` is created for the periodic service of compressor `K-101B`. The storekeeper issues a filter kit and lube oil worth 20,000. The technician records 6 hours at 1,500 an hour (6 × 1,500 = 9,000). At month-end the work order is settled to the compressor station’s cost centre (`CS-OPS`). Nobody in Finance writes a manual entry; the ERP posts these automatically:',
+            fa: 'برای سرویس دوره‌ای کمپرسور `K-102`، دستور کار `WO-40002` ساخته شده است. انباردار المنت‌های فیلتر روغن و روغن روان‌کاری به ارزش 3,400 حواله می‌کند. یک مکانیک 6 ساعت کار را با نرخ گروه مکانیک ثبت می‌کند (6 × 200 = 1,200). هیچ‌کس در مالی سند دستی نمی‌زند؛ ERP این سندها را خودکار ثبت می‌کند و هزینه را روی دستور کار، به‌عنوان **موضوع هزینه**، می‌نشاند:',
+            en: 'Work order `WO-40002` is created for the periodic service of compressor `K-102`. The storekeeper issues lube-oil filter elements and lube oil worth 3,400. A mechanic records 6 hours at the mechanical crew’s rate (6 × 200 = 1,200). Nobody in Finance writes a manual entry; the ERP posts these automatically and puts the cost on the work order as its **cost object**:',
           },
         },
         {
@@ -534,26 +551,18 @@ export const lesson: Lesson = {
             {
               date: t('حواله انبار', 'Goods issue'),
               lines: [
-                { account: ac.wip, debit: 20000 },
-                { account: ac.spares, credit: 20000 },
+                { account: w2.mat, debit: 3400 },
+                { account: ac.inventory, credit: 3400 },
               ],
-              memo: t('خروج بسته فیلتر و روغن برای WO-40002', 'Filter kit and lube oil issued to WO-40002'),
+              memo: t('المنت‌های فیلتر و روغن از انبار میدان برای WO-40002', 'Filter elements and lube oil from the Field Warehouse for WO-40002'),
             },
             {
               date: t('تأیید زمان', 'Time confirmation'),
               lines: [
-                { account: ac.wip, debit: 9000 },
-                { account: ac.labour, credit: 9000 },
+                { account: w2.lab, debit: 1200 },
+                { account: ac.mechAlloc, credit: 1200 },
               ],
-              memo: t('6 ساعت × 1,500؛ هزینه از کارگاه تعمیرات به دستور کار منتقل می‌شود', '6 hours × 1,500; cost moves from the maintenance workshop to the work order'),
-            },
-            {
-              date: t('تسویه پایان ماه', 'Month-end settlement'),
-              lines: [
-                { account: rm('مرکز هزینه CS-OPS', 'cost centre CS-OPS'), debit: 29000 },
-                { account: ac.wip, credit: 29000 },
-              ],
-              memo: t('20,000 + 9,000 = 29,000؛ برچسب بازیافت: هزینه عملیاتی قابل بازیافت', '20,000 + 9,000 = 29,000; recovery tag: recoverable operating cost'),
+              memo: t('6 ساعت × 200؛ هزینه از مرکز هزینه گروه مکانیک به دستور کار می‌آید', '6 hours × 200; the cost moves from the mechanical crew’s cost centre to the work order'),
             },
           ],
         },
@@ -562,20 +571,20 @@ export const lesson: Lesson = {
           tone: 'info',
           title: t('نکته‌های این سندها', 'Notes on these postings'),
           text: {
-            fa: 'ساختن دستور کار و رزرو کالا هیچ سند مالی ایجاد نمی‌کند؛ فقط **جابه‌جایی واقعی** (حواله، ثبت کارکرد، دریافت خدمات) و **تسویه** سند می‌زنند. حساب «کار در جریان نگهداری» مثل یک ظرف موقت است که هزینه‌ها را تا تسویه نگه می‌دارد و پس از تسویه صفر می‌شود. برخی ERPها هزینه را از همان ابتدا مستقیم به حساب هزینه می‌برند و دستور کار را فقط به‌عنوان موضوع هزینه نگه می‌دارند؛ نتیجه نهایی یکسان است.',
-            en: 'Creating a work order or a reservation posts nothing; only **real movements** (goods issues, time confirmations, service receipts) and **settlement** create entries. "Maintenance WIP" works like a temporary container that holds the costs until settlement and returns to zero afterwards. Some ERPs post costs straight to the expense account and keep the work order only as a cost object; the end result is the same.',
+            fa: 'ساختن دستور کار و رزرو کالا هیچ سند مالی ایجاد نمی‌کند؛ فقط **جابه‌جایی واقعی** سند می‌زند: حواله انبار، تأیید زمان، **رسید کالا (GRN)** برای قطعه غیرانباری و تأیید **برگه ثبت خدمات (SES)** برای کار پیمانکار. در پایان ماه، **تسویه** جمع 3,400 + 1,200 = 4,600 را از دستور کار به مرکز هزینه ایستگاه تقویت فشار (`CC-3100`) می‌برد. چون هزینه از قبل در دفتر کل ثبت شده، این تسویه جمع هزینه‌ها را تغییر نمی‌دهد؛ فقط موضوع هزینه را عوض می‌کند. برخی ERPها هزینه‌ها را ابتدا در یک حساب «کار در جریان» جمع می‌کنند و هنگام تسویه به هزینه می‌برند؛ نتیجه نهایی یکسان است.',
+            en: 'Creating a work order or a reservation posts nothing; only **real movements** post: goods issues, time confirmations, a **goods received note (GRN)** for a non-stock part and an approved **service entry sheet (SES)** for contractor work. At month-end, **settlement** moves the 3,400 + 1,200 = 4,600 from the work order to the compressor station cost centre (`CC-3100`). Because the cost is already in the general ledger, this settlement does not change total expenses; it only changes the cost object. Some ERPs first collect costs on a "work in progress" account and expense them at settlement; the end result is the same.',
           },
         },
         { type: 'h', text: t('نقش‌ها و تأییدها در این جریان', 'Roles and Approvals in This Flow') },
         {
           type: 'list',
           items: [
-            t('**برنامه‌ریز نگهداری**: دستور کار و رزرو را می‌سازد.', '**Maintenance planner**: creates the work order and the reservations.'),
-            t('**سرپرست نگهداری**: دستور کار را در سقف اختیار خود تأیید و آزاد می‌کند.', '**Maintenance supervisor**: approves and releases the work order within their authority limit.'),
-            t('**انباردار**: حواله را ثبت می‌کند و همین ثبت، سند مالی را می‌سازد.', '**Storekeeper**: posts the goods issue, and that posting creates the Finance entry.'),
+            t('**برنامه‌ریز نگهداری**: دستور کار، رزرو و درخواست خرید را می‌سازد.', '**Maintenance planner**: creates the work order, reservations and requisitions.'),
+            t('**سرپرست نگهداری**: دستور کار را در سقف اختیار خود تأیید و آزاد می‌کند و SES پیمانکار را پس از دیدن کار تأیید می‌کند.', '**Maintenance supervisor**: approves and releases the work order within their authority limit and approves the contractor’s SES after seeing the work.'),
+            t('**انباردار**: حواله و GRN را ثبت می‌کند و همین ثبت، سند مالی را می‌سازد.', '**Storekeeper**: posts goods issues and GRNs, and that posting creates the Finance entry.'),
             t(
               '**حسابدار بهای تمام‌شده**: قاعده تسویه و کد بازیافت را کنترل و تسویه ماهانه را اجرا می‌کند.',
-              '**Cost accountant**: checks the settlement rule and recovery code and runs the monthly settlement.',
+              '**Cost accountant**: checks the settlement rule and recovery flag and runs the monthly settlement.',
             ),
           ],
         },
@@ -584,8 +593,8 @@ export const lesson: Lesson = {
           tone: 'tip',
           title: t('پیوند با بازیافت هزینه', 'The link to cost recovery'),
           text: {
-            fa: 'در قراردادهای نفتی (مانند قراردادهای مشارکت در تولید، بیع متقابل یا IPC)، بهره‌بردار فقط هزینه‌هایی را می‌تواند بازیافت کند که با موضوع هزینه درست و مدارک پشتیبان ثبت شده باشند. دستور کار همان مدرک است: نشان می‌دهد چه کاری، روی کدام تجهیز، با چه قطعاتی و با چند ساعت کار انجام شده است.',
-            en: 'Under petroleum contracts (such as production sharing, buy-back or IPC contracts), the operator can recover only costs recorded against the right cost object with supporting documents. The work order is that evidence: it shows what was done, on which equipment, with which parts and how many hours.',
+            fa: 'در قراردادهای نفتی (مانند قراردادهای مشارکت در تولید، بیع متقابل یا IPC)، بهره‌بردار فقط هزینه‌هایی را می‌تواند بازیافت کند که با موضوع هزینه درست و مدارک پشتیبان ثبت شده باشند. هر سطر هزینه در مسار پترولیوم کدگذاری مشترک دارد: کد شرکت (MP01)، مرکز هزینه (مثلاً CC-3100)، عنصر WBS اگر کار سرمایه‌ای باشد (مثلاً AFE-2026-07.02.03)، حساب کل، **پرچم بازیافت** (R قابل بازیافت، N غیرقابل بازیافت) و **طبقه هزینه** (اکتشاف، توسعه یا عملیاتی). دستور کار، حواله‌ها، GRN و SES همان مدارک‌اند.',
+            en: 'Under petroleum contracts (such as production sharing, buy-back or IPC contracts), the operator can recover only costs recorded against the right cost object with supporting documents. Every cost line at Masar Petroleum carries the shared coding: company code (MP01), cost centre (for example CC-3100), WBS element for capital work (for example AFE-2026-07.02.03), GL account, a **recovery flag** (R recoverable, N non-recoverable) and a **cost category** (Exploration, Development or Operating). The work order, goods issues, GRNs and SESs are that evidence.',
           },
         },
       ],
@@ -630,8 +639,8 @@ export const lesson: Lesson = {
               '**Charging costs to a general cost centre.** Cost that lands on "field miscellaneous" cannot tell you which equipment is expensive.',
             ),
             t(
-              '**جدا کار کردن واحدها.** اگر بهره‌برداری عیب را گزارش نکند یا مالی قاعده تسویه را کنترل نکند، کل زنجیره خراب می‌شود.',
-              '**Departments working in silos.** If operations does not report defects or Finance does not check settlement rules, the whole chain breaks.',
+              '**جدا کار کردن واحدها.** اگر بهره‌برداری عیب را گزارش نکند، کسی SES را به‌موقع تأیید نکند یا مالی قاعده تسویه را کنترل نکند، کل زنجیره خراب می‌شود.',
+              '**Departments working in silos.** If operations does not report defects, nobody approves SESs on time, or Finance does not check settlement rules, the whole chain breaks.',
             ),
           ],
         },
@@ -655,17 +664,17 @@ export const lesson: Lesson = {
           title: t('مرحله چرخه عمر', 'Lifecycle stages'),
           difficulty: 'easy',
           problem: t(
-            'هر فعالیت پارس‌آریا را به یکی از مراحل چرخه عمر نسبت دهید: برنامه‌ریزی، تأمین، نصب و سرمایه‌ای کردن، بهره‌برداری و نگهداری، اصلاح یا نوسازی، کنارگذاری.',
-            'Assign each Pars Arya activity to one lifecycle stage: plan, acquire, install and capitalise, operate and maintain, modify or renew, dispose.',
+            'هر فعالیت مسار پترولیوم را به یکی از مراحل چرخه عمر نسبت دهید: برنامه‌ریزی، تأمین، نصب و سرمایه‌ای کردن، بهره‌برداری و نگهداری، اصلاح یا نوسازی، کنارگذاری.',
+            'Assign each Masar Petroleum activity to one lifecycle stage: plan, acquire, install and capitalise, operate and maintain, modify or renew, dispose.',
           ),
           given: {
             head: [t('ردیف', 'No.'), t('فعالیت', 'Activity')],
             rows: [
-              [t('1', '1'), t('تصویب AFE برای کمپرسور سوم', 'Approving an AFE for a third compressor')],
-              [t('2', '2'), t('سفارش کمپرسور به‌عنوان قلم با زمان تحویل طولانی', 'Ordering the compressor as a long-lead item')],
-              [t('3', '3'), t('آزمایش راه‌اندازی و تحویل به بهره‌برداری', 'Commissioning tests and handover to operations')],
-              [t('4', '4'), t('پایش ماهانه لرزش K-101A', 'Monthly vibration monitoring of K-101A')],
-              [t('5', '5'), t('تعمیرات اساسی پس از 32,000 ساعت کارکرد', 'Overhaul after 32,000 running hours')],
+              [t('1', '1'), t('تصویب AFE-2026-07 برای کمپرسور سوم K-103', 'Approving AFE-2026-07 for the third compressor K-103')],
+              [t('2', '2'), t('سفارش K-103 به‌عنوان قلم با زمان تحویل طولانی', 'Ordering K-103 as a long-lead item')],
+              [t('3', '3'), t('آزمایش راه‌اندازی K-103 و تحویل به بهره‌برداری', 'Commissioning tests of K-103 and handover to operations')],
+              [t('4', '4'), t('پایش ماهانه لرزش K-101', 'Monthly vibration monitoring of K-101')],
+              [t('5', '5'), t('تعمیر اساسی 4 ساله توربین گازی K-102', 'Four-yearly major overhaul of the K-102 gas turbine')],
               [t('6', '6'), t('مسدودسازی و متروک‌سازی چاه خشک AR-11', 'Plugging and abandoning dry well AR-11')],
             ],
           },
@@ -687,8 +696,8 @@ export const lesson: Lesson = {
               type: 'callout',
               tone: 'tip',
               text: t(
-                'برای ردیف 5، مالی باید تصمیم بگیرد بخشی از هزینه تعمیرات اساسی سرمایه‌ای است یا هزینه دوره؛ این تصمیم را در درس‌های بعدی این دوره می‌بینیم.',
-                'For item 5, Finance must decide whether part of the overhaul cost is capital or a period expense; we look at this decision later in the course.',
+                'برای ردیف 5، مالی باید تصمیم بگیرد هزینه تعمیر اساسی سرمایه‌ای است یا هزینه دوره؛ این تصمیم را در درس «حسابداری دارایی‌ها و هزینه‌های سرمایه‌ای» می‌بینیم.',
+                'For item 5, Finance must decide whether the overhaul cost is capital or a period expense; we look at this decision in the lesson on asset accounting and CAPEX.',
               ),
             },
           ],
@@ -702,8 +711,8 @@ export const lesson: Lesson = {
           title: t('دسترس‌پذیری کمپرسور', 'Compressor availability'),
           difficulty: 'medium',
           problem: t(
-            'کمپرسور `K-101B` در یک سال (8,760 ساعت) 120 ساعت توقف برنامه‌ریزی‌شده برای سرویس و 156 ساعت توقف ناشی از خرابی داشته است. دسترس‌پذیری آن را حساب کنید. آیا هدف 97٪ برآورده شده است؟ برای رسیدن به هدف، حداکثر چند ساعت توقف مجاز بود؟',
-            'Compressor `K-101B` had, in one year (8,760 hours), 120 hours of planned downtime for servicing and 156 hours of downtime from failures. Calculate its availability. Was the 97% target met? What was the maximum downtime allowed to meet the target?',
+            'کمپرسور `K-102` در یک سال (8,760 ساعت) 120 ساعت توقف برنامه‌ریزی‌شده برای سرویس و 156 ساعت توقف ناشی از خرابی داشته است. دسترس‌پذیری آن را حساب کنید. آیا هدف 97٪ برآورده شده است؟ برای رسیدن به هدف، حداکثر چند ساعت توقف مجاز بود؟',
+            'Compressor `K-102` had, in one year (8,760 hours), 120 hours of planned downtime for servicing and 156 hours of downtime from failures. Calculate its availability. Was the 97% target met? What was the maximum downtime allowed to meet the target?',
           ),
           solution: [
             {
@@ -740,14 +749,14 @@ export const lesson: Lesson = {
           title: t('هزینه چرخه عمر دو پمپ', 'Life-cycle cost of two pumps'),
           difficulty: 'medium',
           problem: t(
-            'پارس‌آریا باید برای ایستگاه بهره‌برداری یک پمپ میعانات بخرد. عمر مفید هر دو گزینه 15 سال و هزینه کنارگذاری هر دو 10,000 است. بر پایه هزینه چرخه عمر (بدون تنزیل) کدام را انتخاب می‌کنید؟',
-            'Pars Arya must buy a condensate pump for the production station. Both options have a 15-year useful life and a disposal cost of 10,000. Based on life-cycle cost (not discounted), which do you choose?',
+            'مسار پترولیوم باید برای ایستگاه بهره‌برداری یک پمپ میعانات بخرد. عمر مفید هر دو گزینه 15 سال و هزینه کنارگذاری هر دو 5,000 است. بر پایه هزینه چرخه عمر (بدون تنزیل) کدام را انتخاب می‌کنید؟',
+            'Masar Petroleum must buy a condensate pump for the production station. Both options have a 15-year useful life and a disposal cost of 5,000. Based on life-cycle cost (not discounted), which do you choose?',
           ),
           given: {
             head: [t('گزینه', 'Option'), t('قیمت خرید', 'Purchase price'), t('انرژی و نگهداری سالانه', 'Annual energy and maintenance')],
             rows: [
-              [t('پمپ X', 'Pump X'), 400000, 90000],
-              [t('پمپ Y', 'Pump Y'), 520000, 78000],
+              [t('پمپ X', 'Pump X'), 120000, 30000],
+              [t('پمپ Y', 'Pump Y'), 150000, 26000],
             ],
             numericCols: [1, 2],
           },
@@ -756,46 +765,46 @@ export const lesson: Lesson = {
               type: 'table',
               head: [t('قلم', 'Item'), t('پمپ X', 'Pump X'), t('پمپ Y', 'Pump Y')],
               rows: [
-                [t('قیمت خرید', 'Purchase price'), 400000, 520000],
-                [t('انرژی و نگهداری (15 سال)', 'Energy and maintenance (15 years)'), 1350000, 1170000],
-                [t('کنارگذاری', 'Disposal'), 10000, 10000],
-                [t('جمع هزینه چرخه عمر', 'Total life-cycle cost'), 1760000, 1700000],
+                [t('قیمت خرید', 'Purchase price'), 120000, 150000],
+                [t('انرژی و نگهداری (15 سال)', 'Energy and maintenance (15 years)'), 450000, 390000],
+                [t('کنارگذاری', 'Disposal'), 5000, 5000],
+                [t('جمع هزینه چرخه عمر', 'Total life-cycle cost'), 575000, 545000],
               ],
               numericCols: [1, 2],
             },
             {
               type: 'p',
               text: t(
-                'انرژی و نگهداری: X برابر 15 × 90,000 = 1,350,000 و Y برابر 15 × 78,000 = 1,170,000. پمپ Y با اینکه 120,000 گران‌تر است، در کل عمر 60,000 ارزان‌تر تمام می‌شود.',
-                'Energy and maintenance: X is 15 × 90,000 = 1,350,000 and Y is 15 × 78,000 = 1,170,000. Pump Y costs 120,000 more to buy but 60,000 less over its life.',
+                'انرژی و نگهداری: X برابر 15 × 30,000 = 450,000 و Y برابر 15 × 26,000 = 390,000. پمپ Y با اینکه 30,000 گران‌تر است، در کل عمر 30,000 ارزان‌تر تمام می‌شود.',
+                'Energy and maintenance: X is 15 × 30,000 = 450,000 and Y is 15 × 26,000 = 390,000. Pump Y costs 30,000 more to buy but 30,000 less over its life.',
               ),
             },
             {
               type: 'callout',
               tone: 'info',
               text: t(
-                'در عمل، متخصصان جریان‌های آینده را با یک نرخ تنزیل به ارزش فعلی برمی‌گردانند. با تنزیل، فاصله دو گزینه کمتر می‌شود، چون صرفه‌جویی پمپ Y در سال‌های آینده رخ می‌دهد.',
-                'In practice, professionals discount future cash flows to present value. Discounting narrows the gap, because Pump Y’s savings arrive in future years.',
+                'در عمل، متخصصان جریان‌های آینده را با یک نرخ تنزیل به ارزش فعلی برمی‌گردانند. با تنزیل، فاصله دو گزینه کمتر می‌شود، چون صرفه‌جویی پمپ Y در سال‌های آینده رخ می‌دهد؛ ممکن است حتی برتری Y از بین برود.',
+                'In practice, professionals discount future cash flows to present value. Discounting narrows the gap, because Pump Y’s savings arrive in future years; it may even remove Y’s advantage.',
               ),
             },
           ],
-          answer: t('پمپ Y: هزینه چرخه عمر 1,700,000 در برابر 1,760,000 برای پمپ X (60,000 کمتر)', 'Pump Y: life-cycle cost 1,700,000 vs 1,760,000 for Pump X (60,000 less)'),
+          answer: t('پمپ Y: هزینه چرخه عمر 545,000 در برابر 575,000 برای پمپ X (30,000 کمتر)', 'Pump Y: life-cycle cost 545,000 vs 575,000 for Pump X (30,000 less)'),
         },
         {
           type: 'exercise',
           title: t('سندهای خودکار یک دستور کار', 'Automatic postings of a work order'),
           difficulty: 'hard',
           problem: t(
-            'فرستنده سطح `LT-112` روی جداکننده `V-110` در ایستگاه بهره‌برداری خراب شده و برای آن دستور کار `WO-40009` باز شده است. رویدادهای زیر در ERP ثبت شده‌اند. سندهایی را که ERP خودکار ثبت می‌کند بنویسید و مبلغ تسویه را به دست آورید. گیرنده: مرکز هزینه ایستگاه بهره‌برداری (`PS-OPS`)، کد بازیافت: هزینه عملیاتی قابل بازیافت. مالیات بر ارزش افزوده را در نظر نگیرید.',
-            'Level transmitter `LT-112` on separator `V-110` at the production station has failed, and work order `WO-40009` was opened. The events below were recorded in the ERP. Write the entries the ERP posts automatically and find the settlement amount. Receiver: the production station cost centre (`PS-OPS`); recovery code: recoverable operating cost. Ignore VAT.',
+            'فرستنده سطح `LT-201` روی جداکننده `V-201` در ایستگاه بهره‌برداری خراب شده و برای آن دستور کار `WO-40009` باز شده است. رویدادهای زیر در ERP ثبت شده‌اند. سندهایی را که ERP خودکار ثبت می‌کند بنویسید و مبلغ تسویه را به دست آورید. گیرنده: مرکز هزینه ایستگاه بهره‌برداری (`CC-3200`)، پرچم بازیافت R، طبقه هزینه عملیاتی. مالیات بر ارزش افزوده را در نظر نگیرید.',
+            'Level transmitter `LT-201` on separator `V-201` at the production station has failed, and work order `WO-40009` was opened. The events below were recorded in the ERP. Write the entries the ERP posts automatically and find the settlement amount. Receiver: the production station cost centre (`CC-3200`), recovery flag R, cost category Operating. Ignore VAT.',
           ),
           given: {
             head: [t('رویداد', 'Event'), t('شرح', 'Detail'), t('مبلغ', 'Amount')],
             rows: [
-              [t('حواله انبار', 'Goods issue'), t('یک فرستنده سطح نو از انبار میدان', 'One new level transmitter from the Field Warehouse'), 35000],
-              [t('تأیید خدمات', 'Service entry'), t('کالیبراسیون توسط پیمانکار', 'Calibration by a contractor'), 12000],
-              [t('فاکتور پیمانکار', 'Contractor invoice'), t('فاکتور همان خدمت', 'Invoice for the same service'), 12000],
-              [t('تأیید زمان', 'Time confirmation'), t('5 ساعت تکنسین ابزاردقیق × 1,800', '5 instrument-technician hours × 1,800'), 9000],
+              [t('حواله انبار', 'Goods issue'), t('یک فرستنده سطح نو از انبار میدان', 'One new level transmitter from the Field Warehouse'), 5300],
+              [t('تأیید SES', 'SES approved'), t('کالیبراسیون توسط پیمانکار', 'Calibration by a contractor'), 1800],
+              [t('فاکتور پیمانکار', 'Contractor invoice'), t('فاکتور همان خدمت', 'Invoice for the same service'), 1800],
+              [t('تأیید زمان', 'Time confirmation'), t('5 ساعت تکنسین ابزاردقیق × 180', '5 instrument-technician hours × 180'), 900],
             ],
             numericCols: [2],
           },
@@ -807,50 +816,51 @@ export const lesson: Lesson = {
                 {
                   date: t('حواله انبار', 'Goods issue'),
                   lines: [
-                    { account: ac.wip, debit: 35000 },
-                    { account: ac.spares, credit: 35000 },
+                    { account: w9.mat, debit: 5300 },
+                    { account: ac.inventory, credit: 5300 },
                   ],
                 },
                 {
-                  date: t('تأیید خدمات', 'Service entry'),
+                  date: t('تأیید SES', 'SES approved'),
                   lines: [
-                    { account: ac.wip, debit: 12000 },
-                    { account: ac.grir, credit: 12000 },
+                    { account: w9.svc, debit: 1800 },
+                    { account: ac.grir, credit: 1800 },
                   ],
                 },
                 {
                   date: t('فاکتور پیمانکار', 'Contractor invoice'),
                   lines: [
-                    { account: ac.grir, debit: 12000 },
-                    { account: ac.ap, credit: 12000 },
+                    { account: ac.grir, debit: 1800 },
+                    { account: ac.ap, credit: 1800 },
                   ],
+                  memo: t('تطبیق سه‌طرفه: سفارش خرید، SES و فاکتور', 'Three-way match: purchase order, SES and invoice'),
                 },
                 {
                   date: t('تأیید زمان', 'Time confirmation'),
                   lines: [
-                    { account: ac.wip, debit: 9000 },
-                    { account: ac.labour, credit: 9000 },
+                    { account: w9.lab, debit: 900 },
+                    { account: ac.instAlloc, credit: 900 },
                   ],
                 },
                 {
                   date: t('تسویه پایان ماه', 'Month-end settlement'),
                   lines: [
-                    { account: rm('مرکز هزینه PS-OPS', 'cost centre PS-OPS'), debit: 56000 },
-                    { account: ac.wip, credit: 56000 },
+                    { account: receiver('CC-3200', 'CC-3200'), debit: 8000 },
+                    { account: w9.sender, credit: 8000 },
                   ],
-                  memo: t('برچسب بازیافت: هزینه عملیاتی قابل بازیافت', 'Recovery tag: recoverable operating cost'),
+                  memo: t('انتقال موضوع هزینه از دستور کار به مرکز هزینه؛ جمع هزینه‌ها تغییر نمی‌کند', 'Moves the cost object from the work order to the cost centre; total expenses do not change'),
                 },
               ],
             },
             {
               type: 'p',
               text: t(
-                'مانده کار در جریان پیش از تسویه: 35,000 + 12,000 + 9,000 = 56,000. فاکتور فقط حساب واسط را صفر و بدهی به پیمانکار را ثبت می‌کند. پس از تسویه، مانده کار در جریان برای این دستور کار صفر است.',
-                'WIP balance before settlement: 35,000 + 12,000 + 9,000 = 56,000. The invoice only clears the GR/IR account and records the debt to the contractor. After settlement the WIP balance for this order is zero.',
+                'هزینه روی دستور کار پیش از تسویه: 5,300 + 1,800 + 900 = 8,000. فاکتور فقط حساب واسط را صفر و بدهی به پیمانکار را ثبت می‌کند. پس از تسویه، مانده هزینه روی WO-40009 صفر است و 8,000 روی CC-3200 با پرچم R نشسته است.',
+                'Cost on the work order before settlement: 5,300 + 1,800 + 900 = 8,000. The invoice only clears GR/IR and records the debt to the contractor. After settlement WO-40009 shows zero and the 8,000 sits on CC-3200 with flag R.',
               ),
             },
           ],
-          answer: t('مبلغ تسویه 56,000 به مرکز هزینه PS-OPS با برچسب هزینه عملیاتی قابل بازیافت', 'Settlement of 56,000 to cost centre PS-OPS, tagged as recoverable operating cost'),
+          answer: t('مبلغ تسویه 8,000 به مرکز هزینه CC-3200 با پرچم R و طبقه عملیاتی', 'Settlement of 8,000 to cost centre CC-3200, flag R, category Operating'),
         },
       ],
     },
@@ -878,12 +888,12 @@ export const lesson: Lesson = {
               'Operations, maintenance, integrity, reliability, warehouse and procurement, HSE and finance each own part of the work and the documents.',
             ),
             t(
-              'ماژول EAM با انبار، تدارکات، پروژه‌ها، منابع انسانی و مالی یکپارچه است؛ فقط جابه‌جایی‌های واقعی و تسویه سند مالی خودکار می‌سازند.',
-              'The EAM module is integrated with inventory, procurement, projects, HR and finance; only real movements and settlement create automatic Finance entries.',
+              'ماژول EAM با انبار، تدارکات، پروژه‌ها، منابع انسانی و مالی یکپارچه است؛ فقط جابه‌جایی‌های واقعی (حواله، تأیید زمان، GRN و SES) سند مالی خودکار می‌سازند و تسویه هزینه را به موضوع نهایی می‌برد.',
+              'The EAM module is integrated with inventory, procurement, projects, HR and finance; only real movements (goods issues, time confirmations, GRNs and SESs) create automatic Finance entries, and settlement moves the cost to its final object.',
             ),
             t(
-              'هر هزینه نگهداری باید موضوع هزینه درست و مدارک کامل داشته باشد تا در قرارداد نفتی قابل بازیافت باشد.',
-              'Every maintenance cost needs the right cost object and full documents to be recoverable under the petroleum contract.',
+              'هر هزینه نگهداری باید موضوع هزینه درست، پرچم بازیافت و مدارک کامل داشته باشد تا در قرارداد نفتی قابل بازیافت باشد.',
+              'Every maintenance cost needs the right cost object, a recovery flag and full documents to be recoverable under the petroleum contract.',
             ),
           ],
         },
@@ -898,9 +908,9 @@ export const lesson: Lesson = {
             { term: t('دسترس‌پذیری', 'Availability'), def: t('نسبت زمانی که تجهیز آماده کار بوده به کل زمان دوره', 'The share of the period in which equipment was able to run') },
             { term: t('مالک دارایی', 'Asset owner'), def: t('فردی که درباره عملکرد، ریسک و بودجه یک دارایی پاسخ‌گوست', 'The person accountable for an asset’s performance, risk and budget') },
             { term: t('ماژول مدیریت دارایی و نگهداری (EAM)', 'Enterprise Asset Management (EAM) module'), def: t('بخشی از ERP که داده‌ها و کارهای نگهداری دارایی‌ها را مدیریت می‌کند', 'The part of the ERP that manages asset data and maintenance work') },
-            { term: t('کار در جریان نگهداری', 'Maintenance WIP'), def: t('حساب موقتی که هزینه‌های دستور کار را تا تسویه نگه می‌دارد', 'A temporary account that holds work-order costs until settlement') },
-            { term: t('تسویه دستور کار', 'Work-order settlement'), def: t('انتقال هزینه جمع‌شده روی دستور کار به گیرنده نهایی مانند مرکز هزینه، چاه یا AFE', 'Moving the cost collected on a work order to its final receiver such as a cost centre, well or AFE') },
-            { term: t('مجوز هزینه‌کرد (AFE)', 'Authorisation for Expenditure (AFE)'), def: t('بودجه تصویب‌شده برای یک پروژه یا کار مشخص، اغلب با تأیید شرکا', 'An approved budget for a specific project or job, often approved by the partners') },
+            { term: t('موضوع هزینه', 'Cost object'), def: t('چیزی که هزینه روی آن ثبت می‌شود: دستور کار، مرکز هزینه، چاه یا AFE', 'What a cost is recorded against: a work order, cost centre, well or AFE') },
+            { term: t('رسید کالا (GRN) و برگه ثبت خدمات (SES)', 'Goods received note (GRN) and service entry sheet (SES)'), def: t('اسناد دریافت کالا و پذیرش خدمات که هزینه را ثبت و حساب واسط GR/IR را بستانکار می‌کنند', 'The documents for receiving goods and accepting services; they post the cost and credit the GR/IR account') },
+            { term: t('تسویه دستور کار', 'Work-order settlement'), def: t('انتقال هزینه ثبت‌شده روی دستور کار به گیرنده نهایی مانند مرکز هزینه، چاه یا AFE', 'Moving the cost recorded on a work order to its final receiver such as a cost centre, well or AFE') },
             { term: t('بازیافت هزینه', 'Cost recovery'), def: t('بازگرداندن هزینه‌های مستند بهره‌بردار از محل تولید، طبق قرارداد نفتی', 'Recovering the operator’s documented costs out of production under the petroleum contract') },
           ],
         },
@@ -1005,31 +1015,31 @@ export const lesson: Lesson = {
       options: [
         t('حواله قطعه از انبار به دستور کار', 'Issuing a part from the warehouse to a work order'),
         t('ساختن دستور کار و رزرو قطعات', 'Creating a work order and reserving parts'),
+        t('تأیید SES پیمانکار برای کار انجام‌شده روی دستور کار', 'Approving a contractor’s SES for work done on a work order'),
         t('ثبت ساعت کار تکنسین روی دستور کار', 'Confirming a technician’s hours on a work order'),
-        t('تسویه پایان ماه دستور کار', 'Month-end settlement of a work order'),
       ],
       answer: 1,
       explain: t(
-        'دستور کار و رزرو فقط برنامه‌اند و هنوز چیزی جابه‌جا نشده است. حواله، تأیید زمان و تسویه هر سه هزینه واقعی را جابه‌جا می‌کنند و سند خودکار می‌سازند.',
-        'A work order and a reservation are only plans; nothing has moved yet. Goods issues, time confirmations and settlement all move real cost and post automatically.',
+        'دستور کار و رزرو فقط برنامه‌اند و هنوز چیزی جابه‌جا نشده است. حواله، تأیید SES و تأیید زمان هر سه هزینه واقعی را ثبت می‌کنند و سند خودکار می‌سازند (SES: بدهکار دستور کار، بستانکار GR/IR).',
+        'A work order and a reservation are only plans; nothing has moved yet. Goods issues, SES approvals and time confirmations all record real cost and post automatically (SES: debit the work order, credit GR/IR).',
       ),
     },
     {
       q: t(
-        'برای یک دستور کار، قطعاتی به ارزش 14,000 حواله و 5 ساعت کار با نرخ 1,600 ثبت شده است. مبلغ تسویه پایان ماه چقدر است؟',
-        'A work order has 14,000 of parts issued and 5 hours confirmed at a rate of 1,600. What is the month-end settlement amount?',
+        'برای یک دستور کار، قطعاتی به ارزش 2,800 حواله و 5 ساعت کار با نرخ 200 ثبت شده است. چه مبلغی در پایان ماه تسویه می‌شود؟',
+        'A work order has 2,800 of parts issued and 5 hours confirmed at a rate of 200. What amount is settled at month-end?',
       ),
-      options: [t('22,000', '22,000'), t('14,000', '14,000'), t('8,000', '8,000'), t('15,600', '15,600')],
+      options: [t('3,800', '3,800'), t('2,800', '2,800'), t('1,000', '1,000'), t('3,000', '3,000')],
       answer: 0,
       explain: t(
-        'دستمزد = 5 × 1,600 = 8,000. جمع روی دستور کار = 14,000 + 8,000 = 22,000 که کامل به گیرنده تسویه می‌شود. 15,600 نتیجه جمع کردن نرخ به‌جای مبلغ دستمزد است.',
-        'Labour = 5 × 1,600 = 8,000. Total on the order = 14,000 + 8,000 = 22,000, all settled to the receiver. 15,600 comes from adding the rate instead of the labour amount.',
+        'دستمزد = 5 × 200 = 1,000. جمع روی دستور کار = 2,800 + 1,000 = 3,800 که کامل به گیرنده تسویه می‌شود. 3,000 نتیجه جمع کردن نرخ به‌جای مبلغ دستمزد است.',
+        'Labour = 5 × 200 = 1,000. Total on the order = 2,800 + 1,000 = 3,800, all settled to the receiver. 3,000 comes from adding the rate instead of the labour amount.',
       ),
     },
     {
       q: t(
-        'چرا هر هزینه نگهداری باید موضوع هزینه درست (چاه، مرکز هزینه یا AFE) و مدارک پشتیبان داشته باشد؟',
-        'Why must every maintenance cost carry the right cost object (well, cost centre or AFE) and supporting documents?',
+        'چرا هر هزینه نگهداری باید موضوع هزینه درست (چاه، مرکز هزینه یا AFE)، پرچم بازیافت و مدارک پشتیبان داشته باشد؟',
+        'Why must every maintenance cost carry the right cost object (well, cost centre or AFE), a recovery flag and supporting documents?',
       ),
       options: [
         t('فقط برای اینکه سیستم خطا ندهد', 'Only so the system does not show an error'),
@@ -1039,8 +1049,8 @@ export const lesson: Lesson = {
       ],
       answer: 3,
       explain: t(
-        'موضوع هزینه درست نشان می‌دهد هر دارایی چقدر هزینه دارد و مدارک (دستور کار، حواله، ساعت‌ها) شرط بازیافت هزینه و پاسخ به حسابرسی شرکاست. هیچ‌کدام از گزینه‌های دیگر دلیل اصلی نیست.',
-        'The right cost object shows what each asset costs, and the documents (work order, goods issues, hours) are the condition for cost recovery and partner audits. None of the other options is the real reason.',
+        'موضوع هزینه درست نشان می‌دهد هر دارایی چقدر هزینه دارد و مدارک (دستور کار، حواله، GRN، SES و ساعت‌ها) شرط بازیافت هزینه و پاسخ به حسابرسی شرکاست. هیچ‌کدام از گزینه‌های دیگر دلیل اصلی نیست.',
+        'The right cost object shows what each asset costs, and the documents (work order, goods issues, GRNs, SESs and hours) are the condition for cost recovery and partner audits. None of the other options is the real reason.',
       ),
     },
   ],

@@ -11,8 +11,8 @@ export const lesson: Lesson = {
   tone: 'gold',
   title: { fa: 'شمارش موجودی و کنترل انبار', en: 'Counting and Inventory Control' },
   summary: {
-    fa: 'موجودی واقعی قفسه‌ها باید با کاردکس سیستم یکی باشد. در این درس با مثال انبار میدان پارس‌آریا، انبارگردانی و شمارش چرخه‌ای، بررسی و ثبت مغایرت‌ها و سند مالی آن‌ها، تحلیل ABC و XYZ، اقلام کم‌گردش و منسوخ و کاهش ارزش موجودی، و کنترل‌های داخلی انبار را یاد می‌گیرید.',
-    en: 'What is on the shelves must match the stock ledger in the system. Using Pars Arya’s Field Warehouse, this lesson covers full and cycle counts, investigating and posting differences (and the Finance entry they create), ABC and XYZ analysis, slow-moving and obsolete stock and write-downs, and the internal controls a warehouse needs.',
+    fa: 'موجودی واقعی قفسه‌ها باید با کاردکس سیستم یکی باشد. در این درس با مثال انبار میدان مسار پترولیوم، انبارگردانی و شمارش چرخه‌ای، بررسی و ثبت مغایرت‌ها و سند مالی آن‌ها، تحلیل ABC و XYZ، اقلام کم‌گردش و منسوخ و کاهش ارزش موجودی، و کنترل‌های داخلی انبار را یاد می‌گیرید.',
+    en: 'What is on the shelves must match the stock ledger in the system. Using Masar Petroleum’s Field Warehouse, this lesson covers full and cycle counts, investigating and posting differences (and the Finance entry they create), ABC and XYZ analysis, slow-moving and obsolete stock and write-downs, and the internal controls a warehouse needs.',
   },
   objectives: [
     {
@@ -284,7 +284,7 @@ export const lesson: Lesson = {
           ],
           rows: [
             [
-              { fa: 'حواله یا رسید ثبت‌نشده', en: 'Unposted issue or receipt' },
+              { fa: 'حواله یا رسید کالا (GRN) ثبت‌نشده', en: 'Unposted goods issue or GRN' },
               { fa: 'کسری (حواله) یا اضافی (رسید) به اندازه یک تحویل', en: 'A shortage (issue) or surplus (receipt) equal to one delivery' },
               { fa: 'رزروها، دستور کارها و رسیدهای باز را ببینید؛ سند جاافتاده را ثبت کنید، نه مغایرت را', en: 'Check open reservations, work orders and receipts; post the missing document, not a difference' },
             ],
@@ -325,8 +325,8 @@ export const lesson: Lesson = {
           tone: 'tip',
           title: { fa: 'حد مجاز و شمارش مجدد (اعداد فرضی)', en: 'Tolerance and recount rules (illustrative)' },
           text: {
-            fa: 'قاعده پارس‌آریا این است: اگر مغایرت یک قلم بیش از **2% مقدار** یا بیش از **500 به مبلغ** باشد، یا قلم سریال‌دار یا حیاتی باشد، شخص دیگری آن را دوباره می‌شمارد و فقط نتیجه شمارش مجدد ملاک است. هر شرکت این مرزها را در دستورالعمل انبار خود تعیین می‌کند.',
-            en: 'Pars Arya’s rule: if an item’s difference is more than **2% of the quantity** or more than **500 in value**, or the item is serialised or critical, a different person recounts it and only the recount result counts. Each company sets these limits in its warehouse procedure.',
+            fa: 'قاعده مسار پترولیوم این است: اگر مغایرت یک قلم بیش از **2% مقدار** یا بیش از **500 به مبلغ** باشد، یا قلم سریال‌دار یا حیاتی باشد، شخص دیگری آن را دوباره می‌شمارد و فقط نتیجه شمارش مجدد ملاک است. هر شرکت این مرزها را در دستورالعمل انبار خود تعیین می‌کند.',
+            en: 'Masar Petroleum’s rule: if an item’s difference is more than **2% of the quantity** or more than **500 in value**, or the item is serialised or critical, a different person recounts it and only the recount result counts. Each company sets these limits in its warehouse procedure.',
           },
         },
         { type: 'h', text: { fa: 'در ERP: داده پایه، اسناد و نقش‌ها', en: 'In the ERP: master data, documents and roles' } },
@@ -385,7 +385,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: { fa: 'سقف تأیید مغایرت در پارس‌آریا (اعداد فرضی)', en: 'Pars Arya approval limits for differences (illustrative)' },
+          caption: { fa: 'سقف تأیید مغایرت در مسار پترولیوم (اعداد فرضی)', en: 'Masar Petroleum approval limits for differences (illustrative)' },
           head: [
             { fa: 'جمع مبلغ مطلق مغایرت‌های یک سند', en: 'Absolute total of differences on one document' },
             { fa: 'تأییدکننده', en: 'Approver' },
@@ -852,8 +852,8 @@ export const lesson: Lesson = {
               en: '**Writing down insurance spares on age alone**: slow-moving is not the same as obsolete.',
             },
             {
-              fa: '**رایگان دانستن اضافی انبار**: اضافی هم باید بررسی شود؛ شاید کالای شخص دیگری، رسید ثبت‌نشده یا حواله‌ای باشد که دو بار ثبت شده است.',
-              en: '**Treating a surplus as free stock**: surpluses need investigating too; they may be someone else’s goods, an unposted receipt or an issue posted twice.',
+              fa: '**رایگان دانستن اضافی انبار**: اضافی هم باید بررسی شود؛ شاید کالای شخص دیگری، یک GRN ثبت‌نشده یا حواله‌ای باشد که دو بار ثبت شده است.',
+              en: '**Treating a surplus as free stock**: surpluses need investigating too; they may be someone else’s goods, an unposted GRN or an issue posted twice.',
             },
           ],
         },
@@ -1112,8 +1112,8 @@ export const lesson: Lesson = {
           title: { fa: 'ذخیره کاهش ارزش بر اساس سن موجودی', en: 'A write-down allowance based on stock age' },
           difficulty: 'hard',
           problem: {
-            fa: 'گزارش سن موجودی انبار میدان در پایان سال (به بهای تمام‌شده) در جدول زیر آمده است. سیاست پارس‌آریا (درصدها فرضی‌اند): اقلامی که 12 تا 24 ماه گردش نداشته‌اند 25%، 24 تا 36 ماه 50% و بیش از 36 ماه 100% ذخیره کاهش ارزش می‌گیرند، اما **قطعات بیمه‌ای** که تجهیزشان هنوز در کار است مستثنا هستند. در گروه 24 تا 36 ماه، یک روتور یدکی کمپرسور K-201 به بهای 30,000 هست. مانده فعلی حساب ذخیره کاهش ارزش موجودی **55,000** است. (الف) ذخیره لازم پایان سال را حساب کنید. (ب) سند تعدیل را بنویسید. (ج) خالص موجودی در ترازنامه چقدر است؟ (د) این مبلغ از نظر بازیافت هزینه چه وضعی دارد؟',
-            en: 'The table shows the Field Warehouse stock-aging report at year-end (at cost). Pars Arya’s policy (illustrative percentages): items with no movement for 12 to 24 months carry a 25% write-down allowance, 24 to 36 months 50%, and over 36 months 100%, except **insurance spares** whose equipment is still running. The 24-to-36-month group includes a spare rotor for compressor K-201 costing 30,000. The Allowance for inventory write-down currently has a balance of **55,000**. (a) Compute the required year-end allowance. (b) Write the adjusting entry. (c) What is net inventory on the balance sheet? (d) How does this amount stand for cost recovery?',
+            fa: 'گزارش سن موجودی انبار میدان در پایان سال (به بهای تمام‌شده) در جدول زیر آمده است. سیاست مسار پترولیوم (درصدها فرضی‌اند): اقلامی که 12 تا 24 ماه گردش نداشته‌اند 25%، 24 تا 36 ماه 50% و بیش از 36 ماه 100% ذخیره کاهش ارزش می‌گیرند، اما **قطعات بیمه‌ای** که تجهیزشان هنوز در کار است مستثنا هستند. در گروه 24 تا 36 ماه، یک روتور یدکی کمپرسور K-201 به بهای 30,000 هست. مانده فعلی حساب ذخیره کاهش ارزش موجودی **55,000** است. (الف) ذخیره لازم پایان سال را حساب کنید. (ب) سند تعدیل را بنویسید. (ج) خالص موجودی در ترازنامه چقدر است؟ (د) این مبلغ از نظر بازیافت هزینه چه وضعی دارد؟',
+            en: 'The table shows the Field Warehouse stock-aging report at year-end (at cost). Masar Petroleum’s policy (illustrative percentages): items with no movement for 12 to 24 months carry a 25% write-down allowance, 24 to 36 months 50%, and over 36 months 100%, except **insurance spares** whose equipment is still running. The 24-to-36-month group includes a spare rotor for compressor K-201 costing 30,000. The Allowance for inventory write-down currently has a balance of **55,000**. (a) Compute the required year-end allowance. (b) Write the adjusting entry. (c) What is net inventory on the balance sheet? (d) How does this amount stand for cost recovery?',
           },
           given: {
             head: [

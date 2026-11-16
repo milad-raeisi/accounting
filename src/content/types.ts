@@ -133,9 +133,14 @@ export type Question = {
   explain: L
 }
 
+/** Unit shown above journals and tables. Defaults to the course's currency. */
+export type Currency = 'toman' | 'usd' | 'omr'
+
 export type Lesson = {
   slug: string
   number: number
+  /** overrides the course currency, e.g. 'omr' for the Oman tax lessons */
+  currency?: Currency
   level: Level
   minutes: number
   icon: IconName

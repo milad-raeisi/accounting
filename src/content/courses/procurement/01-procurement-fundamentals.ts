@@ -1,6 +1,6 @@
 import type { Lesson } from '../../types'
 
-/* Account titles used in the Pars Arya examples. */
+/* Account titles used in the Masar Petroleum examples. */
 const ac = {
   inventory: { fa: 'موجودی مواد و قطعات', en: 'Materials and spares inventory' },
   grir: { fa: 'حساب واسط رسید کالا و فاکتور (GR/IR)', en: 'GR/IR clearing' },
@@ -104,7 +104,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: { fa: 'مثال جاری این دوره: شرکت نفت و گاز پارس‌آریا', en: 'The running example of this course: Pars Arya Oil & Gas' },
+          caption: { fa: 'مثال جاری این دوره: شرکت مسار پترولیوم', en: 'The running example of this course: Masar Petroleum' },
           head: [
             { fa: 'مورد', en: 'Item' },
             { fa: 'شرح', en: 'Description' },
@@ -113,8 +113,8 @@ export const lesson: Lesson = {
             [
               { fa: 'شرکت', en: 'Company' },
               {
-                fa: 'شرکت نفت و گاز پارس‌آریا، بهره‌بردار (Operator) یک مشارکت در میدان آریا',
-                en: 'Pars Arya Oil & Gas, operator of a joint venture in the Arya field',
+                fa: 'شرکت مسار پترولیوم، بهره‌بردار (Operator) یک مشارکت در میدان آریا',
+                en: 'Masar Petroleum, operator of a joint venture in the Arya field',
               },
             ],
             [
@@ -141,8 +141,8 @@ export const lesson: Lesson = {
             [
               { fa: 'شرکا', en: 'Partners' },
               {
-                fa: 'پارس‌آریا 50٪، شریک الف 30٪، شریک ب 20٪ (سهم‌ها فرضی‌اند)',
-                en: 'Pars Arya 50%, Partner A 30%, Partner B 20% (illustrative shares)',
+                fa: 'مسار پترولیوم 50٪، شریک الف 30٪، شریک ب 20٪ (سهم‌ها فرضی‌اند)',
+                en: 'Masar Petroleum 50%, Partner A 30%, Partner B 20% (illustrative shares)',
               },
             ],
             [
@@ -169,7 +169,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: { fa: 'سه دسته خرید در پارس‌آریا', en: 'The three purchase types at Pars Arya' },
+          caption: { fa: 'سه دسته خرید در مسار پترولیوم', en: 'The three purchase types at Masar Petroleum' },
           head: [
             { fa: 'دسته', en: 'Type' },
             { fa: 'نمونه‌ها', en: 'Examples' },
@@ -183,7 +183,7 @@ export const lesson: Lesson = {
                 fa: 'لوله جداری و مغزی (OCTG)، شیرهای کشویی، باریت و بنتونیت، قطعات کمپرسور، تجهیزات حفاظت فردی',
                 en: 'Casing and tubing (OCTG), gate valves, barite and bentonite, compressor spares, PPE',
               },
-              { fa: 'رسید انبار پس از بازرسی', en: 'Goods receipt after inspection' },
+              { fa: 'رسید کالا (GRN) پس از بازرسی', en: 'Goods received note (GRN) after inspection' },
               { fa: 'سفارش خرید', en: 'Purchase order' },
             ],
             [
@@ -192,7 +192,7 @@ export const lesson: Lesson = {
                 fa: 'اجاره دکل حفاری با خدمه، سیمان‌کاری و نمودارگیری چاه، بازرسی شخص ثالث، تغذیه کمپ، حمل‌ونقل',
                 en: 'Drilling rig hire with crew, well cementing and logging, third-party inspection, camp catering, transport',
               },
-              { fa: 'تأییدیه انجام خدمات توسط کاربر', en: 'Service entry sheet confirmed by the user' },
+              { fa: 'برگه ثبت خدمات (SES) که مسئول قرارداد می‌پذیرد', en: 'Service entry sheet (SES) accepted by the contract holder' },
               { fa: 'قرارداد خدمات با جدول نرخ‌ها', en: 'Service contract with a rate schedule' },
             ],
             [
@@ -220,8 +220,8 @@ export const lesson: Lesson = {
         {
           type: 'table',
           caption: {
-            fa: 'تحلیل هزینه‌کرد سالانه پارس‌آریا (ارقام فرضی)',
-            en: 'Pars Arya annual spend analysis (illustrative figures)',
+            fa: 'تحلیل هزینه‌کرد سالانه مسار پترولیوم (ارقام فرضی)',
+            en: 'Masar Petroleum annual spend analysis (illustrative figures)',
           },
           head: [
             { fa: 'گروه خرید', en: 'Category' },
@@ -325,17 +325,17 @@ export const lesson: Lesson = {
               },
             },
             {
-              title: { fa: 'رسید کالا یا تأیید خدمات', en: 'Goods receipt or service confirmation' },
+              title: { fa: 'رسید کالا (GRN) یا برگه ثبت خدمات (SES)', en: 'Goods received note (GRN) or service entry sheet (SES)' },
               text: {
-                fa: 'انبار پس از بازرسی **رسید انبار (Goods receipt)** ثبت می‌کند. برای خدمات، کاربر انجام کار را در سیستم تأیید می‌کند.',
-                en: 'After inspection the warehouse posts a **goods receipt (GR)**. For services, the user confirms in the system that the work was done.',
+                fa: 'برای کالا، انبار پس از بازرسی **رسید کالا (GRN: Goods Received Note)** ثبت می‌کند. برای خدمات، پیمانکار یا کاربر **برگه ثبت خدمات (SES: Service Entry Sheet)** را ثبت می‌کند و مسئول قرارداد آن را می‌پذیرد. جزئیات هر دو در درس «رسید کالا (GRN) و برگه ثبت خدمات (SES)» آمده است.',
+                en: 'For goods, the warehouse posts a **goods received note (GRN)** after inspection. For services, the contractor or user enters a **service entry sheet (SES)** and the contract holder accepts it. Both are covered in detail in the lesson on the goods received note (GRN) and service entry sheet (SES).',
               },
             },
             {
               title: { fa: 'فاکتور و تطبیق سه‌طرفه', en: 'Invoice and three-way match' },
               text: {
-                fa: 'واحد حساب‌های پرداختنی فاکتور تأمین‌کننده را ثبت می‌کند و سیستم آن را با سفارش و رسید مقایسه می‌کند.',
-                en: 'Accounts payable enters the supplier’s invoice and the system compares it with the PO and the goods receipt.',
+                fa: 'واحد حساب‌های پرداختنی فاکتور تأمین‌کننده را ثبت می‌کند و سیستم آن را با سفارش و GRN (یا SES) مقایسه می‌کند.',
+                en: 'Accounts payable enters the supplier’s invoice and the system compares it with the PO and the GRN (or SES).',
               },
             },
             {
@@ -388,9 +388,9 @@ export const lesson: Lesson = {
             ],
             [
               { fa: 'رسید', en: 'Receipt' },
-              { fa: 'رسید انبار یا تأییدیه خدمات', en: 'Goods receipt or service entry sheet' },
+              { fa: 'رسید کالا (GRN) یا برگه ثبت خدمات (SES)', en: 'Goods received note (GRN) or service entry sheet (SES)' },
               { fa: 'انباردار یا کاربر', en: 'Storekeeper or user' },
-              { fa: 'بدهکار موجودی یا موضوع هزینه / بستانکار GR/IR', en: 'Dr Inventory or cost object / Cr GR/IR' },
+              { fa: 'بدهکار موجودی یا موضوع هزینه / بستانکار GR/IR (برای SES هنگام پذیرش)', en: 'Dr Inventory or cost object / Cr GR/IR (for an SES, on acceptance)' },
             ],
             [
               { fa: 'فاکتور', en: 'Invoice' },
@@ -411,8 +411,8 @@ export const lesson: Lesson = {
           tone: 'info',
           title: { fa: 'تطبیق سه‌طرفه', en: 'Three-way match' },
           text: {
-            fa: 'پیش از پرداخت، سیستم سه سند را کنار هم می‌گذارد: **سفارش خرید** (چه چیزی و به چه قیمتی خواستیم)، **رسید انبار** (چه مقدار واقعاً رسید) و **فاکتور** (تأمین‌کننده بابت چه چیزی پول می‌خواهد). اگر مقدار یا قیمت فاکتور بیش از حد مجاز با آن دو فرق کند، فاکتور برای پرداخت **مسدود** می‌شود تا کسی علت را بررسی کند. مثال: سفارش 24 شیر به قیمت 3,500، رسید 24 شیر، فاکتور 24 شیر به قیمت 3,600. اختلاف 100 × 24 = 2,400 است و تا روشن شدن علت، چیزی پرداخت نمی‌شود.',
-            en: 'Before payment, the system lines up three documents: the **purchase order** (what we asked for and at what price), the **goods receipt** (what actually arrived) and the **invoice** (what the supplier wants to be paid for). If the invoice quantity or price differs from the other two by more than the tolerance, the invoice is **blocked for payment** until someone investigates. Example: PO for 24 valves at 3,500, GR for 24 valves, invoice for 24 valves at 3,600. The difference is 100 × 24 = 2,400, and nothing is paid until the cause is clear.',
+            fa: 'پیش از پرداخت، سیستم سه سند را کنار هم می‌گذارد: **سفارش خرید** (چه چیزی و به چه قیمتی خواستیم)، **رسید کالا (GRN)** (چه مقدار واقعاً رسید) و **فاکتور** (تأمین‌کننده بابت چه چیزی پول می‌خواهد). اگر مقدار یا قیمت فاکتور بیش از حد مجاز با آن دو فرق کند، فاکتور برای پرداخت **مسدود** می‌شود تا کسی علت را بررسی کند. مثال: سفارش 24 شیر به قیمت 3,500، GRN برای 24 شیر، فاکتور 24 شیر به قیمت 3,600. اختلاف 100 × 24 = 2,400 است و تا روشن شدن علت، چیزی پرداخت نمی‌شود.',
+            en: 'Before payment, the system lines up three documents: the **purchase order** (what we asked for and at what price), the **goods received note (GRN)** (what actually arrived) and the **invoice** (what the supplier wants to be paid for). If the invoice quantity or price differs from the other two by more than the tolerance, the invoice is **blocked for payment** until someone investigates. Example: PO for 24 valves at 3,500, GRN for 24 valves, invoice for 24 valves at 3,600. The difference is 100 × 24 = 2,400, and nothing is paid until the cause is clear.',
           },
         },
         {
@@ -444,15 +444,15 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: '**جدول تفویض اختیار (Delegation of Authority)** سندی است که هیئت‌مدیره تصویب می‌کند و می‌گوید هر سمت تا چه مبلغی می‌تواند هزینه را تأیید یا تعهدی را امضا کند. در کنارش، **رویه خرید** تعیین می‌کند برای هر مبلغ حداقل چه روش منبع‌یابی لازم است. جدول زیر در همه درس‌های این دوره برای پارس‌آریا به کار می‌رود.',
-            en: 'The **delegation of authority (DoA)** is a board-approved document that says up to what value each position may approve spending or sign a commitment. Alongside it, the **procurement procedure** sets the minimum sourcing method for each value. The table below is used for Pars Arya throughout this course.',
+            fa: '**جدول تفویض اختیار (Delegation of Authority)** سندی است که هیئت‌مدیره تصویب می‌کند و می‌گوید هر سمت تا چه مبلغی می‌تواند هزینه را تأیید یا تعهدی را امضا کند. در کنارش، **رویه خرید** تعیین می‌کند برای هر مبلغ حداقل چه روش منبع‌یابی لازم است. جدول زیر در همه درس‌های این دوره برای مسار پترولیوم به کار می‌رود.',
+            en: 'The **delegation of authority (DoA)** is a board-approved document that says up to what value each position may approve spending or sign a commitment. Alongside it, the **procurement procedure** sets the minimum sourcing method for each value. The table below is used for Masar Petroleum throughout this course.',
           },
         },
         {
           type: 'table',
           caption: {
-            fa: 'جدول اختیارات و روش خرید پارس‌آریا (سقف‌ها فرضی‌اند)',
-            en: 'Pars Arya authority and sourcing matrix (illustrative limits)',
+            fa: 'جدول اختیارات و روش خرید مسار پترولیوم (سقف‌ها فرضی‌اند)',
+            en: 'Masar Petroleum authority and sourcing matrix (illustrative limits)',
           },
           head: [
             { fa: 'مبلغ تعهد', en: 'Commitment value' },
@@ -506,7 +506,7 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: '**تفکیک وظایف (Segregation of duties)** یعنی هیچ فردی نتواند یک خرید را از ابتدا تا انتها به‌تنهایی انجام دهد. اگر یک نفر هم سفارش بدهد، هم رسید بزند و هم پرداخت کند، می‌تواند بدون آنکه کسی بفهمد پول را به حساب تأمین‌کننده‌ای ساختگی بفرستد. در ERP این تفکیک با **نقش‌های کاربری** اجرا می‌شود:',
+            fa: '**تفکیک وظایف (Segregation of duties)** یعنی هیچ فردی نتواند یک خرید را از ابتدا تا انتها به‌تنهایی انجام دهد. اگر یک نفر هم سفارش بدهد، هم GRN ثبت کند و هم پرداخت کند، می‌تواند بدون آنکه کسی بفهمد پول را به حساب تأمین‌کننده‌ای ساختگی بفرستد. در ERP این تفکیک با **نقش‌های کاربری** اجرا می‌شود:',
             en: '**Segregation of duties** means no single person can carry a purchase from start to finish alone. If one person could order, receive and pay, they could send money to a fake supplier without anyone noticing. In the ERP this is enforced through **user roles**:',
           },
         },
@@ -515,7 +515,7 @@ export const lesson: Lesson = {
           items: [
             { fa: 'کسی که درخواست خرید می‌دهد، تأمین‌کننده را انتخاب نمی‌کند.', en: 'Whoever raises the requisition does not choose the supplier.' },
             { fa: 'کسی که سفارش خرید صادر می‌کند، کالا را تحویل نمی‌گیرد.', en: 'Whoever issues the PO does not receive the goods.' },
-            { fa: 'کسی که رسید انبار ثبت می‌کند، فاکتور را ثبت یا پرداخت نمی‌کند.', en: 'Whoever posts the goods receipt does not post or pay the invoice.' },
+            { fa: 'کسی که GRN ثبت یا SES را تأیید می‌کند، فاکتور را ثبت یا پرداخت نمی‌کند.', en: 'Whoever posts the GRN or accepts the SES does not post or pay the invoice.' },
             {
               fa: 'کسی که اطلاعات بانکی تأمین‌کننده را تغییر می‌دهد، پرداخت را اجرا نمی‌کند.',
               en: 'Whoever changes a supplier’s bank details does not run payments.',
@@ -602,7 +602,7 @@ export const lesson: Lesson = {
               { fa: 'درخواست خرید', en: 'Purchase requisition' },
               { fa: 'استعلام بها و پیشنهادها', en: 'RFQ and quotations' },
               { fa: 'سفارش خرید', en: 'Purchase order' },
-              { fa: 'رسید انبار و تأییدیه خدمات', en: 'Goods receipt and service entry sheet' },
+              { fa: 'رسید کالا (GRN) و برگه ثبت خدمات (SES)', en: 'Goods received note (GRN) and service entry sheet (SES)' },
               { fa: 'فاکتور و سند پرداخت', en: 'Invoice and payment document' },
             ],
           },
@@ -623,8 +623,8 @@ export const lesson: Lesson = {
                 en: 'Automatic MRP requisitions for items that reached their reorder point',
               },
               {
-                fa: 'رسید انبار مقدار و ارزش موجودی انبار مرکزی یا انبار میدان را افزایش می‌دهد',
-                en: 'The goods receipt increases stock quantity and value in the Central or Field Warehouse',
+                fa: 'رسید کالا (GRN) مقدار و ارزش موجودی انبار مرکزی یا انبار میدان را افزایش می‌دهد',
+                en: 'The GRN increases stock quantity and value in the Central or Field Warehouse',
               },
             ],
             [
@@ -656,8 +656,8 @@ export const lesson: Lesson = {
                 en: 'Budgets, general ledger accounts, payment terms and vendor accounting data',
               },
               {
-                fa: 'ثبت‌های خودکار در رسید، فاکتور و پرداخت؛ گزارش تعهدات',
-                en: 'Automatic postings at receipt, invoice and payment; commitment reports',
+                fa: 'ثبت‌های خودکار در GRN یا SES، فاکتور و پرداخت؛ گزارش تعهدات',
+                en: 'Automatic postings at the GRN or SES, invoice and payment; commitment reports',
               },
             ],
           ],
@@ -671,8 +671,8 @@ export const lesson: Lesson = {
           tone: 'example',
           title: { fa: 'خرید 24 شیر کشویی برای انبار مرکزی', en: 'Buying 24 gate valves for the Central Warehouse' },
           text: {
-            fa: 'پارس‌آریا 24 شیر کشویی 4 اینچ را به قیمت هر عدد 3,500 از تأمین‌کننده V-1001 سفارش می‌دهد: 24 × 3,500 = 84,000. چون مبلغ بین 10,000 و 100,000 است، سه پیشنهاد کتبی گرفته شده است. سفارش خرید در روز 3 صادر می‌شود اما **هیچ ثبتی در دفتر کل ندارد**؛ فقط تعهدی 84,000 در برابر بودجه انبار ثبت می‌شود. سه رویداد بعدی، ثبت خودکار دارند:',
-            en: 'Pars Arya orders 24 four-inch gate valves at 3,500 each from supplier V-1001: 24 × 3,500 = 84,000. Because the value is between 10,000 and 100,000, three written quotations were obtained. The PO is issued on Day 3 but creates **no general ledger entry**; only a commitment of 84,000 is recorded against the stores budget. The next three events each post automatically:',
+            fa: 'مسار پترولیوم 24 شیر کشویی 4 اینچ را به قیمت هر عدد 3,500 از تأمین‌کننده V-1001 سفارش می‌دهد: 24 × 3,500 = 84,000. چون مبلغ بین 10,000 و 100,000 است، سه پیشنهاد کتبی گرفته شده است. سفارش خرید در روز 3 صادر می‌شود اما **هیچ ثبتی در دفتر کل ندارد**؛ فقط تعهدی 84,000 در برابر بودجه انبار ثبت می‌شود. سه رویداد بعدی، ثبت خودکار دارند:',
+            en: 'Masar Petroleum orders 24 four-inch gate valves at 3,500 each from supplier V-1001: 24 × 3,500 = 84,000. Because the value is between 10,000 and 100,000, three written quotations were obtained. The PO is issued on Day 3 but creates **no general ledger entry**; only a commitment of 84,000 is recorded against the stores budget. The next three events each post automatically:',
           },
         },
         {
@@ -686,8 +686,8 @@ export const lesson: Lesson = {
                 { account: ac.grir, credit: 84000 },
               ],
               memo: {
-                fa: 'رسید انبار: 24 شیر پس از بازرسی در انبار مرکزی تحویل گرفته شد.',
-                en: 'Goods receipt: 24 valves accepted into the Central Warehouse after inspection.',
+                fa: 'GRN: 24 شیر پس از بازرسی در انبار مرکزی تحویل گرفته شد.',
+                en: 'GRN: 24 valves accepted into the Central Warehouse after inspection.',
               },
             },
             {
@@ -697,8 +697,8 @@ export const lesson: Lesson = {
                 { account: ac.ap, credit: 84000 },
               ],
               memo: {
-                fa: 'فاکتور V-1001 پس از تطبیق سه‌طرفه با سفارش و رسید ثبت شد.',
-                en: 'V-1001’s invoice posted after the three-way match with the PO and GR.',
+                fa: 'فاکتور V-1001 پس از تطبیق سه‌طرفه با سفارش و GRN ثبت شد.',
+                en: 'V-1001’s invoice posted after the three-way match with the PO and GRN.',
               },
             },
             {
@@ -717,8 +717,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'پس از این سه ثبت، مانده GR/IR صفر است، موجودی انبار 84,000 افزایش یافته، بدهی به تأمین‌کننده تسویه شده و موجودی بانک 84,000 کاهش یافته است. هیچ حسابداری این سندها را دستی نزده است؛ رسید انبار، فاکتور و سند پرداخت آن‌ها را ساخته‌اند. پس دقت انباردار و کارمند حساب‌های پرداختنی مستقیماً روی صورت‌های مالی اثر دارد.',
-            en: 'After these three entries, GR/IR is back to zero, inventory is up by 84,000, the supplier has been paid off and the bank balance is down by 84,000. No accountant keyed these entries; the goods receipt, the invoice and the payment document created them. That is why the storekeeper’s and the AP clerk’s accuracy flows straight into the financial statements.',
+            fa: 'پس از این سه ثبت، مانده GR/IR صفر است، موجودی انبار 84,000 افزایش یافته، بدهی به تأمین‌کننده تسویه شده و موجودی بانک 84,000 کاهش یافته است. هیچ حسابداری این سندها را دستی نزده است؛ GRN، فاکتور و سند پرداخت آن‌ها را ساخته‌اند. پس دقت انباردار و کارمند حساب‌های پرداختنی مستقیماً روی صورت‌های مالی اثر دارد.',
+            en: 'After these three entries, GR/IR is back to zero, inventory is up by 84,000, the supplier has been paid off and the bank balance is down by 84,000. No accountant keyed these entries; the GRN, the invoice and the payment document created them. That is why the storekeeper’s and the AP clerk’s accuracy flows straight into the financial statements.',
           },
         },
         {
@@ -726,8 +726,8 @@ export const lesson: Lesson = {
           tone: 'tip',
           title: { fa: 'حساب واسط GR/IR چه می‌گوید؟', en: 'What does the GR/IR account tell you?' },
           text: {
-            fa: 'GR/IR پلی است بین رسید و فاکتور. **مانده بستانکار** یعنی کالا رسیده اما فاکتورش هنوز ثبت نشده؛ این در پایان دوره یک بدهی است. **مانده بدهکار** یعنی فاکتور آمده اما کالا هنوز نرسیده. واحد مالی در پایان هر ماه اقلام باز GR/IR را با واحد تدارکات بررسی می‌کند. برای سادگی، مالیات بر ارزش افزوده در این مثال‌ها نیامده است؛ نحوه ثبت آن در درس «بدهی‌ها، حقوق و دستمزد و مالیات بر ارزش افزوده» دوره حسابداری آمده است.',
-            en: 'GR/IR is the bridge between receipt and invoice. A **credit balance** means goods arrived but the invoice has not been posted yet, a liability at period-end. A **debit balance** means the invoice came in but the goods have not. Finance reviews the open GR/IR items with procurement every month-end. To keep things simple, VAT is left out of these examples; the accounting course’s lesson on liabilities, payroll and VAT shows how it is recorded.',
+            fa: 'GR/IR پلی است بین رسید (GRN یا SES پذیرفته‌شده) و فاکتور. **مانده بستانکار** یعنی کالا رسیده اما فاکتورش هنوز ثبت نشده؛ این در پایان دوره یک بدهی است. **مانده بدهکار** یعنی فاکتور آمده اما کالا هنوز نرسیده. واحد مالی در پایان هر ماه اقلام باز GR/IR را با واحد تدارکات بررسی می‌کند. برای سادگی، مالیات بر ارزش افزوده در این مثال‌ها نیامده است؛ نحوه ثبت آن در درس «بدهی‌ها، حقوق و دستمزد و مالیات بر ارزش افزوده» دوره حسابداری آمده است.',
+            en: 'GR/IR is the bridge between the receipt (a GRN or an accepted SES) and the invoice. A **credit balance** means goods arrived but the invoice has not been posted yet, a liability at period-end. A **debit balance** means the invoice came in but the goods have not. Finance reviews the open GR/IR items with procurement every month-end. To keep things simple, VAT is left out of these examples; the accounting course’s lesson on liabilities, payroll and VAT shows how it is recorded.',
           },
         },
       ],
@@ -764,8 +764,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'در قراردادهای نفتی، شرکت سرمایه‌گذار معمولاً هزینه‌های مجاز خود را از محل تولید میدان پس می‌گیرد؛ به این **بازیافت هزینه (Cost recovery)** می‌گویند. اما فقط هزینه‌ای بازیافت‌پذیر است که **مجاز، مرتبط با عملیات، به موضوع هزینه درست ثبت‌شده و مستند** باشد. اسناد تدارکات (درخواست تأییدشده، سوابق مناقصه، سفارش، رسید و فاکتور) همان مدارکی‌اند که حسابرس شرکا یا شرکت ملی نفت می‌خواهد ببیند.',
-            en: 'Under petroleum contracts the investing company usually gets its allowable costs back out of the field’s production; this is **cost recovery**. But only costs that are **allowable, related to operations, recorded against the right cost object and documented** can be recovered. Procurement records (the approved requisition, tender file, PO, goods receipt and invoice) are exactly the evidence that a partner’s auditor or the national oil company will ask to see.',
+            fa: 'در قراردادهای نفتی، شرکت سرمایه‌گذار معمولاً هزینه‌های مجاز خود را از محل تولید میدان پس می‌گیرد؛ به این **بازیافت هزینه (Cost recovery)** می‌گویند. اما فقط هزینه‌ای بازیافت‌پذیر است که **مجاز، مرتبط با عملیات، به موضوع هزینه درست ثبت‌شده و مستند** باشد. اسناد تدارکات (درخواست تأییدشده، سوابق مناقصه، سفارش، GRN یا SES و فاکتور) همان مدارکی‌اند که حسابرس شرکا یا شرکت ملی نفت می‌خواهد ببیند.',
+            en: 'Under petroleum contracts the investing company usually gets its allowable costs back out of the field’s production; this is **cost recovery**. But only costs that are **allowable, related to operations, recorded against the right cost object and documented** can be recovered. Procurement records (the approved requisition, tender file, PO, GRN or SES, and invoice) are exactly the evidence that a partner’s auditor or the national oil company will ask to see.',
           },
         },
         {
@@ -825,8 +825,8 @@ export const lesson: Lesson = {
           tone: 'warning',
           title: { fa: 'اشتباه‌های رایج', en: 'Common mistakes' },
           text: {
-            fa: '(1) سفارش دادن پیش از تأیید درخواست، و ساختن سفارش «پس از وقوع» وقتی فاکتور رسیده است. (2) انتخاب کمترین قیمت بدون دیدن هزینه حمل، گواهی‌ها و خطر توقف. (3) خرد کردن سفارش برای فرار از سقف اختیارات. (4) انتخاب موضوع هزینه یا گروه کالای اشتباه؛ هم تحلیل هزینه‌کرد خراب می‌شود و هم بازیافت هزینه. (5) ثبت رسید در سیستم پیش از بازرسی و شمارش واقعی؛ موجودی و GR/IR هر دو غلط می‌شوند. (6) فراموش کردن زمان تحویل اقلام بلندمدت تا روزی که دکل منتظر می‌ماند.',
-            en: '(1) Ordering before the requisition is approved, and creating an “after-the-fact” PO when the invoice turns up. (2) Choosing the lowest price without looking at freight, certificates and downtime risk. (3) Splitting orders to dodge authority limits. (4) Picking the wrong cost object or material group, which breaks both the spend analysis and cost recovery. (5) Posting the goods receipt before the physical count and inspection, so inventory and GR/IR are both wrong. (6) Forgetting the lead time of long-lead items until the day the rig is waiting.',
+            fa: '(1) سفارش دادن پیش از تأیید درخواست، و ساختن سفارش «پس از وقوع» وقتی فاکتور رسیده است. (2) انتخاب کمترین قیمت بدون دیدن هزینه حمل، گواهی‌ها و خطر توقف. (3) خرد کردن سفارش برای فرار از سقف اختیارات. (4) انتخاب موضوع هزینه یا گروه کالای اشتباه؛ هم تحلیل هزینه‌کرد خراب می‌شود و هم بازیافت هزینه. (5) ثبت GRN در سیستم پیش از بازرسی و شمارش واقعی، یا پذیرش SES بدون کنترل برگه‌های کارکرد امضاشده؛ موجودی، هزینه و GR/IR غلط می‌شوند. (6) فراموش کردن زمان تحویل اقلام بلندمدت تا روزی که دکل منتظر می‌ماند.',
+            en: '(1) Ordering before the requisition is approved, and creating an “after-the-fact” PO when the invoice turns up. (2) Choosing the lowest price without looking at freight, certificates and downtime risk. (3) Splitting orders to dodge authority limits. (4) Picking the wrong cost object or material group, which breaks both the spend analysis and cost recovery. (5) Posting the GRN before the physical count and inspection, or accepting an SES without checking the signed field tickets, so inventory, cost and GR/IR are wrong. (6) Forgetting the lead time of long-lead items until the day the rig is waiting.',
           },
         },
       ],
@@ -840,8 +840,8 @@ export const lesson: Lesson = {
           title: { fa: 'کالا، خدمات یا کار؟ مستقیم یا غیرمستقیم؟', en: 'Goods, services or works? Direct or indirect?' },
           difficulty: 'easy',
           problem: {
-            fa: 'هر قلم زیر را از دو جهت دسته‌بندی کنید: کالا، خدمات یا کار؛ و خرید مستقیم یا غیرمستقیم (طبق خط‌مشی پارس‌آریا که تغذیه کمپ و اقلام اداری را غیرمستقیم می‌داند).',
-            en: 'Classify each item two ways: goods, services or works; and direct or indirect spend (under Pars Arya’s policy, camp catering and office items are indirect).',
+            fa: 'هر قلم زیر را از دو جهت دسته‌بندی کنید: کالا، خدمات یا کار؛ و خرید مستقیم یا غیرمستقیم (طبق خط‌مشی مسار پترولیوم که تغذیه کمپ و اقلام اداری را غیرمستقیم می‌داند).',
+            en: 'Classify each item two ways: goods, services or works; and direct or indirect spend (under Masar Petroleum’s policy, camp catering and office items are indirect).',
           },
           given: {
             head: [
@@ -899,10 +899,10 @@ export const lesson: Lesson = {
               { fa: 'رویداد', en: 'Event' },
             ],
             rows: [
-              [{ fa: 'الف', en: 'A' }, { fa: 'فاکتور تأمین‌کننده ثبت و با سفارش و رسید تطبیق داده شد', en: 'Supplier invoice posted and matched with the PO and GR' }],
+              [{ fa: 'الف', en: 'A' }, { fa: 'فاکتور تأمین‌کننده ثبت و با سفارش و GRN تطبیق داده شد', en: 'Supplier invoice posted and matched with the PO and GRN' }],
               [{ fa: 'ب', en: 'B' }, { fa: 'درخواست خرید تأیید شد', en: 'Purchase requisition approved' }],
               [{ fa: 'ج', en: 'C' }, { fa: 'وجه به تأمین‌کننده پرداخت شد', en: 'Supplier paid' }],
-              [{ fa: 'د', en: 'D' }, { fa: 'رسید انبار پس از بازرسی ثبت شد', en: 'Goods receipt posted after inspection' }],
+              [{ fa: 'د', en: 'D' }, { fa: 'رسید کالا (GRN) پس از بازرسی ثبت شد', en: 'Goods received note (GRN) posted after inspection' }],
               [{ fa: 'ه', en: 'E' }, { fa: 'سفارش خرید صادر شد', en: 'Purchase order issued' }],
               [{ fa: 'و', en: 'F' }, { fa: 'سه پیشنهاد دریافت و مقایسه شد', en: 'Three quotations received and compared' }],
             ],
@@ -918,7 +918,7 @@ export const lesson: Lesson = {
                   text: { fa: 'بدون ثبت در دفتر کل؛ فقط تعهد در برابر بودجه.', en: 'No ledger entry; only a commitment against the budget.' },
                 },
                 {
-                  title: { fa: 'د: رسید انبار', en: 'D: goods receipt' },
+                  title: { fa: 'د: رسید کالا (GRN)', en: 'D: goods received note (GRN)' },
                   text: { fa: 'ثبت خودکار: بدهکار موجودی / بستانکار GR/IR.', en: 'Automatic entry: Dr Inventory / Cr GR/IR.' },
                 },
                 {
@@ -942,12 +942,12 @@ export const lesson: Lesson = {
           title: { fa: 'تحویل در دو نوبت و مانده GR/IR', en: 'Two deliveries and the GR/IR balance' },
           difficulty: 'medium',
           problem: {
-            fa: 'پارس‌آریا برای انبار میدان 50 تن باریت به قیمت هر تن 400 سفارش می‌دهد. روز 5: 30 تن می‌رسد. روز 9: فاکتور همان 30 تن ثبت می‌شود. روز 20: 20 تن باقی‌مانده می‌رسد. روز 30: فاکتور اول پرداخت می‌شود. ثبت‌های خودکار ERP را بنویسید و مانده GR/IR را در روز 30 پیدا کنید.',
-            en: 'Pars Arya orders 50 tonnes of barite at 400 per tonne for the Field Warehouse. Day 5: 30 tonnes arrive. Day 9: the invoice for those 30 tonnes is posted. Day 20: the remaining 20 tonnes arrive. Day 30: the first invoice is paid. Write the ERP’s automatic entries and find the GR/IR balance on Day 30.',
+            fa: 'مسار پترولیوم برای انبار میدان 50 تن باریت به قیمت هر تن 400 سفارش می‌دهد. روز 5: 30 تن می‌رسد. روز 9: فاکتور همان 30 تن ثبت می‌شود. روز 20: 20 تن باقی‌مانده می‌رسد. روز 30: فاکتور اول پرداخت می‌شود. ثبت‌های خودکار ERP را بنویسید و مانده GR/IR را در روز 30 پیدا کنید.',
+            en: 'Masar Petroleum orders 50 tonnes of barite at 400 per tonne for the Field Warehouse. Day 5: 30 tonnes arrive. Day 9: the invoice for those 30 tonnes is posted. Day 20: the remaining 20 tonnes arrive. Day 30: the first invoice is paid. Write the ERP’s automatic entries and find the GR/IR balance on Day 30.',
           },
           hint: {
-            fa: 'هر رسید با قیمت سفارش ارزش‌گذاری می‌شود: مقدار × 400.',
-            en: 'Each receipt is valued at the PO price: quantity × 400.',
+            fa: 'هر GRN با قیمت سفارش ارزش‌گذاری می‌شود: مقدار × 400.',
+            en: 'Each GRN is valued at the PO price: quantity × 400.',
           },
           solution: [
             {
@@ -955,11 +955,11 @@ export const lesson: Lesson = {
               items: [
                 {
                   title: { fa: 'ارزش رسیدها', en: 'Value the receipts' },
-                  text: { fa: 'رسید اول: 30 × 400 = 12,000. رسید دوم: 20 × 400 = 8,000. جمع سفارش: 50 × 400 = 20,000.', en: 'First receipt: 30 × 400 = 12,000. Second receipt: 20 × 400 = 8,000. PO total: 50 × 400 = 20,000.' },
+                  text: { fa: 'GRN اول: 30 × 400 = 12,000. GRN دوم: 20 × 400 = 8,000. جمع سفارش: 50 × 400 = 20,000.', en: 'First GRN: 30 × 400 = 12,000. Second GRN: 20 × 400 = 8,000. PO total: 50 × 400 = 20,000.' },
                 },
                 {
                   title: { fa: 'ثبت‌ها را بنویسید', en: 'Write the entries' },
-                  text: { fa: 'هر رسید GR/IR را بستانکار و هر فاکتور آن را بدهکار می‌کند.', en: 'Each receipt credits GR/IR and each invoice debits it.' },
+                  text: { fa: 'هر GRN حساب GR/IR را بستانکار و هر فاکتور آن را بدهکار می‌کند.', en: 'Each GRN credits GR/IR and each invoice debits it.' },
                 },
               ],
             },
@@ -972,7 +972,7 @@ export const lesson: Lesson = {
                     { account: ac.inventory, debit: 12000 },
                     { account: ac.grir, credit: 12000 },
                   ],
-                  memo: { fa: 'رسید 30 تن باریت.', en: 'Receipt of 30 tonnes of barite.' },
+                  memo: { fa: 'GRN برای 30 تن باریت.', en: 'GRN for 30 tonnes of barite.' },
                 },
                 {
                   date: day(9),
@@ -988,7 +988,7 @@ export const lesson: Lesson = {
                     { account: ac.inventory, debit: 8000 },
                     { account: ac.grir, credit: 8000 },
                   ],
-                  memo: { fa: 'رسید 20 تن باقی‌مانده.', en: 'Receipt of the remaining 20 tonnes.' },
+                  memo: { fa: 'GRN برای 20 تن باقی‌مانده.', en: 'GRN for the remaining 20 tonnes.' },
                 },
                 {
                   date: day(30),
@@ -1028,8 +1028,8 @@ export const lesson: Lesson = {
           title: { fa: 'کدام روش و کدام تأییدکننده؟', en: 'Which method and which approver?' },
           difficulty: 'hard',
           problem: {
-            fa: 'با جدول اختیارات پارس‌آریا، برای هر نیاز زیر حداقل روش منبع‌یابی، تأییدکننده درخواست و مرجع تصویب برنده را تعیین کنید. به مورد (ب) دقت کنید.',
-            en: 'Using the Pars Arya authority matrix, give the minimum sourcing method, the PR approver and the award authority for each need. Look closely at item (b).',
+            fa: 'با جدول اختیارات مسار پترولیوم، برای هر نیاز زیر حداقل روش منبع‌یابی، تأییدکننده درخواست و مرجع تصویب برنده را تعیین کنید. به مورد (ب) دقت کنید.',
+            en: 'Using the Masar Petroleum authority matrix, give the minimum sourcing method, the PR approver and the award authority for each need. Look closely at item (b).',
           },
           given: {
             head: [
@@ -1114,8 +1114,8 @@ export const lesson: Lesson = {
               en: 'Purchases are goods, services or works, each with its own contract and delivery confirmation; direct spend is usually most of an upstream company’s spend.',
             },
             {
-              fa: 'چرخه P2P: درخواست، تأیید، منبع‌یابی، سفارش، پیگیری، رسید، فاکتور و پرداخت؛ فقط رسید، فاکتور و پرداخت در دفتر کل ثبت دارند.',
-              en: 'The P2P cycle: requisition, approval, sourcing, order, expediting, receipt, invoice and payment; only receipt, invoice and payment post to the general ledger.',
+              fa: 'چرخه P2P: درخواست، تأیید، منبع‌یابی، سفارش، پیگیری، رسید (GRN برای کالا و SES برای خدمات)، فاکتور و پرداخت؛ فقط رسید، فاکتور و پرداخت در دفتر کل ثبت دارند.',
+              en: 'The P2P cycle: requisition, approval, sourcing, order, expediting, receipt (a GRN for goods, an SES for services), invoice and payment; only receipt, invoice and payment post to the general ledger.',
             },
             {
               fa: 'جدول اختیارات، تفکیک وظایف و قواعد تعارض منافع از پول شرکت و شرکا محافظت می‌کنند؛ خرد کردن سفارش تخلف است.',
@@ -1152,17 +1152,24 @@ export const lesson: Lesson = {
               },
             },
             {
+              term: { fa: 'رسید کالا (GRN) و برگه ثبت خدمات (SES)', en: 'Goods received note (GRN) and service entry sheet (SES)' },
+              def: {
+                fa: 'دو سند تأیید دریافت: GRN برای کالایی که بازرسی و تحویل انبار شده و SES برای خدمتی که انجام و پذیرفته شده است.',
+                en: 'The two receipt documents: the GRN for goods inspected and taken into the warehouse, and the SES for services performed and accepted.',
+              },
+            },
+            {
               term: { fa: 'تطبیق سه‌طرفه', en: 'Three-way match' },
               def: {
-                fa: 'مقایسه سفارش خرید، رسید انبار و فاکتور پیش از پرداخت.',
-                en: 'Comparing the purchase order, goods receipt and invoice before payment.',
+                fa: 'مقایسه سفارش خرید، رسید کالا (GRN) و فاکتور پیش از پرداخت.',
+                en: 'Comparing the purchase order, goods received note (GRN) and invoice before payment.',
               },
             },
             {
               term: { fa: 'حساب واسط رسید کالا و فاکتور (GR/IR)', en: 'GR/IR clearing account' },
               def: {
-                fa: 'حسابی موقت که در رسید بستانکار و در فاکتور بدهکار می‌شود و اختلاف زمانی آن دو را نشان می‌دهد.',
-                en: 'A temporary account credited at receipt and debited at invoice, showing timing gaps between the two.',
+                fa: 'حسابی موقت که با GRN یا پذیرش SES بستانکار و با فاکتور بدهکار می‌شود و اختلاف زمانی آن دو را نشان می‌دهد.',
+                en: 'A temporary account credited by the GRN or accepted SES and debited by the invoice, showing timing gaps between the two.',
               },
             },
             {
@@ -1232,15 +1239,15 @@ export const lesson: Lesson = {
         en: 'Which document creates no general ledger entry but records a commitment against the budget or AFE?',
       },
       options: [
-        { fa: 'رسید انبار', en: 'Goods receipt' },
+        { fa: 'رسید کالا (GRN)', en: 'Goods received note (GRN)' },
         { fa: 'فاکتور تأمین‌کننده', en: 'Supplier invoice' },
         { fa: 'سند پرداخت', en: 'Payment document' },
         { fa: 'سفارش خرید', en: 'Purchase order' },
       ],
       answer: 3,
       explain: {
-        fa: 'سفارش خرید تعهدی حقوقی به تأمین‌کننده است، اما هنوز کالایی نرسیده و بدهی حسابداری ایجاد نشده؛ پس فقط به‌عنوان تعهد بودجه دیده می‌شود. رسید، فاکتور و پرداخت هر سه ثبت خودکار در دفتر کل دارند.',
-        en: 'A PO is a legal commitment to the supplier, but nothing has arrived yet and no accounting liability exists, so it only shows as a budget commitment. Receipt, invoice and payment all post automatically to the ledger.',
+        fa: 'سفارش خرید تعهدی حقوقی به تأمین‌کننده است، اما هنوز کالایی نرسیده و بدهی حسابداری ایجاد نشده؛ پس فقط به‌عنوان تعهد بودجه دیده می‌شود. GRN، فاکتور و پرداخت هر سه ثبت خودکار در دفتر کل دارند.',
+        en: 'A PO is a legal commitment to the supplier, but nothing has arrived yet and no accounting liability exists, so it only shows as a budget commitment. The GRN, invoice and payment all post automatically to the ledger.',
       },
     },
     {
@@ -1256,8 +1263,8 @@ export const lesson: Lesson = {
       ],
       answer: 0,
       explain: {
-        fa: '40 × 2,500 = 100,000. رسید انبار موجودی را بدهکار و حساب واسط GR/IR را بستانکار می‌کند. حساب‌های پرداختنی فقط وقتی بستانکار می‌شود که فاکتور ثبت شود؛ برای همین گزینه دوم، با اینکه آشنا به نظر می‌رسد، برای مرحله رسید غلط است.',
-        en: '40 × 2,500 = 100,000. The goods receipt debits Inventory and credits the GR/IR clearing account. Accounts payable is credited only when the invoice is posted, so the second option, familiar as it looks, is wrong at the receipt step.',
+        fa: '40 × 2,500 = 100,000. GRN موجودی را بدهکار و حساب واسط GR/IR را بستانکار می‌کند. حساب‌های پرداختنی فقط وقتی بستانکار می‌شود که فاکتور ثبت شود؛ برای همین گزینه دوم، با اینکه آشنا به نظر می‌رسد، برای مرحله GRN غلط است.',
+        en: '40 × 2,500 = 100,000. The GRN debits Inventory and credits the GR/IR clearing account. Accounts payable is credited only when the invoice is posted, so the second option, familiar as it looks, is wrong at the GRN step.',
       },
     },
     {
@@ -1279,8 +1286,8 @@ export const lesson: Lesson = {
     },
     {
       q: {
-        fa: 'طبق جدول اختیارات پارس‌آریا، نیازی به ارزش 250,000 حداقل با چه روشی و با تأیید چه کسی خریده می‌شود؟',
-        en: 'Under the Pars Arya authority matrix, how must a need worth 250,000 at least be sourced, and who approves the PR?',
+        fa: 'طبق جدول اختیارات مسار پترولیوم، نیازی به ارزش 250,000 حداقل با چه روشی و با تأیید چه کسی خریده می‌شود؟',
+        en: 'Under the Masar Petroleum authority matrix, how must a need worth 250,000 at least be sourced, and who approves the PR?',
       },
       options: [
         { fa: 'سه پیشنهاد کتبی؛ مدیر واحد', en: 'Three written quotations; department manager' },

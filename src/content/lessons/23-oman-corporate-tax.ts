@@ -26,6 +26,7 @@ const yr = (n: number) => ({ fa: `${n}`, en: `${n}` })
 export const lesson: Lesson = {
   slug: 'oman-corporate-tax',
   number: 23,
+  currency: 'omr',
   level: 'advanced',
   minutes: 40,
   icon: 'Landmark',
@@ -66,8 +67,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'شرکت نفت و گاز پارس‌آریا در عمان یک شرکت با مسئولیت محدود به نام **پارس‌آریا خدمات عمان** دارد. این شرکت برای اپراتورهای میدان‌های نفتی عمان خدمات تعمیر چاه و نگهداری ایستگاه تقویت فشار انجام می‌دهد. سال 2026 تمام شده و مدیر مالی سه سؤال دارد: چقدر مالیات بدهیم؟ تا چه تاریخی؟ و در سیستم ERP چه سندهایی ثبت کنیم؟ این درس به این سه سؤال گام‌به‌گام پاسخ می‌دهد.',
-            en: 'Pars Arya Oil & Gas owns a limited liability company in Oman, **Pars Arya Oman Services LLC**. It provides well-workover services and compressor-station maintenance to the operators of Omani oil fields. The year 2026 has closed and the finance manager has three questions: how much tax do we owe, by when, and which entries do we post in the ERP? This lesson answers all three, step by step.',
+            fa: 'شرکت مسار پترولیوم در عمان یک شرکت با مسئولیت محدود به نام **مسار پترولیوم خدمات عمان** دارد. این شرکت برای اپراتورهای میدان‌های نفتی عمان خدمات تعمیر چاه و نگهداری ایستگاه تقویت فشار انجام می‌دهد. سال 2026 تمام شده و مدیر مالی سه سؤال دارد: چقدر مالیات بدهیم؟ تا چه تاریخی؟ و در سیستم ERP چه سندهایی ثبت کنیم؟ این درس به این سه سؤال گام‌به‌گام پاسخ می‌دهد.',
+            en: 'Masar Petroleum owns a limited liability company in Oman, **Masar Petroleum Oman Services LLC**. It provides well-workover services and compressor-station maintenance to the operators of Omani oil fields. The year 2026 has closed and the finance manager has three questions: how much tax do we owe, by when, and which entries do we post in the ERP? This lesson answers all three, step by step.',
           },
         },
         {
@@ -102,7 +103,7 @@ export const lesson: Lesson = {
           ],
           rows: [
             [
-              { fa: 'شرکت تشکیل‌شده در عمان (مثل پارس‌آریا خدمات عمان)', en: 'Company formed in Oman (such as Pars Arya Oman Services)' },
+              { fa: 'شرکت تشکیل‌شده در عمان (مثل مسار پترولیوم خدمات عمان)', en: 'Company formed in Oman (such as Masar Petroleum Oman Services)' },
               { fa: 'درآمد جهانی: درآمد داخل و خارج عمان', en: 'Worldwide income: income from inside and outside Oman' },
               {
                 fa: 'اظهارنامه سالانه؛ برای مالیات پرداخت‌شده در خارج، اعتبار مالیاتی تا سقف مالیات عمانی همان درآمد',
@@ -248,8 +249,8 @@ export const lesson: Lesson = {
             en: 'Taxable income = Profit before tax + Non-deductible expenses − Exempt income ± Timing adjustments − Losses brought forward',
           },
           note: {
-            fa: 'مالیات جاری = درآمد مشمول مالیات × نرخ مالیات (برای پارس‌آریا خدمات عمان 15٪)',
-            en: 'Current tax = Taxable income × Tax rate (15% for Pars Arya Oman Services)',
+            fa: 'مالیات جاری = درآمد مشمول مالیات × نرخ مالیات (برای مسار پترولیوم خدمات عمان 15٪)',
+            en: 'Current tax = Taxable income × Tax rate (15% for Masar Petroleum Oman Services)',
           },
         },
         {
@@ -300,7 +301,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'h',
-          text: { fa: 'مثال کامل: پارس‌آریا خدمات عمان، سال 2026', en: 'Worked example: Pars Arya Oman Services, 2026' },
+          text: { fa: 'مثال کامل: مسار پترولیوم خدمات عمان، سال 2026', en: 'Worked example: Masar Petroleum Oman Services, 2026' },
         },
         {
           type: 'table',
@@ -504,8 +505,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'مثال: پارس‌آریا خدمات عمان در 1 ژانویه 2026 تجهیزات کارگاهی و تست به بهای 400,000 خرید. در دفاتر، عمر مفید 10 سال و ارزش اسقاط صفر است؛ پس استهلاک خط مستقیم 40,000 در سال است. از نظر مالیاتی، این تجهیزات در گروه 3 (سایر ماشین‌آلات و تجهیزات) با نرخ 15٪ روی مانده مستهلک‌نشده قرار می‌گیرد.',
-            en: 'Example: on 1 January 2026 Pars Arya Oman Services bought workshop and testing equipment for 400,000. In the books the useful life is 10 years with no residual value, so straight-line depreciation is 40,000 a year. For tax, the equipment goes into Pool 3 (other machinery and equipment) at 15% on the written-down value.',
+            fa: 'مثال: مسار پترولیوم خدمات عمان در 1 ژانویه 2026 تجهیزات کارگاهی و تست به بهای 400,000 خرید. در دفاتر، عمر مفید 10 سال و ارزش اسقاط صفر است؛ پس استهلاک خط مستقیم 40,000 در سال است. از نظر مالیاتی، این تجهیزات در گروه 3 (سایر ماشین‌آلات و تجهیزات) با نرخ 15٪ روی مانده مستهلک‌نشده قرار می‌گیرد.',
+            en: 'Example: on 1 January 2026 Masar Petroleum Oman Services bought workshop and testing equipment for 400,000. In the books the useful life is 10 years with no residual value, so straight-line depreciation is 40,000 a year. For tax, the equipment goes into Pool 3 (other machinery and equipment) at 15% on the written-down value.',
           },
         },
         {
@@ -595,8 +596,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'پارس‌آریا خدمات عمان برای ارتقای ایستگاه تقویت فشار، بازبینی طراحی مهندسی را به یک شرکت خارجی سپرده است. آن شرکت در عمان شعبه یا مقر دائم ندارد و کار را از دفتر خودش انجام می‌دهد. آیا عمان از این درآمد مالیات می‌گیرد؟ بله، از راه **مالیات تکلیفی** (withholding tax): شرکت عمانی که پول را می‌پردازد، 10٪ مبلغ ناخالص را کسر می‌کند و به سازمان مالیات واریز می‌کند. مسئولیت کسر و واریز با پرداخت‌کننده عمانی است.',
-            en: 'To upgrade its compressor station, Pars Arya Oman Services has hired a foreign company to review the engineering design. That company has no branch or PE in Oman and works from its own office. Does Oman tax this income? Yes, through **withholding tax** (WHT): the Omani company making the payment deducts 10% of the gross amount and pays it to the Tax Authority. The duty to deduct and pay over sits with the Omani payer.',
+            fa: 'مسار پترولیوم خدمات عمان برای ارتقای ایستگاه تقویت فشار، بازبینی طراحی مهندسی را به یک شرکت خارجی سپرده است. آن شرکت در عمان شعبه یا مقر دائم ندارد و کار را از دفتر خودش انجام می‌دهد. آیا عمان از این درآمد مالیات می‌گیرد؟ بله، از راه **مالیات تکلیفی** (withholding tax): شرکت عمانی که پول را می‌پردازد، 10٪ مبلغ ناخالص را کسر می‌کند و به سازمان مالیات واریز می‌کند. مسئولیت کسر و واریز با پرداخت‌کننده عمانی است.',
+            en: 'To upgrade its compressor station, Masar Petroleum Oman Services has hired a foreign company to review the engineering design. That company has no branch or PE in Oman and works from its own office. Does Oman tax this income? Yes, through **withholding tax** (WHT): the Omani company making the payment deducts 10% of the gross amount and pays it to the Tax Authority. The duty to deduct and pay over sits with the Omani payer.',
           },
         },
         {
@@ -809,8 +810,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'وقتی پارس‌آریا خدمات عمان از شرکت مادر یا شرکت‌های هم‌گروه خدمت می‌خرد، به آن‌ها بهره می‌پردازد یا به آن‌ها خدمت می‌فروشد، قانون می‌گوید مبلغ باید **با قیمت بازار** (اصل معامله مستقل یا arm’s length) باشد؛ یعنی همان قیمتی که دو شرکت مستقل با هم توافق می‌کردند. سازمان مالیات پرداخت‌های درون‌گروهی را با دقت بررسی می‌کند. قانون روش مشخصی برای تعیین قیمت بازار تعیین نکرده است، پس مستندسازی (قرارداد، مبنای محاسبه، مقایسه با بازار) اهمیت زیادی دارد. گروه‌های چندملیتی بزرگ از سال 2020 مشمول گزارش کشوربه‌کشور (CbCR) هم هستند.',
-            en: 'When Pars Arya Oman Services buys services from its parent or other group companies, pays them interest or sells them services, the law requires the price to be **at arm’s length**: the price two independent companies would have agreed. The Tax Authority scrutinises inter-company payments closely. The law does not prescribe a specific method, so documentation (contract, basis of charge, market comparison) matters a great deal. Large multinational groups have also been subject to country-by-country reporting (CbCR) since 2020.',
+            fa: 'وقتی مسار پترولیوم خدمات عمان از شرکت مادر یا شرکت‌های هم‌گروه خدمت می‌خرد، به آن‌ها بهره می‌پردازد یا به آن‌ها خدمت می‌فروشد، قانون می‌گوید مبلغ باید **با قیمت بازار** (اصل معامله مستقل یا arm’s length) باشد؛ یعنی همان قیمتی که دو شرکت مستقل با هم توافق می‌کردند. سازمان مالیات پرداخت‌های درون‌گروهی را با دقت بررسی می‌کند. قانون روش مشخصی برای تعیین قیمت بازار تعیین نکرده است، پس مستندسازی (قرارداد، مبنای محاسبه، مقایسه با بازار) اهمیت زیادی دارد. گروه‌های چندملیتی بزرگ از سال 2020 مشمول گزارش کشوربه‌کشور (CbCR) هم هستند.',
+            en: 'When Masar Petroleum Oman Services buys services from its parent or other group companies, pays them interest or sells them services, the law requires the price to be **at arm’s length**: the price two independent companies would have agreed. The Tax Authority scrutinises inter-company payments closely. The law does not prescribe a specific method, so documentation (contract, basis of charge, market comparison) matters a great deal. Large multinational groups have also been subject to country-by-country reporting (CbCR) since 2020.',
           },
         },
         {
@@ -884,7 +885,7 @@ export const lesson: Lesson = {
             ],
           },
           right: {
-            title: { fa: 'شرکت خدمات نفتی (مثل پارس‌آریا خدمات عمان)', en: 'Oilfield services company (such as Pars Arya Oman Services)' },
+            title: { fa: 'شرکت خدمات نفتی (مثل مسار پترولیوم خدمات عمان)', en: 'Oilfield services company (such as Masar Petroleum Oman Services)' },
             items: [
               { fa: 'درآمد پیمانکاری از اپراتورها، با نرخ عمومی 15٪', en: 'Contract income from operators, at the standard 15%' },
               { fa: 'خودش مالیات را حساب، اظهار و پرداخت می‌کند', en: 'Computes, files and pays its own tax' },
@@ -1034,7 +1035,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'journal',
-          title: { fa: 'مالیات جاری پارس‌آریا خدمات عمان', en: 'Current tax of Pars Arya Oman Services' },
+          title: { fa: 'مالیات جاری مسار پترولیوم خدمات عمان', en: 'Current tax of Masar Petroleum Oman Services' },
           entries: [
             {
               date: { fa: '31 دسامبر 2026', en: '31 Dec 2026' },
@@ -1225,8 +1226,8 @@ export const lesson: Lesson = {
           title: { fa: 'مالیات تکلیفی فاکتور خدمات خارجی', en: 'Withholding on a foreign service invoice' },
           difficulty: 'easy',
           problem: {
-            fa: 'پارس‌آریا خدمات عمان از یک شرکت خارجی که در عمان مقر دائم ندارد و کشورش با عمان پیمان مالیاتی ندارد، خدمات پردازش داده‌های آزمایش چاه برای یکی از میدان‌های عمان خریده است. فاکتور 80,000 در 20 مارس 2026 در ERP ثبت شد و مبلغ در 5 آوریل 2026 پرداخت شد. (الف) مالیات تکلیفی و مبلغ پرداختی به شرکت خارجی را حساب کنید. (ب) آخرین مهلت واریز مالیات را تعیین کنید. (ج) سه سند لازم را بنویسید.',
-            en: 'Pars Arya Oman Services bought well-test data processing for an Omani field from a foreign company that has no PE in Oman and whose country has no tax treaty with Oman. The 80,000 invoice was posted in the ERP on 20 March 2026 and paid on 5 April 2026. (a) Compute the WHT and the amount paid to the foreign company. (b) Find the last day to pay the WHT over. (c) Write the three entries.',
+            fa: 'مسار پترولیوم خدمات عمان از یک شرکت خارجی که در عمان مقر دائم ندارد و کشورش با عمان پیمان مالیاتی ندارد، خدمات پردازش داده‌های آزمایش چاه برای یکی از میدان‌های عمان خریده است. فاکتور 80,000 در 20 مارس 2026 در ERP ثبت شد و مبلغ در 5 آوریل 2026 پرداخت شد. (الف) مالیات تکلیفی و مبلغ پرداختی به شرکت خارجی را حساب کنید. (ب) آخرین مهلت واریز مالیات را تعیین کنید. (ج) سه سند لازم را بنویسید.',
+            en: 'Masar Petroleum Oman Services bought well-test data processing for an Omani field from a foreign company that has no PE in Oman and whose country has no tax treaty with Oman. The 80,000 invoice was posted in the ERP on 20 March 2026 and paid on 5 April 2026. (a) Compute the WHT and the amount paid to the foreign company. (b) Find the last day to pay the WHT over. (c) Write the three entries.',
           },
           hint: {
             fa: 'پرداخت یا بستانکار کردن تأمین‌کننده: کدام زودتر رخ داده است؟',
@@ -1732,8 +1733,8 @@ export const lesson: Lesson = {
   quiz: [
     {
       q: {
-        fa: 'نرخ عمومی مالیات بر درآمد برای شرکتی مثل پارس‌آریا خدمات عمان چند درصد است؟',
-        en: 'What is the standard income tax rate for a company such as Pars Arya Oman Services?',
+        fa: 'نرخ عمومی مالیات بر درآمد برای شرکتی مثل مسار پترولیوم خدمات عمان چند درصد است؟',
+        en: 'What is the standard income tax rate for a company such as Masar Petroleum Oman Services?',
       },
       options: [
         { fa: '3٪', en: '3%' },

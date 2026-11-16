@@ -1,4 +1,4 @@
-import type { IconName, L, Tone } from './types'
+import type { Currency, IconName, L, Tone } from './types'
 
 export type CourseId = 'accounting' | 'budget' | 'procurement' | 'warehouse' | 'assets'
 
@@ -11,12 +11,15 @@ export type Course = {
   erp: L
   icon: IconName
   tone: Tone
+  /** default unit for amounts in this course's lessons */
+  currency: Currency
 }
 
 /** Daftar teaches the modules of an ERP for the oil and gas industry: one course per module. */
 const courseList: Course[] = [
   {
     id: 'accounting',
+    currency: 'toman',
     order: 1,
     icon: 'Scale',
     tone: 'primary',
@@ -29,6 +32,7 @@ const courseList: Course[] = [
   },
   {
     id: 'budget',
+    currency: 'usd',
     order: 2,
     icon: 'FileSpreadsheet',
     tone: 'gold',
@@ -41,6 +45,7 @@ const courseList: Course[] = [
   },
   {
     id: 'warehouse',
+    currency: 'usd',
     order: 4,
     icon: 'Boxes',
     tone: 'gold',
@@ -53,6 +58,7 @@ const courseList: Course[] = [
   },
   {
     id: 'assets',
+    currency: 'usd',
     order: 5,
     icon: 'Building2',
     tone: 'asset',
@@ -65,6 +71,7 @@ const courseList: Course[] = [
   },
   {
     id: 'procurement',
+    currency: 'usd',
     order: 3,
     icon: 'ReceiptText',
     tone: 'revenue',

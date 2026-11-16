@@ -35,14 +35,19 @@ export const diagrams: Record<DiagramId, Lazy> = {
   'warehouse-flow': lazy(() => import('./processFlows').then((m) => ({ default: m.WarehouseFlow }))),
   'asset-lifecycle': lazy(() => import('./processFlows').then((m) => ({ default: m.AssetLifecycle }))),
   'work-order-flow': lazy(() => import('./processFlows').then((m) => ({ default: m.WorkOrderFlow }))),
+  'grn-ses': lazy(() => import('./processFlows').then((m) => ({ default: m.GrnSesFlow }))),
+  'afe-lifecycle': lazy(() => import('./processFlows').then((m) => ({ default: m.AfeLifecycle }))),
+  'je-workflow': lazy(() => import('./processFlows').then((m) => ({ default: m.JournalWorkflow }))),
+  'wbs-tree': lazy(() => import('./WbsTree')),
+  'budget-control': lazy(() => import('./BudgetControl')),
 }
 
 export const diagramIds = Object.keys(diagrams) as DiagramId[]
 
 function Skeleton() {
   return (
-    <div className="my-8 overflow-hidden rounded-2xl border bg-card">
-      <div className="h-14 border-b bg-muted/40" />
+    <div className="my-8 overflow-hidden rounded-lg bg-card">
+      <div className="h-14 bg-muted/40" />
       <div className="h-72 animate-pulse bg-gradient-to-br from-muted/60 via-muted/20 to-muted/60" />
     </div>
   )

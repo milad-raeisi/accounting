@@ -1,18 +1,25 @@
 import type { L, Lesson } from '../../types'
 
+/*
+ * Running example (shared with the rest of the assets course): Masar Petroleum (MP01), Arya field.
+ * Compressor station: centrifugal compressors K-101 and K-102 driven by gas turbines GT-101 and GT-102.
+ * Production station: inlet separator V-201 with relief valve PSV-205. Cost centres: CC-3100 compressor
+ * station, CC-3200 production station. New equipment in this lesson: chemical-injection pump P-160
+ * (AFE-2026-04) and fuel-gas filter separator V-150 (AFE-2026-05).
+ */
+
 /** Short bilingual string helper. */
 const t = (fa: string, en: string): L => ({ fa, en })
 /** Empty table cell. */
 const blank = t('', '')
 
-/* Accounts used in the automatic ERP postings of the running example (Pars Arya Oil & Gas). */
 const ac = {
-  wip: t('کار در جریان نگهداری (دستور کار)', 'Maintenance WIP (work orders)'),
-  grir: t('حساب واسط رسید کالا و فاکتور (GR/IR)', 'GR/IR clearing'),
+  grir: t('حساب واسط رسید کالا و فاکتور (GR/IR)', 'GR/IR clearing account'),
   ap: t('حساب‌های پرداختنی', 'Accounts payable'),
+  capMaint: t('هزینه نگهداری منتقل‌شده به دارایی (کاهنده هزینه)', 'Maintenance costs capitalised (contra expense)'),
 }
 const auc = (afe: string) => t(`دارایی در جریان تکمیل (${afe})`, `Assets under construction (${afe})`)
-const ppe = (fa: string) => t(`دارایی‌های ثابت مشهود: تجهیزات تولید (${fa})`, `PP&E: production equipment (${fa})`)
+const ppe = (fa: string) => t(`ماشین‌آلات و تجهیزات (${fa})`, `Plant and machinery (${fa})`)
 
 /** Class labels for the criticality tables. */
 const A = t('A', 'A')
@@ -46,8 +53,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'حسابرس یکی از شرکای مشارکت از پارس‌آریا می‌پرسد: «هزینه نگهداری کمپرسور K-101A در سه سال گذشته چقدر بوده است؟» تیم نگهداری در ERP سه رکورد پیدا می‌کند: «کمپرسور 1»، «COMP-A» و «K101A». بخشی از هزینه‌ها روی هیچ‌کدام نیست و روی مرکز هزینه کل میدان نشسته است. پاسخ یک سؤال ساده دو هفته کار دستی می‌برد. مشکل از تعمیرات نیست؛ از **فهرست دارایی‌ها** است.',
-            en: 'An auditor from one of the joint-venture partners asks Pars Arya: "What did compressor K-101A cost to maintain over the last three years?" The maintenance team finds three records in the ERP: "Compressor 1", "COMP-A" and "K101A". Some costs sit on none of them and landed on the field’s general cost centre. Answering a simple question takes two weeks of manual work. The problem is not the repairs; it is the **asset register**.',
+            fa: 'حسابرس یکی از شرکای مشارکت از مسار پترولیوم می‌پرسد: «هزینه نگهداری کمپرسور K-101 در سه سال گذشته چقدر بوده است؟» تیم نگهداری در ERP سه رکورد پیدا می‌کند: «کمپرسور 1»، «COMP-A» و «K101». بخشی از هزینه‌ها روی هیچ‌کدام نیست و روی مرکز هزینه کل میدان نشسته است. پاسخ یک سؤال ساده دو هفته کار دستی می‌برد. مشکل از تعمیرات نیست؛ از **فهرست دارایی‌ها** است.',
+            en: 'An auditor from one of the joint-venture partners asks Masar Petroleum: "What did compressor K-101 cost to maintain over the last three years?" The maintenance team finds three records in the ERP: "Compressor 1", "COMP-A" and "K101". Some costs sit on none of them and landed on the field’s general cost centre. Answering a simple question takes two weeks of manual work. The problem is not the repairs; it is the **asset register**.',
           },
         },
         {
@@ -61,8 +68,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'ERPها دو نوع رکورد جدا دارند. **مکان عملیاتی (Functional Location)** یک **جایگاه** در تأسیسات است که کار مشخصی در آن انجام می‌شود؛ مثلاً «جایگاه کمپرسور A در سامانه تراکم گاز». **تجهیز (Equipment)** **قلم فیزیکی** مشخصی است که با شماره سریال خودش در آن جایگاه نصب می‌شود. مثل جایگاه شغلی در نمودار سازمانی و کارمندی که آن را اشغال کرده است: کارمند ممکن است عوض شود، اما جایگاه می‌ماند.',
-            en: 'ERPs keep two separate kinds of record. A **functional location** is a **position** in the facility where a specific function is performed, for example "the compressor A position in the gas-compression system". **Equipment** is the specific **physical item**, with its own serial number, installed at that position. Think of a job position in an org chart and the employee who holds it: the employee may change, but the position stays.',
+            fa: 'ERPها دو نوع رکورد جدا دارند. **مکان عملیاتی (Functional Location)** یک **جایگاه** در تأسیسات است که کار مشخصی در آن انجام می‌شود؛ مثلاً «جایگاه توربین گازی که کمپرسور K-101 را می‌چرخاند». **تجهیز (Equipment)** **قلم فیزیکی** مشخصی است که با شماره سریال خودش در آن جایگاه نصب می‌شود. مثل جایگاه شغلی در نمودار سازمانی و کارمندی که آن را اشغال کرده است: کارمند ممکن است عوض شود، اما جایگاه می‌ماند.',
+            en: 'ERPs keep two separate kinds of record. A **functional location** is a **position** in the facility where a specific function is performed, for example "the gas-turbine position that drives compressor K-101". **Equipment** is the specific **physical item**, with its own serial number, installed at that position. Think of a job position in an org chart and the employee who holds it: the employee may change, but the position stays.',
           },
         },
         {
@@ -88,17 +95,17 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: t('جابه‌جایی کمپرسور در جایگاه ARY-CS-GC-K101A', 'An equipment swap at position ARY-CS-GC-K101A'),
-          head: [t('زمان', 'When'), t('رویداد', 'Event'), t('تجهیز نصب‌شده در جایگاه', 'Equipment at the position'), t('EQ-100245 کجاست؟', 'Where is EQ-100245?')],
+          caption: t('تعویض موتور توربین گازی در جایگاه ARY-CS-GC-GT101', 'An engine swap at position ARY-CS-GC-GT101'),
+          head: [t('زمان', 'When'), t('رویداد', 'Event'), t('تجهیز نصب‌شده در جایگاه', 'Equipment at the position'), t('EQ-100246 کجاست؟', 'Where is EQ-100246?')],
           rows: [
-            [t('ماه 1', 'Month 1'), t('نصب اولیه', 'Original installation'), t('EQ-100245 (سریال SN-7781)', 'EQ-100245 (serial SN-7781)'), t('نصب در جایگاه K-101A', 'Installed at position K-101A')],
+            [t('ماه 1', 'Month 1'), t('نصب اولیه', 'Original installation'), t('EQ-100246 (سریال GT-5521)', 'EQ-100246 (serial GT-5521)'), t('نصب در جایگاه GT-101', 'Installed at position GT-101')],
             [
               t('ماه 7', 'Month 7'),
-              t('پیاده کردن برای تعمیرات اساسی؛ نصب واحد یدکی', 'Removed for overhaul; spare unit installed'),
-              t('EQ-100388 (سریال SN-8120)', 'EQ-100388 (serial SN-8120)'),
-              t('کارگاه مرکزی، در حال تعمیر', 'Main workshop, under repair'),
+              t('پیاده کردن برای تعمیر اساسی نزد سازنده؛ نصب موتور جایگزین', 'Removed for overhaul at the OEM; exchange engine installed'),
+              t('EQ-100388 (سریال GT-6034)', 'EQ-100388 (serial GT-6034)'),
+              t('کارگاه سازنده، در حال تعمیر', 'OEM workshop, under repair'),
             ],
-            [t('ماه 9', 'Month 9'), t('پایان تعمیرات اساسی', 'Overhaul finished'), t('EQ-100388', 'EQ-100388'), t('انبار میدان، آماده به‌عنوان یدکی', 'Field Warehouse, ready as the spare')],
+            [t('ماه 9', 'Month 9'), t('پایان تعمیر اساسی', 'Overhaul finished'), t('EQ-100388', 'EQ-100388'), t('انبار مرکزی، آماده به‌عنوان یدکی', 'Central Warehouse, ready as the spare')],
           ],
         },
         {
@@ -106,8 +113,8 @@ export const lesson: Lesson = {
           tone: 'tip',
           title: t('دو تاریخچه، دو سؤال', 'Two histories, two questions'),
           text: {
-            fa: 'تاریخچه **مکان عملیاتی** پاسخ می‌دهد: «جایگاه K-101A چند بار از کار افتاده است؟» تاریخچه **تجهیز** پاسخ می‌دهد: «دستگاه با سریال SN-7781 در کل عمرش چند ساعت کار کرده و چند بار تعمیر شده است؟» ERP هر دو را نگه می‌دارد، به شرط آنکه هر نصب و پیاده کردن را ثبت کنید.',
-            en: 'The **functional location** history answers: "How many times has the K-101A position failed?" The **equipment** history answers: "How many hours has the unit with serial SN-7781 run in its whole life and how often was it repaired?" The ERP keeps both, as long as you record every installation and removal.',
+            fa: 'تاریخچه **مکان عملیاتی** پاسخ می‌دهد: «جایگاه GT-101 چند بار از کار افتاده است؟» تاریخچه **تجهیز** پاسخ می‌دهد: «موتور با سریال GT-5521 در کل عمرش چند ساعت کار کرده و چند بار تعمیر شده است؟» ERP هر دو را نگه می‌دارد، به شرط آنکه هر نصب و پیاده کردن را ثبت کنید.',
+            en: 'The **functional location** history answers: "How many times has the GT-101 position failed?" The **equipment** history answers: "How many hours has the engine with serial GT-5521 run in its whole life and how often was it repaired?" The ERP keeps both, as long as you record every installation and removal.',
           },
         },
       ],
@@ -119,8 +126,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'مکان‌های عملیاتی در یک **ساختار سلسله‌مراتبی (Asset Hierarchy)** مرتب می‌شوند؛ مثل پوشه‌های تودرتو. پارس‌آریا چهار سطح دارد: **میدان، ایستگاه، سامانه و تجهیز**. کد هر سطح، کد سطح بالاتر را با خود دارد؛ پس از روی کد می‌فهمید هر جایگاه کجاست.',
-            en: 'Functional locations are arranged in an **asset hierarchy**, like nested folders. Pars Arya uses four levels: **field → station → system → equipment**. Each level’s code carries the code of the level above, so the code alone tells you where a position is.',
+            fa: 'مکان‌های عملیاتی در یک **ساختار سلسله‌مراتبی (Asset Hierarchy)** مرتب می‌شوند؛ مثل پوشه‌های تودرتو. مسار پترولیوم چهار سطح دارد: **میدان، ایستگاه، سامانه و تجهیز**. کد هر سطح، کد سطح بالاتر را با خود دارد؛ پس از روی کد می‌فهمید هر جایگاه کجاست.',
+            en: 'Functional locations are arranged in an **asset hierarchy**, like nested folders. Masar Petroleum uses four levels: **field → station → system → equipment**. Each level’s code carries the code of the level above, so the code alone tells you where a position is.',
           },
         },
         {
@@ -131,13 +138,14 @@ export const lesson: Lesson = {
             [t('ARY', 'ARY'), t('میدان آریا', 'Arya field'), t('میدان', 'Field')],
             [t('ARY-CS', 'ARY-CS'), t('ایستگاه تقویت فشار', 'Compressor station'), t('ایستگاه', 'Station')],
             [t('ARY-CS-GC', 'ARY-CS-GC'), t('سامانه تراکم گاز', 'Gas-compression system'), t('سامانه', 'System')],
-            [t('ARY-CS-GC-K101A', 'ARY-CS-GC-K101A'), t('کمپرسور گاز K-101A', 'Gas compressor K-101A'), t('تجهیز', 'Equipment')],
-            [t('ARY-CS-GC-K101B', 'ARY-CS-GC-K101B'), t('کمپرسور گاز K-101B', 'Gas compressor K-101B'), t('تجهیز', 'Equipment')],
+            [t('ARY-CS-GC-K101', 'ARY-CS-GC-K101'), t('کمپرسور گریز از مرکز K-101', 'Centrifugal compressor K-101'), t('تجهیز', 'Equipment')],
+            [t('ARY-CS-GC-GT101', 'ARY-CS-GC-GT101'), t('توربین گازی GT-101 (محرک K-101)', 'Gas turbine GT-101 (drives K-101)'), t('تجهیز', 'Equipment')],
+            [t('ARY-CS-GC-K102', 'ARY-CS-GC-K102'), t('کمپرسور گریز از مرکز K-102', 'Centrifugal compressor K-102'), t('تجهیز', 'Equipment')],
             [t('ARY-CS-LO', 'ARY-CS-LO'), t('سامانه روغن‌کاری', 'Lube-oil system'), t('سامانه', 'System')],
             [t('ARY-PS', 'ARY-PS'), t('ایستگاه بهره‌برداری', 'Production station'), t('ایستگاه', 'Station')],
             [t('ARY-PS-SEP', 'ARY-PS-SEP'), t('سامانه جداسازی', 'Separation system'), t('سامانه', 'System')],
-            [t('ARY-PS-SEP-V110', 'ARY-PS-SEP-V110'), t('جداکننده ورودی V-110', 'Inlet separator V-110'), t('تجهیز', 'Equipment')],
-            [t('ARY-PS-SEP-PSV115', 'ARY-PS-SEP-PSV115'), t('شیر اطمینان PSV-115 روی V-110', 'Pressure safety valve PSV-115 on V-110'), t('تجهیز', 'Equipment')],
+            [t('ARY-PS-SEP-V201', 'ARY-PS-SEP-V201'), t('جداکننده ورودی V-201', 'Inlet separator V-201'), t('تجهیز', 'Equipment')],
+            [t('ARY-PS-SEP-PSV205', 'ARY-PS-SEP-PSV205'), t('شیر اطمینان PSV-205 روی V-201', 'Pressure safety valve PSV-205 on V-201'), t('تجهیز', 'Equipment')],
             [t('ARY-WS', 'ARY-WS'), t('محل چاه‌ها', 'Well sites'), t('ایستگاه', 'Station')],
             [t('ARY-WS-AR07', 'ARY-WS-AR07'), t('چاه AR-07', 'Well AR-07'), t('سامانه', 'System')],
             [t('ARY-WS-AR07-WH', 'ARY-WS-AR07-WH'), t('سرچاهی و تاج چاه AR-07', 'Wellhead and christmas tree of AR-07'), t('تجهیز', 'Equipment')],
@@ -148,8 +156,8 @@ export const lesson: Lesson = {
           tone: 'info',
           title: t('چاه به‌عنوان سامانه', 'A well as a system'),
           text: {
-            fa: 'در ساختار پارس‌آریا هر چاه یک «سامانه» زیر «محل چاه‌ها» است. این کار به نگهداری و مالی هر دو کمک می‌کند: هزینه سرچاهی، لوله مغزی و شیر ایمنی درون‌چاهی همه زیر کد همان چاه جمع می‌شود، و چاه یکی از مهم‌ترین موضوع‌های هزینه در قرارداد نفتی است.',
-            en: 'In Pars Arya’s hierarchy each well is a "system" under "well sites". This helps both maintenance and Finance: the costs of the wellhead, the tubing and the downhole safety valve all roll up under that well’s code, and the well is one of the most important cost objects under the petroleum contract.',
+            fa: 'در ساختار مسار پترولیوم هر چاه یک «سامانه» زیر «محل چاه‌ها» است. این کار به نگهداری و مالی هر دو کمک می‌کند: هزینه سرچاهی، لوله مغزی و شیر ایمنی درون‌چاهی همه زیر کد همان چاه جمع می‌شود، و چاه یکی از مهم‌ترین موضوع‌های هزینه در قرارداد نفتی است.',
+            en: 'In Masar Petroleum’s hierarchy each well is a "system" under "well sites". This helps both maintenance and Finance: the costs of the wellhead, the tubing and the downhole safety valve all roll up under that well’s code, and the well is one of the most important cost objects under the petroleum contract.',
           },
         },
         { type: 'h', text: t('قاعده‌های یک ساختار خوب', 'Rules for a Good Hierarchy') },
@@ -184,15 +192,16 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: t('پیشوندهای رایج تگ در پارس‌آریا', 'Common tag prefixes at Pars Arya'),
+          caption: t('پیشوندهای رایج تگ در مسار پترولیوم', 'Common tag prefixes at Masar Petroleum'),
           head: [t('پیشوند', 'Prefix'), t('نوع تجهیز', 'Equipment type'), t('نمونه در آریا', 'Example at Arya')],
           rows: [
-            [t('K', 'K'), t('کمپرسور', 'Compressor'), t('K-101A', 'K-101A')],
-            [t('P', 'P'), t('پمپ', 'Pump'), t('P-201A', 'P-201A')],
-            [t('V', 'V'), t('ظرف تحت فشار، جداکننده', 'Pressure vessel, separator'), t('V-110', 'V-110')],
+            [t('K', 'K'), t('کمپرسور', 'Compressor'), t('K-101', 'K-101')],
+            [t('GT', 'GT'), t('توربین گازی', 'Gas turbine'), t('GT-101', 'GT-101')],
+            [t('P', 'P'), t('پمپ', 'Pump'), t('P-120', 'P-120')],
+            [t('V', 'V'), t('ظرف تحت فشار، جداکننده', 'Pressure vessel, separator'), t('V-201', 'V-201')],
             [t('E', 'E'), t('مبدل حرارتی، کولر', 'Heat exchanger, cooler'), t('E-130', 'E-130')],
-            [t('PSV', 'PSV'), t('شیر اطمینان فشار', 'Pressure safety valve'), t('PSV-115', 'PSV-115')],
-            [t('LT / PT', 'LT / PT'), t('فرستنده سطح / فرستنده فشار', 'Level / pressure transmitter'), t('LT-112، PT-118', 'LT-112, PT-118')],
+            [t('PSV', 'PSV'), t('شیر اطمینان فشار', 'Pressure safety valve'), t('PSV-205', 'PSV-205')],
+            [t('LT / PT', 'LT / PT'), t('فرستنده سطح / فرستنده فشار', 'Level / pressure transmitter'), t('LT-201، PT-118', 'LT-201, PT-118')],
           ],
         },
         {
@@ -200,8 +209,8 @@ export const lesson: Lesson = {
           caption: t('شناسه‌های یک کمپرسور', 'The identities of one compressor'),
           head: [t('شناسه', 'Identifier'), t('مقدار', 'Value'), t('مالک', 'Owner'), t('همراه چه می‌ماند؟', 'Stays with')],
           rows: [
-            [t('تگ مهندسی', 'Engineering tag'), t('K-101A', 'K-101A'), t('مهندسی', 'Engineering'), t('جایگاه', 'The position')],
-            [t('مکان عملیاتی', 'Functional location'), t('ARY-CS-GC-K101A', 'ARY-CS-GC-K101A'), t('نگهداری', 'Maintenance'), t('جایگاه', 'The position')],
+            [t('تگ مهندسی', 'Engineering tag'), t('K-101', 'K-101'), t('مهندسی', 'Engineering'), t('جایگاه', 'The position')],
+            [t('مکان عملیاتی', 'Functional location'), t('ARY-CS-GC-K101', 'ARY-CS-GC-K101'), t('نگهداری', 'Maintenance'), t('جایگاه', 'The position')],
             [t('شماره تجهیز', 'Equipment number'), t('EQ-100245', 'EQ-100245'), t('نگهداری', 'Maintenance'), t('دستگاه', 'The unit')],
             [t('شماره سریال سازنده', 'Manufacturer serial'), t('SN-7781', 'SN-7781'), t('سازنده', 'Manufacturer'), t('دستگاه', 'The unit')],
             [t('شماره دارایی ثابت', 'Fixed-asset number'), t('FA-30071', 'FA-30071'), t('مالی', 'Finance'), t('دارایی حسابداری', 'The accounting asset')],
@@ -262,8 +271,8 @@ export const lesson: Lesson = {
           type: 'formula',
           text: t('امتیاز بحرانیت = بیشترین پیامد × احتمال خرابی', 'Criticality score = highest consequence × likelihood of failure'),
           note: t(
-            'این قاعده نمونه‌ای از روش فرضی پارس‌آریاست؛ هر شرکت ماتریس و آستانه‌های خودش را تعریف می‌کند.',
-            'This is Pars Arya’s illustrative rule; every company defines its own matrix and thresholds.',
+            'این قاعده نمونه‌ای از روش فرضی مسار پترولیوم است؛ هر شرکت ماتریس و آستانه‌های خودش را تعریف می‌کند.',
+            'This is Masar Petroleum’s illustrative rule; every company defines its own matrix and thresholds.',
           ),
         },
         {
@@ -281,10 +290,10 @@ export const lesson: Lesson = {
             t('رده', 'Class'),
           ],
           rows: [
-            [t('کمپرسور K-101A', 'Compressor K-101A'), 3, 4, 5, 4, 5, 3, 15, A],
-            [t('جداکننده V-110', 'Separator V-110'), 5, 4, 5, 3, 5, 2, 10, B],
-            [t('شیر اطمینان PSV-115', 'Relief valve PSV-115'), 5, 4, 2, 1, 5, 2, 10, t('A (عنصر حیاتی ایمنی)', 'A (safety-critical)')],
-            [t('پمپ میعانات P-201A', 'Condensate pump P-201A'), 2, 2, 2, 2, 2, 3, 6, C],
+            [t('کمپرسور K-101', 'Compressor K-101'), 3, 4, 5, 4, 5, 3, 15, A],
+            [t('جداکننده V-201', 'Separator V-201'), 5, 4, 5, 3, 5, 2, 10, B],
+            [t('شیر اطمینان PSV-205', 'Relief valve PSV-205'), 5, 4, 2, 1, 5, 2, 10, t('A (عنصر حیاتی ایمنی)', 'A (safety-critical)')],
+            [t('پمپ روغن P-131A (با پمپ آماده‌به‌کار)', 'Lube-oil pump P-131A (with standby)'), 2, 2, 2, 2, 2, 3, 6, C],
             [t('کولر گازی دفتر', 'Office air conditioner'), 1, 1, 1, 1, 1, 3, 3, C],
           ],
           numericCols: [1, 2, 3, 4, 5, 6, 7],
@@ -292,8 +301,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'کمپرسور K-101A با امتیاز 15 در رده A است: توقف آن تولید را مستقیم کم می‌کند. کنار پمپ P-201A یک پمپ آماده‌به‌کار (P-201B) هست؛ خرابی‌اش تولید را متوقف نمی‌کند، پس رده C است. PSV-115 با امتیاز 10 در رده B می‌افتد، اما چون عنصر حیاتی ایمنی است به A ارتقا می‌یابد.',
-            en: 'Compressor K-101A scores 15 and is class A: stopping it cuts production directly. Pump P-201A has a standby pump (P-201B) beside it; its failure does not stop production, so it is class C. PSV-115 scores 10, which is class B, but because it is a safety-critical element it is raised to A.',
+            fa: 'کمپرسور K-101 با امتیاز 15 در رده A است: توقف آن تولید را مستقیم کم می‌کند. کنار پمپ روغن P-131A یک پمپ آماده‌به‌کار (P-131B) هست که خودکار راه می‌افتد؛ خرابی‌اش تولید را متوقف نمی‌کند، پس رده C است. PSV-205 با امتیاز 10 در رده B می‌افتد، اما چون عنصر حیاتی ایمنی است به A ارتقا می‌یابد.',
+            en: 'Compressor K-101 scores 15 and is class A: stopping it cuts production directly. Lube-oil pump P-131A has a standby pump (P-131B) that starts automatically; its failure does not stop production, so it is class C. PSV-205 scores 10, which is class B, but because it is a safety-critical element it is raised to A.',
           },
         },
         {
@@ -336,7 +345,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: t('فهرست قطعات نگهداری K-101A (بخشی)', 'Maintenance BOM of K-101A (extract)'),
+          caption: t('فهرست قطعات نگهداری K-101 (بخشی)', 'Maintenance BOM of K-101 (extract)'),
           head: [
             t('ردیف', 'Item'),
             t('شماره کالا', 'Material number'),
@@ -347,42 +356,41 @@ export const lesson: Lesson = {
             t('ارزش ردیف', 'Line value'),
           ],
           rows: [
-            [t('10', '10'), t('MAT-500110', 'MAT-500110'), t('مجموعه سوپاپ مرحله 2', 'Stage-2 valve assembly'), 4, t('بله', 'Yes'), 22000, 88000],
-            [t('20', '20'), t('MAT-500111', 'MAT-500111'), t('بسته واشر سوپاپ', 'Valve gasket kit'), 4, t('خیر', 'No'), 1500, 6000],
-            [t('30', '30'), t('MAT-500140', 'MAT-500140'), t('ست رینگ پیستون', 'Piston ring set'), 2, t('بله', 'Yes'), 9000, 18000],
-            [t('40', '40'), t('MAT-500160', 'MAT-500160'), t('ست آب‌بند میله پیستون', 'Rod packing set'), 2, t('بله', 'Yes'), 7500, 15000],
-            [t('50', '50'), t('MAT-500200', 'MAT-500200'), t('فیلتر روغن', 'Lube-oil filter element'), 2, t('خیر', 'No'), 1200, 2400],
-            [t('جمع', 'Total'), blank, blank, blank, blank, blank, 129400],
+            [t('10', '10'), t('MAT-500300', 'MAT-500300'), t('کارتریج آب‌بند گاز خشک', 'Dry gas seal cartridge'), 2, t('بله', 'Yes'), 210000, 420000],
+            [t('20', '20'), t('MAT-500310', 'MAT-500310'), t('ست یاتاقان ژورنال', 'Journal bearing set'), 2, t('بله', 'Yes'), 12000, 24000],
+            [t('30', '30'), t('MAT-500320', 'MAT-500320'), t('ست لنت یاتاقان کف‌گرد', 'Thrust pad set'), 1, t('بله', 'Yes'), 8000, 8000],
+            [t('40', '40'), t('MAT-500330', 'MAT-500330'), t('بسته اورینگ و آب‌بند', 'O-ring and seal kit'), 2, t('خیر', 'No'), 600, 1200],
+            [t('50', '50'), t('MAT-500200', 'MAT-500200'), t('المنت فیلتر روغن', 'Lube-oil filter element'), 4, t('خیر', 'No'), 450, 1800],
+            [t('جمع', 'Total'), blank, blank, blank, blank, blank, 455000],
           ],
           numericCols: [3, 5, 6],
         },
         {
           type: 'p',
           text: {
-            fa: 'ستون «قطعه حیاتی» به انبار و تدارکات می‌گوید این قلم باید همیشه در انبار باشد، حتی اگر کم مصرف شود؛ چون نبودنش یک تجهیز رده A را هفته‌ها متوقف می‌کند. بسیاری از این قطعات **با زمان تحویل طولانی (Long-lead)** هستند و از سازنده اصلی (OEM) با گواهی کیفیت خریده می‌شوند.',
-            en: 'The "critical spare" column tells the warehouse and procurement that this item must always be in stock, even if it is rarely used, because without it a class-A item could be down for weeks. Many of these parts are **long-lead items**, bought from the original equipment manufacturer (OEM) with quality certificates.',
+            fa: 'ستون «قطعه حیاتی» به انبار و تدارکات می‌گوید این قلم باید همیشه در انبار باشد، حتی اگر کم مصرف شود؛ چون نبودنش یک تجهیز رده A را هفته‌ها متوقف می‌کند. بسیاری از این قطعات **با زمان تحویل طولانی (Long-lead)** هستند؛ مثلاً کارتریج آب‌بند گاز خشک حدود 20 هفته زمان تحویل دارد و از سازنده اصلی (OEM) با گواهی کیفیت خریده می‌شود. محاسبه اینکه چند عدد نگه داریم را در درس «برنامه‌ریزی نگهداری و قطعات یدکی» می‌بینیم.',
+            en: 'The "critical spare" column tells the warehouse and procurement that this item must always be in stock, even if it is rarely used, because without it a class-A item could be down for weeks. Many of these parts are **long-lead items**; the dry gas seal cartridge, for example, has a lead time of about 20 weeks and is bought from the original equipment manufacturer (OEM) with quality certificates. How many to hold is worked out in the lesson on maintenance planning and spare parts.',
           },
         },
         { type: 'h', text: t('مشخصات فنی', 'Technical Attributes') },
         {
           type: 'p',
           text: {
-            fa: 'هر تجهیز به یک **کلاس** (مثلاً «کمپرسور رفت‌وبرگشتی») تعلق دارد و هر کلاس فهرست ثابتی از **مشخصات فنی (Technical Attributes)** دارد. مقدارها از برگه اطلاعات سازنده (Datasheet) و اسناد تحویل پروژه وارد می‌شوند. مشخصات استاندارد، جست‌وجو و مقایسه را ممکن می‌کند؛ مثلاً: «همه کمپرسورهای بالای 1,500 کیلووات در منطقه خطر Zone 2».',
-            en: 'Every equipment item belongs to a **class** (for example "reciprocating compressor") and each class has a fixed list of **technical attributes**. Values come from the manufacturer’s datasheet and the project handover documents. Standard attributes make searching and comparing possible, for example: "all compressors above 1,500 kW in hazardous-area Zone 2".',
+            fa: 'هر تجهیز به یک **کلاس** (مثلاً «کمپرسور گریز از مرکز») تعلق دارد و هر کلاس فهرست ثابتی از **مشخصات فنی (Technical Attributes)** دارد. مقدارها از برگه اطلاعات سازنده (Datasheet) و اسناد تحویل پروژه وارد می‌شوند. مشخصات استاندارد، جست‌وجو و مقایسه را ممکن می‌کند؛ مثلاً: «همه کمپرسورهای با محرک بالای 5,000 کیلووات در منطقه خطر Zone 2».',
+            en: 'Every equipment item belongs to a **class** (for example "centrifugal compressor") and each class has a fixed list of **technical attributes**. Values come from the manufacturer’s datasheet and the project handover documents. Standard attributes make searching and comparing possible, for example: "all compressors with drivers above 5,000 kW in hazardous-area Zone 2".',
           },
         },
         {
           type: 'table',
-          caption: t('مشخصات فنی تجهیز EQ-100245', 'Technical attributes of equipment EQ-100245'),
+          caption: t('مشخصات فنی تجهیز EQ-100245 (کمپرسور K-101)', 'Technical attributes of equipment EQ-100245 (compressor K-101)'),
           head: [t('مشخصه', 'Attribute'), t('مقدار', 'Value')],
           rows: [
-            [t('کلاس', 'Class'), t('کمپرسور رفت‌وبرگشتی', 'Reciprocating compressor')],
-            [t('سازنده و مدل', 'Manufacturer and model'), t('شرکت نمونه (فرضی)، مدل RC-1800', 'Sample Compressors Ltd (fictional), model RC-1800')],
+            [t('کلاس', 'Class'), t('کمپرسور گریز از مرکز', 'Centrifugal compressor')],
+            [t('سازنده و مدل', 'Manufacturer and model'), t('شرکت نمونه (فرضی)، مدل CC-24', 'Sample Compressors Ltd (fictional), model CC-24')],
             [t('شماره سریال', 'Serial number'), t('SN-7781', 'SN-7781')],
-            [t('توان نامی', 'Rated power'), t('1,800 kW', '1,800 kW')],
-            [t('تعداد مراحل', 'Stages'), t('2', '2')],
+            [t('محرک و توان نامی', 'Driver and rated power'), t('توربین گازی GT-101، 7,500 kW', 'Gas turbine GT-101, 7,500 kW')],
             [t('فشار مکش / رانش', 'Suction / discharge pressure'), t('18 bar / 70 bar', '18 bar / 70 bar')],
-            [t('محرک', 'Driver'), t('موتور گازسوز', 'Gas engine')],
+            [t('نوع آب‌بند محور', 'Shaft seal type'), t('آب‌بند گاز خشک دوتایی', 'Tandem dry gas seals')],
             [t('طبقه‌بندی منطقه خطر', 'Hazardous-area classification'), t('Zone 2', 'Zone 2')],
             [t('سال نصب', 'Year installed'), t('1395', '2016')],
             [t('ساعت کارکرد (شمارنده)', 'Running hours (counter)'), t('61,250', '61,250')],
@@ -442,17 +450,17 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: t('پیوند دو فهرست در پارس‌آریا', 'How the two registers link at Pars Arya'),
+          caption: t('پیوند دو فهرست در مسار پترولیوم', 'How the two registers link at Masar Petroleum'),
           head: [t('دارایی ثابت (مالی)', 'Fixed asset (Finance)'), t('تجهیزات (نگهداری)', 'Equipment (maintenance)'), t('رابطه', 'Relationship')],
           rows: [
             [
-              t('FA-30071 بسته کمپرسور K-101A', 'FA-30071 Compressor package K-101A'),
-              t('EQ-100245 کمپرسور، EQ-100246 موتور گازسوز، EQ-100247 کولر گاز', 'EQ-100245 compressor, EQ-100246 gas engine, EQ-100247 gas cooler'),
+              t('FA-30071 ردیف تراکم K-101', 'FA-30071 Compression train K-101'),
+              t('EQ-100245 کمپرسور، EQ-100247 کنسول روغن‌کاری، EQ-100248 کولر گاز E-130', 'EQ-100245 compressor, EQ-100247 lube-oil console, EQ-100248 gas cooler E-130'),
               t('یک دارایی، چند تجهیز', 'One asset, several equipment items'),
             ],
             [
-              t('FA-30090 جداکننده ورودی V-110', 'FA-30090 Inlet separator V-110'),
-              t('EQ-100310 جداکننده و EQ-100311 شیر اطمینان PSV-115', 'EQ-100310 separator and EQ-100311 relief valve PSV-115'),
+              t('FA-30090 جداکننده ورودی V-201', 'FA-30090 Inlet separator V-201'),
+              t('EQ-100310 جداکننده و EQ-100311 شیر اطمینان PSV-205', 'EQ-100310 separator and EQ-100311 relief valve PSV-205'),
               t('شیر اطمینان جزء بهای جداکننده سرمایه‌ای شده است', 'The relief valve was capitalised as part of the separator'),
             ],
             [
@@ -466,8 +474,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'پارس‌آریا برای تزریق بازدارنده خوردگی به چاه‌ها یک پمپ تزریق مواد شیمیایی (`P-150`) را با مجوز هزینه‌کرد **AFE-1405** می‌خرد. ببینید داده پایه، اسناد و نقش‌ها چطور کنار هم قرار می‌گیرند:',
-            en: 'To inject corrosion inhibitor into the wells, Pars Arya buys a chemical-injection pump (`P-150`) under **AFE-1405**. See how master data, documents and roles fit together:',
+            fa: 'مسار پترولیوم برای تزریق بازدارنده خوردگی به چاه‌ها یک پمپ تزریق مواد شیمیایی (`P-160`) را با مجوز هزینه‌کرد **AFE-2026-04** می‌خرد. ببینید داده پایه، اسناد و نقش‌ها چطور کنار هم قرار می‌گیرند:',
+            en: 'To inject corrosion inhibitor into the wells, Masar Petroleum buys a chemical-injection pump (`P-160`) under **AFE-2026-04**. See how master data, documents and roles fit together:',
           },
         },
         {
@@ -476,20 +484,20 @@ export const lesson: Lesson = {
             {
               title: t('مهندسی: ساخت مکان عملیاتی', 'Engineering: create the functional location'),
               text: t(
-                'جایگاه `ARY-PS-CHM-P150` زیر سامانه تزریق مواد شیمیایی ساخته می‌شود؛ پیش از رسیدن پمپ.',
-                'Position `ARY-PS-CHM-P150` is created under the chemical-injection system, before the pump arrives.',
+                'جایگاه `ARY-PS-CHM-P160` زیر سامانه تزریق مواد شیمیایی ساخته می‌شود؛ پیش از رسیدن پمپ.',
+                'Position `ARY-PS-CHM-P160` is created under the chemical-injection system, before the pump arrives.',
               ),
             },
             {
-              title: t('تدارکات: سفارش خرید سرمایه‌ای', 'Procurement: capital purchase order'),
+              title: t('تدارکات و انبار: سفارش خرید سرمایه‌ای و GRN', 'Procurement and warehouse: capital purchase order and GRN'),
               text: t(
-                'سفارش خرید با تخصیص به AFE-1405 ثبت می‌شود، نه به یک مرکز هزینه؛ پس از رسید کالا، بها به «دارایی در جریان تکمیل» می‌رود.',
-                'The purchase order is assigned to AFE-1405, not to a cost centre; on goods receipt the cost goes to "assets under construction".',
+                'سفارش خرید با تخصیص به AFE-2026-04 ثبت می‌شود، نه به یک مرکز هزینه. انباردار با **رسید کالا (GRN)** دریافت پمپ را ثبت می‌کند و چون کالا مستقیم به AFE می‌رود، بها به «دارایی در جریان تکمیل» می‌نشیند.',
+                'The purchase order is assigned to AFE-2026-04, not to a cost centre. The storekeeper records the pump’s arrival with a **goods received note (GRN)**; because it is charged directly to the AFE, the cost lands on "assets under construction".',
               ),
             },
             {
               title: t('نگهداری: دستور کار نصب', 'Maintenance: installation work order'),
-              text: t('یک دستور کار سرمایه‌ای برای نصب و راه‌اندازی باز می‌شود که به همان AFE تسویه می‌شود.', 'A capital work order for installation and commissioning is opened and settled to the same AFE.'),
+              text: t('دستور کار سرمایه‌ای `WO-40021` برای نصب و راه‌اندازی باز می‌شود که به همان AFE تسویه می‌شود.', 'Capital work order `WO-40021` for installation and commissioning is opened and settled to the same AFE.'),
             },
             {
               title: t('مالی: سرمایه‌ای کردن', 'Finance: capitalisation'),
@@ -501,47 +509,47 @@ export const lesson: Lesson = {
             {
               title: t('نگهداری: تکمیل داده پایه', 'Maintenance: complete the master data'),
               text: t(
-                'رکورد تجهیز `EQ-100402` با سریال، مشخصات فنی، BOM، بحرانیت و شماره دارایی FA-30120 ساخته و در جایگاه P-150 نصب می‌شود؛ سپس برنامه نگهداری آن تعریف می‌شود.',
-                'Equipment record `EQ-100402` is created with serial number, attributes, BOM, criticality and asset number FA-30120, and installed at position P-150; then its maintenance plan is set up.',
+                'رکورد تجهیز `EQ-100402` با سریال، مشخصات فنی، BOM، بحرانیت و شماره دارایی FA-30120 ساخته و در جایگاه P-160 نصب می‌شود؛ سپس برنامه نگهداری آن تعریف می‌شود.',
+                'Equipment record `EQ-100402` is created with serial number, attributes, BOM, criticality and asset number FA-30120, and installed at position P-160; then its maintenance plan is set up.',
               ),
             },
           ],
         },
         {
           type: 'journal',
-          title: t('سندهای خودکار ERP برای پمپ P-150', 'Automatic ERP postings for pump P-150'),
+          title: t('سندهای خودکار ERP برای پمپ P-160', 'Automatic ERP postings for pump P-160'),
           entries: [
             {
-              date: t('رسید کالا', 'Goods receipt'),
+              date: t('رسید کالا (GRN)', 'Goods received note (GRN)'),
               lines: [
-                { account: auc('AFE-1405'), debit: 380000 },
-                { account: ac.grir, credit: 380000 },
+                { account: auc('AFE-2026-04'), debit: 48000 },
+                { account: ac.grir, credit: 48000 },
               ],
-              memo: t('پمپ با سفارش خرید سرمایه‌ای دریافت شد', 'Pump received against the capital purchase order'),
+              memo: t('دریافت پمپ با سفارش خرید سرمایه‌ای؛ تعهد سفارش به هزینه واقعی AFE تبدیل می‌شود', 'Pump received on the capital purchase order; the PO commitment becomes an actual cost on the AFE'),
             },
             {
               date: t('فاکتور فروشنده', 'Vendor invoice'),
               lines: [
-                { account: ac.grir, debit: 380000 },
-                { account: ac.ap, credit: 380000 },
+                { account: ac.grir, debit: 48000 },
+                { account: ac.ap, credit: 48000 },
               ],
-              memo: t('تطبیق سه‌طرفه: سفارش، رسید و فاکتور', 'Three-way match: order, receipt and invoice'),
+              memo: t('تطبیق سه‌طرفه: سفارش خرید، GRN و فاکتور', 'Three-way match: purchase order, GRN and invoice'),
             },
             {
-              date: t('تسویه دستور کار نصب', 'Installation work-order settlement'),
+              date: t('تسویه دستور کار نصب WO-40021', 'Settlement of installation work order WO-40021'),
               lines: [
-                { account: auc('AFE-1405'), debit: 70000 },
-                { account: ac.wip, credit: 70000 },
+                { account: auc('AFE-2026-04'), debit: 12000 },
+                { account: ac.capMaint, credit: 12000 },
               ],
-              memo: t('دستمزد و مواد نصب و راه‌اندازی', 'Installation and commissioning labour and materials'),
+              memo: t('دستمزد و مواد نصب که روی دستور کار ثبت شده بود، از هزینه به دارایی منتقل می‌شود', 'Installation labour and materials posted on the work order move from expense to the asset'),
             },
             {
               date: t('سرمایه‌ای کردن', 'Capitalisation'),
               lines: [
-                { account: ppe('FA-30120'), debit: 450000 },
-                { account: auc('AFE-1405'), credit: 450000 },
+                { account: ppe('FA-30120'), debit: 60000 },
+                { account: auc('AFE-2026-04'), credit: 60000 },
               ],
-              memo: t('380,000 + 70,000 = 450,000؛ برچسب بازیافت: هزینه سرمایه‌ای قابل بازیافت', '380,000 + 70,000 = 450,000; recovery tag: recoverable capital cost'),
+              memo: t('48,000 + 12,000 = 60,000؛ پرچم بازیافت R، طبقه هزینه توسعه', '48,000 + 12,000 = 60,000; recovery flag R, cost category Development'),
             },
           ],
         },
@@ -550,8 +558,8 @@ export const lesson: Lesson = {
           tone: 'info',
           title: t('پیوند با بازیافت هزینه', 'The cost-recovery link'),
           text: {
-            fa: 'در بسیاری از قراردادهای نفتی، هزینه‌های سرمایه‌ای (مانند همین پمپ) طی چند سال بازیافت می‌شوند و هزینه‌های عملیاتی (مانند تعمیرات عادی) در همان سالی که رخ می‌دهند. پس اینکه یک هزینه روی AFE سرمایه‌ای بنشیند یا روی مرکز هزینه عملیاتی، هم صورت‌های مالی و هم زمان بازیافت را عوض می‌کند. قاعده دقیق را از روش حسابداری پیوست قرارداد بخوانید.',
-            en: 'Under many petroleum contracts, capital costs (like this pump) are recovered over several years and operating costs (like routine repairs) in the year they occur. So whether a cost lands on a capital AFE or an operating cost centre changes both the financial statements and the timing of recovery. Read the exact rule in the contract’s accounting procedure.',
+            fa: 'در بسیاری از قراردادهای نفتی، هزینه‌های سرمایه‌ای (مانند همین پمپ) طی چند سال بازیافت می‌شوند و هزینه‌های عملیاتی (مانند تعمیرات عادی) در همان سالی که رخ می‌دهند. پس اینکه یک هزینه روی AFE سرمایه‌ای بنشیند یا روی مرکز هزینه عملیاتی، هم صورت‌های مالی و هم زمان بازیافت را عوض می‌کند. GRN، فاکتور و گزارش راه‌اندازی، مدارک بازیافت این پمپ‌اند. قاعده دقیق را از روش حسابداری پیوست قرارداد بخوانید.',
+            en: 'Under many petroleum contracts, capital costs (like this pump) are recovered over several years and operating costs (like routine repairs) in the year they occur. So whether a cost lands on a capital AFE or an operating cost centre changes both the financial statements and the timing of recovery. The GRN, the invoice and the commissioning report are this pump’s recovery evidence. Read the exact rule in the contract’s accounting procedure.',
           },
         },
         {
@@ -591,8 +599,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'برای نمونه: 1,054 ÷ 1,240 = 85٪ و 248 ÷ 310 = 80٪. تیم پارس‌آریا اولویت را به 62 تجهیز رده A و B بدون BOM (310 − 248) می‌دهد، چون اگر همین تجهیزات خراب شوند، برنامه‌ریز نمی‌داند چه قطعه‌ای لازم است.',
-            en: 'For example: 1,054 ÷ 1,240 = 85% and 248 ÷ 310 = 80%. Pars Arya’s team puts the 62 class A and B items without a BOM (310 − 248) first, because if these fail the planner will not know which parts are needed.',
+            fa: 'برای نمونه: 1,054 ÷ 1,240 = 85٪ و 248 ÷ 310 = 80٪. تیم مسار پترولیوم اولویت را به 62 تجهیز رده A و B بدون BOM (310 − 248) می‌دهد، چون اگر همین تجهیزات خراب شوند، برنامه‌ریز نمی‌داند چه قطعه‌ای لازم است.',
+            en: 'For example: 1,054 ÷ 1,240 = 85% and 248 ÷ 310 = 80%. Masar Petroleum’s team puts the 62 class A and B items without a BOM (310 − 248) first, because if these fail the planner will not know which parts are needed.',
           },
         },
         {
@@ -609,8 +617,8 @@ export const lesson: Lesson = {
           type: 'list',
           items: [
             t(
-              '**یکی دانستن مکان عملیاتی و تجهیز.** اگر هر بار که کمپرسور عوض می‌شود رکورد تازه بسازید و قبلی را حذف کنید، تاریخچه جایگاه و دستگاه هر دو از بین می‌رود.',
-              '**Treating functional location and equipment as one.** If you create a new record and delete the old one every time a compressor is swapped, both the position history and the unit history are lost.',
+              '**یکی دانستن مکان عملیاتی و تجهیز.** اگر هر بار که موتور یا کمپرسوری عوض می‌شود رکورد تازه بسازید و قبلی را حذف کنید، تاریخچه جایگاه و دستگاه هر دو از بین می‌رود.',
+              '**Treating functional location and equipment as one.** If you create a new record and delete the old one every time an engine or compressor is swapped, both the position history and the unit history are lost.',
             ),
             t(
               '**شرح متن آزاد.** «پمپ»، «پمپ میعانات» و «Cond. pump» سه رکورد جدا می‌شوند و تکراری‌ها زیاد می‌شوند.',
@@ -650,15 +658,15 @@ export const lesson: Lesson = {
           given: {
             head: [t('ردیف', 'No.'), t('مورد', 'Item')],
             rows: [
-              [t('1', '1'), t('ARY-CS-GC-K101B (جایگاه کمپرسور B)', 'ARY-CS-GC-K101B (compressor B position)')],
-              [t('2', '2'), t('کمپرسوری با سریال SN-8120 که اکنون در انبار میدان است', 'A compressor with serial SN-8120 now in the Field Warehouse')],
+              [t('1', '1'), t('ARY-CS-GC-K102 (جایگاه کمپرسور K-102)', 'ARY-CS-GC-K102 (compressor K-102 position)')],
+              [t('2', '2'), t('موتور توربین گازی با سریال GT-6034 که اکنون در انبار مرکزی است', 'A gas-turbine engine with serial GT-6034 now in the Central Warehouse')],
               [t('3', '3'), t('سامانه روغن‌کاری ARY-CS-LO', 'Lube-oil system ARY-CS-LO')],
               [t('4', '4'), t('فرستنده فشار نو با سریال 55109 که هنوز نصب نشده است', 'A new pressure transmitter, serial 55109, not yet installed')],
               [t('5', '5'), t('جایگاه سرچاهی چاه AR-07', 'The wellhead position of well AR-07')],
-              [t('6', '6'), t('موتور گازسوزی که از K-101A پیاده و به کارگاه فرستاده شده است', 'A gas engine removed from K-101A and sent to the workshop')],
+              [t('6', '6'), t('ست یاتاقانی که از K-101 پیاده و برای بازسازی به کارگاه فرستاده شده است', 'A bearing set removed from K-101 and sent to the workshop for refurbishment')],
             ],
           },
-          hint: t('بپرسید: اگر این را از جایش بردارید، هنوز وجود دارد؟ اگر بله، تجهیز است.', 'Ask: if you take it away from its place, does it still exist? If yes, it is equipment.'),
+          hint: t('بپرسید: اگر این را از جایش بردارید، هنوز وجود دارد؟ اگر بله، قلم فیزیکی است.', 'Ask: if you take it away from its place, does it still exist? If yes, it is a physical item.'),
           solution: [
             {
               type: 'table',
@@ -669,25 +677,29 @@ export const lesson: Lesson = {
                 [t('3', '3'), t('مکان عملیاتی', 'Functional location'), t('سطح «سامانه» در ساختار سلسله‌مراتبی', 'The "system" level of the hierarchy')],
                 [t('4', '4'), t('تجهیز', 'Equipment'), t('قلم فیزیکی در انبار، هنوز بدون جایگاه', 'A physical item in store, not yet at a position')],
                 [t('5', '5'), t('مکان عملیاتی', 'Functional location'), t('جایگاه؛ سرچاهی نصب‌شده در آن یک تجهیز است', 'A position; the wellhead installed there is equipment')],
-                [t('6', '6'), t('تجهیز', 'Equipment'), t('دستگاه جابه‌جا شده و تاریخچه‌اش را با خود می‌برد', 'The unit has moved and takes its history with it')],
+                [
+                  t('6', '6'),
+                  t('قلم فیزیکی (تجهیز یا قطعه قابل بازسازی)', 'Physical item (equipment or repairable part)'),
+                  t('جابه‌جا شده و اگر سریال دارد، تاریخچه‌اش را با خود می‌برد', 'It has moved, and if serialised it takes its history with it'),
+                ],
               ],
             },
           ],
-          answer: t('مکان عملیاتی: 1، 3، 5؛ تجهیز: 2، 4، 6', 'Functional locations: 1, 3, 5; equipment: 2, 4, 6'),
+          answer: t('مکان عملیاتی: 1، 3، 5؛ اقلام فیزیکی: 2، 4، 6', 'Functional locations: 1, 3, 5; physical items: 2, 4, 6'),
         },
         {
           type: 'exercise',
           title: t('رده‌بندی بحرانیت', 'Ranking criticality'),
           difficulty: 'medium',
           problem: t(
-            'با قاعده پارس‌آریا (امتیاز = بیشترین پیامد × احتمال؛ A: 15 و بیشتر، B: 8 تا 14، C: 7 و کمتر؛ عناصر حیاتی ایمنی همیشه A) رده هر تجهیز را تعیین کنید.',
-            'Using Pars Arya’s rule (score = highest consequence × likelihood; A: 15 or more, B: 8 to 14, C: 7 or less; safety-critical elements always A), find each item’s class.',
+            'با قاعده مسار پترولیوم (امتیاز = بیشترین پیامد × احتمال؛ A: 15 و بیشتر، B: 8 تا 14، C: 7 و کمتر؛ عناصر حیاتی ایمنی همیشه A) رده هر تجهیز را تعیین کنید.',
+            'Using Masar Petroleum’s rule (score = highest consequence × likelihood; A: 15 or more, B: 8 to 14, C: 7 or less; safety-critical elements always A), find each item’s class.',
           ),
           given: {
             head: [t('تجهیز', 'Equipment'), t('ایمنی', 'Safety'), t('محیط زیست', 'Environment'), t('تولید', 'Production'), t('هزینه', 'Cost'), t('احتمال', 'Likelihood')],
             rows: [
               [t('کولر گاز E-130', 'Gas cooler E-130'), 2, 3, 4, 3, 3],
-              [t('پمپ آب آتش‌نشانی P-301 (عنصر حیاتی ایمنی)', 'Fire-water pump P-301 (safety-critical)'), 5, 2, 1, 2, 2],
+              [t('پمپ آب آتش‌نشانی P-901 (عنصر حیاتی ایمنی)', 'Fire-water pump P-901 (safety-critical)'), 5, 2, 1, 2, 2],
               [t('ژنراتور گازسوز G-401 (بدون پشتیبان)', 'Gas-engine generator G-401 (no backup)'), 2, 1, 5, 4, 4],
               [t('جرثقیل سقفی کارگاه', 'Workshop overhead crane'), 3, 1, 1, 2, 2],
             ],
@@ -699,7 +711,7 @@ export const lesson: Lesson = {
               head: [t('تجهیز', 'Equipment'), t('بیشترین پیامد', 'Highest consequence'), t('احتمال', 'Likelihood'), t('امتیاز', 'Score'), t('رده', 'Class')],
               rows: [
                 [t('E-130', 'E-130'), 4, 3, 12, B],
-                [t('P-301', 'P-301'), 5, 2, 10, t('A (استثنای ایمنی)', 'A (safety override)')],
+                [t('P-901', 'P-901'), 5, 2, 10, t('A (استثنای ایمنی)', 'A (safety override)')],
                 [t('G-401', 'G-401'), 5, 4, 20, A],
                 [t('جرثقیل کارگاه', 'Workshop crane'), 3, 2, 6, C],
               ],
@@ -709,12 +721,12 @@ export const lesson: Lesson = {
               type: 'callout',
               tone: 'tip',
               text: t(
-                'P-301 با امتیاز 10 به‌تنهایی رده B می‌گیرد؛ اما پمپ آب آتش‌نشانی عنصر حیاتی ایمنی است و باید همیشه آماده باشد، پس A می‌شود. G-401 پشتیبان ندارد و توقفش کل میدان را بی‌برق می‌کند؛ امتیاز 20 آن را بالاترین اولویت می‌کند.',
-                'P-301 scores 10, which alone would be class B; but a fire-water pump is a safety-critical element and must always be ready, so it is A. G-401 has no backup and its failure blacks out the field; its score of 20 makes it the top priority.',
+                'P-901 با امتیاز 10 به‌تنهایی رده B می‌گیرد؛ اما پمپ آب آتش‌نشانی عنصر حیاتی ایمنی است و باید همیشه آماده باشد، پس A می‌شود. G-401 پشتیبان ندارد و توقفش کل میدان را بی‌برق می‌کند؛ امتیاز 20 آن را بالاترین اولویت می‌کند.',
+                'P-901 scores 10, which alone would be class B; but a fire-water pump is a safety-critical element and must always be ready, so it is A. G-401 has no backup and its failure blacks out the field; its score of 20 makes it the top priority.',
               ),
             },
           ],
-          answer: t('G-401: A (20)؛ P-301: A (استثنای ایمنی، امتیاز 10)؛ E-130: B (12)؛ جرثقیل: C (6)', 'G-401: A (20); P-301: A (safety override, score 10); E-130: B (12); crane: C (6)'),
+          answer: t('G-401: A (20)؛ P-901: A (استثنای ایمنی، امتیاز 10)؛ E-130: B (12)؛ جرثقیل: C (6)', 'G-401: A (20); P-901: A (safety override, score 10); E-130: B (12); crane: C (6)'),
         },
         {
           type: 'exercise',
@@ -759,21 +771,21 @@ export const lesson: Lesson = {
         },
         {
           type: 'exercise',
-          title: t('سرمایه‌ای کردن یک کولر جدید', 'Capitalising a new cooler'),
+          title: t('سرمایه‌ای کردن یک فیلتر جداکننده جدید', 'Capitalising a new filter separator'),
           difficulty: 'hard',
           problem: t(
-            'برای افزایش ظرفیت خنک‌کاری، کولر گاز جدید `E-131` در ایستگاه تقویت فشار با AFE-1502 نصب شده است. همه هزینه‌های زیر روی AFE (دارایی در جریان تکمیل) جمع شده‌اند. طبق IAS 16 مبلغ قابل سرمایه‌ای کردن را تعیین کنید، سند اصلاح و سند سرمایه‌ای کردن را بنویسید و بگویید در فهرست فنی چه رکوردهایی باید ساخته شود.',
-            'To add cooling capacity, a new gas cooler `E-131` was installed at the compressor station under AFE-1502. All the costs below were collected on the AFE (assets under construction). Under IAS 16, determine the amount to capitalise, write the correcting entry and the capitalisation entry, and say which records must be created in the technical register.',
+            'فیلتر جداکننده جدید گاز سوخت `V-150` در ایستگاه تقویت فشار با AFE-2026-05 نصب شده است. همه هزینه‌های زیر روی AFE (دارایی در جریان تکمیل) نشسته‌اند. طبق IAS 16 مبلغ قابل سرمایه‌ای کردن را تعیین کنید، سند اصلاح و سند سرمایه‌ای کردن را بنویسید و بگویید در فهرست فنی چه رکوردهایی باید ساخته شود.',
+            'A new fuel-gas filter separator `V-150` was installed at the compressor station under AFE-2026-05. All the costs below sit on the AFE (assets under construction). Under IAS 16, determine the amount to capitalise, write the correcting entry and the capitalisation entry, and say which records must be created in the technical register.',
           ),
           given: {
             head: [t('هزینه', 'Cost'), t('مبلغ', 'Amount')],
             rows: [
-              [t('بهای خرید کولر (رسید کالا)', 'Cooler purchase price (goods receipt)'), 380000],
-              [t('حمل تا میدان', 'Freight to the field'), 15000],
-              [t('دستور کار نصب (دستمزد و مواد)', 'Installation work order (labour and materials)'), 40000],
-              [t('خدمات راه‌اندازی پیمانکار', 'Contractor commissioning service'), 30000],
-              [t('آموزش اپراتورها', 'Operator training'), 12000],
-              [t('جمع', 'Total'), 477000],
+              [t('بهای خرید (GRN)', 'Purchase price (GRN)'), 180000],
+              [t('حمل تا میدان (SES حمل‌کننده)', 'Freight to the field (carrier’s SES)'), 9000],
+              [t('دستور کار نصب (دستمزد و مواد)', 'Installation work order (labour and materials)'), 26000],
+              [t('خدمات راه‌اندازی پیمانکار (SES)', 'Contractor commissioning service (SES)'), 15000],
+              [t('آموزش اپراتورها', 'Operator training'), 6000],
+              [t('جمع', 'Total'), 236000],
             ],
             numericCols: [1],
           },
@@ -784,15 +796,15 @@ export const lesson: Lesson = {
               items: [
                 {
                   title: t('هزینه‌های قابل سرمایه‌ای کردن', 'Costs to capitalise'),
-                  text: t('بها، حمل، نصب و راه‌اندازی: 380,000 + 15,000 + 40,000 + 30,000 = 465,000.', 'Price, freight, installation and commissioning: 380,000 + 15,000 + 40,000 + 30,000 = 465,000.'),
+                  text: t('بها، حمل، نصب و راه‌اندازی: 180,000 + 9,000 + 26,000 + 15,000 = 230,000.', 'Price, freight, installation and commissioning: 180,000 + 9,000 + 26,000 + 15,000 = 230,000.'),
                 },
                 {
                   title: t('هزینه غیرقابل سرمایه‌ای کردن', 'Cost not capitalised'),
-                  text: t('IAS 16 هزینه آموزش کارکنان را جزء بهای دارایی نمی‌داند؛ 12,000 به هزینه دوره می‌رود.', 'IAS 16 excludes staff training from the asset’s cost; the 12,000 is a period expense.'),
+                  text: t('IAS 16 هزینه آموزش کارکنان را جزء بهای دارایی نمی‌داند؛ 6,000 به هزینه دوره می‌رود.', 'IAS 16 excludes staff training from the asset’s cost; the 6,000 is a period expense.'),
                 },
                 {
                   title: t('ترتیب سندها', 'Order of entries'),
-                  text: t('ابتدا آموزش را از AFE خارج می‌کنیم، سپس مانده 465,000 را سرمایه‌ای می‌کنیم.', 'First move the training out of the AFE, then capitalise the remaining 465,000.'),
+                  text: t('ابتدا آموزش را از AFE خارج می‌کنیم، سپس مانده 230,000 را سرمایه‌ای می‌کنیم.', 'First move the training out of the AFE, then capitalise the remaining 230,000.'),
                 },
               ],
             },
@@ -802,31 +814,31 @@ export const lesson: Lesson = {
                 {
                   date: t('اصلاح', 'Correction'),
                   lines: [
-                    { account: t('هزینه آموزش (مرکز هزینه CS-OPS)', 'Training expense (cost centre CS-OPS)'), debit: 12000 },
-                    { account: auc('AFE-1502'), credit: 12000 },
+                    { account: t('هزینه آموزش (CC-3100، طبقه عملیاتی)', 'Training expense (CC-3100, Operating)'), debit: 6000 },
+                    { account: auc('AFE-2026-05'), credit: 6000 },
                   ],
-                  memo: t('آموزش هزینه دوره است، نه بخشی از بهای کولر', 'Training is a period expense, not part of the cooler’s cost'),
+                  memo: t('آموزش هزینه دوره است، نه بخشی از بهای دارایی', 'Training is a period expense, not part of the asset’s cost'),
                 },
                 {
                   date: t('سرمایه‌ای کردن', 'Capitalisation'),
                   lines: [
-                    { account: ppe('FA-30131'), debit: 465000 },
-                    { account: auc('AFE-1502'), credit: 465000 },
+                    { account: ppe('FA-30131'), debit: 230000 },
+                    { account: auc('AFE-2026-05'), credit: 230000 },
                   ],
-                  memo: t('477,000 − 12,000 = 465,000؛ برچسب بازیافت: هزینه سرمایه‌ای قابل بازیافت', '477,000 − 12,000 = 465,000; recovery tag: recoverable capital cost'),
+                  memo: t('236,000 − 6,000 = 230,000؛ پرچم بازیافت R، طبقه هزینه توسعه', '236,000 − 6,000 = 230,000; recovery flag R, cost category Development'),
                 },
               ],
             },
             {
               type: 'list',
               items: [
-                t('مکان عملیاتی `ARY-CS-GC-E131` زیر سامانه تراکم گاز', 'Functional location `ARY-CS-GC-E131` under the gas-compression system'),
+                t('مکان عملیاتی `ARY-CS-FG-V150` زیر سامانه گاز سوخت', 'Functional location `ARY-CS-FG-V150` under the fuel-gas system'),
                 t('رکورد تجهیز با سریال، مشخصات فنی و پیوند به FA-30131', 'An equipment record with serial number, attributes and the link to FA-30131'),
-                t('BOM، رده بحرانیت و برنامه نگهداری کولر', 'The cooler’s BOM, criticality class and maintenance plan'),
+                t('BOM، رده بحرانیت و برنامه نگهداری و بازرسی', 'The BOM, criticality class and maintenance and inspection plan'),
               ],
             },
           ],
-          answer: t('سرمایه‌ای: 465,000 (FA-30131)؛ آموزش 12,000 به هزینه دوره', 'Capitalised: 465,000 (FA-30131); training of 12,000 expensed'),
+          answer: t('سرمایه‌ای: 230,000 (FA-30131)؛ آموزش 6,000 به هزینه دوره', 'Capitalised: 230,000 (FA-30131); training of 6,000 expensed'),
         },
       ],
     },
@@ -850,8 +862,8 @@ export const lesson: Lesson = {
             ),
             t('BOM تجهیز را به کالاهای انبار وصل می‌کند؛ مشخصات فنی استاندارد، جست‌وجو و مقایسه را ممکن می‌کند.', 'The BOM links equipment to warehouse materials; standard attributes make searching and comparing possible.'),
             t(
-              'دفتر دارایی‌های ثابت مال مالی است و از طریق شماره دارایی در رکورد تجهیز به فهرست فنی وصل می‌شود؛ سرمایه‌ای کردن از راه AFE و دارایی در جریان تکمیل انجام می‌شود.',
-              'The fixed-asset register belongs to Finance and links to the technical register through the asset number on the equipment record; capitalisation runs through the AFE and assets under construction.',
+              'دفتر دارایی‌های ثابت مال مالی است و از طریق شماره دارایی در رکورد تجهیز به فهرست فنی وصل می‌شود؛ تجهیز جدید با GRN روی AFE و دارایی در جریان تکمیل می‌نشیند و سپس سرمایه‌ای می‌شود.',
+              'The fixed-asset register belongs to Finance and links to the technical register through the asset number on the equipment record; new equipment lands on the AFE and assets under construction through the GRN, then is capitalised.',
             ),
           ],
         },
@@ -892,14 +904,14 @@ export const lesson: Lesson = {
     },
     {
       q: t(
-        'کمپرسور EQ-100245 برای تعمیرات اساسی از جایگاه K-101A پیاده و واحد یدکی EQ-100388 نصب می‌شود. در ERP چه باید ثبت شود؟',
-        'Compressor EQ-100245 is removed from position K-101A for overhaul and spare unit EQ-100388 is installed. What should be recorded in the ERP?',
+        'موتور توربین گازی EQ-100246 برای تعمیر اساسی از جایگاه GT-101 پیاده و موتور جایگزین EQ-100388 نصب می‌شود. در ERP چه باید ثبت شود؟',
+        'Gas-turbine engine EQ-100246 is removed from position GT-101 for overhaul and exchange engine EQ-100388 is installed. What should be recorded in the ERP?',
       ),
       options: [
-        t('پیاده کردن EQ-100245 و نصب EQ-100388 در همان مکان عملیاتی؛ هر دو تاریخچه ادامه می‌یابند', 'Remove EQ-100245 and install EQ-100388 at the same functional location; both histories continue'),
-        t('حذف رکورد EQ-100245 و ساختن مکان عملیاتی تازه', 'Delete EQ-100245 and create a new functional location'),
-        t('تغییر سریال EQ-100245 به سریال واحد یدکی', 'Change EQ-100245’s serial to the spare’s serial'),
-        t('هیچ چیز؛ این یک جابه‌جایی فیزیکی است', 'Nothing; it is only a physical move'),
+        t('پیاده کردن EQ-100246 و نصب EQ-100388 در همان مکان عملیاتی؛ هر دو تاریخچه ادامه می‌یابند', 'Remove EQ-100246 and install EQ-100388 at the same functional location; both histories continue'),
+        t('حذف رکورد EQ-100246 و ساختن مکان عملیاتی تازه', 'Delete EQ-100246 and create a new functional location'),
+        t('تغییر سریال EQ-100246 به سریال موتور جایگزین', 'Change EQ-100246’s serial to the exchange engine’s serial'),
+        t('هیچ چیز؛ این فقط یک جابه‌جایی فیزیکی است', 'Nothing; it is only a physical move'),
       ],
       answer: 0,
       explain: t(
@@ -909,8 +921,8 @@ export const lesson: Lesson = {
     },
     {
       q: t(
-        'بیشترین پیامد یک تجهیز 4 و احتمال خرابی آن 4 است. با قاعده پارس‌آریا (A: 15 و بیشتر، B: 8 تا 14، C: 7 و کمتر) رده آن چیست؟',
-        'An item’s highest consequence is 4 and its likelihood is 4. Under Pars Arya’s rule (A: 15 or more, B: 8 to 14, C: 7 or less), what is its class?',
+        'بیشترین پیامد یک تجهیز 4 و احتمال خرابی آن 4 است. با قاعده مسار پترولیوم (A: 15 و بیشتر، B: 8 تا 14، C: 7 و کمتر) رده آن چیست؟',
+        'An item’s highest consequence is 4 and its likelihood is 4. Under Masar Petroleum’s rule (A: 15 or more, B: 8 to 14, C: 7 or less), what is its class?',
       ),
       options: [t('B با امتیاز 16', 'B with a score of 16'), t('C با امتیاز 4', 'C with a score of 4'), t('B با امتیاز 8', 'B with a score of 8'), t('A با امتیاز 16', 'A with a score of 16')],
       answer: 3,
@@ -973,10 +985,7 @@ export const lesson: Lesson = {
       ),
     },
     {
-      q: t(
-        'امتیاز بحرانیت یک شیر اطمینان 8 است. با قاعده پارس‌آریا رده آن چیست؟',
-        'A relief valve has a criticality score of 8. Under Pars Arya’s rule, what is its class?',
-      ),
+      q: t('امتیاز بحرانیت یک شیر اطمینان 8 است. با قاعده مسار پترولیوم رده آن چیست؟', 'A relief valve has a criticality score of 8. Under Masar Petroleum’s rule, what is its class?'),
       options: [
         t('B، چون 8 در بازه 8 تا 14 است', 'B, because 8 is in the 8 to 14 band'),
         t('A، چون شیرهای اطمینان عنصر حیاتی ایمنی‌اند', 'A, because relief valves are safety-critical elements'),

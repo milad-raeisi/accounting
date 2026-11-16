@@ -1,6 +1,6 @@
 import type { Lesson } from '../types'
 
-/* Account titles used by Pars Arya Oil & Gas (codes from its chart of accounts). */
+/* Account titles used by Masar Petroleum (codes from its chart of accounts). */
 const ac = {
   bank: { fa: '1110 موجودی نقد (بانک)', en: '1110 Cash at bank' },
   inventory: { fa: '1310 موجودی مواد و قطعات', en: '1310 Materials and spares inventory' },
@@ -24,6 +24,7 @@ const blank = { fa: '', en: '' }
 export const lesson: Lesson = {
   slug: 'oil-gas-accounting',
   number: 20,
+  currency: 'usd',
   level: 'advanced',
   minutes: 32,
   icon: 'Building2',
@@ -63,15 +64,15 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'شرکت نفت و گاز پارس‌آریا در بلوک آریا دو چاه اکتشافی حفر کرد. چاه AR-X1 به نفت رسید و چاه AR-X2 با 8,000,000 هزینه **خشک** درآمد. حالا مدیر مالی باید تصمیم بگیرد: 8,000,000 چاه خشک دارایی است یا هزینه؟ میدان آریا پیش از تولید اولین بشکه ده‌ها میلیون هزینه توسعه می‌خواهد، پانزده تا بیست سال تولید می‌کند و در پایان، چاه‌ها باید مسدود و محل پاک‌سازی شود. هر یک از این واقعیت‌ها یک پرسش حسابداری است که در این درس پاسخ می‌دهیم.',
-            en: 'Pars Arya Oil & Gas drilled two exploration wells in the Arya block. Well AR-X1 found oil, while AR-X2 came in **dry** after costing 8,000,000. Now the finance manager must decide: is the 8,000,000 dry hole an asset or an expense? The Arya field needs tens of millions of development spending before its first barrel, will produce for fifteen to twenty years, and at the end its wells must be plugged and the site restored. Each of these facts is an accounting question, and this lesson answers them.',
+            fa: 'شرکت مسار پترولیوم در بلوک آریا دو چاه اکتشافی حفر کرد. چاه AR-X1 به نفت رسید و چاه AR-X2 با 8,000,000 هزینه **خشک** درآمد. حالا مدیر مالی باید تصمیم بگیرد: 8,000,000 چاه خشک دارایی است یا هزینه؟ میدان آریا پیش از تولید اولین بشکه ده‌ها میلیون هزینه توسعه می‌خواهد، پانزده تا بیست سال تولید می‌کند و در پایان، چاه‌ها باید مسدود و محل پاک‌سازی شود. هر یک از این واقعیت‌ها یک پرسش حسابداری است که در این درس پاسخ می‌دهیم.',
+            en: 'Masar Petroleum drilled two exploration wells in the Arya block. Well AR-X1 found oil, while AR-X2 came in **dry** after costing 8,000,000. Now the finance manager must decide: is the 8,000,000 dry hole an asset or an expense? The Arya field needs tens of millions of development spending before its first barrel, will produce for fifteen to twenty years, and at the end its wells must be plugged and the site restored. Each of these facts is an accounting question, and this lesson answers them.',
           },
         },
         {
           type: 'p',
           text: {
-            fa: 'صنعت نفت و گاز سه بخش دارد: **بالادستی** (اکتشاف و تولید، یا E&P)، **میان‌دستی** (انتقال و ذخیره‌سازی با خط لوله و پایانه) و **پایین‌دستی** (پالایش و فروش فرآورده‌ها). این درس فقط درباره بالادستی است؛ جایی که پارس‌آریا کار می‌کند.',
-            en: 'The oil and gas industry has three segments: **upstream** (exploration and production, or E&P), **midstream** (transport and storage by pipeline and terminal) and **downstream** (refining and marketing of products). This lesson is only about upstream, where Pars Arya works.',
+            fa: 'صنعت نفت و گاز سه بخش دارد: **بالادستی** (اکتشاف و تولید، یا E&P)، **میان‌دستی** (انتقال و ذخیره‌سازی با خط لوله و پایانه) و **پایین‌دستی** (پالایش و فروش فرآورده‌ها). این درس فقط درباره بالادستی است؛ جایی که مسار پترولیوم کار می‌کند.',
+            en: 'The oil and gas industry has three segments: **upstream** (exploration and production, or E&P), **midstream** (transport and storage by pipeline and terminal) and **downstream** (refining and marketing of products). This lesson is only about upstream, where Masar Petroleum works.',
           },
         },
         {
@@ -198,8 +199,8 @@ export const lesson: Lesson = {
           tone: 'tip',
           title: { fa: 'در عمل: وضعیت چاه در ERP', en: 'In practice: well status in the ERP' },
           text: {
-            fa: 'در پارس‌آریا هر چاه اکتشافی یک AFE و یک عنصر WBS دارد و یک فیلد «وضعیت»: در حال حفاری، معلق در انتظار ارزیابی، خشک، کشف. حسابدار هر فصل فهرست چاه‌های «معلق» را با مهندسان مخزن بازبینی می‌کند؛ چاهی که مدت‌ها بدون برنامه ارزیابی معلق مانده، نشانه کاهش ارزش است.',
-            en: 'At Pars Arya each exploration well has an AFE, a WBS element and a "status" field: drilling, suspended pending evaluation, dry, discovery. Each quarter the accountant reviews the list of "suspended" wells with the reservoir engineers; a well left suspended for a long time with no evaluation plan is an impairment indicator.',
+            fa: 'در مسار پترولیوم هر چاه اکتشافی یک AFE و یک عنصر WBS دارد و یک فیلد «وضعیت»: در حال حفاری، معلق در انتظار ارزیابی، خشک، کشف. حسابدار هر فصل فهرست چاه‌های «معلق» را با مهندسان مخزن بازبینی می‌کند؛ چاهی که مدت‌ها بدون برنامه ارزیابی معلق مانده، نشانه کاهش ارزش است.',
+            en: 'At Masar Petroleum each exploration well has an AFE, a WBS element and a "status" field: drilling, suspended pending evaluation, dry, discovery. Each quarter the accountant reviews the list of "suspended" wells with the reservoir engineers; a well left suspended for a long time with no evaluation plan is an impairment indicator.',
           },
         },
       ],
@@ -241,13 +242,13 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'برنامه اکتشاف پارس‌آریا را با هر دو روش ببینیم: لرزه‌نگاری سه‌بعدی 3,000,000، چاه AR-X1 (کشف) 12,000,000 و چاه AR-X2 (خشک) 8,000,000.',
-            en: 'Let’s look at Pars Arya’s exploration programme under both methods: 3D seismic 3,000,000, well AR-X1 (discovery) 12,000,000 and well AR-X2 (dry) 8,000,000.',
+            fa: 'برنامه اکتشاف مسار پترولیوم را با هر دو روش ببینیم: لرزه‌نگاری سه‌بعدی 3,000,000، چاه AR-X1 (کشف) 12,000,000 و چاه AR-X2 (خشک) 8,000,000.',
+            en: 'Let’s look at Masar Petroleum’s exploration programme under both methods: 3D seismic 3,000,000, well AR-X1 (discovery) 12,000,000 and well AR-X2 (dry) 8,000,000.',
           },
         },
         {
           type: 'table',
-          caption: { fa: 'برنامه اکتشاف پارس‌آریا با دو روش', en: 'Pars Arya’s exploration programme under the two methods' },
+          caption: { fa: 'برنامه اکتشاف مسار پترولیوم با دو روش', en: 'Masar Petroleum’s exploration programme under the two methods' },
           head: [
             { fa: 'قلم', en: 'Item' },
             { fa: 'مبلغ', en: 'Amount' },
@@ -275,8 +276,8 @@ export const lesson: Lesson = {
                 { account: ac.grir, credit: 20000000 },
               ],
               memo: {
-                fa: 'هزینه هر دو چاه تا روشن شدن نتیجه روی AFE خودش معلق می‌ماند.',
-                en: 'Each well’s cost is held on its own AFE until the result is known.',
+                fa: 'هزینه هر دو چاه (از راه GRN مواد و SES دکل و خدمات) تا روشن شدن نتیجه روی AFE خودش معلق می‌ماند.',
+                en: 'Each well’s cost (posted through GRNs for materials and SESs for the rig and services) is held on its own AFE until the result is known.',
               },
             },
             {
@@ -389,8 +390,8 @@ export const lesson: Lesson = {
           tone: 'tip',
           title: { fa: 'در عمل: هزینه سرمایه‌ای یا عملیاتی؟', en: 'In practice: capital or operating?' },
           text: {
-            fa: 'مرز سرمایه‌ای و عملیاتی فقط بر سود اثر ندارد؛ در قرارداد نفتی هم دسته هزینه (توسعه یا عملیاتی) زمان بازیافت را تغییر می‌دهد. پارس‌آریا این مرز را در یک دستورالعمل مکتوب تعریف کرده و در ERP آن را با نوع شیء هزینه پیاده می‌کند: هزینه روی WBS پروژه، سرمایه‌ای و روی مرکز هزینه، عملیاتی است.',
-            en: 'The capital/operating boundary does not only affect profit; under the petroleum contract, the cost category (development or operating) also changes when the cost is recovered. Pars Arya defines the boundary in a written policy and implements it in the ERP through the type of cost object: costs on a project WBS are capital, costs on a cost centre are operating.',
+            fa: 'مرز سرمایه‌ای و عملیاتی فقط بر سود اثر ندارد؛ در قرارداد نفتی هم دسته هزینه (توسعه یا عملیاتی) زمان بازیافت را تغییر می‌دهد. مسار پترولیوم این مرز را در یک دستورالعمل مکتوب تعریف کرده و در ERP آن را با نوع شیء هزینه پیاده می‌کند: هزینه روی WBS پروژه، سرمایه‌ای و روی مرکز هزینه، عملیاتی است.',
+            en: 'The capital/operating boundary does not only affect profit; under the petroleum contract, the cost category (development or operating) also changes when the cost is recovered. Masar Petroleum defines the boundary in a written policy and implements it in the ERP through the type of cost object: costs on a project WBS are capital, costs on a cost centre are operating.',
           },
         },
       ],
@@ -477,8 +478,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'در پایان عمر میدان، پارس‌آریا باید چاه‌ها را **مسدود و متروک** کند، تأسیسات را جمع کند و محل را احیا کند. این تعهد امروز ایجاد شده است، چون چاه حفر و تأسیسات نصب شده‌اند، حتی اگر پرداخت سال‌ها بعد باشد. طبق **IAS 37** وقتی (1) تعهد فعلی قانونی یا عرفی ناشی از رویداد گذشته وجود دارد، (2) خروج منابع محتمل است و (3) مبلغ قابل برآورد اتکاپذیر است، **ذخیره (Provision)** شناسایی می‌شود.',
-            en: 'At the end of the field’s life Pars Arya must **plug and abandon** the wells, remove the facilities and restore the site. The obligation exists today, because the wells have been drilled and the facilities installed, even though payment is years away. Under **IAS 37** a **provision** is recognised when (1) there is a present legal or constructive obligation from a past event, (2) an outflow of resources is probable and (3) the amount can be estimated reliably.',
+            fa: 'در پایان عمر میدان، مسار پترولیوم باید چاه‌ها را **مسدود و متروک** کند، تأسیسات را جمع کند و محل را احیا کند. این تعهد امروز ایجاد شده است، چون چاه حفر و تأسیسات نصب شده‌اند، حتی اگر پرداخت سال‌ها بعد باشد. طبق **IAS 37** وقتی (1) تعهد فعلی قانونی یا عرفی ناشی از رویداد گذشته وجود دارد، (2) خروج منابع محتمل است و (3) مبلغ قابل برآورد اتکاپذیر است، **ذخیره (Provision)** شناسایی می‌شود.',
+            en: 'At the end of the field’s life Masar Petroleum must **plug and abandon** the wells, remove the facilities and restore the site. The obligation exists today, because the wells have been drilled and the facilities installed, even though payment is years away. Under **IAS 37** a **provision** is recognised when (1) there is a present legal or constructive obligation from a past event, (2) an outflow of resources is probable and (3) the amount can be estimated reliably.',
           },
         },
         {
@@ -565,8 +566,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'همه آنچه تا اینجا دیدید (دارایی اکتشاف و ارزیابی، دارایی در جریان تکمیل، سرمایه‌ای کردن، استهلاک ذخایر) به یک پیش‌شرط وابسته است: هزینه باید از روز اول روی **چاه درست** جمع شود. در ERP پارس‌آریا این کار با ساختار پروژه، عناصر WBS و AFE انجام می‌شود.',
-            en: 'Everything you have seen so far (E&E assets, assets under construction, capitalisation, depletion) depends on one precondition: cost must collect on the **right well** from day one. In Pars Arya’s ERP this is done with a structure of projects, WBS elements and AFEs.',
+            fa: 'همه آنچه تا اینجا دیدید (دارایی اکتشاف و ارزیابی، دارایی در جریان تکمیل، سرمایه‌ای کردن، استهلاک ذخایر) به یک پیش‌شرط وابسته است: هزینه باید از روز اول روی **چاه درست** جمع شود. در ERP مسار پترولیوم این کار با ساختار پروژه، عناصر WBS و AFE انجام می‌شود.',
+            en: 'Everything you have seen so far (E&E assets, assets under construction, capitalisation, depletion) depends on one precondition: cost must collect on the **right well** from day one. In Masar Petroleum’s ERP this is done with a structure of projects, WBS elements and AFEs.',
           },
         },
         {
@@ -604,7 +605,7 @@ export const lesson: Lesson = {
             },
             {
               title: t('جمع‌آوری هزینه', 'Collect costs'),
-              text: t('سفارش‌های خرید، رزروهای انبار، تأیید خدمات و برگه‌های کارکرد به WBS چاه ارجاع دارند؛ کنترل بودجه، تعهدها را با AFE مقایسه می‌کند.', 'Purchase orders, warehouse reservations, service entries and timesheets reference the well’s WBS; budget control compares commitments with the AFE.'),
+              text: t('سفارش‌های خرید روی WBS چاه تعهد می‌سازند؛ رسید کالا (GRN) برای لوله و مواد و برگه ثبت خدمات (SES) برای دکل و خدمات، این تعهد را به هزینه واقعی تبدیل می‌کنند. حواله‌های انبار و برگه‌های کارکرد هم به همان WBS ارجاع دارند و کنترل بودجه، تعهد و واقعی را با AFE مقایسه می‌کند.', 'Purchase orders on the well’s WBS create commitments; goods received notes (GRN) for tubulars and materials and service entry sheets (SES) for the rig and services turn them into actual cost. Warehouse issues and timesheets reference the same WBS, and budget control compares commitments and actuals with the AFE.'),
             },
             {
               title: t('گزارش ماهانه', 'Report monthly'),
@@ -654,7 +655,7 @@ export const lesson: Lesson = {
                 { account: t('1510 دارایی‌های در جریان تکمیل (WBS AR-07)', '1510 Assets under construction (WBS AR-07)'), debit: 3850000 },
                 { account: ac.grir, credit: 3850000 },
               ],
-              memo: { fa: 'تأیید خدمات روزانه دکل.', en: 'Daily rig service entries.' },
+              memo: { fa: 'برگه‌های ثبت خدمات (SES) دکل، بر پایه گزارش‌های روزانه حفاری که سرپرست حفاری امضا کرده است.', en: 'Rig service entry sheets (SES), based on daily drilling reports signed by the drilling supervisor.' },
             },
             {
               date: t('تکمیل چاه', 'Well completed'),
@@ -671,8 +672,8 @@ export const lesson: Lesson = {
           tone: 'example',
           title: { fa: 'بیش‌خرج 140,000: AFE تکمیلی لازم است؟', en: 'A 140,000 overrun: is a supplementary AFE needed?' },
           text: {
-            fa: 'بیش‌خرج 140,000 روی بودجه 9,000,000 حدود 1.6٪ است. اگر آستانه AFE تکمیلی در موافقت‌نامه مشارکت 10٪ باشد (عدد فرضی)، AFE تکمیلی لازم نیست، اما بیش‌خرج اجاره دکل (250,000) باید در گزارش ماهانه توضیح داده شود. همه این هزینه‌ها با نشانگر «توسعه» و «قابل بازیافت» ثبت شده‌اند، پس در صورت‌حساب شرکا و صورت بازیافت هزینه در جای درست دیده می‌شوند.',
-            en: 'A 140,000 overrun on a 9,000,000 budget is about 1.6%. If the supplementary-AFE threshold in the joint operating agreement is 10% (an illustrative figure), no supplementary AFE is needed, but the rig-hire overrun (250,000) must be explained in the monthly report. All these costs carry the "development" and "recoverable" flags, so they appear in the right place in the partner billing and the cost-recovery statement.',
+            fa: 'بیش‌خرج 140,000 روی بودجه 9,000,000 حدود 1.6٪ است. اگر آستانه AFE تکمیلی در موافقت‌نامه مشارکت 10٪ باشد (عدد فرضی)، AFE تکمیلی لازم نیست، اما بیش‌خرج اجاره دکل (250,000) باید در گزارش ماهانه توضیح داده شود. همه این هزینه‌ها با نشانگر «توسعه» و «قابل بازیافت» ثبت شده‌اند، پس در صورت‌حساب شرکا و صورت بازیافت هزینه در جای درست دیده می‌شوند. گزارش‌های روزانه حفاری امضاشده پشت هر SES هم مدرکی است که شرکا و حسابرسان شرکت ملی نفت برای پذیرش هزینه می‌خواهند.',
+            en: 'A 140,000 overrun on a 9,000,000 budget is about 1.6%. If the supplementary-AFE threshold in the joint operating agreement is 10% (an illustrative figure), no supplementary AFE is needed, but the rig-hire overrun (250,000) must be explained in the monthly report. All these costs carry the "development" and "recoverable" flags, so they appear in the right place in the partner billing and the cost-recovery statement. The signed daily drilling reports behind each SES are the evidence partners and the national oil company’s auditors will ask for before accepting the cost.',
           },
         },
         {
@@ -707,6 +708,10 @@ export const lesson: Lesson = {
               fa: 'جمع کردن هزینه چاه روی مرکز هزینه به‌جای WBS و AFE آن؛ نتیجه، دارایی کمتر و بازیافت هزینه نادرست است.',
               en: 'Collecting a well’s cost on a cost centre instead of its WBS and AFE, which understates assets and distorts cost recovery.',
             },
+            {
+              fa: 'تأیید SES بدون گزارش روزانه یا برگه کار امضاشده؛ چنین هزینه‌ای در حسابرسی بازیافت هزینه به‌راحتی رد می‌شود.',
+              en: 'Approving an SES without signed daily reports or field tickets; such a cost is easily rejected in a cost-recovery audit.',
+            },
           ],
         },
       ],
@@ -727,8 +732,8 @@ export const lesson: Lesson = {
           title: { fa: 'دارایی یا هزینه؟', en: 'Asset or expense?' },
           difficulty: 'easy',
           problem: {
-            fa: 'پارس‌آریا با رویه تلاش‌های موفق، اقلام زیر را دارد. هر قلم را دارایی یا هزینه دوره بدانید و جمع هر گروه را حساب کنید.',
-            en: 'Pars Arya, following successful efforts, has the items below. Classify each as an asset or a period expense and total each group.',
+            fa: 'مسار پترولیوم با رویه تلاش‌های موفق، اقلام زیر را دارد. هر قلم را دارایی یا هزینه دوره بدانید و جمع هر گروه را حساب کنید.',
+            en: 'Masar Petroleum, following successful efforts, has the items below. Classify each as an asset or a period expense and total each group.',
           },
           given: {
             head: [{ fa: 'قلم', en: 'Item' }, { fa: 'مبلغ', en: 'Amount' }],
@@ -813,8 +818,8 @@ export const lesson: Lesson = {
           title: { fa: 'ذخیره برچیدن یک خط لوله', en: 'Decommissioning a flowline' },
           difficulty: 'medium',
           problem: {
-            fa: 'پارس‌آریا خط جریانی نصب می‌کند که باید 2 سال بعد جمع شود. هزینه مورد انتظار 2,420,000 و نرخ تنزیل 10٪ است. (الف) ثبت شناسایی اولیه، (ب) آزادسازی تنزیل هر سال و (ج) ثبت پایان کار را بنویسید، اگر هزینه واقعی 2,500,000 باشد و نقدی پرداخت شود.',
-            en: 'Pars Arya installs a flowline that must be removed in 2 years. The expected cost is 2,420,000 and the discount rate is 10%. Record (a) initial recognition, (b) each year’s unwinding and (c) the final entry if the actual cost is 2,500,000, paid in cash.',
+            fa: 'مسار پترولیوم خط جریانی نصب می‌کند که باید 2 سال بعد جمع شود. هزینه مورد انتظار 2,420,000 و نرخ تنزیل 10٪ است. (الف) ثبت شناسایی اولیه، (ب) آزادسازی تنزیل هر سال و (ج) ثبت پایان کار را بنویسید، اگر هزینه واقعی 2,500,000 باشد و نقدی پرداخت شود.',
+            en: 'Masar Petroleum installs a flowline that must be removed in 2 years. The expected cost is 2,420,000 and the discount rate is 10%. Record (a) initial recognition, (b) each year’s unwinding and (c) the final entry if the actual cost is 2,500,000, paid in cash.',
           },
           hint: { fa: '1.1 × 1.1 = 1.21', en: '1.1 × 1.1 = 1.21' },
           solution: [
@@ -873,8 +878,8 @@ export const lesson: Lesson = {
           title: { fa: 'از اکتشاف تا اولین سال تولید', en: 'From exploration to the first year of production' },
           difficulty: 'hard',
           problem: {
-            fa: 'در بلوک جدید پارس‌آریا، دارایی‌های اکتشاف و ارزیابی 15,000,000 است: چاه AR-X3 برابر 9,000,000 (کشف تجاری) و چاه AR-X4 برابر 6,000,000 (خشک). پس از تصویب طرح توسعه، 27,000,000 هزینه توسعه انجام می‌شود. ذخایر اثبات‌شده توسعه‌یافته در شروع تولید 9,000,000 بشکه و تولید سال 1 برابر 1,200,000 بشکه است. (الف) ثبت‌های پایان مرحله اکتشاف، (ب) بهای قابل استهلاک و نرخ، (ج) استهلاک سال 1 و ارزش دفتری پایان سال و (د) اثر کل این رویدادها بر سود سال 1 را تعیین کنید.',
-            en: 'In Pars Arya’s new block, E&E assets are 15,000,000: well AR-X3 at 9,000,000 (commercial discovery) and well AR-X4 at 6,000,000 (dry). After the development plan is approved, 27,000,000 of development cost is spent. Proved developed reserves at first production are 9,000,000 barrels and Year 1 production is 1,200,000 barrels. Determine (a) the entries at the end of exploration, (b) the depletable cost and rate, (c) Year 1 depletion and closing book value, and (d) the total effect of these events on Year 1 profit.',
+            fa: 'در بلوک جدید مسار پترولیوم، دارایی‌های اکتشاف و ارزیابی 15,000,000 است: چاه AR-X3 برابر 9,000,000 (کشف تجاری) و چاه AR-X4 برابر 6,000,000 (خشک). پس از تصویب طرح توسعه، 27,000,000 هزینه توسعه انجام می‌شود. ذخایر اثبات‌شده توسعه‌یافته در شروع تولید 9,000,000 بشکه و تولید سال 1 برابر 1,200,000 بشکه است. (الف) ثبت‌های پایان مرحله اکتشاف، (ب) بهای قابل استهلاک و نرخ، (ج) استهلاک سال 1 و ارزش دفتری پایان سال و (د) اثر کل این رویدادها بر سود سال 1 را تعیین کنید.',
+            en: 'In Masar Petroleum’s new block, E&E assets are 15,000,000: well AR-X3 at 9,000,000 (commercial discovery) and well AR-X4 at 6,000,000 (dry). After the development plan is approved, 27,000,000 of development cost is spent. Proved developed reserves at first production are 9,000,000 barrels and Year 1 production is 1,200,000 barrels. Determine (a) the entries at the end of exploration, (b) the depletable cost and rate, (c) Year 1 depletion and closing book value, and (d) the total effect of these events on Year 1 profit.',
           },
           solution: [
             {

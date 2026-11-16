@@ -1,7 +1,7 @@
-import type { ReactNode } from 'react'
+import { createContext, useContext, type ReactNode } from 'react'
 
 import { Rich } from '@/components/ui/Rich'
-import type { AnalysisRow, JournalEntry, L, TAccountData } from '@/content/types'
+import type { AnalysisRow, Currency, JournalEntry, L, TAccountData } from '@/content/types'
 import { useI18n } from '@/i18n/I18nProvider'
 import { formatSigned } from '@/lib/format'
 import { cn } from '@/lib/utils'
@@ -10,9 +10,15 @@ function Caption({ children }: { children: ReactNode }) {
   return <div className="mb-2 flex items-center justify-between gap-3 text-sm font-semibold">{children}</div>
 }
 
+const CurrencyContext = createContext<Currency>('toman')
+/** Set by the lesson page so journals and tables label amounts in the lesson's currency. */
+export const CurrencyProvider = CurrencyContext.Provider
+
 function Units() {
   const { t } = useI18n()
-  return <span className="text-[11px] font-normal text-muted-foreground">{t('units.money')}</span>
+  const currency = useContext(CurrencyContext)
+  const key = currency === 'usd' ? 'units.money.usd' : currency === 'omr' ? 'units.money.omr' : 'units.money'
+  return <span className="text-[11px] font-normal text-muted-foreground">{t(key)}</span>
 }
 
 export function TableShell({ children, className }: { children: ReactNode; className?: string }) {

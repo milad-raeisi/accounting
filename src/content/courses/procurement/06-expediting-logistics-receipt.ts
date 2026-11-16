@@ -3,13 +3,16 @@ import type { Lesson } from '../../types'
 const ac = {
   invField: { fa: 'موجودی مواد و قطعات: انبار میدان', en: 'Materials inventory: Field Warehouse' },
   invCentral: { fa: 'موجودی مواد و قطعات: انبار مرکزی', en: 'Materials inventory: Central Warehouse' },
-  aucAR11: { fa: 'دارایی در جریان تکمیل: چاه AR-11', en: 'Assets under construction: well AR-11' },
+  aucAR11: { fa: 'دارایی در جریان ساخت: چاه AR-11', en: 'Assets under construction: well AR-11' },
   grir: { fa: 'حساب واسط رسید کالا و فاکتور (GR/IR)', en: 'GR/IR clearing account' },
   freightClr: { fa: 'حساب واسط هزینه حمل و بیمه', en: 'Freight and insurance clearing' },
   customsClr: { fa: 'حساب واسط حقوق گمرکی و ترخیص', en: 'Customs and clearance clearing' },
   inputVat: { fa: 'مالیات بر ارزش افزوده خرید', en: 'Input VAT receivable' },
   demurrage: { fa: 'هزینه دموراژ و خواب کالا', en: 'Demurrage expense' },
   bank: { fa: 'موجودی نقد (بانک)', en: 'Cash at bank' },
+  ppd: { fa: 'تفاوت قیمت خرید', en: 'Purchase price differences' },
+  apJonoub: { fa: 'حساب‌های پرداختنی: ترابری جنوب', en: 'Accounts payable: Jonoub Transport' },
+  apBroker: { fa: 'حساب‌های پرداختنی: کارگزاری گمرکی بندر', en: 'Accounts payable: Bandar Customs Brokerage' },
 }
 
 const blank = { fa: '', en: '' }
@@ -23,8 +26,8 @@ export const lesson: Lesson = {
   tone: 'gold',
   title: { fa: 'پیگیری سفارش، حمل و دریافت کالا', en: 'Expediting, Logistics and Receipt' },
   summary: {
-    fa: 'سفارش صادرشده تا وقتی کالا سالم و به‌موقع در انبار یا روی دکل نرسیده، کاری انجام نداده است. در این درس پیگیری اقلام دیرتأمین، بازرسی شخص ثالث و گواهی ترخیص، حمل و ترخیص گمرکی، تحویل به انبار مرکزی یا میدان، رسید کالا و تأیید خدمات، تحویل ناقص و مرجوعی، و ثبت خودکار مالی هنگام رسید را می‌آموزید.',
-    en: 'An order has achieved nothing until the goods reach the warehouse or the rig, on time and in good condition. This lesson covers expediting long-lead items, third-party inspection and release notes, shipping and customs clearance, delivery to the central or field warehouse, goods receipt and service acceptance, partial deliveries and rejections, and the automatic Finance posting at receipt.',
+    fa: 'سفارش صادرشده تا وقتی کالا سالم و به‌موقع در انبار یا روی دکل نرسیده، کاری انجام نداده است. در این درس پیگیری اقلام دیرتأمین، بازرسی شخص ثالث و گواهی ترخیص، حمل و ترخیص گمرکی، تحویل به انبار مرکزی، انبار میدان یا محل دکل، سپردن کالا به رسید کالا (GRN)، و ثبت خودکار مالی رسید همراه با هزینه‌های حمل و گمرک را می‌آموزید.',
+    en: 'An order has achieved nothing until the goods reach the warehouse or the rig, on time and in good condition. This lesson covers expediting long-lead items, third-party inspection and release notes, shipping and customs clearance, delivery to the central or field warehouse or the rig site, the handover to the goods received note (GRN), and the automatic Finance posting at receipt together with freight and customs costs.',
   },
   objectives: [
     {
@@ -40,12 +43,12 @@ export const lesson: Lesson = {
       en: 'Describe shipping documents and customs clearance in general terms, and calculate landed cost.',
     },
     {
-      fa: 'رسید کالا و تأیید خدمات را، همراه با تحویل ناقص، رد کالا و مرجوعی، درست ثبت کنید.',
-      en: 'Post goods receipts and service acceptance correctly, including partial deliveries, rejections and returns.',
+      fa: 'تحویل در انبار یا محل دکل را سازمان دهید، آسیب حمل را درست ثبت کنید و کالا را با مدارک کامل به رسید کالا (GRN) بسپارید.',
+      en: 'Organise delivery to the warehouse or rig site, record transit damage correctly, and hand goods over to the goods received note (GRN) with complete documents.',
     },
     {
-      fa: 'ثبت مالی‌ای را که ERP هنگام رسید می‌سازد بنویسید: بدهکار موجودی یا موضوع هزینه، بستانکار GR/IR.',
-      en: 'Write the Finance entry the ERP generates at receipt: debit inventory or the cost object, credit GR/IR.',
+      fa: 'ثبت مالی‌ای را که ERP هنگام GRN می‌سازد بنویسید (بدهکار موجودی یا موضوع هزینه، بستانکار GR/IR و حساب‌های واسط حمل و گمرک) و این حساب‌ها را با فاکتورها تسویه کنید.',
+      en: 'Write the Finance entry the ERP generates at GRN (debit inventory or the cost object, credit GR/IR and the freight and customs clearing accounts) and clear those accounts with the invoices.',
     },
   ],
   sections: [
@@ -172,8 +175,8 @@ export const lesson: Lesson = {
         {
           type: 'table',
           caption: {
-            fa: 'گزارش مراحل کلیدی: روتور یدکی کمپرسور K-102، فن‌آوران کمپرسور توس، سفارش `PO-45020` (شماره هفته از تاریخ سفارش)',
-            en: 'Milestone report: spare rotor for compressor K-102, Toos Compressor Technologies, `PO-45020` (week numbers from the PO date)',
+            fa: 'گزارش مراحل کلیدی: روتور یدکی کمپرسور K-202، فن‌آوران کمپرسور توس، سفارش `PO-45020` (شماره هفته از تاریخ سفارش)',
+            en: 'Milestone report: spare rotor for compressor K-202, Toos Compressor Technologies, `PO-45020` (week numbers from the PO date)',
           },
           head: [
             { fa: 'مرحله', en: 'Milestone' },
@@ -184,7 +187,7 @@ export const lesson: Lesson = {
           rows: [
             [{ fa: 'پذیرش سفارش', en: 'PO acknowledged' }, 1, 1, { fa: 'انجام شد', en: 'Done' }],
             [{ fa: 'ارسال نقشه‌ها', en: 'Drawings submitted' }, 4, 4, { fa: 'انجام شد', en: 'Done' }],
-            [{ fa: 'تأیید نقشه‌ها توسط پارس‌آریا', en: 'Drawings approved by Pars Arya' }, 6, 8, { fa: 'با 2 هفته تأخیر', en: 'Done, 2 weeks late' }],
+            [{ fa: 'تأیید نقشه‌ها توسط مسار پترولیوم', en: 'Drawings approved by Masar Petroleum' }, 6, 8, { fa: 'با 2 هفته تأخیر', en: 'Done, 2 weeks late' }],
             [{ fa: 'رسید قطعات آهنگری در کارخانه', en: 'Forgings received at works' }, 12, 14, { fa: 'انجام شد', en: 'Done' }],
             [{ fa: 'پایان ماشین‌کاری', en: 'Machining complete' }, 24, 26, { fa: 'در جریان', en: 'In progress' }],
             [{ fa: 'بالانس و آزمون کارخانه‌ای (FAT)', en: 'Balancing and factory acceptance test (FAT)' }, 30, 32, { fa: 'برنامه‌ریزی‌شده', en: 'Planned' }],
@@ -198,8 +201,8 @@ export const lesson: Lesson = {
           tone: 'example',
           title: { fa: 'تأخیر از کیست؟', en: 'Whose delay is it?' },
           text: {
-            fa: 'دو هفته از تأخیر این سفارش به خود پارس‌آریا برمی‌گردد: تأیید نقشه‌ها به‌جای هفته 6 در هفته 8 انجام شد. شرکت نمی‌تواند برای تأخیری که خودش ایجاد کرده خسارت تأخیر بگیرد. گزارش پیگیری مستند و تاریخ‌دار همین را روشن می‌کند و از اختلاف بعدی با تأمین‌کننده جلوگیری می‌کند.',
-            en: 'Two weeks of this delay belong to Pars Arya itself: drawings were approved in week 8 instead of week 6. The company cannot claim liquidated damages for delay it caused. A documented, dated expediting report makes this clear and prevents a later dispute with the supplier.',
+            fa: 'دو هفته از تأخیر این سفارش به خود مسار پترولیوم برمی‌گردد: تأیید نقشه‌ها به‌جای هفته 6 در هفته 8 انجام شد. شرکت نمی‌تواند برای تأخیری که خودش ایجاد کرده خسارت تأخیر بگیرد. گزارش پیگیری مستند و تاریخ‌دار همین را روشن می‌کند و از اختلاف بعدی با تأمین‌کننده جلوگیری می‌کند.',
+            en: 'Two weeks of this delay belong to Masar Petroleum itself: drawings were approved in week 8 instead of week 6. The company cannot claim liquidated damages for delay it caused. A documented, dated expediting report makes this clear and prevents a later dispute with the supplier.',
           },
         },
         { type: 'h', text: { fa: 'اسناد فنی تأمین‌کننده', en: 'Vendor documents' } },
@@ -226,14 +229,14 @@ export const lesson: Lesson = {
         {
           type: 'table',
           caption: {
-            fa: 'بخشی از ITP روتور یدکی K-102. P: انجام؛ H: نقطه توقف؛ W: نقطه مشاهده؛ R: بررسی مدارک',
-            en: 'Extract from the ITP for the K-102 spare rotor. P: perform; H: hold point; W: witness point; R: document review',
+            fa: 'بخشی از ITP روتور یدکی K-202. P: انجام؛ H: نقطه توقف؛ W: نقطه مشاهده؛ R: بررسی مدارک',
+            en: 'Extract from the ITP for the K-202 spare rotor. P: perform; H: hold point; W: witness point; R: document review',
           },
           head: [
             { fa: 'فعالیت', en: 'Activity' },
             { fa: 'سازنده', en: 'Manufacturer' },
             { fa: 'بازرس شخص ثالث', en: 'TPI' },
-            { fa: 'پارس‌آریا', en: 'Pars Arya' },
+            { fa: 'مسار پترولیوم', en: 'Masar Petroleum' },
           ],
           rows: [
             [{ fa: 'بررسی گواهی مواد (EN 10204 نوع 3.1)', en: 'Material certificate review (EN 10204 type 3.1)' }, { fa: 'P', en: 'P' }, { fa: 'R', en: 'R' }, { fa: 'R', en: 'R' }],
@@ -283,7 +286,7 @@ export const lesson: Lesson = {
           tone: 'info',
           title: { fa: 'در عمل', en: 'In practice' },
           text: {
-            fa: 'در ایران، بازرسی شخص ثالث معمولاً به شرکت‌های بازرسی فنی دارای صلاحیت سپرده می‌شود و برای آن یک سفارش خدمات جداگانه با صورت‌وضعیت صادر می‌شود. هزینه بازرسی طبق سیاست شرکت یا به بهای تمام‌شده کالا اضافه می‌شود یا به پروژه می‌رود؛ در هر حال گزارش بازرسی و IRN را کنار سفارش نگه دارید.',
+            fa: 'در ایران، بازرسی شخص ثالث معمولاً به شرکت‌های بازرسی فنی دارای صلاحیت سپرده می‌شود و برای آن یک سفارش خدمات جداگانه صادر و کار با برگه ثبت خدمات (SES) پذیرفته می‌شود. هزینه بازرسی طبق سیاست شرکت یا به بهای تمام‌شده کالا اضافه می‌شود یا به پروژه می‌رود؛ در هر حال گزارش بازرسی و IRN را کنار سفارش نگه دارید.',
             en: 'In Iran, third-party inspection is usually given to qualified technical inspection companies under a separate service PO with its own SES. Per company policy, the inspection cost is either added to the cost of the item or charged to the project; either way, keep the inspection report and IRN with the PO.',
           },
         },
@@ -328,8 +331,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'طبق IFRS (استاندارد IAS 2) و استاندارد حسابداری ایران درباره موجودی‌ها، بهای تمام‌شده کالا شامل قیمت خرید، حقوق ورودی و مالیات‌های **غیرقابل استرداد**، حمل، تخلیه و سایر مخارجی است که مستقیماً برای رساندن کالا به محل و وضعیت فعلی‌اش انجام شده است. مالیات‌های قابل استرداد، مانند مالیات بر ارزش افزوده‌ای که اعتبار آن قابل استفاده است، جزء بهای تمام‌شده نیستند. پارس‌آریا 8 شیر کنترل برای ایستگاه تقویت فشار وارد کرده است:',
-            en: 'Under IFRS (IAS 2) and the Iranian standard on inventories, the cost of goods includes the purchase price, import duties and **non-recoverable** taxes, transport, handling and other costs directly incurred to bring the goods to their present location and condition. Recoverable taxes, such as VAT that can be claimed back as a credit, are not part of cost. Pars Arya has imported 8 control valves for the compressor station:',
+            fa: 'طبق IFRS (استاندارد IAS 2) و استاندارد حسابداری ایران درباره موجودی‌ها، بهای تمام‌شده کالا شامل قیمت خرید، حقوق ورودی و مالیات‌های **غیرقابل استرداد**، حمل، تخلیه و سایر مخارجی است که مستقیماً برای رساندن کالا به محل و وضعیت فعلی‌اش انجام شده است. مالیات‌های قابل استرداد، مانند مالیات بر ارزش افزوده‌ای که اعتبار آن قابل استفاده است، جزء بهای تمام‌شده نیستند. مسار پترولیوم 8 شیر کنترل برای ایستگاه تقویت فشار وارد کرده است:',
+            en: 'Under IFRS (IAS 2) and the Iranian standard on inventories, the cost of goods includes the purchase price, import duties and **non-recoverable** taxes, transport, handling and other costs directly incurred to bring the goods to their present location and condition. Recoverable taxes, such as VAT that can be claimed back as a credit, are not part of cost. Masar Petroleum has imported 8 control valves for the compressor station:',
           },
         },
         {
@@ -362,13 +365,16 @@ export const lesson: Lesson = {
     },
     {
       id: 'receipt',
-      title: { fa: 'تحویل، رسید کالا و تأیید خدمات', en: 'Delivery, Goods Receipt and Service Acceptance' },
+      title: {
+        fa: 'تحویل در انبار یا محل دکل، و سپردن کالا به رسید',
+        en: 'Delivery to the Warehouse or Rig Site, and Handover to Receipt',
+      },
       blocks: [
         {
           type: 'p',
           text: {
-            fa: 'محل تحویل در سفارش تعیین شده است. قطعات یدکی حیاتی و کالای وارداتی معمولاً به **انبار مرکزی** می‌روند؛ موجودی عملیاتی نزدیک چاه‌ها در **انبار میدان** نگهداری می‌شود؛ و کالایی که برای یک چاه خاص خریده شده، مثل لوله جداری AR-11، ممکن است مستقیم به انبار میدان یا محل دکل برسد. فرایند دریافت در هر سه حالت یکی است:',
-            en: 'The delivery point is set in the PO. Critical spares and imported goods usually go to the **Central Warehouse**; operating stock near the wells is kept in the **Field Warehouse**; and goods bought for one specific well, like the AR-11 casing, may go straight to the Field Warehouse or the rig site. The receiving process is the same in all three cases:',
+            fa: 'محل تحویل در سفارش تعیین شده است. قطعات یدکی حیاتی و کالای وارداتی معمولاً به **انبار مرکزی** (`WH-10`) می‌روند؛ موجودی عملیاتی نزدیک چاه‌ها در **انبار میدان** (`WH-20`) نگهداری می‌شود؛ و کالایی که برای یک چاه خاص خریده شده، مثل لوله جداری AR-11، ممکن است مستقیم به انبار میدان یا محل دکل برسد. کار لجستیک در این نقطه تمام و کار دریافت آغاز می‌شود:',
+            en: 'The delivery point is set in the PO. Critical spares and imported goods usually go to the **Central Warehouse** (`WH-10`); operating stock near the wells is kept in the **Field Warehouse** (`WH-20`); and goods bought for one specific well, like the AR-11 casing, may go straight to the Field Warehouse or the rig site. This is where logistics ends and receiving begins:',
           },
         },
         {
@@ -377,126 +383,92 @@ export const lesson: Lesson = {
             {
               title: { fa: 'کنترل مدارک', en: 'Check the paperwork' },
               text: {
-                fa: 'شماره سفارش، ردیف‌ها و مقدار روی برگه تحویل با سفارش مقایسه می‌شود؛ IRN و گواهی‌ها باید همراه باشند.',
-                en: 'The PO number, lines and quantities on the delivery note are compared with the PO; the IRN and certificates must be present.',
+                fa: 'شماره سفارش و ردیف روی نشانه‌گذاری بسته‌ها و برگه تحویل با سفارش مقایسه می‌شود؛ IRN، گواهی‌ها و فهرست عدل‌بندی باید همراه باشند.',
+                en: 'The PO and line numbers on the package marking and delivery note are compared with the PO; the IRN, certificates and packing list must be present.',
               },
             },
             {
               title: { fa: 'تخلیه، شمارش و بازدید ظاهری', en: 'Unload, count and inspect visually' },
               text: {
-                fa: 'بسته‌ها شمارش و از نظر آسیب حمل بررسی می‌شوند؛ آسیب روی بارنامه یادداشت می‌شود.',
-                en: 'Packages are counted and checked for transport damage; any damage is noted on the consignment note.',
+                fa: 'بسته‌ها شمارش می‌شوند و هر آسیب حمل همان لحظه روی بارنامه یادداشت و از آن عکس گرفته می‌شود.',
+                en: 'Packages are counted, and any transport damage is noted on the consignment note and photographed on the spot.',
               },
             },
             {
-              title: { fa: 'ثبت رسید در ERP', en: 'Post the goods receipt in the ERP' },
+              title: { fa: 'ثبت رسید کالا (GRN)', en: 'Post the goods received note (GRN)' },
               text: {
-                fa: 'رسید با ارجاع به سفارش ثبت می‌شود؛ اگر بازرسی ورودی لازم است، کالا در وضعیت «موجودی تحت بازرسی» قرار می‌گیرد.',
-                en: 'The receipt is posted with reference to the PO; if incoming inspection is required, the goods go into “quality inspection stock”.',
+                fa: 'انباردار GRN را با ارجاع به سفارش ثبت می‌کند؛ کالایی که بازرسی ورودی لازم دارد به موجودی تحت بازرسی کیفیت می‌رود.',
+                en: 'The storekeeper posts the GRN against the PO; items needing incoming inspection go into quality-inspection stock.',
               },
             },
             {
               title: { fa: 'بازرسی ورودی', en: 'Incoming inspection' },
               text: {
-                fa: 'کنترل کیفیت ابعاد، رزوه‌ها (برای لوله)، و تطابق شماره ذوب با گواهی‌ها را بررسی می‌کند.',
-                en: 'Quality control checks dimensions, threads (for pipe) and that heat numbers match the certificates.',
-              },
-            },
-            {
-              title: { fa: 'آزادسازی یا رد', en: 'Release or reject' },
-              text: {
-                fa: 'کالای سالم به موجودی آزاد منتقل می‌شود؛ کالای معیوب با NCR رد و مرجوع می‌شود.',
-                en: 'Good items move to unrestricted stock; defective items are rejected with an NCR and returned.',
-              },
-            },
-            {
-              title: { fa: 'جانمایی و برچسب', en: 'Put away and label' },
-              text: {
-                fa: 'کالا با شماره کالا و محل قفسه برچسب می‌خورد و در محل تعیین‌شده چیده می‌شود.',
-                en: 'Items are labelled with the material number and bin location and stored in place.',
+                fa: 'کالای سالم آزاد می‌شود؛ کالای معیوب با NCR رد و به تأمین‌کننده مرجوع می‌شود.',
+                en: 'Good items are released; defective items are rejected with an NCR and returned to the supplier.',
               },
             },
           ],
         },
-        { type: 'h', text: { fa: 'تحویل ناقص و مرجوعی', en: 'Partial deliveries and rejections' } },
         {
           type: 'p',
           text: {
-            fa: 'سفارش `PO-45031`: 300 شاخه لوله مغزی 4-1/2 اینچ با قیمت 400 برای موجودی انبار میدان. محموله اول 180 شاخه است و رسید آن ثبت می‌شود. در بازرسی ورودی، رزوه 6 شاخه آسیب‌دیده است؛ NCR صادر و این 6 شاخه به تأمین‌کننده مرجوع می‌شود. سفارش برای مانده باز می‌ماند:',
-            en: '`PO-45031`: 300 joints of 4-1/2" tubing at 400 each for Field Warehouse stock. The first shipment of 180 joints is received and posted. At incoming inspection, 6 joints have damaged threads; an NCR is raised and the 6 joints are returned to the supplier. The PO stays open for the balance:',
+            fa: 'اگر کالا در راه آسیب ببیند، اینکوترمز تعیین می‌کند ضرر با کیست. در **FCA** و **CIF** ریسک هنگام تحویل به حمل‌کننده یا بارگیری در مبدأ به خریدار منتقل شده است؛ پس مسار پترولیوم باید از بیمه‌گر محموله (در CIF، بیمه‌ای که فروشنده به نفع خریدار گرفته) یا از حمل‌کننده خسارت بگیرد، نه از فروشنده. در **DAP** ریسک تا تحویل در مقصد با فروشنده است و او باید کالای سالم جایگزین بفرستد. یادداشت روی بارنامه و عکس‌ها، پایه هر ادعای خسارت‌اند.',
+            en: 'If goods are damaged in transit, the Incoterms rule decides who bears the loss. Under **FCA** and **CIF** the risk passed to the buyer on handover to the carrier or loading at origin, so Masar Petroleum must claim from the cargo insurer (under CIF, the policy the seller bought for the buyer) or from the carrier, not from the seller. Under **DAP** the risk stays with the seller until delivery at destination, and the seller must send sound replacements. The note on the consignment note and the photos are the basis of any claim.',
           },
-        },
-        {
-          type: 'table',
-          head: [
-            { fa: 'رویداد', en: 'Event' },
-            { fa: 'مقدار (شاخه)', en: 'Qty (joints)' },
-            { fa: 'مبلغ', en: 'Value' },
-            { fa: 'مانده باز سفارش', en: 'PO open qty after' },
-          ],
-          rows: [
-            [{ fa: 'رسید محموله اول', en: 'First shipment received' }, 180, 72000, 120],
-            [{ fa: 'مرجوعی شاخه‌های معیوب', en: 'Defective joints returned' }, 6, 2400, 126],
-            [{ fa: 'خالص دریافتی', en: 'Net received' }, 174, 69600, 126],
-          ],
-          numericCols: [1, 2, 3],
         },
         {
           type: 'callout',
-          tone: 'tip',
+          tone: 'info',
+          title: { fa: 'رسید کالا و برگه ثبت خدمات', en: 'GRN and SES in full' },
           text: {
-            fa: 'برای هر ردیف سفارش **حد تحمل تحویل** تعریف کنید؛ مثلاً صفر برای اقلام مهندسی‌شده و 5٪ برای مواد فله مانند باریت. اگر تأمین‌کننده باقی‌مانده را تحویل نمی‌دهد و نیاز هم برطرف شده، ردیف را «تحویل تکمیل» علامت بزنید تا مانده باز بسته شود و تعهد آزاد شود.',
-            en: 'Set a **delivery tolerance** for each PO line, for example zero for engineered items and 5% for bulk materials such as barite. If the supplier will not deliver the balance and the need has gone, flag the line “delivery completed” so the open quantity closes and the commitment is released.',
-          },
-        },
-        { type: 'h', text: { fa: 'تأیید خدمات', en: 'Service acceptance' } },
-        {
-          type: 'p',
-          text: {
-            fa: 'برای خدمات، «رسید» همان تأیید صورت‌وضعیت (SES) است. کسی باید تأیید کند که کار را دیده است: سرپرست حفاری روی دکل یا مهندس مسئول عملیات، نه خریدار و نه پیمانکار. صورت‌وضعیت سیمان‌کاری جداری سطحی AR-11 به مبلغ 45,000 را سرپرست حفاری پس از مقایسه با برگه‌های کار روزانه تأیید کرد و همان لحظه هزینه روی AFE-AR11 نشست.',
-            en: 'For services, the “receipt” is the approval of the service entry sheet (SES). Someone who saw the work must approve it: the drilling supervisor on the rig or the responsible operations engineer, not the buyer and not the contractor. The 45,000 SES for cementing the AR-11 surface casing was approved by the drilling supervisor after checking it against the daily field tickets, and the cost landed on AFE-AR11 at that moment.',
+            fa: 'داده‌های رسید کالا (GRN)، تحویل ناقص و حد تحمل، مرجوعی و ابطال رسید، و برای خدمات، برگه ثبت خدمات (SES) و پذیرش آن، در درس «رسید کالا (GRN) و برگه ثبت خدمات (SES)» کامل آمده‌اند. در این درس فقط ثبت مالی رسید را در کنار هزینه‌های حمل و گمرک می‌بینیم.',
+            en: 'GRN data, partial deliveries and tolerances, returns and GRN reversals, and for services the service entry sheet (SES) and its acceptance, are covered in full in the lesson on goods received notes (GRN) and service entry sheets (SES). Here we look only at the receipt posting together with freight and customs costs.',
           },
         },
       ],
     },
     {
-      id: 'erp-receipt',
-      title: { fa: 'در ERP: رسید کالا و ثبت خودکار مالی', en: 'In the ERP: Goods Receipt and Its Finance Posting' },
+      id: 'erp-logistics',
+      title: {
+        fa: 'در ERP: پیگیری محموله، رسید و هزینه‌های حمل',
+        en: 'In the ERP: Shipment Tracking, Receipt and Delivery Costs',
+      },
       blocks: [
         {
           type: 'diagram',
           id: 'erp-modules',
           caption: {
-            fa: 'رسید کالا نقطه تلاقی ماژول‌هاست: خرید (سفارش)، انبار (مقدار و محل)، کیفیت (بازرسی)، پروژه (AFE) و مالی (ثبت خودکار).',
-            en: 'The goods receipt is where modules meet: Procurement (the PO), Inventory (quantity and location), Quality (inspection), Projects (the AFE) and Finance (the automatic posting).',
+            fa: 'رسید کالا نقطه تلاقی ماژول‌هاست: خرید (سفارش و پیگیری)، انبار (مقدار و محل)، کیفیت (بازرسی)، پروژه (AFE) و مالی (ثبت خودکار و حساب‌های واسط).',
+            en: 'The goods received note (GRN) is where modules meet: Procurement (the PO and expediting), Inventory (quantity and location), Quality (inspection), Projects (the AFE) and Finance (the automatic posting and clearing accounts).',
           },
         },
         {
           type: 'table',
           head: [
             { fa: 'جزء', en: 'Element' },
-            { fa: 'در رسید کالا', en: 'At goods receipt' },
+            { fa: 'در پیگیری، حمل و رسید', en: 'In expediting, shipping and receipt' },
           ],
           rows: [
             [
               { fa: 'داده پایه', en: 'Master data' },
               {
-                fa: 'داده پایه کالا (گروه ارزش‌گذاری که حساب موجودی را تعیین می‌کند، روش قیمت‌گذاری)، محل‌های انبار (مرکزی، میدان)، تنظیمات بازرسی کیفیت، موضوع‌های هزینه',
-                en: 'Material master (valuation class, which sets the inventory account; price control), storage locations (Central, Field), quality inspection settings, cost objects',
+                fa: 'تأمین‌کننده کالا، حمل‌کننده و ترخیص‌کار (هر کدام داده پایه تأمین‌کننده)، داده پایه کالا، اینکوترمز و هزینه‌های برنامه‌ریزی‌شده تحویل در شرایط سفارش، محل‌های انبار',
+                en: 'The goods supplier, the forwarder and the customs broker (each a vendor master), the material master, Incoterms and planned delivery costs in the PO conditions, storage locations',
               },
             ],
             [
               { fa: 'اسناد تراکنشی', en: 'Transaction documents' },
               {
-                fa: 'رسید کالا (سند کالا و سند حسابداری)، مرجوعی به تأمین‌کننده، SES، انتقال بین انبارها',
-                en: 'Goods receipt (material document and accounting document), return to vendor, SES, stock transfer',
+                fa: 'تأییدیه سفارش، اعلام ارسال (Inbound Delivery) با تاریخ پیش‌بینی، وضعیت پیگیری، پیوست IRN، رسید کالا (GRN)، فاکتورهای حمل و ترخیص',
+                en: 'PO confirmation, inbound delivery with its expected date, expediting status, IRN attachment, goods received note (GRN), freight and customs invoices',
               },
             ],
             [
               { fa: 'نقش‌ها', en: 'Roles' },
               {
-                fa: 'انباردار رسید را ثبت می‌کند؛ بازرس کیفیت آزاد یا رد می‌کند؛ نماینده محل SES را تأیید می‌کند؛ خریدار NCR را با تأمین‌کننده پیگیری می‌کند؛ واحد مالی حساب GR/IR را پایش می‌کند',
-                en: 'Storekeeper posts the receipt; QC inspector releases or rejects; the site representative approves the SES; the buyer handles the NCR with the supplier; Finance monitors GR/IR',
+                fa: 'پیگیر سفارش تاریخ‌ها و وضعیت را به‌روز می‌کند؛ هماهنگ‌کننده لجستیک با حمل‌کننده و ترخیص‌کار کار می‌کند؛ انباردار GRN را ثبت می‌کند؛ حساب‌های پرداختنی فاکتورهای حمل و ترخیص را ثبت می‌کند؛ واحد مالی حساب‌های واسط را پایش می‌کند',
+                en: 'The expeditor updates dates and status; the logistics coordinator works with the forwarder and broker; the storekeeper posts the GRN; AP posts freight and customs invoices; Finance monitors the clearing accounts',
               },
             ],
           ],
@@ -504,16 +476,16 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'هر رسید کالا در ERP دو سند می‌سازد: **سند کالا** (کدام کالا، چه مقدار، کدام انبار) و **سند حسابداری** (چه مبلغی، کدام حساب‌ها). مبلغ از **قیمت سفارش خرید** خوانده می‌شود، نه از فاکتور؛ چون فاکتور هنوز نرسیده است. طرف بستانکار همیشه **حساب واسط رسید کالا و فاکتور (GR/IR)** است: بدهی‌ای که می‌دانیم وجود دارد، اما فاکتورش هنوز نیامده است.',
-            en: 'Every goods receipt in the ERP creates two documents: a **material document** (which item, how many, which warehouse) and an **accounting document** (what amount, which accounts). The amount comes from the **PO price**, not the invoice, because the invoice has not arrived yet. The credit side is always the **GR/IR clearing account**: a liability we know exists but have not yet been invoiced for.',
+            fa: 'GRN با **قیمت سفارش** ثبت می‌شود و طرف بستانکار آن **حساب واسط رسید کالا و فاکتور (GR/IR)** است. اگر هزینه‌های حمل و گمرک از پیش در شرایط سفارش تعریف شده باشند، ERP هنگام GRN آن‌ها را هم به بهای تمام‌شده کالا اضافه می‌کند و هر کدام را در یک **حساب واسط** جداگانه بستانکار می‌کند تا بعداً با فاکتور حمل‌کننده و ترخیص‌کار تسویه شوند:',
+            en: 'A GRN is valued at the **PO price** and credits the **GR/IR clearing account**. If freight and customs costs were defined in advance in the PO conditions, the ERP also adds them to the cost of the goods at GRN, crediting each to its own **clearing account**, to be cleared later by the forwarder’s and broker’s invoices:',
           },
         },
         {
           type: 'journal',
-          title: { fa: 'ثبت‌های خودکار ERP هنگام رسید', en: 'Automatic ERP postings at receipt' },
+          title: { fa: 'ثبت‌های خودکار ERP: رسید و هزینه‌های تحویل', en: 'Automatic ERP postings: receipt and delivery costs' },
           entries: [
             {
-              date: { fa: 'رسید لوله مغزی (انبار)', en: 'Tubing received (stock)' },
+              date: { fa: 'GRN لوله مغزی (انبار میدان)', en: 'GRN for tubing (Field Warehouse)' },
               lines: [
                 { account: ac.invField, debit: 72000 },
                 { account: ac.grir, credit: 72000 },
@@ -521,31 +493,7 @@ export const lesson: Lesson = {
               memo: { fa: '180 شاخه × 400 با قیمت سفارش `PO-45031`.', en: '180 joints × 400 at the `PO-45031` price.' },
             },
             {
-              date: { fa: 'مرجوعی 6 شاخه معیوب', en: 'Return of 6 defective joints' },
-              lines: [
-                { account: ac.grir, debit: 2400 },
-                { account: ac.invField, credit: 2400 },
-              ],
-              memo: { fa: 'برعکس رسید، با همان قیمت: 6 × 400.', en: 'Reverses the receipt at the same price: 6 × 400.' },
-            },
-            {
-              date: { fa: 'رسید لوله جداری (تخصیص مستقیم)', en: 'Casing received (direct charge)' },
-              lines: [
-                { account: ac.aucAR11, debit: 180000 },
-                { account: ac.grir, credit: 180000 },
-              ],
-              memo: { fa: 'ردیف 10 سفارش `PO-45007`، 150 × 1,200 روی AFE-AR11.', en: '`PO-45007` line 10, 150 × 1,200 on AFE-AR11.' },
-            },
-            {
-              date: { fa: 'تأیید SES سیمان‌کاری', en: 'Cementing SES approved' },
-              lines: [
-                { account: ac.aucAR11, debit: 45000 },
-                { account: ac.grir, credit: 45000 },
-              ],
-              memo: { fa: 'خدمات چاه البرز، روی AFE-AR11.', en: 'Alborz Well Services, on AFE-AR11.' },
-            },
-            {
-              date: { fa: 'رسید شیرهای کنترل وارداتی', en: 'Imported control valves received' },
+              date: { fa: 'GRN شیرهای کنترل وارداتی', en: 'GRN for imported control valves' },
               lines: [
                 { account: ac.invCentral, debit: 49000 },
                 { account: ac.grir, credit: 40000 },
@@ -553,28 +501,41 @@ export const lesson: Lesson = {
                 { account: ac.customsClr, credit: 4800 },
               ],
               memo: {
-                fa: 'هزینه‌های برنامه‌ریزی‌شده حمل (3,200 + 1,000) و گمرک (4,000 + 800) در سفارش تعریف شده‌اند و هر کدام حساب واسط خودشان را دارند تا با فاکتور حمل‌کننده و ترخیص‌کار تسویه شوند.',
-                en: 'Planned freight (3,200 + 1,000) and customs (4,000 + 800) costs are defined in the PO, each with its own clearing account, to be cleared by the forwarder’s and broker’s invoices.',
+                fa: 'حمل برنامه‌ریزی‌شده 3,200 + 1,000 و گمرک 4,000 + 800؛ بهای تمام‌شده کل 49,000.',
+                en: 'Planned freight 3,200 + 1,000 and customs 4,000 + 800; total landed cost 49,000.',
               },
+            },
+            {
+              date: { fa: 'فاکتور حمل‌کننده', en: 'Forwarder’s invoice' },
+              lines: [
+                { account: ac.freightClr, debit: 4200 },
+                { account: ac.apJonoub, credit: 4200 },
+              ],
+              memo: { fa: 'برای سادگی، مالیات بر ارزش افزوده در نظر گرفته نشده است.', en: 'VAT is left out for simplicity.' },
+            },
+            {
+              date: { fa: 'فاکتور ترخیص‌کار', en: 'Customs broker’s invoice' },
+              lines: [
+                { account: ac.customsClr, debit: 4800 },
+                { account: ac.apBroker, credit: 4800 },
+              ],
+              memo: { fa: 'حقوق ورودی 4,000 و کارمزد و هزینه بندری 800.', en: 'Import duties 4,000 plus fees and port charges 800.' },
             },
           ],
         },
         {
           type: 'tAccounts',
-          title: { fa: 'حساب GR/IR پس از این رسیدها', en: 'GR/IR after these receipts' },
+          title: { fa: 'حساب‌های واسط پس از فاکتورها', en: 'Clearing accounts after the invoices' },
           accounts: [
-            {
-              name: { fa: 'حساب واسط رسید کالا و فاکتور (GR/IR)', en: 'GR/IR clearing account' },
-              debits: [2400],
-              credits: [72000, 180000, 45000, 40000],
-            },
+            { name: ac.freightClr, debits: [4200], credits: [4200] },
+            { name: ac.customsClr, debits: [4800], credits: [4800] },
           ],
         },
         {
           type: 'p',
           text: {
-            fa: 'مانده بستانکار 334,600 یعنی «کالا و خدمت دریافت شده، فاکتور هنوز نرسیده». با ثبت فاکتورها، که در درس تطبیق فاکتور و پرداخت می‌بینیم، این مانده تسویه می‌شود. **انتقال بین انبارها**، مثلاً از انبار مرکزی به انبار میدان، فقط محل کالا را عوض می‌کند: اگر هر دو انبار در یک واحد ارزش‌گذاری باشند ثبت مالی ندارد، و اگر جدا باشند موجودی انبار میدان بدهکار و موجودی انبار مرکزی با همان بها بستانکار می‌شود. هیچ‌کدام سود و زیان ندارد.',
-            en: 'The credit balance of 334,600 means “goods and services received, not yet invoiced”. Posting the invoices, covered in the lesson on invoice verification and payment, clears it. A **stock transfer**, for example from the Central to the Field Warehouse, only changes location: if both warehouses are in the same valuation area there is no Finance posting; if they are separate, Field Warehouse inventory is debited and Central Warehouse inventory credited at the same cost. Neither affects profit or loss.',
+            fa: 'هر دو حساب واسط صفر شده‌اند؛ اگر فاکتوری با مبلغ دیگری برسد، اختلاف مثل تفاوت قیمت کالا رفتار می‌کند. **انتقال بین انبارها**، مثلاً از انبار مرکزی به انبار میدان، فقط محل کالا را عوض می‌کند: اگر هر دو انبار در یک واحد ارزش‌گذاری باشند ثبت مالی ندارد، و اگر جدا باشند موجودی انبار میدان بدهکار و موجودی انبار مرکزی با همان بها بستانکار می‌شود. هیچ‌کدام سود و زیان ندارد.',
+            en: 'Both clearing accounts are now zero; if an invoice arrives at a different amount, the difference behaves like a price difference on the goods. A **stock transfer**, for example from the Central to the Field Warehouse, only changes location: within one valuation area there is no Finance posting, and between separate areas Field Warehouse inventory is debited and Central Warehouse inventory credited at the same cost. Neither affects profit or loss.',
           },
         },
         {
@@ -582,8 +543,8 @@ export const lesson: Lesson = {
           tone: 'info',
           title: { fa: 'پیوند با بازیافت هزینه', en: 'Link to cost recovery' },
           text: {
-            fa: 'تاریخ رسید و موضوع هزینه روی آن تعیین می‌کنند هزینه کی و کجا شناسایی شود. خرید با تخصیص مستقیم از لحظه رسید روی AFE یا چاه می‌نشیند؛ خرید برای انبار طبق بسیاری از رویه‌های حسابداری قراردادهای نفتی هنگام **حواله و مصرف** به حساب عملیات مشترک می‌رود، نه هنگام خرید (رویه دقیق را قرارداد تعیین می‌کند). رسید، برگه تحویل، IRN و NCR شواهد اصلی حسابرس‌اند.',
-            en: 'The receipt date and the cost object on it decide when and where a cost is recognised. Direct-charge purchases land on the AFE or well at receipt; under many petroleum-contract accounting procedures, stock purchases reach the joint account when **issued and used**, not when bought (the contract sets the exact rule). The receipt, delivery note, IRN and NCR are the auditor’s key evidence.',
+            fa: 'تاریخ رسید و موضوع هزینه روی آن تعیین می‌کنند هزینه کی و کجا شناسایی شود. خرید با تخصیص مستقیم از لحظه GRN روی AFE یا چاه می‌نشیند؛ خرید برای انبار طبق بسیاری از رویه‌های حسابداری قراردادهای نفتی هنگام **حواله و مصرف** به حساب عملیات مشترک می‌رود (رویه دقیق را قرارداد تعیین می‌کند). هزینه‌های حمل و گمرک همراه کالا به همان چاه یا مرکز هزینه می‌رسند؛ پس فاکتور حمل‌کننده، اظهارنامه گمرکی و رسید پرداخت حقوق ورودی هم جزء پرونده شواهد حسابرس‌اند.',
+            en: 'The receipt date and the cost object on it decide when and where a cost is recognised. Direct-charge purchases land on the AFE or well at GRN; under many petroleum-contract accounting procedures, stock purchases reach the joint account when **issued and used** (the contract sets the exact rule). Freight and customs costs travel with the goods to the same well or cost centre, so the forwarder’s invoice, the customs declaration and the duty payment receipt are also part of the auditor’s evidence.',
           },
         },
         {
@@ -591,8 +552,8 @@ export const lesson: Lesson = {
           tone: 'info',
           title: { fa: 'در عمل', en: 'In practice' },
           text: {
-            fa: 'بسیاری از شرکت‌های ایرانی هنگام ورود کالا **رسید موقت** صادر می‌کنند و پس از تأیید کنترل کیفیت **رسید قطعی**. در ERP همین منطق با «موجودی تحت بازرسی» و آزادسازی آن پیاده می‌شود. مهم این است که بدهی (GR/IR) و موجودی از لحظه ورود فیزیکی کالا دیده شوند، نه از لحظه امضای آخرین برگه.',
-            en: 'Many Iranian companies issue a **temporary receipt** when goods arrive and a **final receipt** after QC approval. In the ERP the same logic is implemented with quality inspection stock and its release. What matters is that the liability (GR/IR) and the inventory are visible from the moment the goods physically arrive, not from the last signature.',
+            fa: 'در ایران اسناد واردات (ثبت سفارش، اظهارنامه گمرکی، قبض پرداخت حقوق ورودی و پروانه گمرکی) را به سفارش خرید در ERP پیوست کنید. اگر قرارداد نفتی برای کالای عملیات نفتی معافیت گمرکی دارد، همین اسناد شاهد استفاده درست از معافیت‌اند. فیلدهای تاریخ پیگیری (آمادگی، حمل، ورود به بندر) را به‌روز نگه دارید تا گزارش اقلام دیرکرد خودکار ساخته شود.',
+            en: 'In Iran, attach the import documents (order registration, customs declaration, duty payment receipt and customs release permit) to the PO in the ERP. If the petroleum contract gives customs exemptions for goods used in petroleum operations, these documents prove the exemption was used properly. Keep the expediting date fields (ready, shipped, arrived at port) up to date so the late-items report builds itself.',
           },
         },
       ],
@@ -610,23 +571,23 @@ export const lesson: Lesson = {
               en: '**Expediting by phone only**: accepting “it ships next week” without evidence. Fix: milestone reports with photos, test reports and visits for level A items.',
             },
             {
-              fa: '**ارسال بدون IRN یا با NCR باز**: کالایی که بازرسی نشده وارد انبار می‌شود. راه درست: رسید قطعی فقط با IRN معتبر.',
-              en: '**Shipping without an IRN or with an open NCR**: uninspected goods enter the warehouse. Fix: final receipt only with a valid IRN.',
+              fa: '**ارسال بدون IRN یا با NCR باز**: کالایی که بازرسی نشده وارد انبار می‌شود. راه درست: ارسال و رسید قطعی فقط با IRN معتبر.',
+              en: '**Shipping without an IRN or with an open NCR**: uninspected goods enter the warehouse. Fix: shipment and final receipt only with a valid IRN.',
             },
             {
-              fa: '**رسید پیش از ورود فیزیکی کالا**: برای بستن ماه یا کمک به پرداخت زودتر به تأمین‌کننده. این کار موجودی و بدهی ساختگی می‌سازد و نشانه خطر تقلب است. راه درست: رسید فقط پس از شمارش واقعی.',
-              en: '**Receipting before the goods arrive**: to close the month or help the supplier get paid sooner. This creates fictitious inventory and liabilities and is a fraud red flag. Fix: receipt only after a physical count.',
+              fa: '**اسناد حمل ناقص**: فهرست عدل‌بندی با نشانه‌گذاری نمی‌خواند یا گواهی مبدأ نیست؛ نتیجه، توقف در گمرک و دموراژ. راه درست: فهرست کنترل اسناد پیش از ارسال.',
+              en: '**Incomplete shipping documents**: the packing list does not match the marking or the certificate of origin is missing, leading to customs holds and demurrage. Fix: a document checklist before shipment.',
             },
             {
-              fa: '**رسید روی ردیف، انبار یا موضوع هزینه اشتباه**: لوله AR-11 روی سفارش AR-10. راه درست: رسید همیشه با ارجاع به سفارش و ردیف درست.',
-              en: '**Receipt on the wrong line, warehouse or cost object**: AR-11 pipe received on the AR-10 order. Fix: always receive against the correct PO and line.',
+              fa: '**رسید پیش از ورود فیزیکی کالا**: برای بستن ماه یا کمک به پرداخت زودتر به تأمین‌کننده. این کار موجودی و بدهی ساختگی می‌سازد و نشانه خطر تقلب است.',
+              en: '**Receipting before the goods arrive**: to close the month or help the supplier get paid sooner. This creates fictitious inventory and liabilities and is a fraud red flag.',
             },
             {
-              fa: '**ثبت‌نکردن مرجوعی**: کالای ردشده برگشت داده می‌شود اما رسیدش باقی می‌ماند و بعداً فاکتورش پرداخت می‌شود. راه درست: مرجوعی در ERP همان روز ثبت شود.',
-              en: '**Not posting returns**: rejected goods go back but the receipt stays, and the invoice gets paid later. Fix: post the return in the ERP the same day.',
+              fa: '**امضای «بدون ایراد» بارنامه**: آسیب حمل یادداشت نمی‌شود و ادعای بیمه از دست می‌رود. راه درست: یادداشت و عکس همان لحظه.',
+              en: '**Signing the consignment note “clean”**: transit damage is not noted and the insurance claim is lost. Fix: note and photograph it on the spot.',
             },
             {
-              fa: '**بهای تمام‌شده اشتباه**: اضافه‌کردن مالیات بر ارزش افزوده قابل استرداد یا دموراژ به موجودی. راه درست: فقط مخارج مستقیم و غیرقابل استرداد.',
+              fa: '**بهای تمام‌شده اشتباه**: افزودن مالیات بر ارزش افزوده قابل استرداد یا دموراژ به موجودی. راه درست: فقط مخارج مستقیم و غیرقابل استرداد.',
               en: '**Wrong landed cost**: adding recoverable VAT or demurrage to inventory. Fix: only direct, non-recoverable costs.',
             },
           ],
@@ -646,7 +607,7 @@ export const lesson: Lesson = {
               { fa: 'اثر تأخیر', en: 'Effect of delay' },
             ],
             rows: [
-              [{ fa: 'الف: روتور یدکی کمپرسور K-102', en: 'a: spare rotor, compressor K-102' }, 36, { fa: 'کاهش ظرفیت ایستگاه تقویت فشار', en: 'Lost compressor station capacity' }],
+              [{ fa: 'الف: روتور یدکی کمپرسور K-202', en: 'a: spare rotor, compressor K-202' }, 36, { fa: 'کاهش ظرفیت ایستگاه تقویت فشار', en: 'Lost compressor station capacity' }],
               [
                 { fa: 'ب: لوله مغزی برای موجودی تعمیر چاه', en: 'b: tubing for workover stock' },
                 10,
@@ -680,8 +641,8 @@ export const lesson: Lesson = {
           title: { fa: 'تمرین 2: بهای تمام‌شده یاتاقان‌های وارداتی', en: 'Exercise 2: Landed cost of imported bearings' },
           difficulty: 'medium',
           problem: {
-            fa: 'پارس‌آریا 20 یاتاقان کمپرسور برای انبار مرکزی وارد کرده است. بهای تمام‌شده کل و هر یاتاقان را حساب کنید، اقلامی را که نباید به موجودی اضافه شوند جدا کنید و ثبت‌ها را بنویسید. مالیات بر ارزش افزوده گمرکی قابل استرداد است و دموراژ به دلیل تأخیر خود شرکت در تحویل مدارک ایجاد شده است.',
-            en: 'Pars Arya imported 20 compressor bearings for the Central Warehouse. Calculate the total landed cost and the cost per bearing, separate the items that must not go into inventory, and write the entries. The import VAT is recoverable, and the demurrage arose from the company’s own delay in submitting documents.',
+            fa: 'مسار پترولیوم 20 یاتاقان کمپرسور برای انبار مرکزی وارد کرده است. بهای تمام‌شده کل و هر یاتاقان را حساب کنید، اقلامی را که نباید به موجودی اضافه شوند جدا کنید و ثبت‌ها را بنویسید. مالیات بر ارزش افزوده گمرکی قابل استرداد است و دموراژ به دلیل تأخیر خود شرکت در تحویل مدارک ایجاد شده است.',
+            en: 'Masar Petroleum imported 20 compressor bearings for the Central Warehouse. Calculate the total landed cost and the cost per bearing, separate the items that must not go into inventory, and write the entries. The import VAT is recoverable, and the demurrage arose from the company’s own delay in submitting documents.',
           },
           given: {
             head: [
@@ -705,10 +666,7 @@ export const lesson: Lesson = {
               items: [
                 {
                   title: { fa: 'اقلام بهای تمام‌شده', en: 'Cost components' },
-                  text: {
-                    fa: '22,000 + 1,800 + 2,600 + 400 + 200 = 27,000.',
-                    en: '22,000 + 1,800 + 2,600 + 400 + 200 = 27,000.',
-                  },
+                  text: { fa: '22,000 + 1,800 + 2,600 + 400 + 200 = 27,000.', en: '22,000 + 1,800 + 2,600 + 400 + 200 = 27,000.' },
                 },
                 {
                   title: { fa: 'هر یاتاقان', en: 'Per bearing' },
@@ -727,17 +685,14 @@ export const lesson: Lesson = {
               type: 'journal',
               entries: [
                 {
-                  date: { fa: 'رسید در انبار مرکزی', en: 'Receipt at the Central Warehouse' },
+                  date: { fa: 'GRN در انبار مرکزی', en: 'GRN at the Central Warehouse' },
                   lines: [
                     { account: ac.invCentral, debit: 27000 },
                     { account: ac.grir, credit: 22000 },
                     { account: ac.freightClr, credit: 2000 },
                     { account: ac.customsClr, credit: 3000 },
                   ],
-                  memo: {
-                    fa: 'حمل: 1,800 + 200؛ گمرک و ترخیص: 2,600 + 400.',
-                    en: 'Freight: 1,800 + 200; customs and clearance: 2,600 + 400.',
-                  },
+                  memo: { fa: 'حمل: 1,800 + 200؛ گمرک و ترخیص: 2,600 + 400.', en: 'Freight: 1,800 + 200; customs and clearance: 2,600 + 400.' },
                 },
                 {
                   date: { fa: 'پرداخت در گمرک', en: 'Paid at customs' },
@@ -746,10 +701,7 @@ export const lesson: Lesson = {
                     { account: ac.demurrage, debit: 500 },
                     { account: ac.bank, credit: 3200 },
                   ],
-                  memo: {
-                    fa: 'مالیات قابل استرداد و دموراژ، جدا از موجودی.',
-                    en: 'Recoverable VAT and demurrage, kept out of inventory.',
-                  },
+                  memo: { fa: 'مالیات قابل استرداد و دموراژ، جدا از موجودی.', en: 'Recoverable VAT and demurrage, kept out of inventory.' },
                 },
               ],
             },
@@ -761,121 +713,98 @@ export const lesson: Lesson = {
         },
         {
           type: 'exercise',
-          title: { fa: 'تمرین 3: تحویل ناقص و مرجوعی', en: 'Exercise 3: Partial delivery and a return' },
+          title: { fa: 'تمرین 3: سرچاهی AR-12 و تصمیم حمل هوایی', en: 'Exercise 3: The AR-12 wellhead and the air-freight decision' },
           difficulty: 'medium',
           problem: {
-            fa: 'سفارش `PO-45026`: 40 کیت سوپاپ کمپرسور × 750 برای انبار مرکزی. محموله اول 25 کیت است و رسیدش ثبت می‌شود. بازرسی ورودی 2 کیت را به دلیل جنس نادرست فنر (مغایر با گواهی) رد می‌کند و آن‌ها مرجوع می‌شوند. محموله دوم 17 کیت است (شامل 2 کیت جایگزین) و همه پذیرفته می‌شوند. ثبت‌ها، مانده باز سفارش پس از هر رویداد و مانده نهایی GR/IR را به دست آورید.',
-            en: '`PO-45026`: 40 compressor valve kits × 750 for the Central Warehouse. The first shipment of 25 kits is received. Incoming inspection rejects 2 kits for the wrong spring material (not matching the certificate) and they are returned. The second shipment of 17 kits (including 2 replacements) is fully accepted. Write the entries, the PO open quantity after each event, and the final GR/IR balance.',
-          },
-          solution: [
-            {
-              type: 'table',
-              head: [
-                { fa: 'رویداد', en: 'Event' },
-                { fa: 'مقدار', en: 'Qty' },
-                { fa: 'مبلغ', en: 'Value' },
-                { fa: 'مانده باز سفارش', en: 'PO open qty' },
-              ],
-              rows: [
-                [{ fa: 'رسید محموله اول', en: 'First receipt' }, 25, 18750, 15],
-                [{ fa: 'مرجوعی', en: 'Return' }, 2, 1500, 17],
-                [{ fa: 'رسید محموله دوم', en: 'Second receipt' }, 17, 12750, 0],
-              ],
-              numericCols: [1, 2, 3],
-            },
-            {
-              type: 'journal',
-              entries: [
-                {
-                  date: { fa: 'رسید اول', en: 'First receipt' },
-                  lines: [
-                    { account: ac.invCentral, debit: 18750 },
-                    { account: ac.grir, credit: 18750 },
-                  ],
-                  memo: { fa: '25 × 750.', en: '25 × 750.' },
-                },
-                {
-                  date: { fa: 'مرجوعی', en: 'Return' },
-                  lines: [
-                    { account: ac.grir, debit: 1500 },
-                    { account: ac.invCentral, credit: 1500 },
-                  ],
-                  memo: { fa: '2 × 750؛ با NCR.', en: '2 × 750; with an NCR.' },
-                },
-                {
-                  date: { fa: 'رسید دوم', en: 'Second receipt' },
-                  lines: [
-                    { account: ac.invCentral, debit: 12750 },
-                    { account: ac.grir, credit: 12750 },
-                  ],
-                  memo: { fa: '17 × 750.', en: '17 × 750.' },
-                },
-              ],
-            },
-            {
-              type: 'callout',
-              tone: 'tip',
-              text: {
-                fa: 'کنترل: موجودی = 18,750 − 1,500 + 12,750 = 30,000 = 40 × 750. مانده GR/IR هم بستانکار 30,000 است و منتظر فاکتور تأمین‌کننده برای 40 کیت.',
-                en: 'Check: inventory = 18,750 − 1,500 + 12,750 = 30,000 = 40 × 750. GR/IR also shows a 30,000 credit, awaiting the supplier’s invoice for 40 kits.',
-              },
-            },
-          ],
-          answer: {
-            fa: 'مانده باز: 15، سپس 17، سپس صفر؛ موجودی 30,000 و GR/IR بستانکار 30,000.',
-            en: 'Open qty: 15, then 17, then zero; inventory 30,000 and a GR/IR credit of 30,000.',
-          },
-        },
-        {
-          type: 'exercise',
-          title: { fa: 'تمرین 4: تأیید SES با ردیف مورد اختلاف', en: 'Exercise 4: Approving an SES with a disputed line' },
-          difficulty: 'hard',
-          problem: {
-            fa: 'خدمات چاه البرز برای نمودارگیری چاه AR-11 برگه کار زیر را داده است. سفارش خدمات این کار 30,000 است. طبق قرارداد، تکرار نمودارگیری به دلیل خرابی ابزار پیمانکار قابل مطالبه نیست و یکی از سه نوبت نمودارگیری دقیقاً همین بوده است. (الف) مبلغ قابل تأیید SES را حساب کنید. (ب) ثبت خودکار ERP را بنویسید. (ج) اگر کار تمام شده باشد، با مانده سفارش چه باید کرد؟',
-            en: 'Alborz Well Services submitted the field ticket below for wireline logging on well AR-11. The service PO for this job is 30,000. Under the contract, a re-run caused by failure of the contractor’s own tool is not chargeable, and one of the three runs was exactly that. (a) Calculate the SES amount to approve. (b) Write the automatic ERP entry. (c) If the job is finished, what should be done with the remaining PO value?',
-          },
-          given: {
-            head: [
-              { fa: 'ردیف', en: 'Line' },
-              { fa: 'محاسبه', en: 'Calculation' },
-              { fa: 'مبلغ ادعایی', en: 'Amount claimed' },
-            ],
-            rows: [
-              [{ fa: 'دستگاه نمودارگیری و خدمه', en: 'Logging unit and crew' }, { fa: '2 روز × 4,500', en: '2 days × 4,500' }, 9000],
-              [{ fa: 'نوبت‌های نمودارگیری', en: 'Logging runs' }, { fa: '3 نوبت × 3,200', en: '3 runs × 3,200' }, 9600],
-              [{ fa: 'هزینه عمق', en: 'Depth charge' }, { fa: '2,400 متر × 2', en: '2,400 m × 2' }, 4800],
-              [{ fa: 'تجهیز کارگاه', en: 'Mobilisation' }, { fa: 'مقطوع', en: 'Lump sum' }, 2600],
-              [{ fa: 'جمع ادعا', en: 'Total claimed' }, blank, 26000],
-            ],
-            numericCols: [2],
-          },
-          hint: {
-            fa: 'فقط ردیف نوبت‌ها تغییر می‌کند؛ هزینه عمق و دستگاه بابت کار مفید انجام شده‌اند.',
-            en: 'Only the runs line changes; the unit and depth charges relate to useful work.',
+            fa: 'سرچاهی و تاج چاه AR-12 (روی `AFE-2026-014`) باید هفته 40 در محل دکل باشد. زمان‌ها: تأیید نقشه‌ها 4 هفته، ساخت 22، بازرسی و FAT 2، حمل دریایی و ترخیص 5، حمل داخلی 1. (الف) آخرین هفته مجاز صدور سفارش چه بود؟ (ب) به دلیل طولانی شدن مناقصه، سفارش هفته 9 صادر شده است. کالا کی می‌رسد و اگر کاری نکنیم، هزینه آماده‌به‌کار دکل با نرخ فرضی 35,000 در روز چقدر می‌شود؟ (ج) دو راه هست: حمل هوایی که حمل و ترخیص را به 1 هفته می‌رساند و 90,000 هزینه اضافه دارد، یا پرداخت 60,000 به سازنده تا ساخت 2 هفته کوتاه شود. کدام بهتر است؟',
+            en: 'The AR-12 wellhead and tree (on `AFE-2026-014`) must be at the rig site in week 40. Durations: drawing approval 4 weeks, manufacturing 22, inspection and FAT 2, sea freight and clearance 5, inland transport 1. (a) What was the latest week to issue the PO? (b) Because the tender ran long, the PO was issued in week 9. When will the goods arrive, and if nothing is done, what rig standby cost results at an illustrative 35,000 a day? (c) There are two options: air freight, which cuts freight and clearance to 1 week at an extra 90,000, or paying the manufacturer 60,000 to shorten manufacturing by 2 weeks. Which is better?',
           },
           solution: [
             {
               type: 'steps',
               items: [
                 {
-                  title: { fa: 'حذف ردیف غیرقابل مطالبه', en: 'Remove the non-chargeable run' },
+                  title: { fa: 'آخرین هفته سفارش', en: 'Latest PO week' },
+                  text: { fa: '40 − 4 − 22 − 2 − 5 − 1 = 6.', en: '40 − 4 − 22 − 2 − 5 − 1 = 6.' },
+                },
+                {
+                  title: { fa: 'ورود بدون اقدام', en: 'Arrival with no action' },
                   text: {
-                    fa: 'نوبت‌های قابل قبول: 2 × 3,200 = 6,400. مبلغ SES = 9,000 + 6,400 + 4,800 + 2,600 = 22,800 (یعنی 26,000 − 3,200).',
-                    en: 'Acceptable runs: 2 × 3,200 = 6,400. SES amount = 9,000 + 6,400 + 4,800 + 2,600 = 22,800 (that is 26,000 − 3,200).',
+                    fa: '9 + 4 + 22 + 2 + 5 + 1 = 43؛ یعنی 3 هفته دیر. هزینه انتظار: 21 روز × 35,000 = 735,000.',
+                    en: '9 + 4 + 22 + 2 + 5 + 1 = 43, three weeks late. Standby: 21 days × 35,000 = 735,000.',
                   },
                 },
                 {
-                  title: { fa: 'اثر بر تعهد', en: 'Effect on the commitment' },
+                  title: { fa: 'مقایسه گزینه‌ها', en: 'Compare the options' },
                   text: {
-                    fa: 'تعهد سفارش از 30,000 به 7,200 کم می‌شود و 22,800 به هزینه واقعی AFE-AR11 می‌رود.',
-                    en: 'The PO commitment falls from 30,000 to 7,200, and 22,800 moves to AFE-AR11 actuals.',
+                    fa: 'حمل هوایی: 9 + 4 + 22 + 2 + 1 + 1 = 39، به‌موقع. تسریع ساخت: 9 + 4 + 20 + 2 + 5 + 1 = 41، یک هفته دیر: 7 × 35,000 = 245,000 به‌علاوه 60,000.',
+                    en: 'Air freight: 9 + 4 + 22 + 2 + 1 + 1 = 39, on time. Faster manufacturing: 9 + 4 + 20 + 2 + 5 + 1 = 41, one week late: 7 × 35,000 = 245,000 plus 60,000.',
+                  },
+                },
+              ],
+            },
+            {
+              type: 'table',
+              head: [
+                { fa: 'گزینه', en: 'Option' },
+                { fa: 'هفته ورود', en: 'Arrival week' },
+                { fa: 'هزینه اضافه', en: 'Extra cost' },
+                { fa: 'هزینه انتظار دکل', en: 'Rig standby' },
+                { fa: 'جمع', en: 'Total' },
+              ],
+              rows: [
+                [{ fa: 'بدون اقدام', en: 'No action' }, 43, 0, 735000, 735000],
+                [{ fa: 'حمل هوایی', en: 'Air freight' }, 39, 90000, 0, 90000],
+                [{ fa: 'تسریع ساخت', en: 'Faster manufacturing' }, 41, 60000, 245000, 305000],
+              ],
+              numericCols: [1, 2, 3, 4],
+            },
+            {
+              type: 'callout',
+              tone: 'tip',
+              text: {
+                fa: 'هزینه حمل هوایی جزء بهای چاه AR-12 (دارایی در جریان ساخت روی `AFE-2026-014`) است و با یادداشت تصمیم مستند معمولاً قابل بازیافت است؛ اما شرکا ممکن است علت ریشه‌ای، یعنی تأخیر مناقصه، را بپرسند. پس دلیل تصمیم و مقایسه گزینه‌ها را پیوست سفارش کنید.',
+                en: 'The air freight is part of the cost of well AR-12 (assets under construction on `AFE-2026-014`) and, with a documented decision memo, is usually recoverable; but partners may ask about the root cause, the late tender. Attach the reasoning and the option comparison to the PO.',
+              },
+            },
+          ],
+          answer: {
+            fa: 'آخرین هفته سفارش 6؛ بدون اقدام ورود هفته 43 و هزینه انتظار 735,000؛ حمل هوایی با 90,000 بهترین گزینه است.',
+            en: 'Latest PO week 6; with no action, arrival in week 43 and 735,000 of standby; air freight at 90,000 is the best option.',
+          },
+        },
+        {
+          type: 'exercise',
+          title: { fa: 'تمرین 4: تسویه هزینه‌های تحویل با اختلاف', en: 'Exercise 4: Clearing delivery costs with a difference' },
+          difficulty: 'hard',
+          problem: {
+            fa: 'GRN هشت شیر کنترل وارداتی با هزینه‌های برنامه‌ریزی‌شده ثبت شده است: حمل و بیمه 4,200 و گمرک و ترخیص 4,800 (همان ثبت‌های بخش ERP؛ هر شیر 6,125). اکنون فاکتورها می‌رسند: ترابری جنوب 4,500 (300 بیشتر از برنامه، به دلیل افزایش کرایه دریایی که پذیرفته شده است) و کارگزاری گمرکی بندر 4,800. تا این زمان 2 شیر به دستور کار `WO-45188` کمپرسور K-201 حواله شده و 6 شیر هنوز در انبار مرکزی است. کالا با میانگین موزون متحرک ارزش‌گذاری می‌شود. (الف) ثبت دو فاکتور را بنویسید (مالیات بر ارزش افزوده را نادیده بگیرید). (ب) ارزش 6 شیر باقی‌مانده پس از ثبت چقدر است؟ (ج) مانده حساب‌های واسط چقدر است؟',
+            en: 'The GRN for eight imported control valves was posted with planned delivery costs: freight and insurance 4,200 and customs and clearance 4,800 (the entries in the ERP section; 6,125 per valve). Now the invoices arrive: Jonoub Transport 4,500 (300 above plan because of an accepted sea-freight increase) and Bandar Customs Brokerage 4,800. By now 2 valves have been issued to work order `WO-45188` for compressor K-201 and 6 are still in the Central Warehouse. Stock is valued at moving average. (a) Write the entries for both invoices (ignore VAT). (b) What is the value of the 6 remaining valves after posting? (c) What are the clearing-account balances?',
+          },
+          hint: {
+            fa: 'اختلاف را به نسبت کالای موجود و مصرف‌شده تقسیم کنید.',
+            en: 'Split the difference between stock on hand and stock already used.',
+          },
+          solution: [
+            {
+              type: 'steps',
+              items: [
+                {
+                  title: { fa: 'اختلاف', en: 'The difference' },
+                  text: { fa: '4,500 − 4,200 = 300.', en: '4,500 − 4,200 = 300.' },
+                },
+                {
+                  title: { fa: 'تقسیم', en: 'Split' },
+                  text: {
+                    fa: 'سهم 6 شیر موجود: 300 × 6 ÷ 8 = 225 به موجودی. سهم 2 شیر مصرف‌شده: 300 × 2 ÷ 8 = 75 به تفاوت قیمت خرید.',
+                    en: 'Share of the 6 valves on hand: 300 × 6 ÷ 8 = 225 to inventory. Share of the 2 used valves: 300 × 2 ÷ 8 = 75 to purchase price differences.',
                   },
                 },
                 {
-                  title: { fa: 'بستن سفارش', en: 'Close the PO' },
+                  title: { fa: 'ارزش باقی‌مانده', en: 'Remaining value' },
                   text: {
-                    fa: 'اگر کار تمام شده، SES را «نهایی» علامت بزنید یا ردیف را بسته اعلام کنید تا تعهد 7,200 آزاد شود و مانده AFE واقعی دیده شود.',
-                    en: 'If the job is finished, mark the SES “final” or close the line so the 7,200 commitment is released and the AFE remaining is shown correctly.',
+                    fa: 'پیش از فاکتور: 6 × 6,125 = 36,750. پس از آن: 36,750 + 225 = 36,975.',
+                    en: 'Before the invoice: 6 × 6,125 = 36,750. After it: 36,750 + 225 = 36,975.',
                   },
                 },
               ],
@@ -884,15 +813,20 @@ export const lesson: Lesson = {
               type: 'journal',
               entries: [
                 {
-                  date: { fa: 'تأیید SES', en: 'SES approved' },
+                  date: { fa: 'فاکتور ترابری جنوب', en: 'Jonoub Transport invoice' },
                   lines: [
-                    { account: ac.aucAR11, debit: 22800 },
-                    { account: ac.grir, credit: 22800 },
+                    { account: ac.freightClr, debit: 4200 },
+                    { account: ac.invCentral, debit: 225 },
+                    { account: ac.ppd, debit: 75 },
+                    { account: ac.apJonoub, credit: 4500 },
                   ],
-                  memo: {
-                    fa: 'نمودارگیری AR-11 بدون نوبت تکراری.',
-                    en: 'AR-11 wireline logging, excluding the re-run.',
-                  },
+                },
+                {
+                  date: { fa: 'فاکتور کارگزاری گمرکی بندر', en: 'Bandar Customs Brokerage invoice' },
+                  lines: [
+                    { account: ac.customsClr, debit: 4800 },
+                    { account: ac.apBroker, credit: 4800 },
+                  ],
                 },
               ],
             },
@@ -900,14 +834,14 @@ export const lesson: Lesson = {
               type: 'callout',
               tone: 'info',
               text: {
-                fa: 'اگر نوبت تکراری تأیید و پرداخت می‌شد، حسابرس شرکا یا دولت احتمالاً آن را غیرقابل بازیافت اعلام می‌کرد؛ یعنی هزینه را پارس‌آریا به‌تنهایی می‌پرداخت.',
-                en: 'Had the re-run been approved and paid, the partners’ or government’s auditor would likely disallow it, leaving Pars Arya to carry the cost alone.',
+                fa: 'هر دو حساب واسط صفر می‌شوند. اگر اختلاف از حد تحمل بیشتر بود، فاکتور حمل‌کننده هم مثل فاکتور کالا متوقف می‌شد تا خریدار افزایش کرایه را تأیید کند.',
+                en: 'Both clearing accounts go to zero. Had the difference exceeded the tolerance, the forwarder’s invoice would have been blocked like a goods invoice until the buyer approved the freight increase.',
               },
             },
           ],
           answer: {
-            fa: 'SES قابل تأیید 22,800: بدهکار دارایی در جریان تکمیل AR-11 و بستانکار GR/IR؛ تعهد باقی‌مانده 7,200 با بستن سفارش آزاد می‌شود.',
-            en: 'Approve an SES of 22,800: debit AUC well AR-11, credit GR/IR; the remaining 7,200 commitment is released by closing the PO.',
+            fa: 'اختلاف 300: 225 به موجودی و 75 به تفاوت قیمت خرید؛ ارزش 6 شیر 36,975؛ هر دو حساب واسط صفر.',
+            en: 'The 300 difference: 225 to inventory and 75 to purchase price differences; the 6 valves are worth 36,975; both clearing accounts are zero.',
           },
         },
       ],
@@ -932,12 +866,12 @@ export const lesson: Lesson = {
               en: 'Landed cost includes price, freight, insurance, duties and clearance costs; recoverable taxes and abnormal costs are excluded.',
             },
             {
-              fa: 'رسید کالا با قیمت سفارش ثبت می‌شود: بدهکار موجودی (یا موضوع هزینه در تخصیص مستقیم) و بستانکار GR/IR؛ مرجوعی دقیقاً برعکس آن است.',
-              en: 'The goods receipt is valued at the PO price: debit inventory (or the cost object for direct charges), credit GR/IR; a return is the exact reverse.',
+              fa: 'رسید کالا (GRN) با قیمت سفارش ثبت می‌شود: بدهکار موجودی یا موضوع هزینه، بستانکار GR/IR؛ هزینه‌های برنامه‌ریزی‌شده حمل و گمرک حساب واسط خودشان را دارند و با فاکتور تسویه می‌شوند.',
+              en: 'The GRN is valued at the PO price: debit inventory or the cost object, credit GR/IR; planned freight and customs costs have their own clearing accounts, cleared by the invoices.',
             },
             {
-              fa: 'تأیید SES رسید خدمات است و باید توسط کسی انجام شود که کار را دیده است؛ ردیف‌های غیرقابل مطالبه تأیید نمی‌شوند.',
-              en: 'SES approval is the receipt for services and must be done by someone who saw the work; non-chargeable lines are not approved.',
+              fa: 'آسیب حمل همان لحظه ثبت می‌شود؛ اینکوترمز تعیین می‌کند خسارت از فروشنده، بیمه‌گر یا حمل‌کننده گرفته شود.',
+              en: 'Transit damage is recorded on the spot; the Incoterms rule decides whether to claim from the seller, the insurer or the carrier.',
             },
           ],
         },
@@ -973,16 +907,16 @@ export const lesson: Lesson = {
               def: { fa: 'قیمت خرید به‌علاوه همه مخارج مستقیم و غیرقابل استرداد تا رسیدن کالا به انبار.', en: 'Purchase price plus all direct, non-recoverable costs until the goods reach the warehouse.' },
             },
             {
-              term: { fa: 'رسید کالا', en: 'Goods receipt' },
+              term: { fa: 'هزینه‌های برنامه‌ریزی‌شده تحویل', en: 'Planned delivery costs' },
+              def: { fa: 'حمل، بیمه و گمرکی که از پیش در سفارش تعریف می‌شوند و هنگام GRN به بهای کالا اضافه و در حساب واسط بستانکار می‌شوند.', en: 'Freight, insurance and customs defined in the PO in advance, added to the goods’ cost at GRN and credited to clearing accounts.' },
+            },
+            {
+              term: { fa: 'رسید کالا (GRN)', en: 'Goods received note (GRN)' },
               def: { fa: 'سندی که ورود کالا به انبار یا موضوع هزینه را با ارجاع به سفارش ثبت می‌کند.', en: 'The document that records goods arriving into stock or a cost object, with reference to the PO.' },
             },
             {
-              term: { fa: 'حساب واسط GR/IR', en: 'GR/IR clearing account' },
-              def: { fa: 'حسابی که هنگام رسید بستانکار و هنگام ثبت فاکتور بدهکار می‌شود تا رسید و فاکتور با هم تطبیق یابند.', en: 'The account credited at receipt and debited at invoice posting, so that receipts and invoices can be matched.' },
-            },
-            {
-              term: { fa: 'مرجوعی به تأمین‌کننده', en: 'Return to vendor' },
-              def: { fa: 'سندی که کالای ردشده را برمی‌گرداند و رسید آن را برعکس می‌کند.', en: 'The document that sends rejected goods back and reverses their receipt.' },
+              term: { fa: 'دموراژ', en: 'Demurrage' },
+              def: { fa: 'هزینه نگهداری کالا یا کانتینر به دلیل تأخیر در ترخیص یا تخلیه؛ هزینه دوره است، نه بهای کالا.', en: 'Charges for holding goods or containers because clearance or unloading was late; a period expense, not part of the goods’ cost.' },
             },
           ],
         },
@@ -1008,10 +942,7 @@ export const lesson: Lesson = {
       },
     },
     {
-      q: {
-        fa: 'گواهی ترخیص بازرسی (IRN) چیست؟',
-        en: 'What is an inspection release note (IRN)?',
-      },
+      q: { fa: 'گواهی ترخیص بازرسی (IRN) چیست؟', en: 'What is an inspection release note (IRN)?' },
       options: [
         { fa: 'سند گمرک برای آزادکردن کالا', en: 'The customs document that releases goods' },
         { fa: 'سندی که بازرس پس از تکمیل نقاط توقف و بررسی مدارک صادر می‌کند و اجازه ارسال می‌دهد', en: 'The document the inspector issues after hold points and document review, authorising shipment' },
@@ -1020,15 +951,12 @@ export const lesson: Lesson = {
       ],
       answer: 1,
       explain: {
-        fa: 'IRN را بازرس شخص ثالث صادر می‌کند و می‌گوید کالا آزمون‌های لازم را گذرانده و می‌تواند ارسال شود. ترخیص گمرکی، رسید انبار و تأیید پرداخت هر کدام سند جداگانه‌ای در زنجیره‌اند.',
-        en: 'The IRN is issued by the third-party inspector and says the goods passed the required tests and may ship. Customs release, the warehouse receipt and payment approval are separate documents in the chain.',
+        fa: 'IRN را بازرس شخص ثالث صادر می‌کند و می‌گوید کالا آزمون‌های لازم را گذرانده و می‌تواند ارسال شود. ترخیص گمرکی، رسید کالا و تأیید پرداخت هر کدام سند جداگانه‌ای در زنجیره‌اند.',
+        en: 'The IRN is issued by the third-party inspector and says the goods passed the required tests and may ship. Customs release, the GRN and payment approval are separate documents in the chain.',
       },
     },
     {
-      q: {
-        fa: 'تفاوت نقطه توقف (Hold) با نقطه مشاهده (Witness) چیست؟',
-        en: 'What is the difference between a hold point and a witness point?',
-      },
+      q: { fa: 'تفاوت نقطه توقف (Hold) با نقطه مشاهده (Witness) چیست؟', en: 'What is the difference between a hold point and a witness point?' },
       options: [
         { fa: 'در نقطه توقف، کار بدون حضور یا تأیید بازرس ادامه نمی‌یابد؛ در نقطه مشاهده، اگر بازرس نیاید کار ادامه می‌یابد', en: 'At a hold point work cannot proceed without the inspector; at a witness point work continues if the inspector does not attend' },
         { fa: 'هیچ تفاوتی ندارند', en: 'There is no difference' },
@@ -1060,8 +988,8 @@ export const lesson: Lesson = {
     },
     {
       q: {
-        fa: 'ثبت خودکار ERP هنگام رسید یک قطعه یدکی برای انبار مرکزی کدام است؟',
-        en: 'Which automatic ERP entry is made when a spare part is received into the Central Warehouse?',
+        fa: 'ثبت خودکار ERP هنگام رسید کالا (GRN) برای یک قطعه یدکی در انبار مرکزی کدام است؟',
+        en: 'Which automatic ERP entry is made when a GRN is posted for a spare part received into the Central Warehouse?',
       },
       options: [
         { fa: 'بدهکار هزینه تعمیر، بستانکار حساب‌های پرداختنی', en: 'Debit Repairs expense, credit Accounts payable' },
@@ -1071,59 +999,59 @@ export const lesson: Lesson = {
       ],
       answer: 2,
       explain: {
-        fa: 'رسید کالا موجودی را با قیمت سفارش بدهکار و GR/IR را بستانکار می‌کند. حساب‌های پرداختنی فقط با ثبت فاکتور بستانکار می‌شود، چون هنوز صورتحسابی از تأمین‌کننده نرسیده است. هزینه تعمیر هم هنگام حواله قطعه به دستور کار ثبت می‌شود، نه هنگام رسید.',
-        en: 'The receipt debits Inventory at the PO price and credits GR/IR. Accounts payable is credited only when the invoice is posted, since no invoice exists yet. Repairs expense comes when the part is issued to a work order, not at receipt.',
+        fa: 'GRN موجودی را با قیمت سفارش بدهکار و GR/IR را بستانکار می‌کند. حساب‌های پرداختنی فقط با ثبت فاکتور بستانکار می‌شود، چون هنوز صورتحسابی نرسیده است. هزینه تعمیر هم هنگام حواله قطعه به دستور کار ثبت می‌شود، نه هنگام رسید.',
+        en: 'The GRN debits Inventory at the PO price and credits GR/IR. Accounts payable is credited only when the invoice is posted, since no invoice exists yet. Repairs expense comes when the part is issued to a work order, not at receipt.',
       },
     },
     {
       q: {
-        fa: 'سفارش 500 واحد است؛ 320 واحد رسید شده و 15 واحد معیوب مرجوع شده است. مانده باز سفارش چند واحد است؟',
-        en: 'A PO is for 500 units; 320 have been received and 15 defective units returned. What is the open quantity?',
+        fa: 'محموله‌ای با شرط CIF در دریا آسیب می‌بیند. مسار پترولیوم باید خسارت را از کجا بگیرد؟',
+        en: 'A CIF shipment is damaged at sea. Where should Masar Petroleum seek compensation?',
       },
       options: [
-        { fa: '180', en: '180' },
-        { fa: '165', en: '165' },
-        { fa: '195', en: '195' },
-        { fa: '485', en: '485' },
+        { fa: 'از بیمه‌گر محموله، با بیمه‌نامه‌ای که فروشنده به نفع خریدار گرفته است؛ چون ریسک هنگام بارگیری منتقل شده', en: 'From the cargo insurer, under the policy the seller bought for the buyer, because risk passed at loading' },
+        { fa: 'از فروشنده؛ او باید رایگان جایگزین بفرستد', en: 'From the seller, who must replace the goods free of charge' },
+        { fa: 'همیشه از شرکت حمل', en: 'Always from the shipping line' },
+        { fa: 'از هیچ‌کس؛ ضرر به هزینه می‌رود', en: 'From nobody; the loss is simply expensed' },
       ],
-      answer: 2,
+      answer: 0,
       explain: {
-        fa: 'خالص دریافتی 320 − 15 = 305 و مانده باز 500 − 305 = 195 است. مرجوعی مانده باز را زیاد می‌کند، چون تأمین‌کننده هنوز باید آن 15 واحد را تحویل دهد. 180 مرجوعی را نادیده گرفته و 165 آن را اشتباهاً کم کرده است.',
-        en: 'Net received is 320 − 15 = 305, so the open quantity is 500 − 305 = 195. A return increases the open quantity, because the supplier still owes those 15 units. 180 ignores the return and 165 subtracts it the wrong way.',
+        fa: 'در CIF فروشنده کرایه و بیمه را تا بندر مقصد می‌پردازد، اما ریسک هنگام بارگیری در مبدأ به خریدار منتقل می‌شود. پس خریدار با بیمه‌نامه‌ای که به نفعش صادر شده ادعا می‌کند. فروشنده فقط در قواعدی مثل DAP تا مقصد مسئول آسیب است.',
+        en: 'Under CIF the seller pays freight and insurance to the destination port, but risk passes to the buyer on loading at origin. The buyer therefore claims under the policy issued in its favour. The seller bears transit damage to destination only under rules such as DAP.',
       },
     },
     {
       q: {
-        fa: 'چه کسی باید صورت‌وضعیت (SES) سیمان‌کاری روی دکل را تأیید کند؟',
-        en: 'Who should approve the SES for a cementing job on the rig?',
+        fa: 'به دلیل تأخیر خود شرکت در ارائه مدارک، 500 دموراژ پرداخت شده است. این مبلغ چگونه ثبت می‌شود؟',
+        en: 'Because the company submitted documents late, 500 of demurrage was paid. How is it recorded?',
       },
       options: [
-        { fa: 'خریداری که سفارش را صادر کرده است', en: 'The buyer who issued the PO' },
-        { fa: 'نماینده شرکت در محل که کار را دیده است، مثلاً سرپرست حفاری', en: 'The company’s site representative who saw the work, such as the drilling supervisor' },
-        { fa: 'سرپرست پیمانکار', en: 'The contractor’s supervisor' },
-        { fa: 'کارمند حساب‌های پرداختنی', en: 'The accounts payable clerk' },
+        { fa: 'به بهای تمام‌شده موجودی اضافه می‌شود', en: 'Added to the inventory cost' },
+        { fa: 'هزینه غیرعادی دوره است و به موجودی اضافه نمی‌شود', en: 'An abnormal period expense, not added to inventory' },
+        { fa: 'به دارایی در جریان ساخت چاه اضافه می‌شود', en: 'Added to assets under construction for the well' },
+        { fa: 'از تأمین‌کننده کالا مطالبه می‌شود', en: 'Claimed from the goods supplier' },
       ],
       answer: 1,
       explain: {
-        fa: 'تأیید SES یعنی گواهی انجام کار؛ پس باید کسی تأیید کند که کار را دیده و با برگه کار روزانه مقایسه کرده است. اگر خریدار یا کارمند پرداخت تأیید کند، تفکیک وظایف از بین می‌رود؛ و پیمانکار نمی‌تواند کار خودش را تأیید کند.',
-        en: 'Approving an SES certifies the work was done, so it must be someone who saw it and checked the field tickets. If the buyer or the AP clerk approves, segregation of duties is lost; and the contractor cannot approve its own work.',
+        fa: 'IAS 2 هزینه‌های غیرعادی را از بهای تمام‌شده موجودی خارج می‌کند؛ دموراژ ناشی از تأخیر خود شرکت برای رساندن کالا به محل لازم نبوده است. مطالبه از تأمین‌کننده هم معنا ندارد، چون تقصیر با شرکت بوده است.',
+        en: 'IAS 2 excludes abnormal amounts from inventory cost; demurrage caused by the company’s own delay was not needed to bring the goods to their location. Claiming it from the supplier makes no sense, because the fault was the company’s.',
       },
     },
     {
       q: {
-        fa: 'مبلغ رسید کالا در ERP از کجا خوانده می‌شود؟',
-        en: 'Where does the ERP take the goods receipt value from?',
+        fa: 'تأخیر یک کالا 6 روز توقف دکل با هزینه روزانه 35,000 ایجاد می‌کند. حمل هوایی با 80,000 هزینه اضافه این تأخیر را کاملاً حذف می‌کند. صرفه‌جویی خالص حمل هوایی چقدر است؟',
+        en: 'A late item would idle the rig for 6 days at 35,000 a day. Air freight at an extra 80,000 removes the delay completely. What is the net saving from air freight?',
       },
       options: [
-        { fa: 'از فاکتور تأمین‌کننده', en: 'From the supplier’s invoice' },
-        { fa: 'از قیمت روز بازار', en: 'From the current market price' },
-        { fa: 'از برآورد درخواست خرید', en: 'From the requisition estimate' },
-        { fa: 'از قیمت سفارش خرید', en: 'From the PO price' },
+        { fa: '80,000', en: '80,000' },
+        { fa: '210,000', en: '210,000' },
+        { fa: '130,000', en: '130,000' },
+        { fa: '290,000', en: '290,000' },
       ],
-      answer: 3,
+      answer: 2,
       explain: {
-        fa: 'هنگام رسید، فاکتور معمولاً هنوز نرسیده است؛ پس ERP قیمت توافق‌شده در سفارش را به کار می‌برد. اگر فاکتور بعداً قیمت دیگری داشته باشد، اختلاف هنگام تطبیق فاکتور بررسی می‌شود. برآورد درخواست خرید فقط برای بودجه‌ریزی اولیه است.',
-        en: 'At receipt the invoice has usually not arrived, so the ERP uses the price agreed in the PO. If the invoice later shows another price, the difference is handled during invoice matching. The requisition estimate is only for early budgeting.',
+        fa: 'هزینه انتظار 6 × 35,000 = 210,000 است. با کسر 80,000 هزینه حمل هوایی، صرفه‌جویی خالص 130,000 می‌شود. 210,000 هزینه حمل هوایی را کم نکرده و 290,000 آن را اشتباهاً جمع کرده است.',
+        en: 'Standby would cost 6 × 35,000 = 210,000. Less the 80,000 air freight, the net saving is 130,000. 210,000 ignores the air-freight cost and 290,000 wrongly adds it.',
       },
     },
     {
@@ -1145,19 +1073,19 @@ export const lesson: Lesson = {
     },
     {
       q: {
-        fa: '6 شاخه لوله مغزی با قیمت سفارش 400 پس از رسید رد و مرجوع می‌شوند. ثبت ERP کدام است؟',
-        en: '6 tubing joints at a PO price of 400 are rejected after receipt and returned. What does the ERP post?',
+        fa: 'هنگام GRN، حمل برنامه‌ریزی‌شده 4,200 در حساب واسط حمل بستانکار شد. فاکتور حمل‌کننده 4,500 است و همه کالا هنوز در انبار است (میانگین موزون متحرک). اختلاف 300 کجا می‌رود؟',
+        en: 'At GRN, planned freight of 4,200 was credited to the freight clearing account. The forwarder invoices 4,500 and all the goods are still in stock (moving average). Where does the 300 difference go?',
       },
       options: [
-        { fa: 'بدهکار هزینه ضایعات 2,400، بستانکار موجودی 2,400', en: 'Debit Scrap expense 2,400, credit Inventory 2,400' },
-        { fa: 'بدهکار حساب‌های پرداختنی 2,400، بستانکار موجودی 2,400', en: 'Debit Accounts payable 2,400, credit Inventory 2,400' },
-        { fa: 'بدهکار GR/IR 2,400، بستانکار موجودی 2,400', en: 'Debit GR/IR 2,400, credit Inventory 2,400' },
-        { fa: 'هیچ؛ فقط NCR صادر می‌شود', en: 'Nothing; only an NCR is raised' },
+        { fa: 'به حساب تفاوت قیمت خرید', en: 'To purchase price differences' },
+        { fa: 'کل 4,500 دوباره به موجودی اضافه می‌شود', en: 'The full 4,500 is added to inventory again' },
+        { fa: 'روی حساب واسط حمل باقی می‌ماند', en: 'It stays on the freight clearing account' },
+        { fa: 'به موجودی اضافه می‌شود', en: 'It is added to inventory' },
       ],
-      answer: 2,
+      answer: 3,
       explain: {
-        fa: 'مرجوعی دقیقاً برعکس رسید است: 6 × 400 = 2,400 از موجودی کم و از مانده بستانکار GR/IR کم می‌شود. هنوز فاکتوری ثبت نشده، پس حساب‌های پرداختنی درگیر نیست؛ و کالا ضایعات شرکت نیست، چون به تأمین‌کننده برمی‌گردد.',
-        en: 'A return is the exact reverse of the receipt: 6 × 400 = 2,400 comes off inventory and off the GR/IR credit. No invoice has been posted, so Accounts payable is not involved; and it is not the company’s scrap, because it goes back to the supplier.',
+        fa: 'حساب واسط فقط با همان 4,200 برنامه‌ریزی‌شده تسویه می‌شود. چون همه کالا هنوز در انبار است، اختلاف 300 به ارزش موجودی اضافه می‌شود؛ فقط سهم کالای مصرف‌شده به تفاوت قیمت خرید می‌رفت. افزودن دوباره کل 4,500، حمل را دو بار حساب می‌کند.',
+        en: 'The clearing account is cleared with the same planned 4,200. Because all the goods are still in stock, the 300 difference is added to inventory; only the share of goods already used would go to price differences. Adding the full 4,500 again would count freight twice.',
       },
     },
   ],
