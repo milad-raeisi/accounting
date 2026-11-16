@@ -33,7 +33,7 @@ function LangSwitch({ className }: { className?: string }) {
           {lang === l && (
             <motion.span layoutId="lang-pill" className="absolute inset-0 -z-10 rounded-full bg-primary shadow-sm" transition={{ type: 'spring', stiffness: 420, damping: 32 }} />
           )}
-          <span className={l === 'fa' ? 'font-fa' : ''}>{l === 'fa' ? 'فا' : 'EN'}</span>
+          <span lang={l} className={l === 'fa' ? 'font-fa' : ''}>{l === 'fa' ? 'فا' : 'EN'}</span>
         </button>
       ))}
     </div>
