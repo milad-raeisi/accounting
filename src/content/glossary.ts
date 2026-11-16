@@ -3569,4 +3569,319 @@ export const glossary: GlossaryTerm[] = [
     },
     related: ['interest-coverage-ratio', 'net-income', 'income-statement'],
   },
+  // ── Foreign currency (IAS 21) ──
+  {
+    id: 'functional-currency',
+    category: 'statements',
+    term: { fa: 'واحد پول عملیاتی', en: 'Functional Currency' },
+    def: {
+      fa: 'واحد پول محیط اقتصادی اصلی که واحد تجاری در آن فعالیت می‌کند؛ یعنی پولی که بیشتر قیمت‌ها، درآمدها و هزینه‌ها با آن تعیین می‌شوند. هر معامله با پول دیگر، معامله ارزی است. بسیاری از شرکت‌های نفت و گاز بالادستی واحد پول عملیاتی دلاری دارند، چون نفت به دلار قیمت‌گذاری و تأمین مالی می‌شود (IAS 21).',
+      en: 'The currency of the primary economic environment in which the entity operates: the currency that mainly determines its prices, revenues and costs. Any transaction in another currency is a foreign-currency transaction. Many upstream oil and gas companies have a US dollar functional currency because oil is priced and financed in dollars (IAS 21).',
+    },
+    related: ['presentation-currency', 'monetary-item', 'exchange-difference'],
+  },
+  {
+    id: 'presentation-currency',
+    category: 'statements',
+    term: { fa: 'واحد پول گزارشگری', en: 'Presentation Currency' },
+    def: {
+      fa: 'واحد پولی که صورت‌های مالی با آن ارائه می‌شود. می‌تواند با واحد پول عملیاتی فرق داشته باشد؛ در این صورت صورت‌ها به واحد پول گزارشگری تسعیر می‌شوند و تفاوت آن در اندوخته تسعیر ارز در حقوق مالکانه می‌نشیند.',
+      en: 'The currency in which the financial statements are presented. It may differ from the functional currency; the statements are then translated into it and the resulting difference goes to the translation reserve in equity.',
+    },
+    related: ['functional-currency', 'translation-reserve'],
+  },
+  {
+    id: 'monetary-item',
+    category: 'accounts',
+    term: { fa: 'اقلام پولی', en: 'Monetary Items' },
+    def: {
+      fa: 'وجه نقد و دارایی‌ها و بدهی‌هایی که با تعداد ثابت یا قابل تعیینی از واحد پول دریافت یا پرداخت می‌شوند، مثل حساب‌های دریافتنی، پرداختنی و وام. اقلام پولی ارزی در پایان دوره با نرخ پایان دوره تسعیر می‌شوند؛ اقلام غیرپولی مثل دارایی ثابت، موجودی کالا و پیش‌پرداخت با نرخ تاریخی می‌مانند.',
+      en: 'Cash, and assets and liabilities to be received or paid in a fixed or determinable number of units of currency, such as receivables, payables and loans. Foreign-currency monetary items are retranslated at the closing rate at period end; non-monetary items such as fixed assets, inventory and prepayments stay at the historical rate.',
+    },
+    related: ['exchange-difference', 'fx-revaluation'],
+  },
+  {
+    id: 'exchange-difference',
+    category: 'adjusting',
+    term: { fa: 'تفاوت تسعیر ارز', en: 'Exchange Difference' },
+    def: {
+      fa: 'تفاوتی که از تبدیل همان مبلغ ارزی با نرخ‌های متفاوت پدید می‌آید. اگر طلب یا بدهی ارزی تسویه شود، تفاوت «تحقق‌یافته» است؛ اگر در پایان دوره هنوز باز باشد و تسعیر شود، «تحقق‌نیافته» است. هر دو معمولاً در سود و زیان شناسایی می‌شوند.',
+      en: 'The difference that arises from converting the same amount of foreign currency at different rates. On settlement of a foreign-currency receivable or payable it is realised; when an open balance is retranslated at period end it is unrealised. Both are normally recognised in profit or loss.',
+    },
+    formula: {
+      fa: 'تفاوت تسعیر = مبلغ ارزی × (نرخ جدید − نرخ ثبت‌شده)',
+      en: 'Exchange difference = Foreign amount × (New rate − Booked rate)',
+    },
+    related: ['monetary-item', 'fx-revaluation'],
+  },
+  {
+    id: 'fx-revaluation',
+    category: 'adjusting',
+    term: { fa: 'تسعیر ارز پایان دوره', en: 'Period-End FX Revaluation' },
+    def: {
+      fa: 'اجرای پایان دوره در ERP که مانده‌های باز ارزی اقلام پولی (بانک، دریافتنی، پرداختنی، وام) را با نرخ پایان دوره از جدول نرخ ارز دوباره ارزیابی می‌کند و سود یا زیان تسعیر تحقق‌نیافته را ثبت می‌کند. سند آن معمولاً در روز اول دوره بعد خودکار برگشت می‌خورد.',
+      en: 'An ERP period-end run that revalues open foreign-currency balances of monetary items (bank, receivables, payables, loans) at the closing rate from the exchange-rate table and posts the unrealised gain or loss. The entry usually reverses automatically on the first day of the next period.',
+    },
+    related: ['exchange-difference', 'monetary-item', 'close-calendar'],
+  },
+  {
+    id: 'translation-reserve',
+    category: 'equity',
+    term: { fa: 'اندوخته تسعیر ارز عملیات خارجی', en: 'Foreign Currency Translation Reserve' },
+    def: {
+      fa: 'جزئی از حقوق مالکانه (سود و زیان جامع دیگر) که تفاوت تسعیر صورت‌های مالی یک عملیات خارجی به واحد پول گزارشگری را جمع می‌کند: دارایی‌ها و بدهی‌ها با نرخ پایان دوره و درآمدها و هزینه‌ها با نرخ معامله یا میانگین تسعیر می‌شوند. هنگام واگذاری عملیات خارجی به سود و زیان منتقل می‌شود.',
+      en: "A component of equity (other comprehensive income) that collects the difference from translating a foreign operation's statements into the presentation currency: assets and liabilities at the closing rate, income and expenses at transaction or average rates. It is reclassified to profit or loss when the foreign operation is disposed of.",
+    },
+    related: ['presentation-currency', 'functional-currency'],
+  },
+
+  // ── Leases (IFRS 16) ──
+  {
+    id: 'lease',
+    category: 'liabilities',
+    term: { fa: 'اجاره (IFRS 16)', en: 'Lease (IFRS 16)' },
+    def: {
+      fa: 'قراردادی که حق کنترل استفاده از یک دارایی مشخص را برای یک دوره در ازای مابه‌ازا منتقل می‌کند. اجاره‌کننده برای هر اجاره، جز معافیت‌های کوتاه‌مدت و کم‌ارزش، یک دارایی حق استفاده و یک بدهی اجاره شناسایی می‌کند. در نفت و گاز، اجاره دکل، خودرو، دفتر و انبار نمونه‌اند؛ قرارداد دکل اغلب یک جزء اجاره و یک جزء خدمات حفاری دارد.',
+      en: 'A contract that conveys the right to control the use of an identified asset for a period in exchange for consideration. For every lease, except the short-term and low-value exemptions, the lessee recognises a right-of-use asset and a lease liability. In oil and gas, rigs, vehicles, offices and warehouses are typical; a rig contract often contains a lease component and a drilling-services component.',
+    },
+    related: ['right-of-use-asset', 'lease-liability', 'lease-exemptions'],
+  },
+  {
+    id: 'right-of-use-asset',
+    category: 'fixedAssets',
+    term: { fa: 'دارایی حق استفاده', en: 'Right-of-Use Asset' },
+    def: {
+      fa: 'دارایی اجاره‌کننده که حق استفاده از دارایی اجاره‌ای را نشان می‌دهد. در شروع اجاره برابر است با بدهی اجاره به‌علاوه پرداخت‌های پیش از شروع، مخارج مستقیم اولیه و برآورد مخارج برچیدن، منهای مشوق‌های دریافتی. سپس معمولاً به روش خط مستقیم طی مدت اجاره (یا عمر مفید) مستهلک می‌شود.',
+      en: "The lessee's asset representing its right to use the leased asset. At commencement it equals the lease liability plus payments made before commencement, initial direct costs and estimated restoration costs, less incentives received. It is then usually depreciated straight-line over the lease term (or useful life).",
+    },
+    formula: {
+      fa: 'دارایی حق استفاده = بدهی اجاره + پرداخت‌های پیش از شروع + مخارج مستقیم اولیه + مخارج برچیدن − مشوق‌ها',
+      en: 'Right-of-use asset = Lease liability + Prepaid payments + Initial direct costs + Restoration costs − Incentives',
+    },
+    related: ['lease', 'lease-liability'],
+  },
+  {
+    id: 'lease-liability',
+    category: 'liabilities',
+    term: { fa: 'بدهی اجاره', en: 'Lease Liability' },
+    def: {
+      fa: 'ارزش فعلی اجاره‌بهاهای پرداخت‌نشده، تنزیل‌شده با نرخ ضمنی اجاره یا اگر آن نرخ به‌آسانی تعیین‌پذیر نباشد، با نرخ استقراض فزاینده اجاره‌کننده. هر دوره هزینه بهره به آن اضافه و اجاره‌بهای پرداختی از آن کم می‌شود.',
+      en: "The present value of the lease payments not yet paid, discounted at the rate implicit in the lease or, if that cannot be readily determined, the lessee's incremental borrowing rate. Each period interest is added to it and the payment made is deducted.",
+    },
+    formula: {
+      fa: 'مانده پایان دوره = مانده اول دوره + (مانده اول دوره × نرخ) − اجاره‌بهای پرداختی',
+      en: 'Closing balance = Opening balance + (Opening balance × Rate) − Payment',
+    },
+    related: ['lease', 'right-of-use-asset', 'incremental-borrowing-rate'],
+  },
+  {
+    id: 'lease-exemptions',
+    category: 'liabilities',
+    term: { fa: 'معافیت اجاره کوتاه‌مدت و کم‌ارزش', en: 'Short-Term and Low-Value Lease Exemptions' },
+    def: {
+      fa: 'اجاره‌کننده می‌تواند برای اجاره‌های 12 ماه یا کمتر (بدون اختیار خرید) و اجاره دارایی‌های کم‌ارزش، دارایی حق استفاده و بدهی اجاره شناسایی نکند و اجاره‌بهای آن را به‌طور یکنواخت هزینه کند. انتخاب برای اجاره کوتاه‌مدت به تفکیک طبقه دارایی و برای کم‌ارزش به تفکیک هر اجاره است.',
+      en: 'A lessee may choose not to recognise a right-of-use asset and lease liability for leases of 12 months or less (with no purchase option) and for leases of low-value assets, and instead expense the payments on a straight-line basis. The short-term election is made by class of asset; the low-value election lease by lease.',
+    },
+    related: ['lease', 'lease-liability'],
+  },
+  {
+    id: 'incremental-borrowing-rate',
+    category: 'liabilities',
+    term: { fa: 'نرخ استقراض فزاینده', en: 'Incremental Borrowing Rate' },
+    def: {
+      fa: 'نرخ بهره‌ای که اجاره‌کننده باید بپردازد تا وجوه لازم برای تهیه دارایی‌ای با ارزش مشابه دارایی حق استفاده را با مدت و وثیقه مشابه و در محیط اقتصادی مشابه قرض بگیرد. وقتی نرخ ضمنی اجاره معلوم نیست، بدهی اجاره با این نرخ تنزیل می‌شود.',
+      en: 'The rate the lessee would have to pay to borrow, over a similar term, with similar security and in a similar economic environment, the funds needed to obtain an asset of similar value to the right-of-use asset. When the rate implicit in the lease is not known, the lease liability is discounted at this rate.',
+    },
+    related: ['lease-liability'],
+  },
+
+  // ── Group accounts and consolidation ──
+  {
+    id: 'consolidated-financial-statements',
+    category: 'statements',
+    term: { fa: 'صورت‌های مالی تلفیقی', en: 'Consolidated Financial Statements' },
+    def: {
+      fa: 'صورت‌های مالی گروه که شرکت اصلی و شرکت‌های فرعی را مانند یک واحد اقتصادی نشان می‌دهد: اقلام سطر به سطر جمع می‌شوند و مانده‌ها، معاملات، سودهای تحقق‌نیافته درون‌گروهی و سرمایه‌گذاری شرکت اصلی در برابر حقوق مالکانه شرکت فرعی حذف می‌شوند (IFRS 10).',
+      en: "The group's statements presenting the parent and its subsidiaries as a single economic entity: items are added line by line, and intragroup balances, transactions, unrealised profits and the parent's investment against the subsidiary's equity are eliminated (IFRS 10).",
+    },
+    related: ['elimination-entry', 'intercompany-transaction', 'non-controlling-interest'],
+  },
+  {
+    id: 'intercompany-transaction',
+    category: 'recording',
+    term: { fa: 'معامله درون‌گروهی', en: 'Intercompany Transaction' },
+    def: {
+      fa: 'فروش، خدمات، وام یا بازپرداخت هزینه بین شرکت‌های یک گروه، مثل خدمات حفاری شرکت فرعی به شرکت اصلی. دو طرف باید آن را با مبلغ و تاریخ یکسان و با فیلد طرف معامله ثبت کنند تا در پایان دوره تطبیق و در تلفیق حذف شود.',
+      en: "A sale, service, loan or cost recharge between companies in the same group, such as a subsidiary's drilling services to the parent. Both sides must record it with the same amount and date and with the trading-partner field, so it can be matched at period end and eliminated on consolidation.",
+    },
+    related: ['trading-partner', 'elimination-entry'],
+  },
+  {
+    id: 'elimination-entry',
+    category: 'recording',
+    term: { fa: 'ثبت حذفی تلفیق', en: 'Elimination Entry' },
+    def: {
+      fa: 'ثبتی که فقط در کاربرگ یا دفتر تلفیق زده می‌شود، نه در دفاتر شرکت‌ها، و اثر معاملات درون‌گروهی را از صورت‌های تلفیقی پاک می‌کند: طلب و بدهی متقابل، درآمد و هزینه متقابل، سود تحقق‌نیافته در موجودی و سرمایه‌گذاری در برابر حقوق مالکانه شرکت فرعی.',
+      en: "An entry made only in the consolidation worksheet or ledger, never in the companies' own books, that removes the effect of intragroup transactions from the consolidated statements: matching receivables and payables, matching revenue and expense, unrealised profit in inventory, and the investment against the subsidiary's equity.",
+    },
+    related: ['consolidated-financial-statements', 'intercompany-transaction'],
+  },
+  {
+    id: 'non-controlling-interest',
+    category: 'equity',
+    term: { fa: 'منافع فاقد حق کنترل', en: 'Non-Controlling Interest (NCI)' },
+    def: {
+      fa: 'سهمی از حقوق مالکانه شرکت فرعی که به شرکت اصلی تعلق ندارد. اگر شرکت اصلی 80% سهام فرعی را داشته باشد، 20% خالص دارایی‌ها و 20% سود آن متعلق به منافع فاقد حق کنترل است و جداگانه در حقوق مالکانه تلفیقی نشان داده می‌شود.',
+      en: "The part of a subsidiary's equity not attributable to the parent. If the parent owns 80% of the subsidiary, 20% of its net assets and of its profit belong to the non-controlling interest, shown separately within consolidated equity.",
+    },
+    formula: {
+      fa: 'سهم منافع فاقد حق کنترل از سود = سود شرکت فرعی × درصد سهام سایرین',
+      en: "NCI share of profit = Subsidiary's profit × Others' ownership %",
+    },
+    related: ['consolidated-financial-statements'],
+  },
+  {
+    id: 'trading-partner',
+    category: 'recording',
+    term: { fa: 'طرف معامله درون‌گروهی', en: 'Trading Partner' },
+    def: {
+      fa: 'فیلدی در سند ERP که کد شرکت طرف مقابل در گروه (مثلاً MP02) را نگه می‌دارد. با این فیلد، سیستم مانده‌ها و معاملات درون‌گروهی را خودکار تطبیق می‌دهد و ثبت‌های حذفی را آماده می‌کند.',
+      en: 'A field on ERP postings holding the company code of the group company on the other side (for example MP02). With it the system matches intragroup balances and transactions automatically and prepares the elimination entries.',
+    },
+    related: ['intercompany-transaction', 'elimination-entry'],
+  },
+
+  // ── Oil and gas revenue (IFRS 15) ──
+  {
+    id: 'five-step-model',
+    category: 'statements',
+    term: { fa: 'الگوی پنج‌مرحله‌ای درآمد (IFRS 15)', en: 'Five-Step Revenue Model (IFRS 15)' },
+    def: {
+      fa: 'چارچوب شناسایی درآمد از قرارداد با مشتری: شناسایی قرارداد، شناسایی تعهدهای عملکرد، تعیین مبلغ معامله، تخصیص مبلغ به تعهدها و شناسایی درآمد هنگام ایفای هر تعهد. در فروش نفت خام، کنترل معمولاً در نقطه بارگیری طبق شرایط تحویل منتقل می‌شود.',
+      en: 'The framework for recognising revenue from contracts with customers: identify the contract, identify the performance obligations, determine the transaction price, allocate it to the obligations, and recognise revenue as each obligation is satisfied. In crude sales, control usually passes at the loading point under the delivery terms.',
+    },
+    related: ['performance-obligation', 'revenue-recognition'],
+  },
+  {
+    id: 'performance-obligation',
+    category: 'statements',
+    term: { fa: 'تعهد عملکرد', en: 'Performance Obligation' },
+    def: {
+      fa: 'وعده‌ای در قرارداد با مشتری برای انتقال کالا یا خدمتی متمایز، مثل تحویل یک محموله نفت خام. درآمد زمانی (یا به تدریج همان‌طور که) تعهد ایفا می‌شود شناسایی می‌شود، یعنی وقتی کنترل به مشتری منتقل شده است.',
+      en: 'A promise in a contract with a customer to transfer a distinct good or service, such as delivering a cargo of crude oil. Revenue is recognised when (or as) the obligation is satisfied, that is, when control passes to the customer.',
+    },
+    related: ['five-step-model', 'revenue-recognition'],
+  },
+  {
+    id: 'entitlement',
+    category: 'oilgas',
+    term: { fa: 'سهم برداشت (Entitlement)', en: 'Entitlement' },
+    def: {
+      fa: 'سهمی از تولید که هر شریک یا پیمانکار حق دارد برداشت و بفروشد: در قرارداد عملیات مشترک برابر سهم مشارکت، و در قرارداد مشارکت در تولید برابر نفت هزینه به‌علاوه سهم نفت سود. درآمد بر اساس فروش واقعی شناسایی می‌شود و تفاوت برداشت با سهم، بیش‌برداشت یا کم‌برداشت است.',
+      en: 'The share of production each partner or contractor is entitled to lift and sell: its working-interest share under a joint operating agreement, or cost oil plus its profit-oil share under a production sharing contract. Revenue follows actual sales, and the gap between liftings and entitlement is an overlift or underlift.',
+    },
+    related: ['lifting', 'overlift-underlift', 'working-interest'],
+  },
+  {
+    id: 'lifting',
+    category: 'oilgas',
+    term: { fa: 'برداشت (Lifting)', en: 'Lifting' },
+    def: {
+      fa: 'بارگیری و تحویل فیزیکی نفت خام به خریدار توسط یک شریک، معمولاً در محموله‌های بزرگ نفتکش. چون برداشت‌ها دسته‌ای انجام می‌شوند، برداشت هر شریک در هر تاریخ به‌ندرت دقیقاً با سهمش برابر است.',
+      en: "The physical loading and delivery of crude oil to a buyer by one partner, usually in large tanker cargoes. Because liftings happen in parcels, a partner's liftings rarely equal its entitlement on any given date.",
+    },
+    related: ['entitlement', 'overlift-underlift'],
+  },
+  {
+    id: 'overlift-underlift',
+    category: 'oilgas',
+    term: { fa: 'بیش‌برداشت و کم‌برداشت', en: 'Overlift and Underlift' },
+    def: {
+      fa: 'بیش‌برداشت یعنی شریک بیشتر از سهمش برداشت کرده و به شرکای دیگر نفت بدهکار است؛ کم‌برداشت یعنی کمتر برداشته و از آن‌ها طلبکار است. بیش‌برداشت بدهی و کم‌برداشت دارایی ثبت می‌شود و با بهای تمام‌شده یا ارزش بازار، طبق رویه شرکت، اندازه‌گیری و در برداشت‌های بعدی یا نقدی تسویه می‌شود.',
+      en: 'An overlift means a partner has lifted more than its entitlement and owes oil to the other partners; an underlift means it has lifted less and is owed. An overlift is recorded as a liability and an underlift as an asset, measured at cost or market value depending on company policy, and settled through later liftings or in cash.',
+    },
+    related: ['entitlement', 'lifting'],
+  },
+
+  // ── Cost allocation ──
+  {
+    id: 'allocation-base',
+    category: 'budget',
+    term: { fa: 'مبنای تسهیم', en: 'Allocation Base' },
+    def: {
+      fa: 'معیاری که هزینه غیرمستقیم با آن بین گیرندگان تقسیم می‌شود، مثل تعداد کارکنان، ساعت کار، متراژ، حجم تولید یا تعداد چاه. مبنای خوب همان چیزی است که هزینه را ایجاد می‌کند و باید مستند باشد، چون شرکا و دولت در حسابرسی کاست ریکاوری آن را بررسی می‌کنند.',
+      en: 'The measure used to share an indirect cost among its receivers, such as headcount, labour hours, floor area, production volume or number of wells. A good base reflects what actually drives the cost, and it must be documented because partners and the government review it in cost-recovery audits.',
+    },
+    formula: {
+      fa: 'سهم هر گیرنده = هزینه قابل تسهیم × (مبنای گیرنده ÷ جمع مبنا)',
+      en: "Receiver's share = Cost to allocate × (Receiver's base ÷ Total base)",
+    },
+    related: ['step-down-allocation', 'cost-centre', 'overhead-rate'],
+  },
+  {
+    id: 'step-down-allocation',
+    category: 'budget',
+    term: { fa: 'تسهیم مرحله‌ای (Step-down)', en: 'Step-Down Allocation' },
+    def: {
+      fa: 'روشی که هزینه مراکز خدماتی را یکی پس از دیگری به مراکز خدماتی باقی‌مانده و مراکز تولیدی تسهیم می‌کند. مرکزی که هزینه‌اش تسهیم شد دیگر هزینه‌ای دریافت نمی‌کند. از روش مستقیم دقیق‌تر است چون خدمات مراکز خدماتی به یکدیگر را هم در نظر می‌گیرد.',
+      en: 'A method that allocates the costs of service cost centres one after another to the remaining service centres and to the production centres. Once a centre has been allocated it receives no further costs. It is more accurate than the direct method because it reflects services that service centres provide to each other.',
+    },
+    related: ['allocation-base', 'cost-centre'],
+  },
+  {
+    id: 'overhead-rate',
+    category: 'budget',
+    term: { fa: 'نرخ سربار', en: 'Overhead Rate' },
+    def: {
+      fa: 'نرخی که سربار با آن به دستور کارها، پروژه‌ها یا چاه‌ها جذب می‌شود. نرخ از تقسیم سربار بودجه‌شده بر مبنای بودجه‌شده به دست می‌آید و سربار جذب‌شده برابر نرخ ضرب در مبنای واقعی است. در عملیات مشترک، سربار اپراتور طبق روش حسابداری قرارداد به شرکا شارژ می‌شود.',
+      en: "The rate at which overhead is absorbed into work orders, projects or wells. It is budgeted overhead divided by the budgeted base, and absorbed overhead equals the rate times the actual base. In joint operations, the operator's overhead is charged to partners as the agreement's accounting procedure sets out.",
+    },
+    formula: {
+      fa: 'نرخ سربار = سربار بودجه‌شده ÷ مبنای بودجه‌شده',
+      en: 'Overhead rate = Budgeted overhead ÷ Budgeted base',
+    },
+    related: ['allocation-base', 'joint-interest-billing'],
+  },
+  {
+    id: 'assessment-distribution',
+    category: 'budget',
+    term: { fa: 'تخصیص کلی و توزیع', en: 'Assessment and Distribution' },
+    def: {
+      fa: 'دو روش تسهیم دوره‌ای در ERP. در توزیع، هزینه با همان عنصر هزینه اولیه (مثلاً برق) به گیرنده می‌رود و جزئیات حفظ می‌شود. در تخصیص کلی، هزینه‌ها جمع شده و با یک عنصر هزینه ثانویه منتقل می‌شوند؛ ساده‌تر است ولی گیرنده جزئیات را نمی‌بیند. برخی ERPها (مثلاً SAP) همین نام‌ها را به کار می‌برند.',
+      en: 'Two periodic allocation methods in an ERP. Distribution moves costs to receivers under their original primary cost elements (for example power), keeping the detail. Assessment groups the costs and moves them under one secondary cost element; it is simpler but the receiver loses the detail. Some ERPs (for example SAP) use these names.',
+    },
+    related: ['allocation-base', 'cost-centre'],
+  },
+
+  // ── Period close ──
+  {
+    id: 'close-calendar',
+    category: 'adjusting',
+    term: { fa: 'تقویم بستن دوره', en: 'Close Calendar' },
+    def: {
+      fa: 'برنامه زمانی کارهای بستن ماه، معمولاً از دو روز پیش از پایان ماه تا روز پنجم ماه بعد، با مسئول، وابستگی و مهلت هر کار: تفکیک دوره، ذخیره‌ها، استهلاک، تسویه دستور کارها و WBS، تسهیم، تسعیر ارز، تطبیق‌ها، گزارش‌ها و قفل دوره.',
+      en: 'The schedule of month-end tasks, typically from two days before month end to the fifth day of the next month, with an owner, dependencies and a deadline for each: cut-off, accruals, depreciation, work-order and WBS settlement, allocations, FX revaluation, reconciliations, reporting and the period lock.',
+    },
+    related: ['cut-off', 'fx-revaluation', 'suspense-account'],
+  },
+  {
+    id: 'cut-off',
+    category: 'adjusting',
+    term: { fa: 'تفکیک دوره (Cut-off)', en: 'Cut-Off' },
+    def: {
+      fa: 'اطمینان از اینکه هر معامله در دوره‌ای که رخ داده ثبت شود: کالای رسیده تا پایان دوره با GRN همان دوره، خدمات پذیرفته‌شده با SES همان دوره، و فروش و فاکتورها در دوره درست. خطای تفکیک دوره هر دو دوره را نادرست می‌کند.',
+      en: 'Making sure each transaction is recorded in the period in which it happened: goods received by period end on a GRN dated in that period, services accepted on an SES in that period, and sales and invoices in the right period. A cut-off error misstates both periods.',
+    },
+    related: ['received-not-invoiced-accrual', 'gr-ir-reconciliation', 'close-calendar'],
+  },
+  {
+    id: 'suspense-account',
+    category: 'recording',
+    term: { fa: 'حساب معلق', en: 'Suspense Account' },
+    def: {
+      fa: 'حساب موقتی که مبالغی را که هنوز طبقه‌بندی نشده‌اند نگه می‌دارد، مثل واریز بانکی ناشناخته. باید مرتب تسویه شود؛ مانده آن در پایان دوره باید بررسی و توضیح داده شود و رشد مداوم آن نشانه ضعف کنترل است.',
+      en: 'A temporary account holding amounts that cannot yet be classified, such as an unidentified bank receipt. It must be cleared regularly; any period-end balance must be investigated and explained, and a growing balance is a sign of weak control.',
+    },
+    related: ['bank-reconciliation', 'internal-control', 'close-calendar'],
+  },
 ]

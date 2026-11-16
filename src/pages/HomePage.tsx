@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router'
-import { ArrowLeft, ArrowRight, BookOpen, CheckCircle2, FlaskConical, Sparkles } from 'lucide-react'
+import { ArrowLeft, ArrowRight, BookOpen, CheckCircle2, Factory, Sparkles } from 'lucide-react'
 
 import { AnimatedNumber } from '@/components/ui/AnimatedNumber'
 import { CourseCard } from '@/components/ui/CourseCard'
@@ -169,7 +169,7 @@ function Features() {
   const items: { icon: typeof BookOpen; title: UIKey; text: UIKey }[] = [
     { icon: BookOpen, title: 'home.f1.title', text: 'home.f1.text' },
     { icon: Sparkles, title: 'home.f2.title', text: 'home.f2.text' },
-    { icon: FlaskConical, title: 'home.f3.title', text: 'home.f3.text' },
+    { icon: Factory, title: 'home.f3.title', text: 'home.f3.text' },
   ]
   return (
     <section className="mx-auto grid max-w-5xl gap-4 px-4 sm:px-6 md:grid-cols-3">
