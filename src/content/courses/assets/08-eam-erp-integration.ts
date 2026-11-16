@@ -247,8 +247,8 @@ export const lesson: Lesson = {
             {
               title: { fa: 'دستور کار', en: 'Work order' },
               text: {
-                fa: 'برنامه‌ریز `WO-60518` را از روی اعلان می‌سازد: نوع «تعمیر اصلاحی»، محل عملیاتی `AR-CS-K102`، مرکز هزینه CC-3100 و قاعده تسویه به همان مرکز هزینه.',
-                en: 'The planner creates `WO-60518` from the notification: type “corrective repair”, functional location `AR-CS-K102`, cost centre CC-3100 and a settlement rule to that cost centre.',
+                fa: 'برنامه‌ریز `WO-60518` را از روی اعلان می‌سازد: نوع «تعمیر اصلاحی»، محل عملیاتی `ARY-CS-GC-K102`، مرکز هزینه CC-3100 و قاعده تسویه به همان مرکز هزینه.',
+                en: 'The planner creates `WO-60518` from the notification: type “corrective repair”, functional location `ARY-CS-GC-K102`, cost centre CC-3100 and a settlement rule to that cost centre.',
               },
             },
             {

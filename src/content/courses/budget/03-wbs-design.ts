@@ -498,11 +498,11 @@ export const lesson: Lesson = {
         },
         {
           type: 'exercise',
-          title: t('قاعده 100٪ در WBS خط جریان AR-09', 'The 100% rule on the AR-09 flowline WBS'),
+          title: t('قاعده 100٪ در WBS خط جریان AR-12', 'The 100% rule on the AR-12 flowline WBS'),
           difficulty: 'easy',
           problem: t(
-            'پیش‌نویس WBS پروژه `AFE-2026-005` (خط جریان جدید از چاه AR-09 تا جداکننده) بودجه پایه 1,800,000 دارد. فرهنگ‌نامه می‌گوید پروژه شامل لوله و اتصالات، ساخت و نصب، بازرسی و آزمایش هیدرواستاتیک، و مدیریت پروژه است. (الف) آیا قاعده 100٪ رعایت شده است؟ (ب) چه چیزی کم است؟ (ج) در فرهنگ‌نامه قرارداد ساخت «شامل آزمایش هیدرواستاتیک» نوشته شده است؛ چه مشکلی پیش می‌آید؟',
-            'The draft WBS of project `AFE-2026-005` (a new flowline from well AR-09 to the separator) has a base budget of 1,800,000. The dictionary says the project covers pipe and fittings, construction and installation, inspection and hydrotest, and project management. (a) Is the 100% rule met? (b) What is missing? (c) The dictionary also says the construction contract “includes the hydrotest”; what problem does that cause?',
+            'پیش‌نویس WBS پروژه `AFE-2026-005` (خط جریان جدید از چاه AR-12 تا جداکننده) بودجه پایه 1,800,000 دارد. فرهنگ‌نامه می‌گوید پروژه شامل لوله و اتصالات، ساخت و نصب، بازرسی و آزمایش هیدرواستاتیک، و مدیریت پروژه است. (الف) آیا قاعده 100٪ رعایت شده است؟ (ب) چه چیزی کم است؟ (ج) در فرهنگ‌نامه قرارداد ساخت «شامل آزمایش هیدرواستاتیک» نوشته شده است؛ چه مشکلی پیش می‌آید؟',
+            'The draft WBS of project `AFE-2026-005` (a new flowline from well AR-12 to the separator) has a base budget of 1,800,000. The dictionary says the project covers pipe and fittings, construction and installation, inspection and hydrotest, and project management. (a) Is the 100% rule met? (b) What is missing? (c) The dictionary also says the construction contract “includes the hydrotest”; what problem does that cause?',
           ),
           given: {
             head: [t('کد', 'Code'), t('عنصر', 'Element'), t('بودجه', 'Budget')],

@@ -1,14 +1,14 @@
 import type { Lesson } from '../../types'
 
-/* Pars Arya Oil & Gas: accounts the ERP posts to in this lesson. */
+/* Masar Petroleum: accounts the ERP posts to in this lesson. */
 const ac = {
-  sparesPA10: {
-    fa: 'موجودی قطعات یدکی: سایت PA10 (انبار مرکزی)',
-    en: 'Inventory: spare parts, site PA10 (Central Warehouse)',
+  sparesMP10: {
+    fa: 'موجودی قطعات یدکی: سایت MP10 (انبار مرکزی)',
+    en: 'Inventory: spare parts, site MP10 (Central Warehouse)',
   },
-  sparesPA20: {
-    fa: 'موجودی قطعات یدکی: سایت PA20 (انبار میدان)',
-    en: 'Inventory: spare parts, site PA20 (Field Warehouse)',
+  sparesMP20: {
+    fa: 'موجودی قطعات یدکی: سایت MP20 (انبار میدان)',
+    en: 'Inventory: spare parts, site MP20 (Field Warehouse)',
   },
   chemicals: { fa: 'موجودی مواد شیمیایی', en: 'Inventory: chemicals' },
   consumables: { fa: 'موجودی اقلام مصرفی', en: 'Inventory: consumables' },
@@ -63,8 +63,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'پیش از انتقال انبار میدان آریا به ساختمان جدید، تیم HSE و حسابرسی داخلی پارس‌آریا یک بازدید کامل از انبار قدیمی انجام دادند. یافته‌ها کوتاه اما نگران‌کننده بود:',
-            en: 'Before the Arya Field Warehouse moved into a new building, Pars Arya’s HSE and internal audit teams walked through the old store. The findings were short but worrying:',
+            fa: 'پیش از انتقال انبار میدان آریا به ساختمان جدید، تیم HSE و حسابرسی داخلی مسار پترولیوم یک بازدید کامل از انبار قدیمی انجام دادند. یافته‌ها کوتاه اما نگران‌کننده بود:',
+            en: 'Before the Arya Field Warehouse moved into a new building, Masar Petroleum’s HSE and internal audit teams walked through the old store. The findings were short but worrying:',
           },
         },
         {
@@ -122,26 +122,26 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: { fa: 'ساختار انبار پارس‌آریا در ERP', en: 'Pars Arya’s warehouse structure in the ERP' },
+          caption: { fa: 'ساختار انبار مسار پترولیوم در ERP', en: 'Masar Petroleum’s warehouse structure in the ERP' },
           head: [t('سطح', 'Level'), t('کد', 'Code'), t('نام', 'Name'), t('توضیح', 'Notes')],
           rows: [
-            [t('شرکت', 'Company code'), t('PA01', 'PA01'), t('شرکت نفت و گاز پارس‌آریا', 'Pars Arya Oil & Gas'), t('دفاتر و صورت‌های مالی', 'Books and financial statements')],
-            [t('سایت', 'Site'), t('PA10', 'PA10'), t('انبار مرکزی (پایگاه پشتیبانی)', 'Central Warehouse (logistics base)'), t('ارزش‌گذاری در سطح سایت', 'Stock valued at site level')],
-            [t('محل نگهداری', 'Storage location'), t('PA10/1001', 'PA10/1001'), t('انبار اصلی قطعات', 'Main spares store'), t('قفسه‌بندی و پالت‌راک', 'Shelving and pallet racking')],
-            [t('محل نگهداری', 'Storage location'), t('PA10/1002', 'PA10/1002'), t('محوطه لوله', 'OCTG pipe yard'), t('روباز، روی پایه‌های لوله', 'Outdoor, on pipe racks')],
-            [t('محل نگهداری', 'Storage location'), t('PA10/1003', 'PA10/1003'), t('انبار مواد شیمیایی', 'Chemical store'), t('ساختمان جدا با حوضچه مهار نشتی', 'Separate building with spill bunds')],
-            [t('محل نگهداری', 'Storage location'), t('PA10/1004', 'PA10/1004'), t('قفس سیلندرهای گاز', 'Gas cylinder cage'), t('روباز، سایه‌دار و با تهویه طبیعی', 'Outdoor, shaded and naturally ventilated')],
-            [t('سایت', 'Site'), t('PA20', 'PA20'), t('میدان آریا', 'Arya field'), t('انبار میدان و ایستگاه تقویت فشار', 'Field Warehouse and compressor station')],
-            [t('محل نگهداری', 'Storage location'), t('PA20/2001', 'PA20/2001'), t('انبار میدان', 'Field store'), t('اقلام پرمصرف و مصرفی', 'Fast movers and consumables')],
-            [t('محل نگهداری', 'Storage location'), t('PA20/2002', 'PA20/2002'), t('انبار اقماری ایستگاه تقویت فشار', 'Compressor station satellite store'), t('قطعات حیاتی K-201', 'Critical spares for K-201')],
-            [t('محل نگهداری', 'Storage location'), t('PA20/2003', 'PA20/2003'), t('انبار سر دکل چاه AR-12', 'Rig-site store, well AR-12'), t('موقت؛ با جابه‌جایی دکل بسته می‌شود', 'Temporary; closed when the rig moves')],
+            [t('شرکت', 'Company code'), t('MP01', 'MP01'), t('شرکت مسار پترولیوم', 'Masar Petroleum'), t('دفاتر و صورت‌های مالی', 'Books and financial statements')],
+            [t('سایت', 'Site'), t('MP10', 'MP10'), t('انبار مرکزی (پایگاه پشتیبانی)', 'Central Warehouse (logistics base)'), t('ارزش‌گذاری در سطح سایت', 'Stock valued at site level')],
+            [t('محل نگهداری', 'Storage location'), t('MP10/1001', 'MP10/1001'), t('انبار اصلی قطعات', 'Main spares store'), t('قفسه‌بندی و پالت‌راک', 'Shelving and pallet racking')],
+            [t('محل نگهداری', 'Storage location'), t('MP10/1002', 'MP10/1002'), t('محوطه لوله', 'OCTG pipe yard'), t('روباز، روی پایه‌های لوله', 'Outdoor, on pipe racks')],
+            [t('محل نگهداری', 'Storage location'), t('MP10/1003', 'MP10/1003'), t('انبار مواد شیمیایی', 'Chemical store'), t('ساختمان جدا با حوضچه مهار نشتی', 'Separate building with spill bunds')],
+            [t('محل نگهداری', 'Storage location'), t('MP10/1004', 'MP10/1004'), t('قفس سیلندرهای گاز', 'Gas cylinder cage'), t('روباز، سایه‌دار و با تهویه طبیعی', 'Outdoor, shaded and naturally ventilated')],
+            [t('سایت', 'Site'), t('MP20', 'MP20'), t('میدان آریا', 'Arya field'), t('انبار میدان و ایستگاه تقویت فشار', 'Field Warehouse and compressor station')],
+            [t('محل نگهداری', 'Storage location'), t('MP20/2001', 'MP20/2001'), t('انبار میدان', 'Field store'), t('اقلام پرمصرف و مصرفی', 'Fast movers and consumables')],
+            [t('محل نگهداری', 'Storage location'), t('MP20/2002', 'MP20/2002'), t('انبار اقماری ایستگاه تقویت فشار', 'Compressor station satellite store'), t('قطعات حیاتی K-201', 'Critical spares for K-201')],
+            [t('محل نگهداری', 'Storage location'), t('MP20/2003', 'MP20/2003'), t('انبار سر دکل چاه AR-12', 'Rig-site store, well AR-12'), t('موقت؛ با جابه‌جایی دکل بسته می‌شود', 'Temporary; closed when the rig moves')],
           ],
         },
         {
           type: 'p',
           text: {
-            fa: 'هر جایگاه یک نشانی منطقی دارد. در پارس‌آریا قالب نشانی «منطقه، قفسه، طبقه، موقعیت» است: جایگاه `A-12-03-B` یعنی منطقه A، قفسه 12، طبقه 03، موقعیت B. هر جایگاه برچسب بارکد یا QR دارد و انباردار هنگام قرار دادن و برداشتن کالا آن را اسکن می‌کند.',
-            en: 'Every bin has a logical address. At Pars Arya the format is zone, rack, level, position: bin `A-12-03-B` means zone A, rack 12, level 03, position B. Each bin carries a barcode or QR label that the storekeeper scans at put-away and picking.',
+            fa: 'هر جایگاه یک نشانی منطقی دارد. در مسار پترولیوم قالب نشانی «منطقه، قفسه، طبقه، موقعیت» است: جایگاه `A-12-03-B` یعنی منطقه A، قفسه 12، طبقه 03، موقعیت B. هر جایگاه برچسب بارکد یا QR دارد و انباردار هنگام قرار دادن و برداشتن کالا آن را اسکن می‌کند.',
+            en: 'Every bin has a logical address. At Masar Petroleum the format is zone, rack, level, position: bin `A-12-03-B` means zone A, rack 12, level 03, position B. Each bin carries a barcode or QR label that the storekeeper scans at put-away and picking.',
           },
         },
         {
@@ -175,8 +175,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'کدام جابه‌جایی سند مالی دارد؟ قاعده ساده است: اگر **ارزش یا حساب** تغییر نکند، سند مالی لازم نیست. جابه‌جایی از یک جایگاه به جایگاه دیگر، یا از یک محل نگهداری به محل دیگری در همان سایت، فقط سند انبار دارد. اما چون ارزش‌گذاری در سطح سایت است، انتقال از سایت PA10 به PA20 یک سند حسابداری هم می‌سازد.',
-            en: 'Which movements post to Finance? The rule is simple: if neither the **value nor the account** changes, there is no Finance document. Moving stock from bin to bin, or between storage locations of the same site, creates only a material document. But because stock is valued at site level, a transfer from site PA10 to PA20 also creates an accounting document.',
+            fa: 'کدام جابه‌جایی سند مالی دارد؟ قاعده ساده است: اگر **ارزش یا حساب** تغییر نکند، سند مالی لازم نیست. جابه‌جایی از یک جایگاه به جایگاه دیگر، یا از یک محل نگهداری به محل دیگری در همان سایت، فقط سند انبار دارد. اما چون ارزش‌گذاری در سطح سایت است، انتقال از سایت MP10 به MP20 یک سند حسابداری هم می‌سازد.',
+            en: 'Which movements post to Finance? The rule is simple: if neither the **value nor the account** changes, there is no Finance document. Moving stock from bin to bin, or between storage locations of the same site, creates only a material document. But because stock is valued at site level, a transfer from site MP10 to MP20 also creates an accounting document.',
           },
         },
         {
@@ -189,8 +189,8 @@ export const lesson: Lesson = {
             {
               date: { fa: 'انتقال بین سایت‌ها', en: 'Site-to-site transfer' },
               lines: [
-                { account: ac.sparesPA20, debit: 7200 },
-                { account: ac.sparesPA10, credit: 7200 },
+                { account: ac.sparesMP20, debit: 7200 },
+                { account: ac.sparesMP10, credit: 7200 },
               ],
               memo: {
                 fa: '4 × 1,800 به میانگین موزون سایت مبدأ. اگر انتقال دومرحله‌ای باشد، کالا تا ثبت رسید در مقصد به‌صورت «کالای در راه» دیده می‌شود.',
@@ -231,7 +231,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: { fa: 'مناطق انبار میدان جدید پارس‌آریا', en: 'Zones in Pars Arya’s new Field Warehouse' },
+          caption: { fa: 'مناطق انبار میدان جدید مسار پترولیوم', en: 'Zones in Masar Petroleum’s new Field Warehouse' },
           head: [t('منطقه', 'Zone'), t('کاربرد', 'Purpose'), t('نکته طراحی', 'Design notes')],
           rows: [
             [
@@ -398,8 +398,8 @@ export const lesson: Lesson = {
           tone: 'info',
           title: { fa: 'حوضچه مهار نشتی (Bund)', en: 'Spill bunds' },
           text: {
-            fa: 'حوضچه مهار نشتی (مخزن ثانویه) نشت ظرف‌ها را نگه می‌دارد تا به خاک و آب نرسد. رویه HSE پارس‌آریا (یک قاعده فرضی برای این دوره، هم‌راستا با راهنماهای رایج) می‌گوید ظرفیت حوضچه دست‌کم باید برابر **عدد بزرگ‌تر** از این دو باشد: 110٪ حجم بزرگ‌ترین ظرف، یا 25٪ حجم کل مواد ذخیره‌شده. الزامات دقیق را از مقررات زیست‌محیطی روز بررسی کنید.',
-            en: 'A bund (secondary containment) holds leaks so they never reach soil or water. Pars Arya’s HSE procedure (an illustrative rule for this course, in line with common guidance) requires a bund capacity of at least the **greater** of: 110% of the largest container, or 25% of the total volume stored. Check the current environmental regulations for the exact requirement.',
+            fa: 'حوضچه مهار نشتی (مخزن ثانویه) نشت ظرف‌ها را نگه می‌دارد تا به خاک و آب نرسد. رویه HSE مسار پترولیوم (یک قاعده فرضی برای این دوره، هم‌راستا با راهنماهای رایج) می‌گوید ظرفیت حوضچه دست‌کم باید برابر **عدد بزرگ‌تر** از این دو باشد: 110٪ حجم بزرگ‌ترین ظرف، یا 25٪ حجم کل مواد ذخیره‌شده. الزامات دقیق را از مقررات زیست‌محیطی روز بررسی کنید.',
+            en: 'A bund (secondary containment) holds leaks so they never reach soil or water. Masar Petroleum’s HSE procedure (an illustrative rule for this course, in line with common guidance) requires a bund capacity of at least the **greater** of: 110% of the largest container, or 25% of the total volume stored. Check the current environmental regulations for the exact requirement.',
           },
         },
         { type: 'h', text: { fa: 'سیلندرهای گاز', en: 'Gas cylinders' } },
@@ -571,8 +571,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'ایمنی انبار در جزئیات روزانه ساخته می‌شود. قواعد اصلی انبارهای پارس‌آریا این‌هاست:',
-            en: 'Warehouse safety is built in the daily details. The core rules in Pars Arya’s stores are:',
+            fa: 'ایمنی انبار در جزئیات روزانه ساخته می‌شود. قواعد اصلی انبارهای مسار پترولیوم این‌هاست:',
+            en: 'Warehouse safety is built in the daily details. The core rules in Masar Petroleum’s stores are:',
           },
         },
         {
@@ -735,8 +735,8 @@ export const lesson: Lesson = {
           title: { fa: 'محل نگهداری درست را انتخاب کنید', en: 'Choose the right storage location' },
           difficulty: 'easy',
           problem: {
-            fa: 'پنج قلم زیر با رسید کالا (GRN) در انبار مرکزی (سایت PA10) تحویل گرفته شده‌اند. برای هر کدام محل نگهداری (1001 تا 1004) را انتخاب کنید و دلیلش را بگویید. سپس نشانی جایگاه `B-04-01-C` را توضیح دهید.',
-            en: 'The five items below have been received at the Central Warehouse (site PA10) with a GRN. Choose the storage location (1001 to 1004) for each and give the reason. Then explain bin address `B-04-01-C`.',
+            fa: 'پنج قلم زیر با رسید کالا (GRN) در انبار مرکزی (سایت MP10) تحویل گرفته شده‌اند. برای هر کدام محل نگهداری (1001 تا 1004) را انتخاب کنید و دلیلش را بگویید. سپس نشانی جایگاه `B-04-01-C` را توضیح دهید.',
+            en: 'The five items below have been received at the Central Warehouse (site MP10) with a GRN. Choose the storage location (1001 to 1004) for each and give the reason. Then explain bin address `B-04-01-C`.',
           },
           given: {
             head: [t('ردیف', 'No.'), t('کالا', 'Item')],
@@ -749,18 +749,18 @@ export const lesson: Lesson = {
             ],
           },
           hint: {
-            fa: 'به محل‌های نگهداری PA10 در جدول ساختار انبار نگاه کنید و جداسازی مواد ناسازگار را فراموش نکنید.',
-            en: 'Look at the PA10 storage locations in the structure table, and remember segregation of incompatibles.',
+            fa: 'به محل‌های نگهداری MP10 در جدول ساختار انبار نگاه کنید و جداسازی مواد ناسازگار را فراموش نکنید.',
+            en: 'Look at the MP10 storage locations in the structure table, and remember segregation of incompatibles.',
           },
           solution: [
             {
               type: 'table',
               head: [t('ردیف', 'No.'), t('محل نگهداری', 'Storage location'), t('دلیل', 'Reason')],
               rows: [
-                [1, t('PA10/1002 محوطه لوله', 'PA10/1002 pipe yard'), t('لوله OCTG روی پایه لوله، با محافظ رزوه', 'OCTG on pipe racks, with thread protectors')],
+                [1, t('MP10/1002 محوطه لوله', 'MP10/1002 pipe yard'), t('لوله OCTG روی پایه لوله، با محافظ رزوه', 'OCTG on pipe racks, with thread protectors')],
                 [
                   2,
-                  t('PA10/1003 انبار مواد شیمیایی', 'PA10/1003 chemical store'),
+                  t('MP10/1003 انبار مواد شیمیایی', 'MP10/1003 chemical store'),
                   t(
                     'مایع اشتعال‌پذیر؛ در بخش مواد اشتعال‌پذیر با حوضچه، دور از اکسیدکننده‌ها',
                     'Flammable liquid; in the flammables bay with a bund, away from oxidisers',
@@ -768,17 +768,17 @@ export const lesson: Lesson = {
                 ],
                 [
                   3,
-                  t('PA10/1004 قفس سیلندرها', 'PA10/1004 cylinder cage'),
+                  t('MP10/1004 قفس سیلندرها', 'MP10/1004 cylinder cage'),
                   t('ایستاده و مهارشده، جدا از سیلندرهای استیلن', 'Upright and chained, separate from acetylene cylinders'),
                 ],
                 [
                   4,
-                  t('PA10/1001 انبار اصلی قطعات', 'PA10/1001 main spares store'),
+                  t('MP10/1001 انبار اصلی قطعات', 'MP10/1001 main spares store'),
                   t('قطعه یدکی کوچک؛ قفسه با جعبه و برچسب جایگاه', 'Small spare part; shelving with bin boxes and a bin label'),
                 ],
                 [
                   5,
-                  t('PA10/1003 انبار مواد شیمیایی', 'PA10/1003 chemical store'),
+                  t('MP10/1003 انبار مواد شیمیایی', 'MP10/1003 chemical store'),
                   t(
                     'اسید؛ حوضچه مقاوم به اسید و جدا از بازها مانند سود سوزآور',
                     'Acid; acid-resistant bund, separate from bases such as caustic soda',
@@ -850,8 +850,8 @@ export const lesson: Lesson = {
           title: { fa: 'ظرفیت حوضچه مهار نشتی', en: 'Sizing a spill bund' },
           difficulty: 'medium',
           problem: {
-            fa: 'در یک بخش انبار مواد شیمیایی، 6 مخزن IBC هزار لیتری و 10 بشکه 200 لیتری بازدارنده خوردگی نگهداری می‌شود. طبق رویه پارس‌آریا، ظرفیت حوضچه باید دست‌کم برابر عدد بزرگ‌تر از این دو باشد: 110٪ بزرگ‌ترین ظرف، یا 25٪ حجم کل. (الف) ظرفیت لازم چقدر است؟ (ب) حوضچه فعلی 1,500 لیتر است؛ کافی است؟ (ج) اگر نتوان حوضچه را بزرگ کرد، حداکثر حجم مجاز ذخیره در این بخش چقدر است؟',
-            en: 'One bay of the chemical store holds 6 IBC totes of 1,000 litres and 10 drums of 200 litres of corrosion inhibitor. Under Pars Arya’s procedure, the bund must hold at least the greater of: 110% of the largest container, or 25% of the total volume. (a) What capacity is required? (b) The current bund holds 1,500 litres; is it enough? (c) If the bund cannot be enlarged, what is the most that can be stored in this bay?',
+            fa: 'در یک بخش انبار مواد شیمیایی، 6 مخزن IBC هزار لیتری و 10 بشکه 200 لیتری بازدارنده خوردگی نگهداری می‌شود. طبق رویه مسار پترولیوم، ظرفیت حوضچه باید دست‌کم برابر عدد بزرگ‌تر از این دو باشد: 110٪ بزرگ‌ترین ظرف، یا 25٪ حجم کل. (الف) ظرفیت لازم چقدر است؟ (ب) حوضچه فعلی 1,500 لیتر است؛ کافی است؟ (ج) اگر نتوان حوضچه را بزرگ کرد، حداکثر حجم مجاز ذخیره در این بخش چقدر است؟',
+            en: 'One bay of the chemical store holds 6 IBC totes of 1,000 litres and 10 drums of 200 litres of corrosion inhibitor. Under Masar Petroleum’s procedure, the bund must hold at least the greater of: 110% of the largest container, or 25% of the total volume. (a) What capacity is required? (b) The current bund holds 1,500 litres; is it enough? (c) If the bund cannot be enlarged, what is the most that can be stored in this bay?',
           },
           hint: {
             fa: 'هر دو شرط را حساب کنید و عدد بزرگ‌تر را بردارید.',
@@ -899,8 +899,8 @@ export const lesson: Lesson = {
           title: { fa: 'ثبت‌های یک ماه و مانده‌ها', en: 'A month’s postings and balances' },
           difficulty: 'hard',
           problem: {
-            fa: 'مانده‌های ابتدای ماه: موجودی قطعات یدکی سایت PA10 برابر 250,000، موجودی قطعات یدکی سایت PA20 برابر 80,000، موجودی مواد شیمیایی (PA10) برابر 60,000 و موجودی اقلام مصرفی (PA20) برابر 20,000. رویدادهای ماه: (1) انتقال 6 بسته آب‌بند K-201 به میانگین 1,800 از PA10 به PA20؛ (2) جابه‌جایی همان بسته‌ها از جایگاه پذیرش به جایگاه `C-01-02-A` در PA20؛ (3) حواله مواد حفاظتی به ارزش 3,200 از اقلام مصرفی به مرکز هزینه انبار (CC-3300)؛ (4) اسقاط 3 بشکه بازدارنده خوردگی منقضی به ارزش هر بشکه 600. ثبت‌های خودکار را بنویسید و مانده‌های پایان ماه را حساب کنید.',
-            en: 'Opening balances: spare parts inventory at site PA10 250,000, spare parts inventory at site PA20 80,000, chemicals inventory (PA10) 60,000 and consumables inventory (PA20) 20,000. During the month: (1) 6 K-201 seal kits at an average of 1,800 are transferred from PA10 to PA20; (2) the same kits are moved from the receiving bin to bin `C-01-02-A` in PA20; (3) preservation materials worth 3,200 are issued from consumables to the warehouse cost centre (CC-3300); (4) 3 expired drums of corrosion inhibitor at 600 each are scrapped. Write the automatic entries and work out the month-end balances.',
+            fa: 'مانده‌های ابتدای ماه: موجودی قطعات یدکی سایت MP10 برابر 250,000، موجودی قطعات یدکی سایت MP20 برابر 80,000، موجودی مواد شیمیایی (MP10) برابر 60,000 و موجودی اقلام مصرفی (MP20) برابر 20,000. رویدادهای ماه: (1) انتقال 6 بسته آب‌بند K-201 به میانگین 1,800 از MP10 به MP20؛ (2) جابه‌جایی همان بسته‌ها از جایگاه پذیرش به جایگاه `C-01-02-A` در MP20؛ (3) حواله مواد حفاظتی به ارزش 3,200 از اقلام مصرفی به مرکز هزینه انبار (CC-3300)؛ (4) اسقاط 3 بشکه بازدارنده خوردگی منقضی به ارزش هر بشکه 600. ثبت‌های خودکار را بنویسید و مانده‌های پایان ماه را حساب کنید.',
+            en: 'Opening balances: spare parts inventory at site MP10 250,000, spare parts inventory at site MP20 80,000, chemicals inventory (MP10) 60,000 and consumables inventory (MP20) 20,000. During the month: (1) 6 K-201 seal kits at an average of 1,800 are transferred from MP10 to MP20; (2) the same kits are moved from the receiving bin to bin `C-01-02-A` in MP20; (3) preservation materials worth 3,200 are issued from consumables to the warehouse cost centre (CC-3300); (4) 3 expired drums of corrosion inhibitor at 600 each are scrapped. Write the automatic entries and work out the month-end balances.',
           },
           hint: {
             fa: 'یکی از چهار رویداد سند مالی ندارد.',
@@ -914,8 +914,8 @@ export const lesson: Lesson = {
                 {
                   date: { fa: '(1) انتقال بین سایت‌ها', en: '(1) Site-to-site transfer' },
                   lines: [
-                    { account: ac.sparesPA20, debit: 10800 },
-                    { account: ac.sparesPA10, credit: 10800 },
+                    { account: ac.sparesMP20, debit: 10800 },
+                    { account: ac.sparesMP10, credit: 10800 },
                   ],
                   memo: { fa: '6 × 1,800 = 10,800', en: '6 × 1,800 = 10,800' },
                 },
@@ -949,8 +949,8 @@ export const lesson: Lesson = {
               head: [t('حساب', 'Account'), t('ابتدای ماه', 'Opening'), t('افزایش', 'Increase'), t('کاهش', 'Decrease'), t('پایان ماه', 'Closing')],
               numericCols: [1, 2, 3, 4],
               rows: [
-                [t('قطعات یدکی PA10', 'Spare parts PA10'), 250000, 0, 10800, 239200],
-                [t('قطعات یدکی PA20', 'Spare parts PA20'), 80000, 10800, 0, 90800],
+                [t('قطعات یدکی MP10', 'Spare parts MP10'), 250000, 0, 10800, 239200],
+                [t('قطعات یدکی MP20', 'Spare parts MP20'), 80000, 10800, 0, 90800],
                 [t('مواد شیمیایی', 'Chemicals'), 60000, 0, 1800, 58200],
                 [t('اقلام مصرفی', 'Consumables'), 20000, 0, 3200, 16800],
                 [t('جمع', 'Total'), 410000, 10800, 15800, 405000],
@@ -966,8 +966,8 @@ export const lesson: Lesson = {
             },
           ],
           answer: {
-            fa: 'PA10: 239,200؛ PA20: 90,800؛ مواد شیمیایی: 58,200؛ اقلام مصرفی: 16,800؛ جمع 405,000. رویداد (2) ثبت مالی ندارد.',
-            en: 'PA10: 239,200; PA20: 90,800; chemicals: 58,200; consumables: 16,800; total 405,000. Event (2) has no Finance entry.',
+            fa: 'MP10: 239,200؛ MP20: 90,800؛ مواد شیمیایی: 58,200؛ اقلام مصرفی: 16,800؛ جمع 405,000. رویداد (2) ثبت مالی ندارد.',
+            en: 'MP10: 239,200; MP20: 90,800; chemicals: 58,200; consumables: 16,800; total 405,000. Event (2) has no Finance entry.',
           },
         },
       ],
@@ -1104,7 +1104,7 @@ export const lesson: Lesson = {
     {
       q: { fa: 'کدام جابه‌جایی در ERP سند مالی می‌سازد؟', en: 'Which movement creates a Finance document in the ERP?' },
       options: [
-        t('انتقال کالا از سایت PA10 به سایت PA20', 'Transferring stock from site PA10 to site PA20'),
+        t('انتقال کالا از سایت MP10 به سایت MP20', 'Transferring stock from site MP10 to site MP20'),
         t('جابه‌جایی کالا از جایگاه A-12-03-B به A-12-04-B', 'Moving stock from bin A-12-03-B to A-12-04-B'),
         t('انتقال کالا از محل 1001 به محل 1003 در همان سایت', 'Moving stock from location 1001 to 1003 in the same site'),
         t('چاپ برچسب جدید برای جایگاه', 'Printing a new bin label'),
@@ -1217,25 +1217,25 @@ export const lesson: Lesson = {
       ],
       answer: 1,
       explain: {
-        fa: 'اگر شفت مدت طولانی در یک وضعیت بماند، یاتاقان‌ها در یک نقطه آسیب می‌بینند و روتور ممکن است زیر وزن خودش تاب بردارد؛ همان اتفاقی که برای روتور 140,000 پارس‌آریا افتاد.',
-        en: 'If a shaft rests in one position for a long time, the bearings are damaged at one spot and the rotor can bow under its own weight, exactly what happened to Pars Arya’s 140,000 rotor.',
+        fa: 'اگر شفت مدت طولانی در یک وضعیت بماند، یاتاقان‌ها در یک نقطه آسیب می‌بینند و روتور ممکن است زیر وزن خودش تاب بردارد؛ همان اتفاقی که برای روتور 140,000 مسار پترولیوم افتاد.',
+        en: 'If a shaft rests in one position for a long time, the bearings are damaged at one spot and the rotor can bow under its own weight, exactly what happened to Masar Petroleum’s 140,000 rotor.',
       },
     },
     {
       q: {
-        fa: '8 یاتاقان به میانگین 54 از سایت PA10 به سایت PA20 منتقل می‌شود. اثر آن بر موجودی سایت PA20 و بر کل موجودی شرکت چیست؟',
-        en: '8 bearings at an average of 54 are transferred from site PA10 to site PA20. What is the effect on site PA20’s stock and on the company’s total stock?',
+        fa: '8 یاتاقان به میانگین 54 از سایت MP10 به سایت MP20 منتقل می‌شود. اثر آن بر موجودی سایت MP20 و بر کل موجودی شرکت چیست؟',
+        en: '8 bearings at an average of 54 are transferred from site MP10 to site MP20. What is the effect on site MP20’s stock and on the company’s total stock?',
       },
       options: [
-        t('PA20 به اندازه 54 افزایش و کل موجودی 54 افزایش', 'PA20 up 54, total up 54'),
-        t('PA20 به اندازه 432 افزایش و کل موجودی 432 افزایش', 'PA20 up 432, total up 432'),
-        t('PA20 بدون تغییر و کل موجودی 432 کاهش', 'PA20 unchanged, total down 432'),
-        t('PA20 به اندازه 432 افزایش و کل موجودی بدون تغییر', 'PA20 up 432, total unchanged'),
+        t('MP20 به اندازه 54 افزایش و کل موجودی 54 افزایش', 'MP20 up 54, total up 54'),
+        t('MP20 به اندازه 432 افزایش و کل موجودی 432 افزایش', 'MP20 up 432, total up 432'),
+        t('MP20 بدون تغییر و کل موجودی 432 کاهش', 'MP20 unchanged, total down 432'),
+        t('MP20 به اندازه 432 افزایش و کل موجودی بدون تغییر', 'MP20 up 432, total unchanged'),
       ],
       answer: 3,
       explain: {
-        fa: '8 × 54 = 432 از PA10 به PA20 می‌رود؛ PA20 همین مقدار افزایش و PA10 همین مقدار کاهش می‌یابد، پس جمع موجودی شرکت تغییر نمی‌کند.',
-        en: '8 × 54 = 432 moves from PA10 to PA20: PA20 rises and PA10 falls by the same amount, so the company’s total does not change.',
+        fa: '8 × 54 = 432 از MP10 به MP20 می‌رود؛ MP20 همین مقدار افزایش و MP10 همین مقدار کاهش می‌یابد، پس جمع موجودی شرکت تغییر نمی‌کند.',
+        en: '8 × 54 = 432 moves from MP10 to MP20: MP20 rises and MP10 falls by the same amount, so the company’s total does not change.',
       },
     },
   ],

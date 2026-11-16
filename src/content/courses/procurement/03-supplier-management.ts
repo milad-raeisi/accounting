@@ -519,8 +519,8 @@ export const lesson: Lesson = {
           tone: 'example',
           title: { fa: 'پیش‌پرداخت برای یک قلم بلندمدت', en: 'An advance for a long-lead item' },
           text: {
-            fa: 'مسار پترولیوم سرچاهی و تاج چاه AR-09 را به مبلغ 200,000 از تأمین‌کننده V-1015 سفارش می‌دهد (پس از مناقصه محدود). شرایط: 30٪ پیش‌پرداخت در برابر ضمانت‌نامه پیش‌پرداخت، یعنی 60,000، و مانده 30 روز پس از تحویل. GRN کالا با تخصیص AFE-AR09 ثبت می‌شود. ERP این ثبت‌ها را می‌سازد:',
-            en: 'Masar Petroleum orders the wellhead and Christmas tree for AR-09 from supplier V-1015 for 200,000 (after a limited tender). Terms: a 30% advance against an advance payment guarantee, that is 60,000, and the balance 30 days after delivery. The GRN is posted against AFE-AR09. The ERP creates these entries:',
+            fa: 'مسار پترولیوم سرچاهی و تاج چاه AR-09 را به مبلغ 200,000 از تأمین‌کننده V-1015 سفارش می‌دهد (پس از مناقصه محدود). شرایط: 30٪ پیش‌پرداخت در برابر ضمانت‌نامه پیش‌پرداخت، یعنی 60,000، و مانده 30 روز پس از تحویل. GRN کالا با تخصیص AFE-2024-022 ثبت می‌شود. ERP این ثبت‌ها را می‌سازد:',
+            en: 'Masar Petroleum orders the wellhead and Christmas tree for AR-09 from supplier V-1015 for 200,000 (after a limited tender). Terms: a 30% advance against an advance payment guarantee, that is 60,000, and the balance 30 days after delivery. The GRN is posted against AFE-2024-022. The ERP creates these entries:',
           },
         },
         {
@@ -541,7 +541,7 @@ export const lesson: Lesson = {
                 { account: ac.auc09, debit: 200000 },
                 { account: ac.grir, credit: 200000 },
               ],
-              memo: { fa: 'GRN سرچاهی و تاج چاه به AFE-AR09.', en: 'GRN for the wellhead and tree against AFE-AR09.' },
+              memo: { fa: 'GRN سرچاهی و تاج چاه به AFE-2024-022.', en: 'GRN for the wellhead and tree against AFE-2024-022.' },
             },
             {
               date: day(92),

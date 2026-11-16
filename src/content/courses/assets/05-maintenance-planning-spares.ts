@@ -713,7 +713,7 @@ export const lesson: Lesson = {
           rows: [
             [
               { fa: 'محل عملیاتی', en: 'Functional location' },
-              { fa: '`AR-CS-P120`: جایگاه پمپ میعانات در ایستگاه تقویت فشار', en: '`AR-CS-P120`: condensate pump position at the compressor station' },
+              { fa: '`ARY-CS-GC-P120`: جایگاه پمپ میعانات در ایستگاه تقویت فشار', en: '`ARY-CS-GC-P120`: condensate pump position at the compressor station' },
               { fa: 'مهندسی نگهداری', en: 'Maintenance engineering' },
             ],
             [

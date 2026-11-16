@@ -9,8 +9,8 @@ const ac = {
   grir: { fa: 'حساب واسط رسید کالا و فاکتور (GR/IR)', en: 'GR/IR clearing account' },
   consumPrd: { fa: 'هزینه اقلام مصرفی (مرکز هزینه CC-ARY-PRD)', en: 'Consumables expense (cost centre CC-ARY-PRD)' },
   repairsWO: {
-    fa: 'هزینه تعمیر و نگهداری (دستور کار WO-45188، کمپرسور K-201)',
-    en: 'Repairs and maintenance expense (work order WO-45188, compressor K-201)',
+    fa: 'هزینه تعمیر و نگهداری (دستور کار WO-45188، کمپرسور K-202)',
+    en: 'Repairs and maintenance expense (work order WO-45188, compressor K-202)',
   },
   wellRepairs: {
     fa: 'هزینه تعمیر و نگهداری چاه (دستور کار WO-45210، مرکز هزینه CC-ARY-PRD)',
@@ -245,7 +245,7 @@ export const lesson: Lesson = {
             [
               { fa: 'دستور کار', en: 'Work order' },
               { fa: 'بدهکار هزینه دستور کار (بعداً به مرکز هزینه تسویه می‌شود)، بستانکار GR/IR', en: 'Dr work-order cost (settled later to a cost centre), Cr GR/IR' },
-              { fa: 'یاتاقان کف‌گرد K-201 روی `WO-45188`', en: 'K-201 thrust bearing set on `WO-45188`' },
+              { fa: 'یاتاقان کف‌گرد K-202 روی `WO-45188`', en: 'K-202 thrust bearing set on `WO-45188`' },
             ],
             [
               { fa: 'فراخوان از قرارداد چارچوب', en: 'Call-off from a framework' },

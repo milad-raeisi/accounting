@@ -1,6 +1,6 @@
 import type { Lesson } from '../../types'
 
-/* Pars Arya Oil & Gas: accounts the ERP posts to in this lesson. */
+/* Masar Petroleum: accounts the ERP posts to in this lesson. */
 const ac = {
   spares: { fa: 'موجودی قطعات یدکی', en: 'Inventory: spare parts' },
   octg: { fa: 'موجودی لوله‌های OCTG', en: 'Inventory: OCTG' },
@@ -59,8 +59,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'حسابرسی داخلی پارس‌آریا در ERP به سه کد برای یک کالا رسید: یک شیر توپی 2 اینچ کلاس 600. کد `10004521` با شرح «VALVE BALL 2IN 600#»، کد `10007788` با شرح فارسی آزاد «شیر توپی 2 اینچ» و کد `10011240` با شرح «BALL VALVE 2" CL600 RF». برنامه‌ریز انبار میدان زیر کد خودش موجودی صفر دید و برای 4 شیر به ارزش 4 × 450 = 1,800 درخواست خرید ثبت کرد؛ در حالی که 7 شیر به ارزش 3,115 زیر دو کد دیگر در انبار مرکزی خاک می‌خورد.',
-            en: 'Pars Arya’s internal audit found three codes in the ERP for one item, a 2-inch class 600 ball valve: `10004521` described as “VALVE BALL 2IN 600#”, `10007788` with a Persian free-text description meaning “ball valve 2 inch”, and `10011240` described as “BALL VALVE 2" CL600 RF”. The Field Warehouse planner saw zero stock under his code and raised a purchase requisition for 4 valves worth 4 × 450 = 1,800, while 7 valves worth 3,115 sat gathering dust in the Central Warehouse under the other two codes.',
+            fa: 'حسابرسی داخلی مسار پترولیوم در ERP به سه کد برای یک کالا رسید: یک شیر توپی 2 اینچ کلاس 600. کد `10004521` با شرح «VALVE BALL 2IN 600#»، کد `10007788` با شرح فارسی آزاد «شیر توپی 2 اینچ» و کد `10011240` با شرح «BALL VALVE 2" CL600 RF». برنامه‌ریز انبار میدان زیر کد خودش موجودی صفر دید و برای 4 شیر به ارزش 4 × 450 = 1,800 درخواست خرید ثبت کرد؛ در حالی که 7 شیر به ارزش 3,115 زیر دو کد دیگر در انبار مرکزی خاک می‌خورد.',
+            en: 'Masar Petroleum’s internal audit found three codes in the ERP for one item, a 2-inch class 600 ball valve: `10004521` described as “VALVE BALL 2IN 600#”, `10007788` with a Persian free-text description meaning “ball valve 2 inch”, and `10011240` described as “BALL VALVE 2" CL600 RF”. The Field Warehouse planner saw zero stock under his code and raised a purchase requisition for 4 valves worth 4 × 450 = 1,800, while 7 valves worth 3,115 sat gathering dust in the Central Warehouse under the other two codes.',
           },
         },
         {
@@ -256,7 +256,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: { fa: 'انواع کالا در پارس‌آریا', en: 'Material types at Pars Arya' },
+          caption: { fa: 'انواع کالا در مسار پترولیوم', en: 'Material types at Masar Petroleum' },
           head: [
             { fa: 'نوع کالا', en: 'Material type' },
             { fa: 'انباری و ارزش‌گذاری‌شده؟', en: 'Stocked and valued?' },
@@ -299,8 +299,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: '**واحد سنجش پایه (Base unit)** واحدی است که موجودی با آن نگهداری و ارزش‌گذاری می‌شود و همه مقدارها به آن تبدیل می‌شوند. **واحد سفارش** واحدی است که با آن خرید می‌کنیم و **واحد صدور** واحدی است که با آن تحویل می‌دهیم. ضریب‌های تبدیل در داده پایه تعریف می‌شوند. برای باریت (ماده وزن‌افزای گل حفاری)، پارس‌آریا کیلوگرم را واحد پایه گذاشته است:',
-            en: 'The **base unit of measure** is the unit in which stock is held and valued; every quantity is converted to it. The **order unit** is the unit we buy in, and the **issue unit** is the unit we hand out in. The conversion factors are defined in the master data. For barite (the weighting agent in drilling mud), Pars Arya uses the kilogram as the base unit:',
+            fa: '**واحد سنجش پایه (Base unit)** واحدی است که موجودی با آن نگهداری و ارزش‌گذاری می‌شود و همه مقدارها به آن تبدیل می‌شوند. **واحد سفارش** واحدی است که با آن خرید می‌کنیم و **واحد صدور** واحدی است که با آن تحویل می‌دهیم. ضریب‌های تبدیل در داده پایه تعریف می‌شوند. برای باریت (ماده وزن‌افزای گل حفاری)، مسار پترولیوم کیلوگرم را واحد پایه گذاشته است:',
+            en: 'The **base unit of measure** is the unit in which stock is held and valued; every quantity is converted to it. The **order unit** is the unit we buy in, and the **issue unit** is the unit we hand out in. The conversion factors are defined in the master data. For barite (the weighting agent in drilling mud), Masar Petroleum uses the kilogram as the base unit:',
           },
         },
         {
@@ -382,8 +382,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: '**درجه بحرانی بودن (Criticality)** نشان می‌دهد اگر کالا هنگام نیاز موجود نباشد، پیامد آن برای ایمنی، محیط زیست و تولید چقدر جدی است و زمان تأمین آن چقدر است. پارس‌آریا سه سطح دارد:',
-            en: '**Criticality** ranks how serious it is, for safety, the environment and production, if the item is not available when needed, taking its lead time into account. Pars Arya uses three levels:',
+            fa: '**درجه بحرانی بودن (Criticality)** نشان می‌دهد اگر کالا هنگام نیاز موجود نباشد، پیامد آن برای ایمنی، محیط زیست و تولید چقدر جدی است و زمان تأمین آن چقدر است. مسار پترولیوم سه سطح دارد:',
+            en: '**Criticality** ranks how serious it is, for safety, the environment and production, if the item is not available when needed, taking its lead time into account. Masar Petroleum uses three levels:',
           },
         },
         {
@@ -452,8 +452,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: '**کلاس ارزش‌گذاری** پل میان کالا و دفتر کل است: ERP از روی آن تعیین می‌کند هر رسید، حواله یا اختلاف شمارش به کدام حساب موجودی برود. کنار آن **روش کنترل قیمت** هم ثبت می‌شود: **میانگین موزون متحرک** که با هر رسید به‌روز می‌شود، یا **بهای استاندارد** که ثابت می‌ماند و تفاوت‌ها را به حساب اختلاف قیمت می‌برد. پارس‌آریا برای همه کالاها از میانگین موزون متحرک استفاده می‌کند.',
-            en: 'The **valuation class** is the bridge between the item and the general ledger: from it the ERP decides which inventory account each receipt, issue or count difference goes to. Next to it sits the **price control**: a **moving average price**, updated with every receipt, or a **standard price**, which stays fixed and sends differences to a price variance account. Pars Arya uses moving average price for all materials.',
+            fa: '**کلاس ارزش‌گذاری** پل میان کالا و دفتر کل است: ERP از روی آن تعیین می‌کند هر رسید، حواله یا اختلاف شمارش به کدام حساب موجودی برود. کنار آن **روش کنترل قیمت** هم ثبت می‌شود: **میانگین موزون متحرک** که با هر رسید به‌روز می‌شود، یا **بهای استاندارد** که ثابت می‌ماند و تفاوت‌ها را به حساب اختلاف قیمت می‌برد. مسار پترولیوم برای همه کالاها از میانگین موزون متحرک استفاده می‌کند.',
+            en: 'The **valuation class** is the bridge between the item and the general ledger: from it the ERP decides which inventory account each receipt, issue or count difference goes to. Next to it sits the **price control**: a **moving average price**, updated with every receipt, or a **standard price**, which stays fixed and sends differences to a price variance account. Masar Petroleum uses moving average price for all materials.',
           },
         },
         {
@@ -539,7 +539,7 @@ export const lesson: Lesson = {
             [
               { fa: '`10004521`', en: '`10004521`' },
               { fa: 'VALVE BALL 2IN 600#', en: 'VALVE BALL 2IN 600#' },
-              { fa: 'PA10', en: 'PA10' },
+              { fa: 'MP10', en: 'MP10' },
               4,
               430,
               1720,
@@ -548,7 +548,7 @@ export const lesson: Lesson = {
             [
               { fa: '`10007788`', en: '`10007788`' },
               { fa: 'شیر توپی 2 اینچ', en: 'Persian free text (“ball valve 2 inch”)' },
-              { fa: 'PA10', en: 'PA10' },
+              { fa: 'MP10', en: 'MP10' },
               3,
               465,
               1395,
@@ -557,7 +557,7 @@ export const lesson: Lesson = {
             [
               { fa: '`10011240`', en: '`10011240`' },
               { fa: 'BALL VALVE 2" CL600 RF', en: 'BALL VALVE 2" CL600 RF' },
-              { fa: 'PA20', en: 'PA20' },
+              { fa: 'MP20', en: 'MP20' },
               0,
               450,
               0,
@@ -747,8 +747,8 @@ export const lesson: Lesson = {
             {
               title: { fa: 'فعال‌سازی', en: 'Activation' },
               text: {
-                fa: 'متولی داده پس از کنترل نهایی کد را فعال می‌کند. پارس‌آریا برای این چرخه 2 روز کاری هدف گذاشته و برای موارد اضطراری یک مسیر سریع همان‌روز دارد.',
-                en: 'The data steward does a final check and activates the code. Pars Arya targets 2 working days for the cycle, with a same-day fast track for emergencies.',
+                fa: 'متولی داده پس از کنترل نهایی کد را فعال می‌کند. مسار پترولیوم برای این چرخه 2 روز کاری هدف گذاشته و برای موارد اضطراری یک مسیر سریع همان‌روز دارد.',
+                en: 'The data steward does a final check and activates the code. Masar Petroleum targets 2 working days for the cycle, with a same-day fast track for emergencies.',
               },
             },
           ],
@@ -904,8 +904,8 @@ export const lesson: Lesson = {
           title: { fa: 'واحدهای سنجش باریت', en: 'Barite units of measure' },
           difficulty: 'medium',
           problem: {
-            fa: 'پارس‌آریا 18 تن باریت به قیمت هر تن 280 برای انبار مرکزی سفارش داده است. واحد پایه کیلوگرم است، هر کیسه 25 کیلوگرم و هر جامبوبگ 1,500 کیلوگرم. (الف) مقدار رسید را به کیلوگرم، کیسه و جامبوبگ حساب کنید. (ب) ارزش رسید و قیمت هر کیلوگرم چقدر است؟ (ج) 120 کیسه برای حفاری چاه AR-12 به AFE-012 حواله می‌شود؛ ثبت‌های خودکار رسید و حواله را بنویسید. (د) موجودی باقی‌مانده را به کیلوگرم، کیسه و ارزش به دست آورید.',
-            en: 'Pars Arya has ordered 18 tonnes of barite at 280 per tonne for the Central Warehouse. The base unit is the kilogram, a sack holds 25 kg and a big bag 1,500 kg. (a) Express the receipt in kilograms, sacks and big bags. (b) What are the receipt value and the price per kilogram? (c) 120 sacks are issued for drilling well AR-12 under AFE-012; write the automatic entries for the receipt and the issue. (d) Work out the remaining stock in kilograms, sacks and value.',
+            fa: 'مسار پترولیوم 18 تن باریت به قیمت هر تن 280 برای انبار مرکزی سفارش داده است. واحد پایه کیلوگرم است، هر کیسه 25 کیلوگرم و هر جامبوبگ 1,500 کیلوگرم. (الف) مقدار رسید را به کیلوگرم، کیسه و جامبوبگ حساب کنید. (ب) ارزش رسید و قیمت هر کیلوگرم چقدر است؟ (ج) 120 کیسه برای حفاری چاه AR-12 به AFE-012 حواله می‌شود؛ ثبت‌های خودکار رسید و حواله را بنویسید. (د) موجودی باقی‌مانده را به کیلوگرم، کیسه و ارزش به دست آورید.',
+            en: 'Masar Petroleum has ordered 18 tonnes of barite at 280 per tonne for the Central Warehouse. The base unit is the kilogram, a sack holds 25 kg and a big bag 1,500 kg. (a) Express the receipt in kilograms, sacks and big bags. (b) What are the receipt value and the price per kilogram? (c) 120 sacks are issued for drilling well AR-12 under AFE-012; write the automatic entries for the receipt and the issue. (d) Work out the remaining stock in kilograms, sacks and value.',
           },
           hint: {
             fa: 'همه چیز را اول به واحد پایه (کیلوگرم) تبدیل کنید.',
@@ -1037,8 +1037,8 @@ export const lesson: Lesson = {
           title: { fa: 'ادغام یاتاقان‌های تکراری', en: 'Merging duplicate bearings' },
           difficulty: 'hard',
           problem: {
-            fa: 'در انبار مرکزی (سایت PA10) سه کد برای یک یاتاقان `6312-2Z` پیدا شده است (جدول). کد `10002210` ماندگار است. (الف) پس از ادغام، مقدار، ارزش و میانگین موزون متحرک کد ماندگار چقدر است؟ (ب) ثبت‌های خودکار مالی انتقال‌ها را بنویسید. (ج) مصرف سالانه این یاتاقان 10 عدد و نقطه سفارش آن 4 عدد است و یک درخواست خرید باز برای 8 عدد به قیمت هر عدد 56 وجود دارد. با آن چه باید کرد و چه مبلغی صرفه‌جویی می‌شود؟',
-            en: 'Three codes for one `6312-2Z` bearing have been found in the Central Warehouse (site PA10); see the table. Code `10002210` will survive. (a) After the merge, what are the surviving code’s quantity, value and moving average price? (b) Write the automatic Finance entries for the transfers. (c) Annual usage is 10 bearings, the reorder point is 4, and there is an open purchase requisition for 8 at 56 each. What should happen to it, and how much is saved?',
+            fa: 'در انبار مرکزی (سایت MP10) سه کد برای یک یاتاقان `6312-2Z` پیدا شده است (جدول). کد `10002210` ماندگار است. (الف) پس از ادغام، مقدار، ارزش و میانگین موزون متحرک کد ماندگار چقدر است؟ (ب) ثبت‌های خودکار مالی انتقال‌ها را بنویسید. (ج) مصرف سالانه این یاتاقان 10 عدد و نقطه سفارش آن 4 عدد است و یک درخواست خرید باز برای 8 عدد به قیمت هر عدد 56 وجود دارد. با آن چه باید کرد و چه مبلغی صرفه‌جویی می‌شود؟',
+            en: 'Three codes for one `6312-2Z` bearing have been found in the Central Warehouse (site MP10); see the table. Code `10002210` will survive. (a) After the merge, what are the surviving code’s quantity, value and moving average price? (b) Write the automatic Finance entries for the transfers. (c) Annual usage is 10 bearings, the reorder point is 4, and there is an open purchase requisition for 8 at 56 each. What should happen to it, and how much is saved?',
           },
           given: {
             head: [

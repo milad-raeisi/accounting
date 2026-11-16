@@ -194,8 +194,8 @@ export const lesson: Lesson = {
                 en: 'Defined goods with a set quantity and price, usually one-off',
               },
               {
-                fa: '150 شاخه لوله جداری برای چاه AR-11؛ 2 کارتریج آب‌بند گاز خشک برای کمپرسور K-201',
-                en: '150 casing joints for well AR-11; 2 dry gas seal cartridges for compressor K-201',
+                fa: '150 شاخه لوله جداری برای چاه AR-11؛ 2 کارتریج آب‌بند گاز خشک برای کمپرسور K-202',
+                en: '150 casing joints for well AR-11; 2 dry gas seal cartridges for compressor K-202',
               },
               { fa: 'رسید کالا (GRN)', en: 'Goods received note (GRN)' },
             ],
@@ -868,8 +868,8 @@ export const lesson: Lesson = {
               [
                 { fa: 'الف', en: 'a' },
                 {
-                  fa: '2 کارتریج آب‌بند گاز خشک برای کمپرسور K-201 که به‌عنوان قطعه یدکی حیاتی در انبار مرکزی نگهداری می‌شوند',
-                  en: '2 dry gas seal cartridges for compressor K-201, held as critical spares in the Central Warehouse',
+                  fa: '2 کارتریج آب‌بند گاز خشک برای کمپرسور K-202 که به‌عنوان قطعه یدکی حیاتی در انبار مرکزی نگهداری می‌شوند',
+                  en: '2 dry gas seal cartridges for compressor K-202, held as critical spares in the Central Warehouse',
                 },
               ],
               [

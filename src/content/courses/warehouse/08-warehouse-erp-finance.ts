@@ -372,7 +372,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: { fa: 'نقش‌ها در پیوند انبار و مالی', en: 'Roles in the warehouse–Finance link' },
+          caption: { fa: 'نقش‌ها در پیوند انبار و مالی', en: 'Roles linking the warehouse and Finance' },
           head: [
             { fa: 'نقش', en: 'Role' },
             { fa: 'مسئولیت', en: 'Responsibility' },

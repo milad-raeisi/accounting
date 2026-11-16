@@ -4,7 +4,7 @@ import type { Lesson } from '../../types'
 const ac = {
   inventory: { fa: 'موجودی مواد و قطعات', en: 'Materials and spares inventory' },
   auc09: { fa: 'دارایی در جریان تکمیل: چاه AR-09', en: 'Assets under construction: well AR-09' },
-  repairs: { fa: 'هزینه تعمیر و نگهداری (مرکز هزینه CC-310)', en: 'Repairs and maintenance expense (cost centre CC-310)' },
+  repairs: { fa: 'هزینه تعمیر و نگهداری (مرکز هزینه CC-ARY-CMP)', en: 'Repairs and maintenance expense (cost centre CC-ARY-CMP)' },
   grir: { fa: 'حساب واسط رسید کالا و فاکتور (GR/IR)', en: 'GR/IR clearing' },
 }
 
@@ -180,8 +180,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'برنامه‌ریز نگهداری برای تعمیر اساسی کمپرسور شماره 2 یک **دستور کار** باز می‌کند و فهرست قطعات را در آن وارد می‌کند. اقلامی که در انبار هستند رزرو می‌شوند؛ برای اقلام غیرانباری، مثل یک دست یاتاقان مخصوص، ERP خودکار درخواست خرید می‌سازد که تخصیص هزینه‌اش همان دستور کار است. وقتی قطعه می‌رسد، GRN آن مستقیم به دستور کار ثبت می‌شود، نه به انبار، و هزینه‌اش از دستور کار به مرکز هزینه ایستگاه تقویت فشار (CC-310) می‌نشیند.',
-            en: 'The maintenance planner opens a **work order** for the overhaul of compressor No. 2 and lists the parts in it. Items held in stock are reserved; for non-stock items, such as a special bearing set, the ERP creates a requisition automatically with the work order as its account assignment. When the part arrives, its GRN is posted straight against the work order, not into stock, and its cost flows from the work order to the compressor station cost centre (CC-310).',
+            fa: 'برنامه‌ریز نگهداری برای تعمیر اساسی کمپرسور شماره 2 یک **دستور کار** باز می‌کند و فهرست قطعات را در آن وارد می‌کند. اقلامی که در انبار هستند رزرو می‌شوند؛ برای اقلام غیرانباری، مثل یک دست یاتاقان مخصوص، ERP خودکار درخواست خرید می‌سازد که تخصیص هزینه‌اش همان دستور کار است. وقتی قطعه می‌رسد، GRN آن مستقیم به دستور کار ثبت می‌شود، نه به انبار، و هزینه‌اش از دستور کار به مرکز هزینه ایستگاه تقویت فشار (CC-ARY-CMP) می‌نشیند.',
+            en: 'The maintenance planner opens a **work order** for the overhaul of compressor No. 2 and lists the parts in it. Items held in stock are reserved; for non-stock items, such as a special bearing set, the ERP creates a requisition automatically with the work order as its account assignment. When the part arrives, its GRN is posted straight against the work order, not into stock, and its cost flows from the work order to the compressor station cost centre (CC-ARY-CMP).',
           },
         },
       ],
@@ -233,7 +233,7 @@ export const lesson: Lesson = {
             ],
             [
               { fa: 'موضوع هزینه', en: 'Cost object' },
-              { fa: 'AFE-AR09: حفاری و تکمیل چاه AR-09', en: 'AFE-AR09: drilling and completion of well AR-09' },
+              { fa: 'AFE-2024-022: حفاری و تکمیل چاه AR-09', en: 'AFE-2024-022: drilling and completion of well AR-09' },
               { fa: 'تعیین می‌کند چه کسی هزینه را می‌پردازد و آیا بازیافت می‌شود', en: 'Decides who bears the cost and whether it is recovered' },
             ],
             [
@@ -264,12 +264,12 @@ export const lesson: Lesson = {
           type: 'list',
           items: [
             {
-              fa: '**مرکز هزینه**: واحدی که مسئول هزینه‌های جاری است، مثل CC-310 ایستگاه تقویت فشار. هزینه‌اش هزینه عملیاتی (Opex) است.',
-              en: '**Cost centre**: a unit responsible for running costs, such as CC-310, the compressor station. Its costs are operating expenses (opex).',
+              fa: '**مرکز هزینه**: واحدی که مسئول هزینه‌های جاری است، مثل CC-ARY-CMP ایستگاه تقویت فشار. هزینه‌اش هزینه عملیاتی (Opex) است.',
+              en: '**Cost centre**: a unit responsible for running costs, such as CC-ARY-CMP, the compressor station. Its costs are operating expenses (opex).',
             },
             {
-              fa: '**چاه، پروژه یا AFE**: کار سرمایه‌ای روی یک چاه یا تأسیسات، مثل AFE-AR09. هزینه‌اش ابتدا دارایی در جریان تکمیل (Capex) است.',
-              en: '**Well, project or AFE**: capital work on a well or facility, such as AFE-AR09. Its costs first become assets under construction (capex).',
+              fa: '**چاه، پروژه یا AFE**: کار سرمایه‌ای روی یک چاه یا تأسیسات، مثل AFE-2024-022. هزینه‌اش ابتدا دارایی در جریان تکمیل (Capex) است.',
+              en: '**Well, project or AFE**: capital work on a well or facility, such as AFE-2024-022. Its costs first become assets under construction (capex).',
             },
             {
               fa: '**دستور کار**: یک کار نگهداری که هزینه‌ها را جمع می‌کند و بعد به تجهیز یا مرکز هزینه تسویه می‌شود.',
@@ -288,8 +288,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'سنترالایزرهای 30,000 که به AFE-AR09 ثبت شوند، بخشی از بهای چاه می‌شوند و به نسبت سهم شرکا به حساب مشترک می‌روند: مسار پترولیوم 50٪ یعنی 15,000، شریک الف 30٪ یعنی 9,000 و شریک ب 20٪ یعنی 6,000. اگر همین مبلغ اشتباهی به مرکز هزینه CC-310 برود، AFE چاه 30,000 کمتر از واقع نشان داده می‌شود، بهای دارایی چاه کم و هزینه عملیاتی زیاد گزارش می‌شود و هزینه در دسته اشتباه بازیافت قرار می‌گیرد. در بسیاری از قراردادهای مشارکت در تولید، هزینه سرمایه‌ای طی چند سال و هزینه عملیاتی در همان سال بازیافت می‌شود؛ پس دسته اشتباه، زمان بازگشت پول را هم عوض می‌کند.',
-            en: 'Centralisers worth 30,000 charged to AFE-AR09 become part of the cost of the well and go to the joint account in proportion to the partners’ shares: Masar Petroleum 50%, or 15,000; Partner A 30%, or 9,000; Partner B 20%, or 6,000. If the same amount goes to cost centre CC-310 by mistake, the well’s AFE looks 30,000 under-spent, the well asset is understated, operating expense is overstated and the cost sits in the wrong recovery category. Under many production sharing contracts, capital costs are recovered over several years while operating costs are recovered in the year incurred, so the wrong category also changes when the money comes back.',
+            fa: 'سنترالایزرهای 30,000 که به AFE-2024-022 ثبت شوند، بخشی از بهای چاه می‌شوند و به نسبت سهم شرکا به حساب مشترک می‌روند: مسار پترولیوم 50٪ یعنی 15,000، شریک الف 30٪ یعنی 9,000 و شریک ب 20٪ یعنی 6,000. اگر همین مبلغ اشتباهی به مرکز هزینه CC-ARY-CMP برود، AFE چاه 30,000 کمتر از واقع نشان داده می‌شود، بهای دارایی چاه کم و هزینه عملیاتی زیاد گزارش می‌شود و هزینه در دسته اشتباه بازیافت قرار می‌گیرد. در بسیاری از قراردادهای مشارکت در تولید، هزینه سرمایه‌ای طی چند سال و هزینه عملیاتی در همان سال بازیافت می‌شود؛ پس دسته اشتباه، زمان بازگشت پول را هم عوض می‌کند.',
+            en: 'Centralisers worth 30,000 charged to AFE-2024-022 become part of the cost of the well and go to the joint account in proportion to the partners’ shares: Masar Petroleum 50%, or 15,000; Partner A 30%, or 9,000; Partner B 20%, or 6,000. If the same amount goes to cost centre CC-ARY-CMP by mistake, the well’s AFE looks 30,000 under-spent, the well asset is understated, operating expense is overstated and the cost sits in the wrong recovery category. Under many production sharing contracts, capital costs are recovered over several years while operating costs are recovered in the year incurred, so the wrong category also changes when the money comes back.',
           },
         },
         {
@@ -327,7 +327,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: { fa: 'وضعیت AFE-AR09 هنگام ثبت درخواست تکمیل چاه', en: 'Status of AFE-AR09 when the completion requisition is raised' },
+          caption: { fa: 'وضعیت AFE-2024-022 هنگام ثبت درخواست تکمیل چاه', en: 'Status of AFE-2024-022 when the completion requisition is raised' },
           head: [
             { fa: 'قلم', en: 'Item' },
             { fa: 'مبلغ', en: 'Amount' },
@@ -442,8 +442,8 @@ export const lesson: Lesson = {
             {
               title: { fa: 'ثبت و کنترل خودکار', en: 'Submit and automatic checks' },
               text: {
-                fa: 'مهندس تعمیرات درخواست 250,000 برای قطعات تعمیر اساسی کمپرسور شماره 2 را ثبت می‌کند. سیستم فیلدهای اجباری و بودجه مرکز هزینه CC-310 را کنترل می‌کند.',
-                en: 'The maintenance engineer submits a 250,000 PR for overhaul parts for compressor No. 2. The system checks the mandatory fields and the budget of cost centre CC-310.',
+                fa: 'مهندس تعمیرات درخواست 250,000 برای قطعات تعمیر اساسی کمپرسور شماره 2 را ثبت می‌کند. سیستم فیلدهای اجباری و بودجه مرکز هزینه CC-ARY-CMP را کنترل می‌کند.',
+                en: 'The maintenance engineer submits a 250,000 PR for overhaul parts for compressor No. 2. The system checks the mandatory fields and the budget of cost centre CC-ARY-CMP.',
               },
             },
             {
@@ -544,8 +544,8 @@ export const lesson: Lesson = {
           tone: 'example',
           title: { fa: 'سه درخواست، سه ثبت متفاوت', en: 'Three requisitions, three different entries' },
           text: {
-            fa: '(1) درخواست MRP برای 48 شیر کشویی 2 اینچ برای انبار مرکزی به قیمت هر عدد 600: 48 × 600 = 28,800، تخصیص «انبار». (2) درخواست 120 سنترالایزر به قیمت 250: 30,000، تخصیص «AFE-AR09». (3) درخواست یک دست یاتاقان از دستور کار کمپرسور شماره 2: 18,000، تخصیص «دستور کار» که به مرکز هزینه CC-310 تسویه می‌شود. هر سه سفارش شده‌اند و کالاها رسیده است:',
-            en: '(1) An MRP requisition for 48 two-inch gate valves for the Central Warehouse at 600 each: 48 × 600 = 28,800, assigned to “stock”. (2) A PR for 120 centralisers at 250: 30,000, assigned to “AFE-AR09”. (3) A PR for a bearing set from the compressor No. 2 work order: 18,000, assigned to the work order, which settles to cost centre CC-310. All three have been ordered and the goods have arrived:',
+            fa: '(1) درخواست MRP برای 48 شیر کشویی 2 اینچ برای انبار مرکزی به قیمت هر عدد 600: 48 × 600 = 28,800، تخصیص «انبار». (2) درخواست 120 سنترالایزر به قیمت 250: 30,000، تخصیص «AFE-2024-022». (3) درخواست یک دست یاتاقان از دستور کار کمپرسور شماره 2: 18,000، تخصیص «دستور کار» که به مرکز هزینه CC-ARY-CMP تسویه می‌شود. هر سه سفارش شده‌اند و کالاها رسیده است:',
+            en: '(1) An MRP requisition for 48 two-inch gate valves for the Central Warehouse at 600 each: 48 × 600 = 28,800, assigned to “stock”. (2) A PR for 120 centralisers at 250: 30,000, assigned to “AFE-2024-022”. (3) A PR for a bearing set from the compressor No. 2 work order: 18,000, assigned to the work order, which settles to cost centre CC-ARY-CMP. All three have been ordered and the goods have arrived:',
           },
         },
         {
@@ -564,7 +564,7 @@ export const lesson: Lesson = {
                 { account: ac.auc09, debit: 30000 },
                 { account: ac.grir, credit: 30000 },
               ],
-              memo: { fa: 'تخصیص «AFE-AR09»: سنترالایزرها بخشی از بهای چاه می‌شوند.', en: 'Assigned to AFE-AR09: the centralisers become part of the cost of the well.' },
+              memo: { fa: 'تخصیص «AFE-2024-022»: سنترالایزرها بخشی از بهای چاه می‌شوند.', en: 'Assigned to AFE-2024-022: the centralisers become part of the cost of the well.' },
             },
             {
               lines: [
@@ -584,7 +584,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: { fa: 'تعهد و هزینه واقعی سنترالایزرها روی AFE-AR09', en: 'Commitment and actual cost of the centralisers on AFE-AR09' },
+          caption: { fa: 'تعهد و هزینه واقعی سنترالایزرها روی AFE-2024-022', en: 'Commitment and actual cost of the centralisers on AFE-2024-022' },
           head: [
             { fa: 'لحظه', en: 'Moment' },
             { fa: 'تعهد باز', en: 'Open commitment' },
@@ -622,7 +622,7 @@ export const lesson: Lesson = {
               [{ fa: 'مقدار', en: 'Quantity' }, { fa: '10', en: '10' }],
               [{ fa: 'تاریخ نیاز', en: 'Need date' }, { fa: 'هرچه زودتر', en: 'ASAP' }],
               [{ fa: 'محل تحویل', en: 'Delivery location' }, { fa: '(خالی)', en: '(blank)' }],
-              [{ fa: 'موضوع هزینه', en: 'Cost object' }, { fa: 'CC-310 ایستگاه تقویت فشار', en: 'CC-310 compressor station' }],
+              [{ fa: 'موضوع هزینه', en: 'Cost object' }, { fa: 'CC-ARY-CMP ایستگاه تقویت فشار', en: 'CC-ARY-CMP compressor station' }],
               [{ fa: 'مبلغ برآوردی', en: 'Estimated value' }, { fa: '(خالی)', en: '(blank)' }],
               [{ fa: 'پیوست', en: 'Attachments' }, { fa: 'ندارد', en: 'None' }],
             ],
@@ -638,15 +638,15 @@ export const lesson: Lesson = {
                 [{ fa: 'شرح مبهم «شیر»', en: 'Vague description “valves”' }, { fa: 'کد کالا با نوع، اندازه، کلاس فشار و استاندارد (مثلاً API 6A)', en: 'Material code with type, size, pressure class and standard (for example API 6A)' }],
                 [{ fa: 'تاریخ نیاز «هرچه زودتر»', en: 'Need date “ASAP”' }, { fa: 'تاریخ مشخص بر اساس برنامه حفاری و زمان تحویل', en: 'A specific date based on the drilling schedule and lead time' }],
                 [{ fa: 'محل تحویل خالی', en: 'Blank delivery location' }, { fa: 'انبار میدان یا محل دکل چاه AR-09', en: 'Field Warehouse or the AR-09 rig site' }],
-                [{ fa: 'موضوع هزینه اشتباه (مرکز هزینه عملیاتی)', en: 'Wrong cost object (an operating cost centre)' }, { fa: 'AFE-AR09، چون برای حفاری چاه جدید است', en: 'AFE-AR09, because it is for drilling a new well' }],
+                [{ fa: 'موضوع هزینه اشتباه (مرکز هزینه عملیاتی)', en: 'Wrong cost object (an operating cost centre)' }, { fa: 'AFE-2024-022، چون برای حفاری چاه جدید است', en: 'AFE-2024-022, because it is for drilling a new well' }],
                 [{ fa: 'مبلغ برآوردی خالی', en: 'Blank estimated value' }, { fa: 'برآورد از سابقه خرید؛ بدون آن مسیر تأیید و کنترل AFE ممکن نیست', en: 'Estimate from purchase history; without it neither the approval route nor the AFE check can work' }],
                 [{ fa: 'بدون پیوست', en: 'No attachments' }, { fa: 'برگه مشخصات و الزام گواهی مواد', en: 'Datasheet and material certificate requirement' }],
               ],
             },
           ],
           answer: {
-            fa: 'شش مشکل: شرح، تاریخ نیاز، محل تحویل، موضوع هزینه (باید AFE-AR09 باشد)، مبلغ برآوردی و پیوست‌ها؛ مقدار تنها فیلد درست است.',
-            en: 'Six problems: description, need date, delivery location, cost object (should be AFE-AR09), estimated value and attachments; quantity is the only correct field.',
+            fa: 'شش مشکل: شرح، تاریخ نیاز، محل تحویل، موضوع هزینه (باید AFE-2024-022 باشد)، مبلغ برآوردی و پیوست‌ها؛ مقدار تنها فیلد درست است.',
+            en: 'Six problems: description, need date, delivery location, cost object (should be AFE-2024-022), estimated value and attachments; quantity is the only correct field.',
           },
         },
         {
@@ -754,8 +754,8 @@ export const lesson: Lesson = {
           title: { fa: 'موضوع هزینه اشتباه و سند اصلاحی', en: 'A wrong cost object and the correcting entry' },
           difficulty: 'hard',
           problem: {
-            fa: 'درخواست 120 سنترالایزر (30,000) اشتباهی با موضوع هزینه CC-310 ثبت شد و GRN هزینه تعمیر و نگهداری را بدهکار کرد. در بررسی ماهانه AFE، کنترل‌کننده هزینه متوجه می‌شود. (الف) سند اصلاحی را بنویسید. (ب) سهم هر شریک از این هزینه چقدر است؟ (ج) اگر اصلاح نمی‌شد، چه اثری بر گزارش AFE و بازیافت هزینه داشت؟ (د) چه کنترلی جلوی تکرار را می‌گیرد؟',
-            en: 'A PR for 120 centralisers (30,000) was raised against CC-310 by mistake, and the GRN debited repairs and maintenance expense. The cost controller spots it in the monthly AFE review. (a) Write the correcting entry. (b) What is each partner’s share of this cost? (c) Had it not been corrected, how would it affect the AFE report and cost recovery? (d) What control would prevent a repeat?',
+            fa: 'درخواست 120 سنترالایزر (30,000) اشتباهی با موضوع هزینه CC-ARY-CMP ثبت شد و GRN هزینه تعمیر و نگهداری را بدهکار کرد. در بررسی ماهانه AFE، کنترل‌کننده هزینه متوجه می‌شود. (الف) سند اصلاحی را بنویسید. (ب) سهم هر شریک از این هزینه چقدر است؟ (ج) اگر اصلاح نمی‌شد، چه اثری بر گزارش AFE و بازیافت هزینه داشت؟ (د) چه کنترلی جلوی تکرار را می‌گیرد؟',
+            en: 'A PR for 120 centralisers (30,000) was raised against CC-ARY-CMP by mistake, and the GRN debited repairs and maintenance expense. The cost controller spots it in the monthly AFE review. (a) Write the correcting entry. (b) What is each partner’s share of this cost? (c) Had it not been corrected, how would it affect the AFE report and cost recovery? (d) What control would prevent a repeat?',
           },
           hint: {
             fa: 'سند اصلاحی هزینه را از جای اشتباه برمی‌دارد و به جای درست می‌برد؛ GR/IR و حساب‌های پرداختنی تغییری نمی‌کنند.',
@@ -771,8 +771,8 @@ export const lesson: Lesson = {
                     { account: ac.repairs, credit: 30000 },
                   ],
                   memo: {
-                    fa: 'انتقال هزینه سنترالایزرها از مرکز هزینه CC-310 به AFE-AR09.',
-                    en: 'Reclassify the centraliser cost from cost centre CC-310 to AFE-AR09.',
+                    fa: 'انتقال هزینه سنترالایزرها از مرکز هزینه CC-ARY-CMP به AFE-2024-022.',
+                    en: 'Reclassify the centraliser cost from cost centre CC-ARY-CMP to AFE-2024-022.',
                   },
                 },
               ],
@@ -799,8 +799,8 @@ export const lesson: Lesson = {
                 {
                   title: { fa: 'اثر اصلاح‌نشدن', en: 'Effect if not corrected' },
                   text: {
-                    fa: 'AFE-AR09 به اندازه 30,000 کمتر از واقع خرج‌شده نشان داده می‌شد، بهای چاه کم و هزینه عملیاتی زیاد گزارش می‌شد، و هزینه در دسته عملیاتی بازیافت قرار می‌گرفت نه سرمایه‌ای؛ شرکا هم ممکن بود در حسابرسی آن را زیر سؤال ببرند.',
-                    en: 'AFE-AR09 would look 30,000 under-spent, the well cost would be understated and operating expense overstated, and the cost would sit in the operating rather than capital recovery category; partners might also challenge it at audit.',
+                    fa: 'AFE-2024-022 به اندازه 30,000 کمتر از واقع خرج‌شده نشان داده می‌شد، بهای چاه کم و هزینه عملیاتی زیاد گزارش می‌شد، و هزینه در دسته عملیاتی بازیافت قرار می‌گرفت نه سرمایه‌ای؛ شرکا هم ممکن بود در حسابرسی آن را زیر سؤال ببرند.',
+                    en: 'AFE-2024-022 would look 30,000 under-spent, the well cost would be understated and operating expense overstated, and the cost would sit in the operating rather than capital recovery category; partners might also challenge it at audit.',
                   },
                 },
                 {
@@ -1028,8 +1028,8 @@ export const lesson: Lesson = {
     },
     {
       q: {
-        fa: 'سفارش 120 سنترالایزر به قیمت 250 با تخصیص AFE-AR09 رسیده و پذیرفته شده است. ERP چه ثبتی می‌سازد؟',
-        en: 'An order for 120 centralisers at 250, assigned to AFE-AR09, is received and accepted. What entry does the ERP create?',
+        fa: 'سفارش 120 سنترالایزر به قیمت 250 با تخصیص AFE-2024-022 رسیده و پذیرفته شده است. ERP چه ثبتی می‌سازد؟',
+        en: 'An order for 120 centralisers at 250, assigned to AFE-2024-022, is received and accepted. What entry does the ERP create?',
       },
       options: [
         { fa: 'بدهکار موجودی 30,000 / بستانکار GR/IR 30,000', en: 'Dr Inventory 30,000 / Cr GR/IR 30,000' },

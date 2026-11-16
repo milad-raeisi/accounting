@@ -7,7 +7,7 @@ const ac = {
   memo: { fa: 'حساب انتظامی: ضمانت‌نامه‌های دریافتی', en: 'Memorandum: guarantees received' },
   memoContra: { fa: 'طرف حساب انتظامی: ضمانت‌نامه‌های دریافتی', en: 'Memorandum contra: guarantees received' },
   forfeited: { fa: 'سایر درآمدها: سپرده‌های ضبط‌شده', en: 'Other income: forfeited bid deposits' },
-  repairs: { fa: 'هزینه تعمیر و نگهداری (مرکز هزینه CC-310)', en: 'Repairs and maintenance expense (cost centre CC-310)' },
+  repairs: { fa: 'هزینه تعمیر و نگهداری (مرکز هزینه CC-ARY-CMP)', en: 'Repairs and maintenance expense (cost centre CC-ARY-CMP)' },
   grir: { fa: 'حساب واسط رسید کالا و فاکتور (GR/IR)', en: 'GR/IR clearing' },
   ap: { fa: 'حساب‌های پرداختنی', en: 'Accounts payable' },
 }
@@ -578,8 +578,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'پس از این ثبت‌ها، حساب سپرده‌های دریافتی صفر است و در حساب‌های انتظامی فقط ضمانت‌نامه انجام تعهدات الف به مبلغ 200,000 باقی مانده است. قرارداد 2,000,000 به‌صورت تعهد در برابر بودجه مرکز هزینه CC-310 ثبت می‌شود. نخستین ثبت واقعی در دفتر کل با پذیرش **برگه ثبت خدمات (SES)** ماه اول می‌آید. ثبت SES به‌تنهایی سندی نمی‌سازد؛ پذیرش آن توسط مسئول قرارداد (غیر از ثبت‌کننده) ثبت مالی را ایجاد می‌کند. جزئیات در درس «رسید کالا (GRN) و برگه ثبت خدمات (SES)» آمده است. فرض کنید خدمات پذیرفته‌شده ماه اول طبق نرخ‌های قرارداد 54,000 باشد:',
-            en: 'After these entries, bid deposits are back to zero and only A’s 200,000 performance guarantee remains in the memorandum accounts. The 2,000,000 contract is recorded as a commitment against the CC-310 budget. The first real ledger entry comes with the acceptance of the first month’s **service entry sheet (SES)**. Entering an SES posts nothing by itself; its acceptance by the contract holder (not the person who entered it) creates the entry. The lesson on the goods received note (GRN) and service entry sheet (SES) covers this in detail. Suppose the services accepted in month one come to 54,000 at the contract rates:',
+            fa: 'پس از این ثبت‌ها، حساب سپرده‌های دریافتی صفر است و در حساب‌های انتظامی فقط ضمانت‌نامه انجام تعهدات الف به مبلغ 200,000 باقی مانده است. قرارداد 2,000,000 به‌صورت تعهد در برابر بودجه مرکز هزینه CC-ARY-CMP ثبت می‌شود. نخستین ثبت واقعی در دفتر کل با پذیرش **برگه ثبت خدمات (SES)** ماه اول می‌آید. ثبت SES به‌تنهایی سندی نمی‌سازد؛ پذیرش آن توسط مسئول قرارداد (غیر از ثبت‌کننده) ثبت مالی را ایجاد می‌کند. جزئیات در درس «رسید کالا (GRN) و برگه ثبت خدمات (SES)» آمده است. فرض کنید خدمات پذیرفته‌شده ماه اول طبق نرخ‌های قرارداد 54,000 باشد:',
+            en: 'After these entries, bid deposits are back to zero and only A’s 200,000 performance guarantee remains in the memorandum accounts. The 2,000,000 contract is recorded as a commitment against the CC-ARY-CMP budget. The first real ledger entry comes with the acceptance of the first month’s **service entry sheet (SES)**. Entering an SES posts nothing by itself; its acceptance by the contract holder (not the person who entered it) creates the entry. The lesson on the goods received note (GRN) and service entry sheet (SES) covers this in detail. Suppose the services accepted in month one come to 54,000 at the contract rates:',
           },
         },
         {

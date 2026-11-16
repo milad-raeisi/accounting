@@ -1,6 +1,6 @@
 import type { Lesson } from '../../types'
 
-/* Pars Arya Oil & Gas: accounts the ERP posts to in this lesson. */
+/* Masar Petroleum: accounts the ERP posts to in this lesson. */
 const ac = {
   spares: { fa: 'موجودی قطعات یدکی', en: 'Inventory: spare parts' },
   consumables: { fa: 'موجودی اقلام مصرفی', en: 'Inventory: consumables' },
@@ -65,8 +65,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'در این دوره با **شرکت نفت و گاز پارس‌آریا** همراه می‌شویم: یک شرکت بالادستی که میدان خشکی **آریا** را با چاه‌های AR-01 تا AR-12 و یک ایستگاه تقویت فشار گاز، از طرف یک مشارکت (Joint venture) با چند شریک، بهره‌برداری می‌کند. پارس‌آریا یک **انبار مرکزی** و یک **انبار میدان** دارد.',
-            en: 'Throughout this course we follow **Pars Arya Oil & Gas**, an upstream company that operates the onshore **Arya field** (wells AR-01 to AR-12 and a gas compressor station) on behalf of a joint venture with several partners. Pars Arya runs a **Central Warehouse** and a **Field Warehouse**.',
+            fa: 'در این دوره با **شرکت مسار پترولیوم** همراه می‌شویم: یک شرکت بالادستی که میدان خشکی **آریا** را با چاه‌های AR-01 تا AR-12 و یک ایستگاه تقویت فشار گاز، از طرف یک مشارکت (Joint venture) با چند شریک، بهره‌برداری می‌کند. مسار پترولیوم یک **انبار مرکزی** و یک **انبار میدان** دارد.',
+            en: 'Throughout this course we follow **Masar Petroleum**, an upstream company that operates the onshore **Arya field** (wells AR-01 to AR-12 and a gas compressor station) on behalf of a joint venture with several partners. Masar Petroleum runs a **Central Warehouse** and a **Field Warehouse**.',
           },
         },
         {
@@ -135,13 +135,13 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: { fa: 'سطوح شبکه انبار در پارس‌آریا', en: 'The store levels at Pars Arya' },
+          caption: { fa: 'سطوح شبکه انبار در مسار پترولیوم', en: 'The store levels at Masar Petroleum' },
           head: [
             { fa: 'نوع انبار', en: 'Store type' },
             { fa: 'محل', en: 'Location' },
             { fa: 'موجودی معمول', en: 'Typical stock' },
             { fa: 'مصرف‌کننده اصلی', en: 'Main users' },
-            { fa: 'در پارس‌آریا', en: 'At Pars Arya' },
+            { fa: 'در مسار پترولیوم', en: 'At Masar Petroleum' },
           ],
           rows: [
             [
@@ -152,7 +152,7 @@ export const lesson: Lesson = {
                 en: 'Slow-moving and capital spares, the pipe yard, bulk chemicals',
               },
               { fa: 'همه سایت‌ها؛ از همه تأمین‌کنندگان کالا می‌گیرد', en: 'All sites; receives from all vendors' },
-              { fa: 'انبار مرکزی (سایت PA10)', en: 'Central Warehouse (site PA10)' },
+              { fa: 'انبار مرکزی (سایت MP10)', en: 'Central Warehouse (site MP10)' },
             ],
             [
               { fa: 'انبار میدان', en: 'Field warehouse' },
@@ -162,7 +162,7 @@ export const lesson: Lesson = {
                 en: 'Fast-moving spares, consumables, day-to-day chemicals, critical spares for the compressor station',
               },
               { fa: 'تیم‌های تعمیرات و بهره‌برداری', en: 'Maintenance and production crews' },
-              { fa: 'انبار میدان (سایت PA20)', en: 'Field Warehouse (site PA20)' },
+              { fa: 'انبار میدان (سایت MP20)', en: 'Field Warehouse (site MP20)' },
             ],
             [
               { fa: 'انبار سر دکل (محل چاه)', en: 'Rig-site store' },
@@ -360,8 +360,8 @@ export const lesson: Lesson = {
         {
           type: 'table',
           caption: {
-            fa: 'ترکیب موجودی پارس‌آریا در پایان سال (انبار مرکزی و انبار میدان)',
-            en: 'Pars Arya’s year-end inventory mix (Central and Field Warehouses)',
+            fa: 'ترکیب موجودی مسار پترولیوم در پایان سال (انبار مرکزی و انبار میدان)',
+            en: 'Masar Petroleum’s year-end inventory mix (Central and Field Warehouses)',
           },
           head: [
             { fa: 'گروه', en: 'Group' },
@@ -435,7 +435,7 @@ export const lesson: Lesson = {
         {
           type: 'callout',
           tone: 'example',
-          title: { fa: 'انبار میدان پارس‌آریا', en: 'Pars Arya’s Field Warehouse' },
+          title: { fa: 'انبار میدان مسار پترولیوم', en: 'Masar Petroleum’s Field Warehouse' },
           text: {
             fa: 'میانگین ارزش موجودی انبار میدان 4,800,000 است. با نرخ 20٪، هزینه نگهداری سالانه آن 4,800,000 × 20٪ = 960,000 می‌شود. بررسی نشان داد 600,000 از این موجودی 12 ماه هیچ گردشی نداشته است. اگر این اقلام به میدان دیگری منتقل یا واگذار شوند، سالانه 600,000 × 20٪ = 120,000 صرفه‌جویی می‌شود.',
             en: 'The Field Warehouse holds an average inventory of 4,800,000. At 20%, its annual carrying cost is 4,800,000 × 20% = 960,000. A review found that 600,000 of that stock had not moved for 12 months. Redeploying or disposing of those items would save 600,000 × 20% = 120,000 a year.',
@@ -756,8 +756,8 @@ export const lesson: Lesson = {
           title: { fa: 'کالا را طبقه‌بندی کنید', en: 'Classify the material' },
           difficulty: 'easy',
           problem: {
-            fa: 'شش قلم زیر به انبار مرکزی پارس‌آریا رسیده است. گروه هر کالا را تعیین کنید و بگویید در کدام انبار باید نگهداری شود.',
-            en: 'The six items below have arrived at Pars Arya’s Central Warehouse. Name each item’s material group and say which store should hold it.',
+            fa: 'شش قلم زیر به انبار مرکزی مسار پترولیوم رسیده است. گروه هر کالا را تعیین کنید و بگویید در کدام انبار باید نگهداری شود.',
+            en: 'The six items below have arrived at Masar Petroleum’s Central Warehouse. Name each item’s material group and say which store should hold it.',
           },
           given: {
             head: [
@@ -984,8 +984,8 @@ export const lesson: Lesson = {
           title: { fa: 'کارنامه انبار مرکزی', en: 'The Central Warehouse scorecard' },
           difficulty: 'hard',
           problem: {
-            fa: 'داده‌های سال گذشته انبار مرکزی پارس‌آریا در جدول آمده است. سطح خدمت، دقت موجودی، گردش موجودی، روزهای پوشش موجودی و سهم موجودی راکد را محاسبه کنید و هزینه نگهداری سالانه اقلام راکد را با نرخ فرضی 20٪ به دست آورید. سپس نتیجه را در یکی دو جمله تفسیر کنید.',
-            en: 'The table gives last year’s data for Pars Arya’s Central Warehouse. Calculate the fill rate, inventory accuracy, inventory turnover, days of supply and slow-moving share, and the annual carrying cost of the slow-moving stock at the assumed 20% rate. Then interpret the result in a sentence or two.',
+            fa: 'داده‌های سال گذشته انبار مرکزی مسار پترولیوم در جدول آمده است. سطح خدمت، دقت موجودی، گردش موجودی، روزهای پوشش موجودی و سهم موجودی راکد را محاسبه کنید و هزینه نگهداری سالانه اقلام راکد را با نرخ فرضی 20٪ به دست آورید. سپس نتیجه را در یکی دو جمله تفسیر کنید.',
+            en: 'The table gives last year’s data for Masar Petroleum’s Central Warehouse. Calculate the fill rate, inventory accuracy, inventory turnover, days of supply and slow-moving share, and the annual carrying cost of the slow-moving stock at the assumed 20% rate. Then interpret the result in a sentence or two.',
           },
           given: {
             head: [
@@ -1072,8 +1072,8 @@ export const lesson: Lesson = {
               en: 'In an upstream company the warehouse receives, stores, preserves, issues and accounts for material so that operations never wait for the right part.',
             },
             {
-              fa: 'پارس‌آریا شبکه‌ای از انبار مرکزی، انبار میدان و انبار سر دکل دارد و کالا را با اسناد انتقال میان آنها جابه‌جا می‌کند.',
-              en: 'Pars Arya runs a network of Central Warehouse, Field Warehouse and rig-site store, and moves stock between them with transfer documents.',
+              fa: 'مسار پترولیوم شبکه‌ای از انبار مرکزی، انبار میدان و انبار سر دکل دارد و کالا را با اسناد انتقال میان آنها جابه‌جا می‌کند.',
+              en: 'Masar Petroleum runs a network of Central Warehouse, Field Warehouse and rig-site store, and moves stock between them with transfer documents.',
             },
             {
               fa: 'قطعات یدکی، OCTG، مواد شیمیایی، اقلام مصرفی و قطعات یدکی سرمایه‌ای هر کدام نگهداری، کنترل و حسابداری خاص خود را دارند.',

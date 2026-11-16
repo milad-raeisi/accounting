@@ -15,8 +15,6 @@ const ac = {
   apBroker: { fa: 'حساب‌های پرداختنی: کارگزاری گمرکی بندر', en: 'Accounts payable: Bandar Customs Brokerage' },
 }
 
-const blank = { fa: '', en: '' }
-
 export const lesson: Lesson = {
   slug: 'expediting-logistics-receipt',
   number: 6,
@@ -778,8 +776,8 @@ export const lesson: Lesson = {
           title: { fa: 'تمرین 4: تسویه هزینه‌های تحویل با اختلاف', en: 'Exercise 4: Clearing delivery costs with a difference' },
           difficulty: 'hard',
           problem: {
-            fa: 'GRN هشت شیر کنترل وارداتی با هزینه‌های برنامه‌ریزی‌شده ثبت شده است: حمل و بیمه 4,200 و گمرک و ترخیص 4,800 (همان ثبت‌های بخش ERP؛ هر شیر 6,125). اکنون فاکتورها می‌رسند: ترابری جنوب 4,500 (300 بیشتر از برنامه، به دلیل افزایش کرایه دریایی که پذیرفته شده است) و کارگزاری گمرکی بندر 4,800. تا این زمان 2 شیر به دستور کار `WO-45188` کمپرسور K-201 حواله شده و 6 شیر هنوز در انبار مرکزی است. کالا با میانگین موزون متحرک ارزش‌گذاری می‌شود. (الف) ثبت دو فاکتور را بنویسید (مالیات بر ارزش افزوده را نادیده بگیرید). (ب) ارزش 6 شیر باقی‌مانده پس از ثبت چقدر است؟ (ج) مانده حساب‌های واسط چقدر است؟',
-            en: 'The GRN for eight imported control valves was posted with planned delivery costs: freight and insurance 4,200 and customs and clearance 4,800 (the entries in the ERP section; 6,125 per valve). Now the invoices arrive: Jonoub Transport 4,500 (300 above plan because of an accepted sea-freight increase) and Bandar Customs Brokerage 4,800. By now 2 valves have been issued to work order `WO-45188` for compressor K-201 and 6 are still in the Central Warehouse. Stock is valued at moving average. (a) Write the entries for both invoices (ignore VAT). (b) What is the value of the 6 remaining valves after posting? (c) What are the clearing-account balances?',
+            fa: 'GRN هشت شیر کنترل وارداتی با هزینه‌های برنامه‌ریزی‌شده ثبت شده است: حمل و بیمه 4,200 و گمرک و ترخیص 4,800 (همان ثبت‌های بخش ERP؛ هر شیر 6,125). اکنون فاکتورها می‌رسند: ترابری جنوب 4,500 (300 بیشتر از برنامه، به دلیل افزایش کرایه دریایی که پذیرفته شده است) و کارگزاری گمرکی بندر 4,800. تا این زمان 2 شیر به دستور کار `WO-45188` کمپرسور K-202 حواله شده و 6 شیر هنوز در انبار مرکزی است. کالا با میانگین موزون متحرک ارزش‌گذاری می‌شود. (الف) ثبت دو فاکتور را بنویسید (مالیات بر ارزش افزوده را نادیده بگیرید). (ب) ارزش 6 شیر باقی‌مانده پس از ثبت چقدر است؟ (ج) مانده حساب‌های واسط چقدر است؟',
+            en: 'The GRN for eight imported control valves was posted with planned delivery costs: freight and insurance 4,200 and customs and clearance 4,800 (the entries in the ERP section; 6,125 per valve). Now the invoices arrive: Jonoub Transport 4,500 (300 above plan because of an accepted sea-freight increase) and Bandar Customs Brokerage 4,800. By now 2 valves have been issued to work order `WO-45188` for compressor K-202 and 6 are still in the Central Warehouse. Stock is valued at moving average. (a) Write the entries for both invoices (ignore VAT). (b) What is the value of the 6 remaining valves after posting? (c) What are the clearing-account balances?',
           },
           hint: {
             fa: 'اختلاف را به نسبت کالای موجود و مصرف‌شده تقسیم کنید.',
