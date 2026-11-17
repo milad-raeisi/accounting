@@ -5,7 +5,7 @@ import { AnimatedNumber } from '@/components/ui/AnimatedNumber'
 import { novaAccountMap, novaTransactions } from '@/content/nova'
 import { useI18n } from '@/i18n/I18nProvider'
 import { formatSigned } from '@/lib/format'
-import { gsap, useGSAP } from '@/lib/gsap'
+import { gsap, prefersReducedMotion, useGSAP } from '@/lib/gsap'
 import { cn } from '@/lib/utils'
 import { DiagramFrame, useInViewTimeline, type DiagramProps } from './DiagramFrame'
 
@@ -29,7 +29,8 @@ function effectOf(txId: string): Effect {
   return e
 }
 
-const MAX = 75000
+/** Bar scale. The running totals peak at 76,000 after t6, so leave headroom above that. */
+const MAX = 80000
 
 export default function EquationBars({ caption }: DiagramProps) {
   const { tr, t, lang } = useI18n()
@@ -69,7 +70,7 @@ export default function EquationBars({ caption }: DiagramProps) {
         .from('[data-anim="ctrl"]', { y: 12, opacity: 0, duration: 0.5 }, '-=0.2')
         .add(() => {
           setStep(0)
-          setPlaying(true)
+          setPlaying(!prefersReducedMotion())
         })
     },
     [lang],
@@ -79,9 +80,10 @@ export default function EquationBars({ caption }: DiagramProps) {
   useGSAP(
     () => {
       const h = (v: number) => `${Math.max(0, (v / MAX) * 100)}%`
-      gsap.to('[data-bar="assets"]', { height: h(totals.assets), duration: 1, ease: 'elastic.out(1, 0.65)' })
-      gsap.to('[data-bar="liabilities"]', { height: h(totals.liabilities), duration: 1, ease: 'elastic.out(1, 0.65)', delay: 0.15 })
-      gsap.to('[data-bar="equity"]', { height: h(totals.equity), duration: 1, ease: 'elastic.out(1, 0.65)', delay: 0.15 })
+      const d = prefersReducedMotion() ? 0 : 1
+      gsap.to('[data-bar="assets"]', { height: h(totals.assets), duration: d, ease: 'elastic.out(1, 0.65)' })
+      gsap.to('[data-bar="liabilities"]', { height: h(totals.liabilities), duration: d, ease: 'elastic.out(1, 0.65)', delay: 0.15 * d })
+      gsap.to('[data-bar="equity"]', { height: h(totals.equity), duration: d, ease: 'elastic.out(1, 0.65)', delay: 0.15 * d })
       if (step > 0) {
         gsap.fromTo('[data-anim="eq"]', { scale: 1.35 }, { scale: 1, duration: 0.6, ease: 'back.out(3)', delay: 0.35 })
         gsap.from('[data-anim="chip"]', { y: 10, opacity: 0, stagger: 0.08, duration: 0.45 })

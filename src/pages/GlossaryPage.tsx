@@ -87,7 +87,9 @@ function TermCard({ term, onRelated, highlight }: { term: GlossaryTerm; onRelate
 
 function Flashcards({ terms }: { terms: GlossaryTerm[] }) {
   const { t, tr, num, isFa } = useI18n()
-  const [order, setOrder] = useState(() => terms.map((_, i) => i))
+  // card order by term id: the list is re-sorted when the language changes, ids keep the same card in place
+  const [order, setOrder] = useState(() => terms.map((g) => g.id))
+  const byId = useMemo(() => new Map(terms.map((g) => [g.id, g])), [terms])
   const [pos, setPos] = useState(0)
   const [flipped, setFlipped] = useState(false)
   const [known, setKnown] = useState<Set<string>>(new Set())
@@ -102,7 +104,8 @@ function Flashcards({ terms }: { terms: GlossaryTerm[] }) {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if ((e.target as HTMLElement)?.tagName === 'INPUT') return
+      // leave typing and Radix tab/arrow navigation alone
+      if ((e.target as HTMLElement | null)?.closest?.('input, textarea, select, [role="tab"], [contenteditable="true"]')) return
       if (e.key === ' ') {
         e.preventDefault()
         setFlipped((f) => !f)
@@ -115,7 +118,7 @@ function Flashcards({ terms }: { terms: GlossaryTerm[] }) {
   }, [go, isFa])
 
   if (!terms.length) return <p className="py-16 text-center text-muted-foreground">{t('glossary.none')}</p>
-  const term = terms[order[pos] ?? 0]
+  const term = byId.get(order[pos]) ?? terms[0]
   const other = isFa ? term.term.en : term.term.fa
 
   return (
@@ -158,16 +161,19 @@ function Flashcards({ terms }: { terms: GlossaryTerm[] }) {
                   <RotateCw className="size-3.5" /> {t('glossary.flip')}
                 </div>
               </div>
-              <div className="absolute inset-0 flex flex-col justify-center overflow-y-auto rounded-lg bg-card p-7 [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                <div className="mb-2 text-sm font-bold text-primary">{tr(term.term)}</div>
-                <p className="leading-8">
-                  <Rich text={term.def} />
-                </p>
-                {term.formula && (
-                  <div className="mt-4 rounded-xl border bg-muted/50 px-4 py-2.5 text-sm font-medium" dir="auto">
-                    <Rich text={term.formula} />
-                  </div>
-                )}
+              {/* my-auto centres short definitions; unlike justify-center it keeps the top of long ones scrollable */}
+              <div className="absolute inset-0 flex flex-col overflow-y-auto rounded-lg bg-card p-7 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                <div className="my-auto">
+                  <div className="mb-2 text-sm font-bold text-primary">{tr(term.term)}</div>
+                  <p className="leading-8">
+                    <Rich text={term.def} />
+                  </p>
+                  {term.formula && (
+                    <div className="mt-4 rounded-xl border bg-muted/50 px-4 py-2.5 text-sm font-medium" dir="auto">
+                      <Rich text={term.formula} />
+                    </div>
+                  )}
+                </div>
               </div>
             </motion.div>
           </motion.button>
@@ -205,7 +211,15 @@ function Flashcards({ terms }: { terms: GlossaryTerm[] }) {
         <button
           type="button"
           onClick={() => {
-            setOrder((o) => [...o].sort(() => Math.random() - 0.5))
+            // Fisher-Yates: sort() with a random comparator is biased
+            setOrder((o) => {
+              const a = [...o]
+              for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1))
+                ;[a[i], a[j]] = [a[j], a[i]]
+              }
+              return a
+            })
             setPos(0)
             setFlipped(false)
           }}

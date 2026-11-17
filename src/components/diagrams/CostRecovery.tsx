@@ -2,21 +2,22 @@ import { useMemo, useRef, useState } from 'react'
 
 import type { L } from '@/content/types'
 import { useI18n } from '@/i18n/I18nProvider'
-import { gsap, useGSAP } from '@/lib/gsap'
+import { gsap, prefersReducedMotion, useGSAP } from '@/lib/gsap'
 import { cn } from '@/lib/utils'
 import { DiagramFrame, type DiagramProps } from './DiagramFrame'
 
 type Inputs = { gross: number; royalty: number; ceiling: number; costs: number; carried: number; split: number }
 
+/** Whole units, rounded once here and derived from each other, so every line shown in the table foots exactly. */
 function compute(i: Inputs) {
-  const royalty = (i.gross * i.royalty) / 100
+  const royalty = Math.round((i.gross * i.royalty) / 100)
   const net = i.gross - royalty
-  const cap = (net * i.ceiling) / 100
+  const cap = Math.round((net * i.ceiling) / 100)
   const available = i.costs + i.carried
   const costOil = Math.min(cap, available)
   const carryForward = available - costOil
   const profitOil = net - costOil
-  const contractorProfit = (profitOil * i.split) / 100
+  const contractorProfit = Math.round((profitOil * i.split) / 100)
   const governmentProfit = profitOil - contractorProfit
   return { royalty, net, cap, available, costOil, carryForward, profitOil, contractorProfit, governmentProfit }
 }
@@ -45,7 +46,8 @@ export default function CostRecovery({ caption }: DiagramProps) {
 
   useGSAP(
     () => {
-      parts.forEach((p) => gsap.to(`[data-cr="${p.key}"]`, { width: `${(p.value / inp.gross) * 100}%`, duration: 0.6, ease: 'power2.out' }))
+      const d = prefersReducedMotion() ? 0 : 0.6
+      parts.forEach((p) => gsap.to(`[data-cr="${p.key}"]`, { width: `${(p.value / inp.gross) * 100}%`, duration: d, ease: 'power2.out' }))
     },
     { scope, dependencies: [r, lang] },
   )
@@ -108,7 +110,7 @@ export default function CostRecovery({ caption }: DiagramProps) {
               <div key={p.key} className="flex items-center gap-2">
                 <span className={cn('size-2.5 rounded-full', p.color)} />
                 <span className="text-muted-foreground">{tr(p.label)}</span>
-                <span className="ms-auto tabular font-semibold text-foreground">{money(Math.round(p.value))}</span>
+                <span className="ms-auto tabular font-semibold text-foreground">{money(p.value)}</span>
               </div>
             ))}
           </div>
@@ -119,7 +121,7 @@ export default function CostRecovery({ caption }: DiagramProps) {
                 {rows.map(([label, value, strong], i) => (
                   <tr key={i} className={cn('border-b last:border-b-0', strong && 'bg-muted/40 font-semibold')}>
                     <td className="px-3 py-2 text-body">{tr(label)}</td>
-                    <td className="px-3 py-2 text-end tabular text-foreground">{money(Math.round(value))}</td>
+                    <td className="px-3 py-2 text-end tabular text-foreground">{money(value)}</td>
                   </tr>
                 ))}
               </tbody>

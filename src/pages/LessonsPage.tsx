@@ -12,6 +12,7 @@ import { useI18n } from '@/i18n/I18nProvider'
 import { useCourseStats } from '@/lib/courseStats'
 import { useProgress } from '@/lib/progress'
 import { cn } from '@/lib/utils'
+import NotFoundPage from './NotFoundPage'
 
 type Filter = 'all' | Level
 
@@ -30,10 +31,14 @@ export default function LessonsPage() {
   const questions = lessons.reduce((s, l) => s + l.quizCount, 0)
   const levels = (['beginner', 'intermediate', 'advanced'] as const).filter((lv) => lessons.some((l) => l.level === lv))
 
+  // an unknown course id (typo, old link) used to show the accounting course silently
+  if (!isCourseId(courseParam)) return <NotFoundPage />
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:py-16">
+      {/* min-w-0 on both columns: otherwise the truncated "continue" link widens the column past a phone screen */}
       <div className="grid gap-8 lg:grid-cols-[1fr_380px] lg:items-start">
-        <div>
+        <div className="min-w-0">
           <div className="mb-4 flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
             <Link to="/courses" className="hover:text-foreground">
               {t('nav.courses')}
@@ -54,14 +59,14 @@ export default function LessonsPage() {
                 <Clock className="size-3.5" /> {num(Math.max(1, Math.round(minutes / 60)))} {t('course.hours')}
               </span>
               <span className="inline-flex items-center gap-1.5 rounded-full bg-card px-3 py-1.5">
-                <GraduationCap className="size-3.5" /> {num(questions)} {t('quiz.question')}
+                <GraduationCap className="size-3.5" /> {num(questions)} {t('quiz.questions')}
               </span>
             </div>
           )}
         </div>
 
         {lessons.length > 0 && (
-          <aside className="rounded-lg bg-card p-6">
+          <aside className="min-w-0 rounded-lg bg-card p-6">
             <div className="flex items-center justify-between text-sm">
               <span className="font-semibold">{t('progress.course')}</span>
               <span className="tabular font-semibold text-primary">{fmtPct(stats.pct, 0)}</span>
@@ -194,7 +199,7 @@ export default function LessonsPage() {
             <p className="mt-2 flex-1 text-sm leading-7 text-muted-foreground">{t('progress.examLead')}</p>
             <div className="mt-5 flex items-center justify-between border-t pt-4 text-xs text-muted-foreground">
               <span>
-                {num(questions)} {t('quiz.question')}
+                {num(questions)} {t('quiz.questions')}
               </span>
               {stats.exam ? (
                 <span className="inline-flex items-center gap-1.5 font-medium text-foreground">

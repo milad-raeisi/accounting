@@ -25,7 +25,7 @@ export function SiteFooter() {
           </a>
         </div>
 
-        <nav aria-label="Footer" className="grid grid-cols-2 content-start gap-x-6 gap-y-2.5 text-sm">
+        <nav aria-label={t('nav.footer')} className="grid grid-cols-2 content-start gap-x-6 gap-y-2.5 text-sm">
           {NAV.map((n) => (
             <Link key={n.to} to={n.to} className="text-muted-foreground transition-colors hover:text-foreground">
               {t(n.key)}

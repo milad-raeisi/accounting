@@ -93,7 +93,7 @@ function JournalRows({ entry, last }: { entry: JournalEntry; last: boolean }) {
 
 /** Transaction analysis on the accounting equation with running totals. */
 export function AnalysisTable({ title, rows }: { title?: L; rows: AnalysisRow[] }) {
-  const { t, tr, money, lang } = useI18n()
+  const { t, tr, money, num, lang } = useI18n()
   const a = rows.reduce((s, r) => s + (r.assets ?? 0), 0)
   const l = rows.reduce((s, r) => s + (r.liabilities ?? 0), 0)
   const e = rows.reduce((s, r) => s + (r.equity ?? 0), 0)
@@ -121,7 +121,7 @@ export function AnalysisTable({ title, rows }: { title?: L; rows: AnalysisRow[] 
             return (
               <tr key={i} className="border-b last:border-b-0 even:bg-muted/25">
                 <td className="px-3 py-2">
-                  <span className="me-2 tabular text-xs text-muted-foreground">{i + 1}.</span>
+                  <span className="me-2 tabular text-xs text-muted-foreground">{num(i + 1)}.</span>
                   <Rich text={r.tx} />
                 </td>
                 <td className="px-3 py-2 text-end">{cell(r.assets, 'text-asset')}</td>

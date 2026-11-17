@@ -182,6 +182,12 @@ export function balanceSheet(balances: Map<string, AccountBalance>) {
 }
 
 /** Build the closing entries for a set of balances (Income Summary method). */
+/** Moves `amount` to `side`; a negative amount (an abnormal balance) is posted to the other side instead. */
+function post(account: string, side: Side, amount: number): TxLine {
+  const s: Side = amount >= 0 ? side : side === 'debit' ? 'credit' : 'debit'
+  return s === 'debit' ? { account, debit: Math.abs(amount) } : { account, credit: Math.abs(amount) }
+}
+
 export function closingEntries(
   balances: Map<string, AccountBalance>,
   ids: { incomeSummary: string; capital: string },
@@ -195,10 +201,7 @@ export function closingEntries(
       day,
       kind: 'closing',
       title: { fa: 'بستن حساب‌های درآمد', en: 'Close revenue accounts' },
-      lines: [
-        ...is.revenues.map((r) => ({ account: r.account.id, debit: r.amount })),
-        { account: ids.incomeSummary, credit: is.totalRevenue },
-      ],
+      lines: [...is.revenues.map((r) => post(r.account.id, 'debit', r.amount)), post(ids.incomeSummary, 'credit', is.totalRevenue)],
     })
   if (is.totalExpense)
     out.push({
@@ -206,10 +209,7 @@ export function closingEntries(
       day,
       kind: 'closing',
       title: { fa: 'بستن حساب‌های هزینه', en: 'Close expense accounts' },
-      lines: [
-        { account: ids.incomeSummary, debit: is.totalExpense },
-        ...is.expenses.map((r) => ({ account: r.account.id, credit: r.amount })),
-      ],
+      lines: [post(ids.incomeSummary, 'debit', is.totalExpense), ...is.expenses.map((r) => post(r.account.id, 'credit', r.amount))],
     })
   if (is.netIncome)
     out.push({
