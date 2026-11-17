@@ -194,8 +194,8 @@ export const lesson: Lesson = {
                 en: 'Defined goods with a set quantity and price, usually one-off',
               },
               {
-                fa: '150 شاخه لوله جداری برای چاه AR-07؛ 2 کارتریج آب‌بند گاز خشک برای کمپرسور K-202',
-                en: '150 casing joints for well AR-07; 2 dry gas seal cartridges for compressor K-202',
+                fa: '150 شاخه لوله جداری برای چاه AR-07؛ 2 کارتریج آب‌بند گاز خشک برای کمپرسور K-102',
+                en: '150 casing joints for well AR-07; 2 dry gas seal cartridges for compressor K-102',
               },
               { fa: 'رسید کالا (GRN)', en: 'Goods received note (GRN)' },
             ],
@@ -868,8 +868,8 @@ export const lesson: Lesson = {
               [
                 { fa: 'الف', en: 'a' },
                 {
-                  fa: '2 کارتریج آب‌بند گاز خشک برای کمپرسور K-202 که به‌عنوان قطعه یدکی حیاتی در انبار مرکزی نگهداری می‌شوند',
-                  en: '2 dry gas seal cartridges for compressor K-202, held as critical spares in the Central Warehouse',
+                  fa: '2 کارتریج آب‌بند گاز خشک برای کمپرسور K-102 که به‌عنوان قطعه یدکی حیاتی در انبار مرکزی نگهداری می‌شوند',
+                  en: '2 dry gas seal cartridges for compressor K-102, held as critical spares in the Central Warehouse',
                 },
               ],
               [
@@ -939,7 +939,7 @@ export const lesson: Lesson = {
                 [
                   { fa: 'د', en: 'd' },
                   { fa: 'فراخوان از قرارداد چارچوب', en: 'Call-off from the framework' },
-                  { fa: '`AFE-2026-014`', en: '`AFE-2026-014`' },
+                  { fa: '`AFE-2026-012`', en: '`AFE-2026-012`' },
                   {
                     fa: 'قیمت‌ها از پیش در قرارداد تعیین شده‌اند؛ هر فراخوان کد چاه خودش را دارد',
                     en: 'Prices are already fixed in the agreement; each call-off carries its own well code',
@@ -949,8 +949,8 @@ export const lesson: Lesson = {
             },
           ],
           answer: {
-            fa: 'الف: سفارش استاندارد برای انبار؛ ب: فراخوان خدمات با SES روی AFE-2025-014؛ ج: سفارش باز روی مرکز هزینه میدان؛ د: فراخوان قرارداد چارچوب روی AFE-2026-014.',
-            en: 'a: standard PO for stock; b: service call-off with SES on AFE-2025-014; c: blanket PO on the field cost centre; d: framework call-off on AFE-2026-014.',
+            fa: 'الف: سفارش استاندارد برای انبار؛ ب: فراخوان خدمات با SES روی AFE-2025-014؛ ج: سفارش باز روی مرکز هزینه میدان؛ د: فراخوان قرارداد چارچوب روی AFE-2026-012.',
+            en: 'a: standard PO for stock; b: service call-off with SES on AFE-2025-014; c: blanket PO on the field cost centre; d: framework call-off on AFE-2026-012.',
           },
         },
         {
@@ -958,8 +958,8 @@ export const lesson: Lesson = {
           title: { fa: 'تمرین 2: محاسبه خسارت تأخیر', en: 'Exercise 2: Calculating liquidated damages' },
           difficulty: 'medium',
           problem: {
-            fa: 'مسار پترولیوم برای پروژه ارتقای ایستگاه تقویت فشار (WBS `AFE-2026-021`) سفارشی دو ردیفی به تأمین‌کننده داده است. بند خسارت تأخیر: 0.5٪ ارزش ردیف دیرکرد به ازای هر هفته کامل، حداکثر 5٪ ارزش همان ردیف (فرضی). (الف) خسارت هر ردیف و جمع آن را حساب کنید. (ب) هزینه خالص قابل بازیافت این سفارش چقدر است؟',
-            en: 'For the compressor station upgrade project (WBS `AFE-2026-021`) Masar Petroleum placed a two-line PO. LD clause: 0.5% of the late line’s value per full week, capped at 5% of that line’s value (illustrative). (a) Calculate the LDs per line and in total. (b) What is the net recoverable cost of this PO?',
+            fa: 'مسار پترولیوم برای پروژه ارتقای ایستگاه تقویت فشار (WBS `AFE-2025-021`) سفارشی دو ردیفی به تأمین‌کننده داده است. بند خسارت تأخیر: 0.5٪ ارزش ردیف دیرکرد به ازای هر هفته کامل، حداکثر 5٪ ارزش همان ردیف (فرضی). (الف) خسارت هر ردیف و جمع آن را حساب کنید. (ب) هزینه خالص قابل بازیافت این سفارش چقدر است؟',
+            en: 'For the compressor station upgrade project (WBS `AFE-2025-021`) Masar Petroleum placed a two-line PO. LD clause: 0.5% of the late line’s value per full week, capped at 5% of that line’s value (illustrative). (a) Calculate the LDs per line and in total. (b) What is the net recoverable cost of this PO?',
           },
           given: {
             head: [

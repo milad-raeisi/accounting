@@ -64,8 +64,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'شرکت مسار پترولیوم اپراتور «میدان آریا» است: دوازده چاه (AR-01 تا AR-12)، یک ایستگاه تقویت فشار، یک انبار مرکزی و یک انبار میدان. تا پارسال هر واحد نرم‌افزار خودش را داشت: انبار با فایل اکسل کار می‌کرد، تدارکات سفارش‌ها را در سامانه‌ای جدا ثبت می‌کرد و حسابداری همه فاکتورها را دوباره با دست وارد می‌کرد. بستن هر ماه پانزده روز طول می‌کشید و وقتی یکی از شرکای مشارکت پرسید «حفاری چاه AR-07 تا امروز دقیقاً چقدر خرج برداشته است؟»، هیچ‌کس نتوانست زودتر از یک هفته جواب بدهد.',
-            en: 'Masar Petroleum operates the Arya field: twelve wells (AR-01 to AR-12), a compressor station, a Central Warehouse and a Field Warehouse. Until last year each department had its own software: the warehouse ran on spreadsheets, procurement kept orders in a separate system, and accounting re-keyed every invoice by hand. Closing a month took fifteen days, and when a joint venture partner asked "exactly how much has drilling well AR-07 cost so far?", nobody could answer in less than a week.',
+            fa: 'شرکت مسار پترولیوم اپراتور «میدان آریا» است: دوازده چاه تولیدی (AR-01 تا AR-12) و چاه‌های توسعه‌ای تازه‌ای که از AR-13 به بعد حفاری می‌شوند، یک ایستگاه تقویت فشار، یک انبار مرکزی و یک انبار میدان. تا پارسال هر واحد نرم‌افزار خودش را داشت: انبار با فایل اکسل کار می‌کرد، تدارکات سفارش‌ها را در سامانه‌ای جدا ثبت می‌کرد و حسابداری همه فاکتورها را دوباره با دست وارد می‌کرد. بستن هر ماه پانزده روز طول می‌کشید و وقتی یکی از شرکای مشارکت پرسید «حفاری چاه AR-13 تا امروز دقیقاً چقدر خرج برداشته است؟»، هیچ‌کس نتوانست زودتر از یک هفته جواب بدهد.',
+            en: 'Masar Petroleum operates the Arya field: twelve producing wells (AR-01 to AR-12) plus new development wells being drilled from AR-13 onwards, a compressor station, a Central Warehouse and a Field Warehouse. Until last year each department had its own software: the warehouse ran on spreadsheets, procurement kept orders in a separate system, and accounting re-keyed every invoice by hand. Closing a month took fifteen days, and when a joint venture partner asked "exactly how much has drilling well AR-13 cost so far?", nobody could answer in less than a week.',
           },
         },
         {
@@ -276,8 +276,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: '**شیء هزینه (Cost Object)** هر چیزی است که می‌خواهیم بدانیم «چقدر برایش خرج شده است». حساب دفتر کل می‌گوید هزینه **از چه نوعی** است (مثلاً مواد مصرفی)؛ شیء هزینه می‌گوید **برای چه** یا **کجا** خرج شده است (مثلاً چاه AR-07 یا ایستگاه تقویت فشار). در ERP هر سطر هزینه هم حساب دارد و هم شیء هزینه.',
-            en: 'A **cost object** is anything whose cost we want to know. The ledger account says **what kind** of cost it is (for example materials consumed); the cost object says **what for** or **where** it was spent (for example well AR-07 or the compressor station). In an ERP every cost line carries both an account and a cost object.',
+            fa: '**شیء هزینه (Cost Object)** هر چیزی است که می‌خواهیم بدانیم «چقدر برایش خرج شده است». حساب دفتر کل می‌گوید هزینه **از چه نوعی** است (مثلاً مواد مصرفی)؛ شیء هزینه می‌گوید **برای چه** یا **کجا** خرج شده است (مثلاً چاه AR-13 یا ایستگاه تقویت فشار). در ERP هر سطر هزینه هم حساب دارد و هم شیء هزینه.',
+            en: 'A **cost object** is anything whose cost we want to know. The ledger account says **what kind** of cost it is (for example materials consumed); the cost object says **what for** or **where** it was spent (for example well AR-13 or the compressor station). In an ERP every cost line carries both an account and a cost object.',
           },
         },
         {
@@ -292,7 +292,7 @@ export const lesson: Lesson = {
           rows: [
             [
               t('مرکز هزینه', 'Cost centre'),
-              t('CC-110 عملیات میدان آریا؛ CC-120 ایستگاه تقویت فشار؛ CC-210 انبار مرکزی', 'CC-110 Arya field operations; CC-120 Compressor station; CC-210 Central Warehouse'),
+              t('CC-ARY-PRD عملیات میدان آریا؛ CC-ARY-CMP ایستگاه تقویت فشار؛ CC-ARY-WHS انبار مرکزی', 'CC-ARY-PRD Arya field operations; CC-ARY-CMP Compressor station; CC-ARY-WHS Central Warehouse'),
               t('اداره این واحد هر ماه چقدر هزینه دارد؟', 'What does this unit cost to run each month?'),
               t('مواد شیمیایی، حقوق اپراتورها، سوخت', 'Chemicals, operators’ salaries, fuel'),
             ],
@@ -306,13 +306,13 @@ export const lesson: Lesson = {
               t('پروژه و عناصر WBS', 'Project and WBS elements'),
               t('P-ARYA-DEV توسعه میدان؛ عنصر WBS برای هر چاه', 'P-ARYA-DEV field development; one WBS element per well'),
               t('این پروژه سرمایه‌ای تا امروز، به تفکیک مرحله، چقدر هزینه داشته است؟', 'What has this capital project cost so far, by stage?'),
-              t('حفاری، تکمیل و خط جریان چاه AR-07', 'Drilling, completion and flowline of well AR-07'),
+              t('حفاری، تکمیل و خط جریان چاه AR-13', 'Drilling, completion and flowline of well AR-13'),
             ],
             [
               t('مجوز هزینه (AFE)', 'Authorization for expenditure (AFE)'),
-              t('AFE-207', 'AFE-207'),
+              t('AFE-2026-013', 'AFE-2026-013'),
               t('چقدر مجاز به خرج کردن بودیم و چقدر خرج کرده‌ایم؟', 'How much were we authorised to spend, and how much have we spent?'),
-              t('حفاری و تکمیل AR-07 با بودجه 9,000,000', 'Drill and complete AR-07, budget 9,000,000'),
+              t('حفاری و تکمیل AR-13 با بودجه 9,000,000', 'Drill and complete AR-13, budget 9,000,000'),
             ],
             [
               t('دارایی', 'Asset'),
@@ -325,8 +325,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: '**مجوز هزینه (AFE: Authorization for Expenditure)** سندی است که مدیریت و، در مشارکت‌ها، شرکا با آن بودجه یک کار مشخص را تصویب می‌کنند؛ مثلاً حفاری و تکمیل چاه AR-07. در ERP، AFE معمولاً به یک پروژه یا عنصر WBS وصل می‌شود و سیستم هزینه واقعی و **تعهدشده** (سفارش‌های خرید باز) را با بودجه آن مقایسه می‌کند و پیش از عبور از سقف هشدار می‌دهد.',
-            en: 'An **authorization for expenditure (AFE)** is the document with which management and, in joint ventures, the partners approve the budget for a specific job, for example drilling and completing well AR-07. In an ERP an AFE is usually linked to a project or WBS element, and the system compares actual and **committed** cost (open purchase orders) with its budget and warns before the limit is crossed.',
+            fa: '**مجوز هزینه (AFE: Authorization for Expenditure)** سندی است که مدیریت و، در مشارکت‌ها، شرکا با آن بودجه یک کار مشخص را تصویب می‌کنند؛ مثلاً حفاری و تکمیل چاه AR-13. در ERP، AFE معمولاً به یک پروژه یا عنصر WBS وصل می‌شود و سیستم هزینه واقعی و **تعهدشده** (سفارش‌های خرید باز) را با بودجه آن مقایسه می‌کند و پیش از عبور از سقف هشدار می‌دهد.',
+            en: 'An **authorization for expenditure (AFE)** is the document with which management and, in joint ventures, the partners approve the budget for a specific job, for example drilling and completing well AR-13. In an ERP an AFE is usually linked to a project or WBS element, and the system compares actual and **committed** cost (open purchase orders) with its budget and warns before the limit is crossed.',
           },
         },
         {
@@ -386,7 +386,7 @@ export const lesson: Lesson = {
             [t('تاریخ سند', 'Document date'), t('تاریخ روی مدرک مبدأ', 'The date on the source document'), t('تاریخ فاکتور تأمین‌کننده', 'The vendor’s invoice date')],
             [t('تاریخ ثبت', 'Posting date'), t('تاریخ ورود به دفاتر؛ دوره را تعیین می‌کند', 'The date it enters the books; decides the period'), t('آخرین روز ماه', 'Last day of the month')],
             [t('مرجع', 'Reference'), t('شماره فاکتور تأمین‌کننده؛ جلوی ثبت تکراری را می‌گیرد', 'Vendor’s invoice number; blocks duplicate posting'), t('INV-8841', 'INV-8841')],
-            [t('سطرها', 'Line items'), t('حساب، بدهکار یا بستانکار، مبلغ، شیء هزینه', 'Account, debit or credit, amount, cost object'), t('1510 با WBS چاه AR-07', '1510 with WBS of well AR-07')],
+            [t('سطرها', 'Line items'), t('حساب، بدهکار یا بستانکار، مبلغ، شیء هزینه', 'Account, debit or credit, amount, cost object'), t('1510 با WBS چاه AR-13', '1510 with WBS of well AR-13')],
             [t('پیوست و جریان اسناد', 'Attachments and document flow'), t('تصویر مدارک و پیوند به سفارش و رسید', 'Scanned documents and links to the order and receipt'), t('PO-3051 و رسید کالا (GRN) مربوط به آن', 'PO-3051 and its goods received note (GRN)')],
             [t('کاربر و زمان', 'User and time stamps'), t('چه کسی ثبت و چه کسی تأیید کرد، و چه زمانی', 'Who posted, who approved, and when'), t('کارشناس پرداختنی‌ها، مدیر مالی', 'AP accountant, finance manager')],
           ],
@@ -414,9 +414,9 @@ export const lesson: Lesson = {
             [t('پذیرش خدمت انجام‌شده (مثلاً اجاره دکل)', 'Acceptance of a service performed (for example rig hire)'), t('تدارکات: برگه ثبت خدمات (SES)', 'Procurement: service entry sheet (SES)'), t('1510، 5110 یا 5120 روی WBS، مرکز هزینه یا دستور کار', '1510, 5110 or 5120 on the WBS, cost centre or work order'), t('2120 GR/IR', '2120 GR/IR')],
             [t('فاکتور تأمین‌کننده مطابق سفارش و GRN/SES', 'Vendor invoice matched to the PO and GRN/SES'), t('پرداختنی‌ها: فاکتور خرید', 'AP: purchase invoice'), t('2120 GR/IR', '2120 GR/IR'), t('2110 حساب‌های پرداختنی', '2110 Accounts payable')],
             [t('پرداخت به تأمین‌کننده', 'Payment to a vendor'), t('خزانه: سند پرداخت', 'Treasury: payment'), t('2110 حساب‌های پرداختنی', '2110 Accounts payable'), t('1110 موجودی نقد (بانک)', '1110 Cash at bank')],
-            [t('حواله کالا به مرکز هزینه', 'Goods issue to a cost centre'), t('انبار: حواله انبار', 'Inventory: goods issue'), t('5110 روی CC-110', '5110 on CC-110'), t('1310 موجودی', '1310 Inventory')],
+            [t('حواله کالا به مرکز هزینه', 'Goods issue to a cost centre'), t('انبار: حواله انبار', 'Inventory: goods issue'), t('5110 روی CC-ARY-PRD', '5110 on CC-ARY-PRD'), t('1310 موجودی', '1310 Inventory')],
             [t('حواله کالا به چاه یا AFE', 'Goods issue to a well or AFE'), t('انبار: حواله انبار', 'Inventory: goods issue'), t('1510 روی WBS چاه', '1510 on the well’s WBS'), t('1310 موجودی', '1310 Inventory')],
-            [t('حواله قطعه به دستور کار نگهداری', 'Spare part issued to a maintenance work order'), t('نگهداری و انبار: حواله به دستور کار', 'Maintenance and inventory: issue to work order'), t('5120 روی دستور کار، تسویه به CC-120', '5120 on the work order, settled to CC-120'), t('1310 موجودی', '1310 Inventory')],
+            [t('حواله قطعه به دستور کار نگهداری', 'Spare part issued to a maintenance work order'), t('نگهداری و انبار: حواله به دستور کار', 'Maintenance and inventory: issue to work order'), t('5120 روی دستور کار، تسویه به CC-ARY-CMP', '5120 on the work order, settled to CC-ARY-CMP'), t('1310 موجودی', '1310 Inventory')],
             [t('تکمیل پروژه و سرمایه‌ای کردن', 'Project completion and capitalisation'), t('پروژه و دارایی: سند تسویه', 'Projects and assets: settlement'), t('1520 دارایی‌های نفت و گاز', '1520 Oil and gas properties'), t('1510 در جریان تکمیل', '1510 Assets under construction')],
             [t('اجرای استهلاک ماهانه', 'Monthly depreciation run'), t('دارایی‌های ثابت: اجرای استهلاک', 'Fixed assets: depreciation run'), t('5210 هزینه استهلاک', '5210 Depreciation expense'), t('1590 استهلاک انباشته', '1590 Accumulated depreciation')],
             [t('فاکتور فروش نفت خام', 'Crude oil sales invoice'), t('فروش و دریافتنی‌ها: فاکتور فروش', 'Sales and AR: sales invoice'), t('1210 حساب‌های دریافتنی', '1210 Accounts receivable'), t('4110 درآمد فروش نفت', '4110 Oil sales revenue')],
@@ -556,8 +556,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'خدمت را نمی‌شود در انبار شمرد؛ پس رسید آن **SES** است. پیمانکار حفاری این ماه 12 روز روی چاه AR-07 کار کرده و هر روز نماینده مسار پترولیوم در محل (سرپرست حفاری) «گزارش روزانه حفاری» را امضا کرده است. پایان ماه، SES-0412 برای 12 روز × 100,000 = 1,200,000 ثبت می‌شود و سرپرست حفاری، که کار را دیده است، آن را با گزارش‌های امضاشده مقایسه و تأیید می‌کند؛ نه خریدار و نه خود پیمانکار. همین تأیید، **تعهد** سفارش خرید روی AFE-207 را به **هزینه واقعی** تبدیل می‌کند.',
-            en: 'A service cannot be counted in a warehouse, so its receipt is the **SES**. The drilling contractor worked 12 days on well AR-07 this month, and each day Masar Petroleum’s representative on site (the drilling supervisor) signed the daily drilling report. At month-end SES-0412 is entered for 12 days × 100,000 = 1,200,000, and the drilling supervisor, who saw the work, checks it against the signed reports and approves it; neither the buyer nor the contractor does. That approval turns the purchase order **commitment** on AFE-207 into **actual cost**.',
+            fa: 'خدمت را نمی‌شود در انبار شمرد؛ پس رسید آن **SES** است. پیمانکار حفاری این ماه 12 روز روی چاه AR-13 کار کرده و هر روز نماینده مسار پترولیوم در محل (سرپرست حفاری) «گزارش روزانه حفاری» را امضا کرده است. پایان ماه، SES-0412 برای 12 روز × 100,000 = 1,200,000 ثبت می‌شود و سرپرست حفاری، که کار را دیده است، آن را با گزارش‌های امضاشده مقایسه و تأیید می‌کند؛ نه خریدار و نه خود پیمانکار. همین تأیید، **تعهد** سفارش خرید روی AFE-2026-013 را به **هزینه واقعی** تبدیل می‌کند.',
+            en: 'A service cannot be counted in a warehouse, so its receipt is the **SES**. The drilling contractor worked 12 days on well AR-13 this month, and each day Masar Petroleum’s representative on site (the drilling supervisor) signed the daily drilling report. At month-end SES-0412 is entered for 12 days × 100,000 = 1,200,000, and the drilling supervisor, who saw the work, checks it against the signed reports and approves it; neither the buyer nor the contractor does. That approval turns the purchase order **commitment** on AFE-2026-013 into **actual cost**.',
           },
         },
         {
@@ -567,7 +567,7 @@ export const lesson: Lesson = {
             {
               date: day(30),
               lines: [
-                { account: t('1510 دارایی‌های در جریان تکمیل (WBS چاه AR-07، AFE-207)', '1510 Assets under construction (WBS well AR-07, AFE-207)'), debit: 1200000 },
+                { account: t('1510 دارایی‌های در جریان تکمیل (WBS چاه AR-13، AFE-2026-013)', '1510 Assets under construction (WBS well AR-13, AFE-2026-013)'), debit: 1200000 },
                 { account: ac.grir, credit: 1200000 },
               ],
               memo: { fa: 'تأیید SES: 12 روز دکل × 100,000.', en: 'SES approved: 12 rig days × 100,000.' },
@@ -587,8 +587,8 @@ export const lesson: Lesson = {
           tone: 'info',
           title: { fa: 'مدرک بازیافت هزینه پشت هر SES', en: 'The cost-recovery evidence behind each SES' },
           text: {
-            fa: 'گزارش‌های روزانه و برگه‌های کار امضاشده پشت هر SES، مدرک اصلی بازیافت هزینه و حسابرسی شرکاست. مسار پترولیوم آن‌ها را به‌صورت پیوست الکترونیکی به همان SES وصل می‌کند تا حسابرس شرکت ملی نفت یا شرکا بتواند از هزینه AFE-207 تا امضای سرپرست حفاری را دنبال کند. در پایان ماه، SESها و GRNهای فاکتورنشده در GR/IR مانده بستانکار می‌سازند؛ خدمتی که انجام شده ولی SES ندارد، باید با سند تعهدی دستی ثبت شود.',
-            en: 'The signed daily reports and field tickets behind each SES are the main evidence for cost recovery and partner audits. Masar Petroleum attaches them electronically to the SES so that the national oil company’s or the partners’ auditor can trace AFE-207’s cost all the way to the drilling supervisor’s signature. At month-end, uninvoiced SESs and GRNs form the credit balance in GR/IR; a service performed without an SES must be accrued with a manual journal.',
+            fa: 'گزارش‌های روزانه و برگه‌های کار امضاشده پشت هر SES، مدرک اصلی بازیافت هزینه و حسابرسی شرکاست. مسار پترولیوم آن‌ها را به‌صورت پیوست الکترونیکی به همان SES وصل می‌کند تا حسابرس شرکت ملی نفت یا شرکا بتواند از هزینه AFE-2026-013 تا امضای سرپرست حفاری را دنبال کند. در پایان ماه، SESها و GRNهای فاکتورنشده در GR/IR مانده بستانکار می‌سازند؛ خدمتی که انجام شده ولی SES ندارد، باید با سند تعهدی دستی ثبت شود.',
+            en: 'The signed daily reports and field tickets behind each SES are the main evidence for cost recovery and partner audits. Masar Petroleum attaches them electronically to the SES so that the national oil company’s or the partners’ auditor can trace AFE-2026-013’s cost all the way to the drilling supervisor’s signature. At month-end, uninvoiced SESs and GRNs form the credit balance in GR/IR; a service performed without an SES must be accrued with a manual journal.',
           },
         },
         { type: 'h', text: { fa: 'حواله کالا به چاه و به ایستگاه', en: 'Issuing goods to a well and to the station' } },
@@ -599,18 +599,18 @@ export const lesson: Lesson = {
             {
               date: day(18),
               lines: [
-                { account: t('1510 دارایی‌های در جریان تکمیل (WBS چاه AR-07، AFE-207)', '1510 Assets under construction (WBS well AR-07, AFE-207)'), debit: 25000 },
+                { account: t('1510 دارایی‌های در جریان تکمیل (WBS چاه AR-13، AFE-2026-013)', '1510 Assets under construction (WBS well AR-13, AFE-2026-013)'), debit: 25000 },
                 { account: ac.inventory, credit: 25000 },
               ],
               memo: {
-                fa: 'حواله 10 شیر به چاه AR-07؛ هزینه سرمایه‌ای و قابل بازیافت روی AFE-207.',
-                en: '10 valves issued to well AR-07; a capital, recoverable cost on AFE-207.',
+                fa: 'حواله 10 شیر به چاه AR-13؛ هزینه سرمایه‌ای و قابل بازیافت روی AFE-2026-013.',
+                en: '10 valves issued to well AR-13; a capital, recoverable cost on AFE-2026-013.',
               },
             },
             {
               date: day(20),
               lines: [
-                { account: t('5120 هزینه تعمیر و نگهداری (دستور کار، CC-120)', '5120 Repairs and maintenance (work order, CC-120)'), debit: 10000 },
+                { account: t('5120 هزینه تعمیر و نگهداری (دستور کار، CC-ARY-CMP)', '5120 Repairs and maintenance (work order, CC-ARY-CMP)'), debit: 10000 },
                 { account: ac.inventory, credit: 10000 },
               ],
               memo: {
@@ -727,7 +727,7 @@ export const lesson: Lesson = {
             {
               date: day(30),
               lines: [
-                { account: t('5110 هزینه عملیات تولید (CC-110)', '5110 Production operating expense (CC-110)'), debit: 45000 },
+                { account: t('5110 هزینه عملیات تولید (CC-ARY-PRD)', '5110 Production operating expense (CC-ARY-PRD)'), debit: 45000 },
                 { account: ac.accrued, credit: 45000 },
               ],
               memo: {
@@ -897,10 +897,10 @@ export const lesson: Lesson = {
             rows: [
               [1, t('پرونده تأمین‌کننده «شیرآلات صنعتی خلیج»', 'Vendor record "Khalij Industrial Valves"')],
               [2, t('سفارش خرید PO-3051', 'Purchase order PO-3051')],
-              [3, t('مرکز هزینه CC-120 ایستگاه تقویت فشار', 'Cost centre CC-120 Compressor station')],
+              [3, t('مرکز هزینه CC-ARY-CMP ایستگاه تقویت فشار', 'Cost centre CC-ARY-CMP Compressor station')],
               [4, t('رسید کالا (GRN) 40 شیر در روز 5', 'GRN for 40 valves on Day 5')],
               [5, t('کالای «شیر دروازه‌ای 4 اینچ»', 'Material "4-inch gate valve"')],
-              [6, t('AFE-207 حفاری و تکمیل AR-07', 'AFE-207 drill and complete AR-07')],
+              [6, t('AFE-2026-013 حفاری و تکمیل AR-13', 'AFE-2026-013 drill and complete AR-13')],
               [7, t('فاکتور خرید مواد شیمیایی حفاری', 'Purchase invoice for drilling chemicals')],
               [8, t('حساب 2120 GR/IR', 'Account 2120 GR/IR')],
             ],
@@ -935,8 +935,8 @@ export const lesson: Lesson = {
           title: { fa: 'از سفارش تا حواله: مواد افزودنی گل حفاری', en: 'From order to issue: drilling mud additive' },
           difficulty: 'medium',
           problem: {
-            fa: 'مسار پترولیوم با PO-3088 تعداد 50 بشکه افزودنی گل حفاری را به قیمت واحد 1,200 سفارش می‌دهد. روز 3 رسید کالا (GRN) در انبار میدان ثبت می‌شود، روز 9 فاکتور 60,000 می‌رسد و تطبیق می‌شود، روز 10 تعداد 20 بشکه به چاه AR-07 (AFE-207) حواله می‌شود و روز 25 فاکتور پرداخت می‌شود. ثبت‌هایی را که ERP می‌سازد بنویسید و بگویید مانده GR/IR پس از روز 9 و مانده موجودی این کالا پس از روز 10 چقدر است.',
-            en: 'With PO-3088 Masar Petroleum orders 50 drums of drilling mud additive at 1,200 each. On Day 3 a GRN is posted at the Field Warehouse, on Day 9 an invoice of 60,000 arrives and is matched, on Day 10 20 drums are issued to well AR-07 (AFE-207), and on Day 25 the invoice is paid. Write the entries the ERP posts and state the GR/IR balance after Day 9 and the stock value of this material after Day 10.',
+            fa: 'مسار پترولیوم با PO-3088 تعداد 50 بشکه افزودنی گل حفاری را به قیمت واحد 1,200 سفارش می‌دهد. روز 3 رسید کالا (GRN) در انبار میدان ثبت می‌شود، روز 9 فاکتور 60,000 می‌رسد و تطبیق می‌شود، روز 10 تعداد 20 بشکه به چاه AR-13 (AFE-2026-013) حواله می‌شود و روز 25 فاکتور پرداخت می‌شود. ثبت‌هایی را که ERP می‌سازد بنویسید و بگویید مانده GR/IR پس از روز 9 و مانده موجودی این کالا پس از روز 10 چقدر است.',
+            en: 'With PO-3088 Masar Petroleum orders 50 drums of drilling mud additive at 1,200 each. On Day 3 a GRN is posted at the Field Warehouse, on Day 9 an invoice of 60,000 arrives and is matched, on Day 10 20 drums are issued to well AR-13 (AFE-2026-013), and on Day 25 the invoice is paid. Write the entries the ERP posts and state the GR/IR balance after Day 9 and the stock value of this material after Day 10.',
           },
           hint: {
             fa: 'رسید با قیمت سفارش ثبت می‌شود؛ حواله به چاه، هزینه سرمایه‌ای روی WBS آن است.',
@@ -965,10 +965,10 @@ export const lesson: Lesson = {
                 {
                   date: day(10),
                   lines: [
-                    { account: t('1510 دارایی‌های در جریان تکمیل (WBS چاه AR-07، AFE-207)', '1510 Assets under construction (WBS well AR-07, AFE-207)'), debit: 24000 },
+                    { account: t('1510 دارایی‌های در جریان تکمیل (WBS چاه AR-13، AFE-2026-013)', '1510 Assets under construction (WBS well AR-13, AFE-2026-013)'), debit: 24000 },
                     { account: ac.inventory, credit: 24000 },
                   ],
-                  memo: { fa: 'حواله 20 بشکه × 1,200 به چاه AR-07.', en: '20 drums × 1,200 issued to well AR-07.' },
+                  memo: { fa: 'حواله 20 بشکه × 1,200 به چاه AR-13.', en: '20 drums × 1,200 issued to well AR-13.' },
                 },
                 {
                   date: day(25),
@@ -1060,8 +1060,8 @@ export const lesson: Lesson = {
           title: { fa: 'شیء هزینه اشتباه', en: 'The wrong cost object' },
           difficulty: 'hard',
           problem: {
-            fa: 'روز 18، انباردار 80 شاخه لوله مغزی (هر شاخه 1,200) را به‌اشتباه به مرکز هزینه CC-110 (عملیات میدان) حواله کرد، در حالی که این لوله‌ها برای حفاری چاه AR-09 روی AFE-209 رزرو شده بودند. در بازبینی پایان ماه خطا پیدا می‌شود. (الف) ERP چه ثبتی ساخته است؟ (ب) این خطا چه اثری بر سود ماه، گزارش AFE-209 و بازیافت هزینه دارد؟ (ج) اصلاح درست چیست؟',
-            en: 'On Day 18 the storekeeper wrongly issued 80 joints of tubing (1,200 each) to cost centre CC-110 (field operations), although they were reserved for drilling well AR-09 on AFE-209. The month-end review finds the error. (a) What did the ERP post? (b) How does the error affect the month’s profit, the AFE-209 report and cost recovery? (c) What is the right correction?',
+            fa: 'روز 18، انباردار 80 شاخه لوله مغزی (هر شاخه 1,200) را به‌اشتباه به مرکز هزینه CC-ARY-PRD (عملیات میدان) حواله کرد، در حالی که این لوله‌ها برای حفاری چاه AR-15 روی AFE-2026-017 رزرو شده بودند. در بازبینی پایان ماه خطا پیدا می‌شود. (الف) ERP چه ثبتی ساخته است؟ (ب) این خطا چه اثری بر سود ماه، گزارش AFE-2026-017 و بازیافت هزینه دارد؟ (ج) اصلاح درست چیست؟',
+            en: 'On Day 18 the storekeeper wrongly issued 80 joints of tubing (1,200 each) to cost centre CC-ARY-PRD (field operations), although they were reserved for drilling well AR-15 on AFE-2026-017. The month-end review finds the error. (a) What did the ERP post? (b) How does the error affect the month’s profit, the AFE-2026-017 report and cost recovery? (c) What is the right correction?',
           },
           hint: {
             fa: 'اصلاح را از ماژول انبار انجام دهید، نه با سند دستی در حساب موجودی.',
@@ -1075,7 +1075,7 @@ export const lesson: Lesson = {
                 {
                   date: day(18),
                   lines: [
-                    { account: t('5110 هزینه عملیات تولید (CC-110)', '5110 Production operating expense (CC-110)'), debit: 96000 },
+                    { account: t('5110 هزینه عملیات تولید (CC-ARY-PRD)', '5110 Production operating expense (CC-ARY-PRD)'), debit: 96000 },
                     { account: ac.inventory, credit: 96000 },
                   ],
                   memo: { fa: '80 × 1,200 = 96,000 به مرکز هزینه اشتباه.', en: '80 × 1,200 = 96,000 to the wrong cost centre.' },
@@ -1090,12 +1090,12 @@ export const lesson: Lesson = {
                   en: '**Monthly profit**: operating expense is overstated by 96,000, so profit is understated by 96,000.',
                 },
                 {
-                  fa: '**ترازنامه و AFE**: دارایی‌های در جریان تکمیل 96,000 کمتر است و AFE-209 کمتر از واقع خرج نشان می‌دهد (ظاهراً زیر بودجه).',
-                  en: '**Balance sheet and AFE**: assets under construction are 96,000 too low, and AFE-209 shows less spending than real (it looks under budget).',
+                  fa: '**ترازنامه و AFE**: دارایی‌های در جریان تکمیل 96,000 کمتر است و AFE-2026-017 کمتر از واقع خرج نشان می‌دهد (ظاهراً زیر بودجه).',
+                  en: '**Balance sheet and AFE**: assets under construction are 96,000 too low, and AFE-2026-017 shows less spending than real (it looks under budget).',
                 },
                 {
-                  fa: '**بازیافت هزینه و شرکا**: هزینه در دسته عملیاتی به‌جای توسعه نشسته است؛ زمان و شیوه بازیافت آن فرق می‌کند و ممکن است در صورت‌حساب شرکا زیر AFE-209 دیده نشود.',
-                  en: '**Cost recovery and partners**: the cost sits in the operating category instead of development; its recovery timing and treatment differ, and it may be missing from the partner billing under AFE-209.',
+                  fa: '**بازیافت هزینه و شرکا**: هزینه در دسته عملیاتی به‌جای توسعه نشسته است؛ زمان و شیوه بازیافت آن فرق می‌کند و ممکن است در صورت‌حساب شرکا زیر AFE-2026-017 دیده نشود.',
+                  en: '**Cost recovery and partners**: the cost sits in the operating category instead of development; its recovery timing and treatment differ, and it may be missing from the partner billing under AFE-2026-017.',
                 },
               ],
             },
@@ -1107,17 +1107,17 @@ export const lesson: Lesson = {
                   date: day(30),
                   lines: [
                     { account: ac.inventory, debit: 96000 },
-                    { account: t('5110 هزینه عملیات تولید (CC-110)', '5110 Production operating expense (CC-110)'), credit: 96000 },
+                    { account: t('5110 هزینه عملیات تولید (CC-ARY-PRD)', '5110 Production operating expense (CC-ARY-PRD)'), credit: 96000 },
                   ],
                   memo: { fa: 'سند برگشتی حواله روز 18.', en: 'Reversal of the Day 18 issue.' },
                 },
                 {
                   date: day(30),
                   lines: [
-                    { account: t('1510 دارایی‌های در جریان تکمیل (WBS چاه AR-09، AFE-209)', '1510 Assets under construction (WBS well AR-09, AFE-209)'), debit: 96000 },
+                    { account: t('1510 دارایی‌های در جریان تکمیل (WBS چاه AR-15، AFE-2026-017)', '1510 Assets under construction (WBS well AR-15, AFE-2026-017)'), debit: 96000 },
                     { account: ac.inventory, credit: 96000 },
                   ],
-                  memo: { fa: 'حواله درست با ارجاع به رزرو AFE-209.', en: 'Correct issue referencing the AFE-209 reservation.' },
+                  memo: { fa: 'حواله درست با ارجاع به رزرو AFE-2026-017.', en: 'Correct issue referencing the AFE-2026-017 reservation.' },
                 },
               ],
             },
@@ -1131,8 +1131,8 @@ export const lesson: Lesson = {
             },
           ],
           answer: {
-            fa: '96,000 از هزینه عملیاتی CC-110 به دارایی در جریان تکمیل روی WBS چاه AR-09 منتقل می‌شود؛ سود ماه 96,000 افزایش و هزینه واقعی AFE-209 نیز 96,000 افزایش می‌یابد.',
-            en: '96,000 moves from CC-110 operating expense to assets under construction on well AR-09’s WBS; monthly profit rises by 96,000 and AFE-209 actuals rise by 96,000.',
+            fa: '96,000 از هزینه عملیاتی CC-ARY-PRD به دارایی در جریان تکمیل روی WBS چاه AR-15 منتقل می‌شود؛ سود ماه 96,000 افزایش و هزینه واقعی AFE-2026-017 نیز 96,000 افزایش می‌یابد.',
+            en: '96,000 moves from CC-ARY-PRD operating expense to assets under construction on well AR-15’s WBS; monthly profit rises by 96,000 and AFE-2026-017 actuals rise by 96,000.',
           },
         },
       ],
@@ -1264,7 +1264,7 @@ export const lesson: Lesson = {
       options: [
         { fa: 'پرونده تأمین‌کننده «خدمات حفاری آریا»', en: 'The vendor record "Arya Drilling Services"' },
         { fa: 'رسید کالا (GRN) 40 شیر در روز 5', en: 'The GRN for 40 valves on Day 5' },
-        { fa: 'مرکز هزینه CC-120 ایستگاه تقویت فشار', en: 'Cost centre CC-120 Compressor station' },
+        { fa: 'مرکز هزینه CC-ARY-CMP ایستگاه تقویت فشار', en: 'Cost centre CC-ARY-CMP Compressor station' },
         { fa: 'حساب 1310 در کدینگ حساب‌ها', en: 'Account 1310 in the chart of accounts' },
       ],
       answer: 1,
@@ -1292,19 +1292,19 @@ export const lesson: Lesson = {
     },
     {
       q: {
-        fa: 'سرپرست حفاری برگه ثبت خدمات (SES) اجاره دکل چاه AR-07 را روی AFE-207 تأیید می‌کند. ERP در همان لحظه چه ثبتی می‌سازد؟',
-        en: 'The drilling supervisor approves the service entry sheet (SES) for rig hire on well AR-07 against AFE-207. What does the ERP post at that moment?',
+        fa: 'سرپرست حفاری برگه ثبت خدمات (SES) اجاره دکل چاه AR-13 را روی AFE-2026-013 تأیید می‌کند. ERP در همان لحظه چه ثبتی می‌سازد؟',
+        en: 'The drilling supervisor approves the service entry sheet (SES) for rig hire on well AR-13 against AFE-2026-013. What does the ERP post at that moment?',
       },
       options: [
-        { fa: 'بدهکار دارایی‌های در جریان تکمیل (WBS چاه AR-07) / بستانکار GR/IR', en: 'Dr Assets under construction (WBS well AR-07) / Cr GR/IR' },
+        { fa: 'بدهکار دارایی‌های در جریان تکمیل (WBS چاه AR-13) / بستانکار GR/IR', en: 'Dr Assets under construction (WBS well AR-13) / Cr GR/IR' },
         { fa: 'بدهکار موجودی مواد و قطعات / بستانکار GR/IR', en: 'Dr Materials and spares inventory / Cr GR/IR' },
         { fa: 'بدهکار GR/IR / بستانکار حساب‌های پرداختنی', en: 'Dr GR/IR / Cr Accounts payable' },
         { fa: 'هیچ ثبتی تا رسیدن فاکتور پیمانکار ساخته نمی‌شود', en: 'Nothing is posted until the contractor’s invoice arrives' },
       ],
       answer: 0,
       explain: {
-        fa: 'SES رسیدِ خدمت است: هزینه خدمت را روی شیء هزینه سفارش (اینجا WBS چاه AR-07) بدهکار و GR/IR را بستانکار می‌کند و تعهد AFE-207 را به هزینه واقعی تبدیل می‌کند. خدمت به انبار نمی‌رود، پس موجودی درگیر نیست؛ ثبت GR/IR در برابر حساب‌های پرداختنی کار فاکتور است.',
-        en: 'An SES is the receipt for a service: it debits the service cost to the PO’s cost object (here the WBS of well AR-07), credits GR/IR, and turns the AFE-207 commitment into actual cost. A service never enters a warehouse, so inventory is not involved; GR/IR against payables is the invoice’s job.',
+        fa: 'SES رسیدِ خدمت است: هزینه خدمت را روی شیء هزینه سفارش (اینجا WBS چاه AR-13) بدهکار و GR/IR را بستانکار می‌کند و تعهد AFE-2026-013 را به هزینه واقعی تبدیل می‌کند. خدمت به انبار نمی‌رود، پس موجودی درگیر نیست؛ ثبت GR/IR در برابر حساب‌های پرداختنی کار فاکتور است.',
+        en: 'An SES is the receipt for a service: it debits the service cost to the PO’s cost object (here the WBS of well AR-13), credits GR/IR, and turns the AFE-2026-013 commitment into actual cost. A service never enters a warehouse, so inventory is not involved; GR/IR against payables is the invoice’s job.',
       },
     },
     {
@@ -1360,19 +1360,19 @@ export const lesson: Lesson = {
     },
     {
       q: {
-        fa: 'لوله جداری (Casing) از انبار مرکزی برای حفاری چاه AR-07 روی AFE-207 حواله می‌شود. کدام حساب بدهکار می‌شود؟',
-        en: 'Casing is issued from the Central Warehouse for drilling well AR-07 on AFE-207. Which account is debited?',
+        fa: 'لوله جداری (Casing) از انبار مرکزی برای حفاری چاه AR-13 روی AFE-2026-013 حواله می‌شود. کدام حساب بدهکار می‌شود؟',
+        en: 'Casing is issued from the Central Warehouse for drilling well AR-13 on AFE-2026-013. Which account is debited?',
       },
       options: [
-        { fa: '5110 هزینه عملیات تولید روی CC-110', en: '5110 Production operating expense on CC-110' },
+        { fa: '5110 هزینه عملیات تولید روی CC-ARY-PRD', en: '5110 Production operating expense on CC-ARY-PRD' },
         { fa: '2120 حساب واسط GR/IR', en: '2120 GR/IR clearing' },
-        { fa: '1510 دارایی‌های در جریان تکمیل روی WBS چاه AR-07', en: '1510 Assets under construction on the WBS of well AR-07' },
+        { fa: '1510 دارایی‌های در جریان تکمیل روی WBS چاه AR-13', en: '1510 Assets under construction on the WBS of well AR-13' },
         { fa: '1310 موجودی مواد و قطعات', en: '1310 Materials and spares inventory' },
       ],
       answer: 2,
       explain: {
-        fa: 'حفاری چاه جدید یک پروژه سرمایه‌ای است؛ پس هزینه روی WBS چاه در دارایی‌های در جریان تکمیل جمع می‌شود و موجودی بستانکار می‌شود. ثبت آن به‌عنوان هزینه عملیاتی CC-110 همان خطای رایج «شیء هزینه اشتباه» است.',
-        en: 'Drilling a new well is a capital project, so the cost collects on the well’s WBS in assets under construction and inventory is credited. Charging it to CC-110 operating expense is the classic "wrong cost object" mistake.',
+        fa: 'حفاری چاه جدید یک پروژه سرمایه‌ای است؛ پس هزینه روی WBS چاه در دارایی‌های در جریان تکمیل جمع می‌شود و موجودی بستانکار می‌شود. ثبت آن به‌عنوان هزینه عملیاتی CC-ARY-PRD همان خطای رایج «شیء هزینه اشتباه» است.',
+        en: 'Drilling a new well is a capital project, so the cost collects on the well’s WBS in assets under construction and inventory is credited. Charging it to CC-ARY-PRD operating expense is the classic "wrong cost object" mistake.',
       },
     },
     {

@@ -36,8 +36,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: t(
-            'جلسه ماهانه کمیته عملیات مشترک است. مهندس هزینه شریک الف گزارش AFE چاه AR-07 را ورق می‌زند: «طبق برنامه تا پایان ماه 2 قرار بود 5,000,000 خرج شود و شما 4,318,000 خرج کرده‌اید. یعنی 682,000 زیر بودجه‌اید؛ تبریک!» کنترل‌کننده پروژه مسار پترولیوم سر تکان می‌دهد: «نه. ما هم عقب‌تر از برنامه‌ایم و هم برای کاری که انجام داده‌ایم بیش از بودجه‌اش خرج کرده‌ایم.» هر دو یک گزارش را می‌خوانند؛ فرقشان در یک عدد سوم است: **ارزش کاری که واقعاً انجام شده است**.',
-            'It is the monthly operating committee meeting. Partner A’s cost engineer leafs through the AR-07 AFE report: “The plan said 5,000,000 would be spent by the end of month 2 and you have spent 4,318,000. So you are 682,000 under budget; congratulations!” Masar Petroleum’s project controller shakes his head: “No. We are behind schedule, and we have spent more than budget for the work we have done.” Both are reading the same report; the difference is a third number: **the value of the work actually done**.',
+            'جلسه ماهانه کمیته عملیات مشترک است. مهندس هزینه انرژی البرز گزارش AFE چاه AR-07 را ورق می‌زند: «طبق برنامه تا پایان ماه 2 قرار بود 5,000,000 خرج شود و شما 4,318,000 خرج کرده‌اید. یعنی 682,000 زیر بودجه‌اید؛ تبریک!» کنترل‌کننده پروژه مسار پترولیوم سر تکان می‌دهد: «نه. ما هم عقب‌تر از برنامه‌ایم و هم برای کاری که انجام داده‌ایم بیش از بودجه‌اش خرج کرده‌ایم.» هر دو یک گزارش را می‌خوانند؛ فرقشان در یک عدد سوم است: **ارزش کاری که واقعاً انجام شده است**.',
+            'It is the monthly operating committee meeting. Alborz Energy’s cost engineer leafs through the AR-07 AFE report: “The plan said 5,000,000 would be spent by the end of month 2 and you have spent 4,318,000. So you are 682,000 under budget; congratulations!” Masar Petroleum’s project controller shakes his head: “No. We are behind schedule, and we have spent more than budget for the work we have done.” Both are reading the same report; the difference is a third number: **the value of the work actually done**.',
           ),
         },
         {

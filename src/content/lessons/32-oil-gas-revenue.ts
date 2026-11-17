@@ -20,7 +20,7 @@ const ac = {
   oilRevenue: { fa: '4110 درآمد فروش نفت', en: '4110 Oil sales revenue' },
   gasRevenue: { fa: '4120 درآمد فروش گاز', en: '4120 Gas sales revenue' },
   pricingAdj: { fa: '4150 تعدیل قیمت فروش‌های موقت', en: '4150 Provisional pricing adjustments' },
-  imbalance: { fa: '5150 تعدیل بیش‌برداشت و کم‌برداشت', en: '5150 Overlift and underlift adjustment' },
+  imbalance: { fa: '5185 تعدیل بیش‌برداشت و کم‌برداشت', en: '5185 Overlift and underlift adjustment' },
 }
 
 const t = (fa: string, en: string) => ({ fa, en })

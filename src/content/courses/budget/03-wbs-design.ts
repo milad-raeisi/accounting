@@ -38,8 +38,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: t(
-            'دو هفته پیش از شروع حفاری چاه AR-07، نماینده شریک الف در جلسه کمیته عملیات می‌پرسد: «از 8,000,000 بودجه پایه این چاه، سهم لوله‌های جداری چقدر است؟ آزمایش چاه با کیست؟ اگر حفاری گیر کند، کدام بخش بودجه فشار می‌خورد؟» اگر بودجه فقط یک عدد کلی باشد، هیچ‌کدام از این پرسش‌ها جواب ندارد. **ساختار شکست کار** همان ابزاری است که این عدد را به اجزای قابل پاسخ‌گویی می‌شکند.',
-            'Two weeks before well AR-07 spuds, Partner A’s representative asks in the operating committee: “Of this well’s 8,000,000 base budget, how much is casing? Who owns well testing? If drilling gets stuck, which part of the budget takes the hit?” If the budget is just one total, none of these questions has an answer. The **work breakdown structure** is the tool that breaks that number into accountable parts.',
+            'دو هفته پیش از شروع حفاری چاه AR-07، نماینده انرژی البرز در جلسه کمیته عملیات می‌پرسد: «از 8,000,000 بودجه پایه این چاه، سهم لوله‌های جداری چقدر است؟ آزمایش چاه با کیست؟ اگر حفاری گیر کند، کدام بخش بودجه فشار می‌خورد؟» اگر بودجه فقط یک عدد کلی باشد، هیچ‌کدام از این پرسش‌ها جواب ندارد. **ساختار شکست کار** همان ابزاری است که این عدد را به اجزای قابل پاسخ‌گویی می‌شکند.',
+            'Two weeks before well AR-07 spuds, Alborz Energy’s representative asks in the operating committee: “Of this well’s 8,000,000 base budget, how much is casing? Who owns well testing? If drilling gets stuck, which part of the budget takes the hit?” If the budget is just one total, none of these questions has an answer. The **work breakdown structure** is the tool that breaks that number into accountable parts.',
           ),
         },
         {

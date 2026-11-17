@@ -212,7 +212,7 @@ export const lesson: Lesson = {
           numericCols: [1, 2, 3],
           rows: [
             [t('5140 پذیرایی', '5140 Catering'), 1260000, 420000, blank],
-            [t('5110 سوخت و آب و برق کمپ', '5110 Camp fuel and utilities'), 360000, 120000, blank],
+            [t('5180 سوخت و آب و برق کمپ', '5180 Camp fuel and utilities'), 360000, 120000, blank],
             [t('5120 تعمیرات کمپ', '5120 Camp repairs'), 180000, 60000, blank],
             [t('9510 تسهیم سربار', '9510 Overhead allocation'), blank, blank, 600000],
             [t('**جمع**', '**Total**'), 1800000, 600000, 600000],
@@ -441,7 +441,7 @@ export const lesson: Lesson = {
           head: [t('داده پایه', 'Master data'), t('نمونه در مسار پترولیوم', 'Example at Masar Petroleum')],
           rows: [
             [t('مرکز هزینه و سلسله‌مراتب', 'Cost centres and hierarchy'), t('`CC-ARY-CAM`، `CC-ARY-MNT`، `CC-ARY-HSE` زیر «میدان آریا»', '`CC-ARY-CAM`, `CC-ARY-MNT`, `CC-ARY-HSE` under "Arya field"')],
-            [t('عنصر هزینه اولیه', 'Primary cost elements'), t('حساب‌های هزینه 5110 تا 5150', 'Expense accounts 5110 to 5150')],
+            [t('عنصر هزینه اولیه', 'Primary cost elements'), t('حساب‌های هزینه 5180 تا 5150', 'Expense accounts 5180 to 5150')],
             [t('عنصر هزینه ثانویه', 'Secondary cost elements'), t('9510 تسهیم سربار، 9520 تخصیص ساعت نگهداری، 9410 تسویه سفارش', '9510 overhead allocation, 9520 maintenance-hour allocation, 9410 order settlement')],
             [t('شاخص آماری', 'Statistical key figures'), t('تعداد نفر، نفر-شب، نفر-ساعت، بشکه تولید', 'Headcount, person-nights, man-hours, barrels produced')],
             [t('نوع فعالیت و نرخ', 'Activity types and rates'), t('ساعت کار نگهداری: نرخ برنامه 1,200، بازمحاسبه با هزینه واقعی', 'Maintenance labour hour: planned rate 1,200, revalued at actual cost')],
@@ -578,8 +578,8 @@ export const lesson: Lesson = {
           title: t('تسهیم کمپ با نفر-شب: توزیع یا ارزیابی؟', 'Allocating the camp by person-nights: distribution or assessment?'),
           difficulty: 'medium',
           problem: t(
-            'هزینه کمپ در ماه 9 برابر 2,160,000 است: پذیرایی (5140) 1,440,000، سوخت و آب و برق (5110) 480,000 و تعمیرات کمپ (5120) 240,000. (الف) نرخ هر نفر-شب و سهم هر گیرنده را حساب کنید. (ب) AFE حفاری با روش توزیع چه سطرهایی می‌گیرد و با ارزیابی چه سطری؟ (ج) قاعده اعتبارسنجی مسار پترولیوم حساب‌های 5110 تا 5130 را روی WBS سرمایه‌ای نمی‌پذیرد. برای AFE کدام روش باید به کار رود و سهم آن در چه طبقه‌ای است؟',
-            'The camp cost 2,160,000 in month 9: catering (5140) 1,440,000, fuel and utilities (5110) 480,000 and camp repairs (5120) 240,000. (a) Compute the rate per person-night and each receiver’s share. (b) Which lines does the drilling AFE receive under distribution, and which under assessment? (c) Masar Petroleum’s validation rule rejects accounts 5110 to 5130 on a capital WBS. Which method must be used for the AFE, and in which category does its share fall?',
+            'هزینه کمپ در ماه 9 برابر 2,160,000 است: پذیرایی (5140) 1,440,000، سوخت و آب و برق (5180) 480,000 و تعمیرات کمپ (5120) 240,000. (الف) نرخ هر نفر-شب و سهم هر گیرنده را حساب کنید. (ب) AFE حفاری با روش توزیع چه سطرهایی می‌گیرد و با ارزیابی چه سطری؟ (ج) قاعده اعتبارسنجی مسار پترولیوم حساب‌های 5180 تا 5130 را روی WBS سرمایه‌ای نمی‌پذیرد. برای AFE کدام روش باید به کار رود و سهم آن در چه طبقه‌ای است؟',
+            'The camp cost 2,160,000 in month 9: catering (5140) 1,440,000, fuel and utilities (5180) 480,000 and camp repairs (5120) 240,000. (a) Compute the rate per person-night and each receiver’s share. (b) Which lines does the drilling AFE receive under distribution, and which under assessment? (c) Masar Petroleum’s validation rule rejects accounts 5180 to 5130 on a capital WBS. Which method must be used for the AFE, and in which category does its share fall?',
           ),
           given: {
             head: [t('گیرنده', 'Receiver'), t('نفر-شب', 'Person-nights')],
@@ -614,7 +614,7 @@ export const lesson: Lesson = {
               numericCols: [1, 2],
               rows: [
                 [t('5140 پذیرایی: 1,440,000 × 1,050 ÷ 3,600', '5140 Catering: 1,440,000 × 1,050 ÷ 3,600'), 420000, blank],
-                [t('5110 سوخت و آب و برق: 480,000 × 1,050 ÷ 3,600', '5110 Fuel and utilities: 480,000 × 1,050 ÷ 3,600'), 140000, blank],
+                [t('5180 سوخت و آب و برق: 480,000 × 1,050 ÷ 3,600', '5180 Fuel and utilities: 480,000 × 1,050 ÷ 3,600'), 140000, blank],
                 [t('5120 تعمیرات: 240,000 × 1,050 ÷ 3,600', '5120 Repairs: 240,000 × 1,050 ÷ 3,600'), 70000, blank],
                 [t('9510 تسهیم سربار', '9510 Overhead allocation'), blank, 630000],
                 [t('**جمع**', '**Total**'), 630000, 630000],
@@ -624,8 +624,8 @@ export const lesson: Lesson = {
               type: 'callout',
               tone: 'tip',
               text: t(
-                'توزیع حساب‌های 5110 و 5120 را روی WBS سرمایه‌ای می‌نشاند و قاعده اعتبارسنجی آن را رد می‌کند؛ پس برای AFE از **ارزیابی** با عنصر 9510 استفاده می‌شود. سهم 630,000 هزینه مستقیماً قابل انتساب حفاری است: طبقه **توسعه**، نشانگر **R**، و با تسویه پروژه به دارایی در جریان تکمیل می‌رود. سهم نگهداری و ایمنی در مراحل بعدی تسهیم مرحله‌ای جلوتر می‌رود.',
-                'Distribution would put accounts 5110 and 5120 on a capital WBS, which the validation rule rejects; so the AFE is charged by **assessment** with element 9510. Its 630,000 share is a directly attributable drilling cost: category **Development**, flag **R**, and it moves to assets under construction through the project settlement. The maintenance and HSE shares move on in the later steps of the step-down.',
+                'توزیع حساب‌های 5180 و 5120 را روی WBS سرمایه‌ای می‌نشاند و قاعده اعتبارسنجی آن را رد می‌کند؛ پس برای AFE از **ارزیابی** با عنصر 9510 استفاده می‌شود. سهم 630,000 هزینه مستقیماً قابل انتساب حفاری است: طبقه **توسعه**، نشانگر **R**، و با تسویه پروژه به دارایی در جریان تکمیل می‌رود. سهم نگهداری و ایمنی در مراحل بعدی تسهیم مرحله‌ای جلوتر می‌رود.',
+                'Distribution would put accounts 5180 and 5120 on a capital WBS, which the validation rule rejects; so the AFE is charged by **assessment** with element 9510. Its 630,000 share is a directly attributable drilling cost: category **Development**, flag **R**, and it moves to assets under construction through the project settlement. The maintenance and HSE shares move on in the later steps of the step-down.',
               ),
             },
           ],

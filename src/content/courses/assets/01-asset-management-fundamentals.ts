@@ -3,9 +3,9 @@ import type { L, Lesson } from '../../types'
 /*
  * Running example (shared with the rest of the assets course): Masar Petroleum, Arya field.
  * Compressor station: centrifugal compressors K-101 and K-102, driven by gas turbines GT-101 and GT-102.
- * AFE-2026-07: a third compressor K-103 (budget 6,000,000). Separator V-201 at the production station.
- * Cost centres: CC-3100 compressor station operations, CC-3200 production station operations,
- * CC-3900 mechanical crew (rate 200 per hour), CC-3910 instrument crew (rate 180 per hour).
+ * AFE-2025-021: a third compressor K-103 (budget 6,000,000). Separator V-201 at the production station.
+ * Cost centres: CC-ARY-CMP compressor station operations, CC-ARY-PRD production station operations,
+ * CC-ARY-MNT mechanical crew (rate 200 per hour), CC-ARY-INS instrument crew (rate 180 per hour).
  * Company: Masar Petroleum (company code MP01).
  */
 
@@ -23,8 +23,8 @@ const ac = {
   inventory: t('موجودی قطعات یدکی', 'Inventory: spare parts'),
   grir: t('حساب واسط رسید کالا و فاکتور (GR/IR)', 'GR/IR clearing account'),
   ap: t('حساب‌های پرداختنی', 'Accounts payable'),
-  mechAlloc: t('دستمزد تخصیص‌یافته: گروه مکانیک (CC-3900)', 'Labour cost allocated: mechanical crew (CC-3900)'),
-  instAlloc: t('دستمزد تخصیص‌یافته: گروه ابزاردقیق (CC-3910)', 'Labour cost allocated: instrument crew (CC-3910)'),
+  mechAlloc: t('دستمزد تخصیص‌یافته: گروه مکانیک (CC-ARY-MNT)', 'Labour cost allocated: mechanical crew (CC-ARY-MNT)'),
+  instAlloc: t('دستمزد تخصیص‌یافته: گروه ابزاردقیق (CC-ARY-INS)', 'Labour cost allocated: instrument crew (CC-ARY-INS)'),
 }
 /** Settlement receiver: repairs and maintenance on a cost object, with recovery flag and cost category. */
 const receiver = (objFa: string, objEn: string) =>
@@ -202,8 +202,8 @@ export const lesson: Lesson = {
             {
               title: t('برنامه‌ریزی', 'Plan'),
               text: t(
-                'نیاز تعریف می‌شود (مثلاً کمپرسور سوم K-103 برای افزایش ظرفیت)، گزینه‌ها مقایسه و بودجه با یک **مجوز هزینه‌کرد (AFE)** تصویب می‌شود؛ برای K-103، AFE-2026-07.',
-                'The need is defined (for example a third compressor, K-103, for more capacity), options are compared and the budget is approved with an **Authorisation for Expenditure (AFE)**; for K-103, AFE-2026-07.',
+                'نیاز تعریف می‌شود (مثلاً کمپرسور سوم K-103 برای افزایش ظرفیت)، گزینه‌ها مقایسه و بودجه با یک **مجوز هزینه‌کرد (AFE)** تصویب می‌شود؛ برای K-103، AFE-2025-021.',
+                'The need is defined (for example a third compressor, K-103, for more capacity), options are compared and the budget is approved with an **Authorisation for Expenditure (AFE)**; for K-103, AFE-2025-021.',
               ),
             },
             {
@@ -247,8 +247,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'قیمت خرید فقط بخشی از هزینه یک دارایی است. **هزینه چرخه عمر (Life-Cycle Cost)** همه هزینه‌ها را از خرید تا کنارگذاری جمع می‌زند. جدول زیر برآورد مسار پترولیوم برای کمپرسور جدید `K-103` است (اعداد فرضی و بدون تنزیل). بودجه AFE-2026-07 یعنی 6,000,000 فقط دو ردیف اول را می‌پوشاند: 40٪ هزینه چرخه عمر.',
-            en: 'The purchase price is only part of what an asset costs. **Life-cycle cost** adds up every cost from purchase to disposal. The table shows Masar Petroleum’s estimate for the new compressor `K-103` (illustrative figures, not discounted). The AFE-2026-07 budget of 6,000,000 covers only the first two lines: 40% of the life-cycle cost.',
+            fa: 'قیمت خرید فقط بخشی از هزینه یک دارایی است. **هزینه چرخه عمر (Life-Cycle Cost)** همه هزینه‌ها را از خرید تا کنارگذاری جمع می‌زند. جدول زیر برآورد مسار پترولیوم برای کمپرسور جدید `K-103` است (اعداد فرضی و بدون تنزیل). بودجه AFE-2025-021 یعنی 6,000,000 فقط دو ردیف اول را می‌پوشاند: 40٪ هزینه چرخه عمر.',
+            en: 'The purchase price is only part of what an asset costs. **Life-cycle cost** adds up every cost from purchase to disposal. The table shows Masar Petroleum’s estimate for the new compressor `K-103` (illustrative figures, not discounted). The AFE-2025-021 budget of 6,000,000 covers only the first two lines: 40% of the life-cycle cost.',
           },
         },
         {
@@ -449,8 +449,8 @@ export const lesson: Lesson = {
           tone: 'info',
           title: t('در عمل: شرکا هم ذی‌نفع‌اند', 'In practice: partners are stakeholders too'),
           text: {
-            fa: 'در مشارکت میدان آریا (با سهم‌های فرضی مسار پترولیوم 50٪، شریک الف 30٪ و شریک ب 20٪)، مسار پترولیوم به‌عنوان **بهره‌بردار (Operator)** دارایی‌ها را از طرف همه شرکا اداره می‌کند. شرکا سهم خود از هزینه‌ها را می‌پردازند و حق دارند حساب‌ها را حسابرسی کنند. پس هر هزینه نگهداری باید با مدارک کامل و موضوع هزینه درست (چاه، مرکز هزینه یا AFE) ثبت شود.',
-            en: 'In the Arya joint venture (illustrative interests: Masar Petroleum 50%, Partner A 30%, Partner B 20%), Masar Petroleum, as the **operator**, runs the assets on behalf of all partners. Partners pay their share of the costs and have the right to audit the accounts. Every maintenance cost must therefore be recorded with full supporting documents and the right cost object (well, cost centre or AFE).',
+            fa: 'در مشارکت میدان آریا (با سهم‌های فرضی مسار پترولیوم 50٪، انرژی البرز 30٪ و نفت دنا 20٪)، مسار پترولیوم به‌عنوان **بهره‌بردار (Operator)** دارایی‌ها را از طرف همه شرکا اداره می‌کند. شرکا سهم خود از هزینه‌ها را می‌پردازند و حق دارند حساب‌ها را حسابرسی کنند. پس هر هزینه نگهداری باید با مدارک کامل و موضوع هزینه درست (چاه، مرکز هزینه یا AFE) ثبت شود.',
+            en: 'In the Arya joint venture (illustrative interests: Masar Petroleum 50%, Alborz Energy 30%, Dena Petroleum 20%), Masar Petroleum, as the **operator**, runs the assets on behalf of all partners. Partners pay their share of the costs and have the right to audit the accounts. Every maintenance cost must therefore be recorded with full supporting documents and the right cost object (well, cost centre or AFE).',
           },
         },
       ],
@@ -571,8 +571,8 @@ export const lesson: Lesson = {
           tone: 'info',
           title: t('نکته‌های این سندها', 'Notes on these postings'),
           text: {
-            fa: 'ساختن دستور کار و رزرو کالا هیچ سند مالی ایجاد نمی‌کند؛ فقط **جابه‌جایی واقعی** سند می‌زند: حواله انبار، تأیید زمان، **رسید کالا (GRN)** برای قطعه غیرانباری و تأیید **برگه ثبت خدمات (SES)** برای کار پیمانکار. در پایان ماه، **تسویه** جمع 3,400 + 1,200 = 4,600 را از دستور کار به مرکز هزینه ایستگاه تقویت فشار (`CC-3100`) می‌برد. چون هزینه از قبل در دفتر کل ثبت شده، این تسویه جمع هزینه‌ها را تغییر نمی‌دهد؛ فقط موضوع هزینه را عوض می‌کند. برخی ERPها هزینه‌ها را ابتدا در یک حساب «کار در جریان» جمع می‌کنند و هنگام تسویه به هزینه می‌برند؛ نتیجه نهایی یکسان است.',
-            en: 'Creating a work order or a reservation posts nothing; only **real movements** post: goods issues, time confirmations, a **goods received note (GRN)** for a non-stock part and an approved **service entry sheet (SES)** for contractor work. At month-end, **settlement** moves the 3,400 + 1,200 = 4,600 from the work order to the compressor station cost centre (`CC-3100`). Because the cost is already in the general ledger, this settlement does not change total expenses; it only changes the cost object. Some ERPs first collect costs on a "work in progress" account and expense them at settlement; the end result is the same.',
+            fa: 'ساختن دستور کار و رزرو کالا هیچ سند مالی ایجاد نمی‌کند؛ فقط **جابه‌جایی واقعی** سند می‌زند: حواله انبار، تأیید زمان، **رسید کالا (GRN)** برای قطعه غیرانباری و تأیید **برگه ثبت خدمات (SES)** برای کار پیمانکار. در پایان ماه، **تسویه** جمع 3,400 + 1,200 = 4,600 را از دستور کار به مرکز هزینه ایستگاه تقویت فشار (`CC-ARY-CMP`) می‌برد. چون هزینه از قبل در دفتر کل ثبت شده، این تسویه جمع هزینه‌ها را تغییر نمی‌دهد؛ فقط موضوع هزینه را عوض می‌کند. برخی ERPها هزینه‌ها را ابتدا در یک حساب «کار در جریان» جمع می‌کنند و هنگام تسویه به هزینه می‌برند؛ نتیجه نهایی یکسان است.',
+            en: 'Creating a work order or a reservation posts nothing; only **real movements** post: goods issues, time confirmations, a **goods received note (GRN)** for a non-stock part and an approved **service entry sheet (SES)** for contractor work. At month-end, **settlement** moves the 3,400 + 1,200 = 4,600 from the work order to the compressor station cost centre (`CC-ARY-CMP`). Because the cost is already in the general ledger, this settlement does not change total expenses; it only changes the cost object. Some ERPs first collect costs on a "work in progress" account and expense them at settlement; the end result is the same.',
           },
         },
         { type: 'h', text: t('نقش‌ها و تأییدها در این جریان', 'Roles and Approvals in This Flow') },
@@ -593,8 +593,8 @@ export const lesson: Lesson = {
           tone: 'tip',
           title: t('پیوند با بازیافت هزینه', 'The link to cost recovery'),
           text: {
-            fa: 'در قراردادهای نفتی (مانند قراردادهای مشارکت در تولید، بیع متقابل یا IPC)، بهره‌بردار فقط هزینه‌هایی را می‌تواند بازیافت کند که با موضوع هزینه درست و مدارک پشتیبان ثبت شده باشند. هر سطر هزینه در مسار پترولیوم کدگذاری مشترک دارد: کد شرکت (MP01)، مرکز هزینه (مثلاً CC-3100)، عنصر WBS اگر کار سرمایه‌ای باشد (مثلاً AFE-2026-07.02.03)، حساب کل، **پرچم بازیافت** (R قابل بازیافت، N غیرقابل بازیافت) و **طبقه هزینه** (اکتشاف، توسعه یا عملیاتی). دستور کار، حواله‌ها، GRN و SES همان مدارک‌اند.',
-            en: 'Under petroleum contracts (such as production sharing, buy-back or IPC contracts), the operator can recover only costs recorded against the right cost object with supporting documents. Every cost line at Masar Petroleum carries the shared coding: company code (MP01), cost centre (for example CC-3100), WBS element for capital work (for example AFE-2026-07.02.03), GL account, a **recovery flag** (R recoverable, N non-recoverable) and a **cost category** (Exploration, Development or Operating). The work order, goods issues, GRNs and SESs are that evidence.',
+            fa: 'در قراردادهای نفتی (مانند قراردادهای مشارکت در تولید، بیع متقابل یا IPC)، بهره‌بردار فقط هزینه‌هایی را می‌تواند بازیافت کند که با موضوع هزینه درست و مدارک پشتیبان ثبت شده باشند. هر سطر هزینه در مسار پترولیوم کدگذاری مشترک دارد: کد شرکت (MP01)، مرکز هزینه (مثلاً CC-ARY-CMP)، عنصر WBS اگر کار سرمایه‌ای باشد (مثلاً AFE-2025-021.02.03)، حساب کل، **پرچم بازیافت** (R قابل بازیافت، N غیرقابل بازیافت) و **طبقه هزینه** (اکتشاف، توسعه یا عملیاتی). دستور کار، حواله‌ها، GRN و SES همان مدارک‌اند.',
+            en: 'Under petroleum contracts (such as production sharing, buy-back or IPC contracts), the operator can recover only costs recorded against the right cost object with supporting documents. Every cost line at Masar Petroleum carries the shared coding: company code (MP01), cost centre (for example CC-ARY-CMP), WBS element for capital work (for example AFE-2025-021.02.03), GL account, a **recovery flag** (R recoverable, N non-recoverable) and a **cost category** (Exploration, Development or Operating). The work order, goods issues, GRNs and SESs are that evidence.',
           },
         },
       ],
@@ -670,7 +670,7 @@ export const lesson: Lesson = {
           given: {
             head: [t('ردیف', 'No.'), t('فعالیت', 'Activity')],
             rows: [
-              [t('1', '1'), t('تصویب AFE-2026-07 برای کمپرسور سوم K-103', 'Approving AFE-2026-07 for the third compressor K-103')],
+              [t('1', '1'), t('تصویب AFE-2025-021 برای کمپرسور سوم K-103', 'Approving AFE-2025-021 for the third compressor K-103')],
               [t('2', '2'), t('سفارش K-103 به‌عنوان قلم با زمان تحویل طولانی', 'Ordering K-103 as a long-lead item')],
               [t('3', '3'), t('آزمایش راه‌اندازی K-103 و تحویل به بهره‌برداری', 'Commissioning tests of K-103 and handover to operations')],
               [t('4', '4'), t('پایش ماهانه لرزش K-101', 'Monthly vibration monitoring of K-101')],
@@ -795,8 +795,8 @@ export const lesson: Lesson = {
           title: t('سندهای خودکار یک دستور کار', 'Automatic postings of a work order'),
           difficulty: 'hard',
           problem: t(
-            'فرستنده سطح `LT-201` روی جداکننده `V-201` در ایستگاه بهره‌برداری خراب شده و برای آن دستور کار `WO-40009` باز شده است. رویدادهای زیر در ERP ثبت شده‌اند. سندهایی را که ERP خودکار ثبت می‌کند بنویسید و مبلغ تسویه را به دست آورید. گیرنده: مرکز هزینه ایستگاه بهره‌برداری (`CC-3200`)، پرچم بازیافت R، طبقه هزینه عملیاتی. مالیات بر ارزش افزوده را در نظر نگیرید.',
-            'Level transmitter `LT-201` on separator `V-201` at the production station has failed, and work order `WO-40009` was opened. The events below were recorded in the ERP. Write the entries the ERP posts automatically and find the settlement amount. Receiver: the production station cost centre (`CC-3200`), recovery flag R, cost category Operating. Ignore VAT.',
+            'فرستنده سطح `LT-201` روی جداکننده `V-201` در ایستگاه بهره‌برداری خراب شده و برای آن دستور کار `WO-40009` باز شده است. رویدادهای زیر در ERP ثبت شده‌اند. سندهایی را که ERP خودکار ثبت می‌کند بنویسید و مبلغ تسویه را به دست آورید. گیرنده: مرکز هزینه ایستگاه بهره‌برداری (`CC-ARY-PRD`)، پرچم بازیافت R، طبقه هزینه عملیاتی. مالیات بر ارزش افزوده را در نظر نگیرید.',
+            'Level transmitter `LT-201` on separator `V-201` at the production station has failed, and work order `WO-40009` was opened. The events below were recorded in the ERP. Write the entries the ERP posts automatically and find the settlement amount. Receiver: the production station cost centre (`CC-ARY-PRD`), recovery flag R, cost category Operating. Ignore VAT.',
           ),
           given: {
             head: [t('رویداد', 'Event'), t('شرح', 'Detail'), t('مبلغ', 'Amount')],
@@ -845,7 +845,7 @@ export const lesson: Lesson = {
                 {
                   date: t('تسویه پایان ماه', 'Month-end settlement'),
                   lines: [
-                    { account: receiver('CC-3200', 'CC-3200'), debit: 8000 },
+                    { account: receiver('CC-ARY-PRD', 'CC-ARY-PRD'), debit: 8000 },
                     { account: w9.sender, credit: 8000 },
                   ],
                   memo: t('انتقال موضوع هزینه از دستور کار به مرکز هزینه؛ جمع هزینه‌ها تغییر نمی‌کند', 'Moves the cost object from the work order to the cost centre; total expenses do not change'),
@@ -855,12 +855,12 @@ export const lesson: Lesson = {
             {
               type: 'p',
               text: t(
-                'هزینه روی دستور کار پیش از تسویه: 5,300 + 1,800 + 900 = 8,000. فاکتور فقط حساب واسط را صفر و بدهی به پیمانکار را ثبت می‌کند. پس از تسویه، مانده هزینه روی WO-40009 صفر است و 8,000 روی CC-3200 با پرچم R نشسته است.',
-                'Cost on the work order before settlement: 5,300 + 1,800 + 900 = 8,000. The invoice only clears GR/IR and records the debt to the contractor. After settlement WO-40009 shows zero and the 8,000 sits on CC-3200 with flag R.',
+                'هزینه روی دستور کار پیش از تسویه: 5,300 + 1,800 + 900 = 8,000. فاکتور فقط حساب واسط را صفر و بدهی به پیمانکار را ثبت می‌کند. پس از تسویه، مانده هزینه روی WO-40009 صفر است و 8,000 روی CC-ARY-PRD با پرچم R نشسته است.',
+                'Cost on the work order before settlement: 5,300 + 1,800 + 900 = 8,000. The invoice only clears GR/IR and records the debt to the contractor. After settlement WO-40009 shows zero and the 8,000 sits on CC-ARY-PRD with flag R.',
               ),
             },
           ],
-          answer: t('مبلغ تسویه 8,000 به مرکز هزینه CC-3200 با پرچم R و طبقه عملیاتی', 'Settlement of 8,000 to cost centre CC-3200, flag R, category Operating'),
+          answer: t('مبلغ تسویه 8,000 به مرکز هزینه CC-ARY-PRD با پرچم R و طبقه عملیاتی', 'Settlement of 8,000 to cost centre CC-ARY-PRD, flag R, category Operating'),
         },
       ],
     },

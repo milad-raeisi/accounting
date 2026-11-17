@@ -1039,8 +1039,8 @@ export const lesson: Lesson = {
           title: { fa: 'کسری 10 شاخه‌ای که واقعی نبود', en: 'A 10-joint shortage that was not real' },
           difficulty: 'medium',
           problem: {
-            fa: 'سند شمارش PI-26-052 برای لوله جداری 9-5/8 اینچ (کالای 100100) در محوطه لوله انبار میدان، صبح روز آخر ماه صادر شد و مقدار دفتری **180 شاخه** را ثبت کرد. شمارنده روی برگه نوشت «2,040» و کنارش «متر». طبق فهرست طول شاخه‌ها، متوسط طول هر شاخه **12 متر** است. بررسی بیشتر نشان داد عصر روز قبل **10 شاخه** برای دکل حفاری چاه AR-12 (مجوز هزینه AFE-2026-014) بار زده و ارسال شده، اما حواله GI-26-0815 آن هنوز ثبت نشده است. قیمت میانگین متحرک 2,400 است. (الف) اگر 2,040 مستقیم به‌عنوان تعداد شاخه وارد شود چه می‌شود؟ (ب) مغایرت واقعی چقدر است؟ (ج) چه سندی باید ثبت شود و سند مالی آن چیست؟',
-            en: 'Count document PI-26-052 for 9-5/8" casing (material 100100) in the Field Warehouse pipe yard was created on the morning of the last day of the month, recording a book quantity of **180 joints**. The counter wrote "2,040" on the sheet, with "metres" beside it. According to the joint-length list, the average joint is **12 metres**. Further checks showed that the previous evening **10 joints** were loaded and shipped to the rig drilling well AR-12 (AFE-2026-014), but goods issue GI-26-0815 had not yet been posted. The moving average price is 2,400. (a) What happens if 2,040 is entered directly as joints? (b) What is the real difference? (c) What document should be posted, and what is its Finance entry?',
+            fa: 'سند شمارش PI-26-052 برای لوله جداری 9-5/8 اینچ (کالای 100100) در محوطه لوله انبار میدان، صبح روز آخر ماه صادر شد و مقدار دفتری **180 شاخه** را ثبت کرد. شمارنده روی برگه نوشت «2,040» و کنارش «متر». طبق فهرست طول شاخه‌ها، متوسط طول هر شاخه **12 متر** است. بررسی بیشتر نشان داد عصر روز قبل **10 شاخه** برای دکل حفاری چاه AR-12 (مجوز هزینه AFE-2026-012) بار زده و ارسال شده، اما حواله GI-26-0815 آن هنوز ثبت نشده است. قیمت میانگین متحرک 2,400 است. (الف) اگر 2,040 مستقیم به‌عنوان تعداد شاخه وارد شود چه می‌شود؟ (ب) مغایرت واقعی چقدر است؟ (ج) چه سندی باید ثبت شود و سند مالی آن چیست؟',
+            en: 'Count document PI-26-052 for 9-5/8" casing (material 100100) in the Field Warehouse pipe yard was created on the morning of the last day of the month, recording a book quantity of **180 joints**. The counter wrote "2,040" on the sheet, with "metres" beside it. According to the joint-length list, the average joint is **12 metres**. Further checks showed that the previous evening **10 joints** were loaded and shipped to the rig drilling well AR-12 (AFE-2026-012), but goods issue GI-26-0815 had not yet been posted. The moving average price is 2,400. (a) What happens if 2,040 is entered directly as joints? (b) What is the real difference? (c) What document should be posted, and what is its Finance entry?',
           },
           hint: {
             fa: 'اول عدد را به واحد کاردکس (شاخه) تبدیل کنید، بعد ببینید آیا سندی جا افتاده است.',
@@ -1074,8 +1074,8 @@ export const lesson: Lesson = {
                 {
                   title: { fa: '(ج) سند درست', en: '(c) The right document' },
                   text: {
-                    fa: 'حواله GI-26-0815 با تاریخ همان ماه (روزی که کالا خارج شد) و با ارجاع به AFE-2026-014 و پروژه P-AR12 ثبت می‌شود. سپس مقدار دفتری سند شمارش به‌روز می‌شود (یا سند شمارش این قلم دوباره صادر می‌شود)، شمارش 170 با دفتری 170 برابر است و سند شمارش بدون مغایرت بسته می‌شود.',
-                    en: 'Post GI-26-0815 dated in the same month (the day the goods left), referencing AFE-2026-014 and WBS P-AR12. The count document’s book quantity is then refreshed (or the item is re-counted on a new document), the count of 170 matches the book quantity of 170, and the document closes with no difference.',
+                    fa: 'حواله GI-26-0815 با تاریخ همان ماه (روزی که کالا خارج شد) و با ارجاع به AFE-2026-012 و پروژه P-AR12 ثبت می‌شود. سپس مقدار دفتری سند شمارش به‌روز می‌شود (یا سند شمارش این قلم دوباره صادر می‌شود)، شمارش 170 با دفتری 170 برابر است و سند شمارش بدون مغایرت بسته می‌شود.',
+                    en: 'Post GI-26-0815 dated in the same month (the day the goods left), referencing AFE-2026-012 and WBS P-AR12. The count document’s book quantity is then refreshed (or the item is re-counted on a new document), the count of 170 matches the book quantity of 170, and the document closes with no difference.',
                   },
                 },
               ],
@@ -1086,7 +1086,7 @@ export const lesson: Lesson = {
               entries: [
                 {
                   lines: [
-                    { account: { fa: 'دارایی در جریان ساخت: چاه‌ها (AFE-2026-014)', en: 'Assets under construction: wells (AFE-2026-014)' }, debit: 24000 },
+                    { account: { fa: 'دارایی در جریان ساخت: چاه‌ها (AFE-2026-012)', en: 'Assets under construction: wells (AFE-2026-012)' }, debit: 24000 },
                     { account: { fa: 'موجودی لوله‌های جداری و مغزی (OCTG)', en: 'Inventory: OCTG (casing and tubing)' }, credit: 24000 },
                   ],
                   memo: { fa: '10 شاخه لوله جداری به چاه AR-12', en: '10 joints of casing to well AR-12' },
@@ -1103,8 +1103,8 @@ export const lesson: Lesson = {
             },
           ],
           answer: {
-            fa: 'ورود 2,040 به‌عنوان شاخه اضافی کاذب 4,464,000 می‌سازد؛ شمارش واقعی 170 شاخه و مغایرت واقعی صفر است؛ حواله GI-26-0815 ثبت می‌شود: بدهکار دارایی در جریان ساخت (AFE-2026-014) و بستانکار موجودی OCTG، هر کدام 24,000.',
-            en: 'Entering 2,040 as joints creates a false surplus of 4,464,000; the real count is 170 joints and the real difference is zero; post GI-26-0815: Dr Assets under construction (AFE-2026-014) 24,000, Cr Inventory: OCTG 24,000.',
+            fa: 'ورود 2,040 به‌عنوان شاخه اضافی کاذب 4,464,000 می‌سازد؛ شمارش واقعی 170 شاخه و مغایرت واقعی صفر است؛ حواله GI-26-0815 ثبت می‌شود: بدهکار دارایی در جریان ساخت (AFE-2026-012) و بستانکار موجودی OCTG، هر کدام 24,000.',
+            en: 'Entering 2,040 as joints creates a false surplus of 4,464,000; the real count is 170 joints and the real difference is zero; post GI-26-0815: Dr Assets under construction (AFE-2026-012) 24,000, Cr Inventory: OCTG 24,000.',
           },
         },
         {
@@ -1452,7 +1452,7 @@ export const lesson: Lesson = {
       },
       options: [
         { fa: '12 بشکه را به‌عنوان کسری انبار ثبت کنیم', en: 'Post the 12 drums as an inventory shortage' },
-        { fa: 'حواله را با تاریخ ارسال و مرکز هزینه CC-310 ثبت کنیم؛ مغایرت واقعی صفر است', en: 'Post the goods issue dated the day of shipment to cost centre CC-310; the real difference is zero' },
+        { fa: 'حواله را با تاریخ ارسال و مرکز هزینه CC-ARY-CMP ثبت کنیم؛ مغایرت واقعی صفر است', en: 'Post the goods issue dated the day of shipment to cost centre CC-ARY-CMP; the real difference is zero' },
         { fa: 'مقدار شمارش را به عدد سیستم تغییر دهیم', en: 'Change the count to match the system' },
         { fa: 'تا انبارگردانی سالانه صبر کنیم', en: 'Wait for the annual physical inventory' },
       ],

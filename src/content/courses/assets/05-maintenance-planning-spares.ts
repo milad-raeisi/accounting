@@ -3,7 +3,7 @@ import type { Lesson } from '../../types'
 /*
  * Running example: Masar Petroleum, Arya field, compressor station.
  * Work order WO-50231: replace the mechanical seal of condensate pump P-120.
- * Internal labour rate of the mechanical crew (work centre, cost centre CC-3900): 200 per hour.
+ * Internal labour rate of the mechanical crew (work centre, cost centre CC-ARY-MNT): 200 per hour.
  */
 const wo = (n: string) => ({
   mat: { fa: `هزینه قطعات و مواد نگهداری (${n})`, en: `Maintenance materials expense (${n})` },
@@ -14,7 +14,7 @@ const ac = {
   inventory: { fa: 'موجودی قطعات یدکی', en: 'Inventory: spare parts' },
   grir: { fa: 'حساب واسط رسید کالا و فاکتور (GR/IR)', en: 'GR/IR clearing account' },
   ap: { fa: 'حساب‌های پرداختنی', en: 'Accounts payable' },
-  labourAlloc: { fa: 'دستمزد تخصیص‌یافته: گروه مکانیک (CC-3900)', en: 'Labour cost allocated: mechanical crew (CC-3900)' },
+  labourAlloc: { fa: 'دستمزد تخصیص‌یافته: گروه مکانیک (CC-ARY-MNT)', en: 'Labour cost allocated: mechanical crew (CC-ARY-MNT)' },
 }
 const w1 = wo('WO-50231')
 const w2 = wo('WO-50418')
@@ -738,7 +738,7 @@ export const lesson: Lesson = {
             ],
             [
               { fa: 'مرکز کار', en: 'Work centre' },
-              { fa: 'گروه مکانیک، مرکز هزینه CC-3900، نرخ 200 در ساعت', en: 'Mechanical crew, cost centre CC-3900, rate 200 per hour' },
+              { fa: 'گروه مکانیک، مرکز هزینه CC-ARY-MNT، نرخ 200 در ساعت', en: 'Mechanical crew, cost centre CC-ARY-MNT, rate 200 per hour' },
               { fa: 'نگهداری و مالی (نرخ)', en: 'Maintenance; Finance (rate)' },
             ],
             [
@@ -748,7 +748,7 @@ export const lesson: Lesson = {
             ],
             [
               { fa: 'مرکز هزینه', en: 'Cost centre' },
-              { fa: 'CC-3100: بهره‌برداری ایستگاه تقویت فشار', en: 'CC-3100: compressor station operations' },
+              { fa: 'CC-ARY-CMP: بهره‌برداری ایستگاه تقویت فشار', en: 'CC-ARY-CMP: compressor station operations' },
               { fa: 'مالی (حسابداری مدیریت)', en: 'Finance (controlling)' },
             ],
           ],
@@ -867,8 +867,8 @@ export const lesson: Lesson = {
           tone: 'info',
           title: { fa: 'تسویه دستور کار', en: 'Work order settlement' },
           text: {
-            fa: 'برآورد دستمزد 24 ساعت بود، اما کار 32 ساعت طول کشید؛ بیشتر انحراف از همین‌جاست. در پایان ماه، دستور کار هزینه 60,000 را به گیرنده نهایی **تسویه (Settle)** می‌کند. برای این کار جاری، گیرنده مرکز هزینه ایستگاه تقویت فشار (CC-3100) است. تسویه به مرکز هزینه جمع دفتر کل را تغییر نمی‌دهد؛ فقط در حسابداری مدیریت، هزینه را از دستور کار به مرکز هزینه (و از آنجا به میدان و قرارداد) می‌برد. اگر کار سرمایه‌ای بود، گیرنده دارایی در جریان تکمیل می‌شد و آن تسویه یک سند مالی واقعی می‌ساخت.',
-            en: 'Labour was estimated at 24 hours but the job took 32, which explains most of the variance. At month-end the work order **settles** its 60,000 to the final receiver. For this routine repair, that is the compressor station cost centre (CC-3100). Settling to a cost centre does not change the general ledger total; it only moves the cost, in management accounting, from the work order to the cost centre (and from there to the field and the contract). Had the job been capital, the receiver would be an asset under construction, and that settlement would create a real Finance document.',
+            fa: 'برآورد دستمزد 24 ساعت بود، اما کار 32 ساعت طول کشید؛ بیشتر انحراف از همین‌جاست. در پایان ماه، دستور کار هزینه 60,000 را به گیرنده نهایی **تسویه (Settle)** می‌کند. برای این کار جاری، گیرنده مرکز هزینه ایستگاه تقویت فشار (CC-ARY-CMP) است. تسویه به مرکز هزینه جمع دفتر کل را تغییر نمی‌دهد؛ فقط در حسابداری مدیریت، هزینه را از دستور کار به مرکز هزینه (و از آنجا به میدان و قرارداد) می‌برد. اگر کار سرمایه‌ای بود، گیرنده دارایی در جریان تکمیل می‌شد و آن تسویه یک سند مالی واقعی می‌ساخت.',
+            en: 'Labour was estimated at 24 hours but the job took 32, which explains most of the variance. At month-end the work order **settles** its 60,000 to the final receiver. For this routine repair, that is the compressor station cost centre (CC-ARY-CMP). Settling to a cost centre does not change the general ledger total; it only moves the cost, in management accounting, from the work order to the cost centre (and from there to the field and the contract). Had the job been capital, the receiver would be an asset under construction, and that settlement would create a real Finance document.',
           },
         },
         {

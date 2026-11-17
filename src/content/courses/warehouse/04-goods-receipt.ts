@@ -9,8 +9,8 @@ const ac = {
   grir: { fa: 'حساب واسط رسید کالا و فاکتور (GR/IR)', en: 'GR/IR clearing account' },
   ap: { fa: 'حساب‌های پرداختنی', en: 'Accounts payable' },
   wellAR12: {
-    fa: 'دارایی در جریان ساخت: چاه AR-12 (AFE-012)',
-    en: 'Assets under construction: well AR-12 (AFE-012)',
+    fa: 'دارایی در جریان ساخت: چاه AR-12 (AFE-2026-012)',
+    en: 'Assets under construction: well AR-12 (AFE-2026-012)',
   },
 }
 
@@ -59,8 +59,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'صبح یک روز کاری دو کامیون به انبار مرکزی مسار پترولیوم می‌رسند. اولی 40 بشکه امولسیون‌شکن و 6 بسته آب‌بند K-201 را طبق سفارش خرید PO-0518 آورده است. دومی لوله جداری `9-5/8"` برای چاه AR-12 را طبق سفارش PO-0533 آورده که مستقیم به AFE-012 منظور می‌شود. پیش از اینکه انباردار چیزی را امضا کند، باید به چند پرسش پاسخ دهد: آیا این همان چیزی است که سفارش داده‌ایم؟ چه مقدار؟ سالم است؟ گواهی‌های درست را دارد؟ و به کجا می‌رود: موجودی یا چاه؟',
-            en: 'One working morning two trucks pull into Masar Petroleum’s Central Warehouse. The first brings 40 drums of demulsifier and 6 K-201 seal kits on purchase order PO-0518. The second brings `9-5/8"` casing for well AR-12 on PO-0533, charged directly to AFE-012. Before the storekeeper signs anything, a few questions need answers: is this what we ordered? How much? Is it in good condition? Does it have the right certificates? And where does it go: into stock or onto the well?',
+            fa: 'صبح یک روز کاری دو کامیون به انبار مرکزی مسار پترولیوم می‌رسند. اولی 40 بشکه امولسیون‌شکن و 6 بسته آب‌بند K-201 را طبق سفارش خرید PO-0518 آورده است. دومی لوله جداری `9-5/8"` برای چاه AR-12 را طبق سفارش PO-0533 آورده که مستقیم به AFE-2026-012 منظور می‌شود. پیش از اینکه انباردار چیزی را امضا کند، باید به چند پرسش پاسخ دهد: آیا این همان چیزی است که سفارش داده‌ایم؟ چه مقدار؟ سالم است؟ گواهی‌های درست را دارد؟ و به کجا می‌رود: موجودی یا چاه؟',
+            en: 'One working morning two trucks pull into Masar Petroleum’s Central Warehouse. The first brings 40 drums of demulsifier and 6 K-201 seal kits on purchase order PO-0518. The second brings `9-5/8"` casing for well AR-12 on PO-0533, charged directly to AFE-2026-012. Before the storekeeper signs anything, a few questions need answers: is this what we ordered? How much? Is it in good condition? Does it have the right certificates? And where does it go: into stock or onto the well?',
           },
         },
         {
@@ -381,8 +381,8 @@ export const lesson: Lesson = {
             [
               t('سایت، محل و وضعیت موجودی', 'Site, location and stock status'),
               t(
-                'MP10/1003 آزاد (امولسیون‌شکن)؛ MP10/1001 در انتظار بازرسی (آب‌بند)',
-                'MP10/1003 unrestricted (demulsifier); MP10/1001 quality inspection (seal kits)',
+                'WH-10/1003 آزاد (امولسیون‌شکن)؛ WH-10/1001 در انتظار بازرسی (آب‌بند)',
+                'WH-10/1003 unrestricted (demulsifier); WH-10/1001 quality inspection (seal kits)',
               ),
             ],
             [t('بچ', 'Batch'), t('DM-2611', 'DM-2611')],
@@ -637,7 +637,7 @@ export const lesson: Lesson = {
           title: { fa: 'ثبت‌های خودکار لوله جداری چاه AR-12', en: 'Automatic entries for the AR-12 casing' },
           entries: [
             {
-              date: { fa: 'GRN مستقیم به AFE-012', en: 'GRN directly to AFE-012' },
+              date: { fa: 'GRN مستقیم به AFE-2026-012', en: 'GRN directly to AFE-2026-012' },
               lines: [
                 { account: ac.wellAR12, debit: 345000 },
                 { account: ac.grir, credit: 345000 },
@@ -675,8 +675,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'ERP مبلغ سفارش را از لحظه صدور به‌صورت **تعهد** روی AFE نشان می‌دهد و با GRN آن را به هزینه واقعی تبدیل می‌کند. اگر بودجه مصوب لوله جداری در AFE-012 برابر 360,000 باشد، پس از این ثبت‌ها 360,000 − 339,000 = 21,000 باقی می‌ماند؛ اما تعهد 20 متر باقی‌مانده سفارش (20 × 250 = 5,000) هم هنوز روی AFE است، پس بودجه آزاد 21,000 − 5,000 = 16,000 است. اگر هزینه از بودجه AFE بیشتر شود، قرارداد عملیات مشترک معمولاً **AFE تکمیلی** با تأیید شرکا می‌خواهد.',
-            en: 'The ERP shows the PO value as a **commitment** on the AFE from the moment the PO is issued, and turns it into actual cost at the GRN. If AFE-012’s approved budget for casing is 360,000, then after these entries 360,000 − 339,000 = 21,000 remains; but the commitment for the 20 m still due on the PO (20 × 250 = 5,000) is also on the AFE, so the free budget is 21,000 − 5,000 = 16,000. If spending would exceed the AFE, the joint operating agreement normally requires a **supplementary AFE** approved by the partners.',
+            fa: 'ERP مبلغ سفارش را از لحظه صدور به‌صورت **تعهد** روی AFE نشان می‌دهد و با GRN آن را به هزینه واقعی تبدیل می‌کند. اگر بودجه مصوب لوله جداری در AFE-2026-012 برابر 360,000 باشد، پس از این ثبت‌ها 360,000 − 339,000 = 21,000 باقی می‌ماند؛ اما تعهد 20 متر باقی‌مانده سفارش (20 × 250 = 5,000) هم هنوز روی AFE است، پس بودجه آزاد 21,000 − 5,000 = 16,000 است. اگر هزینه از بودجه AFE بیشتر شود، قرارداد عملیات مشترک معمولاً **AFE تکمیلی** با تأیید شرکا می‌خواهد.',
+            en: 'The ERP shows the PO value as a **commitment** on the AFE from the moment the PO is issued, and turns it into actual cost at the GRN. If AFE-2026-012’s approved budget for casing is 360,000, then after these entries 360,000 − 339,000 = 21,000 remains; but the commitment for the 20 m still due on the PO (20 × 250 = 5,000) is also on the AFE, so the free budget is 21,000 − 5,000 = 16,000. If spending would exceed the AFE, the joint operating agreement normally requires a **supplementary AFE** approved by the partners.',
           },
         },
         { type: 'h', text: { fa: 'بسته مستندات کاست ریکاوری', en: 'The cost-recovery documentation pack' } },
@@ -907,8 +907,8 @@ export const lesson: Lesson = {
           title: { fa: 'لاینر چاه AR-12: از GRN تا صورت‌حساب شریک', en: 'The AR-12 liner: from GRN to partner billing' },
           difficulty: 'hard',
           problem: {
-            fa: 'برای چاه AR-12، سفارش PO-0640 به مقدار 600 متر لوله `7"` (لاینر) به قیمت هر متر 200، با تخصیص مستقیم به AFE-012 و حد مجاز تحویل 3٪، صادر شده است. تحویل: 50 شاخه با طول اندازه‌گیری‌شده 606 متر. یک شاخه به طول 12.2 متر به دلیل فرورفتگی بدنه رد می‌شود. پس از نصب لاینر، 4 شاخه به طول 48.6 متر استفاده نمی‌شود و به انبار مرکزی برمی‌گردد. سهم شریک (فرضی) 40٪ است. (الف) آیا تحویل در حد مجاز است؟ (ب) مقدار و ارزش GRN چقدر است؟ (ج) ثبت‌های خودکار GRN و برگشت مازاد را بنویسید. (د) هزینه خالص مواد چاه و سهم شریک را حساب کنید و سه مدرک کلیدی کاست ریکاوری این کالا را نام ببرید.',
-            en: 'For well AR-12, PO-0640 orders 600 m of `7"` pipe (liner) at 200 per metre, assigned directly to AFE-012, with a 3% delivery tolerance. Delivered: 50 joints with a measured length of 606 m. One joint of 12.2 m is rejected for a dented body. After the liner is run, 4 joints totalling 48.6 m are not used and go back to the Central Warehouse. The partner’s (illustrative) share is 40%. (a) Is the delivery within tolerance? (b) What are the GRN quantity and value? (c) Write the automatic entries for the GRN and the surplus return. (d) Work out the well’s net material cost and the partner’s share, and name three key cost-recovery documents for this material.',
+            fa: 'برای چاه AR-12، سفارش PO-0640 به مقدار 600 متر لوله `7"` (لاینر) به قیمت هر متر 200، با تخصیص مستقیم به AFE-2026-012 و حد مجاز تحویل 3٪، صادر شده است. تحویل: 50 شاخه با طول اندازه‌گیری‌شده 606 متر. یک شاخه به طول 12.2 متر به دلیل فرورفتگی بدنه رد می‌شود. پس از نصب لاینر، 4 شاخه به طول 48.6 متر استفاده نمی‌شود و به انبار مرکزی برمی‌گردد. سهم شریک (فرضی) 40٪ است. (الف) آیا تحویل در حد مجاز است؟ (ب) مقدار و ارزش GRN چقدر است؟ (ج) ثبت‌های خودکار GRN و برگشت مازاد را بنویسید. (د) هزینه خالص مواد چاه و سهم شریک را حساب کنید و سه مدرک کلیدی کاست ریکاوری این کالا را نام ببرید.',
+            en: 'For well AR-12, PO-0640 orders 600 m of `7"` pipe (liner) at 200 per metre, assigned directly to AFE-2026-012, with a 3% delivery tolerance. Delivered: 50 joints with a measured length of 606 m. One joint of 12.2 m is rejected for a dented body. After the liner is run, 4 joints totalling 48.6 m are not used and go back to the Central Warehouse. The partner’s (illustrative) share is 40%. (a) Is the delivery within tolerance? (b) What are the GRN quantity and value? (c) Write the automatic entries for the GRN and the surplus return. (d) Work out the well’s net material cost and the partner’s share, and name three key cost-recovery documents for this material.',
           },
           hint: {
             fa: 'حد بالای تحویل = 600 × 1.03. ارزش GRN بر اساس طول پذیرفته‌شده است، نه طول سفارش.',
@@ -953,7 +953,7 @@ export const lesson: Lesson = {
               title: { fa: '(ج) ثبت‌های خودکار', en: '(c) Automatic entries' },
               entries: [
                 {
-                  date: { fa: 'GRN مستقیم به AFE-012', en: 'GRN directly to AFE-012' },
+                  date: { fa: 'GRN مستقیم به AFE-2026-012', en: 'GRN directly to AFE-2026-012' },
                   lines: [
                     { account: ac.wellAR12, debit: 118760 },
                     { account: ac.grir, credit: 118760 },
@@ -1190,11 +1190,11 @@ export const lesson: Lesson = {
     },
     {
       q: {
-        fa: 'لوله‌ای که با سفارش دارای تخصیص به AFE-012 خریده شده، رسید می‌شود. ثبت خودکار کدام است؟',
-        en: 'Pipe bought on a PO assigned to AFE-012 is received. What is the automatic entry?',
+        fa: 'لوله‌ای که با سفارش دارای تخصیص به AFE-2026-012 خریده شده، رسید می‌شود. ثبت خودکار کدام است؟',
+        en: 'Pipe bought on a PO assigned to AFE-2026-012 is received. What is the automatic entry?',
       },
       options: [
-        t('بدهکار دارایی در جریان ساخت: چاه AR-12 (AFE-012)، بستانکار GR/IR', 'Dr Assets under construction: well AR-12 (AFE-012), Cr GR/IR'),
+        t('بدهکار دارایی در جریان ساخت: چاه AR-12 (AFE-2026-012)، بستانکار GR/IR', 'Dr Assets under construction: well AR-12 (AFE-2026-012), Cr GR/IR'),
         t('بدهکار موجودی لوله‌های OCTG، بستانکار GR/IR', 'Dr Inventory: OCTG, Cr GR/IR'),
         t('بدهکار دارایی در جریان ساخت، بستانکار موجودی لوله‌های OCTG', 'Dr Assets under construction, Cr Inventory: OCTG'),
         t('تا نصب لوله در چاه ثبتی انجام نمی‌شود', 'No entry until the pipe is run in the well'),

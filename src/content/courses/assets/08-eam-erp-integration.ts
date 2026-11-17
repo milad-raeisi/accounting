@@ -3,7 +3,7 @@ import type { Lesson } from '../../types'
 /*
  * Running example: Masar Petroleum, Arya field compressor station.
  * Scenario: K-102 trips on high vibration; notification NT-80412, work order WO-60518.
- * Mechanical crew work centre, cost centre CC-3900, rate 200 per hour (derived in this lesson).
+ * Mechanical crew work centre, cost centre CC-ARY-MNT, rate 200 per hour (derived in this lesson).
  * Joint venture: in this lesson the non-operating partner holds 40% (illustrative).
  * VAT: assumed 10% for illustration only.
  */
@@ -20,8 +20,8 @@ const ac = {
   ap: { fa: 'حساب‌های پرداختنی', en: 'Accounts payable' },
   vat: { fa: 'مالیات بر ارزش افزوده خرید (اعتبار مالیاتی)', en: 'Input VAT receivable' },
   bank: { fa: 'موجودی نقد (بانک)', en: 'Cash at bank' },
-  labourMech: { fa: 'دستمزد تخصیص‌یافته: گروه مکانیک (CC-3900)', en: 'Labour cost allocated: mechanical crew (CC-3900)' },
-  labourInst: { fa: 'دستمزد تخصیص‌یافته: گروه ابزار دقیق (CC-3910)', en: 'Labour cost allocated: instrument crew (CC-3910)' },
+  labourMech: { fa: 'دستمزد تخصیص‌یافته: گروه مکانیک (CC-ARY-MNT)', en: 'Labour cost allocated: mechanical crew (CC-ARY-MNT)' },
+  labourInst: { fa: 'دستمزد تخصیص‌یافته: گروه ابزار دقیق (CC-ARY-INS)', en: 'Labour cost allocated: instrument crew (CC-ARY-INS)' },
   partnerAr: { fa: 'حساب دریافتنی از شریک مشارکت', en: 'Receivable from JV partner' },
   recharge: { fa: 'هزینه نگهداری قابل مطالبه از شرکا (کاهنده هزینه)', en: 'Maintenance costs recharged to partners (contra expense)' },
   auc: { fa: 'دارایی در جریان تکمیل', en: 'Assets under construction' },
@@ -195,8 +195,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'حقوق، بیمه سهم کارفرما، اضافه‌کاری و فوق‌العاده‌های کار در میدان در سیستم حقوق و دستمزد (منابع انسانی) محاسبه و هزینه واقعی‌اش به مرکز هزینه گروه (مثلاً CC-3900 گروه مکانیک) ثبت می‌شود. مالی و نگهداری از این هزینه یک **نرخ ساعتی** برای مرکز کار می‌سازند. هر تأیید ساعت کار، ساعت × نرخ را به دستور کار می‌برد و مرکز هزینه گروه را بستانکار می‌کند. صلاحیت‌های کارکنان (مثلاً گواهی کار روی توربین گازی) هم از منابع انسانی هنگام زمان‌بندی کنترل می‌شود.',
-            en: 'Salaries, the employer’s insurance share, overtime and field allowances are calculated in payroll (HR), and their actual cost is posted to the crew’s cost centre (e.g. CC-3900, mechanical crew). Finance and maintenance turn that cost into an **hourly rate** for the work centre. Each time confirmation charges hours × rate to the work order and credits the crew cost centre. Staff qualifications (e.g. gas-turbine certification) also come from HR and are checked at scheduling.',
+            fa: 'حقوق، بیمه سهم کارفرما، اضافه‌کاری و فوق‌العاده‌های کار در میدان در سیستم حقوق و دستمزد (منابع انسانی) محاسبه و هزینه واقعی‌اش به مرکز هزینه گروه (مثلاً CC-ARY-MNT گروه مکانیک) ثبت می‌شود. مالی و نگهداری از این هزینه یک **نرخ ساعتی** برای مرکز کار می‌سازند. هر تأیید ساعت کار، ساعت × نرخ را به دستور کار می‌برد و مرکز هزینه گروه را بستانکار می‌کند. صلاحیت‌های کارکنان (مثلاً گواهی کار روی توربین گازی) هم از منابع انسانی هنگام زمان‌بندی کنترل می‌شود.',
+            en: 'Salaries, the employer’s insurance share, overtime and field allowances are calculated in payroll (HR), and their actual cost is posted to the crew’s cost centre (e.g. CC-ARY-MNT, mechanical crew). Finance and maintenance turn that cost into an **hourly rate** for the work centre. Each time confirmation charges hours × rate to the work order and credits the crew cost centre. Staff qualifications (e.g. gas-turbine certification) also come from HR and are checked at scheduling.',
           },
         },
         {
@@ -206,8 +206,8 @@ export const lesson: Lesson = {
             en: 'Labour rate = (annual crew personnel cost + crew overheads) ÷ planned productive hours',
           },
           note: {
-            fa: 'گروه مکانیک CC-3900: هزینه کارکنان 2,520,000 + سربار (ابزار، خودرو، آموزش) 360,000 = 2,880,000؛ ساعت مفید 8 تکنسین × 1,800 = 14,400؛ نرخ = 2,880,000 ÷ 14,400 = 200 در ساعت.',
-            en: 'Mechanical crew CC-3900: personnel cost 2,520,000 + overheads (tools, vehicles, training) 360,000 = 2,880,000; productive hours 8 technicians × 1,800 = 14,400; rate = 2,880,000 ÷ 14,400 = 200 per hour.',
+            fa: 'گروه مکانیک CC-ARY-MNT: هزینه کارکنان 2,520,000 + سربار (ابزار، خودرو، آموزش) 360,000 = 2,880,000؛ ساعت مفید 8 تکنسین × 1,800 = 14,400؛ نرخ = 2,880,000 ÷ 14,400 = 200 در ساعت.',
+            en: 'Mechanical crew CC-ARY-MNT: personnel cost 2,520,000 + overheads (tools, vehicles, training) 360,000 = 2,880,000; productive hours 8 technicians × 1,800 = 14,400; rate = 2,880,000 ÷ 14,400 = 200 per hour.',
           },
         },
         {
@@ -215,8 +215,8 @@ export const lesson: Lesson = {
           tone: 'example',
           title: { fa: 'جذب کمتر از هزینه واقعی', en: 'Under-absorption' },
           text: {
-            fa: 'در پایان سال، هزینه واقعی CC-3900 برابر 2,950,000 است و ساعت‌های تأییدشده روی دستورهای کار 14,200 × 200 = 2,840,000 را جذب کرده‌اند. 110,000 «جذب‌نشده» در مرکز هزینه گروه مانده است. علت را بررسی کنید (اضافه‌کاری بیشتر، ساعت ثبت‌نشده، آموزش بیشتر) و یا آن را به گیرندگان تخصیص دهید یا نرخ سال بعد را اصلاح کنید.',
-            en: 'At year-end, CC-3900’s actual cost is 2,950,000 and the hours confirmed on work orders absorbed 14,200 × 200 = 2,840,000. 110,000 remains “unabsorbed” in the crew cost centre. Investigate why (more overtime, unrecorded hours, more training), then either allocate it to receivers or correct next year’s rate.',
+            fa: 'در پایان سال، هزینه واقعی CC-ARY-MNT برابر 2,950,000 است و ساعت‌های تأییدشده روی دستورهای کار 14,200 × 200 = 2,840,000 را جذب کرده‌اند. 110,000 «جذب‌نشده» در مرکز هزینه گروه مانده است. علت را بررسی کنید (اضافه‌کاری بیشتر، ساعت ثبت‌نشده، آموزش بیشتر) و یا آن را به گیرندگان تخصیص دهید یا نرخ سال بعد را اصلاح کنید.',
+            en: 'At year-end, CC-ARY-MNT’s actual cost is 2,950,000 and the hours confirmed on work orders absorbed 14,200 × 200 = 2,840,000. 110,000 remains “unabsorbed” in the crew cost centre. Investigate why (more overtime, unrecorded hours, more training), then either allocate it to receivers or correct next year’s rate.',
           },
         },
         {
@@ -247,8 +247,8 @@ export const lesson: Lesson = {
             {
               title: { fa: 'دستور کار', en: 'Work order' },
               text: {
-                fa: 'برنامه‌ریز `WO-60518` را از روی اعلان می‌سازد: نوع «تعمیر اصلاحی»، محل عملیاتی `ARY-CS-GC-K102`، مرکز هزینه CC-3100 و قاعده تسویه به همان مرکز هزینه.',
-                en: 'The planner creates `WO-60518` from the notification: type “corrective repair”, functional location `ARY-CS-GC-K102`, cost centre CC-3100 and a settlement rule to that cost centre.',
+                fa: 'برنامه‌ریز `WO-60518` را از روی اعلان می‌سازد: نوع «تعمیر اصلاحی»، محل عملیاتی `ARY-CS-GC-K102`، مرکز هزینه CC-ARY-CMP و قاعده تسویه به همان مرکز هزینه.',
+                en: 'The planner creates `WO-60518` from the notification: type “corrective repair”, functional location `ARY-CS-GC-K102`, cost centre CC-ARY-CMP and a settlement rule to that cost centre.',
               },
             },
             {
@@ -296,7 +296,7 @@ export const lesson: Lesson = {
             [{ fa: 'کارتریج آب‌بند گاز خشک', en: 'Dry gas seal cartridge' }, { fa: 'حیاتی، انبار مرکزی', en: 'Critical, Central Warehouse' }, { fa: '1 × 210,000', en: '1 × 210,000' }, 210000, { fa: 'انتقال و رزرو', en: 'Transfer and reservation' }],
             [{ fa: 'کوپلینگ انعطاف‌پذیر', en: 'Flexible coupling' }, { fa: 'غیرانباری', en: 'Non-stock' }, { fa: '1 × 18,000', en: '1 × 18,000' }, 18000, { fa: 'درخواست خرید و سفارش `PO-45120`', en: 'Requisition and PO `PO-45120`' }],
             [{ fa: 'مهندس سرویس سازنده (OEM)', en: 'OEM field service engineer' }, { fa: 'خدمت، قرارداد چارچوبی', en: 'Service, framework contract' }, { fa: '4 روز × 22,000', en: '4 days × 22,000' }, 88000, { fa: 'سفارش خدمت `PO-45121`', en: 'Service call-off `PO-45121`' }],
-            [{ fa: 'گروه مکانیک', en: 'Mechanical crew' }, { fa: 'دستمزد داخلی، CC-3900', en: 'Internal labour, CC-3900' }, { fa: '60 ساعت × 200', en: '60 hours × 200' }, 12000, { fa: 'برنامه روی مرکز کار', en: 'Planned on the work centre' }],
+            [{ fa: 'گروه مکانیک', en: 'Mechanical crew' }, { fa: 'دستمزد داخلی، CC-ARY-MNT', en: 'Internal labour, CC-ARY-MNT' }, { fa: '60 ساعت × 200', en: '60 hours × 200' }, 12000, { fa: 'برنامه روی مرکز کار', en: 'Planned on the work centre' }],
             [{ fa: 'جمع بدون احتیاط', en: 'Total before contingency' }, { fa: '', en: '' }, { fa: '', en: '' }, 374000, { fa: '', en: '' }],
           ],
           numericCols: [3],
@@ -452,15 +452,15 @@ export const lesson: Lesson = {
             {
               title: { fa: 'دستور کار به مرکز هزینه', en: 'Work order to cost centre' },
               text: {
-                fa: '374,000 از WO-60518 به CC-3100 ایستگاه تقویت فشار تسویه می‌شود (حسابداری مدیریت؛ جمع دفتر کل تغییر نمی‌کند).',
-                en: '374,000 settles from WO-60518 to CC-3100, the compressor station (management accounting; the GL total does not change).',
+                fa: '374,000 از WO-60518 به CC-ARY-CMP ایستگاه تقویت فشار تسویه می‌شود (حسابداری مدیریت؛ جمع دفتر کل تغییر نمی‌کند).',
+                en: '374,000 settles from WO-60518 to CC-ARY-CMP, the compressor station (management accounting; the GL total does not change).',
               },
             },
             {
               title: { fa: 'مرکز هزینه به حوضه هزینه مشارکت', en: 'Cost centre to the joint-venture cost pool' },
               text: {
-                fa: 'CC-3100 متعلق به محدوده قرارداد آریاست، پس هزینه‌اش در حوضه هزینه مشترک آن مشارکت جمع می‌شود.',
-                en: 'CC-3100 belongs to the Arya contract area, so its cost joins that joint venture’s shared cost pool.',
+                fa: 'CC-ARY-CMP متعلق به محدوده قرارداد آریاست، پس هزینه‌اش در حوضه هزینه مشترک آن مشارکت جمع می‌شود.',
+                en: 'CC-ARY-CMP belongs to the Arya contract area, so its cost joins that joint venture’s shared cost pool.',
               },
             },
             {
@@ -508,7 +508,7 @@ export const lesson: Lesson = {
             [{ fa: 'قطعات انباری', en: 'Stock parts' }, 256000, { fa: 'رزرو، حواله با امضای تکنسین، نرخ میانگین موزون کالا', en: 'Reservation, goods issue signed by the technician, moving average price' }],
             [{ fa: 'کوپلینگ', en: 'Coupling' }, 18000, { fa: 'درخواست، سفارش، رسید، فاکتور، پرداخت', en: 'Requisition, PO, receipt, invoice, payment' }],
             [{ fa: 'مهندس سازنده', en: 'OEM engineer' }, 88000, { fa: 'قرارداد چارچوبی، سفارش خدمت، SES تأییدشده، برگه کار روزانه، فاکتور', en: 'Framework contract, call-off, approved SES, daily field tickets, invoice' }],
-            [{ fa: 'دستمزد', en: 'Labour' }, 12000, { fa: 'تأییدهای ساعت کار و محاسبه نرخ CC-3900', en: 'Time confirmations and the CC-3900 rate calculation' }],
+            [{ fa: 'دستمزد', en: 'Labour' }, 12000, { fa: 'تأییدهای ساعت کار و محاسبه نرخ CC-ARY-MNT', en: 'Time confirmations and the CC-ARY-MNT rate calculation' }],
             [{ fa: 'جمع', en: 'Total' }, 374000, { fa: 'جریان اسناد دستور کار، گزارش خرابی، سند تسویه', en: 'Work order document flow, failure report, settlement document' }],
           ],
           numericCols: [1],
@@ -679,8 +679,8 @@ export const lesson: Lesson = {
           title: { fa: 'نرخ گروه ابزار دقیق', en: 'The instrument crew rate' },
           difficulty: 'easy',
           problem: {
-            fa: 'هزینه سالانه کارکنان گروه ابزار دقیق (CC-3910) 1,350,000 و سربار گروه 270,000 است. گروه 6 تکنسین دارد و هر کدام 1,500 ساعت مفید در سال برنامه‌ریزی شده است. نرخ ساعتی را حساب کنید و ثبت خودکار تأیید 25 ساعت روی دستور کار `WO-61022` را بنویسید.',
-            en: 'The instrument crew (CC-3910) has annual personnel cost of 1,350,000 and crew overheads of 270,000. It has 6 technicians with 1,500 planned productive hours each per year. Compute the hourly rate and write the automatic posting for confirming 25 hours on work order `WO-61022`.',
+            fa: 'هزینه سالانه کارکنان گروه ابزار دقیق (CC-ARY-INS) 1,350,000 و سربار گروه 270,000 است. گروه 6 تکنسین دارد و هر کدام 1,500 ساعت مفید در سال برنامه‌ریزی شده است. نرخ ساعتی را حساب کنید و ثبت خودکار تأیید 25 ساعت روی دستور کار `WO-61022` را بنویسید.',
+            en: 'The instrument crew (CC-ARY-INS) has annual personnel cost of 1,350,000 and crew overheads of 270,000. It has 6 technicians with 1,500 planned productive hours each per year. Compute the hourly rate and write the automatic posting for confirming 25 hours on work order `WO-61022`.',
           },
           solution: [
             {
@@ -844,8 +844,8 @@ export const lesson: Lesson = {
           title: { fa: 'یافته‌های حسابرسی پایان سال', en: 'Year-end audit findings' },
           difficulty: 'hard',
           problem: {
-            fa: 'حسابرس داخلی چهار یافته دارد. برای هر کدام کنترل ازدست‌رفته و اقدام اصلاحی را بنویسید و برای یافته (الف) ثبت اصلاحی را بنویسید. (الف) دستور کار تعمیر اساسی سرمایه‌ای `WO-70145` به مبلغ 800,000 به مرکز هزینه CC-3100 تسویه شده است. (ب) یک کاربر هم سفارش داربست 64,000 را ثبت کرده و هم SES آن را تأیید کرده است. (ج) 45,000 مانده GR/IR بابت یک رسید کوپلینگ بیش از 90 روز باز مانده است. (د) 30,000 هزینه مواد شیمیایی چاه AR-04 روی چاه AR-07 ثبت شده است.',
-            en: 'Internal audit has four findings. For each, name the failed control and the corrective action, and write the correcting entry for finding (a). (a) Capital overhaul work order `WO-70145` for 800,000 was settled to cost centre CC-3100. (b) One user both created the 64,000 scaffolding PO and approved its SES. (c) A 45,000 GR/IR balance for a coupling receipt has been open for more than 90 days. (d) 30,000 of chemicals for well AR-04 was booked to well AR-07.',
+            fa: 'حسابرس داخلی چهار یافته دارد. برای هر کدام کنترل ازدست‌رفته و اقدام اصلاحی را بنویسید و برای یافته (الف) ثبت اصلاحی را بنویسید. (الف) دستور کار تعمیر اساسی سرمایه‌ای `WO-70145` به مبلغ 800,000 به مرکز هزینه CC-ARY-CMP تسویه شده است. (ب) یک کاربر هم سفارش داربست 64,000 را ثبت کرده و هم SES آن را تأیید کرده است. (ج) 45,000 مانده GR/IR بابت یک رسید کوپلینگ بیش از 90 روز باز مانده است. (د) 30,000 هزینه مواد شیمیایی چاه AR-04 روی چاه AR-07 ثبت شده است.',
+            en: 'Internal audit has four findings. For each, name the failed control and the corrective action, and write the correcting entry for finding (a). (a) Capital overhaul work order `WO-70145` for 800,000 was settled to cost centre CC-ARY-CMP. (b) One user both created the 64,000 scaffolding PO and approved its SES. (c) A 45,000 GR/IR balance for a coupling receipt has been open for more than 90 days. (d) 30,000 of chemicals for well AR-04 was booked to well AR-07.',
           },
           solution: [
             {

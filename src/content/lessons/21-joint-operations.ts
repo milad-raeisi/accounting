@@ -6,13 +6,13 @@ const op = {
   jointAccount: { fa: '1710 حساب مشترک مشارکت آریا (واسط)', en: '1710 Arya JV joint account (clearing)' },
   alborz: { fa: '1720 حساب جاری شریک: انرژی البرز', en: '1720 Partner current account: Alborz Energy' },
   dena: { fa: '1730 حساب جاری شریک: نفت دنا', en: '1730 Partner current account: Dena Petroleum' },
-  auc: { fa: '1510 دارایی‌های در جریان تکمیل (WBS چاه AR-08، سهم 50٪)', en: '1510 Assets under construction (WBS well AR-08, 50% share)' },
+  auc: { fa: '1510 دارایی‌های در جریان تکمیل (WBS چاه AR-14، سهم 50٪)', en: '1510 Assets under construction (WBS well AR-14, 50% share)' },
   ap: { fa: '2110 حساب‌های پرداختنی', en: '2110 Accounts payable' },
   grir: { fa: '2120 حساب واسط رسید کالا و فاکتور (GR/IR)', en: '2120 GR/IR clearing account' },
   opex: { fa: '5110 هزینه عملیات تولید', en: '5110 Production operating expense' },
   ga: { fa: '5900 هزینه‌های اداری و عمومی', en: '5900 General and administrative expense' },
-  ohRecovered: { fa: '5910 سربار بازیافتی از حساب مشترک', en: '5910 Overhead recovered from the joint account' },
-  soleRisk: { fa: '5120 هزینه عملیات انفرادی اپراتور', en: '5120 Operator sole-risk operations expense' },
+  ohRecovered: { fa: '5930 سربار بازیافتی از حساب مشترک', en: '5930 Overhead recovered from the joint account' },
+  soleRisk: { fa: '5195 هزینه عملیات انفرادی اپراتور', en: '5195 Operator sole-risk operations expense' },
 }
 
 /* Accounts in a non-operator’s books (Alborz Energy or Dena Petroleum). */
@@ -90,7 +90,7 @@ export const lesson: Lesson = {
             { fa: 'شریک', en: 'Partner' },
             { fa: 'نقش', en: 'Role' },
             { fa: 'سهم مشارکت', en: 'Working interest' },
-            { fa: 'سهم از AFE-208 (10,000,000)', en: 'Share of AFE-208 (10,000,000)' },
+            { fa: 'سهم از AFE-2026-015 (10,000,000)', en: 'Share of AFE-2026-015 (10,000,000)' },
           ],
           numericCols: [3],
           rows: [
@@ -183,13 +183,13 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'هر سال اپراتور **برنامه کاری و بودجه** سال بعد را به کمیته عملیاتی می‌دهد. برای هر کار بزرگ مشخص، مثل حفاری چاه AR-08، علاوه بر بودجه یک **AFE** هم لازم است: سندی با شماره، شرح کار، محل، برآورد هزینه به تفکیک دسته و سهم هر شریک که شرکا آن را امضا می‌کنند. اگر هزینه واقعی از آستانه مندرج در JOA فراتر رود، **AFE تکمیلی** لازم است.',
-            en: 'Each year the operator presents next year’s **work programme and budget** to the operating committee. For each large specific job, such as drilling well AR-08, an **AFE** is needed on top of the budget: a document with a number, scope, location, cost estimate by category and each partner’s share, signed by the partners. If actual cost goes beyond the threshold in the JOA, a **supplementary AFE** is needed.',
+            fa: 'هر سال اپراتور **برنامه کاری و بودجه** سال بعد را به کمیته عملیاتی می‌دهد. برای هر کار بزرگ مشخص، مثل حفاری چاه AR-14، علاوه بر بودجه یک **AFE** هم لازم است: سندی با شماره، شرح کار، محل، برآورد هزینه به تفکیک دسته و سهم هر شریک که شرکا آن را امضا می‌کنند. اگر هزینه واقعی از آستانه مندرج در JOA فراتر رود، **AFE تکمیلی** لازم است.',
+            en: 'Each year the operator presents next year’s **work programme and budget** to the operating committee. For each large specific job, such as drilling well AR-14, an **AFE** is needed on top of the budget: a document with a number, scope, location, cost estimate by category and each partner’s share, signed by the partners. If actual cost goes beyond the threshold in the JOA, a **supplementary AFE** is needed.',
           },
         },
         {
           type: 'table',
-          caption: { fa: 'AFE-208: حفاری و تکمیل چاه AR-08', en: 'AFE-208: drill and complete well AR-08' },
+          caption: { fa: 'AFE-2026-015: حفاری و تکمیل چاه AR-14', en: 'AFE-2026-015: drill and complete well AR-14' },
           head: [
             { fa: 'دسته هزینه', en: 'Cost category' },
             { fa: 'برآورد 100٪', en: 'Estimate 100%' },
@@ -213,7 +213,7 @@ export const lesson: Lesson = {
           items: [
             { title: t('تهیه', 'Prepare'), text: t('مهندس حفاری اپراتور برآورد را تهیه و حسابدار مشارکت سهم شرکا را اضافه می‌کند.', 'The operator’s drilling engineer prepares the estimate and the JV accountant adds the partners’ shares.') },
             { title: t('ارسال و تصویب', 'Circulate and approve'), text: t('AFE برای شرکا فرستاده و طبق قواعد JOA تصویب می‌شود.', 'The AFE is sent to the partners and approved under the JOA rules.') },
-            { title: t('ساخت در ERP', 'Set up in the ERP'), text: t('عنصر WBS چاه AR-08 با AFE-208، بودجه 10,000,000، کد مشارکت آریا و نشانگر «قابل شارژ به حساب مشترک» ساخته می‌شود.', 'The WBS element for well AR-08 is created with AFE-208, a 10,000,000 budget, the Arya JV code and a "chargeable to the joint account" flag.') },
+            { title: t('ساخت در ERP', 'Set up in the ERP'), text: t('عنصر WBS چاه AR-14 با AFE-2026-015، بودجه 10,000,000، کد مشارکت آریا و نشانگر «قابل شارژ به حساب مشترک» ساخته می‌شود.', 'The WBS element for well AR-14 is created with AFE-2026-015, a 10,000,000 budget, the Arya JV code and a "chargeable to the joint account" flag.') },
             { title: t('کنترل تعهد', 'Control commitments'), text: t('وقتی قرارداد دکل یا سفارش لوله ثبت می‌شود، ERP تعهد را از بودجه AFE کم می‌کند و پیش از عبور از سقف هشدار می‌دهد؛ سپس GRN و SES این تعهد را به هزینه واقعی تبدیل می‌کنند.', 'When the rig contract or a tubing order is created, the ERP deducts the commitment from the AFE budget and warns before the limit is crossed; GRNs and SESs then turn the commitment into actual cost.') },
             { title: t('بستن', 'Close out'), text: t('پس از تکمیل، گزارش نهایی AFE برای شرکا فرستاده می‌شود؛ بیش‌خرج بالای آستانه، AFE تکمیلی می‌خواهد.', 'After completion, the final AFE report goes to the partners; an overrun above the threshold needs a supplementary AFE.') },
           ],
@@ -252,7 +252,7 @@ export const lesson: Lesson = {
           ],
           numericCols: [1, 2, 3, 4],
           rows: [
-            [t('حفاری چاه AR-08 (AFE-208)', 'Drilling well AR-08 (AFE-208)'), 3000000, 1500000, 900000, 600000],
+            [t('حفاری چاه AR-14 (AFE-2026-015)', 'Drilling well AR-14 (AFE-2026-015)'), 3000000, 1500000, 900000, 600000],
             [t('عملیات میدان', 'Field operations'), 1000000, 500000, 300000, 200000],
             [t('جمع درخواست وجه', 'Total cash call'), 4000000, 2000000, 1200000, 800000],
           ],
@@ -310,8 +310,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'در طول ماه، اپراتور همه هزینه‌های عملیات مشترک را **100٪** در حساب مشترک ثبت و پرداخت می‌کند. هزینه هنگام ثبت رسید کالا (GRN) یا تأیید برگه ثبت خدمات (SES) وارد حساب مشترک می‌شود، نه هنگام پرداخت به تأمین‌کننده؛ هر سطر روی شیء هزینه خودش (AFE-208، مرکز هزینه عملیات میدان) و با کد مشارکت آریا. در پایان ماه، **صورت‌حساب سهم شرکا (JIB: Joint Interest Billing)** اجرا می‌شود: سهم هر شریک از هزینه‌های واقعی محاسبه و پس از کسر وجه دریافتی، مانده بدهکار یا بستانکار او مشخص می‌شود.',
-            en: 'During the month the operator records and pays **100%** of the joint operation’s costs in the joint account. A cost enters the joint account when its goods received note (GRN) or service entry sheet (SES) is posted, not when the vendor is paid; each line sits on its cost object (AFE-208, the field operations cost centre) with the Arya JV code. At month-end **joint interest billing (JIB)** is run: each partner’s share of actual costs is computed and, after deducting cash received, its balance due or owed is determined.',
+            fa: 'در طول ماه، اپراتور همه هزینه‌های عملیات مشترک را **100٪** در حساب مشترک ثبت و پرداخت می‌کند. هزینه هنگام ثبت رسید کالا (GRN) یا تأیید برگه ثبت خدمات (SES) وارد حساب مشترک می‌شود، نه هنگام پرداخت به تأمین‌کننده؛ هر سطر روی شیء هزینه خودش (AFE-2026-015، مرکز هزینه عملیات میدان) و با کد مشارکت آریا. در پایان ماه، **صورت‌حساب سهم شرکا (JIB: Joint Interest Billing)** اجرا می‌شود: سهم هر شریک از هزینه‌های واقعی محاسبه و پس از کسر وجه دریافتی، مانده بدهکار یا بستانکار او مشخص می‌شود.',
+            en: 'During the month the operator records and pays **100%** of the joint operation’s costs in the joint account. A cost enters the joint account when its goods received note (GRN) or service entry sheet (SES) is posted, not when the vendor is paid; each line sits on its cost object (AFE-2026-015, the field operations cost centre) with the Arya JV code. At month-end **joint interest billing (JIB)** is run: each partner’s share of actual costs is computed and, after deducting cash received, its balance due or owed is determined.',
           },
         },
         {
@@ -328,8 +328,8 @@ export const lesson: Lesson = {
             en: 'Overhead = 3% × 4,000,000 = 120,000; total joint account charges = 4,000,000 + 120,000 = 4,120,000',
           },
           note: {
-            fa: 'هزینه‌های مستقیم واقعی ماه: حفاری AR-08 برابر 3,000,000 و عملیات میدان 1,000,000.',
-            en: 'Actual direct costs for the month: drilling AR-08 3,000,000 and field operations 1,000,000.',
+            fa: 'هزینه‌های مستقیم واقعی ماه: حفاری AR-14 برابر 3,000,000 و عملیات میدان 1,000,000.',
+            en: 'Actual direct costs for the month: drilling AR-14 3,000,000 and field operations 1,000,000.',
           },
         },
         {
@@ -344,7 +344,7 @@ export const lesson: Lesson = {
           ],
           numericCols: [1, 2, 3, 4],
           rows: [
-            [t('حفاری AR-08 (AFE-208)', 'Drilling AR-08 (AFE-208)'), 3000000, 1500000, 900000, 600000],
+            [t('حفاری AR-14 (AFE-2026-015)', 'Drilling AR-14 (AFE-2026-015)'), 3000000, 1500000, 900000, 600000],
             [t('عملیات میدان', 'Field operations'), 1000000, 500000, 300000, 200000],
             [t('سربار اپراتور (3٪)', 'Operator overhead (3%)'), 120000, 60000, 36000, 24000],
             [t('جمع هزینه', 'Total charges'), 4120000, 2060000, 1236000, 824000],
@@ -363,7 +363,7 @@ export const lesson: Lesson = {
           numericCols: [1, 2],
           rows: [
             [t('مانده ابتدای ماه', 'Opening balance'), 0, 0],
-            [t('سهم 30٪ از AFE-208: حفاری AR-08', '30% share of AFE-208: drilling AR-08'), 900000, blank],
+            [t('سهم 30٪ از AFE-2026-015: حفاری AR-14', '30% share of AFE-2026-015: drilling AR-14'), 900000, blank],
             [t('سهم 30٪ از هزینه‌های عملیات میدان', '30% share of field operating costs'), 300000, blank],
             [t('سهم 30٪ از سربار اپراتور', '30% share of operator overhead'), 36000, blank],
             [t('درخواست وجه دریافتی روز 1', 'Cash call received on Day 1'), blank, 1200000],
@@ -385,8 +385,8 @@ export const lesson: Lesson = {
           tone: 'info',
           title: { fa: 'پشت هر سطر صورت‌حساب', en: 'Behind every billing line' },
           text: {
-            fa: 'شریکی که صورت‌حساب را بررسی می‌کند، باید بتواند هر سطر را تا مدرک آن دنبال کند: سهم 900,000 البرز از حفاری AR-08 به SESهای دکل و GRNهای مواد روی AFE-208 می‌رسد و هر SES به گزارش‌های روزانه امضاشده. همین مدارک بعداً در صورت بازیافت هزینه هم به کار می‌روند.',
-            en: 'A partner reviewing the billing must be able to trace each line to its evidence: Alborz’s 900,000 share of drilling AR-08 leads to the rig SESs and material GRNs on AFE-208, and each SES to signed daily reports. The same records are used later in the cost-recovery statement.',
+            fa: 'شریکی که صورت‌حساب را بررسی می‌کند، باید بتواند هر سطر را تا مدرک آن دنبال کند: سهم 900,000 البرز از حفاری AR-14 به SESهای دکل و GRNهای مواد روی AFE-2026-015 می‌رسد و هر SES به گزارش‌های روزانه امضاشده. همین مدارک بعداً در صورت بازیافت هزینه هم به کار می‌روند.',
+            en: 'A partner reviewing the billing must be able to trace each line to its evidence: Alborz’s 900,000 share of drilling AR-14 leads to the rig SESs and material GRNs on AFE-2026-015, and each SES to signed daily reports. The same records are used later in the cost-recovery statement.',
           },
         },
       ],
@@ -410,7 +410,7 @@ export const lesson: Lesson = {
             {
               date: t('طی ماه', 'During the month'),
               lines: [
-                { account: t('1710 حساب مشترک (AFE-208: حفاری AR-08)', '1710 Joint account (AFE-208: drilling AR-08)'), debit: 3000000 },
+                { account: t('1710 حساب مشترک (AFE-2026-015: حفاری AR-14)', '1710 Joint account (AFE-2026-015: drilling AR-14)'), debit: 3000000 },
                 { account: t('1710 حساب مشترک (عملیات میدان)', '1710 Joint account (field operations)'), debit: 1000000 },
                 { account: op.grir, credit: 4000000 },
               ],
@@ -484,7 +484,7 @@ export const lesson: Lesson = {
             {
               date: t('دریافت صورت‌حساب', 'Billing received'),
               lines: [
-                { account: t('دارایی‌های در جریان تکمیل (سهم 30٪ چاه AR-08)', 'Assets under construction (30% share of well AR-08)'), debit: 900000 },
+                { account: t('دارایی‌های در جریان تکمیل (سهم 30٪ چاه AR-14)', 'Assets under construction (30% share of well AR-14)'), debit: 900000 },
                 { account: nonOp.opex, debit: 300000 },
                 { account: nonOp.overhead, debit: 36000 },
                 { account: nonOp.advances, credit: 1200000 },
@@ -509,8 +509,8 @@ export const lesson: Lesson = {
           tone: 'tip',
           title: { fa: 'آزمون سازگاری', en: 'A consistency check' },
           text: {
-            fa: 'جمع سهم شرکا از دارایی چاه AR-08 در سه دفتر باید برابر 100٪ هزینه باشد: 1,500,000 (مسار پترولیوم) و 900,000 (البرز) و 600,000 (دنا)، یعنی 3,000,000. حسابدار مشارکت این آزمون را در پایان هر فصل با تأیید مانده‌ها از شرکا انجام می‌دهد.',
-            en: 'The partners’ shares of the AR-08 well asset across the three sets of books must add up to 100% of the cost: 1,500,000 (Masar Petroleum), 900,000 (Alborz) and 600,000 (Dena), that is 3,000,000. The JV accountant runs this check every quarter by confirming balances with the partners.',
+            fa: 'جمع سهم شرکا از دارایی چاه AR-14 در سه دفتر باید برابر 100٪ هزینه باشد: 1,500,000 (مسار پترولیوم) و 900,000 (البرز) و 600,000 (دنا)، یعنی 3,000,000. حسابدار مشارکت این آزمون را در پایان هر فصل با تأیید مانده‌ها از شرکا انجام می‌دهد.',
+            en: 'The partners’ shares of the AR-14 well asset across the three sets of books must add up to 100% of the cost: 1,500,000 (Masar Petroleum), 900,000 (Alborz) and 600,000 (Dena), that is 3,000,000. The JV accountant runs this check every quarter by confirming balances with the partners.',
           },
         },
       ],
@@ -548,7 +548,7 @@ export const lesson: Lesson = {
             [t('هزینه غیرمجاز طبق JOA', 'Cost not allowed by the JOA'), t('هزینه حقوقی دفتر مرکزی که سربار آن را پوشش می‌دهد', 'Head-office legal costs already covered by overhead'), t('مراکز هزینه دفتر مرکزی بدون نشانگر «قابل شارژ»', 'Head-office cost centres without a "chargeable" flag')],
             [t('هزینه عملیات انفرادی', 'Sole-risk cost'), t('آزمایشی که فقط اپراتور تصمیم به انجامش گرفت', 'A test only the operator decided to run'), t('WBS جدا با کد مشارکت انفرادی', 'A separate WBS with a sole-risk venture code')],
             [t('قیمت‌گذاری نادرست مواد', 'Wrong material pricing'), t('قطعه کارکرده با قیمت نو شارژ شده', 'A used part charged at the new price'), t('قاعده قیمت‌گذاری انتقال مواد طبق JOA در تنظیمات', 'JOA material-transfer pricing rules in the configuration')],
-            [t('AFE اشتباه یا بیش‌خرج بدون مجوز', 'Wrong AFE or unapproved overrun'), t('هزینه چاه AR-09 روی AFE-208', 'Well AR-09 cost on AFE-208'), t('رزرو و سفارش فقط با WBS معتبر؛ کنترل بودجه AFE', 'Reservations and orders only with a valid WBS; AFE budget control')],
+            [t('AFE اشتباه یا بیش‌خرج بدون مجوز', 'Wrong AFE or unapproved overrun'), t('هزینه چاه AR-15 روی AFE-2026-015', 'Well AR-15 cost on AFE-2026-015'), t('رزرو و سفارش فقط با WBS معتبر؛ کنترل بودجه AFE', 'Reservations and orders only with a valid WBS; AFE budget control')],
             [t('نبود مدرک پشتیبان', 'Missing support'), t('فاکتور بدون GRN، یا SES بدون برگه کار امضاشده', 'An invoice with no GRN, or an SES with no signed field ticket'), t('تطبیق سه‌طرفه (سفارش، GRN یا SES، فاکتور) و پیوست الکترونیکی برگه‌های کار', 'Three-way match (PO, GRN or SES, invoice) and electronic attachment of field tickets')],
             [t('سربار دوباره', 'Double overhead'), t('سربار روی هزینه‌ای که خودش سربار است', 'Overhead charged on a cost that is itself overhead'), t('پایه محاسبه سربار در تنظیمات ERP', 'The overhead base defined in the ERP configuration')],
           ],
@@ -606,15 +606,15 @@ export const lesson: Lesson = {
           title: { fa: 'سهم AFE و درخواست وجه', en: 'AFE shares and a cash call' },
           difficulty: 'easy',
           problem: {
-            fa: 'AFE-211 برای تعمیر اساسی چاه AR-11 با بودجه 6,000,000 تصویب شده است. پیش‌بینی هزینه ماه آینده: 2,500,000 روی AFE-211 و 800,000 عملیات میدان. (الف) سهم هر شریک از AFE-211 و (ب) مبلغ درخواست وجه از هر شریک غیرعامل را حساب کنید.',
-            en: 'AFE-211 for a major workover on well AR-11 is approved with a 6,000,000 budget. Next month’s forecast: 2,500,000 on AFE-211 and 800,000 of field operations. Compute (a) each partner’s share of AFE-211 and (b) the cash call to each non-operator.',
+            fa: 'AFE-2025-016 برای تعمیر اساسی چاه AR-02 با بودجه 6,000,000 تصویب شده است. پیش‌بینی هزینه ماه آینده: 2,500,000 روی AFE-2025-016 و 800,000 عملیات میدان. (الف) سهم هر شریک از AFE-2025-016 و (ب) مبلغ درخواست وجه از هر شریک غیرعامل را حساب کنید.',
+            en: 'AFE-2025-016 for a major workover on well AR-02 is approved with a 6,000,000 budget. Next month’s forecast: 2,500,000 on AFE-2025-016 and 800,000 of field operations. Compute (a) each partner’s share of AFE-2025-016 and (b) the cash call to each non-operator.',
           },
           solution: [
             {
               type: 'table',
               head: [
                 { fa: 'شریک', en: 'Partner' },
-                { fa: 'سهم از AFE-211', en: 'Share of AFE-211' },
+                { fa: 'سهم از AFE-2025-016', en: 'Share of AFE-2025-016' },
                 { fa: 'سهم از پیش‌بینی ماه (3,300,000)', en: 'Share of the month’s forecast (3,300,000)' },
               ],
               numericCols: [1, 2],
@@ -635,8 +635,8 @@ export const lesson: Lesson = {
             },
           ],
           answer: {
-            fa: 'AFE-211: مسار پترولیوم 3,000,000، البرز 1,800,000، دنا 1,200,000؛ درخواست وجه: البرز 990,000 و دنا 660,000.',
-            en: 'AFE-211: Masar Petroleum 3,000,000, Alborz 1,800,000, Dena 1,200,000; cash calls: Alborz 990,000 and Dena 660,000.',
+            fa: 'AFE-2025-016: مسار پترولیوم 3,000,000، البرز 1,800,000، دنا 1,200,000؛ درخواست وجه: البرز 990,000 و دنا 660,000.',
+            en: 'AFE-2025-016: Masar Petroleum 3,000,000, Alborz 1,800,000, Dena 1,200,000; cash calls: Alborz 990,000 and Dena 660,000.',
           },
         },
         {
@@ -644,8 +644,8 @@ export const lesson: Lesson = {
           title: { fa: 'صورت‌حساب ماهانه نفت دنا', en: 'Dena Petroleum’s monthly statement' },
           difficulty: 'medium',
           problem: {
-            fa: 'هزینه‌های مستقیم واقعی یک ماه: حفاری AR-08 برابر 2,400,000 و عملیات میدان 1,100,000. سربار 3٪ هزینه‌های مستقیم است. دنا در ابتدای ماه 750,000 درخواست وجه پرداخت کرده است. صورت‌حساب ماهانه دنا را تهیه کنید و بگویید چه کسی به چه کسی بدهکار است.',
-            en: 'Actual direct costs for a month: drilling AR-08 2,400,000 and field operations 1,100,000. Overhead is 3% of direct costs. Dena paid a 750,000 cash call at the start of the month. Prepare Dena’s monthly statement and say who owes whom.',
+            fa: 'هزینه‌های مستقیم واقعی یک ماه: حفاری AR-14 برابر 2,400,000 و عملیات میدان 1,100,000. سربار 3٪ هزینه‌های مستقیم است. دنا در ابتدای ماه 750,000 درخواست وجه پرداخت کرده است. صورت‌حساب ماهانه دنا را تهیه کنید و بگویید چه کسی به چه کسی بدهکار است.',
+            en: 'Actual direct costs for a month: drilling AR-14 2,400,000 and field operations 1,100,000. Overhead is 3% of direct costs. Dena paid a 750,000 cash call at the start of the month. Prepare Dena’s monthly statement and say who owes whom.',
           },
           solution: [
             {
@@ -664,7 +664,7 @@ export const lesson: Lesson = {
               ],
               numericCols: [1, 2],
               rows: [
-                [t('سهم 20٪ حفاری AR-08', '20% of drilling AR-08'), 480000, blank],
+                [t('سهم 20٪ حفاری AR-14', '20% of drilling AR-14'), 480000, blank],
                 [t('سهم 20٪ عملیات میدان', '20% of field operations'), 220000, blank],
                 [t('سهم 20٪ سربار', '20% of overhead'), 21000, blank],
                 [t('درخواست وجه دریافتی', 'Cash call received'), blank, 750000],
@@ -705,7 +705,7 @@ export const lesson: Lesson = {
                 {
                   date: t('دریافت صورت‌حساب', 'Statement received'),
                   lines: [
-                    { account: t('دارایی‌های در جریان تکمیل (سهم 20٪ چاه AR-08)', 'Assets under construction (20% share of well AR-08)'), debit: 480000 },
+                    { account: t('دارایی‌های در جریان تکمیل (سهم 20٪ چاه AR-14)', 'Assets under construction (20% share of well AR-14)'), debit: 480000 },
                     { account: nonOp.opex, debit: 220000 },
                     { account: nonOp.overhead, debit: 21000 },
                     { account: nonOp.advances, credit: 721000 },
@@ -729,8 +729,8 @@ export const lesson: Lesson = {
           title: { fa: 'یافته حسابرسی شرکا', en: 'A partner audit finding' },
           difficulty: 'hard',
           problem: {
-            fa: 'حسابرسی مشترک البرز و دنا دو یافته دارد که اپراتور می‌پذیرد: (1) 150,000 هزینه حقوقی دفتر مرکزی که JOA آن را جزو سربار می‌داند ولی مستقیم به حساب مشترک شارژ شده است؛ (2) 50,000 هزینه آزمایشی روی چاه AR-11 که فقط اپراتور تصمیم به انجامش گرفته بود (عملیات انفرادی). هر دو قلم در اصل به‌عنوان هزینه عملیات میدان صورت‌حساب شده‌اند و سربار روی آن‌ها اعمال نشده است. (الف) مبلغ اصلاح هر شریک، (ب) ثبت اپراتور و (ج) ثبت البرز را بنویسید.',
-            en: 'The joint audit by Alborz and Dena has two findings the operator accepts: (1) 150,000 of head-office legal costs, which the JOA treats as covered by overhead, charged directly to the joint account; (2) 50,000 for a test on well AR-11 that only the operator chose to run (a sole-risk operation). Both were billed as field operating costs and no overhead was applied to them. Record (a) each partner’s adjustment, (b) the operator’s entries and (c) Alborz’s entry.',
+            fa: 'حسابرسی مشترک البرز و دنا دو یافته دارد که اپراتور می‌پذیرد: (1) 150,000 هزینه حقوقی دفتر مرکزی که JOA آن را جزو سربار می‌داند ولی مستقیم به حساب مشترک شارژ شده است؛ (2) 50,000 هزینه آزمایشی روی چاه AR-02 که فقط اپراتور تصمیم به انجامش گرفته بود (عملیات انفرادی). هر دو قلم در اصل به‌عنوان هزینه عملیات میدان صورت‌حساب شده‌اند و سربار روی آن‌ها اعمال نشده است. (الف) مبلغ اصلاح هر شریک، (ب) ثبت اپراتور و (ج) ثبت البرز را بنویسید.',
+            en: 'The joint audit by Alborz and Dena has two findings the operator accepts: (1) 150,000 of head-office legal costs, which the JOA treats as covered by overhead, charged directly to the joint account; (2) 50,000 for a test on well AR-02 that only the operator chose to run (a sole-risk operation). Both were billed as field operating costs and no overhead was applied to them. Record (a) each partner’s adjustment, (b) the operator’s entries and (c) Alborz’s entry.',
           },
           hint: {
             fa: 'کل 200,000 باید هزینه خود اپراتور شود؛ سهم شرکا از آن به حساب جاری‌شان برمی‌گردد.',
@@ -758,7 +758,7 @@ export const lesson: Lesson = {
                 {
                   lines: [
                     { account: t('5900 هزینه‌های اداری و عمومی (سهم شرکا از هزینه حقوقی)', '5900 G&A expense (partners’ share of legal cost)'), debit: 75000 },
-                    { account: t('5120 هزینه عملیات انفرادی (سهم شرکا از آزمایش AR-11)', '5120 Sole-risk operations expense (partners’ share of AR-11 test)'), debit: 25000 },
+                    { account: t('5195 هزینه عملیات انفرادی (سهم شرکا از آزمایش AR-02)', '5195 Sole-risk operations expense (partners’ share of AR-02 test)'), debit: 25000 },
                     { account: op.alborz, credit: 60000 },
                     { account: op.dena, credit: 40000 },
                   ],
@@ -933,8 +933,8 @@ export const lesson: Lesson = {
     },
     {
       q: {
-        fa: 'بودجه AFE-208 برابر 10,000,000 است. سهم نفت دنا با سهم مشارکت 20٪ چقدر است؟',
-        en: 'AFE-208’s budget is 10,000,000. What is Dena Petroleum’s share at a 20% working interest?',
+        fa: 'بودجه AFE-2026-015 برابر 10,000,000 است. سهم نفت دنا با سهم مشارکت 20٪ چقدر است؟',
+        en: 'AFE-2026-015’s budget is 10,000,000. What is Dena Petroleum’s share at a 20% working interest?',
       },
       options: [
         { fa: '200,000', en: '200,000' },

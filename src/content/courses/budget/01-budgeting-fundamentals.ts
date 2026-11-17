@@ -83,7 +83,7 @@ export const lesson: Lesson = {
             [t('میدان و چاه‌ها', 'Field and wells'), t('میدان خشکی آریا با چاه‌های AR-01 تا AR-12؛ چاه AR-07 برای سال 2026 برنامه‌ریزی شده است', 'The onshore Arya field with wells AR-01 to AR-12; well AR-07 is planned for 2026')],
             [t('تأسیسات', 'Facilities'), t('جداکننده‌ها، خطوط جریان و ایستگاه تقویت فشار گاز با دو واحد کمپرسور', 'Separators, flowlines and a gas compressor station with two compressor units')],
             [t('انبارها', 'Warehouses'), t('انبار مرکزی و انبار میدان', 'Central Warehouse and Field Warehouse')],
-            [t('شرکا (سهم‌ها فرضی‌اند)', 'Partners (illustrative shares)'), t('مسار پترولیوم 50٪، شریک الف 30٪، شریک ب 20٪', 'Masar Petroleum 50%, Partner A 30%, Partner B 20%')],
+            [t('شرکا (سهم‌ها فرضی‌اند)', 'Partners (illustrative shares)'), t('مسار پترولیوم 50٪، انرژی البرز 30٪، نفت دنا 20٪', 'Masar Petroleum 50%, Alborz Energy 30%, Dena Petroleum 20%')],
             [t('کدگذاری هزینه', 'Cost coding'), t('کد شرکت، مرکز هزینه (مثلاً `CC-ARY-PRD`)، عنصر WBS (مثلاً `AFE-2025-014.02.03`)، عنصر هزینه یا حساب کل، نشانگر قابل بازیافت (R/N) و طبقه هزینه', 'Company code, cost centre (for example `CC-ARY-PRD`), WBS element (for example `AFE-2025-014.02.03`), cost element or GL account, recoverable flag (R/N) and cost category')],
           ],
         },
@@ -92,8 +92,8 @@ export const lesson: Lesson = {
           tone: 'example',
           title: t('هر شریک چقدر می‌پردازد؟', 'How much does each partner pay?'),
           text: t(
-            'بودجه سال 2026 میدان آریا 34,000,000 است (ارقام این دوره فرضی‌اند). با سهم‌های مشارکت: مسار پترولیوم 34,000,000 × 50٪ = 17,000,000، شریک الف 34,000,000 × 30٪ = 10,200,000 و شریک ب 34,000,000 × 20٪ = 6,800,000. جمع سه سهم دوباره 34,000,000 می‌شود. هر شریک پیش از تصویب، سهم خودش را با دقت بررسی می‌کند؛ برای همین بودجه در مشارکت یک سند مذاکره است، نه فقط یک جدول داخلی.',
-            'The 2026 budget for the Arya field is 34,000,000 (all figures in this course are illustrative). With the joint-venture shares: Masar Petroleum 34,000,000 × 50% = 17,000,000, Partner A 34,000,000 × 30% = 10,200,000 and Partner B 34,000,000 × 20% = 6,800,000. The three shares add back to 34,000,000. Each partner checks its own share carefully before approving, which is why a joint-venture budget is a negotiated document, not just an internal spreadsheet.',
+            'بودجه سال 2026 میدان آریا 34,000,000 است (ارقام این دوره فرضی‌اند). با سهم‌های مشارکت: مسار پترولیوم 34,000,000 × 50٪ = 17,000,000، انرژی البرز 34,000,000 × 30٪ = 10,200,000 و نفت دنا 34,000,000 × 20٪ = 6,800,000. جمع سه سهم دوباره 34,000,000 می‌شود. هر شریک پیش از تصویب، سهم خودش را با دقت بررسی می‌کند؛ برای همین بودجه در مشارکت یک سند مذاکره است، نه فقط یک جدول داخلی.',
+            'The 2026 budget for the Arya field is 34,000,000 (all figures in this course are illustrative). With the joint-venture shares: Masar Petroleum 34,000,000 × 50% = 17,000,000, Alborz Energy 34,000,000 × 30% = 10,200,000 and Dena Petroleum 34,000,000 × 20% = 6,800,000. The three shares add back to 34,000,000. Each partner checks its own share carefully before approving, which is why a joint-venture budget is a negotiated document, not just an internal spreadsheet.',
           ),
         },
       ],
@@ -811,12 +811,12 @@ export const lesson: Lesson = {
       ),
     },
     {
-      q: t('بودجه سالانه میدان 34,000,000 و سهم شریک الف 30٪ است. سهم شریک الف از بودجه چقدر است؟', 'The field’s annual budget is 34,000,000 and Partner A holds 30%. What is Partner A’s share of the budget?'),
+      q: t('بودجه سالانه میدان 34,000,000 و سهم انرژی البرز 30٪ است. سهم انرژی البرز از بودجه چقدر است؟', 'The field’s annual budget is 34,000,000 and Alborz Energy holds 30%. What is Alborz Energy’s share of the budget?'),
       options: [t('6,800,000', '6,800,000'), t('10,200,000', '10,200,000'), t('17,000,000', '17,000,000'), t('3,400,000', '3,400,000')],
       answer: 1,
       explain: t(
-        '34,000,000 × 30٪ = 10,200,000. رقم 6,800,000 سهم 20٪ شریک ب و 17,000,000 سهم 50٪ مسار پترولیوم است.',
-        '34,000,000 × 30% = 10,200,000. 6,800,000 is Partner B’s 20% share and 17,000,000 is Masar Petroleum’s 50%.',
+        '34,000,000 × 30٪ = 10,200,000. رقم 6,800,000 سهم 20٪ نفت دنا و 17,000,000 سهم 50٪ مسار پترولیوم است.',
+        '34,000,000 × 30% = 10,200,000. 6,800,000 is Dena Petroleum’s 20% share and 17,000,000 is Masar Petroleum’s 50%.',
       ),
     },
     {
