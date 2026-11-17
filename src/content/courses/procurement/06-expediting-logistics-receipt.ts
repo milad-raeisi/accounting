@@ -173,8 +173,8 @@ export const lesson: Lesson = {
         {
           type: 'table',
           caption: {
-            fa: 'گزارش مراحل کلیدی: روتور یدکی کمپرسور K-202، فن‌آوران کمپرسور توس، سفارش `PO-45020` (شماره هفته از تاریخ سفارش)',
-            en: 'Milestone report: spare rotor for compressor K-202, Toos Compressor Technologies, `PO-45020` (week numbers from the PO date)',
+            fa: 'گزارش مراحل کلیدی: روتور یدکی کمپرسور K-102، فن‌آوران کمپرسور توس، سفارش `PO-45020` (شماره هفته از تاریخ سفارش)',
+            en: 'Milestone report: spare rotor for compressor K-102, Toos Compressor Technologies, `PO-45020` (week numbers from the PO date)',
           },
           head: [
             { fa: 'مرحله', en: 'Milestone' },
@@ -227,8 +227,8 @@ export const lesson: Lesson = {
         {
           type: 'table',
           caption: {
-            fa: 'بخشی از ITP روتور یدکی K-202. P: انجام؛ H: نقطه توقف؛ W: نقطه مشاهده؛ R: بررسی مدارک',
-            en: 'Extract from the ITP for the K-202 spare rotor. P: perform; H: hold point; W: witness point; R: document review',
+            fa: 'بخشی از ITP روتور یدکی K-102. P: انجام؛ H: نقطه توقف؛ W: نقطه مشاهده؛ R: بررسی مدارک',
+            en: 'Extract from the ITP for the K-102 spare rotor. P: perform; H: hold point; W: witness point; R: document review',
           },
           head: [
             { fa: 'فعالیت', en: 'Activity' },
@@ -605,7 +605,7 @@ export const lesson: Lesson = {
               { fa: 'اثر تأخیر', en: 'Effect of delay' },
             ],
             rows: [
-              [{ fa: 'الف: روتور یدکی کمپرسور K-202', en: 'a: spare rotor, compressor K-202' }, 36, { fa: 'کاهش ظرفیت ایستگاه تقویت فشار', en: 'Lost compressor station capacity' }],
+              [{ fa: 'الف: روتور یدکی کمپرسور K-102', en: 'a: spare rotor, compressor K-102' }, 36, { fa: 'کاهش ظرفیت ایستگاه تقویت فشار', en: 'Lost compressor station capacity' }],
               [
                 { fa: 'ب: لوله مغزی برای موجودی تعمیر چاه', en: 'b: tubing for workover stock' },
                 10,
@@ -714,8 +714,8 @@ export const lesson: Lesson = {
           title: { fa: 'تمرین 3: سرچاهی AR-12 و تصمیم حمل هوایی', en: 'Exercise 3: The AR-12 wellhead and the air-freight decision' },
           difficulty: 'medium',
           problem: {
-            fa: 'سرچاهی و تاج چاه AR-12 (روی `AFE-2026-014`) باید هفته 40 در محل دکل باشد. زمان‌ها: تأیید نقشه‌ها 4 هفته، ساخت 22، بازرسی و FAT 2، حمل دریایی و ترخیص 5، حمل داخلی 1. (الف) آخرین هفته مجاز صدور سفارش چه بود؟ (ب) به دلیل طولانی شدن مناقصه، سفارش هفته 9 صادر شده است. کالا کی می‌رسد و اگر کاری نکنیم، هزینه آماده‌به‌کار دکل با نرخ فرضی 35,000 در روز چقدر می‌شود؟ (ج) دو راه هست: حمل هوایی که حمل و ترخیص را به 1 هفته می‌رساند و 90,000 هزینه اضافه دارد، یا پرداخت 60,000 به سازنده تا ساخت 2 هفته کوتاه شود. کدام بهتر است؟',
-            en: 'The AR-12 wellhead and tree (on `AFE-2026-014`) must be at the rig site in week 40. Durations: drawing approval 4 weeks, manufacturing 22, inspection and FAT 2, sea freight and clearance 5, inland transport 1. (a) What was the latest week to issue the PO? (b) Because the tender ran long, the PO was issued in week 9. When will the goods arrive, and if nothing is done, what rig standby cost results at an illustrative 35,000 a day? (c) There are two options: air freight, which cuts freight and clearance to 1 week at an extra 90,000, or paying the manufacturer 60,000 to shorten manufacturing by 2 weeks. Which is better?',
+            fa: 'سرچاهی و تاج چاه AR-12 (روی `AFE-2026-012`) باید هفته 40 در محل دکل باشد. زمان‌ها: تأیید نقشه‌ها 4 هفته، ساخت 22، بازرسی و FAT 2، حمل دریایی و ترخیص 5، حمل داخلی 1. (الف) آخرین هفته مجاز صدور سفارش چه بود؟ (ب) به دلیل طولانی شدن مناقصه، سفارش هفته 9 صادر شده است. کالا کی می‌رسد و اگر کاری نکنیم، هزینه آماده‌به‌کار دکل با نرخ فرضی 35,000 در روز چقدر می‌شود؟ (ج) دو راه هست: حمل هوایی که حمل و ترخیص را به 1 هفته می‌رساند و 90,000 هزینه اضافه دارد، یا پرداخت 60,000 به سازنده تا ساخت 2 هفته کوتاه شود. کدام بهتر است؟',
+            en: 'The AR-12 wellhead and tree (on `AFE-2026-012`) must be at the rig site in week 40. Durations: drawing approval 4 weeks, manufacturing 22, inspection and FAT 2, sea freight and clearance 5, inland transport 1. (a) What was the latest week to issue the PO? (b) Because the tender ran long, the PO was issued in week 9. When will the goods arrive, and if nothing is done, what rig standby cost results at an illustrative 35,000 a day? (c) There are two options: air freight, which cuts freight and clearance to 1 week at an extra 90,000, or paying the manufacturer 60,000 to shorten manufacturing by 2 weeks. Which is better?',
           },
           solution: [
             {
@@ -761,8 +761,8 @@ export const lesson: Lesson = {
               type: 'callout',
               tone: 'tip',
               text: {
-                fa: 'هزینه حمل هوایی جزء بهای چاه AR-12 (دارایی در جریان ساخت روی `AFE-2026-014`) است و با یادداشت تصمیم مستند معمولاً قابل بازیافت است؛ اما شرکا ممکن است علت ریشه‌ای، یعنی تأخیر مناقصه، را بپرسند. پس دلیل تصمیم و مقایسه گزینه‌ها را پیوست سفارش کنید.',
-                en: 'The air freight is part of the cost of well AR-12 (assets under construction on `AFE-2026-014`) and, with a documented decision memo, is usually recoverable; but partners may ask about the root cause, the late tender. Attach the reasoning and the option comparison to the PO.',
+                fa: 'هزینه حمل هوایی جزء بهای چاه AR-12 (دارایی در جریان ساخت روی `AFE-2026-012`) است و با یادداشت تصمیم مستند معمولاً قابل بازیافت است؛ اما شرکا ممکن است علت ریشه‌ای، یعنی تأخیر مناقصه، را بپرسند. پس دلیل تصمیم و مقایسه گزینه‌ها را پیوست سفارش کنید.',
+                en: 'The air freight is part of the cost of well AR-12 (assets under construction on `AFE-2026-012`) and, with a documented decision memo, is usually recoverable; but partners may ask about the root cause, the late tender. Attach the reasoning and the option comparison to the PO.',
               },
             },
           ],
@@ -776,8 +776,8 @@ export const lesson: Lesson = {
           title: { fa: 'تمرین 4: تسویه هزینه‌های تحویل با اختلاف', en: 'Exercise 4: Clearing delivery costs with a difference' },
           difficulty: 'hard',
           problem: {
-            fa: 'GRN هشت شیر کنترل وارداتی با هزینه‌های برنامه‌ریزی‌شده ثبت شده است: حمل و بیمه 4,200 و گمرک و ترخیص 4,800 (همان ثبت‌های بخش ERP؛ هر شیر 6,125). اکنون فاکتورها می‌رسند: ترابری جنوب 4,500 (300 بیشتر از برنامه، به دلیل افزایش کرایه دریایی که پذیرفته شده است) و کارگزاری گمرکی بندر 4,800. تا این زمان 2 شیر به دستور کار `WO-45188` کمپرسور K-202 حواله شده و 6 شیر هنوز در انبار مرکزی است. کالا با میانگین موزون متحرک ارزش‌گذاری می‌شود. (الف) ثبت دو فاکتور را بنویسید (مالیات بر ارزش افزوده را نادیده بگیرید). (ب) ارزش 6 شیر باقی‌مانده پس از ثبت چقدر است؟ (ج) مانده حساب‌های واسط چقدر است؟',
-            en: 'The GRN for eight imported control valves was posted with planned delivery costs: freight and insurance 4,200 and customs and clearance 4,800 (the entries in the ERP section; 6,125 per valve). Now the invoices arrive: Jonoub Transport 4,500 (300 above plan because of an accepted sea-freight increase) and Bandar Customs Brokerage 4,800. By now 2 valves have been issued to work order `WO-45188` for compressor K-202 and 6 are still in the Central Warehouse. Stock is valued at moving average. (a) Write the entries for both invoices (ignore VAT). (b) What is the value of the 6 remaining valves after posting? (c) What are the clearing-account balances?',
+            fa: 'GRN هشت شیر کنترل وارداتی با هزینه‌های برنامه‌ریزی‌شده ثبت شده است: حمل و بیمه 4,200 و گمرک و ترخیص 4,800 (همان ثبت‌های بخش ERP؛ هر شیر 6,125). اکنون فاکتورها می‌رسند: ترابری جنوب 4,500 (300 بیشتر از برنامه، به دلیل افزایش کرایه دریایی که پذیرفته شده است) و کارگزاری گمرکی بندر 4,800. تا این زمان 2 شیر به دستور کار `WO-45188` کمپرسور K-102 حواله شده و 6 شیر هنوز در انبار مرکزی است. کالا با میانگین موزون متحرک ارزش‌گذاری می‌شود. (الف) ثبت دو فاکتور را بنویسید (مالیات بر ارزش افزوده را نادیده بگیرید). (ب) ارزش 6 شیر باقی‌مانده پس از ثبت چقدر است؟ (ج) مانده حساب‌های واسط چقدر است؟',
+            en: 'The GRN for eight imported control valves was posted with planned delivery costs: freight and insurance 4,200 and customs and clearance 4,800 (the entries in the ERP section; 6,125 per valve). Now the invoices arrive: Jonoub Transport 4,500 (300 above plan because of an accepted sea-freight increase) and Bandar Customs Brokerage 4,800. By now 2 valves have been issued to work order `WO-45188` for compressor K-102 and 6 are still in the Central Warehouse. Stock is valued at moving average. (a) Write the entries for both invoices (ignore VAT). (b) What is the value of the 6 remaining valves after posting? (c) What are the clearing-account balances?',
           },
           hint: {
             fa: 'اختلاف را به نسبت کالای موجود و مصرف‌شده تقسیم کنید.',

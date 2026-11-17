@@ -44,8 +44,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'پایان ماه است. کنترلر مالی مسار پترولیوم می‌بیند جمع حساب‌های موجودی در دفتر کل **2,496,500** است، اما کاردکس انبار در ERP جمع موجودی را **2,500,000** نشان می‌دهد. همان هفته حسابرسان شریک الف می‌خواهند بهای کالایی را که به چاه AR-12 منظور شده، تا رسید کالا (GRN) و حواله هر قلم دنبال کنند. به هر دو پرسش فقط وقتی می‌توان پاسخ داد که **همه حرکت‌های کالا از اسناد ERP گذشته باشند** و انبار و مالی یک عدد را ببینند.',
-            en: 'It is month-end. Masar Petroleum’s financial controller sees that the inventory accounts in the general ledger total **2,496,500**, while the warehouse stock ledger in the ERP shows **2,500,000**. In the same week, Partner A’s auditors want to trace the material charged to well AR-12 back to the goods received note (GRN) and the goods issue for each item. Both questions can be answered only if **every goods movement has gone through ERP documents**, so the warehouse and Finance see the same number.',
+            fa: 'پایان ماه است. کنترلر مالی مسار پترولیوم می‌بیند جمع حساب‌های موجودی در دفتر کل **2,496,500** است، اما کاردکس انبار در ERP جمع موجودی را **2,500,000** نشان می‌دهد. همان هفته حسابرسان انرژی البرز می‌خواهند بهای کالایی را که به چاه AR-12 منظور شده، تا رسید کالا (GRN) و حواله هر قلم دنبال کنند. به هر دو پرسش فقط وقتی می‌توان پاسخ داد که **همه حرکت‌های کالا از اسناد ERP گذشته باشند** و انبار و مالی یک عدد را ببینند.',
+            en: 'It is month-end. Masar Petroleum’s financial controller sees that the inventory accounts in the general ledger total **2,496,500**, while the warehouse stock ledger in the ERP shows **2,500,000**. In the same week, Alborz Energy’s auditors want to trace the material charged to well AR-12 back to the goods received note (GRN) and the goods issue for each item. Both questions can be answered only if **every goods movement has gone through ERP documents**, so the warehouse and Finance see the same number.',
           },
         },
         {
@@ -338,14 +338,14 @@ export const lesson: Lesson = {
               { fa: 'ثبت مغایرت شمارش', en: 'Count-difference posting' },
               { fa: 'مغایرت موجودی انبار', en: 'Inventory differences' },
               { fa: 'موجودی', en: 'Inventory' },
-              { fa: 'مرکز هزینه انبار CC-120؛ بازیافت بسته به علت', en: 'Warehouse cost centre CC-120; recovery depends on the cause' },
+              { fa: 'مرکز هزینه انبار CC-ARY-WHS؛ بازیافت بسته به علت', en: 'Warehouse cost centre CC-ARY-WHS; recovery depends on the cause' },
             ],
             [
               { fa: 'اضافی شمارش', en: 'Count surplus' },
               { fa: 'ثبت مغایرت شمارش', en: 'Count-difference posting' },
               { fa: 'موجودی', en: 'Inventory' },
               { fa: 'مغایرت موجودی انبار', en: 'Inventory differences' },
-              { fa: 'مرکز هزینه انبار CC-120', en: 'Warehouse cost centre CC-120' },
+              { fa: 'مرکز هزینه انبار CC-ARY-WHS', en: 'Warehouse cost centre CC-ARY-WHS' },
             ],
             [
               { fa: 'کاهش ارزش به خالص ارزش فروش', en: 'Write-down to net realisable value' },
@@ -366,7 +366,7 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: '**تعیین حساب** در ERP یک جدول تنظیمات است: برای هر گروه ارزش‌گذاری (مثلاً قطعات یدکی ← 1430) و هر نوع ثبت (موجودی، طرف مقابل حواله، GR/IR، تفاوت قیمت، مغایرت انبار) یک حساب کل تعیین می‌شود. این جدول را واحد مالی با کنترل موجودی یک بار تنظیم می‌کند و هر تغییر آن باید از **کنترل تغییرات** بگذرد، چون یک نگاشت اشتباه می‌تواند هزاران سند را به حساب غلط بفرستد. به همین دلیل هم **گروه ارزش‌گذاری** در داده پایه کالا مهم است: اگر قطعه یدکی حیاتی به اشتباه «اقلام مصرفی» تعریف شود، به حساب غلط می‌رود و در گزارش‌ها گم می‌شود.',
+            fa: '**تعیین حساب** در ERP یک جدول تنظیمات است: برای هر گروه ارزش‌گذاری (مثلاً قطعات یدکی ← 1310) و هر نوع ثبت (موجودی، طرف مقابل حواله، GR/IR، تفاوت قیمت، مغایرت انبار) یک حساب کل تعیین می‌شود. این جدول را واحد مالی با کنترل موجودی یک بار تنظیم می‌کند و هر تغییر آن باید از **کنترل تغییرات** بگذرد، چون یک نگاشت اشتباه می‌تواند هزاران سند را به حساب غلط بفرستد. به همین دلیل هم **گروه ارزش‌گذاری** در داده پایه کالا مهم است: اگر قطعه یدکی حیاتی به اشتباه «اقلام مصرفی» تعریف شود، به حساب غلط می‌رود و در گزارش‌ها گم می‌شود.',
             en: '**Account determination** in the ERP is a configuration table: for each valuation class (spare parts → 1430, for example) and each kind of posting (inventory, offset for an issue, GR/IR, price difference, inventory difference) a general-ledger account is set. Finance sets this table up once with inventory control, and every change must go through **change control**, because one wrong mapping can send thousands of documents to the wrong account. It is also why the **valuation class** in the material master matters: if a critical spare is wrongly set up as a "consumable", it posts to the wrong account and gets lost in the reports.',
           },
         },
@@ -402,7 +402,7 @@ export const lesson: Lesson = {
             {
               date: { fa: 'حواله GI-26-0960: 4 عدد به WO-45133', en: 'GI-26-0960: 4 units to WO-45133' },
               lines: [
-                { account: { fa: 'هزینه تعمیر و نگهداری (WO-45133، مرکز هزینه CC-220)', en: 'Repairs and maintenance expense (WO-45133, cost centre CC-220)' }, debit: 4800 },
+                { account: { fa: 'هزینه تعمیر و نگهداری (WO-45133، مرکز هزینه CC-ARY-PRD)', en: 'Repairs and maintenance expense (WO-45133, cost centre CC-ARY-PRD)' }, debit: 4800 },
                 { account: { fa: 'موجودی قطعات یدکی', en: 'Inventory: spare parts' }, credit: 4800 },
               ],
             },
@@ -410,7 +410,7 @@ export const lesson: Lesson = {
               date: { fa: 'برگشت RT-26-0041: 1 عدد مصرف‌نشده', en: 'RT-26-0041: 1 unused unit returned' },
               lines: [
                 { account: { fa: 'موجودی قطعات یدکی', en: 'Inventory: spare parts' }, debit: 1200 },
-                { account: { fa: 'هزینه تعمیر و نگهداری (WO-45133، مرکز هزینه CC-220)', en: 'Repairs and maintenance expense (WO-45133, cost centre CC-220)' }, credit: 1200 },
+                { account: { fa: 'هزینه تعمیر و نگهداری (WO-45133، مرکز هزینه CC-ARY-PRD)', en: 'Repairs and maintenance expense (WO-45133, cost centre CC-ARY-PRD)' }, credit: 1200 },
               ],
             },
             {
@@ -449,11 +449,11 @@ export const lesson: Lesson = {
             { fa: 'اختلاف', en: 'Difference' },
           ],
           rows: [
-            [{ fa: '1410 موجودی لوله‌های جداری و مغزی (OCTG)', en: '1410 Inventory: OCTG' }, 1248000, 1248000, { fa: 'ندارد', en: 'None' }],
-            [{ fa: '1420 موجودی مواد شیمیایی', en: '1420 Inventory: chemicals' }, 182400, 184900, { fa: '2,500 (دفتر کل بیشتر)', en: '2,500 (GL higher)' }],
-            [{ fa: '1430 موجودی قطعات یدکی', en: '1430 Inventory: spare parts' }, 896500, 890500, { fa: '6,000 (دفتر کل کمتر)', en: '6,000 (GL lower)' }],
-            [{ fa: '1440 موجودی اقلام مصرفی عمومی', en: '1440 Inventory: general consumables' }, 63100, 63100, { fa: 'ندارد', en: 'None' }],
-            [{ fa: '1450 موجودی در راه بین انبارها', en: '1450 Stock in transit' }, 110000, 110000, { fa: 'ندارد', en: 'None' }],
+            [{ fa: '1320 موجودی لوله‌های جداری و مغزی (OCTG)', en: '1320 Inventory: OCTG' }, 1248000, 1248000, { fa: 'ندارد', en: 'None' }],
+            [{ fa: '1330 موجودی مواد شیمیایی', en: '1330 Inventory: chemicals' }, 182400, 184900, { fa: '2,500 (دفتر کل بیشتر)', en: '2,500 (GL higher)' }],
+            [{ fa: '1310 موجودی قطعات یدکی', en: '1310 Inventory: spare parts' }, 896500, 890500, { fa: '6,000 (دفتر کل کمتر)', en: '6,000 (GL lower)' }],
+            [{ fa: '1340 موجودی اقلام مصرفی عمومی', en: '1340 Inventory: general consumables' }, 63100, 63100, { fa: 'ندارد', en: 'None' }],
+            [{ fa: '1350 موجودی در راه بین انبارها', en: '1350 Stock in transit' }, 110000, 110000, { fa: 'ندارد', en: 'None' }],
             [{ fa: 'جمع', en: 'Total' }, 2500000, 2496500, { fa: '3,500 (دفتر کل کمتر، خالص)', en: '3,500 (GL lower, net)' }],
           ],
           numericCols: [1, 2],
@@ -512,8 +512,8 @@ export const lesson: Lesson = {
           tone: 'warning',
           title: { fa: 'حساب‌های موجودی را «فقط ثبت خودکار» کنید', en: 'Make inventory accounts "automatic postings only"' },
           text: {
-            fa: 'در تنظیمات دفتر کل، حساب‌های 1410 تا 1450 باید فقط از حرکت‌های کالا ثبت بگیرند و سند دستی روی آن‌ها پذیرفته نشود. تنها ثبت دستی مجاز در کنار موجودی، ذخیره کاهش ارزش (1490) است، آن هم با تأیید و مستندات بررسی اقلام کم‌گردش. تطبیق را **حساب به حساب** انجام دهید، نه فقط در جمع؛ همان‌طور که دیدیم، جمع‌ها می‌توانند خطاها را پنهان کنند.',
-            en: 'In the general-ledger settings, accounts 1410 to 1450 should accept postings only from goods movements, and manual journals on them should be blocked. The only manual entry allowed next to inventory is the allowance for write-down (1490), and only with approval and the slow-moving review behind it. Reconcile **account by account**, not just in total; as we saw, totals can hide errors.',
+            fa: 'در تنظیمات دفتر کل، حساب‌های 1320 تا 1350 باید فقط از حرکت‌های کالا ثبت بگیرند و سند دستی روی آن‌ها پذیرفته نشود. تنها ثبت دستی مجاز در کنار موجودی، ذخیره کاهش ارزش (1490) است، آن هم با تأیید و مستندات بررسی اقلام کم‌گردش. تطبیق را **حساب به حساب** انجام دهید، نه فقط در جمع؛ همان‌طور که دیدیم، جمع‌ها می‌توانند خطاها را پنهان کنند.',
+            en: 'In the general-ledger settings, accounts 1320 to 1350 should accept postings only from goods movements, and manual journals on them should be blocked. The only manual entry allowed next to inventory is the allowance for write-down (1490), and only with approval and the slow-moving review behind it. Reconcile **account by account**, not just in total; as we saw, totals can hide errors.',
           },
         },
         { type: 'h', text: { fa: 'فهرست کنترل‌های پایان ماه', en: 'The month-end checklist' } },
@@ -748,8 +748,8 @@ export const lesson: Lesson = {
           title: { fa: 'قیمت میانگین تازه پس از GRN', en: 'The new average price after a GRN' },
           difficulty: 'easy',
           problem: {
-            fa: 'انبار میدان 120 بشکه بازدارنده خوردگی (200310) با قیمت میانگین 650 دارد. GRN-26-0950 برای 80 بشکه با قیمت سفارش 700 ثبت می‌شود و سپس 30 بشکه با حواله به مرکز هزینه CC-220 تحویل می‌شود. قیمت میانگین تازه، مبلغ حواله و ارزش موجودی باقی‌مانده را حساب کنید و ثبت‌های خودکار را بنویسید.',
-            en: 'The Field Warehouse holds 120 drums of corrosion inhibitor (200310) at an average price of 650. GRN-26-0950 is posted for 80 drums at a PO price of 700, and then 30 drums are issued to cost centre CC-220. Work out the new average price, the issue amount and the value of the remaining stock, and write the automatic entries.',
+            fa: 'انبار میدان 120 بشکه بازدارنده خوردگی (200310) با قیمت میانگین 650 دارد. GRN-26-0950 برای 80 بشکه با قیمت سفارش 700 ثبت می‌شود و سپس 30 بشکه با حواله به مرکز هزینه CC-ARY-PRD تحویل می‌شود. قیمت میانگین تازه، مبلغ حواله و ارزش موجودی باقی‌مانده را حساب کنید و ثبت‌های خودکار را بنویسید.',
+            en: 'The Field Warehouse holds 120 drums of corrosion inhibitor (200310) at an average price of 650. GRN-26-0950 is posted for 80 drums at a PO price of 700, and then 30 drums are issued to cost centre CC-ARY-PRD. Work out the new average price, the issue amount and the value of the remaining stock, and write the automatic entries.',
           },
           solution: [
             {
@@ -783,9 +783,9 @@ export const lesson: Lesson = {
                   ],
                 },
                 {
-                  date: { fa: 'حواله به CC-220', en: 'Issue to CC-220' },
+                  date: { fa: 'حواله به CC-ARY-PRD', en: 'Issue to CC-ARY-PRD' },
                   lines: [
-                    { account: { fa: 'هزینه مواد شیمیایی تولید (مرکز هزینه CC-220)', en: 'Production chemicals expense (cost centre CC-220)' }, debit: 20100 },
+                    { account: { fa: 'هزینه مواد شیمیایی تولید (مرکز هزینه CC-ARY-PRD)', en: 'Production chemicals expense (cost centre CC-ARY-PRD)' }, debit: 20100 },
                     { account: { fa: 'موجودی مواد شیمیایی', en: 'Inventory: chemicals' }, credit: 20100 },
                   ],
                 },
@@ -941,10 +941,10 @@ export const lesson: Lesson = {
               { fa: 'دفتر کل', en: 'General ledger' },
             ],
             rows: [
-              [{ fa: '1410 موجودی لوله‌های جداری و مغزی (OCTG)', en: '1410 Inventory: OCTG' }, 640000, 649000],
-              [{ fa: '1420 موجودی مواد شیمیایی', en: '1420 Inventory: chemicals' }, 95000, 95000],
-              [{ fa: '1430 موجودی قطعات یدکی', en: '1430 Inventory: spare parts' }, 410000, 422000],
-              [{ fa: '1450 موجودی در راه بین انبارها', en: '1450 Stock in transit' }, 54000, 45000],
+              [{ fa: '1320 موجودی لوله‌های جداری و مغزی (OCTG)', en: '1320 Inventory: OCTG' }, 640000, 649000],
+              [{ fa: '1330 موجودی مواد شیمیایی', en: '1330 Inventory: chemicals' }, 95000, 95000],
+              [{ fa: '1310 موجودی قطعات یدکی', en: '1310 Inventory: spare parts' }, 410000, 422000],
+              [{ fa: '1350 موجودی در راه بین انبارها', en: '1350 Stock in transit' }, 54000, 45000],
               [{ fa: 'جمع', en: 'Total' }, 1199000, 1211000],
             ],
             numericCols: [1, 2],
@@ -963,9 +963,9 @@ export const lesson: Lesson = {
                 { fa: 'علت', en: 'Cause' },
               ],
               rows: [
-                [{ fa: '1410 OCTG', en: '1410 OCTG' }, { fa: '9,000 (دفتر کل بیشتر)', en: '9,000 (GL higher)' }, { fa: 'MJ-26-144', en: 'MJ-26-144' }],
-                [{ fa: '1430 قطعات یدکی', en: '1430 Spare parts' }, { fa: '12,000 (دفتر کل بیشتر)', en: '12,000 (GL higher)' }, { fa: 'MJ-26-140', en: 'MJ-26-140' }],
-                [{ fa: '1450 موجودی در راه', en: '1450 Stock in transit' }, { fa: '9,000 (دفتر کل کمتر)', en: '9,000 (GL lower)' }, { fa: 'MJ-26-144', en: 'MJ-26-144' }],
+                [{ fa: '1320 OCTG', en: '1320 OCTG' }, { fa: '9,000 (دفتر کل بیشتر)', en: '9,000 (GL higher)' }, { fa: 'MJ-26-144', en: 'MJ-26-144' }],
+                [{ fa: '1310 قطعات یدکی', en: '1310 Spare parts' }, { fa: '12,000 (دفتر کل بیشتر)', en: '12,000 (GL higher)' }, { fa: 'MJ-26-140', en: 'MJ-26-140' }],
+                [{ fa: '1350 موجودی در راه', en: '1350 Stock in transit' }, { fa: '9,000 (دفتر کل کمتر)', en: '9,000 (GL lower)' }, { fa: 'MJ-26-144', en: 'MJ-26-144' }],
                 [{ fa: 'جمع', en: 'Total' }, { fa: '12,000 (دفتر کل بیشتر، خالص)', en: '12,000 (GL higher, net)' }, { fa: 'دو اختلاف 9,000 در جمع خنثی شده‌اند', en: 'The two 9,000 differences cancel in the total' }],
               ],
             },
@@ -1013,10 +1013,10 @@ export const lesson: Lesson = {
                 { fa: 'کاردکس', en: 'Stock ledger' },
               ],
               rows: [
-                [{ fa: '1410 OCTG', en: '1410 OCTG' }, 649000, 640000, 640000],
-                [{ fa: '1420 مواد شیمیایی', en: '1420 Chemicals' }, 95000, 95000, 95000],
-                [{ fa: '1430 قطعات یدکی', en: '1430 Spare parts' }, 422000, 410000, 410000],
-                [{ fa: '1450 موجودی در راه', en: '1450 Stock in transit' }, 45000, 54000, 54000],
+                [{ fa: '1320 OCTG', en: '1320 OCTG' }, 649000, 640000, 640000],
+                [{ fa: '1330 مواد شیمیایی', en: '1330 Chemicals' }, 95000, 95000, 95000],
+                [{ fa: '1310 قطعات یدکی', en: '1310 Spare parts' }, 422000, 410000, 410000],
+                [{ fa: '1350 موجودی در راه', en: '1350 Stock in transit' }, 45000, 54000, 54000],
                 [{ fa: 'جمع', en: 'Total' }, 1211000, 1199000, 1199000],
               ],
               numericCols: [1, 2, 3],
@@ -1275,8 +1275,8 @@ export const lesson: Lesson = {
     },
     {
       q: {
-        fa: 'حسابرس شریک الف 30 شاخه لوله جداری را که به AFE-2026-014 منظور شده انتخاب می‌کند. کدام مجموعه اسناد این هزینه را کامل پشتیبانی می‌کند؟',
-        en: 'Partner A’s auditor picks the 30 joints of casing charged to AFE-2026-014. Which set of documents fully supports this cost?',
+        fa: 'حسابرس انرژی البرز 30 شاخه لوله جداری را که به AFE-2026-012 منظور شده انتخاب می‌کند. کدام مجموعه اسناد این هزینه را کامل پشتیبانی می‌کند؟',
+        en: 'Alborz Energy’s auditor picks the 30 joints of casing charged to AFE-2026-012. Which set of documents fully supports this cost?',
       },
       options: [
         { fa: 'فقط فاکتور تأمین‌کننده و سند پرداخت', en: 'Only the supplier invoice and the payment record' },

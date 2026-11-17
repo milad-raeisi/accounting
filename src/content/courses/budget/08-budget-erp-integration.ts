@@ -11,7 +11,7 @@ const ac = {
   grir: t('2120 حساب واسط رسید کالا و فاکتور (GR/IR)', '2120 GR/IR clearing account'),
   ap: t('2110 حساب‌های پرداختنی', '2110 Accounts payable'),
   bank: t('1110 موجودی نقد (بانک)', '1110 Cash at bank'),
-  partnerAr: t('1230 حساب دریافتنی از شرکای مشارکت', '1230 Receivable from JV partners'),
+  partnerAr: t('1700 حساب دریافتنی از شرکای مشارکت', '1700 Receivable from JV partners'),
   cashCalls: t('2140 پیش‌دریافت درخواست وجه از شرکا', '2140 Cash calls received from partners'),
   staff: t('5190 هزینه کارکنان منتقل‌شده به پروژه‌ها (`CC-ARY-DRL`)', '5190 Staff costs recharged to projects (`CC-ARY-DRL`)'),
   training: t('5130 هزینه ایمنی، بهداشت، محیط زیست و آموزش (`CC-ARY-PRD`)', '5130 HSE and training expense (`CC-ARY-PRD`)'),
@@ -46,8 +46,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: t(
-            'روز سوم کاری ماه 5 است. نماینده شریک الف سه چیز می‌خواهد: وضعیت AFE چاه AR-07، صورت‌حساب هزینه‌های ماه 4، و دلیل اینکه این هزینه‌ها قابل بازیافت‌اند. کنترل‌کننده پروژه مسار پترولیوم برای هیچ‌کدام فایل جداگانه‌ای نمی‌سازد؛ هر سه از **همان اسناد** در ERP بیرون می‌آیند. هر GRN، SES، فاکتور و برگه کارکرد یک بار ثبت می‌شود و هم‌زمان بودجه پروژه، دفتر کل، صورت‌حساب شرکا و طبقه بازیافت هزینه را به‌روز می‌کند. یکپارچگی یعنی همین: یک رویداد، یک سند، چند ماژول.',
-            'It is the third working day of month 5. Partner A’s representative wants three things: the status of the AR-07 AFE, the bill for month-4 costs, and evidence that those costs are recoverable. Masar Petroleum’s project controller builds no separate file for any of them; all three come from **the same documents** in the ERP. Each GRN, SES, invoice and timesheet is entered once and at the same moment updates the project budget, the general ledger, partner billing and the cost-recovery category. That is what integration means: one event, one document, many modules.',
+            'روز سوم کاری ماه 5 است. نماینده انرژی البرز سه چیز می‌خواهد: وضعیت AFE چاه AR-07، صورت‌حساب هزینه‌های ماه 4، و دلیل اینکه این هزینه‌ها قابل بازیافت‌اند. کنترل‌کننده پروژه مسار پترولیوم برای هیچ‌کدام فایل جداگانه‌ای نمی‌سازد؛ هر سه از **همان اسناد** در ERP بیرون می‌آیند. هر GRN، SES، فاکتور و برگه کارکرد یک بار ثبت می‌شود و هم‌زمان بودجه پروژه، دفتر کل، صورت‌حساب شرکا و طبقه بازیافت هزینه را به‌روز می‌کند. یکپارچگی یعنی همین: یک رویداد، یک سند، چند ماژول.',
+            'It is the third working day of month 5. Alborz Energy’s representative wants three things: the status of the AR-07 AFE, the bill for month-4 costs, and evidence that those costs are recoverable. Masar Petroleum’s project controller builds no separate file for any of them; all three come from **the same documents** in the ERP. Each GRN, SES, invoice and timesheet is entered once and at the same moment updates the project budget, the general ledger, partner billing and the cost-recovery category. That is what integration means: one event, one document, many modules.',
           ),
         },
         {
@@ -291,14 +291,14 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: t(
-            'در پایان هر ماه، بهره‌بردار **صورت‌حساب هزینه‌های مشترک** (JIB: Joint Interest Billing) را برای هر شریک صادر می‌کند: سهم او از هزینه ناخالص ماه، به تفکیک AFE و طبقه، منهای درخواست وجهی که از پیش پرداخته است. در ERP این کار با اجرای **تقسیم سهم شرکا** (Cutback) انجام می‌شود: سهم شرکا از حساب‌های هزینه و AUC بیرون می‌رود و به حساب دریافتنی از شرکا یا پیش‌دریافت درخواست وجه می‌نشیند. سهم‌ها فرضی‌اند: مسار پترولیوم 50٪، شریک الف 30٪، شریک ب 20٪.',
-            'At the end of each month the operator issues a **joint interest billing (JIB)** statement to each partner: its share of the month’s gross cost, by AFE and category, less the cash call it has already paid. In the ERP this is done by the **cutback** run: the partners’ share is taken out of the cost and AUC accounts and moved to the partner receivable or the cash-call advance. The shares are illustrative: Masar Petroleum 50%, Partner A 30%, Partner B 20%.',
+            'در پایان هر ماه، بهره‌بردار **صورت‌حساب هزینه‌های مشترک** (JIB: Joint Interest Billing) را برای هر شریک صادر می‌کند: سهم او از هزینه ناخالص ماه، به تفکیک AFE و طبقه، منهای درخواست وجهی که از پیش پرداخته است. در ERP این کار با اجرای **تقسیم سهم شرکا** (Cutback) انجام می‌شود: سهم شرکا از حساب‌های هزینه و AUC بیرون می‌رود و به حساب دریافتنی از شرکا یا پیش‌دریافت درخواست وجه می‌نشیند. سهم‌ها فرضی‌اند: مسار پترولیوم 50٪، انرژی البرز 30٪، نفت دنا 20٪.',
+            'At the end of each month the operator issues a **joint interest billing (JIB)** statement to each partner: its share of the month’s gross cost, by AFE and category, less the cash call it has already paid. In the ERP this is done by the **cutback** run: the partners’ share is taken out of the cost and AUC accounts and moved to the partner receivable or the cash-call advance. The shares are illustrative: Masar Petroleum 50%, Alborz Energy 30%, Dena Petroleum 20%.',
           ),
         },
         {
           type: 'table',
           caption: t('صورت‌حساب ماه 4 برای `AFE-2025-014`', 'Month-4 billing for `AFE-2025-014`'),
-          head: [t('قلم', 'Item'), t('ناخالص', 'Gross'), t('مسار پترولیوم 50٪', 'Masar Petroleum 50%'), t('شریک الف 30٪', 'Partner A 30%'), t('شریک ب 20٪', 'Partner B 20%')],
+          head: [t('قلم', 'Item'), t('ناخالص', 'Gross'), t('مسار پترولیوم 50٪', 'Masar Petroleum 50%'), t('انرژی البرز 30٪', 'Alborz Energy 30%'), t('نفت دنا 20٪', 'Dena Petroleum 20%')],
           rows: [
             [t('هزینه ماه 4', 'Month-4 cost'), 811000, 405500, 243300, 162200],
             [t('درخواست وجه دریافت‌شده', 'Cash call received'), 800000, dash, 240000, 160000],
@@ -325,7 +325,7 @@ export const lesson: Lesson = {
                 { account: ac.bank, debit: 400000 },
                 { account: ac.cashCalls, credit: 400000 },
               ],
-              memo: t('درخواست وجه شرکا: شریک الف 240,000 و شریک ب 160,000.', 'Partners’ cash calls: Partner A 240,000 and Partner B 160,000.'),
+              memo: t('درخواست وجه شرکا: انرژی البرز 240,000 و نفت دنا 160,000.', 'Partners’ cash calls: Alborz Energy 240,000 and Dena Petroleum 160,000.'),
             },
             {
               date: t('پایان ماه 4: صورت‌حساب', 'End of month 4: billing'),
@@ -357,8 +357,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: t(
-            'آشتی 1510 در دفاتر مسار: هزینه ناخالص تا پایان ماه 4 برابر 7,940,000 بود و سهم 50٪ مسار 3,970,000 است. 12,500 از آن (50٪ آموزش ماه 3) در ماه 3 تسویه شده بود، پس پیش از تسویه‌های ماه 4 مانده 3,957,500 است. تسویه آموزش ماه 4 (7,500) و سرمایه‌ای کردن (3,950,000) آن را صفر می‌کنند: 3,957,500 − 7,500 − 3,950,000 = 0. شریک الف و شریک ب سهم خود از همین چاه (30٪ و 20٪) را در دفاتر خودشان سرمایه‌ای می‌کنند.',
-            'Reconciling 1510 in Masar’s books: gross cost to the end of month 4 was 7,940,000 and Masar’s 50% share is 3,970,000. Of that, 12,500 (50% of month-3 training) was settled in month 3, so the balance before the month-4 settlements is 3,957,500. Settling month-4 training (7,500) and capitalising (3,950,000) bring it to zero: 3,957,500 − 7,500 − 3,950,000 = 0. Partner A and Partner B capitalise their own shares of the same well (30% and 20%) in their own books.',
+            'آشتی 1510 در دفاتر مسار: هزینه ناخالص تا پایان ماه 4 برابر 7,940,000 بود و سهم 50٪ مسار 3,970,000 است. 12,500 از آن (50٪ آموزش ماه 3) در ماه 3 تسویه شده بود، پس پیش از تسویه‌های ماه 4 مانده 3,957,500 است. تسویه آموزش ماه 4 (7,500) و سرمایه‌ای کردن (3,950,000) آن را صفر می‌کنند: 3,957,500 − 7,500 − 3,950,000 = 0. انرژی البرز و نفت دنا سهم خود از همین چاه (30٪ و 20٪) را در دفاتر خودشان سرمایه‌ای می‌کنند.',
+            'Reconciling 1510 in Masar’s books: gross cost to the end of month 4 was 7,940,000 and Masar’s 50% share is 3,970,000. Of that, 12,500 (50% of month-3 training) was settled in month 3, so the balance before the month-4 settlements is 3,957,500. Settling month-4 training (7,500) and capitalising (3,950,000) bring it to zero: 3,957,500 − 7,500 − 3,950,000 = 0. Alborz Energy and Dena Petroleum capitalise their own shares of the same well (30% and 20%) in their own books.',
           ),
         },
         {
@@ -497,7 +497,7 @@ export const lesson: Lesson = {
                 [t('ج', 'c'), t('رسید کالا (GRN)', 'Goods received note (GRN)'), t('تعهد کم، واقعی زیاد', 'Commitment down, actual up'), t('بدهکار 1510 (WBS)؛ بستانکار 2120', 'Dr 1510 (WBS); Cr 2120')],
                 [t('د', 'd'), t('برگه ثبت خدمات (SES)', 'Service entry sheet (SES)'), t('تعهد کم، واقعی زیاد', 'Commitment down, actual up'), t('بدهکار 1510 (WBS)؛ بستانکار 2120', 'Dr 1510 (WBS); Cr 2120')],
                 [t('هـ', 'e'), t('برگه کارکرد', 'Timesheet'), t('واقعی زیاد؛ تعهدی ندارد', 'Actual up; no commitment'), t('بدهکار 1510 (WBS)؛ بستانکار 5190', 'Dr 1510 (WBS); Cr 5190')],
-                [t('و', 'f'), t('اجرای صورت‌حساب شرکا (JIB)', 'Partner billing run (JIB)'), t('بی‌اثر؛ گزارش AFE ناخالص می‌ماند', 'None; the AFE report stays gross'), t('بدهکار 2140 یا 1230؛ بستانکار 1510 (سهم شرکا)', 'Dr 2140 or 1230; Cr 1510 (partners’ share)')],
+                [t('و', 'f'), t('اجرای صورت‌حساب شرکا (JIB)', 'Partner billing run (JIB)'), t('بی‌اثر؛ گزارش AFE ناخالص می‌ماند', 'None; the AFE report stays gross'), t('بدهکار 2140 یا 1700؛ بستانکار 1510 (سهم شرکا)', 'Dr 2140 or 1700; Cr 1510 (partners’ share)')],
               ],
             },
           ],
@@ -508,16 +508,16 @@ export const lesson: Lesson = {
           title: t('تمرین 2: صورت‌حساب شرکا با درخواست وجه', 'Exercise 2: Partner billing against cash calls'),
           difficulty: 'medium',
           problem: t(
-            'هزینه ناخالص یک ماه روی AFE برابر 840,000 است. سهم‌ها: مسار 50٪، شریک الف 30٪، شریک ب 20٪. در آغاز ماه، شریک الف 240,000 و شریک ب 170,000 درخواست وجه پرداخته‌اند. (الف) سهم هر شریک و مانده او را حساب کنید. (ب) ثبت صورت‌حساب پایان ماه را در دفاتر مسار بنویسید. (ج) با مازاد شریک ب چه می‌کنید؟',
-            'The month’s gross cost on an AFE is 840,000. Shares: Masar 50%, Partner A 30%, Partner B 20%. At the start of the month Partner A paid a cash call of 240,000 and Partner B 170,000. (a) Calculate each partner’s share and balance. (b) Write the month-end billing entry in Masar’s books. (c) What do you do with Partner B’s excess?',
+            'هزینه ناخالص یک ماه روی AFE برابر 840,000 است. سهم‌ها: مسار 50٪، انرژی البرز 30٪، نفت دنا 20٪. در آغاز ماه، انرژی البرز 240,000 و نفت دنا 170,000 درخواست وجه پرداخته‌اند. (الف) سهم هر شریک و مانده او را حساب کنید. (ب) ثبت صورت‌حساب پایان ماه را در دفاتر مسار بنویسید. (ج) با مازاد نفت دنا چه می‌کنید؟',
+            'The month’s gross cost on an AFE is 840,000. Shares: Masar 50%, Alborz Energy 30%, Dena Petroleum 20%. At the start of the month Alborz Energy paid a cash call of 240,000 and Dena Petroleum 170,000. (a) Calculate each partner’s share and balance. (b) Write the month-end billing entry in Masar’s books. (c) What do you do with Dena Petroleum’s excess?',
           ),
           solution: [
             {
               type: 'table',
               head: [t('شریک', 'Partner'), t('سهم هزینه', 'Share of cost'), t('درخواست وجه پرداخته', 'Cash call paid'), t('مانده', 'Balance')],
               rows: [
-                [t('شریک الف (30٪)', 'Partner A (30%)'), 252000, 240000, t('12,000 بدهکار', '12,000 owed')],
-                [t('شریک ب (20٪)', 'Partner B (20%)'), 168000, 170000, t('2,000 پیش‌پرداخت اضافه', '2,000 overpaid')],
+                [t('انرژی البرز (30٪)', 'Alborz Energy (30%)'), 252000, 240000, t('12,000 بدهکار', '12,000 owed')],
+                [t('نفت دنا (20٪)', 'Dena Petroleum (20%)'), 168000, 170000, t('2,000 پیش‌پرداخت اضافه', '2,000 overpaid')],
                 [t('جمع شرکا', 'Partners total'), 420000, 410000, t('10,000 خالص بدهکار', '10,000 net owed')],
               ],
               numericCols: [1, 2, 3],
@@ -532,19 +532,19 @@ export const lesson: Lesson = {
                     { account: ac.partnerAr, debit: 12000 },
                     { account: t('1510 دارایی‌های در جریان تکمیل (سهم شرکا)', '1510 Assets under construction (partners’ share)'), credit: 420000 },
                   ],
-                  memo: t('408,000 = 240,000 از شریک الف + 168,000 از شریک ب؛ 12,000 بدهی شریک الف.', '408,000 = 240,000 from Partner A + 168,000 from Partner B; 12,000 owed by Partner A.'),
+                  memo: t('408,000 = 240,000 از انرژی البرز + 168,000 از شریک ب؛ 12,000 بدهی انرژی البرز.', '408,000 = 240,000 from Alborz Energy + 168,000 from Dena Petroleum; 12,000 owed by Alborz Energy.'),
                 },
               ],
             },
             {
               type: 'p',
               text: t(
-                '2,000 اضافه شریک ب در 2140 می‌ماند و از درخواست وجه ماه بعد او کسر می‌شود؛ پس نیازی به بازپرداخت نقدی نیست. سهم خود مسار (420,000) در 1510 می‌ماند.',
-                'Partner B’s 2,000 excess stays in 2140 and is deducted from its next cash call, so no cash refund is needed. Masar’s own share (420,000) stays in 1510.',
+                '2,000 اضافه نفت دنا در 2140 می‌ماند و از درخواست وجه ماه بعد او کسر می‌شود؛ پس نیازی به بازپرداخت نقدی نیست. سهم خود مسار (420,000) در 1510 می‌ماند.',
+                'Dena Petroleum’s 2,000 excess stays in 2140 and is deducted from its next cash call, so no cash refund is needed. Masar’s own share (420,000) stays in 1510.',
               ),
             },
           ],
-          answer: t('شریک الف 252,000 (12,000 بدهکار)، شریک ب 168,000 (2,000 مازاد)؛ بستانکار 1510 به مبلغ 420,000.', 'Partner A 252,000 (12,000 owed), Partner B 168,000 (2,000 excess); credit 1510 for 420,000.'),
+          answer: t('انرژی البرز 252,000 (12,000 بدهکار)، نفت دنا 168,000 (2,000 مازاد)؛ بستانکار 1510 به مبلغ 420,000.', 'Alborz Energy 252,000 (12,000 owed), Dena Petroleum 168,000 (2,000 excess); credit 1510 for 420,000.'),
         },
         {
           type: 'exercise',
@@ -635,7 +635,7 @@ export const lesson: Lesson = {
                     { account: ac.partnerAr, debit: 139000 },
                     { account: ac.auc('AFE-2024-029'), credit: 139000 },
                   ],
-                  memo: t('50٪ از 278,000: شریک الف 83,400 و شریک ب 55,600.', '50% of 278,000: Partner A 83,400 and Partner B 55,600.'),
+                  memo: t('50٪ از 278,000: انرژی البرز 83,400 و نفت دنا 55,600.', '50% of 278,000: Alborz Energy 83,400 and Dena Petroleum 55,600.'),
                 },
                 {
                   date: t('تسویه', 'Settlement'),
@@ -650,13 +650,13 @@ export const lesson: Lesson = {
               type: 'steps',
               items: [
                 { title: t('هزینه ناخالص', 'Gross cost'), text: t('120,000 + 3,000 + 140,000 + 15,000 = 278,000.', '120,000 + 3,000 + 140,000 + 15,000 = 278,000.') },
-                { title: t('سهم‌ها', 'Shares'), text: t('مسار 139,000؛ شریک الف 30٪ × 278,000 = 83,400؛ شریک ب 20٪ × 278,000 = 55,600.', 'Masar 139,000; Partner A 30% × 278,000 = 83,400; Partner B 20% × 278,000 = 55,600.') },
+                { title: t('سهم‌ها', 'Shares'), text: t('مسار 139,000؛ انرژی البرز 30٪ × 278,000 = 83,400؛ نفت دنا 20٪ × 278,000 = 55,600.', 'Masar 139,000; Alborz Energy 30% × 278,000 = 83,400; Dena Petroleum 20% × 278,000 = 55,600.') },
                 { title: t('دارایی و برگشت', 'Asset and return'), text: t('بهای `FA-57029` در دفاتر مسار 139,000 است و مانده 1510 صفر می‌شود (278,000 − 139,000 − 139,000). برگشت بودجه: 300,000 − 278,000 = 22,000.', 'The cost of `FA-57029` in Masar’s books is 139,000 and 1510 returns to zero (278,000 − 139,000 − 139,000). Budget return: 300,000 − 278,000 = 22,000.') },
                 { title: t('صورت بازیافت', 'Recovery statement'), text: t('طبقه توسعه، قابل بازیافت (R): 278,000 ناخالص؛ برابر هزینه نهایی AFE؛ بدون قلم N.', 'Development category, recoverable (R): 278,000 gross; equal to the AFE’s final cost; no N items.') },
               ],
             },
           ],
-          answer: t('هزینه ناخالص 278,000؛ شریک الف 83,400، شریک ب 55,600؛ دارایی مسار 139,000؛ برگشت 22,000؛ بازیافت توسعه R برابر 278,000.', 'Gross cost 278,000; Partner A 83,400, Partner B 55,600; Masar’s asset 139,000; return 22,000; Development R recovery 278,000.'),
+          answer: t('هزینه ناخالص 278,000؛ انرژی البرز 83,400، نفت دنا 55,600؛ دارایی مسار 139,000؛ برگشت 22,000؛ بازیافت توسعه R برابر 278,000.', 'Gross cost 278,000; Alborz Energy 83,400, Dena Petroleum 55,600; Masar’s asset 139,000; return 22,000; Development R recovery 278,000.'),
         },
       ],
     },
@@ -704,12 +704,12 @@ export const lesson: Lesson = {
       ),
     },
     {
-      q: t('هزینه ناخالص ماه 4 روی AFE چاه AR-07 برابر 811,000 است. سهم شریک الف (30٪) در صورت‌حساب چقدر است؟', 'Gross month-4 cost on the AR-07 AFE is 811,000. What is Partner A’s (30%) share on the bill?'),
+      q: t('هزینه ناخالص ماه 4 روی AFE چاه AR-07 برابر 811,000 است. سهم انرژی البرز (30٪) در صورت‌حساب چقدر است؟', 'Gross month-4 cost on the AR-07 AFE is 811,000. What is Alborz Energy’s (30%) share on the bill?'),
       options: [t('405,500', '405,500'), t('162,200', '162,200'), t('811,000', '811,000'), t('243,300', '243,300')],
       answer: 3,
       explain: t(
-        '30٪ × 811,000 = 243,300. 405,500 سهم کل شرکا (50٪) است و 162,200 سهم شریک ب (20٪).',
-        '30% × 811,000 = 243,300. 405,500 is the partners’ combined 50% share and 162,200 is Partner B’s 20%.',
+        '30٪ × 811,000 = 243,300. 405,500 سهم کل شرکا (50٪) است و 162,200 سهم نفت دنا (20٪).',
+        '30% × 811,000 = 243,300. 405,500 is the partners’ combined 50% share and 162,200 is Dena Petroleum’s 20%.',
       ),
     },
     {
@@ -777,8 +777,8 @@ export const lesson: Lesson = {
       options: [t('405,500', '405,500'), t('5,500', '5,500'), t('400,000', '400,000'), t('811,000', '811,000')],
       answer: 1,
       explain: t(
-        '405,500 − 400,000 = 5,500 (شریک الف 3,300 و شریک ب 2,200). صورت‌حساب ابتدا با پیش‌دریافت 2140 تسویه می‌شود و فقط مانده به 1230 می‌رود.',
-        '405,500 − 400,000 = 5,500 (Partner A 3,300 and Partner B 2,200). The bill is first settled against the 2140 advance, and only the balance goes to 1230.',
+        '405,500 − 400,000 = 5,500 (انرژی البرز 3,300 و نفت دنا 2,200). صورت‌حساب ابتدا با پیش‌دریافت 2140 تسویه می‌شود و فقط مانده به 1700 می‌رود.',
+        '405,500 − 400,000 = 5,500 (Alborz Energy 3,300 and Dena Petroleum 2,200). The bill is first settled against the 2140 advance, and only the balance goes to 1700.',
       ),
     },
     {

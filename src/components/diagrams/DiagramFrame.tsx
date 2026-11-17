@@ -39,7 +39,7 @@ export function DiagramFrame({ title, caption, children, onReplay, controls, bad
             {t('diagram.figure')}
             {badge && <span>· {badge === '3d' ? t('diagram.3d') : t('diagram.interactive')}</span>}
           </div>
-          <div className="truncate text-sm font-semibold">{tr(title)}</div>
+          <div className="text-sm font-semibold sm:truncate">{tr(title)}</div>
         </div>
         <div className="flex items-center gap-2">
           {controls}

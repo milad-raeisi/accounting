@@ -6,7 +6,7 @@ const ac = {
   ar: { fa: '1210 حساب‌های دریافتنی', en: '1210 Accounts receivable' },
   grir: { fa: '2120 حساب واسط رسید کالا و فاکتور (GR/IR)', en: '2120 GR/IR clearing account' },
   revenue: { fa: '4110 درآمد فروش نفت', en: '4110 Oil sales revenue' },
-  fines: { fa: '5810 جریمه‌ها (غیرقابل بازیافت)', en: '5810 Fines and penalties (non-recoverable)' },
+  fines: { fa: '5910 جریمه‌ها (غیرقابل بازیافت)', en: '5910 Fines and penalties (non-recoverable)' },
 }
 
 const t = (fa: string, en: string) => ({ fa, en })
@@ -428,10 +428,10 @@ export const lesson: Lesson = {
           ],
           rows: [
             [t('محدوده قراردادی', 'Contract area'), t('مرکز سود و پروژه', 'Profit centre and project'), t('PC-ARYA: قرارداد میدان آریا', 'PC-ARYA: Arya field contract')],
-            [t('شیء هزینه', 'Cost object'), t('انتخاب کاربر در سفارش خرید، رزرو یا SES', 'User’s choice on the PO, reservation or SES'), t('WBS چاه AR-09 یا مرکز هزینه CC-110', 'WBS of well AR-09 or cost centre CC-110')],
+            [t('شیء هزینه', 'Cost object'), t('انتخاب کاربر در سفارش خرید، رزرو یا SES', 'User’s choice on the PO, reservation or SES'), t('WBS چاه AR-15 یا مرکز هزینه CC-ARY-PRD', 'WBS of well AR-15 or cost centre CC-ARY-PRD')],
             [t('دسته هزینه', 'Cost category'), t('ویژگی شیء هزینه', 'Attribute of the cost object'), t('توسعه، عملیاتی یا اکتشاف', 'Development, operating or exploration')],
             [t('نشانگر بازیافت', 'Recoverable flag'), t('ویژگی شیء هزینه یا حساب؛ قابل تغییر در سطر با تأیید', 'Attribute of the cost object or account; overridable on the line with approval'), t('قابل بازیافت، غیرقابل بازیافت، در انتظار مدرک', 'Recoverable, non-recoverable, pending evidence')],
-            [t('مرجع بودجه', 'Budget reference'), t('AFE یا ردیف برنامه کاری', 'AFE or work programme line'), t('AFE-209', 'AFE-209')],
+            [t('مرجع بودجه', 'Budget reference'), t('AFE یا ردیف برنامه کاری', 'AFE or work programme line'), t('AFE-2026-017', 'AFE-2026-017')],
             [t('مدرک', 'Evidence'), t('پیوست‌های GRN، SES و فاکتور', 'Attachments to the GRN, SES and invoice'), t('برگه‌های کار امضاشده، گزارش بازرسی', 'Signed field tickets, inspection report')],
           ],
         },
@@ -452,7 +452,7 @@ export const lesson: Lesson = {
             {
               date: t('تأیید SES', 'SES approved'),
               lines: [
-                { account: t('1510 دارایی‌های در جریان تکمیل (WBS چاه AR-09؛ AFE-209؛ توسعه؛ قابل بازیافت)', '1510 Assets under construction (WBS well AR-09; AFE-209; development; recoverable)'), debit: 1100000 },
+                { account: t('1510 دارایی‌های در جریان تکمیل (WBS چاه AR-15؛ AFE-2026-017؛ توسعه؛ قابل بازیافت)', '1510 Assets under construction (WBS well AR-15; AFE-2026-017; development; recoverable)'), debit: 1100000 },
                 { account: ac.grir, credit: 1100000 },
               ],
               memo: { fa: 'اجاره دکل؛ گزارش‌های روزانه حفاری امضاشده پیوست SES است.', en: 'Rig hire; signed daily drilling reports are attached to the SES.' },
@@ -460,7 +460,7 @@ export const lesson: Lesson = {
             {
               date: t('ثبت GRN', 'GRN posted'),
               lines: [
-                { account: t('5110 هزینه عملیات تولید (CC-110؛ عملیاتی؛ قابل بازیافت)', '5110 Production operating expense (CC-110; operating; recoverable)'), debit: 250000 },
+                { account: t('5110 هزینه عملیات تولید (CC-ARY-PRD؛ عملیاتی؛ قابل بازیافت)', '5110 Production operating expense (CC-ARY-PRD; operating; recoverable)'), debit: 250000 },
                 { account: ac.grir, credit: 250000 },
               ],
               memo: { fa: 'مواد شیمیایی ضدخوردگی با GRN مصرف مستقیم برای چاه‌های تولیدی.', en: 'Corrosion-inhibitor chemicals on a direct-charge GRN for producing wells.' },
@@ -609,10 +609,10 @@ export const lesson: Lesson = {
           given: {
             head: [{ fa: 'قلم', en: 'Item' }],
             rows: [
-              [t('1. اجاره دکل چاه AR-09 روی AFE-209 مصوب، با SES و گزارش‌های روزانه امضاشده', '1. Rig hire for well AR-09 on approved AFE-209, with an SES and signed daily reports')],
+              [t('1. اجاره دکل چاه AR-15 روی AFE-2026-017 مصوب، با SES و گزارش‌های روزانه امضاشده', '1. Rig hire for well AR-15 on approved AFE-2026-017, with an SES and signed daily reports')],
               [t('2. پاداش امضای قرارداد پرداختی به دولت', '2. Signature bonus paid to the state')],
               [t('3. جریمه تخلف زیست‌محیطی', '3. Fine for an environmental breach')],
-              [t('4. مواد شیمیایی چاه‌های تولیدی با GRN روی CC-110', '4. Chemicals for producing wells on a GRN to CC-110')],
+              [t('4. مواد شیمیایی چاه‌های تولیدی با GRN روی CC-ARY-PRD', '4. Chemicals for producing wells on a GRN to CC-ARY-PRD')],
               [t('5. سربار دفتر مرکزی بیش از سقف درصدی قرارداد', '5. Head-office overhead above the contract’s percentage cap')],
               [t('6. فاکتور مشاوره بدون قرارداد، سفارش خرید یا SES', '6. A consultancy invoice with no contract, PO or SES')],
             ],

@@ -3,19 +3,19 @@ import type { Lesson } from '../../types'
 /* Masar Petroleum: accounts the ERP posts to in this lesson. */
 const ac = {
   sparesMP10: {
-    fa: 'موجودی قطعات یدکی: سایت MP10 (انبار مرکزی)',
-    en: 'Inventory: spare parts, site MP10 (Central Warehouse)',
+    fa: 'موجودی قطعات یدکی: سایت WH-10 (انبار مرکزی)',
+    en: 'Inventory: spare parts, site WH-10 (Central Warehouse)',
   },
   sparesMP20: {
-    fa: 'موجودی قطعات یدکی: سایت MP20 (انبار میدان)',
-    en: 'Inventory: spare parts, site MP20 (Field Warehouse)',
+    fa: 'موجودی قطعات یدکی: سایت WH-20 (انبار میدان)',
+    en: 'Inventory: spare parts, site WH-20 (Field Warehouse)',
   },
   chemicals: { fa: 'موجودی مواد شیمیایی', en: 'Inventory: chemicals' },
   consumables: { fa: 'موجودی اقلام مصرفی', en: 'Inventory: consumables' },
   writeOff: { fa: 'هزینه زیان و اسقاط موجودی', en: 'Inventory write-off expense' },
   warehouseExp: {
-    fa: 'هزینه‌های عملیاتی انبار (مرکز هزینه CC-3300)',
-    en: 'Warehouse operating expense (cost centre CC-3300)',
+    fa: 'هزینه‌های عملیاتی انبار (مرکز هزینه CC-ARY-WHS)',
+    en: 'Warehouse operating expense (cost centre CC-ARY-WHS)',
   },
 }
 
@@ -126,15 +126,15 @@ export const lesson: Lesson = {
           head: [t('سطح', 'Level'), t('کد', 'Code'), t('نام', 'Name'), t('توضیح', 'Notes')],
           rows: [
             [t('شرکت', 'Company code'), t('MP01', 'MP01'), t('شرکت مسار پترولیوم', 'Masar Petroleum'), t('دفاتر و صورت‌های مالی', 'Books and financial statements')],
-            [t('سایت', 'Site'), t('MP10', 'MP10'), t('انبار مرکزی (پایگاه پشتیبانی)', 'Central Warehouse (logistics base)'), t('ارزش‌گذاری در سطح سایت', 'Stock valued at site level')],
-            [t('محل نگهداری', 'Storage location'), t('MP10/1001', 'MP10/1001'), t('انبار اصلی قطعات', 'Main spares store'), t('قفسه‌بندی و پالت‌راک', 'Shelving and pallet racking')],
-            [t('محل نگهداری', 'Storage location'), t('MP10/1002', 'MP10/1002'), t('محوطه لوله', 'OCTG pipe yard'), t('روباز، روی پایه‌های لوله', 'Outdoor, on pipe racks')],
-            [t('محل نگهداری', 'Storage location'), t('MP10/1003', 'MP10/1003'), t('انبار مواد شیمیایی', 'Chemical store'), t('ساختمان جدا با حوضچه مهار نشتی', 'Separate building with spill bunds')],
-            [t('محل نگهداری', 'Storage location'), t('MP10/1004', 'MP10/1004'), t('قفس سیلندرهای گاز', 'Gas cylinder cage'), t('روباز، سایه‌دار و با تهویه طبیعی', 'Outdoor, shaded and naturally ventilated')],
-            [t('سایت', 'Site'), t('MP20', 'MP20'), t('میدان آریا', 'Arya field'), t('انبار میدان و ایستگاه تقویت فشار', 'Field Warehouse and compressor station')],
-            [t('محل نگهداری', 'Storage location'), t('MP20/2001', 'MP20/2001'), t('انبار میدان', 'Field store'), t('اقلام پرمصرف و مصرفی', 'Fast movers and consumables')],
-            [t('محل نگهداری', 'Storage location'), t('MP20/2002', 'MP20/2002'), t('انبار اقماری ایستگاه تقویت فشار', 'Compressor station satellite store'), t('قطعات حیاتی K-201', 'Critical spares for K-201')],
-            [t('محل نگهداری', 'Storage location'), t('MP20/2003', 'MP20/2003'), t('انبار سر دکل چاه AR-12', 'Rig-site store, well AR-12'), t('موقت؛ با جابه‌جایی دکل بسته می‌شود', 'Temporary; closed when the rig moves')],
+            [t('سایت', 'Site'), t('WH-10', 'WH-10'), t('انبار مرکزی (پایگاه پشتیبانی)', 'Central Warehouse (logistics base)'), t('ارزش‌گذاری در سطح سایت', 'Stock valued at site level')],
+            [t('محل نگهداری', 'Storage location'), t('WH-10/1001', 'WH-10/1001'), t('انبار اصلی قطعات', 'Main spares store'), t('قفسه‌بندی و پالت‌راک', 'Shelving and pallet racking')],
+            [t('محل نگهداری', 'Storage location'), t('WH-10/1002', 'WH-10/1002'), t('محوطه لوله', 'OCTG pipe yard'), t('روباز، روی پایه‌های لوله', 'Outdoor, on pipe racks')],
+            [t('محل نگهداری', 'Storage location'), t('WH-10/1003', 'WH-10/1003'), t('انبار مواد شیمیایی', 'Chemical store'), t('ساختمان جدا با حوضچه مهار نشتی', 'Separate building with spill bunds')],
+            [t('محل نگهداری', 'Storage location'), t('WH-10/1004', 'WH-10/1004'), t('قفس سیلندرهای گاز', 'Gas cylinder cage'), t('روباز، سایه‌دار و با تهویه طبیعی', 'Outdoor, shaded and naturally ventilated')],
+            [t('سایت', 'Site'), t('WH-20', 'WH-20'), t('میدان آریا', 'Arya field'), t('انبار میدان و ایستگاه تقویت فشار', 'Field Warehouse and compressor station')],
+            [t('محل نگهداری', 'Storage location'), t('WH-20/2001', 'WH-20/2001'), t('انبار میدان', 'Field store'), t('اقلام پرمصرف و مصرفی', 'Fast movers and consumables')],
+            [t('محل نگهداری', 'Storage location'), t('WH-20/2002', 'WH-20/2002'), t('انبار اقماری ایستگاه تقویت فشار', 'Compressor station satellite store'), t('قطعات حیاتی K-201', 'Critical spares for K-201')],
+            [t('محل نگهداری', 'Storage location'), t('WH-20/2003', 'WH-20/2003'), t('انبار سر دکل چاه AR-12', 'Rig-site store, well AR-12'), t('موقت؛ با جابه‌جایی دکل بسته می‌شود', 'Temporary; closed when the rig moves')],
           ],
         },
         {
@@ -175,8 +175,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'کدام جابه‌جایی سند مالی دارد؟ قاعده ساده است: اگر **ارزش یا حساب** تغییر نکند، سند مالی لازم نیست. جابه‌جایی از یک جایگاه به جایگاه دیگر، یا از یک محل نگهداری به محل دیگری در همان سایت، فقط سند انبار دارد. اما چون ارزش‌گذاری در سطح سایت است، انتقال از سایت MP10 به MP20 یک سند حسابداری هم می‌سازد.',
-            en: 'Which movements post to Finance? The rule is simple: if neither the **value nor the account** changes, there is no Finance document. Moving stock from bin to bin, or between storage locations of the same site, creates only a material document. But because stock is valued at site level, a transfer from site MP10 to MP20 also creates an accounting document.',
+            fa: 'کدام جابه‌جایی سند مالی دارد؟ قاعده ساده است: اگر **ارزش یا حساب** تغییر نکند، سند مالی لازم نیست. جابه‌جایی از یک جایگاه به جایگاه دیگر، یا از یک محل نگهداری به محل دیگری در همان سایت، فقط سند انبار دارد. اما چون ارزش‌گذاری در سطح سایت است، انتقال از سایت WH-10 به WH-20 یک سند حسابداری هم می‌سازد.',
+            en: 'Which movements post to Finance? The rule is simple: if neither the **value nor the account** changes, there is no Finance document. Moving stock from bin to bin, or between storage locations of the same site, creates only a material document. But because stock is valued at site level, a transfer from site WH-10 to WH-20 also creates an accounting document.',
           },
         },
         {
@@ -549,8 +549,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'کارهای حفاظت را می‌توان در ERP به‌صورت **برنامه نگهداری پیشگیرانه** روی کالای انبارشده تعریف کرد تا سیستم در موعد دستور کار بسازد، انجام کار ثبت شود و هزینه مواد و نفرساعت حفاظت به مرکز هزینه انبار (CC-3300) برسد. سابقه کامل حفاظت هم در ادعای ضمانت و هم در حسابرسی به کار می‌آید.',
-            en: 'Preservation tasks can be set up in the ERP as **preventive maintenance plans** on the stored items, so the system raises work orders when they fall due, completion is recorded, and the cost of preservation materials and labour goes to the warehouse cost centre (CC-3300). A complete preservation history helps both in warranty claims and in audits.',
+            fa: 'کارهای حفاظت را می‌توان در ERP به‌صورت **برنامه نگهداری پیشگیرانه** روی کالای انبارشده تعریف کرد تا سیستم در موعد دستور کار بسازد، انجام کار ثبت شود و هزینه مواد و نفرساعت حفاظت به مرکز هزینه انبار (CC-ARY-WHS) برسد. سابقه کامل حفاظت هم در ادعای ضمانت و هم در حسابرسی به کار می‌آید.',
+            en: 'Preservation tasks can be set up in the ERP as **preventive maintenance plans** on the stored items, so the system raises work orders when they fall due, completion is recorded, and the cost of preservation materials and labour goes to the warehouse cost centre (CC-ARY-WHS). A complete preservation history helps both in warranty claims and in audits.',
           },
         },
         {
@@ -682,8 +682,8 @@ export const lesson: Lesson = {
                 { account: ac.consumables, credit: 2600 },
               ],
               memo: {
-                fa: 'پوشش VCI، رطوبت‌گیر و گریس نگهداری رزوه برای دستورهای کار حفاظت؛ هزینه به مرکز هزینه انبار (CC-3300) می‌رود.',
-                en: 'VCI wrap, desiccant and thread storage compound for preservation work orders; the cost goes to the warehouse cost centre (CC-3300).',
+                fa: 'پوشش VCI، رطوبت‌گیر و گریس نگهداری رزوه برای دستورهای کار حفاظت؛ هزینه به مرکز هزینه انبار (CC-ARY-WHS) می‌رود.',
+                en: 'VCI wrap, desiccant and thread storage compound for preservation work orders; the cost goes to the warehouse cost centre (CC-ARY-WHS).',
               },
             },
             {
@@ -735,8 +735,8 @@ export const lesson: Lesson = {
           title: { fa: 'محل نگهداری درست را انتخاب کنید', en: 'Choose the right storage location' },
           difficulty: 'easy',
           problem: {
-            fa: 'پنج قلم زیر با رسید کالا (GRN) در انبار مرکزی (سایت MP10) تحویل گرفته شده‌اند. برای هر کدام محل نگهداری (1001 تا 1004) را انتخاب کنید و دلیلش را بگویید. سپس نشانی جایگاه `B-04-01-C` را توضیح دهید.',
-            en: 'The five items below have been received at the Central Warehouse (site MP10) with a GRN. Choose the storage location (1001 to 1004) for each and give the reason. Then explain bin address `B-04-01-C`.',
+            fa: 'پنج قلم زیر با رسید کالا (GRN) در انبار مرکزی (سایت WH-10) تحویل گرفته شده‌اند. برای هر کدام محل نگهداری (1001 تا 1004) را انتخاب کنید و دلیلش را بگویید. سپس نشانی جایگاه `B-04-01-C` را توضیح دهید.',
+            en: 'The five items below have been received at the Central Warehouse (site WH-10) with a GRN. Choose the storage location (1001 to 1004) for each and give the reason. Then explain bin address `B-04-01-C`.',
           },
           given: {
             head: [t('ردیف', 'No.'), t('کالا', 'Item')],
@@ -749,18 +749,18 @@ export const lesson: Lesson = {
             ],
           },
           hint: {
-            fa: 'به محل‌های نگهداری MP10 در جدول ساختار انبار نگاه کنید و جداسازی مواد ناسازگار را فراموش نکنید.',
-            en: 'Look at the MP10 storage locations in the structure table, and remember segregation of incompatibles.',
+            fa: 'به محل‌های نگهداری WH-10 در جدول ساختار انبار نگاه کنید و جداسازی مواد ناسازگار را فراموش نکنید.',
+            en: 'Look at the WH-10 storage locations in the structure table, and remember segregation of incompatibles.',
           },
           solution: [
             {
               type: 'table',
               head: [t('ردیف', 'No.'), t('محل نگهداری', 'Storage location'), t('دلیل', 'Reason')],
               rows: [
-                [1, t('MP10/1002 محوطه لوله', 'MP10/1002 pipe yard'), t('لوله OCTG روی پایه لوله، با محافظ رزوه', 'OCTG on pipe racks, with thread protectors')],
+                [1, t('WH-10/1002 محوطه لوله', 'WH-10/1002 pipe yard'), t('لوله OCTG روی پایه لوله، با محافظ رزوه', 'OCTG on pipe racks, with thread protectors')],
                 [
                   2,
-                  t('MP10/1003 انبار مواد شیمیایی', 'MP10/1003 chemical store'),
+                  t('WH-10/1003 انبار مواد شیمیایی', 'WH-10/1003 chemical store'),
                   t(
                     'مایع اشتعال‌پذیر؛ در بخش مواد اشتعال‌پذیر با حوضچه، دور از اکسیدکننده‌ها',
                     'Flammable liquid; in the flammables bay with a bund, away from oxidisers',
@@ -768,17 +768,17 @@ export const lesson: Lesson = {
                 ],
                 [
                   3,
-                  t('MP10/1004 قفس سیلندرها', 'MP10/1004 cylinder cage'),
+                  t('WH-10/1004 قفس سیلندرها', 'WH-10/1004 cylinder cage'),
                   t('ایستاده و مهارشده، جدا از سیلندرهای استیلن', 'Upright and chained, separate from acetylene cylinders'),
                 ],
                 [
                   4,
-                  t('MP10/1001 انبار اصلی قطعات', 'MP10/1001 main spares store'),
+                  t('WH-10/1001 انبار اصلی قطعات', 'WH-10/1001 main spares store'),
                   t('قطعه یدکی کوچک؛ قفسه با جعبه و برچسب جایگاه', 'Small spare part; shelving with bin boxes and a bin label'),
                 ],
                 [
                   5,
-                  t('MP10/1003 انبار مواد شیمیایی', 'MP10/1003 chemical store'),
+                  t('WH-10/1003 انبار مواد شیمیایی', 'WH-10/1003 chemical store'),
                   t(
                     'اسید؛ حوضچه مقاوم به اسید و جدا از بازها مانند سود سوزآور',
                     'Acid; acid-resistant bund, separate from bases such as caustic soda',
@@ -899,8 +899,8 @@ export const lesson: Lesson = {
           title: { fa: 'ثبت‌های یک ماه و مانده‌ها', en: 'A month’s postings and balances' },
           difficulty: 'hard',
           problem: {
-            fa: 'مانده‌های ابتدای ماه: موجودی قطعات یدکی سایت MP10 برابر 250,000، موجودی قطعات یدکی سایت MP20 برابر 80,000، موجودی مواد شیمیایی (MP10) برابر 60,000 و موجودی اقلام مصرفی (MP20) برابر 20,000. رویدادهای ماه: (1) انتقال 6 بسته آب‌بند K-201 به میانگین 1,800 از MP10 به MP20؛ (2) جابه‌جایی همان بسته‌ها از جایگاه پذیرش به جایگاه `C-01-02-A` در MP20؛ (3) حواله مواد حفاظتی به ارزش 3,200 از اقلام مصرفی به مرکز هزینه انبار (CC-3300)؛ (4) اسقاط 3 بشکه بازدارنده خوردگی منقضی به ارزش هر بشکه 600. ثبت‌های خودکار را بنویسید و مانده‌های پایان ماه را حساب کنید.',
-            en: 'Opening balances: spare parts inventory at site MP10 250,000, spare parts inventory at site MP20 80,000, chemicals inventory (MP10) 60,000 and consumables inventory (MP20) 20,000. During the month: (1) 6 K-201 seal kits at an average of 1,800 are transferred from MP10 to MP20; (2) the same kits are moved from the receiving bin to bin `C-01-02-A` in MP20; (3) preservation materials worth 3,200 are issued from consumables to the warehouse cost centre (CC-3300); (4) 3 expired drums of corrosion inhibitor at 600 each are scrapped. Write the automatic entries and work out the month-end balances.',
+            fa: 'مانده‌های ابتدای ماه: موجودی قطعات یدکی سایت WH-10 برابر 250,000، موجودی قطعات یدکی سایت WH-20 برابر 80,000، موجودی مواد شیمیایی (WH-10) برابر 60,000 و موجودی اقلام مصرفی (WH-20) برابر 20,000. رویدادهای ماه: (1) انتقال 6 بسته آب‌بند K-201 به میانگین 1,800 از WH-10 به WH-20؛ (2) جابه‌جایی همان بسته‌ها از جایگاه پذیرش به جایگاه `C-01-02-A` در WH-20؛ (3) حواله مواد حفاظتی به ارزش 3,200 از اقلام مصرفی به مرکز هزینه انبار (CC-ARY-WHS)؛ (4) اسقاط 3 بشکه بازدارنده خوردگی منقضی به ارزش هر بشکه 600. ثبت‌های خودکار را بنویسید و مانده‌های پایان ماه را حساب کنید.',
+            en: 'Opening balances: spare parts inventory at site WH-10 250,000, spare parts inventory at site WH-20 80,000, chemicals inventory (WH-10) 60,000 and consumables inventory (WH-20) 20,000. During the month: (1) 6 K-201 seal kits at an average of 1,800 are transferred from WH-10 to WH-20; (2) the same kits are moved from the receiving bin to bin `C-01-02-A` in WH-20; (3) preservation materials worth 3,200 are issued from consumables to the warehouse cost centre (CC-ARY-WHS); (4) 3 expired drums of corrosion inhibitor at 600 each are scrapped. Write the automatic entries and work out the month-end balances.',
           },
           hint: {
             fa: 'یکی از چهار رویداد سند مالی ندارد.',
@@ -949,8 +949,8 @@ export const lesson: Lesson = {
               head: [t('حساب', 'Account'), t('ابتدای ماه', 'Opening'), t('افزایش', 'Increase'), t('کاهش', 'Decrease'), t('پایان ماه', 'Closing')],
               numericCols: [1, 2, 3, 4],
               rows: [
-                [t('قطعات یدکی MP10', 'Spare parts MP10'), 250000, 0, 10800, 239200],
-                [t('قطعات یدکی MP20', 'Spare parts MP20'), 80000, 10800, 0, 90800],
+                [t('قطعات یدکی WH-10', 'Spare parts WH-10'), 250000, 0, 10800, 239200],
+                [t('قطعات یدکی WH-20', 'Spare parts WH-20'), 80000, 10800, 0, 90800],
                 [t('مواد شیمیایی', 'Chemicals'), 60000, 0, 1800, 58200],
                 [t('اقلام مصرفی', 'Consumables'), 20000, 0, 3200, 16800],
                 [t('جمع', 'Total'), 410000, 10800, 15800, 405000],
@@ -966,8 +966,8 @@ export const lesson: Lesson = {
             },
           ],
           answer: {
-            fa: 'MP10: 239,200؛ MP20: 90,800؛ مواد شیمیایی: 58,200؛ اقلام مصرفی: 16,800؛ جمع 405,000. رویداد (2) ثبت مالی ندارد.',
-            en: 'MP10: 239,200; MP20: 90,800; chemicals: 58,200; consumables: 16,800; total 405,000. Event (2) has no Finance entry.',
+            fa: 'WH-10: 239,200؛ WH-20: 90,800؛ مواد شیمیایی: 58,200؛ اقلام مصرفی: 16,800؛ جمع 405,000. رویداد (2) ثبت مالی ندارد.',
+            en: 'WH-10: 239,200; WH-20: 90,800; chemicals: 58,200; consumables: 16,800; total 405,000. Event (2) has no Finance entry.',
           },
         },
       ],
@@ -1104,7 +1104,7 @@ export const lesson: Lesson = {
     {
       q: { fa: 'کدام جابه‌جایی در ERP سند مالی می‌سازد؟', en: 'Which movement creates a Finance document in the ERP?' },
       options: [
-        t('انتقال کالا از سایت MP10 به سایت MP20', 'Transferring stock from site MP10 to site MP20'),
+        t('انتقال کالا از سایت WH-10 به سایت WH-20', 'Transferring stock from site WH-10 to site WH-20'),
         t('جابه‌جایی کالا از جایگاه A-12-03-B به A-12-04-B', 'Moving stock from bin A-12-03-B to A-12-04-B'),
         t('انتقال کالا از محل 1001 به محل 1003 در همان سایت', 'Moving stock from location 1001 to 1003 in the same site'),
         t('چاپ برچسب جدید برای جایگاه', 'Printing a new bin label'),
@@ -1223,19 +1223,19 @@ export const lesson: Lesson = {
     },
     {
       q: {
-        fa: '8 یاتاقان به میانگین 54 از سایت MP10 به سایت MP20 منتقل می‌شود. اثر آن بر موجودی سایت MP20 و بر کل موجودی شرکت چیست؟',
-        en: '8 bearings at an average of 54 are transferred from site MP10 to site MP20. What is the effect on site MP20’s stock and on the company’s total stock?',
+        fa: '8 یاتاقان به میانگین 54 از سایت WH-10 به سایت WH-20 منتقل می‌شود. اثر آن بر موجودی سایت WH-20 و بر کل موجودی شرکت چیست؟',
+        en: '8 bearings at an average of 54 are transferred from site WH-10 to site WH-20. What is the effect on site WH-20’s stock and on the company’s total stock?',
       },
       options: [
-        t('MP20 به اندازه 54 افزایش و کل موجودی 54 افزایش', 'MP20 up 54, total up 54'),
-        t('MP20 به اندازه 432 افزایش و کل موجودی 432 افزایش', 'MP20 up 432, total up 432'),
-        t('MP20 بدون تغییر و کل موجودی 432 کاهش', 'MP20 unchanged, total down 432'),
-        t('MP20 به اندازه 432 افزایش و کل موجودی بدون تغییر', 'MP20 up 432, total unchanged'),
+        t('WH-20 به اندازه 54 افزایش و کل موجودی 54 افزایش', 'WH-20 up 54, total up 54'),
+        t('WH-20 به اندازه 432 افزایش و کل موجودی 432 افزایش', 'WH-20 up 432, total up 432'),
+        t('WH-20 بدون تغییر و کل موجودی 432 کاهش', 'WH-20 unchanged, total down 432'),
+        t('WH-20 به اندازه 432 افزایش و کل موجودی بدون تغییر', 'WH-20 up 432, total unchanged'),
       ],
       answer: 3,
       explain: {
-        fa: '8 × 54 = 432 از MP10 به MP20 می‌رود؛ MP20 همین مقدار افزایش و MP10 همین مقدار کاهش می‌یابد، پس جمع موجودی شرکت تغییر نمی‌کند.',
-        en: '8 × 54 = 432 moves from MP10 to MP20: MP20 rises and MP10 falls by the same amount, so the company’s total does not change.',
+        fa: '8 × 54 = 432 از WH-10 به WH-20 می‌رود؛ WH-20 همین مقدار افزایش و WH-10 همین مقدار کاهش می‌یابد، پس جمع موجودی شرکت تغییر نمی‌کند.',
+        en: '8 × 54 = 432 moves from WH-10 to WH-20: WH-20 rises and WH-10 falls by the same amount, so the company’s total does not change.',
       },
     },
   ],

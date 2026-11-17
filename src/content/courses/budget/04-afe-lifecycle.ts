@@ -8,8 +8,8 @@ const ac = {
   aucAR07Billed: t('1510 دارایی‌های در جریان تکمیل (سهم شرکا از `AFE-2025-014`)', '1510 Assets under construction (partners’ share of `AFE-2025-014`)'),
   grir: t('2120 حساب واسط رسید کالا و فاکتور (GR/IR)', '2120 GR/IR clearing'),
   ap: t('2110 حساب‌های پرداختنی', '2110 Accounts payable'),
-  recA: t('1220 دریافتنی از شرکای مشارکت: شریک الف', '1220 Receivable from JV partners: Partner A'),
-  recB: t('1220 دریافتنی از شرکای مشارکت: شریک ب', '1220 Receivable from JV partners: Partner B'),
+  recA: t('1700 دریافتنی از شرکای مشارکت: انرژی البرز', '1700 Receivable from JV partners: Alborz Energy'),
+  recB: t('1700 دریافتنی از شرکای مشارکت: نفت دنا', '1700 Receivable from JV partners: Dena Petroleum'),
   oilGasAR06: t('1520 دارایی‌های نفت و گاز (چاه AR-06)', '1520 Oil and gas properties (well AR-06)'),
   aucAR06: t('1510 دارایی‌های در جریان تکمیل (WBS `AFE-2024-011`)', '1510 Assets under construction (WBS `AFE-2024-011`)'),
   oilGasAR12: t('1520 دارایی‌های نفت و گاز (خط جریان AR-12)', '1520 Oil and gas properties (AR-12 flowline)'),
@@ -122,8 +122,8 @@ export const lesson: Lesson = {
           numericCols: [2],
           rows: [
             [t('مسار پترولیوم (بهره‌بردار)', 'Masar Petroleum (operator)'), t('50٪', '50%'), 4400000],
-            [t('شریک الف', 'Partner A'), t('30٪', '30%'), 2640000],
-            [t('شریک ب', 'Partner B'), t('20٪', '20%'), 1760000],
+            [t('انرژی البرز', 'Alborz Energy'), t('30٪', '30%'), 2640000],
+            [t('نفت دنا', 'Dena Petroleum'), t('20٪', '20%'), 1760000],
             [t('**جمع**', '**Total**'), t('100٪', '100%'), 8800000],
           ],
         },
@@ -200,8 +200,8 @@ export const lesson: Lesson = {
           head: [t('شریک', 'Partner'), t('سهم', 'Interest'), t('رأی', 'Vote'), t('سهم موافق', 'Interest in favour')],
           rows: [
             [t('مسار پترولیوم', 'Masar Petroleum'), t('50٪', '50%'), t('موافق', 'For'), t('50٪', '50%')],
-            [t('شریک الف', 'Partner A'), t('30٪', '30%'), t('موافق', 'For'), t('30٪', '30%')],
-            [t('شریک ب', 'Partner B'), t('20٪', '20%'), t('مخالف', 'Against'), t('0٪', '0%')],
+            [t('انرژی البرز', 'Alborz Energy'), t('30٪', '30%'), t('موافق', 'For'), t('30٪', '30%')],
+            [t('نفت دنا', 'Dena Petroleum'), t('20٪', '20%'), t('مخالف', 'Against'), t('0٪', '0%')],
             [t('**نتیجه**', '**Result**'), t('100٪', '100%'), t('80٪ ≥ 65٪', '80% ≥ 65%'), t('تصویب شد', 'Approved')],
           ],
         },
@@ -230,8 +230,8 @@ export const lesson: Lesson = {
           tone: 'tip',
           title: t('در عمل: مخالفت یک شریک همه را متوقف نمی‌کند', 'In practice: one partner’s “no” does not stop everyone'),
           text: t(
-            'شریک ب با 20٪ مخالف بود، اما AFE با 80٪ تصویب شد. اینکه شریک ب باز هم باید سهمش را بپردازد یا می‌تواند از این عملیات بیرون بماند، به قواعد JOA برای این نوع عملیات بستگی دارد. واحد عملیات مشترک باید این وضعیت را پیش از اولین درخواست وجه روشن کند تا صورت‌حساب‌ها درست صادر شوند.',
-            'Partner B, with 20%, voted against, but the AFE passed with 80%. Whether Partner B must still pay its share or may stay out of this operation depends on the JOA’s rules for this kind of operation. Joint-venture accounting must settle this before the first cash call so that bills are issued correctly.',
+            'نفت دنا با 20٪ مخالف بود، اما AFE با 80٪ تصویب شد. اینکه نفت دنا باز هم باید سهمش را بپردازد یا می‌تواند از این عملیات بیرون بماند، به قواعد JOA برای این نوع عملیات بستگی دارد. واحد عملیات مشترک باید این وضعیت را پیش از اولین درخواست وجه روشن کند تا صورت‌حساب‌ها درست صادر شوند.',
+            'Dena Petroleum, with 20%, voted against, but the AFE passed with 80%. Whether Dena Petroleum must still pay its share or may stay out of this operation depends on the JOA’s rules for this kind of operation. Joint-venture accounting must settle this before the first cash call so that bills are issued correctly.',
           ),
         },
       ],
@@ -275,7 +275,7 @@ export const lesson: Lesson = {
         {
           type: 'table',
           caption: t('AFE تکمیلی `AFE-2024-011-S1`', 'Supplementary AFE `AFE-2024-011-S1`'),
-          head: [t('قلم', 'Item'), t('مبلغ', 'Amount'), t('مسار پترولیوم 50٪', 'Masar Petroleum 50%'), t('شریک الف 30٪', 'Partner A 30%'), t('شریک ب 20٪', 'Partner B 20%')],
+          head: [t('قلم', 'Item'), t('مبلغ', 'Amount'), t('مسار پترولیوم 50٪', 'Masar Petroleum 50%'), t('انرژی البرز 30٪', 'Alborz Energy 30%'), t('نفت دنا 20٪', 'Dena Petroleum 20%')],
           numericCols: [1, 2, 3, 4],
           rows: [
             [t('کسری پیش‌بینی‌شده', 'Forecast shortfall'), 1000000, 500000, 300000, 200000],
@@ -337,8 +337,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: t(
-            'هزینه نهایی 8,960,000 است. نسبت به برآورد پایه 8,960,000 − 7,200,000 = 1,760,000 بیشتر شده که از محل ذخیره اولیه (800,000) و AFE تکمیلی (1,200,000)، یعنی جمعاً 2,000,000، تأمین شده است. نسبت به AFE بازنگری‌شده 9,200,000 − 8,960,000 = 240,000 کمتر خرج شده و این مبلغ در ERP **برگشت** داده می‌شود. نسبت به AFE اولیه، فراتر رفتن 8,960,000 − 8,000,000 = 960,000، یعنی 12٪ بوده است. سهم نهایی شرکا: مسار پترولیوم 8,960,000 × 50٪ = 4,480,000، شریک الف × 30٪ = 2,688,000 و شریک ب × 20٪ = 1,792,000.',
-            'The final cost is 8,960,000. Against the base estimate it is 8,960,000 − 7,200,000 = 1,760,000 higher, funded from the original contingency (800,000) and the supplement (1,200,000), together 2,000,000. Against the revised AFE, 9,200,000 − 8,960,000 = 240,000 was not spent, and this amount is **returned** in the ERP. Against the original AFE, the overrun was 8,960,000 − 8,000,000 = 960,000, or 12%. Final partner shares: Masar Petroleum 8,960,000 × 50% = 4,480,000, Partner A × 30% = 2,688,000 and Partner B × 20% = 1,792,000.',
+            'هزینه نهایی 8,960,000 است. نسبت به برآورد پایه 8,960,000 − 7,200,000 = 1,760,000 بیشتر شده که از محل ذخیره اولیه (800,000) و AFE تکمیلی (1,200,000)، یعنی جمعاً 2,000,000، تأمین شده است. نسبت به AFE بازنگری‌شده 9,200,000 − 8,960,000 = 240,000 کمتر خرج شده و این مبلغ در ERP **برگشت** داده می‌شود. نسبت به AFE اولیه، فراتر رفتن 8,960,000 − 8,000,000 = 960,000، یعنی 12٪ بوده است. سهم نهایی شرکا: مسار پترولیوم 8,960,000 × 50٪ = 4,480,000، انرژی البرز × 30٪ = 2,688,000 و نفت دنا × 20٪ = 1,792,000.',
+            'The final cost is 8,960,000. Against the base estimate it is 8,960,000 − 7,200,000 = 1,760,000 higher, funded from the original contingency (800,000) and the supplement (1,200,000), together 2,000,000. Against the revised AFE, 9,200,000 − 8,960,000 = 240,000 was not spent, and this amount is **returned** in the ERP. Against the original AFE, the overrun was 8,960,000 − 8,000,000 = 960,000, or 12%. Final partner shares: Masar Petroleum 8,960,000 × 50% = 4,480,000, Alborz Energy × 30% = 2,688,000 and Dena Petroleum × 20% = 1,792,000.',
           ),
         },
         {
@@ -373,7 +373,7 @@ export const lesson: Lesson = {
             [t('تعهد', 'Commit'), t('درخواست و سفارش خرید روی WBS', 'Requisition and PO on the WBS'), t('کارشناس خرید', 'Buyer'), t('ندارد (فقط تعهد)', 'None (commitment only)')],
             [t('دریافت کالا یا خدمات', 'Receive goods or services'), t('رسید کالا (GRN) یا پذیرش برگه ثبت خدمات (SES)', 'Goods received note (GRN) or accepted service entry sheet (SES)'), t('انباردار یا مسئول قرارداد', 'Storekeeper or contract holder'), t('بدهکار 1510 روی WBS، بستانکار 2120 GR/IR', 'Dr 1510 on the WBS, Cr 2120 GR/IR')],
             [t('فاکتور', 'Invoice'), t('فاکتور تطبیق‌شده با سفارش و GRN/SES', 'Invoice matched to the PO and GRN/SES'), t('حساب‌های پرداختنی', 'Accounts payable'), t('بدهکار 2120، بستانکار 2110', 'Dr 2120, Cr 2110')],
-            [t('صورت‌حساب شرکا', 'Partner billing'), t('صورت‌حساب ماهانه سهم شرکا', 'Monthly joint interest billing'), t('حسابداری عملیات مشترک', 'Joint-venture accounting'), t('بدهکار 1220 شرکا، بستانکار 1510 (سهم شرکا)', 'Dr 1220 partners, Cr 1510 (partners’ share)')],
+            [t('صورت‌حساب شرکا', 'Partner billing'), t('صورت‌حساب ماهانه سهم شرکا', 'Monthly joint interest billing'), t('حسابداری عملیات مشترک', 'Joint-venture accounting'), t('بدهکار 1700 شرکا، بستانکار 1510 (سهم شرکا)', 'Dr 1700 partners, Cr 1510 (partners’ share)')],
             [t('AFE تکمیلی', 'Supplementary AFE'), t('سند افزایش بودجه', 'Budget supplement document'), t('کنترل‌کننده پروژه', 'Project controller'), t('ندارد', 'None')],
             [t('بستن', 'Close-out'), t('سند تسویه و سند برگشت بودجه؛ وضعیت «بسته»', 'Settlement document and budget return; status “closed”'), t('حسابداری دارایی', 'Asset accounting'), t('بدهکار 1520، بستانکار 1510', 'Dr 1520, Cr 1510')],
           ],
@@ -465,8 +465,8 @@ export const lesson: Lesson = {
           title: t('مسیر تأیید سه AFE', 'The approval route of three AFEs'),
           difficulty: 'easy',
           problem: t(
-            'برای هر AFE، تأییدکننده نهایی داخلی را تعیین کنید و بگویید آیا رأی کمیته عملیات لازم است. برای AFE (ب) رأی‌ها این است: مسار پترولیوم موافق، شریک الف مخالف، شریک ب موافق. نتیجه رأی‌گیری چیست؟',
-            'For each AFE, name the final internal approver and say whether an operating committee ballot is needed. For AFE (b) the votes are: Masar Petroleum for, Partner A against, Partner B for. What is the ballot result?',
+            'برای هر AFE، تأییدکننده نهایی داخلی را تعیین کنید و بگویید آیا رأی کمیته عملیات لازم است. برای AFE (ب) رأی‌ها این است: مسار پترولیوم موافق، انرژی البرز مخالف، نفت دنا موافق. نتیجه رأی‌گیری چیست؟',
+            'For each AFE, name the final internal approver and say whether an operating committee ballot is needed. For AFE (b) the votes are: Masar Petroleum for, Alborz Energy against, Dena Petroleum for. What is the ballot result?',
           ),
           given: {
             head: [t('AFE', 'AFE'), t('شرح', 'Description'), t('مبلغ', 'Amount')],
@@ -491,7 +491,7 @@ export const lesson: Lesson = {
               type: 'steps',
               items: [
                 { title: t('رأی AFE (ب)', 'Ballot on AFE (b)'), text: t('سهم موافق: 50٪ + 20٪ = 70٪. چون 70٪ ≥ 65٪، AFE تصویب می‌شود.', 'Interest in favour: 50% + 20% = 70%. Since 70% ≥ 65%, the AFE is approved.') },
-                { title: t('اگر شریک ب هم مخالف بود', 'If Partner B also voted against'), text: t('فقط 50٪ موافق بود و 50٪ < 65٪؛ AFE رد می‌شد، حتی با رأی موافق بهره‌بردار.', 'Only 50% would be in favour, and 50% < 65%; the AFE would fail, even with the operator voting for it.') },
+                { title: t('اگر نفت دنا هم مخالف بود', 'If Dena Petroleum also voted against'), text: t('فقط 50٪ موافق بود و 50٪ < 65٪؛ AFE رد می‌شد، حتی با رأی موافق بهره‌بردار.', 'Only 50% would be in favour, and 50% < 65%; the AFE would fail, even with the operator voting for it.') },
               ],
             },
           ],
@@ -586,7 +586,7 @@ export const lesson: Lesson = {
               items: [
                 { title: t('(ب) ذخیره و برگشت', '(b) Contingency and return'), text: t('انحراف خالص: 110,000 − 10,000 = 100,000 بیش از برآورد پایه که از ذخیره 200,000 تأمین شد. برگشت: 2,000,000 − 1,900,000 = 100,000.', 'Net variance: 110,000 − 10,000 = 100,000 over base, funded from the 200,000 contingency. Return: 2,000,000 − 1,900,000 = 100,000.') },
                 { title: t('(ج) SES فاکتورنشده', '(c) The uninvoiced SES'), text: t('خیر. پذیرش SES همان لحظه بدهکار 1510 و بستانکار GR/IR را ثبت کرده است؛ 40,000 هم در هزینه نهایی است و هم در اقلام باز GR/IR. فقط باید پیگیری شود که فاکتور برسد و تطبیق شود.', 'No. Accepting the SES already posted Dr 1510 and Cr GR/IR; the 40,000 is both in the final cost and in the open GR/IR items. It only needs follow-up so the invoice arrives and is matched.') },
-                { title: t('(د) صورت‌حساب شرکا', '(d) Partner billing'), text: t('شریک الف 1,900,000 × 30٪ = 570,000؛ شریک ب 1,900,000 × 20٪ = 380,000؛ جمع 950,000 از 1510 بیرون رفته و سهم مسار پترولیوم 1,900,000 × 50٪ = 950,000 در 1510 مانده است.', 'Partner A 1,900,000 × 30% = 570,000; Partner B 1,900,000 × 20% = 380,000; together 950,000 billed out of 1510, leaving Masar Petroleum’s 1,900,000 × 50% = 950,000 in 1510.') },
+                { title: t('(د) صورت‌حساب شرکا', '(d) Partner billing'), text: t('انرژی البرز 1,900,000 × 30٪ = 570,000؛ نفت دنا 1,900,000 × 20٪ = 380,000؛ جمع 950,000 از 1510 بیرون رفته و سهم مسار پترولیوم 1,900,000 × 50٪ = 950,000 در 1510 مانده است.', 'Alborz Energy 1,900,000 × 30% = 570,000; Dena Petroleum 1,900,000 × 20% = 380,000; together 950,000 billed out of 1510, leaving Masar Petroleum’s 1,900,000 × 50% = 950,000 in 1510.') },
               ],
             },
             {
@@ -666,7 +666,7 @@ export const lesson: Lesson = {
       ),
     },
     {
-      q: t('مبلغ AFE چاه AR-07 برابر 8,800,000 است. سهم شریک ب (20٪) چقدر است؟', 'The AR-07 AFE is 8,800,000. What is Partner B’s 20% share?'),
+      q: t('مبلغ AFE چاه AR-07 برابر 8,800,000 است. سهم نفت دنا (20٪) چقدر است؟', 'The AR-07 AFE is 8,800,000. What is Dena Petroleum’s 20% share?'),
       options: [t('2,640,000', '2,640,000'), t('1,760,000', '1,760,000'), t('1,600,000', '1,600,000'), t('4,400,000', '4,400,000')],
       answer: 1,
       explain: t('8,800,000 × 20٪ = 1,760,000. رقم 1,600,000 فقط 20٪ برآورد پایه است و ذخیره را جا انداخته؛ شرکا سهمشان را از کل مبلغ AFE تصویب می‌کنند.', '8,800,000 × 20% = 1,760,000. 1,600,000 is 20% of the base only and leaves out contingency; partners approve their share of the full AFE amount.'),
@@ -684,7 +684,7 @@ export const lesson: Lesson = {
       explain: t('2,400,000 بین 1,000,000 و 5,000,000 است، پس مدیرعامل. مدیر دارایی فقط تا 1,000,000 اختیار دارد و هیئت‌مدیره برای بیش از 5,000,000 است.', '2,400,000 is between 1,000,000 and 5,000,000, so the CEO. The asset manager’s limit is 1,000,000 and the board is for amounts over 5,000,000.'),
     },
     {
-      q: t('آستانه تصویب 65٪ است. مسار پترولیوم (50٪) موافق و شریک الف (30٪) و شریک ب (20٪) مخالف‌اند. نتیجه چیست؟', 'The approval threshold is 65%. Masar Petroleum (50%) votes for; Partner A (30%) and Partner B (20%) vote against. What is the result?'),
+      q: t('آستانه تصویب 65٪ است. مسار پترولیوم (50٪) موافق و انرژی البرز (30٪) و نفت دنا (20٪) مخالف‌اند. نتیجه چیست؟', 'The approval threshold is 65%. Masar Petroleum (50%) votes for; Alborz Energy (30%) and Dena Petroleum (20%) vote against. What is the result?'),
       options: [
         t('تصویب، چون بهره‌بردار بزرگ‌ترین سهم را دارد', 'Approved, because the operator has the largest share'),
         t('رد، چون فقط 50٪ موافق است و 50٪ < 65٪', 'Rejected, because only 50% is in favour and 50% < 65%'),
@@ -692,7 +692,7 @@ export const lesson: Lesson = {
         t('رد، چون هر شریک حق وتو دارد', 'Rejected, because every partner has a veto'),
       ],
       answer: 1,
-      explain: t('سهم موافق 50٪ است و به آستانه 65٪ نمی‌رسد. بزرگ‌ترین سهم به‌تنهایی کافی نیست. وتوی تک‌تک شرکا هم قاعده این JOA نیست؛ اگر شریک ب موافق بود، 70٪ می‌شد و تصویب می‌شد.', 'Interest in favour is 50%, short of the 65% threshold. Having the largest share is not enough on its own. Nor does this JOA give each partner a veto; had Partner B voted for, it would be 70% and pass.'),
+      explain: t('سهم موافق 50٪ است و به آستانه 65٪ نمی‌رسد. بزرگ‌ترین سهم به‌تنهایی کافی نیست. وتوی تک‌تک شرکا هم قاعده این JOA نیست؛ اگر نفت دنا موافق بود، 70٪ می‌شد و تصویب می‌شد.', 'Interest in favour is 50%, short of the 65% threshold. Having the largest share is not enough on its own. Nor does this JOA give each partner a veto; had Dena Petroleum voted for, it would be 70% and pass.'),
     },
     {
       q: t('AFE برابر 8,000,000 و پیش‌بینی هزینه نهایی 9,000,000 است. حد مجاز فراتر رفتن 10٪ است. چه باید کرد؟', 'The AFE is 8,000,000 and the forecast final cost is 9,000,000. The overrun tolerance is 10%. What must happen?'),

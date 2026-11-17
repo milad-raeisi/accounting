@@ -9,8 +9,8 @@ const ac = {
   wht: { fa: 'مالیات تکلیفی پرداختنی', en: 'Withholding tax payable' },
   insRet: { fa: 'سپرده بیمه پیمانکاران پرداختنی', en: 'Contractor insurance retention payable' },
   repairs188: {
-    fa: 'هزینه تعمیر و نگهداری (دستور کار WO-45188، کمپرسور K-202)',
-    en: 'Repairs and maintenance expense (work order WO-45188, compressor K-202)',
+    fa: 'هزینه تعمیر و نگهداری (دستور کار WO-45188، کمپرسور K-102)',
+    en: 'Repairs and maintenance expense (work order WO-45188, compressor K-102)',
   },
   repairs240: {
     fa: 'هزینه تعمیر و نگهداری (دستور کار WO-45240، کمپرسور K-201)',
@@ -34,8 +34,8 @@ export const lesson: Lesson = {
     en: 'End-to-End Procure-to-Pay in the ERP and Internal Controls',
   },
   summary: {
-    fa: 'این درس همه حلقه‌های دوره را به هم وصل می‌کند: یک کارتریج آب‌بند گاز خشک برای کمپرسور K-202 و خدمات مهندس سازنده روی همان دستور کار، از درخواست خرید تا پرداخت و بازیافت هزینه، با همه اسناد و ثبت‌ها. سپس کنترل‌های داخلی، تحلیل هزینه خرید و شاخص‌های عملکرد، سابقه حسابرسی و نقش اسناد خرید در حسابرسی بازیافت هزینه دولت و شرکا را می‌آموزید.',
-    en: 'This lesson ties the whole course together: a dry gas seal cartridge for compressor K-202 and the manufacturer’s field engineer on the same work order, from requisition to payment and cost recovery, with every document and posting. It then covers internal controls, spend analysis and KPIs, the audit trail, and how procurement records support cost-recovery audits by the government and JV partners.',
+    fa: 'این درس همه حلقه‌های دوره را به هم وصل می‌کند: یک کارتریج آب‌بند گاز خشک برای کمپرسور K-102 و خدمات مهندس سازنده روی همان دستور کار، از درخواست خرید تا پرداخت و بازیافت هزینه، با همه اسناد و ثبت‌ها. سپس کنترل‌های داخلی، تحلیل هزینه خرید و شاخص‌های عملکرد، سابقه حسابرسی و نقش اسناد خرید در حسابرسی بازیافت هزینه دولت و شرکا را می‌آموزید.',
+    en: 'This lesson ties the whole course together: a dry gas seal cartridge for compressor K-102 and the manufacturer’s field engineer on the same work order, from requisition to payment and cost recovery, with every document and posting. It then covers internal controls, spend analysis and KPIs, the audit trail, and how procurement records support cost-recovery audits by the government and JV partners.',
   },
   objectives: [
     {
@@ -112,13 +112,13 @@ export const lesson: Lesson = {
     },
     {
       id: 'end-to-end',
-      title: { fa: 'سناریوی کامل: آب‌بند گاز خشک کمپرسور K-202', en: 'The Full Scenario: A Dry Gas Seal for Compressor K-202' },
+      title: { fa: 'سناریوی کامل: آب‌بند گاز خشک کمپرسور K-102', en: 'The Full Scenario: A Dry Gas Seal for Compressor K-102' },
       blocks: [
         {
           type: 'p',
           text: {
-            fa: 'کمپرسور گریز از مرکز K-202 در ایستگاه تقویت فشار میدان آریا دو **کارتریج آب‌بند گاز خشک** دارد؛ قطعه‌ای حیاتی با زمان تأمین حدود 20 هفته. داده پایه کالا (`300580`) حداقل موجودی 1 و حداکثر 2 را در انبار مرکزی (`WH-10`) تعیین می‌کند. پس از یک تعویض اضطراری، موجودی صفر شده است. هم‌زمان، برنامه‌ریز نگهداری دستور کار `WO-45188` را برای تعمیرات دوره‌ای K-202 باز کرده است که به مرکز هزینه `CC-ARY-CMP` تسویه می‌شود؛ کد کامل هزینه: `MP01 / CC-ARY-CMP / 6110 / R / عملیات`. این دستور کار یک کارتریج و 4 روز خدمات مهندس سازنده لازم دارد.',
-            en: 'Centrifugal compressor K-202 at the Arya field compressor station has two **dry gas seal cartridges**, critical parts with a lead time of about 20 weeks. The material master (`300580`) sets a minimum of 1 and a maximum of 2 in the Central Warehouse (`WH-10`). After an emergency replacement, stock is zero. Meanwhile the maintenance planner has opened work order `WO-45188` for K-202’s planned maintenance, which settles to cost centre `CC-ARY-CMP`; full cost code: `MP01 / CC-ARY-CMP / 6110 / R / Operating`. The work order needs one cartridge and 4 days of the manufacturer’s field engineer.',
+            fa: 'کمپرسور گریز از مرکز K-102 در ایستگاه تقویت فشار میدان آریا دو **کارتریج آب‌بند گاز خشک** دارد؛ قطعه‌ای حیاتی با زمان تأمین حدود 20 هفته. داده پایه کالا (`300580`) حداقل موجودی 1 و حداکثر 2 را در انبار مرکزی (`WH-10`) تعیین می‌کند. پس از یک تعویض اضطراری، موجودی صفر شده است. هم‌زمان، برنامه‌ریز نگهداری دستور کار `WO-45188` را برای تعمیرات دوره‌ای K-102 باز کرده است که به مرکز هزینه `CC-ARY-CMP` تسویه می‌شود؛ کد کامل هزینه: `MP01 / CC-ARY-CMP / 5120 / R / عملیات`. این دستور کار یک کارتریج و 4 روز خدمات مهندس سازنده لازم دارد.',
+            en: 'Centrifugal compressor K-102 at the Arya field compressor station has two **dry gas seal cartridges**, critical parts with a lead time of about 20 weeks. The material master (`300580`) sets a minimum of 1 and a maximum of 2 in the Central Warehouse (`WH-10`). After an emergency replacement, stock is zero. Meanwhile the maintenance planner has opened work order `WO-45188` for K-102’s planned maintenance, which settles to cost centre `CC-ARY-CMP`; full cost code: `MP01 / CC-ARY-CMP / 5120 / R / Operating`. The work order needs one cartridge and 4 days of the manufacturer’s field engineer.',
           },
         },
         {
@@ -289,8 +289,8 @@ export const lesson: Lesson = {
           ],
           rows: [
             [{ fa: '`GRN-26-0402`', en: '`GRN-26-0402`' }, { fa: 'انبار `WH-10` (هنوز هزینه نیست)', en: 'Stock `WH-10` (not yet a cost)' }, { fa: '`1430` موجودی قطعات یدکی', en: '`1430` spare parts inventory' }, { fa: 'هنگام حواله تعیین می‌شود', en: 'Set when issued' }],
-            [{ fa: '`GI-26-0911`', en: '`GI-26-0911`' }, { fa: '`WO-45188` ← `CC-ARY-CMP`', en: '`WO-45188` → `CC-ARY-CMP`' }, { fa: '`6110` تعمیر و نگهداری', en: '`6110` repairs and maintenance' }, { fa: '`R`، عملیات', en: '`R`, Operating' }],
-            [{ fa: '`SES-26-0157`', en: '`SES-26-0157`' }, { fa: '`WO-45188` ← `CC-ARY-CMP`', en: '`WO-45188` → `CC-ARY-CMP`' }, { fa: '`6110` تعمیر و نگهداری', en: '`6110` repairs and maintenance' }, { fa: '`R`، عملیات', en: '`R`, Operating' }],
+            [{ fa: '`GI-26-0911`', en: '`GI-26-0911`' }, { fa: '`WO-45188` ← `CC-ARY-CMP`', en: '`WO-45188` → `CC-ARY-CMP`' }, { fa: '`5120` تعمیر و نگهداری', en: '`5120` repairs and maintenance' }, { fa: '`R`، عملیات', en: '`R`, Operating' }],
+            [{ fa: '`SES-26-0157`', en: '`SES-26-0157`' }, { fa: '`WO-45188` ← `CC-ARY-CMP`', en: '`WO-45188` → `CC-ARY-CMP`' }, { fa: '`5120` تعمیر و نگهداری', en: '`5120` repairs and maintenance' }, { fa: '`R`، عملیات', en: '`R`, Operating' }],
           ],
         },
         {
@@ -493,7 +493,7 @@ export const lesson: Lesson = {
             [{ fa: 'زمان چرخه درخواست تا سفارش', en: 'Requisition-to-PO cycle time' }, { fa: 'میانگین روز از تأیید درخواست تا آزادشدن سفارش', en: 'Average days from approved PR to released PO' }, { fa: '(12 + 18 + 9 + 25 + 16) ÷ 5 = 16 روز', en: '(12 + 18 + 9 + 25 + 16) ÷ 5 = 16 days' }],
             [{ fa: 'تحویل به‌موقع', en: 'On-time delivery' }, { fa: 'ردیف‌های تحویل‌شده تا تاریخ قول ÷ کل ردیف‌ها', en: 'Lines delivered by the promised date ÷ all lines' }, { fa: '172 ÷ 200 = 86٪', en: '172 ÷ 200 = 86%' }],
             [{ fa: 'تحویل کامل و به‌موقع (OTIF)', en: 'On time in full (OTIF)' }, { fa: 'ردیف‌های به‌موقع و با مقدار کامل و سالم ÷ کل ردیف‌ها', en: 'Lines on time, complete and sound ÷ all lines' }, { fa: '160 ÷ 200 = 80٪', en: '160 ÷ 200 = 80%' }],
-            [{ fa: 'صرفه‌جویی', en: 'Savings' }, { fa: '(مبنا − مبلغ قرارداد) ÷ مبنا؛ مبنا معمولاً آخرین قیمت خرید', en: '(baseline − awarded) ÷ baseline; baseline usually the last price paid' }, { fa: 'آب‌بند K-202: (87,500 − 84,000) ÷ 87,500 = 4٪', en: 'K-202 seal: (87,500 − 84,000) ÷ 87,500 = 4%' }],
+            [{ fa: 'صرفه‌جویی', en: 'Savings' }, { fa: '(مبنا − مبلغ قرارداد) ÷ مبنا؛ مبنا معمولاً آخرین قیمت خرید', en: '(baseline − awarded) ÷ baseline; baseline usually the last price paid' }, { fa: 'آب‌بند K-102: (87,500 − 84,000) ÷ 87,500 = 4٪', en: 'K-102 seal: (87,500 − 84,000) ÷ 87,500 = 4%' }],
             [{ fa: 'تطبیق در اولین بار', en: 'First-pass match rate' }, { fa: 'فاکتورهای ثبت‌شده بدون قفل ÷ کل فاکتورها', en: 'Invoices posted without a block ÷ all invoices' }, { fa: '1,140 ÷ 1,200 = 95٪', en: '1,140 ÷ 1,200 = 95%' }],
             [{ fa: 'هزینه زیر قرارداد', en: 'Spend under contract' }, { fa: 'هزینه از قراردادهای چارچوب ÷ کل هزینه', en: 'Spend through framework agreements ÷ total spend' }, { fa: '30,000,000 ÷ 40,000,000 = 75٪', en: '30,000,000 ÷ 40,000,000 = 75%' }],
             [{ fa: 'سفارش پس از فاکتور', en: 'After-the-fact POs' }, { fa: 'سفارش‌هایی که پس از فاکتور ساخته شده‌اند ÷ کل سفارش‌ها', en: 'POs created after the invoice ÷ all POs' }, { fa: '36 ÷ 1,200 = 3٪', en: '36 ÷ 1,200 = 3%' }],

@@ -20,20 +20,20 @@ const ac = {
   icPay02: tp('2810 پرداختنی بین شرکتی', '2810 Intercompany payables', 'MP02'),
   icLoanPay: tp('2820 وام دریافتی از شرکت‌های گروه', '2820 Loans from group companies', 'MP01'),
   hoCurrent: t('2890 حساب جاری دفتر مرکزی (در دفاتر شعبه)', '2890 Head-office current account (in the branch books)'),
-  bankLoans: t('2310 وام‌های بانکی', '2310 Bank loans'),
+  bankLoans: t('2410 وام‌های بانکی', '2410 Bank loans'),
   shareCapital: t('3110 سرمایه (`MP02`)', '3110 Share capital (`MP02`)'),
   retained: t('3310 سود انباشته', '3310 Retained earnings'),
   nci: t('3510 منافع فاقد حق کنترل', '3510 Non-controlling interests'),
   interestIncome: tp('4410 درآمد بهره', '4410 Interest income', 'MP02'),
   feeIncome: tp('4510 درآمد خدمات مدیریت', '4510 Management fee income', 'MP02'),
-  rechargeIncome: tp('4510 درآمد خدمات و بازپرداخت هزینه', '4510 Service and recharge income', 'MP03'),
+  rechargeIncome: tp('4520 درآمد خدمات و بازپرداخت هزینه', '4520 Service and recharge income', 'MP03'),
   dividendIncome: tp('4610 درآمد سود سهام', '4610 Dividend income', 'MP02'),
   revenue02: t('4310 درآمد خدمات حفاری و تعمیر چاه (`MP02`)', '4310 Drilling and workover revenue (`MP02`)'),
   repairs: t('5120 هزینه تعمیر و نگهداری (`CC-ARY-PRD`، R، عملیاتی)', '5120 Repairs and maintenance expense (`CC-ARY-PRD`, R, Operating)'),
   ga01: tp('5900 هزینه‌های اداری و عمومی', '5900 General and administrative expense', 'MP01'),
   costOfSales: t('6100 بهای تمام‌شده خدمات و فروش', '6100 Cost of services and sales'),
   interestExp: tp('7110 هزینه بهره', '7110 Interest expense', 'MP01'),
-  fx: t('7210 سود و زیان تسعیر ارز', '7210 Foreign exchange gains and losses'),
+  fx: t('5820 زیان تسعیر ارز تحقق‌نیافته', '5820 Unrealised exchange loss'),
 }
 
 const blank = t('', '')
@@ -562,7 +562,7 @@ export const lesson: Lesson = {
             [t('حساب‌های بین شرکتی', 'Intercompany accounts'), t('1810، 1820، 2810، 2820 با طرف معامله اجباری', '1810, 1820, 2810, 2820 with a mandatory trading partner')],
             [t('درصد مالکیت و تاریخ آن', 'Ownership percentages and dates'), t('`MP02`: 80٪ از ابتدای سال؛ `MP03`: 100٪', '`MP02`: 80% from the start of the year; `MP03`: 100%')],
             [t('نرخ‌های ارز گروه', 'Group exchange rates'), t('نرخ مصوب برای اقلام بین شرکتی و تسعیر `MP03`', 'Approved rates for intercompany items and translating `MP03`')],
-            [t('قواعد حذف', 'Elimination rules'), t('4510 در برابر 5900، 4410 در برابر 7110، 1810 در برابر 2810، 1820 در برابر 2820', '4510 against 5900, 4410 against 7110, 1810 against 2810, 1820 against 2820')],
+            [t('قواعد حذف', 'Elimination rules'), t('4510 و 4520 در برابر 5900، 4410 در برابر 7110، 1810 در برابر 2810، 1820 در برابر 2820', '4510 and 4520 against 5900, 4410 against 7110, 1810 against 2810, 1820 against 2820')],
           ],
         },
         {
@@ -672,7 +672,7 @@ export const lesson: Lesson = {
             rows: [
               [t('1) خدمات تعمیر چاه `MP02` به `MP01`', '1) `MP02` workover services to `MP01`'), 980000, 780000, t('فاکتور 200,000 روز 30 برای چاه AR-04 صادر شده؛ مهندس `MP01` هنوز SES را تأیید نکرده', 'A 200,000 invoice for well AR-04 was issued on day 30; `MP01`’s engineer has not yet accepted the SES')],
               [t('2) خدمات فنی `MP01` به `MP03`', '2) `MP01` technical services to `MP03`'), 420000, 405000, t('`MP03` نرخ بانک محلی را به‌جای نرخ گروه به کار برده؛ نرخ گروه 420,000 می‌دهد', '`MP03` used its local bank’s rate instead of the group rate; the group rate gives 420,000')],
-              [t('3) وام `MP01` به `MP02`', '3) `MP01` loan to `MP02`'), 10000000, 0, t('`MP02` وام را در 2310 وام‌های بانکی و بدون طرف معامله ثبت کرده است', '`MP02` booked the loan in 2310 bank loans with no trading partner')],
+              [t('3) وام `MP01` به `MP02`', '3) `MP01` loan to `MP02`'), 10000000, 0, t('`MP02` وام را در 2410 وام‌های بانکی و بدون طرف معامله ثبت کرده است', '`MP02` booked the loan in 2410 bank loans with no trading partner')],
             ],
           },
           hint: t('در هر مورد، شرکتی سند را اصلاح می‌کند که رقمش با واقعیت نمی‌خواند.', 'In each case, the company whose figure does not match the facts posts the correction.'),

@@ -15,9 +15,9 @@ const ac = {
   ap: { fa: '2110 حساب‌های پرداختنی', en: '2110 Accounts payable' },
   grir: { fa: '2120 حساب واسط رسید کالا و فاکتور (GR/IR)', en: '2120 GR/IR clearing account' },
   leaseLiab: { fa: '2420 بدهی اجاره', en: '2420 Lease liabilities' },
-  shortTerm: { fa: '5140 هزینه اجاره کوتاه‌مدت و کم‌ارزش', en: '5140 Short-term and low-value lease expense' },
+  shortTerm: { fa: '5170 هزینه اجاره کوتاه‌مدت و کم‌ارزش', en: '5170 Short-term and low-value lease expense' },
   rouDep: { fa: '5230 هزینه استهلاک دارایی حق استفاده', en: '5230 Depreciation of right-of-use assets' },
-  interest: { fa: '5730 هزینه مالی: بهره بدهی اجاره', en: '5730 Finance cost: interest on lease liabilities' },
+  interest: { fa: '7130 هزینه مالی: بهره بدهی اجاره', en: '7130 Finance cost: interest on lease liabilities' },
 }
 
 const t = (fa: string, en: string) => ({ fa, en })

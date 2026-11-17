@@ -9,8 +9,8 @@ const ac = {
   grir: { fa: 'حساب واسط رسید کالا و فاکتور (GR/IR)', en: 'GR/IR clearing account' },
   consumPrd: { fa: 'هزینه اقلام مصرفی (مرکز هزینه CC-ARY-PRD)', en: 'Consumables expense (cost centre CC-ARY-PRD)' },
   repairsWO: {
-    fa: 'هزینه تعمیر و نگهداری (دستور کار WO-45188، کمپرسور K-202)',
-    en: 'Repairs and maintenance expense (work order WO-45188, compressor K-202)',
+    fa: 'هزینه تعمیر و نگهداری (دستور کار WO-45188، کمپرسور K-102)',
+    en: 'Repairs and maintenance expense (work order WO-45188, compressor K-102)',
   },
   wellRepairs: {
     fa: 'هزینه تعمیر و نگهداری چاه (دستور کار WO-45210، مرکز هزینه CC-ARY-PRD)',
@@ -245,12 +245,12 @@ export const lesson: Lesson = {
             [
               { fa: 'دستور کار', en: 'Work order' },
               { fa: 'بدهکار هزینه دستور کار (بعداً به مرکز هزینه تسویه می‌شود)، بستانکار GR/IR', en: 'Dr work-order cost (settled later to a cost centre), Cr GR/IR' },
-              { fa: 'یاتاقان کف‌گرد K-202 روی `WO-45188`', en: 'K-202 thrust bearing set on `WO-45188`' },
+              { fa: 'یاتاقان کف‌گرد K-102 روی `WO-45188`', en: 'K-102 thrust bearing set on `WO-45188`' },
             ],
             [
               { fa: 'فراخوان از قرارداد چارچوب', en: 'Call-off from a framework' },
               { fa: 'مثل سفارش استاندارد، با تخصیص همان فراخوان', en: 'As for a standard PO, with the call-off’s assignment' },
-              { fa: 'باریت فراخوان AR-12 به `WH-20` یا مستقیم به `AFE-2026-014.02.02`', en: 'Barite on the AR-12 call-off into `WH-20` or straight to `AFE-2026-014.02.02`' },
+              { fa: 'باریت فراخوان AR-12 به `WH-20` یا مستقیم به `AFE-2026-012.02.02`', en: 'Barite on the AR-12 call-off into `WH-20` or straight to `AFE-2026-012.02.02`' },
             ],
             [
               { fa: 'سفارش باز', en: 'Blanket PO' },
@@ -362,7 +362,7 @@ export const lesson: Lesson = {
                 { account: ac.aucAR12, debit: 108000 },
                 { account: ac.grir, credit: 108000 },
               ],
-              memo: { fa: 'روی سفارش AR-12 با تخصیص `AFE-2026-014.02.03`.', en: 'On the AR-12 order, assigned to `AFE-2026-014.02.03`.' },
+              memo: { fa: 'روی سفارش AR-12 با تخصیص `AFE-2026-012.02.03`.', en: 'On the AR-12 order, assigned to `AFE-2026-012.02.03`.' },
             },
           ],
         },
@@ -779,7 +779,7 @@ export const lesson: Lesson = {
             [{ fa: 'کد شرکت', en: 'Company code' }, { fa: '`MP01`', en: '`MP01`' }, { fa: 'مسار پترولیوم، اپراتور مشارکت میدان آریا', en: 'Masar Petroleum, operator of the Arya field JV' }],
             [{ fa: 'مرکز هزینه', en: 'Cost centre' }, { fa: '`CC-ARY-PRD`، `CC-ARY-CMP`', en: '`CC-ARY-PRD`, `CC-ARY-CMP`' }, { fa: 'تولید میدان؛ ایستگاه تقویت فشار', en: 'Field production; compressor station' }],
             [{ fa: 'عنصر WBS (AFE)', en: 'WBS element (AFE)' }, { fa: '`AFE-2025-014.02.03`', en: '`AFE-2025-014.02.03`' }, { fa: 'حفاری AR-07: لوله‌گذاری و سیمان‌کاری', en: 'AR-07 drilling: casing and cementing' }],
-            [{ fa: 'عنصر هزینه یا حساب کل', en: 'Cost element or GL account' }, { fa: '`1710`، `6110`', en: '`1710`, `6110`' }, { fa: 'دارایی در جریان ساخت چاه‌ها؛ تعمیر و نگهداری', en: 'AUC wells; repairs and maintenance' }],
+            [{ fa: 'عنصر هزینه یا حساب کل', en: 'Cost element or GL account' }, { fa: '`6140`، `5120`', en: '`6140`, `5120`' }, { fa: 'دارایی در جریان ساخت چاه‌ها؛ تعمیر و نگهداری', en: 'AUC wells; repairs and maintenance' }],
             [{ fa: 'نشان بازیافت', en: 'Recoverable flag' }, { fa: '`R` یا `N`', en: '`R` or `N`' }, { fa: 'قابل بازیافت یا غیرقابل بازیافت', en: 'Recoverable or non-recoverable' }],
             [{ fa: 'دسته هزینه', en: 'Cost category' }, { fa: 'اکتشاف، توسعه، عملیات', en: 'Exploration, Development, Operating' }, { fa: 'دسته بازیافت طبق قرارداد', en: 'Recovery category per the contract' }],
           ],
@@ -788,8 +788,8 @@ export const lesson: Lesson = {
           type: 'callout',
           tone: 'example',
           text: {
-            fa: 'GRN-26-0318 با کد `MP01 / AFE-2025-014.02.03 / 1710 / R / توسعه` و پیوست گواهی‌های کارخانه با شماره‌های ذوب و IRN، و SES-26-0141 با کد `MP01 / CC-ARY-PRD (WO-45210) / 6110 / R / عملیات` و پیوست 13 گزارش روزانه امضاشده، دقیقاً همان شواهدی‌اند که حسابرس می‌خواهد. اگر برگه کارکرد امضا نداشته باشد یا کد اشتباه باشد، حتی هزینه واقعی هم ممکن است رد شود.',
-            en: 'GRN-26-0318 coded `MP01 / AFE-2025-014.02.03 / 1710 / R / Development` with the mill certificates, heat numbers and IRN attached, and SES-26-0141 coded `MP01 / CC-ARY-PRD (WO-45210) / 6110 / R / Operating` with 13 signed daily reports attached, are exactly the evidence the auditor wants. If a field ticket is unsigned or the code is wrong, even a real cost may be disallowed.',
+            fa: 'GRN-26-0318 با کد `MP01 / AFE-2025-014.02.03 / 6140 / R / توسعه` و پیوست گواهی‌های کارخانه با شماره‌های ذوب و IRN، و SES-26-0141 با کد `MP01 / CC-ARY-PRD (WO-45210) / 5120 / R / عملیات` و پیوست 13 گزارش روزانه امضاشده، دقیقاً همان شواهدی‌اند که حسابرس می‌خواهد. اگر برگه کارکرد امضا نداشته باشد یا کد اشتباه باشد، حتی هزینه واقعی هم ممکن است رد شود.',
+            en: 'GRN-26-0318 coded `MP01 / AFE-2025-014.02.03 / 6140 / R / Development` with the mill certificates, heat numbers and IRN attached, and SES-26-0141 coded `MP01 / CC-ARY-PRD (WO-45210) / 5120 / R / Operating` with 13 signed daily reports attached, are exactly the evidence the auditor wants. If a field ticket is unsigned or the code is wrong, even a real cost may be disallowed.',
           },
         },
         { type: 'h', text: { fa: 'کنترل‌ها و اشتباه‌های رایج', en: 'Controls and common mistakes' } },
@@ -838,7 +838,7 @@ export const lesson: Lesson = {
             rows: [
               [{ fa: 'الف', en: 'a' }, { fa: '120 تن باریت از فراخوان قرارداد چارچوب برای موجودی `WH-20`', en: '120 t of barite on a framework call-off, for `WH-20` stock' }],
               [{ fa: 'ب', en: 'b' }, { fa: '3 روز خدمات اسلیک‌لاین روی چاه AR-03 از فراخوان خدمات چاه؛ دستور کار به `CC-ARY-PRD` تسویه می‌شود', en: '3 days of slickline on well AR-03 under a well-services call-off; the work order settles to `CC-ARY-PRD`' }],
-              [{ fa: 'ج', en: 'c' }, { fa: 'سرچاهی چاه AR-12 که مستقیم به محل دکل می‌رسد، روی `AFE-2026-014`', en: 'The AR-12 wellhead delivered straight to the rig site, on `AFE-2026-014`' }],
+              [{ fa: 'ج', en: 'c' }, { fa: 'سرچاهی چاه AR-12 که مستقیم به محل دکل می‌رسد، روی `AFE-2026-012`', en: 'The AR-12 wellhead delivered straight to the rig site, on `AFE-2026-012`' }],
               [{ fa: 'د', en: 'd' }, { fa: 'کیت‌های سوپاپ K-201 که پیش از مصرف بازرسی ورودی لازم دارند', en: 'K-201 valve kits that need incoming inspection before use' }],
             ],
           },

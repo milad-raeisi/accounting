@@ -141,8 +141,8 @@ export const lesson: Lesson = {
             [
               { fa: 'شرکا', en: 'Partners' },
               {
-                fa: 'مسار پترولیوم 50٪، شریک الف 30٪، شریک ب 20٪ (سهم‌ها فرضی‌اند)',
-                en: 'Masar Petroleum 50%, Partner A 30%, Partner B 20% (illustrative shares)',
+                fa: 'مسار پترولیوم 50٪، انرژی البرز 30٪، نفت دنا 20٪ (سهم‌ها فرضی‌اند)',
+                en: 'Masar Petroleum 50%, Alborz Energy 30%, Dena Petroleum 20% (illustrative shares)',
               },
             ],
             [

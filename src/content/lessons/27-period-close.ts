@@ -33,7 +33,8 @@ const ac = {
   depExp: t('5210 هزینه استهلاک', '5210 Depreciation expense'),
   depletion: t('5220 هزینه استهلاک ذخایر', '5220 Depletion expense'),
   bankCharges: t('5920 هزینه کارمزد بانکی (`CC-HQ-FIN`، N)', '5920 Bank charges (`CC-HQ-FIN`, N)'),
-  fx: t('7210 سود و زیان تسعیر ارز', '7210 Foreign exchange gains and losses'),
+  fxGain: t('4920 سود تسعیر ارز تحقق‌نیافته', '4920 Unrealised exchange gain'),
+  fxLoss: t('5820 زیان تسعیر ارز تحقق‌نیافته', '5820 Unrealised exchange loss'),
 }
 
 const blank = t('', '')
@@ -325,7 +326,7 @@ export const lesson: Lesson = {
             {
               date: d(2),
               lines: [
-                { account: ac.fx, debit: 60000 },
+                { account: ac.fxLoss, debit: 60000 },
                 { account: ac.ap, credit: 60000 },
               ],
               memo: t('بدهی ارزی بزرگ‌تر شد: زیان. اجرای تسعیر (نه سند دستی) حساب کنترل پرداختنی‌ها را تعدیل می‌کند.', 'The FC liability grew: a loss. The revaluation run (not a manual entry) adjusts the payables control account.'),
@@ -334,14 +335,14 @@ export const lesson: Lesson = {
               date: d(2),
               lines: [
                 { account: ac.fcBank, debit: 50000 },
-                { account: ac.fx, credit: 50000 },
+                { account: ac.fxGain, credit: 50000 },
               ],
               memo: t('دارایی ارزی بزرگ‌تر شد: سود.', 'The FC asset grew: a gain.'),
             },
             {
               date: d(2),
               lines: [
-                { account: ac.fx, debit: 10000 },
+                { account: ac.fxLoss, debit: 10000 },
                 { account: ac.ar, credit: 10000 },
               ],
               memo: t('طلب ارزی کوچک‌تر شد: زیان. خالص سه سند: زیان تسعیر 20,000.', 'The FC receivable shrank: a loss. Net of the three entries: an FX loss of 20,000.'),
@@ -594,7 +595,7 @@ export const lesson: Lesson = {
             [t('برگشت تعهدی‌های ماه قبل', 'Reversal of last month’s accruals'), t('`JR`', '`JR`'), t('بدهکار 2130، بستانکار حساب هزینه', 'Debit 2130, credit the expense account')],
             [t('تسویه AFE تکمیل‌شده', 'Settlement of a completed AFE'), t('`ST`', '`ST`'), t('بدهکار 1520، بستانکار 1510', 'Debit 1520, credit 1510')],
             [t('استهلاک و استهلاک ذخایر', 'Depreciation and depletion'), t('`DP`', '`DP`'), t('بدهکار 5210 و 5220، بستانکار 1590 و 1595', 'Debit 5210 and 5220, credit 1590 and 1595')],
-            [t('تسعیر ارز', 'FX revaluation'), t('`RV`', '`RV`'), t('7210 در برابر اقلام باز ارزی (2110، 1120، 1210)', '7210 against the open FC items (2110, 1120, 1210)')],
+            [t('تسعیر ارز', 'FX revaluation'), t('`RV`', '`RV`'), t('4920 یا 5820 در برابر اقلام باز ارزی (2110، 1120، 1210)', '4920 or 5820 against the open FC items (2110, 1120, 1210)')],
             [t('صورت‌حساب شرکا', 'Joint interest billing'), t('`JB`', '`JB`'), t('بدهکار 1720 و 1730، بستانکار 1710', 'Debit 1720 and 1730, credit 1710')],
             [t('انتقال مانده به سال جدید (پایان سال)', 'Balance carry-forward (year-end)'), t('بدون سند عادی', 'No ordinary document'), t('سود و زیان به سود انباشته؛ مانده‌های ترازنامه به سال بعد', 'P&L to retained earnings; balance-sheet balances to the new year')],
           ],
@@ -821,7 +822,7 @@ export const lesson: Lesson = {
                 {
                   date: t('پایان ماه 5', 'End of month 5'),
                   lines: [
-                    { account: ac.fx, debit: 16000 },
+                    { account: ac.fxLoss, debit: 16000 },
                     { account: ac.ap, credit: 16000 },
                   ],
                 },
@@ -829,13 +830,13 @@ export const lesson: Lesson = {
                   date: t('پایان ماه 5', 'End of month 5'),
                   lines: [
                     { account: ac.fcBank, debit: 15000 },
-                    { account: ac.fx, credit: 15000 },
+                    { account: ac.fxGain, credit: 15000 },
                   ],
                 },
                 {
                   date: t('پایان ماه 5', 'End of month 5'),
                   lines: [
-                    { account: ac.fx, debit: 12000 },
+                    { account: ac.fxLoss, debit: 12000 },
                     { account: ac.ar, credit: 12000 },
                   ],
                 },

@@ -7,7 +7,7 @@ const ac = {
   well: t('1520 دارایی‌های نفت و گاز: چاه AR-07 (`FA-52007`)', '1520 Oil and gas properties: well AR-07 (`FA-52007`)'),
   training: t('5130 هزینه ایمنی، بهداشت، محیط زیست و آموزش (`CC-ARY-PRD`)', '5130 HSE and training expense (`CC-ARY-PRD`)'),
   ee: t('1530 دارایی‌های اکتشاف و ارزیابی', '1530 Exploration and evaluation assets'),
-  dry: t('5410 هزینه اکتشاف: چاه خشک', '5410 Exploration expense: dry hole'),
+  dry: t('5610 هزینه اکتشاف: چاه خشک', '5610 Exploration expense: dry hole'),
   grir: t('2120 حساب واسط رسید کالا و فاکتور (GR/IR)', '2120 GR/IR clearing account'),
   ap: t('2110 حساب‌های پرداختنی', '2110 Accounts payable'),
 }
@@ -39,8 +39,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: t(
-            'اوایل ماه 4 است. چاه AR-07 تکمیل و آزمایش شده و به منیفولد تولید موجود وصل شده است؛ فقط چند هزینه پایانی (آخرین گزارش آزمایش چاه، نظارت و بستن مجوزها) مانده است. مدیر تولید خوشحال است، اما مدیر مالی مسار پترولیوم می‌پرسد: «چرا چاهی که تولید می‌کند هنوز در دارایی در جریان تکمیل است و استهلاک ندارد؟» حسابرس شریک الف هم می‌خواهد بداند از هزینه AFE چه مقدار به دارایی چاه و چه مقدار به هزینه دوره رفته است. پاسخ هر دو پرسش در **تسویه** (Settlement) است.',
-            'It is early month 4. Well AR-07 has been completed, tested and tied into the existing production manifold; only a few final costs (the last well-testing report, supervision and permit close-out) remain. The production manager is pleased, but Masar Petroleum’s finance manager asks: “Why is a producing well still in assets under construction with no depreciation?” Partner A’s auditor also wants to know how much of the AFE cost has gone to the well asset and how much to period expense. The answer to both questions is **settlement**.',
+            'اوایل ماه 4 است. چاه AR-07 تکمیل و آزمایش شده و به منیفولد تولید موجود وصل شده است؛ فقط چند هزینه پایانی (آخرین گزارش آزمایش چاه، نظارت و بستن مجوزها) مانده است. مدیر تولید خوشحال است، اما مدیر مالی مسار پترولیوم می‌پرسد: «چرا چاهی که تولید می‌کند هنوز در دارایی در جریان تکمیل است و استهلاک ندارد؟» حسابرس انرژی البرز هم می‌خواهد بداند از هزینه AFE چه مقدار به دارایی چاه و چه مقدار به هزینه دوره رفته است. پاسخ هر دو پرسش در **تسویه** (Settlement) است.',
+            'It is early month 4. Well AR-07 has been completed, tested and tied into the existing production manifold; only a few final costs (the last well-testing report, supervision and permit close-out) remain. The production manager is pleased, but Masar Petroleum’s finance manager asks: “Why is a producing well still in assets under construction with no depreciation?” Alborz Energy’s auditor also wants to know how much of the AFE cost has gone to the well asset and how much to period expense. The answer to both questions is **settlement**.',
           ),
         },
         {
@@ -72,8 +72,8 @@ export const lesson: Lesson = {
           tone: 'info',
           title: t('ارقام ناخالص و سهم مسار پترولیوم', 'Gross figures and Masar Petroleum’s share'),
           text: t(
-            'چاه AR-07 در مشارکت است (مسار پترولیوم 50٪، شریک الف 30٪، شریک ب 20٪؛ سهم‌ها فرضی‌اند). ارقام این درس **ناخالص** (100٪) است، همان‌طور که در گزارش AFE دیده می‌شود. در دفاتر خود مسار پترولیوم، صورت‌حساب ماهانه شرکا سهم 50٪ آن‌ها را از 1510 به حساب دریافتنی از شرکا می‌برد؛ پس AUC و دارایی نهایی در دفاتر مسار فقط سهم 50٪ را نشان می‌دهند. این جزئیات در درس بودجه و پروژه در ERP: سناریوی کامل آمده است.',
-            'Well AR-07 is in the joint venture (Masar Petroleum 50%, Partner A 30%, Partner B 20%; illustrative shares). The figures in this lesson are **gross** (100%), as they appear on the AFE report. In Masar Petroleum’s own books, the monthly partner billing moves the partners’ 50% out of 1510 to the partner receivable, so AUC and the final assets in Masar’s books carry only its 50% share. The detail is in the lesson on budget and projects in the ERP, end to end.',
+            'چاه AR-07 در مشارکت است (مسار پترولیوم 50٪، انرژی البرز 30٪، نفت دنا 20٪؛ سهم‌ها فرضی‌اند). ارقام این درس **ناخالص** (100٪) است، همان‌طور که در گزارش AFE دیده می‌شود. در دفاتر خود مسار پترولیوم، صورت‌حساب ماهانه شرکا سهم 50٪ آن‌ها را از 1510 به حساب دریافتنی از شرکا می‌برد؛ پس AUC و دارایی نهایی در دفاتر مسار فقط سهم 50٪ را نشان می‌دهند. این جزئیات در درس بودجه و پروژه در ERP: سناریوی کامل آمده است.',
+            'Well AR-07 is in the joint venture (Masar Petroleum 50%, Alborz Energy 30%, Dena Petroleum 20%; illustrative shares). The figures in this lesson are **gross** (100%), as they appear on the AFE report. In Masar Petroleum’s own books, the monthly partner billing moves the partners’ 50% out of 1510 to the partner receivable, so AUC and the final assets in Masar’s books carry only its 50% share. The detail is in the lesson on budget and projects in the ERP, end to end.',
           ),
         },
       ],
@@ -308,7 +308,7 @@ export const lesson: Lesson = {
           rows: [
             [t('چاه AR-07 (`FA-52007`)', 'Well AR-07 (`FA-52007`)'), 8058000, t('سرمایه‌ای؛ استهلاک به روش واحد تولید', 'Capitalised; unit-of-production depreciation'), t('توسعه', 'Development'), t('R', 'R')],
             [t('آموزش اپراتورها (سطر مبلغی `.03.02`)', 'Operator training (`.03.02` amount line)'), 40000, t('هزینه دوره 5130', 'Expense 5130'), t('عملیاتی', 'Operating'), t('R', 'R')],
-            [t('چاه اکتشافی خشک ARN-1', 'Dry exploration well ARN-1'), 3400000, t('هزینه دوره 5410 (تلاش‌های موفق)', 'Expense 5410 (successful efforts)'), t('اکتشاف', 'Exploration'), t('طبق قرارداد', 'Per contract')],
+            [t('چاه اکتشافی خشک ARN-1', 'Dry exploration well ARN-1'), 3400000, t('هزینه دوره 5610 (تلاش‌های موفق)', 'Expense 5610 (successful efforts)'), t('اکتشاف', 'Exploration'), t('طبق قرارداد', 'Per contract')],
             [t('جریمه زیست‌محیطی نشت', 'Environmental fine for a spill'), 50000, t('هزینه دوره 5910', 'Expense 5910'), t('عملیاتی', 'Operating'), t('N', 'N')],
             [t('بهره وام شرکتی', 'Corporate loan interest'), t('طبق قرارداد وام', 'Per loan agreement'), t('هزینه مالی 7110', 'Finance cost 7110'), t('ندارد', 'None'), t('N', 'N')],
           ],
@@ -649,8 +649,8 @@ export const lesson: Lesson = {
             },
           ],
           answer: t(
-            'تلاش‌های موفق: KV-1 هزینه 2,240,000 (بدهکار 5410)؛ چاه پله‌ای سرمایه‌ای 2,100,000 (بدهکار 1520). بهای تمام‌شده کامل: هر دو سرمایه‌ای.',
-            'Successful efforts: KV-1 expensed 2,240,000 (debit 5410); step-out well capitalised 2,100,000 (debit 1520). Full cost: both capitalised.',
+            'تلاش‌های موفق: KV-1 هزینه 2,240,000 (بدهکار 5610)؛ چاه پله‌ای سرمایه‌ای 2,100,000 (بدهکار 1520). بهای تمام‌شده کامل: هر دو سرمایه‌ای.',
+            'Successful efforts: KV-1 expensed 2,240,000 (debit 5610); step-out well capitalised 2,100,000 (debit 1520). Full cost: both capitalised.',
           ),
         },
       ],
@@ -750,8 +750,8 @@ export const lesson: Lesson = {
       ],
       answer: 2,
       explain: t(
-        'در تلاش‌های موفق فقط تلاشی سرمایه‌ای می‌شود که به کشف تجاری برسد؛ چاه اکتشافی خشک از دارایی E&E حذف و هزینه می‌شود (بدهکار 5410). «استخر هزینه» مخصوص روش بهای تمام‌شده کامل است.',
-        'Under successful efforts only effort that leads to a commercial find is capitalised; a dry exploration well is written off from E&E and expensed (debit 5410). The “cost pool” belongs to the full cost method.',
+        'در تلاش‌های موفق فقط تلاشی سرمایه‌ای می‌شود که به کشف تجاری برسد؛ چاه اکتشافی خشک از دارایی E&E حذف و هزینه می‌شود (بدهکار 5610). «استخر هزینه» مخصوص روش بهای تمام‌شده کامل است.',
+        'Under successful efforts only effort that leads to a commercial find is capitalised; a dry exploration well is written off from E&E and expensed (debit 5610). The “cost pool” belongs to the full cost method.',
       ),
     },
     {

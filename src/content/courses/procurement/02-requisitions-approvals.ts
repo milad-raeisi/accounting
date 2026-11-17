@@ -50,8 +50,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'مهندس حفاری چاه AR-09 در یک پیام کوتاه از کارشناس خرید می‌خواهد «فوری 120 عدد سنترالایزر لوله جداری» بخرد. کارشناس خرید تلفنی سفارش می‌دهد. سه هفته بعد فاکتوری 30,000 می‌رسد که نه شماره چاه دارد، نه AFE و نه تأییدی. واحد مالی آن را در یک حساب معلق نگه می‌دارد. در حسابرسی شرکا، شریک الف سهم خود را نمی‌پذیرد، چون درخواست تأییدشده‌ای وجود ندارد و هزینه به AFE چاه قابل ردیابی نیست.',
-            en: 'The drilling engineer on well AR-09 sends the buyer a short message: “urgently need 120 casing centralisers.” The buyer orders by phone. Three weeks later an invoice for 30,000 arrives with no well number, no AFE and no approval. Finance parks it in a suspense account. At the partners’ audit, Partner A refuses its share, because there is no approved requisition and the cost cannot be traced to the well’s AFE.',
+            fa: 'مهندس حفاری چاه AR-09 در یک پیام کوتاه از کارشناس خرید می‌خواهد «فوری 120 عدد سنترالایزر لوله جداری» بخرد. کارشناس خرید تلفنی سفارش می‌دهد. سه هفته بعد فاکتوری 30,000 می‌رسد که نه شماره چاه دارد، نه AFE و نه تأییدی. واحد مالی آن را در یک حساب معلق نگه می‌دارد. در حسابرسی شرکا، انرژی البرز سهم خود را نمی‌پذیرد، چون درخواست تأییدشده‌ای وجود ندارد و هزینه به AFE چاه قابل ردیابی نیست.',
+            en: 'The drilling engineer on well AR-09 sends the buyer a short message: “urgently need 120 casing centralisers.” The buyer orders by phone. Three weeks later an invoice for 30,000 arrives with no well number, no AFE and no approval. Finance parks it in a suspense account. At the partners’ audit, Alborz Energy refuses its share, because there is no approved requisition and the cost cannot be traced to the well’s AFE.',
           },
         },
         {
@@ -288,8 +288,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'سنترالایزرهای 30,000 که به AFE-2024-022 ثبت شوند، بخشی از بهای چاه می‌شوند و به نسبت سهم شرکا به حساب مشترک می‌روند: مسار پترولیوم 50٪ یعنی 15,000، شریک الف 30٪ یعنی 9,000 و شریک ب 20٪ یعنی 6,000. اگر همین مبلغ اشتباهی به مرکز هزینه CC-ARY-CMP برود، AFE چاه 30,000 کمتر از واقع نشان داده می‌شود، بهای دارایی چاه کم و هزینه عملیاتی زیاد گزارش می‌شود و هزینه در دسته اشتباه بازیافت قرار می‌گیرد. در بسیاری از قراردادهای مشارکت در تولید، هزینه سرمایه‌ای طی چند سال و هزینه عملیاتی در همان سال بازیافت می‌شود؛ پس دسته اشتباه، زمان بازگشت پول را هم عوض می‌کند.',
-            en: 'Centralisers worth 30,000 charged to AFE-2024-022 become part of the cost of the well and go to the joint account in proportion to the partners’ shares: Masar Petroleum 50%, or 15,000; Partner A 30%, or 9,000; Partner B 20%, or 6,000. If the same amount goes to cost centre CC-ARY-CMP by mistake, the well’s AFE looks 30,000 under-spent, the well asset is understated, operating expense is overstated and the cost sits in the wrong recovery category. Under many production sharing contracts, capital costs are recovered over several years while operating costs are recovered in the year incurred, so the wrong category also changes when the money comes back.',
+            fa: 'سنترالایزرهای 30,000 که به AFE-2024-022 ثبت شوند، بخشی از بهای چاه می‌شوند و به نسبت سهم شرکا به حساب مشترک می‌روند: مسار پترولیوم 50٪ یعنی 15,000، انرژی البرز 30٪ یعنی 9,000 و نفت دنا 20٪ یعنی 6,000. اگر همین مبلغ اشتباهی به مرکز هزینه CC-ARY-CMP برود، AFE چاه 30,000 کمتر از واقع نشان داده می‌شود، بهای دارایی چاه کم و هزینه عملیاتی زیاد گزارش می‌شود و هزینه در دسته اشتباه بازیافت قرار می‌گیرد. در بسیاری از قراردادهای مشارکت در تولید، هزینه سرمایه‌ای طی چند سال و هزینه عملیاتی در همان سال بازیافت می‌شود؛ پس دسته اشتباه، زمان بازگشت پول را هم عوض می‌کند.',
+            en: 'Centralisers worth 30,000 charged to AFE-2024-022 become part of the cost of the well and go to the joint account in proportion to the partners’ shares: Masar Petroleum 50%, or 15,000; Alborz Energy 30%, or 9,000; Dena Petroleum 20%, or 6,000. If the same amount goes to cost centre CC-ARY-CMP by mistake, the well’s AFE looks 30,000 under-spent, the well asset is understated, operating expense is overstated and the cost sits in the wrong recovery category. Under many production sharing contracts, capital costs are recovered over several years while operating costs are recovered in the year incurred, so the wrong category also changes when the money comes back.',
           },
         },
         {
@@ -788,8 +788,8 @@ export const lesson: Lesson = {
               numericCols: [2],
               rows: [
                 [{ fa: 'مسار پترولیوم', en: 'Masar Petroleum' }, { fa: '50٪', en: '50%' }, 15000],
-                [{ fa: 'شریک الف', en: 'Partner A' }, { fa: '30٪', en: '30%' }, 9000],
-                [{ fa: 'شریک ب', en: 'Partner B' }, { fa: '20٪', en: '20%' }, 6000],
+                [{ fa: 'انرژی البرز', en: 'Alborz Energy' }, { fa: '30٪', en: '30%' }, 9000],
+                [{ fa: 'نفت دنا', en: 'Dena Petroleum' }, { fa: '20٪', en: '20%' }, 6000],
                 [{ fa: '**جمع**', en: '**Total**' }, { fa: '100٪', en: '100%' }, 30000],
               ],
             },
@@ -977,8 +977,8 @@ export const lesson: Lesson = {
     },
     {
       q: {
-        fa: 'هزینه‌ای 30,000 به حساب مشترک میدان آریا ثبت شده است. سهم شریک الف (30٪) چقدر است؟',
-        en: 'A cost of 30,000 is charged to the Arya field joint account. What is Partner A’s (30%) share?',
+        fa: 'هزینه‌ای 30,000 به حساب مشترک میدان آریا ثبت شده است. سهم انرژی البرز (30٪) چقدر است؟',
+        en: 'A cost of 30,000 is charged to the Arya field joint account. What is Alborz Energy’s (30%) share?',
       },
       options: [
         { fa: '9,000', en: '9,000' },
@@ -988,8 +988,8 @@ export const lesson: Lesson = {
       ],
       answer: 0,
       explain: {
-        fa: '30,000 × 30٪ = 9,000. 15,000 سهم 50٪ مسار پترولیوم و 6,000 سهم 20٪ شریک ب است. این تقسیم فقط وقتی درست انجام می‌شود که هزینه به موضوع هزینه مشترک درست ثبت شده باشد.',
-        en: '30,000 × 30% = 9,000. 15,000 is Masar Petroleum’s 50% and 6,000 is Partner B’s 20%. The split only works if the cost was charged to the right joint cost object.',
+        fa: '30,000 × 30٪ = 9,000. 15,000 سهم 50٪ مسار پترولیوم و 6,000 سهم 20٪ نفت دنا است. این تقسیم فقط وقتی درست انجام می‌شود که هزینه به موضوع هزینه مشترک درست ثبت شده باشد.',
+        en: '30,000 × 30% = 9,000. 15,000 is Masar Petroleum’s 50% and 6,000 is Dena Petroleum’s 20%. The split only works if the cost was charged to the right joint cost object.',
       },
     },
     {

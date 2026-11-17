@@ -7,12 +7,12 @@ const ac = {
   grir: { fa: 'حساب واسط رسید کالا و فاکتور (GR/IR)', en: 'GR/IR clearing account' },
   ap: { fa: 'حساب‌های پرداختنی', en: 'Accounts payable' },
   maintCompressor: {
-    fa: 'هزینه مواد تعمیرات: ایستگاه تقویت فشار (مرکز هزینه CC-3200)',
-    en: 'Maintenance materials expense: compressor station (cost centre CC-3200)',
+    fa: 'هزینه مواد تعمیرات: ایستگاه تقویت فشار (مرکز هزینه CC-ARY-CMP)',
+    en: 'Maintenance materials expense: compressor station (cost centre CC-ARY-CMP)',
   },
   maintProduction: {
-    fa: 'هزینه مواد تعمیرات: عملیات تولید (مرکز هزینه CC-3100)',
-    en: 'Maintenance materials expense: production operations (cost centre CC-3100)',
+    fa: 'هزینه مواد تعمیرات: عملیات تولید (مرکز هزینه CC-ARY-PRD)',
+    en: 'Maintenance materials expense: production operations (cost centre CC-ARY-PRD)',
   },
 }
 
@@ -152,7 +152,7 @@ export const lesson: Lesson = {
                 en: 'Slow-moving and capital spares, the pipe yard, bulk chemicals',
               },
               { fa: 'همه سایت‌ها؛ از همه تأمین‌کنندگان کالا می‌گیرد', en: 'All sites; receives from all vendors' },
-              { fa: 'انبار مرکزی (سایت MP10)', en: 'Central Warehouse (site MP10)' },
+              { fa: 'انبار مرکزی (سایت WH-10)', en: 'Central Warehouse (site WH-10)' },
             ],
             [
               { fa: 'انبار میدان', en: 'Field warehouse' },
@@ -162,7 +162,7 @@ export const lesson: Lesson = {
                 en: 'Fast-moving spares, consumables, day-to-day chemicals, critical spares for the compressor station',
               },
               { fa: 'تیم‌های تعمیرات و بهره‌برداری', en: 'Maintenance and production crews' },
-              { fa: 'انبار میدان (سایت MP20)', en: 'Field Warehouse (site MP20)' },
+              { fa: 'انبار میدان (سایت WH-20)', en: 'Field Warehouse (site WH-20)' },
             ],
             [
               { fa: 'انبار سر دکل (محل چاه)', en: 'Rig-site store' },
@@ -654,8 +654,8 @@ export const lesson: Lesson = {
             {
               title: { fa: 'سیستم ERP', en: 'The ERP' },
               text: {
-                fa: 'موجودی را کم می‌کند، سند انبار و سند حسابداری می‌سازد و هزینه را به دستور کار و از آنجا به مرکز هزینه ایستگاه تقویت فشار (CC-3200) می‌برد.',
-                en: 'Reduces stock, creates the material document and the accounting document, and charges the cost to the work order and from there to the compressor station cost centre (CC-3200).',
+                fa: 'موجودی را کم می‌کند، سند انبار و سند حسابداری می‌سازد و هزینه را به دستور کار و از آنجا به مرکز هزینه ایستگاه تقویت فشار (CC-ARY-CMP) می‌برد.',
+                en: 'Reduces stock, creates the material document and the accounting document, and charges the cost to the work order and from there to the compressor station cost centre (CC-ARY-CMP).',
               },
             },
             {
@@ -791,7 +791,7 @@ export const lesson: Lesson = {
                   1,
                   { fa: 'OCTG', en: 'OCTG' },
                   { fa: 'محوطه لوله انبار مرکزی؛ سپس انبار سر دکل AR-12', en: 'Central Warehouse pipe yard, then the AR-12 rig-site store' },
-                  { fa: 'اغلب مستقیم به AFE-012 چاه AR-12 منظور می‌شود', en: 'Often charged directly to AFE-012 for well AR-12' },
+                  { fa: 'اغلب مستقیم به AFE-2026-012 چاه AR-12 منظور می‌شود', en: 'Often charged directly to AFE-2026-012 for well AR-12' },
                 ],
                 [
                   2,
@@ -914,8 +914,8 @@ export const lesson: Lesson = {
           title: { fa: 'ثبت‌های خودکار ERP را بنویسید', en: 'Write the ERP’s automatic entries' },
           difficulty: 'medium',
           problem: {
-            fa: 'انبار میدان 40 المنت فیلتر به قیمت هر عدد 30 را در برابر سفارش خرید PO-0450 رسید می‌کند. سپس 25 عدد از آنها با حواله انبار به دستور کار WO-7802 برای پمپ P-105 تحویل می‌شود؛ هزینه این دستور کار به مرکز هزینه عملیات تولید (CC-3100) می‌رود. در پایان، فاکتور فروشنده به مبلغ 1,200 می‌رسد و تطبیق سه‌طرفه انجام می‌شود. ثبت‌هایی را که ERP خودکار انجام می‌دهد بنویسید و مقدار و ارزش موجودی باقی‌مانده را محاسبه کنید. (فرض کنید پیش از این رسید، فیلتری در انبار نبوده است.)',
-            en: 'The Field Warehouse receives 40 filter elements at 30 each against purchase order PO-0450. It then issues 25 of them to work order WO-7802 for pump P-105, whose cost settles to the production operations cost centre (CC-3100). Finally the vendor’s invoice for 1,200 arrives and the three-way match is done. Write the entries the ERP makes automatically and work out the quantity and value left in stock. (Assume there were no filters in stock before this receipt.)',
+            fa: 'انبار میدان 40 المنت فیلتر به قیمت هر عدد 30 را در برابر سفارش خرید PO-0450 رسید می‌کند. سپس 25 عدد از آنها با حواله انبار به دستور کار WO-7802 برای پمپ P-105 تحویل می‌شود؛ هزینه این دستور کار به مرکز هزینه عملیات تولید (CC-ARY-PRD) می‌رود. در پایان، فاکتور فروشنده به مبلغ 1,200 می‌رسد و تطبیق سه‌طرفه انجام می‌شود. ثبت‌هایی را که ERP خودکار انجام می‌دهد بنویسید و مقدار و ارزش موجودی باقی‌مانده را محاسبه کنید. (فرض کنید پیش از این رسید، فیلتری در انبار نبوده است.)',
+            en: 'The Field Warehouse receives 40 filter elements at 30 each against purchase order PO-0450. It then issues 25 of them to work order WO-7802 for pump P-105, whose cost settles to the production operations cost centre (CC-ARY-PRD). Finally the vendor’s invoice for 1,200 arrives and the three-way match is done. Write the entries the ERP makes automatically and work out the quantity and value left in stock. (Assume there were no filters in stock before this receipt.)',
           },
           hint: {
             fa: 'رسید: موجودی بدهکار، حساب واسط بستانکار. حواله: محل مصرف بدهکار، موجودی بستانکار. فاکتور: حساب واسط بدهکار، حساب‌های پرداختنی بستانکار.',
@@ -975,8 +975,8 @@ export const lesson: Lesson = {
             },
           ],
           answer: {
-            fa: '15 فیلتر به ارزش 450 در انبار می‌ماند؛ 750 به هزینه تعمیرات CC-3100 و 1,200 به حساب‌های پرداختنی رفته است.',
-            en: '15 filters worth 450 remain; 750 went to CC-3100 maintenance expense and 1,200 to accounts payable.',
+            fa: '15 فیلتر به ارزش 450 در انبار می‌ماند؛ 750 به هزینه تعمیرات CC-ARY-PRD و 1,200 به حساب‌های پرداختنی رفته است.',
+            en: '15 filters worth 450 remain; 750 went to CC-ARY-PRD maintenance expense and 1,200 to accounts payable.',
           },
         },
         {
@@ -1364,7 +1364,7 @@ export const lesson: Lesson = {
       q: { fa: 'کدام یک **داده تراکنشی** است؟', en: 'Which of these is **transaction data**?' },
       options: [
         { fa: 'داده پایه کالای بسته آب‌بند', en: 'The seal kit’s material master' },
-        { fa: 'مرکز هزینه CC-3200', en: 'Cost centre CC-3200' },
+        { fa: 'مرکز هزینه CC-ARY-CMP', en: 'Cost centre CC-ARY-CMP' },
         { fa: 'جایگاه A-12-03-B در انبار میدان', en: 'Bin A-12-03-B in the Field Warehouse' },
         { fa: 'حواله انبار یک بسته آب‌بند به دستور کار WO-7781', en: 'The goods issue of one seal kit to work order WO-7781' },
       ],

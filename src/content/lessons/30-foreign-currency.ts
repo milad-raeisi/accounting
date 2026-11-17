@@ -21,7 +21,7 @@ const ac = {
   gainR: { fa: '4910 سود تسعیر ارز تحقق‌یافته', en: '4910 Realised exchange gain' },
   gainU: { fa: '4920 سود تسعیر ارز تحقق‌نیافته', en: '4920 Unrealised exchange gain' },
   repairs: { fa: '5120 هزینه تعمیر و نگهداری (CC-ARY-CMP)', en: '5120 Repairs and maintenance expense (CC-ARY-CMP)' },
-  wellServices: { fa: '5130 هزینه خدمات چاه (CC-ARY-PRD)', en: '5130 Well services expense (CC-ARY-PRD)' },
+  wellServices: { fa: '5160 هزینه خدمات چاه (CC-ARY-PRD)', en: '5160 Well services expense (CC-ARY-PRD)' },
   lossR: { fa: '5810 زیان تسعیر ارز تحقق‌یافته', en: '5810 Realised exchange loss' },
   lossU: { fa: '5820 زیان تسعیر ارز تحقق‌نیافته', en: '5820 Unrealised exchange loss' },
 }

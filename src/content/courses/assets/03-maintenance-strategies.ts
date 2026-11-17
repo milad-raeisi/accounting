@@ -4,7 +4,7 @@ import type { L, Lesson } from '../../types'
  * Running example (shared with the rest of the assets course): Masar Petroleum (MP01), Arya field.
  * Compressor station: centrifugal compressors K-101 and K-102 driven by gas turbines GT-101 and GT-102.
  * Production station: condensate export pump P-210 (no standby), slug catcher V-100, separator V-201 with PSV-205.
- * Cost centres: CC-3100 compressor station, CC-3900 mechanical crew (200 per hour).
+ * Cost centres: CC-ARY-CMP compressor station, CC-ARY-MNT mechanical crew (200 per hour).
  * Work-order costs post to expense with the work order as cost object; settlement moves them to the receiver.
  */
 
@@ -20,8 +20,8 @@ const wo = (n: string) => ({
 const ac = {
   inventory: t('موجودی قطعات یدکی', 'Inventory: spare parts'),
   grir: t('حساب واسط رسید کالا و فاکتور (GR/IR)', 'GR/IR clearing account'),
-  mechAlloc: t('دستمزد تخصیص‌یافته: گروه مکانیک (CC-3900)', 'Labour cost allocated: mechanical crew (CC-3900)'),
-  receiverCS: t('هزینه تعمیر و نگهداری: گیرنده CC-3100 (R، عملیاتی)', 'Repairs and maintenance: receiver CC-3100 (R, Operating)'),
+  mechAlloc: t('دستمزد تخصیص‌یافته: گروه مکانیک (CC-ARY-MNT)', 'Labour cost allocated: mechanical crew (CC-ARY-MNT)'),
+  receiverCS: t('هزینه تعمیر و نگهداری: گیرنده CC-ARY-CMP (R، عملیاتی)', 'Repairs and maintenance: receiver CC-ARY-CMP (R, Operating)'),
 }
 const w31 = wo('WO-40031')
 
@@ -732,8 +732,8 @@ export const lesson: Lesson = {
                 {
                   title: t('در ERP', 'In the ERP'),
                   text: t(
-                    'نقاط اندازه‌گیری لرزش و آنالیز روغن با حد هشدار؛ برنامه زمانی ماهانه MP-2010 با دستورالعمل مسیر پایش؛ برنامه مبتنی بر وضعیت که با عبور از حد هشدار اعلان می‌سازد؛ قاعده تسویه پیش‌فرض به CC-3100 با پرچم R و طبقه عملیاتی؛ و ثبت آنالیز روغن آزمایشگاه بیرونی با SES.',
-                    'Measuring points for vibration and oil analysis with alert limits; a monthly time-based plan MP-2010 with the monitoring-route task list; a condition-based plan that raises a notification when a limit is crossed; a default settlement rule to CC-3100 with flag R and category Operating; and the outside lab’s oil analysis accepted on an SES.',
+                    'نقاط اندازه‌گیری لرزش و آنالیز روغن با حد هشدار؛ برنامه زمانی ماهانه MP-2010 با دستورالعمل مسیر پایش؛ برنامه مبتنی بر وضعیت که با عبور از حد هشدار اعلان می‌سازد؛ قاعده تسویه پیش‌فرض به CC-ARY-CMP با پرچم R و طبقه عملیاتی؛ و ثبت آنالیز روغن آزمایشگاه بیرونی با SES.',
+                    'Measuring points for vibration and oil analysis with alert limits; a monthly time-based plan MP-2010 with the monitoring-route task list; a condition-based plan that raises a notification when a limit is crossed; a default settlement rule to CC-ARY-CMP with flag R and category Operating; and the outside lab’s oil analysis accepted on an SES.',
                   ),
                 },
               ],

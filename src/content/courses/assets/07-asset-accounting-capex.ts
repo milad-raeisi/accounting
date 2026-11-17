@@ -3,18 +3,18 @@ import type { Lesson } from '../../types'
 /*
  * Running example: Masar Petroleum, Arya field.
  * K-101 overhaul in the turnaround: 2,400,000 (capital work order WO-70110).
- * AFE-2026-07: install a third compressor K-103 (budget 6,000,000).
+ * AFE-2025-021: install a third compressor K-103 (budget 6,000,000).
  * Arya oil and gas properties: 72,000,000; proved developed reserves 24,000,000 boe; production 2,400,000 boe.
  */
 const ac = {
-  auc: { fa: 'دارایی در جریان تکمیل (AFE-2026-07)', en: 'Assets under construction (AFE-2026-07)' },
+  auc: { fa: 'دارایی در جریان تکمیل (AFE-2025-021)', en: 'Assets under construction (AFE-2025-021)' },
   aucOverhaul: { fa: 'دارایی در جریان تکمیل: تعمیر اساسی K-101', en: 'Assets under construction: K-101 overhaul' },
   aucGeneric: { fa: 'دارایی در جریان تکمیل', en: 'Assets under construction' },
   plant: { fa: 'ماشین‌آلات و تجهیزات', en: 'Plant and machinery' },
   plantK103: { fa: 'ماشین‌آلات و تجهیزات: کمپرسور K-103', en: 'Plant and machinery: compressor K-103' },
   plantOverhaul: { fa: 'ماشین‌آلات و تجهیزات: جزء تعمیر اساسی', en: 'Plant and machinery: overhaul component' },
   accDep: { fa: 'استهلاک انباشته ماشین‌آلات و تجهیزات', en: 'Accumulated depreciation: plant and machinery' },
-  depExp: { fa: 'هزینه استهلاک (CC-3100)', en: 'Depreciation expense (CC-3100)' },
+  depExp: { fa: 'هزینه استهلاک (CC-ARY-CMP)', en: 'Depreciation expense (CC-ARY-CMP)' },
   depletionExp: { fa: 'هزینه استهلاک ذخایر', en: 'Depletion expense' },
   accDepletion: { fa: 'استهلاک انباشته ذخایر: دارایی‌های نفت و گاز', en: 'Accumulated depletion: oil and gas properties' },
   grir: { fa: 'حساب واسط رسید کالا و فاکتور (GR/IR)', en: 'GR/IR clearing account' },
@@ -241,7 +241,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: { fa: 'AFE-2026-07: نصب کمپرسور سوم K-103 (بودجه 6,000,000)', en: 'AFE-2026-07: install a third compressor K-103 (budget 6,000,000)' },
+          caption: { fa: 'AFE-2025-021: نصب کمپرسور سوم K-103 (بودجه 6,000,000)', en: 'AFE-2025-021: install a third compressor K-103 (budget 6,000,000)' },
           head: [
             { fa: 'مخارج', en: 'Cost' },
             { fa: 'مبلغ', en: 'Amount' },
@@ -274,7 +274,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'journal',
-          title: { fa: 'گردش AFE-2026-07 در دفاتر', en: 'AFE-2026-07 through the books' },
+          title: { fa: 'گردش AFE-2025-021 در دفاتر', en: 'AFE-2025-021 through the books' },
           entries: [
             {
               date: { fa: 'رسید پکیج کمپرسور', en: 'Compressor package receipt' },
@@ -625,7 +625,7 @@ export const lesson: Lesson = {
             [{ fa: 'A-100231', en: 'A-100231' }, { fa: 'جزء تعمیر اساسی K-101 (6 ماه)', en: 'K-101 overhaul component (6 months)' }, 2400000, 240000, 2160000],
             [{ fa: 'A-100232', en: 'A-100232' }, { fa: 'پکیج کمپرسور K-102', en: 'K-102 compressor package' }, 4800000, 2640000, 2160000],
             [{ fa: 'A-100245', en: 'A-100245' }, { fa: 'کمپرسور K-103 (4 جزء، سال اول)', en: 'K-103 compressor (4 components, year 1)' }, 5750000, 525000, 5225000],
-            [{ fa: 'A-900012', en: 'A-900012' }, { fa: 'AUC: ارتقای کولر گاز (AFE-2026-11)', en: 'AUC: gas cooler upgrade (AFE-2026-11)' }, 830000, 0, 830000],
+            [{ fa: 'A-900012', en: 'A-900012' }, { fa: 'AUC: ارتقای کولر گاز (AFE-2026-011)', en: 'AUC: gas cooler upgrade (AFE-2026-011)' }, 830000, 0, 830000],
             [{ fa: '', en: '' }, { fa: 'جمع', en: 'Total' }, 18580000, 6285000, 12295000],
           ],
           numericCols: [2, 3, 4],

@@ -12,8 +12,8 @@ const ac = {
     en: 'Materials consumption expense (production operations)',
   },
   wellAR12: {
-    fa: 'دارایی در جریان ساخت: چاه AR-12 (AFE-012)',
-    en: 'Assets under construction: well AR-12 (AFE-012)',
+    fa: 'دارایی در جریان ساخت: چاه AR-12 (AFE-2026-012)',
+    en: 'Assets under construction: well AR-12 (AFE-2026-012)',
   },
 }
 
@@ -539,7 +539,7 @@ export const lesson: Lesson = {
             [
               { fa: '`10004521`', en: '`10004521`' },
               { fa: 'VALVE BALL 2IN 600#', en: 'VALVE BALL 2IN 600#' },
-              { fa: 'MP10', en: 'MP10' },
+              { fa: 'WH-10', en: 'WH-10' },
               4,
               430,
               1720,
@@ -548,7 +548,7 @@ export const lesson: Lesson = {
             [
               { fa: '`10007788`', en: '`10007788`' },
               { fa: 'شیر توپی 2 اینچ', en: 'Persian free text (“ball valve 2 inch”)' },
-              { fa: 'MP10', en: 'MP10' },
+              { fa: 'WH-10', en: 'WH-10' },
               3,
               465,
               1395,
@@ -557,7 +557,7 @@ export const lesson: Lesson = {
             [
               { fa: '`10011240`', en: '`10011240`' },
               { fa: 'BALL VALVE 2" CL600 RF', en: 'BALL VALVE 2" CL600 RF' },
-              { fa: 'MP20', en: 'MP20' },
+              { fa: 'WH-20', en: 'WH-20' },
               0,
               450,
               0,
@@ -904,8 +904,8 @@ export const lesson: Lesson = {
           title: { fa: 'واحدهای سنجش باریت', en: 'Barite units of measure' },
           difficulty: 'medium',
           problem: {
-            fa: 'مسار پترولیوم 18 تن باریت به قیمت هر تن 280 برای انبار مرکزی سفارش داده است. واحد پایه کیلوگرم است، هر کیسه 25 کیلوگرم و هر جامبوبگ 1,500 کیلوگرم. (الف) مقدار رسید را به کیلوگرم، کیسه و جامبوبگ حساب کنید. (ب) ارزش رسید و قیمت هر کیلوگرم چقدر است؟ (ج) 120 کیسه برای حفاری چاه AR-12 به AFE-012 حواله می‌شود؛ ثبت‌های خودکار رسید و حواله را بنویسید. (د) موجودی باقی‌مانده را به کیلوگرم، کیسه و ارزش به دست آورید.',
-            en: 'Masar Petroleum has ordered 18 tonnes of barite at 280 per tonne for the Central Warehouse. The base unit is the kilogram, a sack holds 25 kg and a big bag 1,500 kg. (a) Express the receipt in kilograms, sacks and big bags. (b) What are the receipt value and the price per kilogram? (c) 120 sacks are issued for drilling well AR-12 under AFE-012; write the automatic entries for the receipt and the issue. (d) Work out the remaining stock in kilograms, sacks and value.',
+            fa: 'مسار پترولیوم 18 تن باریت به قیمت هر تن 280 برای انبار مرکزی سفارش داده است. واحد پایه کیلوگرم است، هر کیسه 25 کیلوگرم و هر جامبوبگ 1,500 کیلوگرم. (الف) مقدار رسید را به کیلوگرم، کیسه و جامبوبگ حساب کنید. (ب) ارزش رسید و قیمت هر کیلوگرم چقدر است؟ (ج) 120 کیسه برای حفاری چاه AR-12 به AFE-2026-012 حواله می‌شود؛ ثبت‌های خودکار رسید و حواله را بنویسید. (د) موجودی باقی‌مانده را به کیلوگرم، کیسه و ارزش به دست آورید.',
+            en: 'Masar Petroleum has ordered 18 tonnes of barite at 280 per tonne for the Central Warehouse. The base unit is the kilogram, a sack holds 25 kg and a big bag 1,500 kg. (a) Express the receipt in kilograms, sacks and big bags. (b) What are the receipt value and the price per kilogram? (c) 120 sacks are issued for drilling well AR-12 under AFE-2026-012; write the automatic entries for the receipt and the issue. (d) Work out the remaining stock in kilograms, sacks and value.',
           },
           hint: {
             fa: 'همه چیز را اول به واحد پایه (کیلوگرم) تبدیل کنید.',
@@ -958,7 +958,7 @@ export const lesson: Lesson = {
                   memo: { fa: '18 تن × 280', en: '18 tonnes × 280' },
                 },
                 {
-                  date: { fa: 'حواله به AFE-012', en: 'Issue to AFE-012' },
+                  date: { fa: 'حواله به AFE-2026-012', en: 'Issue to AFE-2026-012' },
                   lines: [
                     { account: ac.wellAR12, debit: 840 },
                     { account: ac.chemicals, credit: 840 },
@@ -1037,8 +1037,8 @@ export const lesson: Lesson = {
           title: { fa: 'ادغام یاتاقان‌های تکراری', en: 'Merging duplicate bearings' },
           difficulty: 'hard',
           problem: {
-            fa: 'در انبار مرکزی (سایت MP10) سه کد برای یک یاتاقان `6312-2Z` پیدا شده است (جدول). کد `10002210` ماندگار است. (الف) پس از ادغام، مقدار، ارزش و میانگین موزون متحرک کد ماندگار چقدر است؟ (ب) ثبت‌های خودکار مالی انتقال‌ها را بنویسید. (ج) مصرف سالانه این یاتاقان 10 عدد و نقطه سفارش آن 4 عدد است و یک درخواست خرید باز برای 8 عدد به قیمت هر عدد 56 وجود دارد. با آن چه باید کرد و چه مبلغی صرفه‌جویی می‌شود؟',
-            en: 'Three codes for one `6312-2Z` bearing have been found in the Central Warehouse (site MP10); see the table. Code `10002210` will survive. (a) After the merge, what are the surviving code’s quantity, value and moving average price? (b) Write the automatic Finance entries for the transfers. (c) Annual usage is 10 bearings, the reorder point is 4, and there is an open purchase requisition for 8 at 56 each. What should happen to it, and how much is saved?',
+            fa: 'در انبار مرکزی (سایت WH-10) سه کد برای یک یاتاقان `6312-2Z` پیدا شده است (جدول). کد `10002210` ماندگار است. (الف) پس از ادغام، مقدار، ارزش و میانگین موزون متحرک کد ماندگار چقدر است؟ (ب) ثبت‌های خودکار مالی انتقال‌ها را بنویسید. (ج) مصرف سالانه این یاتاقان 10 عدد و نقطه سفارش آن 4 عدد است و یک درخواست خرید باز برای 8 عدد به قیمت هر عدد 56 وجود دارد. با آن چه باید کرد و چه مبلغی صرفه‌جویی می‌شود؟',
+            en: 'Three codes for one `6312-2Z` bearing have been found in the Central Warehouse (site WH-10); see the table. Code `10002210` will survive. (a) After the merge, what are the surviving code’s quantity, value and moving average price? (b) Write the automatic Finance entries for the transfers. (c) Annual usage is 10 bearings, the reorder point is 4, and there is an open purchase requisition for 8 at 56 each. What should happen to it, and how much is saved?',
           },
           given: {
             head: [

@@ -4,7 +4,7 @@ import type { Lesson } from '../types'
 const ac = {
   bank: { fa: '1110 موجودی نقد (بانک)', en: '1110 Cash at bank' },
   inventory: { fa: '1310 موجودی مواد و قطعات', en: '1310 Materials and spares inventory' },
-  ee: { fa: '1505 دارایی‌های اکتشاف و ارزیابی', en: '1505 Exploration and evaluation assets' },
+  ee: { fa: '1530 دارایی‌های اکتشاف و ارزیابی', en: '1530 Exploration and evaluation assets' },
   auc: { fa: '1510 دارایی‌های در جریان تکمیل', en: '1510 Assets under construction' },
   ogp: { fa: '1520 دارایی‌های نفت و گاز', en: '1520 Oil and gas properties' },
   accDepl: { fa: '1595 استهلاک انباشته ذخایر', en: '1595 Accumulated depletion' },
@@ -13,7 +13,7 @@ const ac = {
   provision: { fa: '2510 ذخیره برچیدن تأسیسات', en: '2510 Decommissioning provision' },
   explExp: { fa: '5610 هزینه اکتشاف', en: '5610 Exploration expense' },
   depletion: { fa: '5220 هزینه استهلاک ذخایر', en: '5220 Depletion expense' },
-  finance: { fa: '5710 هزینه مالی (آزادسازی تنزیل)', en: '5710 Finance cost (unwinding of discount)' },
+  finance: { fa: '7120 هزینه مالی (آزادسازی تنزیل)', en: '7120 Finance cost (unwinding of discount)' },
   loss: { fa: '5720 زیان برچیدن تأسیسات', en: '5720 Loss on decommissioning' },
 }
 
@@ -271,8 +271,8 @@ export const lesson: Lesson = {
             {
               date: t('حین حفاری', 'During drilling'),
               lines: [
-                { account: t('1505 دارایی‌های اکتشاف و ارزیابی (AFE-101، چاه AR-X1)', '1505 E&E assets (AFE-101, well AR-X1)'), debit: 12000000 },
-                { account: t('1505 دارایی‌های اکتشاف و ارزیابی (AFE-102، چاه AR-X2)', '1505 E&E assets (AFE-102, well AR-X2)'), debit: 8000000 },
+                { account: t('1530 دارایی‌های اکتشاف و ارزیابی (EXP-2022-001، چاه AR-X1)', '1530 E&E assets (EXP-2022-001, well AR-X1)'), debit: 12000000 },
+                { account: t('1530 دارایی‌های اکتشاف و ارزیابی (EXP-2022-002، چاه AR-X2)', '1530 E&E assets (EXP-2022-002, well AR-X2)'), debit: 8000000 },
                 { account: ac.grir, credit: 20000000 },
               ],
               memo: {
@@ -292,7 +292,7 @@ export const lesson: Lesson = {
               date: t('اعلام خشک بودن', 'Declared dry'),
               lines: [
                 { account: t('5610 هزینه اکتشاف (چاه خشک)', '5610 Exploration expense (dry hole)'), debit: 8000000 },
-                { account: t('1505 دارایی‌های اکتشاف و ارزیابی (AFE-102)', '1505 E&E assets (AFE-102)'), credit: 8000000 },
+                { account: t('1530 دارایی‌های اکتشاف و ارزیابی (EXP-2022-002)', '1530 E&E assets (EXP-2022-002)'), credit: 8000000 },
               ],
               memo: { fa: 'چاه AR-X2 خشک اعلام شد.', en: 'Well AR-X2 is declared dry.' },
             },
@@ -300,7 +300,7 @@ export const lesson: Lesson = {
               date: t('اعلام تجاری بودن', 'Declared commercial'),
               lines: [
                 { account: t('1510 دارایی‌های در جریان تکمیل (توسعه میدان آریا)', '1510 Assets under construction (Arya field development)'), debit: 12000000 },
-                { account: t('1505 دارایی‌های اکتشاف و ارزیابی (AFE-101)', '1505 E&E assets (AFE-101)'), credit: 12000000 },
+                { account: t('1530 دارایی‌های اکتشاف و ارزیابی (EXP-2022-001)', '1530 E&E assets (EXP-2022-001)'), credit: 12000000 },
               ],
               memo: {
                 fa: 'پس از آزمون کاهش ارزش، AR-X1 به دارایی‌های توسعه منتقل می‌شود.',
@@ -582,10 +582,10 @@ export const lesson: Lesson = {
           rows: [
             [t('مرکز سود', 'Profit centre'), t('PC-ARYA', 'PC-ARYA'), t('میدان آریا', 'Arya field'), t('درآمد و هزینه میدان', 'Field revenue and cost')],
             [t('پروژه', 'Project'), t('P-ARYA-EXP', 'P-ARYA-EXP'), t('برنامه اکتشاف آریا', 'Arya exploration programme'), t('مرحله: اکتشاف؛ رویه IFRS 6', 'Phase: exploration; IFRS 6 policy')],
-            [t('عنصر WBS', 'WBS element'), t('AR-X2', 'AR-X2'), t('چاه اکتشافی AR-X2', 'Exploration well AR-X2'), t('AFE-102؛ وضعیت: خشک، هزینه شد', 'AFE-102; status: dry, written off')],
+            [t('عنصر WBS', 'WBS element'), t('AR-X2', 'AR-X2'), t('چاه اکتشافی AR-X2', 'Exploration well AR-X2'), t('EXP-2022-002؛ وضعیت: خشک، هزینه شد', 'EXP-2022-002; status: dry, written off')],
             [t('پروژه', 'Project'), t('P-ARYA-DEV', 'P-ARYA-DEV'), t('توسعه میدان آریا', 'Arya field development'), t('مرحله: توسعه', 'Phase: development')],
-            [t('عنصر WBS', 'WBS element'), t('AR-07', 'AR-07'), t('حفاری و تکمیل چاه AR-07', 'Drill and complete well AR-07'), t('AFE-207؛ بودجه 9,000,000؛ قابل بازیافت؛ مشارکتی', 'AFE-207; budget 9,000,000; recoverable; joint venture')],
-            [t('مرکز هزینه', 'Cost centre'), t('CC-110', 'CC-110'), t('عملیات میدان آریا', 'Arya field operations'), t('هزینه عملیاتی؛ قابل بازیافت', 'Operating cost; recoverable')],
+            [t('عنصر WBS', 'WBS element'), t('AR-13', 'AR-13'), t('حفاری و تکمیل چاه AR-13', 'Drill and complete well AR-13'), t('AFE-2026-013؛ بودجه 9,000,000؛ قابل بازیافت؛ مشارکتی', 'AFE-2026-013; budget 9,000,000; recoverable; joint venture')],
+            [t('مرکز هزینه', 'Cost centre'), t('CC-ARY-PRD', 'CC-ARY-PRD'), t('عملیات میدان آریا', 'Arya field operations'), t('هزینه عملیاتی؛ قابل بازیافت', 'Operating cost; recoverable')],
           ],
         },
         {
@@ -593,11 +593,11 @@ export const lesson: Lesson = {
           items: [
             {
               title: t('تهیه AFE', 'Prepare the AFE'),
-              text: t('مهندس حفاری برآورد هزینه چاه AR-07 را به تفکیک دسته (دکل، لوله، گل حفاری، خدمات) تهیه می‌کند.', 'The drilling engineer prepares the cost estimate for well AR-07 by category (rig, tubulars, mud, services).'),
+              text: t('مهندس حفاری برآورد هزینه چاه AR-13 را به تفکیک دسته (دکل، لوله، گل حفاری، خدمات) تهیه می‌کند.', 'The drilling engineer prepares the cost estimate for well AR-13 by category (rig, tubulars, mud, services).'),
             },
             {
               title: t('تصویب', 'Approve'),
-              text: t('مدیریت و، چون میدان مشارکتی است، شرکا AFE-207 را تصویب می‌کنند.', 'Management and, because the field is a joint venture, the partners approve AFE-207.'),
+              text: t('مدیریت و، چون میدان مشارکتی است، شرکا AFE-2026-013 را تصویب می‌کنند.', 'Management and, because the field is a joint venture, the partners approve AFE-2026-013.'),
             },
             {
               title: t('ساخت در ERP', 'Set up in the ERP'),
@@ -619,7 +619,7 @@ export const lesson: Lesson = {
         },
         {
           type: 'table',
-          caption: { fa: 'AFE-207: بودجه در برابر واقعی چاه AR-07', en: 'AFE-207: budget versus actual for well AR-07' },
+          caption: { fa: 'AFE-2026-013: بودجه در برابر واقعی چاه AR-13', en: 'AFE-2026-013: budget versus actual for well AR-13' },
           head: [
             { fa: 'دسته هزینه', en: 'Cost category' },
             { fa: 'بودجه AFE', en: 'AFE budget' },
@@ -639,12 +639,12 @@ export const lesson: Lesson = {
         },
         {
           type: 'journal',
-          title: { fa: 'ثبت‌هایی که ERP برای چاه AR-07 می‌سازد (خلاصه)', en: 'Entries the ERP posts for well AR-07 (summarised)' },
+          title: { fa: 'ثبت‌هایی که ERP برای چاه AR-13 می‌سازد (خلاصه)', en: 'Entries the ERP posts for well AR-13 (summarised)' },
           entries: [
             {
               date: t('حین حفاری', 'During drilling'),
               lines: [
-                { account: t('1510 دارایی‌های در جریان تکمیل (WBS AR-07)', '1510 Assets under construction (WBS AR-07)'), debit: 1750000 },
+                { account: t('1510 دارایی‌های در جریان تکمیل (WBS AR-13)', '1510 Assets under construction (WBS AR-13)'), debit: 1750000 },
                 { account: ac.inventory, credit: 1750000 },
               ],
               memo: { fa: 'حواله لوله جداری و مغزی از انبار مرکزی.', en: 'Casing and tubing issued from the Central Warehouse.' },
@@ -652,7 +652,7 @@ export const lesson: Lesson = {
             {
               date: t('حین حفاری', 'During drilling'),
               lines: [
-                { account: t('1510 دارایی‌های در جریان تکمیل (WBS AR-07)', '1510 Assets under construction (WBS AR-07)'), debit: 3850000 },
+                { account: t('1510 دارایی‌های در جریان تکمیل (WBS AR-13)', '1510 Assets under construction (WBS AR-13)'), debit: 3850000 },
                 { account: ac.grir, credit: 3850000 },
               ],
               memo: { fa: 'برگه‌های ثبت خدمات (SES) دکل، بر پایه گزارش‌های روزانه حفاری که سرپرست حفاری امضا کرده است.', en: 'Rig service entry sheets (SES), based on daily drilling reports signed by the drilling supervisor.' },
@@ -660,10 +660,10 @@ export const lesson: Lesson = {
             {
               date: t('تکمیل چاه', 'Well completed'),
               lines: [
-                { account: t('1520 دارایی‌های نفت و گاز (چاه AR-07)', '1520 Oil and gas properties (well AR-07)'), debit: 9140000 },
-                { account: t('1510 دارایی‌های در جریان تکمیل (WBS AR-07)', '1510 Assets under construction (WBS AR-07)'), credit: 9140000 },
+                { account: t('1520 دارایی‌های نفت و گاز (چاه AR-13)', '1520 Oil and gas properties (well AR-13)'), debit: 9140000 },
+                { account: t('1510 دارایی‌های در جریان تکمیل (WBS AR-13)', '1510 Assets under construction (WBS AR-13)'), credit: 9140000 },
               ],
-              memo: { fa: 'تسویه کل هزینه واقعی AFE-207 به دارایی نهایی.', en: 'Settlement of the full AFE-207 actual cost to the final asset.' },
+              memo: { fa: 'تسویه کل هزینه واقعی AFE-2026-013 به دارایی نهایی.', en: 'Settlement of the full AFE-2026-013 actual cost to the final asset.' },
             },
           ],
         },
@@ -1173,8 +1173,8 @@ export const lesson: Lesson = {
     },
     {
       q: {
-        fa: 'بودجه AFE-207 برابر 9,000,000 و هزینه واقعی 9,140,000 است. آستانه AFE تکمیلی در این مثال 10٪ است. کدام درست است؟',
-        en: 'AFE-207’s budget is 9,000,000 and actual cost is 9,140,000. In this example the supplementary-AFE threshold is 10%. Which is correct?',
+        fa: 'بودجه AFE-2026-013 برابر 9,000,000 و هزینه واقعی 9,140,000 است. آستانه AFE تکمیلی در این مثال 10٪ است. کدام درست است؟',
+        en: 'AFE-2026-013’s budget is 9,000,000 and actual cost is 9,140,000. In this example the supplementary-AFE threshold is 10%. Which is correct?',
       },
       options: [
         { fa: 'بیش‌خرج 1,400,000 است و AFE تکمیلی لازم است', en: 'The overrun is 1,400,000 and a supplementary AFE is needed' },

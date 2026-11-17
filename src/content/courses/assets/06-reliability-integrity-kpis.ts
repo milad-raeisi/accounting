@@ -5,8 +5,8 @@ import type { Lesson } from '../../types'
  * separator V-201. Arya field production this year: 2,400,000 boe.
  */
 const ac = {
-  inspection: { fa: 'هزینه خدمات بازرسی (WO-51240، CC-3100)', en: 'Inspection services expense (WO-51240, CC-3100)' },
-  chemicals: { fa: 'هزینه مواد شیمیایی تولید (CC-3100)', en: 'Production chemicals expense (CC-3100)' },
+  inspection: { fa: 'هزینه خدمات بازرسی (WO-51240، CC-ARY-CMP)', en: 'Inspection services expense (WO-51240, CC-ARY-CMP)' },
+  chemicals: { fa: 'هزینه مواد شیمیایی تولید (CC-ARY-CMP)', en: 'Production chemicals expense (CC-ARY-CMP)' },
   chemStock: { fa: 'موجودی مواد شیمیایی', en: 'Inventory: production chemicals' },
   grir: { fa: 'حساب واسط رسید کالا و فاکتور (GR/IR)', en: 'GR/IR clearing account' },
   ap: { fa: 'حساب‌های پرداختنی', en: 'Accounts payable' },
@@ -523,7 +523,7 @@ export const lesson: Lesson = {
             ],
             [
               { fa: 'مرکز هزینه و حجم تولید', en: 'Cost centres and production volumes' },
-              { fa: 'CC-3100 ایستگاه تقویت فشار؛ تولید ماهانه از سامانه حسابداری تولید', en: 'CC-3100 compressor station; monthly production from the production accounting system' },
+              { fa: 'CC-ARY-CMP ایستگاه تقویت فشار؛ تولید ماهانه از سامانه حسابداری تولید', en: 'CC-ARY-CMP compressor station; monthly production from the production accounting system' },
             ],
           ],
         },

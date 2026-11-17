@@ -3,9 +3,9 @@ import type { L, Lesson } from '../../types'
 /*
  * Running example (shared with the rest of the assets course): Masar Petroleum (MP01), Arya field.
  * Compressor station: centrifugal compressors K-101 and K-102 driven by gas turbines GT-101 and GT-102.
- * Production station: inlet separator V-201 with relief valve PSV-205. Cost centres: CC-3100 compressor
- * station, CC-3200 production station. New equipment in this lesson: chemical-injection pump P-160
- * (AFE-2026-04) and fuel-gas filter separator V-150 (AFE-2026-05).
+ * Production station: inlet separator V-201 with relief valve PSV-205. Cost centres: CC-ARY-CMP compressor
+ * station, CC-ARY-PRD production station. New equipment in this lesson: chemical-injection pump P-160
+ * (AFE-2026-004) and fuel-gas filter separator V-150 (AFE-2026-006).
  */
 
 /** Short bilingual string helper. */
@@ -386,7 +386,7 @@ export const lesson: Lesson = {
           head: [t('مشخصه', 'Attribute'), t('مقدار', 'Value')],
           rows: [
             [t('کلاس', 'Class'), t('کمپرسور گریز از مرکز', 'Centrifugal compressor')],
-            [t('سازنده و مدل', 'Manufacturer and model'), t('شرکت نمونه (فرضی)، مدل CC-24', 'Sample Compressors Ltd (fictional), model CC-24')],
+            [t('سازنده و مدل', 'Manufacturer and model'), t('شرکت نمونه (فرضی)، مدل CX-24', 'Sample Compressors Ltd (fictional), model CX-24')],
             [t('شماره سریال', 'Serial number'), t('SN-7781', 'SN-7781')],
             [t('محرک و توان نامی', 'Driver and rated power'), t('توربین گازی GT-101، 7,500 kW', 'Gas turbine GT-101, 7,500 kW')],
             [t('فشار مکش / رانش', 'Suction / discharge pressure'), t('18 bar / 70 bar', '18 bar / 70 bar')],
@@ -474,8 +474,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'مسار پترولیوم برای تزریق بازدارنده خوردگی به چاه‌ها یک پمپ تزریق مواد شیمیایی (`P-160`) را با مجوز هزینه‌کرد **AFE-2026-04** می‌خرد. ببینید داده پایه، اسناد و نقش‌ها چطور کنار هم قرار می‌گیرند:',
-            en: 'To inject corrosion inhibitor into the wells, Masar Petroleum buys a chemical-injection pump (`P-160`) under **AFE-2026-04**. See how master data, documents and roles fit together:',
+            fa: 'مسار پترولیوم برای تزریق بازدارنده خوردگی به چاه‌ها یک پمپ تزریق مواد شیمیایی (`P-160`) را با مجوز هزینه‌کرد **AFE-2026-004** می‌خرد. ببینید داده پایه، اسناد و نقش‌ها چطور کنار هم قرار می‌گیرند:',
+            en: 'To inject corrosion inhibitor into the wells, Masar Petroleum buys a chemical-injection pump (`P-160`) under **AFE-2026-004**. See how master data, documents and roles fit together:',
           },
         },
         {
@@ -491,8 +491,8 @@ export const lesson: Lesson = {
             {
               title: t('تدارکات و انبار: سفارش خرید سرمایه‌ای و GRN', 'Procurement and warehouse: capital purchase order and GRN'),
               text: t(
-                'سفارش خرید با تخصیص به AFE-2026-04 ثبت می‌شود، نه به یک مرکز هزینه. انباردار با **رسید کالا (GRN)** دریافت پمپ را ثبت می‌کند و چون کالا مستقیم به AFE می‌رود، بها به «دارایی در جریان تکمیل» می‌نشیند.',
-                'The purchase order is assigned to AFE-2026-04, not to a cost centre. The storekeeper records the pump’s arrival with a **goods received note (GRN)**; because it is charged directly to the AFE, the cost lands on "assets under construction".',
+                'سفارش خرید با تخصیص به AFE-2026-004 ثبت می‌شود، نه به یک مرکز هزینه. انباردار با **رسید کالا (GRN)** دریافت پمپ را ثبت می‌کند و چون کالا مستقیم به AFE می‌رود، بها به «دارایی در جریان تکمیل» می‌نشیند.',
+                'The purchase order is assigned to AFE-2026-004, not to a cost centre. The storekeeper records the pump’s arrival with a **goods received note (GRN)**; because it is charged directly to the AFE, the cost lands on "assets under construction".',
               ),
             },
             {
@@ -522,7 +522,7 @@ export const lesson: Lesson = {
             {
               date: t('رسید کالا (GRN)', 'Goods received note (GRN)'),
               lines: [
-                { account: auc('AFE-2026-04'), debit: 48000 },
+                { account: auc('AFE-2026-004'), debit: 48000 },
                 { account: ac.grir, credit: 48000 },
               ],
               memo: t('دریافت پمپ با سفارش خرید سرمایه‌ای؛ تعهد سفارش به هزینه واقعی AFE تبدیل می‌شود', 'Pump received on the capital purchase order; the PO commitment becomes an actual cost on the AFE'),
@@ -538,7 +538,7 @@ export const lesson: Lesson = {
             {
               date: t('تسویه دستور کار نصب WO-40021', 'Settlement of installation work order WO-40021'),
               lines: [
-                { account: auc('AFE-2026-04'), debit: 12000 },
+                { account: auc('AFE-2026-004'), debit: 12000 },
                 { account: ac.capMaint, credit: 12000 },
               ],
               memo: t('دستمزد و مواد نصب که روی دستور کار ثبت شده بود، از هزینه به دارایی منتقل می‌شود', 'Installation labour and materials posted on the work order move from expense to the asset'),
@@ -547,7 +547,7 @@ export const lesson: Lesson = {
               date: t('سرمایه‌ای کردن', 'Capitalisation'),
               lines: [
                 { account: ppe('FA-30120'), debit: 60000 },
-                { account: auc('AFE-2026-04'), credit: 60000 },
+                { account: auc('AFE-2026-004'), credit: 60000 },
               ],
               memo: t('48,000 + 12,000 = 60,000؛ پرچم بازیافت R، طبقه هزینه توسعه', '48,000 + 12,000 = 60,000; recovery flag R, cost category Development'),
             },
@@ -774,8 +774,8 @@ export const lesson: Lesson = {
           title: t('سرمایه‌ای کردن یک فیلتر جداکننده جدید', 'Capitalising a new filter separator'),
           difficulty: 'hard',
           problem: t(
-            'فیلتر جداکننده جدید گاز سوخت `V-150` در ایستگاه تقویت فشار با AFE-2026-05 نصب شده است. همه هزینه‌های زیر روی AFE (دارایی در جریان تکمیل) نشسته‌اند. طبق IAS 16 مبلغ قابل سرمایه‌ای کردن را تعیین کنید، سند اصلاح و سند سرمایه‌ای کردن را بنویسید و بگویید در فهرست فنی چه رکوردهایی باید ساخته شود.',
-            'A new fuel-gas filter separator `V-150` was installed at the compressor station under AFE-2026-05. All the costs below sit on the AFE (assets under construction). Under IAS 16, determine the amount to capitalise, write the correcting entry and the capitalisation entry, and say which records must be created in the technical register.',
+            'فیلتر جداکننده جدید گاز سوخت `V-150` در ایستگاه تقویت فشار با AFE-2026-006 نصب شده است. همه هزینه‌های زیر روی AFE (دارایی در جریان تکمیل) نشسته‌اند. طبق IAS 16 مبلغ قابل سرمایه‌ای کردن را تعیین کنید، سند اصلاح و سند سرمایه‌ای کردن را بنویسید و بگویید در فهرست فنی چه رکوردهایی باید ساخته شود.',
+            'A new fuel-gas filter separator `V-150` was installed at the compressor station under AFE-2026-006. All the costs below sit on the AFE (assets under construction). Under IAS 16, determine the amount to capitalise, write the correcting entry and the capitalisation entry, and say which records must be created in the technical register.',
           ),
           given: {
             head: [t('هزینه', 'Cost'), t('مبلغ', 'Amount')],
@@ -814,8 +814,8 @@ export const lesson: Lesson = {
                 {
                   date: t('اصلاح', 'Correction'),
                   lines: [
-                    { account: t('هزینه آموزش (CC-3100، طبقه عملیاتی)', 'Training expense (CC-3100, Operating)'), debit: 6000 },
-                    { account: auc('AFE-2026-05'), credit: 6000 },
+                    { account: t('هزینه آموزش (CC-ARY-CMP، طبقه عملیاتی)', 'Training expense (CC-ARY-CMP, Operating)'), debit: 6000 },
+                    { account: auc('AFE-2026-006'), credit: 6000 },
                   ],
                   memo: t('آموزش هزینه دوره است، نه بخشی از بهای دارایی', 'Training is a period expense, not part of the asset’s cost'),
                 },
@@ -823,7 +823,7 @@ export const lesson: Lesson = {
                   date: t('سرمایه‌ای کردن', 'Capitalisation'),
                   lines: [
                     { account: ppe('FA-30131'), debit: 230000 },
-                    { account: auc('AFE-2026-05'), credit: 230000 },
+                    { account: auc('AFE-2026-006'), credit: 230000 },
                   ],
                   memo: t('236,000 − 6,000 = 230,000؛ پرچم بازیافت R، طبقه هزینه توسعه', '236,000 − 6,000 = 230,000; recovery flag R, cost category Development'),
                 },

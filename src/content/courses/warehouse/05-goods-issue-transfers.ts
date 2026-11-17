@@ -41,8 +41,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: {
-            fa: 'ساعت 6 صبح، کمپرسور **K-201** در ایستگاه تقویت فشار میدان آریا به دلیل شکستن یک سوپاپ از مدار خارج می‌شود. تیم تعمیرات فوراً **کیت سوپاپ** (کالای 300500) لازم دارد. انباردار انبار میدان کیت را تحویل می‌دهد و با خودش می‌گوید: «کاغذبازی‌اش بماند برای بعد». کمپرسور دوباره راه می‌افتد، اما سه مشکل پنهان می‌ماند: سیستم هنوز کیت را در انبار نشان می‌دهد و برنامه‌ریز مواد سفارش مجدد نمی‌دهد؛ هزینه 4,500 به مرکز هزینه ایستگاه (CC-310) نمی‌رسد و هزینه نگهداری کمپرسور کمتر از واقع گزارش می‌شود؛ و چون سندی برای مصرف وجود ندارد، این هزینه در ادعای بازیافت هزینه قابل دفاع نیست.',
-            en: 'At 6 a.m., compressor **K-201** at the Arya field compressor station trips because a valve has broken. The maintenance crew needs a **valve kit** (material 300500) right away. The Field Warehouse storekeeper hands one over and thinks, "I’ll do the paperwork later." The compressor runs again, but three problems stay hidden: the system still shows the kit on the shelf, so the material planner does not reorder; the 4,500 cost never reaches the compressor station cost centre (CC-310), so the compressor’s maintenance cost is understated; and with no document proving the material was used, the cost is hard to defend in a cost-recovery claim.',
+            fa: 'ساعت 6 صبح، کمپرسور **K-201** در ایستگاه تقویت فشار میدان آریا به دلیل شکستن یک سوپاپ از مدار خارج می‌شود. تیم تعمیرات فوراً **کیت سوپاپ** (کالای 300500) لازم دارد. انباردار انبار میدان کیت را تحویل می‌دهد و با خودش می‌گوید: «کاغذبازی‌اش بماند برای بعد». کمپرسور دوباره راه می‌افتد، اما سه مشکل پنهان می‌ماند: سیستم هنوز کیت را در انبار نشان می‌دهد و برنامه‌ریز مواد سفارش مجدد نمی‌دهد؛ هزینه 4,500 به مرکز هزینه ایستگاه (CC-ARY-CMP) نمی‌رسد و هزینه نگهداری کمپرسور کمتر از واقع گزارش می‌شود؛ و چون سندی برای مصرف وجود ندارد، این هزینه در ادعای بازیافت هزینه قابل دفاع نیست.',
+            en: 'At 6 a.m., compressor **K-201** at the Arya field compressor station trips because a valve has broken. The maintenance crew needs a **valve kit** (material 300500) right away. The Field Warehouse storekeeper hands one over and thinks, "I’ll do the paperwork later." The compressor runs again, but three problems stay hidden: the system still shows the kit on the shelf, so the material planner does not reorder; the 4,500 cost never reaches the compressor station cost centre (CC-ARY-CMP), so the compressor’s maintenance cost is understated; and with no document proving the material was used, the cost is hard to defend in a cost-recovery claim.',
           },
         },
         {
@@ -126,12 +126,12 @@ export const lesson: Lesson = {
               en: '**Maintenance work orders**: the maintenance planner adds the parts to the work order (for example two valve kits on WO-45120, the K-201 valve replacement) and the system creates the reservation automatically.',
             },
             {
-              fa: '**پروژه و AFE**: مهندس حفاری لوله جداری و مغزی چاه AR-12 را برای پروژه P-AR12 (ذیل AFE-2026-014) رزرو می‌کند؛ معمولاً چند هفته پیش از آن‌که حفاری به آن بخش چاه برسد.',
-              en: '**Projects and AFEs**: the drilling engineer reserves casing and tubing for well AR-12 against project P-AR12 (under AFE-2026-014), usually weeks before drilling reaches that section of the well.',
+              fa: '**پروژه و AFE**: مهندس حفاری لوله جداری و مغزی چاه AR-12 را برای پروژه P-AR12 (ذیل AFE-2026-012) رزرو می‌کند؛ معمولاً چند هفته پیش از آن‌که حفاری به آن بخش چاه برسد.',
+              en: '**Projects and AFEs**: the drilling engineer reserves casing and tubing for well AR-12 against project P-AR12 (under AFE-2026-012), usually weeks before drilling reaches that section of the well.',
             },
             {
-              fa: '**درخواست مرکز هزینه**: واحد بهره‌برداری برای مصرف جاری، مثلاً بازدارنده خوردگی چاه‌ها، درخواست کالا به نام مرکز هزینه CC-220 ثبت می‌کند.',
-              en: '**Cost-centre requests**: the production team raises a material request against cost centre CC-220 for routine consumption, such as corrosion inhibitor for the wells.',
+              fa: '**درخواست مرکز هزینه**: واحد بهره‌برداری برای مصرف جاری، مثلاً بازدارنده خوردگی چاه‌ها، درخواست کالا به نام مرکز هزینه CC-ARY-PRD ثبت می‌کند.',
+              en: '**Cost-centre requests**: the production team raises a material request against cost centre CC-ARY-PRD for routine consumption, such as corrosion inhibitor for the wells.',
             },
           ],
         },
@@ -148,7 +148,7 @@ export const lesson: Lesson = {
             [{ fa: 'مقدار', en: 'Quantity' }, { fa: '30 شاخه', en: '30 joints' }],
             [{ fa: 'تاریخ نیاز', en: 'Requirement date' }, { fa: 'روز 14 حفاری (شروع رانش لوله جداری)', en: 'Drilling day 14 (casing run starts)' }],
             [{ fa: 'انبار تحویل‌دهنده', en: 'Issuing warehouse' }, { fa: 'WH-20، انبار میدان (محوطه لوله)', en: 'WH-20, Field Warehouse (pipe yard)' }],
-            [{ fa: 'موضوع هزینه', en: 'Cost object' }, { fa: 'پروژه P-AR12 ذیل AFE-2026-014', en: 'Project P-AR12 under AFE-2026-014' }],
+            [{ fa: 'موضوع هزینه', en: 'Cost object' }, { fa: 'پروژه P-AR12 ذیل AFE-2026-012', en: 'Project P-AR12 under AFE-2026-012' }],
             [{ fa: 'دسته بازیافت هزینه', en: 'Cost-recovery category' }, { fa: 'قابل بازیافت: هزینه سرمایه‌ای توسعه', en: 'Recoverable: development capex' }],
             [
               { fa: 'درخواست‌کننده و تأییدکننده', en: 'Requester and approver' },
@@ -259,7 +259,7 @@ export const lesson: Lesson = {
             [{ fa: 'انبار و محل', en: 'Warehouse and bin' }, { fa: 'WH-20، قفس قطعات یدکی، قفسه S-04', en: 'WH-20, spares cage, bin S-04' }],
             [{ fa: 'کالا و مقدار', en: 'Material and quantity' }, { fa: '300500 کیت سوپاپ K-201، 2 دست', en: '300500 K-201 valve kit, 2 sets' }],
             [{ fa: 'مرجع', en: 'Reference' }, { fa: 'رزرو RES-50188 از دستور کار WO-45120', en: 'Reservation RES-50188 from work order WO-45120' }],
-            [{ fa: 'موضوع هزینه', en: 'Cost object' }, { fa: 'WO-45120 (تسویه به مرکز هزینه CC-310)', en: 'WO-45120 (settles to cost centre CC-310)' }],
+            [{ fa: 'موضوع هزینه', en: 'Cost object' }, { fa: 'WO-45120 (تسویه به مرکز هزینه CC-ARY-CMP)', en: 'WO-45120 (settles to cost centre CC-ARY-CMP)' }],
             [
               { fa: 'ارزش', en: 'Value' },
               { fa: '2 × 4,500 = 9,000 (محاسبه سیستم با قیمت میانگین متحرک)', en: '2 × 4,500 = 9,000 (calculated by the system at moving average price)' },
@@ -312,7 +312,7 @@ export const lesson: Lesson = {
             [
               { fa: 'مرکز هزینه', en: 'Cost centre' },
               { fa: 'مصرف جاری یک واحد یا تأسیسات', en: 'Routine consumption by a unit or facility' },
-              { fa: 'بازدارنده خوردگی برای CC-220', en: 'Corrosion inhibitor to CC-220' },
+              { fa: 'بازدارنده خوردگی برای CC-ARY-PRD', en: 'Corrosion inhibitor to CC-ARY-PRD' },
               { fa: 'هزینه مواد شیمیایی تولید', en: 'Production chemicals expense' },
               { fa: 'قابل بازیافت: هزینه عملیاتی', en: 'Recoverable: operating cost' },
             ],
@@ -326,7 +326,7 @@ export const lesson: Lesson = {
             [
               { fa: 'پروژه (WBS) ذیل AFE', en: 'Project (WBS) under an AFE' },
               { fa: 'کار سرمایه‌ای مثل حفاری چاه یا ساخت تأسیسات', en: 'Capital work such as drilling a well or building a facility' },
-              { fa: 'لوله جداری برای P-AR12 (AFE-2026-014)', en: 'Casing to P-AR12 (AFE-2026-014)' },
+              { fa: 'لوله جداری برای P-AR12 (AFE-2026-012)', en: 'Casing to P-AR12 (AFE-2026-012)' },
               { fa: 'دارایی در جریان ساخت: چاه‌ها', en: 'Assets under construction: wells' },
               { fa: 'قابل بازیافت: هزینه سرمایه‌ای توسعه', en: 'Recoverable: development capex' },
             ],
@@ -361,8 +361,8 @@ export const lesson: Lesson = {
           tone: 'example',
           title: { fa: 'مثال: سهم شرکا از یک حواله', en: 'Example: the partners’ share of one issue' },
           text: {
-            fa: 'حواله GI-26-0412 (دو کیت سوپاپ به ارزش 9,000) مربوط به کمپرسور K-201 است که از تأسیسات مشترک مشارکت است. با سهم‌های فرضی این مثال (مسار پترولیوم 60%، شریک الف 25%، شریک ب 15%)، سهم مسار پترولیوم 5,400، شریک الف 2,250 و شریک ب 1,350 است و اپراتور سهم شرکا را در صورت‌حساب مشارکت از آن‌ها مطالبه می‌کند. اگر همین حواله اشتباهاً «هزینه خود اپراتور» برچسب بخورد، مسار پترولیوم کل 9,000 را به‌تنهایی می‌پردازد.',
-            en: 'Goods issue GI-26-0412 (two valve kits worth 9,000) relates to compressor K-201, a joint-venture facility. With this example’s illustrative shares (Masar Petroleum 60%, Partner A 25%, Partner B 15%), Masar Petroleum’s share is 5,400, Partner A’s 2,250 and Partner B’s 1,350, and the operator bills the partners their shares through joint-interest billing. If the same issue were wrongly tagged as an operator-only cost, Masar Petroleum would carry the whole 9,000 alone.',
+            fa: 'حواله GI-26-0412 (دو کیت سوپاپ به ارزش 9,000) مربوط به کمپرسور K-201 است که از تأسیسات مشترک مشارکت است. با سهم‌های فرضی این مثال (مسار پترولیوم 60%، انرژی البرز 25%، نفت دنا 15%)، سهم مسار پترولیوم 5,400، انرژی البرز 2,250 و نفت دنا 1,350 است و اپراتور سهم شرکا را در صورت‌حساب مشارکت از آن‌ها مطالبه می‌کند. اگر همین حواله اشتباهاً «هزینه خود اپراتور» برچسب بخورد، مسار پترولیوم کل 9,000 را به‌تنهایی می‌پردازد.',
+            en: 'Goods issue GI-26-0412 (two valve kits worth 9,000) relates to compressor K-201, a joint-venture facility. With this example’s illustrative shares (Masar Petroleum 60%, Alborz Energy 25%, Dena Petroleum 15%), Masar Petroleum’s share is 5,400, Alborz Energy’s 2,250 and Dena Petroleum’s 1,350, and the operator bills the partners their shares through joint-interest billing. If the same issue were wrongly tagged as an operator-only cost, Masar Petroleum would carry the whole 9,000 alone.',
           },
         },
       ],
@@ -466,7 +466,7 @@ export const lesson: Lesson = {
               date: { fa: 'GI-26-0412', en: 'GI-26-0412' },
               lines: [
                 {
-                  account: { fa: 'هزینه تعمیر و نگهداری (دستور کار WO-45120، مرکز هزینه CC-310)', en: 'Repairs and maintenance expense (work order WO-45120, cost centre CC-310)' },
+                  account: { fa: 'هزینه تعمیر و نگهداری (دستور کار WO-45120، مرکز هزینه CC-ARY-CMP)', en: 'Repairs and maintenance expense (work order WO-45120, cost centre CC-ARY-CMP)' },
                   debit: 9000,
                 },
                 { account: { fa: 'موجودی قطعات یدکی', en: 'Inventory: spare parts' }, credit: 9000 },
@@ -484,7 +484,7 @@ export const lesson: Lesson = {
             {
               date: { fa: 'GI-26-0419', en: 'GI-26-0419' },
               lines: [
-                { account: { fa: 'هزینه مواد شیمیایی تولید (مرکز هزینه CC-220)', en: 'Production chemicals expense (cost centre CC-220)' }, debit: 7800 },
+                { account: { fa: 'هزینه مواد شیمیایی تولید (مرکز هزینه CC-ARY-PRD)', en: 'Production chemicals expense (cost centre CC-ARY-PRD)' }, debit: 7800 },
                 { account: { fa: 'موجودی مواد شیمیایی', en: 'Inventory: chemicals' }, credit: 7800 },
               ],
               memo: { fa: '12 بشکه بازدارنده خوردگی: 12 × 650', en: '12 drums of corrosion inhibitor: 12 × 650' },
@@ -496,8 +496,8 @@ export const lesson: Lesson = {
           tone: 'tip',
           title: { fa: 'در عمل: تسویه دستور کار', en: 'In practice: work-order settlement' },
           text: {
-            fa: 'دستور کار WO-45120 در طول ماه همه هزینه‌های تعمیر را جمع می‌کند: کالا از انبار، ساعت کار تکنسین‌ها و خدمات پیمانکار. در پایان ماه، **تسویه** کل آن را به مرکز هزینه CC-310 منتقل می‌کند و سابقه هزینه تجهیز K-201 هم کامل می‌شود. به همین دلیل مهندس قابلیت اطمینان می‌تواند ببیند K-201 در یک سال چند کیت سوپاپ مصرف کرده است.',
-            en: 'Throughout the month, work order WO-45120 collects all the repair costs: material from the warehouse, technicians’ hours and contractor services. At month-end, **settlement** moves the total to cost centre CC-310, and the cost history of equipment K-201 is completed too. That is how the reliability engineer can see how many valve kits K-201 consumed in a year.',
+            fa: 'دستور کار WO-45120 در طول ماه همه هزینه‌های تعمیر را جمع می‌کند: کالا از انبار، ساعت کار تکنسین‌ها و خدمات پیمانکار. در پایان ماه، **تسویه** کل آن را به مرکز هزینه CC-ARY-CMP منتقل می‌کند و سابقه هزینه تجهیز K-201 هم کامل می‌شود. به همین دلیل مهندس قابلیت اطمینان می‌تواند ببیند K-201 در یک سال چند کیت سوپاپ مصرف کرده است.',
+            en: 'Throughout the month, work order WO-45120 collects all the repair costs: material from the warehouse, technicians’ hours and contractor services. At month-end, **settlement** moves the total to cost centre CC-ARY-CMP, and the cost history of equipment K-201 is completed too. That is how the reliability engineer can see how many valve kits K-201 consumed in a year.',
           },
         },
         {
@@ -572,8 +572,8 @@ export const lesson: Lesson = {
           tone: 'info',
           title: { fa: 'حمل، HSE و کسری در راه', en: 'Transport, HSE and losses in transit' },
           text: {
-            fa: 'هر انتقال بارنامه و برگه خروج دارد. لوله‌ها باید درست مهار شوند و مواد شیمیایی با مدارک کالای خطرناک حمل شوند. اگر در مقصد کسری یا آسیب دیده شود، انبار میدان فقط مقدار سالم را رسید می‌زند و باقی‌مانده در موجودی در راه می‌ماند تا بررسی شود: یا از پیمانکار حمل یا بیمه مطالبه می‌شود، یا با تأیید مسئولان از دفاتر حذف می‌شود. هزینه حمل هم طبق یک سیاست ثابت یا به مرکز هزینه انبار (CC-120) می‌رود یا به بهای کالا اضافه می‌شود.',
-            en: 'Every transfer has a waybill and a gate pass. Pipe must be properly secured, and chemicals travel with their dangerous-goods documents. If a shortage or damage is found at the destination, the Field Warehouse receives only the sound quantity and the rest stays in stock in transit until it is investigated: it is either claimed from the carrier or the insurer, or written off with proper approval. Freight is either charged to the warehouse cost centre (CC-120) or added to the material cost, following one consistent policy.',
+            fa: 'هر انتقال بارنامه و برگه خروج دارد. لوله‌ها باید درست مهار شوند و مواد شیمیایی با مدارک کالای خطرناک حمل شوند. اگر در مقصد کسری یا آسیب دیده شود، انبار میدان فقط مقدار سالم را رسید می‌زند و باقی‌مانده در موجودی در راه می‌ماند تا بررسی شود: یا از پیمانکار حمل یا بیمه مطالبه می‌شود، یا با تأیید مسئولان از دفاتر حذف می‌شود. هزینه حمل هم طبق یک سیاست ثابت یا به مرکز هزینه انبار (CC-ARY-WHS) می‌رود یا به بهای کالا اضافه می‌شود.',
+            en: 'Every transfer has a waybill and a gate pass. Pipe must be properly secured, and chemicals travel with their dangerous-goods documents. If a shortage or damage is found at the destination, the Field Warehouse receives only the sound quantity and the rest stays in stock in transit until it is investigated: it is either claimed from the carrier or the insurer, or written off with proper approval. Freight is either charged to the warehouse cost centre (CC-ARY-WHS) or added to the material cost, following one consistent policy.',
           },
         },
         { type: 'h', text: { fa: 'برگشت کالای مصرف‌نشده به انبار', en: 'Returning unused material to stock' } },
@@ -666,7 +666,7 @@ export const lesson: Lesson = {
             rows: [
               [{ fa: 'موجودی آزاد در انبار', en: 'Unrestricted stock on hand' }, 64],
               [{ fa: 'موجودی در بازرسی کیفی (رسید کالا (GRN) تازه، منتظر نتیجه آزمایشگاه)', en: 'Stock in quality inspection (new GRN awaiting lab results)' }, 6],
-              [{ fa: 'رزرو باز: مصرف جاری چاه‌ها (CC-220)', en: 'Open reservation: routine well treatment (CC-220)' }, 24],
+              [{ fa: 'رزرو باز: مصرف جاری چاه‌ها (CC-ARY-PRD)', en: 'Open reservation: routine well treatment (CC-ARY-PRD)' }, 24],
               [{ fa: 'رزرو باز: تزریق یک‌باره به چاه AR-09 (دستور کار WO-45161)', en: 'Open reservation: batch treatment of well AR-09 (work order WO-45161)' }, 18],
             ],
             numericCols: [1],
@@ -728,7 +728,7 @@ export const lesson: Lesson = {
                 { fa: 'آب‌بند مکانیکی P-104 (300520)', en: 'P-104 mechanical seal (300520)' },
                 4,
                 1200,
-                { fa: 'دستور کار WO-45133 (تسویه به CC-220)', en: 'Work order WO-45133 (settles to CC-220)' },
+                { fa: 'دستور کار WO-45133 (تسویه به CC-ARY-PRD)', en: 'Work order WO-45133 (settles to CC-ARY-PRD)' },
               ],
               [
                 { fa: 'GI-26-0432', en: 'GI-26-0432' },
@@ -742,7 +742,7 @@ export const lesson: Lesson = {
                 { fa: 'واشر اسپیرال 4 اینچ (400700)', en: 'Spiral-wound gasket 4" (400700)' },
                 40,
                 15,
-                { fa: 'مرکز هزینه CC-310، نگهداری جاری', en: 'Cost centre CC-310, routine maintenance' },
+                { fa: 'مرکز هزینه CC-ARY-CMP، نگهداری جاری', en: 'Cost centre CC-ARY-CMP, routine maintenance' },
               ],
             ],
             numericCols: [2, 3],
@@ -783,7 +783,7 @@ export const lesson: Lesson = {
                 {
                   date: { fa: 'GI-26-0431', en: 'GI-26-0431' },
                   lines: [
-                    { account: { fa: 'هزینه تعمیر و نگهداری (WO-45133، مرکز هزینه CC-220)', en: 'Repairs and maintenance expense (WO-45133, cost centre CC-220)' }, debit: 4800 },
+                    { account: { fa: 'هزینه تعمیر و نگهداری (WO-45133، مرکز هزینه CC-ARY-PRD)', en: 'Repairs and maintenance expense (WO-45133, cost centre CC-ARY-PRD)' }, debit: 4800 },
                     { account: { fa: 'موجودی قطعات یدکی', en: 'Inventory: spare parts' }, credit: 4800 },
                   ],
                 },
@@ -797,7 +797,7 @@ export const lesson: Lesson = {
                 {
                   date: { fa: 'GI-26-0433', en: 'GI-26-0433' },
                   lines: [
-                    { account: { fa: 'هزینه اقلام مصرفی (مرکز هزینه CC-310)', en: 'Consumables expense (cost centre CC-310)' }, debit: 600 },
+                    { account: { fa: 'هزینه اقلام مصرفی (مرکز هزینه CC-ARY-CMP)', en: 'Consumables expense (cost centre CC-ARY-CMP)' }, debit: 600 },
                     { account: { fa: 'موجودی اقلام مصرفی عمومی', en: 'Inventory: general consumables' }, credit: 600 },
                   ],
                 },
@@ -890,8 +890,8 @@ export const lesson: Lesson = {
           title: { fa: 'هزینه خالص کالا برای تکمیل چاه AR-12 و سهم شرکا', en: 'Net material cost of completing well AR-12 and the partners’ shares' },
           difficulty: 'hard',
           problem: {
-            fa: 'برای تکمیل چاه AR-12 (پروژه P-AR12 ذیل AFE-2026-014) این حرکت‌ها ثبت شد: حواله 260 شاخه لوله مغزی (100120) با نرخ 900؛ و حواله 4 بشکه بازدارنده خوردگی (200310) با نرخ 650 برای سیال پکر. پس از عملیات، 248 شاخه لوله در چاه رانده شده بود، 10 شاخه نو و سالم برگشت و 2 شاخه که رزوه‌شان هنگام رانش آسیب دیده بود به محوطه ضایعات رفت؛ 2 بشکه بازدارنده هم باز نشده برگشت. (الف) ثبت‌های خودکار ERP را بنویسید. (ب) هزینه خالص کالا روی AFE چقدر است؟ (ج) با سهم‌های فرضی 60%، 25% و 15%، سهم هر شریک را حساب کنید.',
-            en: 'To complete well AR-12 (project P-AR12 under AFE-2026-014) these movements were posted: an issue of 260 joints of tubing (100120) at 900, and an issue of 4 drums of corrosion inhibitor (200310) at 650 for the packer fluid. After the job, 248 joints had been run into the well, 10 new and sound joints came back, and 2 joints whose threads were damaged while running went to the scrap yard; 2 drums of inhibitor came back unopened. (a) Write the ERP’s automatic entries. (b) What is the net material cost on the AFE? (c) Using illustrative shares of 60%, 25% and 15%, work out each partner’s share.',
+            fa: 'برای تکمیل چاه AR-12 (پروژه P-AR12 ذیل AFE-2026-012) این حرکت‌ها ثبت شد: حواله 260 شاخه لوله مغزی (100120) با نرخ 900؛ و حواله 4 بشکه بازدارنده خوردگی (200310) با نرخ 650 برای سیال پکر. پس از عملیات، 248 شاخه لوله در چاه رانده شده بود، 10 شاخه نو و سالم برگشت و 2 شاخه که رزوه‌شان هنگام رانش آسیب دیده بود به محوطه ضایعات رفت؛ 2 بشکه بازدارنده هم باز نشده برگشت. (الف) ثبت‌های خودکار ERP را بنویسید. (ب) هزینه خالص کالا روی AFE چقدر است؟ (ج) با سهم‌های فرضی 60%، 25% و 15%، سهم هر شریک را حساب کنید.',
+            en: 'To complete well AR-12 (project P-AR12 under AFE-2026-012) these movements were posted: an issue of 260 joints of tubing (100120) at 900, and an issue of 4 drums of corrosion inhibitor (200310) at 650 for the packer fluid. After the job, 248 joints had been run into the well, 10 new and sound joints came back, and 2 joints whose threads were damaged while running went to the scrap yard; 2 drums of inhibitor came back unopened. (a) Write the ERP’s automatic entries. (b) What is the net material cost on the AFE? (c) Using illustrative shares of 60%, 25% and 15%, work out each partner’s share.',
           },
           hint: {
             fa: 'شاخه‌هایی که هنگام کار آسیب دیده‌اند مصرف عادی عملیات‌اند و به انبار برنمی‌گردند؛ پس بهایشان روی AFE می‌ماند.',
@@ -900,7 +900,7 @@ export const lesson: Lesson = {
           solution: [
             {
               type: 'table',
-              caption: { fa: 'اثر هر حرکت بر AFE-2026-014', en: 'Effect of each movement on AFE-2026-014' },
+              caption: { fa: 'اثر هر حرکت بر AFE-2026-012', en: 'Effect of each movement on AFE-2026-012' },
               head: [
                 { fa: 'حرکت', en: 'Movement' },
                 { fa: 'محاسبه', en: 'Calculation' },
@@ -972,8 +972,8 @@ export const lesson: Lesson = {
               ],
               rows: [
                 [{ fa: 'مسار پترولیوم (اپراتور)', en: 'Masar Petroleum (operator)' }, { fa: '60%', en: '60%' }, 135780],
-                [{ fa: 'شریک الف', en: 'Partner A' }, { fa: '25%', en: '25%' }, 56575],
-                [{ fa: 'شریک ب', en: 'Partner B' }, { fa: '15%', en: '15%' }, 33945],
+                [{ fa: 'انرژی البرز', en: 'Alborz Energy' }, { fa: '25%', en: '25%' }, 56575],
+                [{ fa: 'نفت دنا', en: 'Dena Petroleum' }, { fa: '15%', en: '15%' }, 33945],
                 [{ fa: 'جمع', en: 'Total' }, { fa: '100%', en: '100%' }, 226300],
               ],
               numericCols: [2],
@@ -988,8 +988,8 @@ export const lesson: Lesson = {
             },
           ],
           answer: {
-            fa: 'هزینه خالص کالا روی AFE برابر 226,300 است: مسار پترولیوم 135,780، شریک الف 56,575 و شریک ب 33,945.',
-            en: 'Net material cost on the AFE is 226,300: Masar Petroleum 135,780, Partner A 56,575 and Partner B 33,945.',
+            fa: 'هزینه خالص کالا روی AFE برابر 226,300 است: مسار پترولیوم 135,780، انرژی البرز 56,575 و نفت دنا 33,945.',
+            en: 'Net material cost on the AFE is 226,300: Masar Petroleum 135,780, Alborz Energy 56,575 and Dena Petroleum 33,945.',
           },
         },
       ],
@@ -1138,8 +1138,8 @@ export const lesson: Lesson = {
     },
     {
       q: {
-        fa: 'لوله جداری که قرار است در چاه تازه AR-12 سیمان شود، با حواله به پروژه P-AR12 (ذیل AFE-2026-014) تحویل شده است. حساب بدهکار و دسته بازیافت هزینه کدام است؟',
-        en: 'Casing to be cemented into the new well AR-12 is issued to project P-AR12 (under AFE-2026-014). Which debit account and cost-recovery category apply?',
+        fa: 'لوله جداری که قرار است در چاه تازه AR-12 سیمان شود، با حواله به پروژه P-AR12 (ذیل AFE-2026-012) تحویل شده است. حساب بدهکار و دسته بازیافت هزینه کدام است؟',
+        en: 'Casing to be cemented into the new well AR-12 is issued to project P-AR12 (under AFE-2026-012). Which debit account and cost-recovery category apply?',
       },
       options: [
         { fa: 'هزینه تعمیر و نگهداری؛ قابل بازیافت: عملیاتی', en: 'Repairs and maintenance expense; recoverable: operating cost' },
@@ -1189,8 +1189,8 @@ export const lesson: Lesson = {
     },
     {
       q: {
-        fa: 'حواله‌ای به ارزش 20,000 به تأسیسات مشترک مشارکت تعلق دارد. با سهم‌های فرضی مسار پترولیوم 60%، شریک الف 25% و شریک ب 15%، اپراتور چه مبلغی از شریک ب مطالبه می‌کند؟',
-        en: 'A goods issue worth 20,000 belongs to a joint-venture facility. With illustrative shares of Masar Petroleum 60%, Partner A 25% and Partner B 15%, how much does the operator bill Partner B?',
+        fa: 'حواله‌ای به ارزش 20,000 به تأسیسات مشترک مشارکت تعلق دارد. با سهم‌های فرضی مسار پترولیوم 60%، انرژی البرز 25% و نفت دنا 15%، اپراتور چه مبلغی از نفت دنا مطالبه می‌کند؟',
+        en: 'A goods issue worth 20,000 belongs to a joint-venture facility. With illustrative shares of Masar Petroleum 60%, Alborz Energy 25% and Dena Petroleum 15%, how much does the operator bill Dena Petroleum?',
       },
       options: [
         { fa: '5,000', en: '5,000' },
@@ -1200,8 +1200,8 @@ export const lesson: Lesson = {
       ],
       answer: 1,
       explain: {
-        fa: '20,000 × 15% = 3,000. مبلغ 5,000 سهم شریک الف (25%) و 12,000 سهم خود مسار پترولیوم است. «صفر» فقط وقتی درست است که هزینه واقعاً هزینه خود اپراتور باشد؛ اگر حواله مشترک اشتباهاً این برچسب را بخورد، اپراتور سهم شرکا را از دست می‌دهد.',
-        en: '20,000 × 15% = 3,000. 5,000 is Partner A’s share (25%) and 12,000 is Masar Petroleum’s own. "Zero" is right only when the cost truly is the operator’s own; if a joint issue is wrongly tagged that way, the operator loses the partners’ share.',
+        fa: '20,000 × 15% = 3,000. مبلغ 5,000 سهم انرژی البرز (25%) و 12,000 سهم خود مسار پترولیوم است. «صفر» فقط وقتی درست است که هزینه واقعاً هزینه خود اپراتور باشد؛ اگر حواله مشترک اشتباهاً این برچسب را بخورد، اپراتور سهم شرکا را از دست می‌دهد.',
+        en: '20,000 × 15% = 3,000. 5,000 is Alborz Energy’s share (25%) and 12,000 is Masar Petroleum’s own. "Zero" is right only when the cost truly is the operator’s own; if a joint issue is wrongly tagged that way, the operator loses the partners’ share.',
       },
     },
     {
@@ -1237,8 +1237,8 @@ export const lesson: Lesson = {
     },
     {
       q: {
-        fa: 'برای AFE-2026-014 این حرکت‌ها ثبت شده است: حواله 30 شاخه لوله جداری به ارزش 72,000، حواله 10 تن باریت به ارزش 3,500 و برگشت 4 شاخه لوله جداری با نرخ 2,400. هزینه خالص کالا روی AFE چقدر است؟',
-        en: 'These movements were posted against AFE-2026-014: an issue of 30 joints of casing worth 72,000, an issue of 10 tonnes of barite worth 3,500, and a return of 4 joints of casing at 2,400. What is the net material cost on the AFE?',
+        fa: 'برای AFE-2026-012 این حرکت‌ها ثبت شده است: حواله 30 شاخه لوله جداری به ارزش 72,000، حواله 10 تن باریت به ارزش 3,500 و برگشت 4 شاخه لوله جداری با نرخ 2,400. هزینه خالص کالا روی AFE چقدر است؟',
+        en: 'These movements were posted against AFE-2026-012: an issue of 30 joints of casing worth 72,000, an issue of 10 tonnes of barite worth 3,500, and a return of 4 joints of casing at 2,400. What is the net material cost on the AFE?',
       },
       options: [
         { fa: '75,500', en: '75,500' },

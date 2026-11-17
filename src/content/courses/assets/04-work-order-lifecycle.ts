@@ -4,8 +4,8 @@ import type { L, Lesson } from '../../types'
  * Running example (shared with the rest of the assets course): Masar Petroleum (MP01), Arya field.
  * Main case: notification N-10233 and work order WO-40017, replacing the non-drive-end bearing of compressor K-101
  * after the vibration alert seen in the maintenance-strategies lesson.
- * Cost centres: CC-3100 compressor station, CC-3200 production station, CC-3900 mechanical crew (200 per hour),
- * CC-3910 instrument crew (180 per hour). JV interests (illustrative): Masar Petroleum 50%, Partner A 30%, Partner B 20%.
+ * Cost centres: CC-ARY-CMP compressor station, CC-ARY-PRD production station, CC-ARY-MNT mechanical crew (200 per hour),
+ * CC-ARY-INS instrument crew (180 per hour). JV interests (illustrative): Masar Petroleum 50%, Alborz Energy 30%, Dena Petroleum 20%.
  * Work-order costs post to expense with the work order as cost object; settlement moves them to the receiver.
  */
 
@@ -22,8 +22,8 @@ const ac = {
   inventory: t('موجودی قطعات یدکی', 'Inventory: spare parts'),
   grir: t('حساب واسط رسید کالا و فاکتور (GR/IR)', 'GR/IR clearing account'),
   ap: t('حساب‌های پرداختنی', 'Accounts payable'),
-  mechAlloc: t('دستمزد تخصیص‌یافته: گروه مکانیک (CC-3900)', 'Labour cost allocated: mechanical crew (CC-3900)'),
-  instAlloc: t('دستمزد تخصیص‌یافته: گروه ابزار دقیق (CC-3910)', 'Labour cost allocated: instrument crew (CC-3910)'),
+  mechAlloc: t('دستمزد تخصیص‌یافته: گروه مکانیک (CC-ARY-MNT)', 'Labour cost allocated: mechanical crew (CC-ARY-MNT)'),
+  instAlloc: t('دستمزد تخصیص‌یافته: گروه ابزار دقیق (CC-ARY-INS)', 'Labour cost allocated: instrument crew (CC-ARY-INS)'),
   capMaint: t('هزینه نگهداری منتقل‌شده به دارایی (کاهنده هزینه)', 'Maintenance costs capitalised (contra expense)'),
 }
 /** Settlement receiver with recovery flag R and cost category Operating. */
@@ -412,7 +412,7 @@ export const lesson: Lesson = {
             {
               date: t('تسویه پایان ماه', 'Month-end settlement'),
               lines: [
-                { account: receiver('CC-3100', 'CC-3100'), debit: 35900 },
+                { account: receiver('CC-ARY-CMP', 'CC-ARY-CMP'), debit: 35900 },
                 { account: w17.sender, credit: 35900 },
               ],
               memo: t('33,200 − 12,000 + 1,800 + 6,000 + 6,900 = 35,900', '33,200 − 12,000 + 1,800 + 6,000 + 6,900 = 35,900'),
@@ -432,8 +432,8 @@ export const lesson: Lesson = {
           tone: 'info',
           title: t('سه نکته درباره این سندها', 'Three notes on these postings'),
           text: {
-            fa: '(1) **دستمزد تخصیص‌یافته**: حقوق تکنسین‌ها پیش‌تر با سند حقوق ماهانه هزینه مرکز هزینه گروه شده است؛ تأیید زمان آن را با نرخ فعالیت به دستور کار می‌آورد و بستانکار «دستمزد تخصیص‌یافته» آن را از گروه کم می‌کند تا یک هزینه دو بار شمرده نشود. (2) **تسویه به مرکز هزینه** جمع هزینه‌ها را در دفتر کل تغییر نمی‌دهد؛ فقط موضوع هزینه را از دستور کار به CC-3100 می‌برد. (3) اگر تا پایان ماه کار انجام و GRN یا SES ثبت شده اما فاکتور نرسیده باشد، مانده بستانکار GR/IR همان **«دریافت‌شده، فاکتورنشده»** است که در تطبیق GR/IR و اقلام تعهدی پایان ماه بررسی می‌شود.',
-            en: '(1) **Labour allocated**: the technicians’ salaries were already expensed to the crew’s cost centre by the monthly payroll entry; the time confirmation brings that cost to the work order at the activity rate, and the "labour cost allocated" credit takes it off the crew so the same cost is not counted twice. (2) **Settlement to a cost centre** does not change total expenses in the general ledger; it only moves the cost object from the work order to CC-3100. (3) If the work was done and the GRN or SES posted by month-end but the invoice has not arrived, the GR/IR credit balance is exactly the **"received, not invoiced"** amount reviewed in the GR/IR reconciliation and month-end accruals.',
+            fa: '(1) **دستمزد تخصیص‌یافته**: حقوق تکنسین‌ها پیش‌تر با سند حقوق ماهانه هزینه مرکز هزینه گروه شده است؛ تأیید زمان آن را با نرخ فعالیت به دستور کار می‌آورد و بستانکار «دستمزد تخصیص‌یافته» آن را از گروه کم می‌کند تا یک هزینه دو بار شمرده نشود. (2) **تسویه به مرکز هزینه** جمع هزینه‌ها را در دفتر کل تغییر نمی‌دهد؛ فقط موضوع هزینه را از دستور کار به CC-ARY-CMP می‌برد. (3) اگر تا پایان ماه کار انجام و GRN یا SES ثبت شده اما فاکتور نرسیده باشد، مانده بستانکار GR/IR همان **«دریافت‌شده، فاکتورنشده»** است که در تطبیق GR/IR و اقلام تعهدی پایان ماه بررسی می‌شود.',
+            en: '(1) **Labour allocated**: the technicians’ salaries were already expensed to the crew’s cost centre by the monthly payroll entry; the time confirmation brings that cost to the work order at the activity rate, and the "labour cost allocated" credit takes it off the crew so the same cost is not counted twice. (2) **Settlement to a cost centre** does not change total expenses in the general ledger; it only moves the cost object from the work order to CC-ARY-CMP. (3) If the work was done and the GRN or SES posted by month-end but the invoice has not arrived, the GR/IR credit balance is exactly the **"received, not invoiced"** amount reviewed in the GR/IR reconciliation and month-end accruals.',
           },
         },
         { type: 'h', text: t('قاعده تسویه و گیرنده‌ها', 'Settlement Rules and Receivers') },
@@ -449,12 +449,12 @@ export const lesson: Lesson = {
           caption: t('گیرنده‌های تسویه و پرچم بازیافت', 'Settlement receivers and recovery flags'),
           head: [t('گیرنده', 'Receiver'), t('چه زمانی', 'When'), t('نمونه', 'Example'), t('پرچم و طبقه هزینه', 'Flag and cost category')],
           rows: [
-            [t('مرکز هزینه', 'Cost centre'), t('کار عملیاتی روی تأسیسات مشترک', 'Operating work on shared facilities'), t('تعمیر K-101 به CC-3100', 'K-101 repair to CC-3100'), t('R، عملیاتی', 'R, Operating')],
+            [t('مرکز هزینه', 'Cost centre'), t('کار عملیاتی روی تأسیسات مشترک', 'Operating work on shared facilities'), t('تعمیر K-101 به CC-ARY-CMP', 'K-101 repair to CC-ARY-CMP'), t('R، عملیاتی', 'R, Operating')],
             [t('چاه', 'Well'), t('کار عملیاتی روی یک چاه مشخص', 'Operating work on a specific well'), t('تعمیر شیر سرچاهی AR-07', 'Wellhead valve repair on AR-07'), t('R، عملیاتی', 'R, Operating')],
             [
               t('عنصر WBS یک AFE', 'WBS element of an AFE'),
               t('کار سرمایه‌ای: نصب، ارتقا، تعمیر اساسی سرمایه‌ای', 'Capital work: installation, upgrade, capitalised overhaul'),
-              t('نصب اسکرابر جدید با AFE-2026-09.01', 'New scrubber installation on AFE-2026-09.01'),
+              t('نصب اسکرابر جدید با AFE-2026-010.01', 'New scrubber installation on AFE-2026-010.01'),
               t('R، توسعه (به دارایی در جریان تکمیل)', 'R, Development (to assets under construction)'),
             ],
             [
@@ -485,8 +485,8 @@ export const lesson: Lesson = {
           tone: 'info',
           title: t('در عمل: صورت‌حساب شرکا', 'In practice: partner billing'),
           text: {
-            fa: 'پس از تسویه، هزینه‌های عملیاتی میدان در گزارش ماهانه **صورت‌حساب مشترک (Joint Interest Billing)** به نسبت سهم هر شریک تقسیم می‌شوند. با سهم‌های فرضی این دوره، از 35,900 هزینه WO-40017، شریک الف 30٪ یعنی 10,770 و شریک ب 20٪ یعنی 7,180 را می‌پردازد و سهم مسار پترولیوم 50٪ یعنی 17,950 است. به همین دلیل گیرنده یا پرچم اشتباه، مستقیم صورت‌حساب شرکا را اشتباه می‌کند.',
-            en: 'After settlement, the field’s operating costs are shared among the partners in the monthly **joint interest billing** statement according to each partner’s interest. With this course’s illustrative interests, of the 35,900 on WO-40017, Partner A pays 30%, or 10,770, Partner B 20%, or 7,180, and Masar Petroleum’s 50% share is 17,950. That is why a wrong receiver or flag makes the partner billing wrong too.',
+            fa: 'پس از تسویه، هزینه‌های عملیاتی میدان در گزارش ماهانه **صورت‌حساب مشترک (Joint Interest Billing)** به نسبت سهم هر شریک تقسیم می‌شوند. با سهم‌های فرضی این دوره، از 35,900 هزینه WO-40017، انرژی البرز 30٪ یعنی 10,770 و نفت دنا 20٪ یعنی 7,180 را می‌پردازد و سهم مسار پترولیوم 50٪ یعنی 17,950 است. به همین دلیل گیرنده یا پرچم اشتباه، مستقیم صورت‌حساب شرکا را اشتباه می‌کند.',
+            en: 'After settlement, the field’s operating costs are shared among the partners in the monthly **joint interest billing** statement according to each partner’s interest. With this course’s illustrative interests, of the 35,900 on WO-40017, Alborz Energy pays 30%, or 10,770, Dena Petroleum 20%, or 7,180, and Masar Petroleum’s 50% share is 17,950. That is why a wrong receiver or flag makes the partner billing wrong too.',
           },
         },
       ],
@@ -562,7 +562,7 @@ export const lesson: Lesson = {
             rows: [
               [t('A', 'A'), t('تکنسین 10 ساعت کار را روی دستور کار ثبت می‌کند', 'The technician confirms 10 hours on the work order')],
               [t('B', 'B'), t('اپراتور نشتی آب‌بند را در یک اعلان گزارش می‌کند', 'The operator reports the seal leak in a notification')],
-              [t('C', 'C'), t('مالی هزینه دستور کار را به مرکز هزینه CC-3200 تسویه می‌کند', 'Finance settles the work-order cost to cost centre CC-3200')],
+              [t('C', 'C'), t('مالی هزینه دستور کار را به مرکز هزینه CC-ARY-PRD تسویه می‌کند', 'Finance settles the work-order cost to cost centre CC-ARY-PRD')],
               [t('D', 'D'), t('برنامه‌ریز دستور کار را می‌سازد و آب‌بند را رزرو می‌کند', 'The planner creates the work order and reserves the seal')],
               [t('E', 'E'), t('انباردار آب‌بند را حواله می‌کند', 'The storekeeper issues the seal')],
               [t('F', 'F'), t('سرپرست دستور کار را تأیید و آزاد می‌کند', 'The supervisor approves and releases the work order')],
@@ -582,7 +582,7 @@ export const lesson: Lesson = {
                 [t('5', '5'), t('H تأیید SES', 'H SES approved'), t('بله: بدهکار هزینه خدمات دستور کار، بستانکار GR/IR', 'Yes: Dr work-order services, Cr GR/IR')],
                 [t('6', '6'), t('A تأیید زمان', 'A time confirmation'), t('بله: بدهکار دستمزد دستور کار، بستانکار دستمزد تخصیص‌یافته', 'Yes: Dr work-order labour, Cr labour allocated')],
                 [t('7', '7'), t('G تکمیل فنی', 'G technical completion'), t('خیر', 'No')],
-                [t('8', '8'), t('C تسویه', 'C settlement'), t('بله: انتقال به CC-3200', 'Yes: moves the cost to CC-3200')],
+                [t('8', '8'), t('C تسویه', 'C settlement'), t('بله: انتقال به CC-ARY-PRD', 'Yes: moves the cost to CC-ARY-PRD')],
               ],
             },
             {
@@ -711,8 +711,8 @@ export const lesson: Lesson = {
           title: t('تسویه پایان ماه و سهم شرکا', 'Month-end settlement and partner shares'),
           difficulty: 'hard',
           problem: t(
-            'در پایان ماه دو دستور کار تسویه می‌شوند. (الف) `WO-40200`: تعمیر منیفولد مشترک چاه‌های AR-03 و AR-05 با هزینه 9,000؛ قاعده تسویه به نسبت تولید گاز: AR-03 سهم 60٪ و AR-05 سهم 40٪. (ب) `WO-40210`: نصب اسکرابر مکش جدید `V-140` در ایستگاه تقویت فشار با عنصر WBS به نام AFE-2026-09.01 و هزینه 120,000. سندهای تسویه را بنویسید، پرچم و طبقه هر سطر را تعیین کنید و سهم شریک الف (30٪) و شریک ب (20٪) را از هر دستور کار حساب کنید.',
-            'Two work orders settle at month-end. (a) `WO-40200`: repair of the manifold shared by wells AR-03 and AR-05, costing 9,000; settlement by gas production: AR-03 60%, AR-05 40%. (b) `WO-40210`: installing a new suction scrubber `V-140` at the compressor station on WBS element AFE-2026-09.01, costing 120,000. Write the settlement entries, set the flag and category for each line, and calculate Partner A’s (30%) and Partner B’s (20%) shares of each work order.',
+            'در پایان ماه دو دستور کار تسویه می‌شوند. (الف) `WO-40200`: تعمیر منیفولد مشترک چاه‌های AR-03 و AR-05 با هزینه 9,000؛ قاعده تسویه به نسبت تولید گاز: AR-03 سهم 60٪ و AR-05 سهم 40٪. (ب) `WO-40210`: نصب اسکرابر مکش جدید `V-140` در ایستگاه تقویت فشار با عنصر WBS به نام AFE-2026-010.01 و هزینه 120,000. سندهای تسویه را بنویسید، پرچم و طبقه هر سطر را تعیین کنید و سهم انرژی البرز (30٪) و نفت دنا (20٪) را از هر دستور کار حساب کنید.',
+            'Two work orders settle at month-end. (a) `WO-40200`: repair of the manifold shared by wells AR-03 and AR-05, costing 9,000; settlement by gas production: AR-03 60%, AR-05 40%. (b) `WO-40210`: installing a new suction scrubber `V-140` at the compressor station on WBS element AFE-2026-010.01, costing 120,000. Write the settlement entries, set the flag and category for each line, and calculate Alborz Energy’s (30%) and Dena Petroleum’s (20%) shares of each work order.',
           ),
           hint: t('کار سرمایه‌ای به دارایی در جریان تکمیل تسویه می‌شود و هزینه دوره نیست.', 'Capital work settles to assets under construction; it is not a period expense.'),
           solution: [
@@ -723,8 +723,8 @@ export const lesson: Lesson = {
                 {
                   title: t('ماهیت WO-40210', 'Nature of WO-40210'),
                   text: t(
-                    'نصب تجهیز جدید سرمایه‌ای است؛ گیرنده AFE-2026-09.01 و حساب «دارایی در جریان تکمیل» است، با پرچم R و طبقه توسعه. هزینه‌هایی که روی دستور کار به هزینه رفته بودند با «هزینه نگهداری منتقل‌شده به دارایی» خنثی می‌شوند.',
-                    'Installing new equipment is capital; the receiver is AFE-2026-09.01 and the account is "assets under construction", with flag R and category Development. Costs expensed on the work order are reversed out through "maintenance costs capitalised".',
+                    'نصب تجهیز جدید سرمایه‌ای است؛ گیرنده AFE-2026-010.01 و حساب «دارایی در جریان تکمیل» است، با پرچم R و طبقه توسعه. هزینه‌هایی که روی دستور کار به هزینه رفته بودند با «هزینه نگهداری منتقل‌شده به دارایی» خنثی می‌شوند.',
+                    'Installing new equipment is capital; the receiver is AFE-2026-010.01 and the account is "assets under construction", with flag R and category Development. Costs expensed on the work order are reversed out through "maintenance costs capitalised".',
                   ),
                 },
               ],
@@ -743,7 +743,7 @@ export const lesson: Lesson = {
                 {
                   date: t('تسویه WO-40210', 'Settlement of WO-40210'),
                   lines: [
-                    { account: t('دارایی در جریان تکمیل (AFE-2026-09.01، R، توسعه)', 'Assets under construction (AFE-2026-09.01, R, Development)'), debit: 120000 },
+                    { account: t('دارایی در جریان تکمیل (AFE-2026-010.01، R، توسعه)', 'Assets under construction (AFE-2026-010.01, R, Development)'), debit: 120000 },
                     { account: ac.capMaint, credit: 120000 },
                   ],
                   memo: t('سند مالی واقعی: هزینه به دارایی تبدیل می‌شود', 'A real Finance document: the cost becomes an asset'),
@@ -752,7 +752,7 @@ export const lesson: Lesson = {
             },
             {
               type: 'table',
-              head: [t('دستور کار', 'Work order'), t('مبلغ', 'Amount'), t('شریک الف (30٪)', 'Partner A (30%)'), t('شریک ب (20٪)', 'Partner B (20%)'), t('مسار پترولیوم (50٪)', 'Masar Petroleum (50%)')],
+              head: [t('دستور کار', 'Work order'), t('مبلغ', 'Amount'), t('انرژی البرز (30٪)', 'Alborz Energy (30%)'), t('نفت دنا (20٪)', 'Dena Petroleum (20%)'), t('مسار پترولیوم (50٪)', 'Masar Petroleum (50%)')],
               rows: [
                 [t('WO-40200 (عملیاتی)', 'WO-40200 (operating)'), 9000, 2700, 1800, 4500],
                 [t('WO-40210 (سرمایه‌ای)', 'WO-40210 (capital)'), 120000, 36000, 24000, 60000],
@@ -764,14 +764,14 @@ export const lesson: Lesson = {
               type: 'callout',
               tone: 'warning',
               text: t(
-                'اگر WO-40210 به اشتباه به CC-3100 تسویه شود، هزینه دوره 120,000 بیش از واقع، دارایی‌ها 120,000 کمتر از واقع و طبقه هزینه به‌جای توسعه، عملیاتی ثبت می‌شود؛ زمان بازیافت آن در قرارداد هم عوض می‌شود.',
-                'If WO-40210 were wrongly settled to CC-3100, period expenses would be overstated by 120,000, assets understated by 120,000 and the cost category recorded as Operating instead of Development; its recovery timing under the contract would change too.',
+                'اگر WO-40210 به اشتباه به CC-ARY-CMP تسویه شود، هزینه دوره 120,000 بیش از واقع، دارایی‌ها 120,000 کمتر از واقع و طبقه هزینه به‌جای توسعه، عملیاتی ثبت می‌شود؛ زمان بازیافت آن در قرارداد هم عوض می‌شود.',
+                'If WO-40210 were wrongly settled to CC-ARY-CMP, period expenses would be overstated by 120,000, assets understated by 120,000 and the cost category recorded as Operating instead of Development; its recovery timing under the contract would change too.',
               ),
             },
           ],
           answer: t(
-            'AR-03: 5,400 و AR-05: 3,600 (R، عملیاتی)؛ AFE-2026-09.01: 120,000 (R، توسعه)؛ شریک الف 2,700 و 36,000، شریک ب 1,800 و 24,000',
-            'AR-03: 5,400 and AR-05: 3,600 (R, Operating); AFE-2026-09.01: 120,000 (R, Development); Partner A 2,700 and 36,000, Partner B 1,800 and 24,000',
+            'AR-03: 5,400 و AR-05: 3,600 (R، عملیاتی)؛ AFE-2026-010.01: 120,000 (R، توسعه)؛ انرژی البرز 2,700 و 36,000، نفت دنا 1,800 و 24,000',
+            'AR-03: 5,400 and AR-05: 3,600 (R, Operating); AFE-2026-010.01: 120,000 (R, Development); Alborz Energy 2,700 and 36,000, Dena Petroleum 1,800 and 24,000',
           ),
         },
       ],

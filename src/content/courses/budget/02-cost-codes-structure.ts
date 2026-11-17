@@ -96,8 +96,8 @@ export const lesson: Lesson = {
         {
           type: 'p',
           text: t(
-            '**کد شرکت (Company code)** کوچک‌ترین واحدی است که ترازنامه و صورت سود و زیان کامل و مستقل دارد؛ معمولاً همان شخصیت حقوقی ثبت‌شده. مسار پترولیوم در ERP کد `MP01` دارد. مشارکت میدان آریا یک شرکت جدا نیست: مسار پترولیوم به‌عنوان بهره‌بردار همه هزینه‌ها را در `MP01` ثبت می‌کند و با یک فیلد **مشارکت** (مثلاً `JV-ARY`) نشان می‌دهد کدام هزینه‌ها مشترک‌اند و باید بین شرکا تقسیم شوند. دفاتر شریک الف و شریک ب در ERP خودشان نگه داشته می‌شود.',
-            'The **company code** is the smallest unit with a complete, self-contained balance sheet and income statement; usually the registered legal entity. Masar Petroleum is `MP01` in the ERP. The Arya joint venture is not a separate company: as operator, Masar Petroleum records all costs in `MP01` and uses a **joint venture** field (for example `JV-ARY`) to show which costs are joint and must be shared among the partners. Partner A’s and Partner B’s books are kept in their own systems.',
+            '**کد شرکت (Company code)** کوچک‌ترین واحدی است که ترازنامه و صورت سود و زیان کامل و مستقل دارد؛ معمولاً همان شخصیت حقوقی ثبت‌شده. مسار پترولیوم در ERP کد `MP01` دارد. مشارکت میدان آریا یک شرکت جدا نیست: مسار پترولیوم به‌عنوان بهره‌بردار همه هزینه‌ها را در `MP01` ثبت می‌کند و با یک فیلد **مشارکت** (مثلاً `JV-ARY`) نشان می‌دهد کدام هزینه‌ها مشترک‌اند و باید بین شرکا تقسیم شوند. دفاتر انرژی البرز و نفت دنا در ERP خودشان نگه داشته می‌شود.',
+            'The **company code** is the smallest unit with a complete, self-contained balance sheet and income statement; usually the registered legal entity. Masar Petroleum is `MP01` in the ERP. The Arya joint venture is not a separate company: as operator, Masar Petroleum records all costs in `MP01` and uses a **joint venture** field (for example `JV-ARY`) to show which costs are joint and must be shared among the partners. Alborz Energy’s and Dena Petroleum’s books are kept in their own systems.',
           ),
         },
         {
@@ -119,7 +119,7 @@ export const lesson: Lesson = {
             [t('5110', '5110'), t('هزینه عملیات تولید', 'Production operating expense'), t('عنصر هزینه اولیه = حساب هزینه', 'Primary cost element = expense account'), t('مرکز هزینه', 'Cost centre')],
             [t('5120', '5120'), t('هزینه تعمیر و نگهداری', 'Repairs and maintenance expense'), t('عنصر هزینه اولیه = حساب هزینه', 'Primary cost element = expense account'), t('دستور کار نگهداری', 'Maintenance work order')],
             [t('5130', '5130'), t('هزینه ایمنی، بهداشت، محیط زیست و آموزش', 'HSE and training expense'), t('عنصر هزینه اولیه = حساب هزینه', 'Primary cost element = expense account'), t('سفارش داخلی یا مرکز هزینه', 'Internal order or cost centre')],
-            [t('5410', '5410'), t('هزینه اکتشاف (زمین‌شناسی و ژئوفیزیک)', 'Exploration expense (G&G)'), t('عنصر هزینه اولیه = حساب هزینه', 'Primary cost element = expense account'), t('WBS پروژه اکتشافی', 'Exploration project WBS')],
+            [t('5610', '5610'), t('هزینه اکتشاف (زمین‌شناسی و ژئوفیزیک)', 'Exploration expense (G&G)'), t('عنصر هزینه اولیه = حساب هزینه', 'Primary cost element = expense account'), t('WBS پروژه اکتشافی', 'Exploration project WBS')],
             [t('5910', '5910'), t('جرائم و خسارات', 'Fines and penalties'), t('عنصر هزینه اولیه؛ همیشه N', 'Primary cost element; always N'), t('مرکز هزینه', 'Cost centre')],
             [t('7110', '7110'), t('هزینه مالی (بهره وام)', 'Finance costs (loan interest)'), t('حساب هزینه؛ بیرون از حسابداری بهای تمام‌شده میدان', 'Expense account; outside field cost accounting'), t('مرکز هزینه دفتر مرکزی', 'Head-office cost centre')],
             [t('6120 / 6130 / 6140', '6120 / 6130 / 6140'), t('اجاره دکل / خدمات حفاری / کالای حفاری (OCTG)', 'Drilling rig hire / drilling services / drilling materials (OCTG)'), t('عنصر هزینه پروژه (حساب: 1510)', 'Project cost element (account: 1510)'), t('عنصر WBS', 'WBS element')],
@@ -202,7 +202,7 @@ export const lesson: Lesson = {
           rows: [
             [t('پروژه / AFE', 'Project / AFE'), t('`AFE-2025-014`', '`AFE-2025-014`'), t('حفاری و تکمیل چاه AR-07', 'Drill and complete well AR-07'), t('1520 دارایی‌های نفت و گاز (چاه AR-07)', '1520 Oil and gas properties (well AR-07)')],
             [t('پروژه / AFE', 'Project / AFE'), t('`AFE-2025-021`', '`AFE-2025-021`'), t('ارتقای ایستگاه تقویت فشار (واحد سوم)', 'Compressor station upgrade (third unit)'), t('1520 (اجزای دارایی ایستگاه)', '1520 (station asset components)')],
-            [t('پروژه اکتشافی', 'Exploration project'), t('`EXP-2026-003`', '`EXP-2026-003`'), t('بازپردازش لرزه‌نگاری یال شمالی', 'Northern flank seismic reprocessing'), t('5410 هزینه اکتشاف (طبق رویه)', '5410 Exploration expense (per policy)')],
+            [t('پروژه اکتشافی', 'Exploration project'), t('`EXP-2026-003`', '`EXP-2026-003`'), t('بازپردازش لرزه‌نگاری یال شمالی', 'Northern flank seismic reprocessing'), t('5610 هزینه اکتشاف (طبق رویه)', '5610 Exploration expense (per policy)')],
             [t('سفارش داخلی', 'Internal order'), t('`IO-26-0012`', '`IO-26-0012`'), t('کمپین آموزش HSE سال 2026', '2026 HSE training campaign'), t('`CC-ARY-PRD`', '`CC-ARY-PRD`')],
             [t('دستور کار نگهداری', 'Maintenance work order'), t('`WO-26-0410`', '`WO-26-0410`'), t('تعمیر اساسی واحد کمپرسور 1', 'Overhaul of compressor unit 1'), t('`CC-ARY-CMP`', '`CC-ARY-CMP`')],
             [t('مرکز سود', 'Profit centre'), t('`PC-ARYA`', '`PC-ARYA`'), t('کل میدان آریا: درآمد فروش و هزینه‌ها', 'The whole Arya field: sales revenue and costs'), t('تسویه نمی‌شود؛ خودکار استخراج می‌شود', 'Not settled; derived automatically')],
@@ -303,7 +303,7 @@ export const lesson: Lesson = {
           caption: t('سه طبقه هزینه در مسار پترولیوم', 'The three cost categories at Masar Petroleum'),
           head: [t('طبقه', 'Category'), t('نمونه', 'Examples'), t('شیء هزینه', 'Cost object'), t('حساب معمول', 'Usual account')],
           rows: [
-            [t('اکتشاف', 'Exploration'), t('بازپردازش لرزه‌نگاری، مطالعات G&G، چاه اکتشافی', 'Seismic reprocessing, G&G studies, exploration wells'), t('WBS پروژه `EXP-*`', '`EXP-*` project WBS'), t('5410 یا دارایی اکتشاف و ارزیابی، طبق رویه', '5410 or E&E asset, per policy')],
+            [t('اکتشاف', 'Exploration'), t('بازپردازش لرزه‌نگاری، مطالعات G&G، چاه اکتشافی', 'Seismic reprocessing, G&G studies, exploration wells'), t('WBS پروژه `EXP-*`', '`EXP-*` project WBS'), t('5610 یا دارایی اکتشاف و ارزیابی، طبق رویه', '5610 or E&E asset, per policy')],
             [t('توسعه', 'Development'), t('چاه AR-07، واحد کمپرسور سوم، خط جریان', 'Well AR-07, third compressor unit, flowline'), t('WBS پروژه `AFE-*`', '`AFE-*` project WBS'), t('1510 و سپس 1520', '1510, then 1520')],
             [t('عملیاتی', 'Operating'), t('مواد شیمیایی، روغن، نگهداری، اپراتورها', 'Chemicals, lube oil, maintenance, operators'), t('مرکز هزینه، سفارش داخلی، دستور کار', 'Cost centre, internal order, work order'), t('5110، 5120، 5130', '5110, 5120, 5130')],
           ],
@@ -347,7 +347,7 @@ export const lesson: Lesson = {
             [t('لوله جداری AR-07 (GRN)', 'AR-07 casing (GRN)'), t('(`CC-ARY-DRL`)', '(`CC-ARY-DRL`)'), t('`AFE-2025-014.02.03`', '`AFE-2025-014.02.03`'), t('6140 ← 1510', '6140 → 1510'), t('`DRL`', '`DRL`'), t('R', 'R'), t('توسعه', 'Development')],
             [t('تجهیزات تکمیل AR-07 (حواله انبار)', 'AR-07 completion equipment (goods issue)'), t('(`CC-ARY-DRL`)', '(`CC-ARY-DRL`)'), t('`AFE-2025-014.03.01`', '`AFE-2025-014.03.01`'), t('6150 ← 1510', '6150 → 1510'), t('`CMP`', '`CMP`'), t('R', 'R'), t('توسعه', 'Development')],
             [t('بسته کمپرسور واحد 3 (GRN)', 'Compressor unit 3 package (GRN)'), t('(`CC-ARY-CMP`)', '(`CC-ARY-CMP`)'), t('`AFE-2025-021.01.02`', '`AFE-2025-021.01.02`'), t('6310 ← 1510', '6310 → 1510'), t('`FAC`', '`FAC`'), t('R', 'R'), t('توسعه', 'Development')],
-            [t('بازپردازش لرزه‌نگاری (SES)', 'Seismic reprocessing (SES)'), t('(`CC-HQ-EXP`)', '(`CC-HQ-EXP`)'), t('`EXP-2026-003.01`', '`EXP-2026-003.01`'), t('5410 ← 5410', '5410 → 5410'), t('`GGS`', '`GGS`'), t('R', 'R'), t('اکتشاف', 'Exploration')],
+            [t('بازپردازش لرزه‌نگاری (SES)', 'Seismic reprocessing (SES)'), t('(`CC-HQ-EXP`)', '(`CC-HQ-EXP`)'), t('`EXP-2026-003.01`', '`EXP-2026-003.01`'), t('5610 ← 5610', '5610 → 5610'), t('`GGS`', '`GGS`'), t('R', 'R'), t('اکتشاف', 'Exploration')],
             [t('ضد امولسیون جداکننده‌ها (حواله انبار)', 'Separator demulsifier (goods issue)'), t('`CC-ARY-PRD`', '`CC-ARY-PRD`'), none, t('5110 ← 5110', '5110 → 5110'), t('`OPS`', '`OPS`'), t('R', 'R'), t('عملیاتی', 'Operating')],
             [t('روغن روانکاری کمپرسورها', 'Compressor lube oil'), t('`CC-ARY-CMP`', '`CC-ARY-CMP`'), none, t('5110 ← 5110', '5110 → 5110'), t('`OPS`', '`OPS`'), t('R', 'R'), t('عملیاتی', 'Operating')],
             [t('تعمیر اساسی واحد کمپرسور 1', 'Overhaul of compressor unit 1'), t('`CC-ARY-CMP` (گیرنده تسویه)', '`CC-ARY-CMP` (settlement receiver)'), t('`WO-26-0410`', '`WO-26-0410`'), t('5120 ← 5120', '5120 → 5120'), t('`MNT`', '`MNT`'), t('R', 'R'), t('عملیاتی', 'Operating')],
@@ -361,7 +361,7 @@ export const lesson: Lesson = {
           items: [
             t('**سطرهای WBS**: هزینه روی عنصر WBS می‌نشیند و حساب 1510 خودکار انتخاب می‌شود؛ مرکز هزینه داخل پرانتز فقط برای گزارش مسئولیت است.', '**WBS rows**: the cost sits on the WBS element and account 1510 is picked automatically; the cost centre in parentheses is for responsibility reporting only.'),
             t('**دستور کار و سفارش داخلی**: هزینه اول روی سفارش جمع می‌شود و در پایان ماه با عنصر هزینه ثانویه 9410 به مرکز هزینه گیرنده تسویه می‌شود.', '**Work orders and internal orders**: cost first collects on the order and is settled at month-end to the receiving cost centre with secondary cost element 9410.'),
-            t('**پروژه اکتشافی**: در این مثال رویه مسار پترولیوم هزینه G&G را مستقیم به هزینه (5410) می‌برد؛ با رویه دیگر ممکن است دارایی اکتشاف و ارزیابی شود.', '**Exploration project**: in this example Masar Petroleum’s policy expenses G&G directly (5410); under another policy it could be an exploration and evaluation asset.'),
+            t('**پروژه اکتشافی**: در این مثال رویه مسار پترولیوم هزینه G&G را مستقیم به هزینه (5610) می‌برد؛ با رویه دیگر ممکن است دارایی اکتشاف و ارزیابی شود.', '**Exploration project**: in this example Masar Petroleum’s policy expenses G&G directly (5610); under another policy it could be an exploration and evaluation asset.'),
             t('**N همیشه با دلیل**: جریمه و بهره به‌خاطر حساب‌شان N می‌گیرند، نه به تشخیص کاربر.', '**N always has a reason**: the fine and interest are N because of their accounts, not the user’s judgement.'),
           ],
         },
@@ -463,7 +463,7 @@ export const lesson: Lesson = {
         {
           type: 'table',
           caption: t('یک کد، چهار گزارش', 'One code, four reports'),
-          head: [t('سند', 'Document'), t('مبلغ', 'Amount'), t('گزارش بودجه', 'Budget report'), t('سهم شریک الف (30٪)', 'Partner A share (30%)'), t('سهم شریک ب (20٪)', 'Partner B share (20%)'), t('صورت بازیافت هزینه', 'Cost-recovery statement')],
+          head: [t('سند', 'Document'), t('مبلغ', 'Amount'), t('گزارش بودجه', 'Budget report'), t('سهم انرژی البرز (30٪)', 'Alborz Energy share (30%)'), t('سهم نفت دنا (20٪)', 'Dena Petroleum share (20%)'), t('صورت بازیافت هزینه', 'Cost-recovery statement')],
           numericCols: [1, 3, 4],
           rows: [
             [t('GRN لوله جداری', 'Casing GRN'), 410000, t('AFE ردیف .02.03', 'AFE line .02.03'), 123000, 82000, t('توسعه', 'Development')],
@@ -532,7 +532,7 @@ export const lesson: Lesson = {
                 [t('ب', 'b'), t('مرکز هزینه', 'Cost centre'), t('`CC-ARY-PRD` (5110)', '`CC-ARY-PRD` (5110)'), t('عملیاتی', 'Operating')],
                 [t('ج', 'c'), t('سفارش داخلی که به مرکز هزینه تسویه می‌شود', 'Internal order settled to a cost centre'), t('سفارش داخلی جدید HSE (5130) ← `CC-ARY-PRD`', 'New HSE internal order (5130) → `CC-ARY-PRD`'), t('عملیاتی', 'Operating')],
                 [t('د', 'd'), t('دستور کار نگهداری', 'Maintenance work order'), t('دستور کار جدید (5120) ← `CC-ARY-CMP`', 'New work order (5120) → `CC-ARY-CMP`'), t('عملیاتی', 'Operating')],
-                [t('ه', 'e'), t('عنصر WBS اکتشافی', 'Exploration WBS element'), t('`EXP-2026-003.01` (5410)', '`EXP-2026-003.01` (5410)'), t('اکتشاف', 'Exploration')],
+                [t('ه', 'e'), t('عنصر WBS اکتشافی', 'Exploration WBS element'), t('`EXP-2026-003.01` (5610)', '`EXP-2026-003.01` (5610)'), t('اکتشاف', 'Exploration')],
                 [t('و', 'f'), t('عنصر WBS', 'WBS element'), t('`AFE-2025-021.05` اتصالات و لوله‌کشی', '`AFE-2025-021.05` tie-ins and piping'), t('توسعه', 'Development')],
               ],
             },
@@ -563,7 +563,7 @@ export const lesson: Lesson = {
                 [t('1', '1'), t('هزینه پروژه فقط با WBS', 'Project cost only with a WBS'), t('`AFE-2025-014.02.01`، 6120 ← 1510، `DRL`، R، توسعه', '`AFE-2025-014.02.01`, 6120 → 1510, `DRL`, R, Development')],
                 [t('2', '2'), t('هزینه عملیاتی روی WBS سرمایه‌ای ممنوع', 'Operating cost not allowed on a capital WBS'), t('`CC-ARY-CMP`، 5110، `OPS`، R، عملیاتی', '`CC-ARY-CMP`, 5110, `OPS`, R, Operating')],
                 [t('3', '3'), t('حساب 5910 همیشه N', 'Account 5910 is always N'), t('`CC-ARY-PRD`، 5910، `OPS`، N، عملیاتی', '`CC-ARY-PRD`, 5910, `OPS`, N, Operating')],
-                [t('4', '4'), t('طبقه از نوع پروژه استخراج می‌شود', 'Category is derived from the project type'), t('`EXP-2026-003.01`، 5410، `GGS`، R، اکتشاف', '`EXP-2026-003.01`, 5410, `GGS`, R, Exploration')],
+                [t('4', '4'), t('طبقه از نوع پروژه استخراج می‌شود', 'Category is derived from the project type'), t('`EXP-2026-003.01`، 5610، `GGS`، R، اکتشاف', '`EXP-2026-003.01`, 5410, `GGS`, R, Exploration')],
                 [t('5', '5'), t('ثبت روی WBS بسته ممنوع', 'No posting to a closed WBS'), t('بازگشایی مصوب WBS، ثبت فاکتور، تسویه و بستن دوباره', 'Approved reopening of the WBS, post the invoice, settle and close again')],
               ],
             },
@@ -605,7 +605,7 @@ export const lesson: Lesson = {
               type: 'steps',
               items: [
                 { title: t('جمع هزینه‌های مشترک', 'Total joint costs'), text: t('840,000 + 410,000 + 36,000 + 120,000 + 90,000 + 50,000 = 1,546,000. بهره (64,000) هزینه خود مسار پترولیوم است.', '840,000 + 410,000 + 36,000 + 120,000 + 90,000 + 50,000 = 1,546,000. Interest (64,000) is Masar Petroleum’s own cost.') },
-                { title: t('سهم شرکا', 'Partner shares'), text: t('مسار پترولیوم 1,546,000 × 50٪ = 773,000؛ شریک الف × 30٪ = 463,800؛ شریک ب × 20٪ = 309,200. جمع: 1,546,000.', 'Masar Petroleum 1,546,000 × 50% = 773,000; Partner A × 30% = 463,800; Partner B × 20% = 309,200. Total: 1,546,000.') },
+                { title: t('سهم شرکا', 'Partner shares'), text: t('مسار پترولیوم 1,546,000 × 50٪ = 773,000؛ انرژی البرز × 30٪ = 463,800؛ نفت دنا × 20٪ = 309,200. جمع: 1,546,000.', 'Masar Petroleum 1,546,000 × 50% = 773,000; Alborz Energy × 30% = 463,800; Dena Petroleum × 20% = 309,200. Total: 1,546,000.') },
                 { title: t('قابل بازیافت به تفکیک طبقه', 'Recoverable by category'), text: t('توسعه: 840,000 + 410,000 = 1,250,000؛ عملیاتی: 36,000 + 120,000 = 156,000؛ اکتشاف: 90,000. جمع: 1,496,000.', 'Development: 840,000 + 410,000 = 1,250,000; operating: 36,000 + 120,000 = 156,000; exploration: 90,000. Total: 1,496,000.') },
                 { title: t('غیرقابل بازیافت', 'Non-recoverable'), text: t('50,000 + 64,000 = 114,000. کنترل: 1,496,000 + 114,000 = 1,610,000 که برابر جمع همه هزینه‌هاست.', '50,000 + 64,000 = 114,000. Check: 1,496,000 + 114,000 = 1,610,000, equal to all costs.') },
               ],
@@ -616,8 +616,8 @@ export const lesson: Lesson = {
               head: [t('گزارش', 'Report'), t('مبلغ', 'Amount')],
               numericCols: [1],
               rows: [
-                [t('صورت‌حساب شریک الف', 'Bill to Partner A'), 463800],
-                [t('صورت‌حساب شریک ب', 'Bill to Partner B'), 309200],
+                [t('صورت‌حساب انرژی البرز', 'Bill to Alborz Energy'), 463800],
+                [t('صورت‌حساب نفت دنا', 'Bill to Dena Petroleum'), 309200],
                 [t('بازیافت: توسعه', 'Recovery: development'), 1250000],
                 [t('بازیافت: عملیاتی', 'Recovery: operating'), 156000],
                 [t('بازیافت: اکتشاف', 'Recovery: exploration'), 90000],
@@ -751,12 +751,12 @@ export const lesson: Lesson = {
       ),
     },
     {
-      q: t('یک هزینه مشترک 410,000 است. سهم شریک ب (20٪) چقدر است؟', 'A joint cost is 410,000. What is Partner B’s 20% share?'),
+      q: t('یک هزینه مشترک 410,000 است. سهم نفت دنا (20٪) چقدر است؟', 'A joint cost is 410,000. What is Dena Petroleum’s 20% share?'),
       options: [t('82,000', '82,000'), t('123,000', '123,000'), t('205,000', '205,000'), t('41,000', '41,000')],
       answer: 0,
       explain: t(
-        '410,000 × 20٪ = 82,000. رقم 123,000 سهم 30٪ شریک الف و 205,000 سهم 50٪ مسار پترولیوم است.',
-        '410,000 × 20% = 82,000. 123,000 is Partner A’s 30% and 205,000 is Masar Petroleum’s 50%.',
+        '410,000 × 20٪ = 82,000. رقم 123,000 سهم 30٪ انرژی البرز و 205,000 سهم 50٪ مسار پترولیوم است.',
+        '410,000 × 20% = 82,000. 123,000 is Alborz Energy’s 30% and 205,000 is Masar Petroleum’s 50%.',
       ),
     },
     {
