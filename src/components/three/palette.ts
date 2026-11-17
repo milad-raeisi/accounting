@@ -1,4 +1,17 @@
 import { useEffect, useRef, useState } from 'react'
+import { setConsoleFunction } from 'three'
+
+/**
+ * @react-three/fiber 9 (the latest stable release) still creates a THREE.Clock, which three r183+ marks deprecated,
+ * so every canvas logs "THREE.Clock: This module has been deprecated" and there is nothing to change on our side.
+ * Drop only that message until R3F moves to THREE.Timer (v10); everything else three.js logs passes through as before.
+ */
+setConsoleFunction((type, message, ...params) => {
+  if (type === 'warn' && message.startsWith('THREE.Clock: This module has been deprecated')) return
+  const trace = params[0] as { isStackTrace?: boolean; getError?: (m: string) => Error } | undefined
+  if (trace?.isStackTrace && trace.getError) console[type](trace.getError(message))
+  else console[type](message, ...params)
+})
 
 /** Three.js can't parse oklch(), so scenes use hex twins of the CSS tokens. */
 export const palette3D = {

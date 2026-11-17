@@ -107,8 +107,14 @@ export default function LabPage() {
   useGSAP(
     () => {
       if (!txs.length) return
-      gsap.fromTo('[data-new-row]', { backgroundColor: 'color-mix(in oklch, var(--gold) 35%, transparent)', y: -10, opacity: 0 }, { backgroundColor: 'transparent', y: 0, opacity: 1, duration: 1.2, ease: 'power2.out' })
-      gsap.fromTo('[data-touched]', { scale: 0.94 }, { scale: 1, duration: 0.8, ease: 'elastic.out(1, 0.5)' })
+      // each target lives in one view only (new row: journal, touched accounts: ledger), so animate what is on screen;
+      // tweening a missing target makes GSAP log "target not found"
+      const q = gsap.utils.selector(root)
+      const rows = q('[data-new-row]')
+      const touchedEls = q('[data-touched]')
+      if (rows.length)
+        gsap.fromTo(rows, { backgroundColor: 'color-mix(in oklch, var(--gold) 35%, transparent)', y: -10, opacity: 0 }, { backgroundColor: 'transparent', y: 0, opacity: 1, duration: 1.2, ease: 'power2.out' })
+      if (touchedEls.length) gsap.fromTo(touchedEls, { scale: 0.94 }, { scale: 1, duration: 0.8, ease: 'elastic.out(1, 0.5)' })
     },
     { scope: root, dependencies: [txs.length, view] },
   )
