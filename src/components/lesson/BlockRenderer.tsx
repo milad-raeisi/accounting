@@ -76,7 +76,7 @@ const calloutStyle = {
 } as const
 
 export function BlockRenderer({ block }: { block: Block }) {
-  const { t, tr } = useI18n()
+  const { t, tr, num } = useI18n()
 
   switch (block.type) {
     case 'p':
@@ -100,7 +100,7 @@ export function BlockRenderer({ block }: { block: Block }) {
           {block.items.map((item, i) => (
             <li key={i} className="flex gap-3 leading-8 text-body">
               {block.ordered ? (
-                <span className="w-5 shrink-0 text-end text-sm font-semibold text-muted-foreground tabular">{i + 1}.</span>
+                <span className="w-5 shrink-0 text-end text-sm font-semibold text-muted-foreground tabular">{num(i + 1)}.</span>
               ) : (
                 <span className="mt-[0.8rem] size-1.5 shrink-0 rounded-full bg-foreground/40" />
               )}
@@ -163,7 +163,7 @@ export function BlockRenderer({ block }: { block: Block }) {
           {block.items.map((s, i) => (
             <li key={i} className="relative flex gap-4">
               <span className="relative z-10 grid size-[1.65rem] shrink-0 place-items-center rounded-full bg-muted text-xs font-semibold tabular">
-                {i + 1}
+                {num(i + 1)}
               </span>
               <div className="pt-0.5">
                 <div className="font-semibold">

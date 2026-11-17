@@ -1,5 +1,5 @@
 import { use, useEffect, useMemo, useRef, useState } from 'react'
-import { Link, useParams } from 'react-router'
+import { Link, Navigate, useParams } from 'react-router'
 import { motion } from 'motion/react'
 import { ArrowLeft, ArrowRight, CheckCircle2, Circle, Clock, GraduationCap, Target } from 'lucide-react'
 
@@ -34,8 +34,8 @@ function useScrollSpy(ids: string[]) {
 }
 
 export default function LessonPage() {
-  const { slug = '' } = useParams()
-  const { t, tr, num, lang, isFa } = useI18n()
+  const { slug = '', course: courseParam } = useParams()
+  const { t, tr, num, isFa } = useI18n()
   const lesson = use(loadLesson(slug))
   const { prev, next } = neighbours(slug)
   const { isDone, markDone, saveQuiz, quiz } = useProgress()
@@ -56,6 +56,9 @@ export default function LessonPage() {
       </div>
     )
   }
+
+  // one canonical URL per lesson: old /lessons/:slug links and a wrong course segment both redirect
+  if (courseParam !== lesson.course) return <Navigate to={lessonPath(lesson)} replace />
 
   const done = isDone(lesson.slug)
   const best = quiz[lesson.slug]
@@ -171,7 +174,7 @@ export default function LessonPage() {
               )}
             </div>
             <Quiz
-              key={`${lesson.slug}-${lang}`}
+              key={lesson.slug}
               questions={lesson.quiz}
               onComplete={(score, total) => {
                 saveQuiz(lesson.slug, score, total)
@@ -232,7 +235,7 @@ export default function LessonPage() {
               {[...lesson.sections.map((s) => ({ id: s.id, title: tr(s.title) })), { id: 'quiz', title: t('lesson.quiz') }].map((s) => (
                 <a
                   key={s.id}
-                  href={`#/lessons/${lesson.slug}`}
+                  href={`#${lessonPath(lesson)}`}
                   onClick={(e) => {
                     e.preventDefault()
                     document.getElementById(s.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })

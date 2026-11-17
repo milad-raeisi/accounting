@@ -7,6 +7,7 @@ import { TAccount } from '@/components/lesson/tables'
 import { AnimatedNumber } from '@/components/ui/AnimatedNumber'
 import { labExtras, novaAccountMap, novaAccounts, novaAdjustments, novaTransactions } from '@/content/nova'
 import { useI18n } from '@/i18n/I18nProvider'
+import { ui } from '@/i18n/strings'
 import { gsap, useGSAP } from '@/lib/gsap'
 import {
   balanceSheet,
@@ -509,7 +510,8 @@ function CustomEntry({ onRecord, disabled, nextDay }: { onRecord: (tx: Tx) => vo
       id: `c${Date.now()}`,
       day: nextDay,
       kind: 'regular',
-      title: memo.trim() ? { fa: memo.trim(), en: memo.trim() } : { fa: t('lab.customMemo'), en: 'Custom entry' },
+      // both languages from the dictionary, so the default memo follows a later language switch
+      title: memo.trim() ? { fa: memo.trim(), en: memo.trim() } : { fa: ui['lab.customMemo'].fa, en: ui['lab.customMemo'].en },
       lines: [
         { account: dr, debit: value },
         { account: cr, credit: value },

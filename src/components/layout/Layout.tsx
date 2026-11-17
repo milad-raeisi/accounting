@@ -35,7 +35,7 @@ export function Layout() {
   return (
     <div className="flex min-h-svh flex-col">
       <SiteHeader />
-      <main id="main" className="flex-1">
+      <main id="main" tabIndex={-1} className="flex-1 scroll-mt-16 outline-none">
         <AnimatePresence mode="wait" initial={false}>
           {/* opacity only: a lingering transform/filter would become the containing block
               for GSAP's position:fixed pins and break ScrollTrigger pinning */}

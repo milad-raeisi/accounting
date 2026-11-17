@@ -27,6 +27,8 @@ export const ui = {
   'nav.practice': { fa: 'آزمون', en: 'Practice' },
   'nav.menu': { fa: 'منو', en: 'Menu' },
   'nav.skip': { fa: 'پرش به محتوا', en: 'Skip to content' },
+  'nav.main': { fa: 'ناوبری اصلی', en: 'Main navigation' },
+  'nav.footer': { fa: 'پیوندهای پایین صفحه', en: 'Footer links' },
 
   'lang.label': { fa: 'زبان', en: 'Language' },
   'lang.switchTo': { fa: 'Switch to English', en: 'تغییر به فارسی' },
@@ -148,6 +150,8 @@ export const ui = {
   'quiz.correct': { fa: 'آفرین! درست است.', en: 'Correct, nicely done.' },
   'quiz.wrong': { fa: 'نه دقیقاً.', en: 'Not quite.' },
   'quiz.question': { fa: 'پرسش', en: 'Question' },
+  /** after a count: "80 questions" */
+  'quiz.questions': { fa: 'پرسش', en: 'questions' },
   'quiz.of': { fa: 'از', en: 'of' },
   'quiz.score': { fa: 'امتیاز شما', en: 'Your score' },
   'quiz.retry': { fa: 'تلاش دوباره', en: 'Try again' },
@@ -170,6 +174,8 @@ export const ui = {
   'practice.new': { fa: 'آزمون جدید', en: 'New exam' },
   'practice.empty': { fa: 'هنوز پرسشی بارگذاری نشده است.', en: 'No questions are available yet.' },
   'practice.selectAll': { fa: 'انتخاب همه', en: 'Select all' },
+  'practice.selectNone': { fa: 'حذف همه', en: 'Clear all' },
+  'practice.loadError': { fa: 'بارگیری پرسش‌ها انجام نشد. اتصال اینترنت را بررسی کنید و دوباره تلاش کنید.', en: 'The questions could not be loaded. Check your connection and try again.' },
 
   'glossary.title': { fa: 'واژه‌نامه حسابداری', en: 'Accounting glossary' },
   'glossary.lead': {

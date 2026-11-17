@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'motion/react'
 
 import type { L } from '@/content/types'
 import { useI18n } from '@/i18n/I18nProvider'
+import { prefersReducedMotion } from '@/lib/gsap'
 import { cn } from '@/lib/utils'
 import { DiagramFrame, type DiagramProps } from './DiagramFrame'
 
@@ -85,7 +86,7 @@ const STEPS: { title: L; text: L }[] = [
 export default function Cycle3D({ caption }: DiagramProps) {
   const { tr, t, num, isFa } = useI18n()
   const [active, setActive] = useState(0)
-  const [playing, setPlaying] = useState(true)
+  const [playing, setPlaying] = useState(() => !prefersReducedMotion())
 
   useEffect(() => {
     if (!playing) return
@@ -173,7 +174,7 @@ export default function Cycle3D({ caption }: DiagramProps) {
           <button
             key={i}
             type="button"
-            aria-label={`${t('diagram.step')} ${i + 1}`}
+            aria-label={`${t('diagram.step')} ${num(i + 1)}`}
             onClick={() => select(i)}
             className={cn('h-1.5 flex-1 rounded-full transition-colors duration-500', i <= active ? 'bg-primary' : 'bg-border')}
           />

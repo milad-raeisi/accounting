@@ -51,7 +51,17 @@ export function SiteHeader() {
 
   return (
     <header className="glass sticky top-0 z-40 border-b">
-      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:start-4 focus:top-3 focus:rounded-md focus:bg-background focus:px-3 focus:py-2">
+      {/* HashRouter owns the URL hash, so a plain href="#main" would navigate to a "main" route; move focus instead */}
+      <a
+        href="#main"
+        onClick={(e) => {
+          e.preventDefault()
+          const main = document.getElementById('main')
+          main?.focus({ preventScroll: true })
+          main?.scrollIntoView()
+        }}
+        className="sr-only focus:not-sr-only focus:absolute focus:start-4 focus:top-3 focus:rounded-md focus:bg-background focus:px-3 focus:py-2"
+      >
         {t('nav.skip')}
       </a>
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-3 px-4 sm:px-6">
@@ -59,7 +69,7 @@ export function SiteHeader() {
           <DaftarLockup size={34} showDescriptor />
         </Link>
 
-        <nav className="ms-6 hidden items-center gap-1 md:flex" aria-label="Main">
+        <nav className="ms-6 hidden items-center gap-1 md:flex" aria-label={t('nav.main')}>
           {NAV.map((item) => {
             const active = isActive(item.to, item.end)
             return (

@@ -1,4 +1,4 @@
-import { useMemo, useRef, type MutableRefObject } from 'react'
+import { useEffect, useMemo, useRef, type MutableRefObject } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Environment, Float, Lightformer, OrbitControls, RoundedBox, Sparkles } from '@react-three/drei'
 import * as THREE from 'three'
@@ -43,6 +43,13 @@ function Node({
   const pos: [number, number, number] = [Math.cos(a) * R, 0, -Math.sin(a) * R]
   const isActive = i === active
   const isDone = i < active
+  // unmounting while hovered (route or language change) would otherwise leave the page with a pointer cursor
+  useEffect(
+    () => () => {
+      document.body.style.cursor = ''
+    },
+    [],
+  )
   useFrame((_, dt) => {
     if (!ref.current || !mat.current) return
     const s = isActive ? 1.55 : 1

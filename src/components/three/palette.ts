@@ -40,12 +40,22 @@ export function useOnScreen<T extends HTMLElement>(rootMargin = '200px') {
   return { ref, mounted, visible }
 }
 
-/** WebGL availability check (falls back to a static message when missing). */
+let webglSupport: boolean | undefined
+
+/**
+ * WebGL availability check (falls back to a static message when missing).
+ * Probed once and the probe context released: browsers cap live WebGL contexts, and a leaked probe per
+ * scene mount could evict a real canvas after enough lesson navigation.
+ */
 export function hasWebGL(): boolean {
+  if (webglSupport !== undefined) return webglSupport
   try {
     const c = document.createElement('canvas')
-    return Boolean(c.getContext('webgl2') || c.getContext('webgl'))
+    const gl = c.getContext('webgl2') ?? c.getContext('webgl')
+    webglSupport = Boolean(gl)
+    gl?.getExtension('WEBGL_lose_context')?.loseContext()
   } catch {
-    return false
+    webglSupport = false
   }
+  return webglSupport
 }

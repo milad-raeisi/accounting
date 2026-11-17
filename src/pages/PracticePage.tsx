@@ -26,7 +26,7 @@ function shuffle<T>(arr: T[]): T[] {
 }
 
 export default function PracticePage() {
-  const { t, tr, num, lang } = useI18n()
+  const { t, tr, num } = useI18n()
   const [count, setCount] = useState(15)
   const [params, setParams] = useSearchParams()
   const fromUrl = params.get('course') ?? undefined
@@ -49,6 +49,7 @@ export default function PracticePage() {
 
   const poolSize = useMemo(() => lessons.filter((l) => selected.has(l.number)).reduce((s, l) => s + l.quizCount, 0), [selected, lessons])
   const [loading, setLoading] = useState(false)
+  const [loadError, setLoadError] = useState(false)
 
   useEffect(() => {
     if (!exam || finished) return
@@ -58,10 +59,15 @@ export default function PracticePage() {
 
   const start = async () => {
     setLoading(true)
+    setLoadError(false)
     let pool: Picked[]
     try {
       const full = await loadCourseLessons(course)
       pool = full.filter((l) => selected.has(l.number)).flatMap((l) => l.quiz.map((q) => ({ q, lesson: l.number, course: l.course })))
+    } catch {
+      // a lesson chunk failed to load (offline, or a new deploy replaced the old files)
+      setLoadError(true)
+      return
     } finally {
       setLoading(false)
     }
@@ -133,7 +139,7 @@ export default function PracticePage() {
                   onClick={() => setSelected(allOn ? new Set() : new Set(lessons.map((l) => l.number)))}
                   className="text-xs font-semibold text-primary hover:underline"
                 >
-                  {t('practice.selectAll')}
+                  {allOn ? t('practice.selectNone') : t('practice.selectAll')}
                 </button>
               </div>
               <div className="mt-3 grid gap-2 sm:grid-cols-2">
@@ -165,8 +171,13 @@ export default function PracticePage() {
                 onClick={start}
                 className="mt-8 h-12 w-full rounded-full bg-primary text-base font-semibold text-primary-foreground transition hover:opacity-90 active:scale-[0.99] disabled:opacity-40"
               >
-                {t('practice.start')} · {num(Math.min(count, poolSize))} {t('quiz.question')}
+                {t('practice.start')} · {num(Math.min(count, poolSize))} {t('quiz.questions')}
               </button>
+              {loadError && (
+                <p role="alert" className="mt-3 text-center text-sm text-liability">
+                  {t('practice.loadError')}
+                </p>
+              )}
             </>
           )}
         </motion.div>
@@ -181,7 +192,7 @@ export default function PracticePage() {
             </button>
           </div>
           <Quiz
-            key={`${startedAt}-${lang}`}
+            key={startedAt}
             questions={exam.map((e) => e.q)}
             sourceOf={(i) => `${t('lesson.number')} ${num(exam[i].lesson)}`}
             onComplete={(score, total) => {
