@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'motion/react'
 import { ErrorBoundary } from '@/components/ui/ErrorBoundary'
 import { useI18n } from '@/i18n/I18nProvider'
 import { ScrollTrigger } from '@/lib/gsap'
+import { isChunkLoadError, reloadPage } from '@/lib/stale-build'
 import { SiteFooter } from './SiteFooter'
 import { SiteHeader } from './SiteHeader'
 
@@ -48,16 +49,20 @@ export function Layout() {
           >
             <ErrorBoundary
               resetKey={location.pathname}
-              fallback={(_, reset) => (
-                <div className="mx-auto grid min-h-[50vh] max-w-lg place-items-center px-4 text-center">
-                  <div>
-                    <p className="text-muted-foreground">{t('common.error')}</p>
-                    <button type="button" onClick={reset} className="mt-4 rounded-xl border px-4 py-2 text-sm font-medium hover:bg-muted">
-                      {t('quiz.retry')}
-                    </button>
+              fallback={(error, reset) => {
+                // a page chunk from an older deploy: React.lazy keeps the failed import, so only a reload helps
+                const chunk = isChunkLoadError(error)
+                return (
+                  <div className="mx-auto grid min-h-[50vh] max-w-lg place-items-center px-4 text-center">
+                    <div>
+                      <p className="text-muted-foreground">{chunk ? t('common.chunkError') : t('common.error')}</p>
+                      <button type="button" onClick={chunk ? reloadPage : reset} className="mt-4 rounded-xl border px-4 py-2 text-sm font-medium hover:bg-muted">
+                        {chunk ? t('common.reload') : t('quiz.retry')}
+                      </button>
+                    </div>
                   </div>
-                </div>
-              )}
+                )
+              }}
             >
               <Suspense fallback={<PageFallback />}>{outlet}</Suspense>
             </ErrorBoundary>

@@ -3,6 +3,7 @@ import { lazy, Suspense, type ComponentType, type LazyExoticComponent } from 're
 import { ErrorBoundary } from '@/components/ui/ErrorBoundary'
 import type { DiagramId, L } from '@/content/types'
 import { useI18n } from '@/i18n/I18nProvider'
+import { isChunkLoadError, reloadPage } from '@/lib/stale-build'
 import type { DiagramProps } from './DiagramFrame'
 
 type Lazy = LazyExoticComponent<ComponentType<DiagramProps>>
@@ -53,13 +54,15 @@ function Skeleton() {
   )
 }
 
-function DiagramError({ reset }: { reset: () => void }) {
-  const { tr } = useI18n()
+function DiagramError({ error, reset }: { error: Error; reset: () => void }) {
+  const { t, tr } = useI18n()
+  // React.lazy caches a failed import, so Retry cannot fetch the chunk again: only a reload can
+  const chunk = isChunkLoadError(error)
   return (
     <div className="my-8 flex items-center justify-between gap-4 rounded-2xl border border-dashed p-5 text-sm text-muted-foreground">
-      {tr({ fa: 'نمایش این شکل با خطا روبه‌رو شد.', en: 'This figure failed to render.' })}
-      <button type="button" onClick={reset} className="rounded-lg border px-3 py-1.5 text-xs font-medium hover:bg-muted">
-        {tr({ fa: 'تلاش دوباره', en: 'Retry' })}
+      {chunk ? t('common.chunkError') : tr({ fa: 'نمایش این شکل با خطا روبه‌رو شد.', en: 'This figure failed to render.' })}
+      <button type="button" onClick={chunk ? reloadPage : reset} className="shrink-0 rounded-lg border px-3 py-1.5 text-xs font-medium hover:bg-muted">
+        {chunk ? t('common.reload') : tr({ fa: 'تلاش دوباره', en: 'Retry' })}
       </button>
     </div>
   )
@@ -70,7 +73,7 @@ export function Diagram({ id, caption }: { id: DiagramId; caption?: L }) {
   const Comp = diagrams[id]
   if (!Comp) return null
   return (
-    <ErrorBoundary resetKey={lang} fallback={(_, reset) => <DiagramError reset={reset} />}>
+    <ErrorBoundary resetKey={lang} fallback={(error, reset) => <DiagramError error={error} reset={reset} />}>
       <Suspense fallback={<Skeleton />}>
         <Comp caption={caption} />
       </Suspense>

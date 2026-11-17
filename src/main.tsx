@@ -6,7 +6,10 @@ import '@fontsource-variable/inter/opsz.css'
 import '@fontsource-variable/bricolage-grotesque'
 import './index.css'
 import '@/lib/gsap'
+import { installStaleBuildRecovery } from '@/lib/stale-build'
 import App from './App.tsx'
+
+installStaleBuildRecovery()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

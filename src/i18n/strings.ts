@@ -292,6 +292,11 @@ export const ui = {
   'common.loading': { fa: 'در حال بارگذاری…', en: 'Loading…' },
   'common.close': { fa: 'بستن', en: 'Close' },
   'common.error': { fa: 'مشکلی پیش آمد. لطفاً دوباره تلاش کنید.', en: 'Something went wrong. Please try again.' },
+  'common.chunkError': {
+    fa: 'این بخش بارگیری نشد. احتمالاً نسخه تازه‌ای از سایت منتشر شده یا اتصال اینترنت قطع است.',
+    en: 'This part of the site could not be loaded. A new version may have been published, or the connection dropped.',
+  },
+  'common.reload': { fa: 'بارگذاری دوباره صفحه', en: 'Reload page' },
 
   'footer.about': {
     fa: 'دفتر مجموعه دوره‌های آموزش ماژول‌های ERP برای صنعت نفت و گاز است، به فارسی و انگلیسی.',
